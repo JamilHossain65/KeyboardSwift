@@ -10,7 +10,7 @@ import UIKit
 
 class KeyboardButton: UIButton {
     
-    var defaultBackgroundColor: UIColor = .red
+    var defaultBackgroundColor: UIColor = .white
     var highlightBackgroundColor: UIColor = .lightGray
     
     override init(frame: CGRect) {
@@ -40,5 +40,6 @@ private extension KeyboardButton {
         layer.shadowOffset = CGSize(width: 0, height: 1.0)
         layer.shadowRadius = 0.0
         layer.shadowOpacity = 0.35
+        setTitleColor(.black, for: .normal)
     }
 }
