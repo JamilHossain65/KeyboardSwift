@@ -15,10 +15,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let keyboardView = KeyboardView()
-        //keyboardView.delegate = self
         textView.becomeFirstResponder()
-        view.addSubview(keyboardView)
     }
 }
 

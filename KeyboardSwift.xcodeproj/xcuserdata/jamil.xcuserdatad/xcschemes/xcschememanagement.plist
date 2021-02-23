@@ -4,10 +4,38 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>KeyboardSwift.xcscheme_^#shared#^_</key>
+		<key>KeyboardExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>KeyboardSwift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Test.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8DE7F94725E4474A00D3C48A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DE7F9C025E4784200D3C48A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DE7F9E525E497BA00D3C48A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
