@@ -9,7 +9,7 @@ import UIKit
 
 class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice] playInputClick];
     // constants
-    let paddingX:Double = 2 //left and right padding
+    let paddingX:Double = 3 //left and right padding
     let paddingY:Double = 3 //top and bottom padding
     
     let gapX:Double = 3 //gap between button in a row
@@ -22,7 +22,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     var nextKeyboardButton:KeyboardButton!
     
     var currentButtonIndex = 0;
-    var nextKeyboardButtonIndex = 41;
+    var nextKeyboardButtonIndex = 39;
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,11 +47,11 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
 //MARK:- configure keyboard button
 extension KeyboardView{
     func showLine(){
-        showLine(row: 0, totalCol: 11,info: [0:20,10:20])
-        showLine(row: 1, totalCol: 11)
-        showLine(row: 2, totalCol: 11)
-        showLine(row: 3, totalCol: 8)
-        showLine(row: 4, totalCol: 3)
+        showLine(row: 0, totalCol: 11)
+        showLine(row: 1, totalCol: 10)
+        showLine(row: 2, totalCol: 10)
+        showLine(row: 3, totalCol: 8,info: [0:40,7:40])
+        showLine(row: 4, totalCol: 5,info: [0:50,1:26,2:170,3:26])
     }
     
     func showLine(row:Int,totalCol:Int,info:[Int:Int]? = [:]){
@@ -61,25 +61,30 @@ extension KeyboardView{
             print("test info::\(_info)")
         }
         
-        
-        //calculate width
-        let btnWidth = self.getButtonWidth(totalCol: totalCol)
-        
-        //calculate height
-        let btnHeight = self.getButtonHeight()
-        
-        let colY:Double = paddingY + Double(row)*(gapY + btnHeight)
+        var preX = paddingX
+        var preWidth:Double = 0
         
         for i in 0...totalCol-1 {
+        
+            //calculate width
+            let btnWidth = self.getButtonWidth(totalCol,colIndex:i,info: info)
+            //calculate height
+            let btnHeight = self.getButtonHeight()
+            let colY:Double = paddingY + Double(row)*(gapY + btnHeight)
+            let colX:Double = self.getColX(index:i, btnWidth:preWidth, preX:preX)
             
-            let bFrame = CGRect(x: paddingX + Double(i)*(gapX + btnWidth), y: colY, width: btnWidth, height: btnHeight)
+            print("colX[\(i)]::\(colX)")
+            preX = colX
+            preWidth = btnWidth
+            
+            let bFrame = CGRect(x: colX, y: colY, width: btnWidth, height: btnHeight)
             let keyboardButton = KeyboardButton(frame: bFrame)
             keyboardButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .allTouchEvents)
             keyboardButton.setTitle("\(Int(btnWidth))", for: .normal);
             keyboardButton.tag = currentButtonIndex
             addSubview(keyboardButton)
             
-            print("button tag::\(keyboardButton.tag)")
+            //print("button tag::\(keyboardButton.tag)")
             
             //set next keyboard button
             if (currentButtonIndex == nextKeyboardButtonIndex){
@@ -91,22 +96,57 @@ extension KeyboardView{
     }
     
     //calculate button width in a row
-    func getButtonWidth(totalCol:Int,info:[Int:Int]? = [:]) -> Double{
+    func getButtonWidth(_ totalCol:Int,colIndex:Int,info:[Int:Int]? = [:]) -> Double{
         
         let paddingLR:Double = 2 * paddingX //padding left and right
         let totalGapX:Double = gapX * Double(totalCol-1)
         
-        let btnWidth:Double  = (Double(frame.size.width) - paddingLR - totalGapX) / Double(totalCol)
+        var btnWidth:Double  = (Double(frame.size.width) - paddingLR - totalGapX) / Double(totalCol)
+        print("btnWidth::\(btnWidth)")
         
         //override width
-        if let _info = info {
-            print("info::\(_info)")
+        if let _info = info, _info.keys.count > 0 {
+            print("override info::\(_info)")
+            
+            //todo, check mismatch of floating point value
+            var sum: Double = 0  //sum of override button width
+            var avg :Double = 0  //avg of override button width
+            var diff:Double = 0 //total difference of all override button width
+            
             for index in _info.keys{
                 print("info[\(index)] ::\(String(describing: _info[index]))")
+                sum += Double(_info[index] ?? 0)
             }
+            
+            avg = sum / Double(_info.keys.count)
+            diff = btnWidth - avg
+            
+            if _info.keys.contains(colIndex) /*colIndex == 0 || colIndex == 10 */ {
+                btnWidth = Double(_info[colIndex] ?? 0) //replace override width
+                
+            } else{//todo, need calculate
+                let diffWidth:Double = diff * Double(_info.keys.count) / Double(totalCol - _info.keys.count)
+                btnWidth += diffWidth
+            }
+            
+            print("\navg::\(avg)")
+            print("sum  ::\(sum)")
+            print("diff ::\(diff)")
+            print("new btnWidth::\(btnWidth)")
         }
-        
         return btnWidth
+    }
+    
+    //calculate button height in a col
+    func getColX(index:Int,btnWidth:Double,preX:Double,info:[Int:Int]? = [:]) -> Double{
+        //let originColX:Double = paddingX + Double(index)*(gapX + btnWidth)
+        
+        var originColX:Double = preX
+        if index > 0 {
+            originColX = originColX + gapX + btnWidth
+            
+        }
+        return originColX
     }
     
     //calculate button height in a col
