@@ -57,10 +57,6 @@ extension KeyboardView{
     func showLine(row:Int,totalCol:Int,info:[Int:Int]? = [:]){
         print("frame::\(frame)")
         
-        if let _info = info {
-            print("test info::\(_info)")
-        }
-        
         var preX = paddingX
         var preWidth:Double = 0
         
@@ -73,7 +69,6 @@ extension KeyboardView{
             let colY:Double = paddingY + Double(row)*(gapY + btnHeight)
             let colX:Double = self.getColX(index:i, btnWidth:preWidth, preX:preX)
             
-            print("colX[\(i)]::\(colX)")
             preX = colX
             preWidth = btnWidth
             
@@ -102,11 +97,10 @@ extension KeyboardView{
         let totalGapX:Double = gapX * Double(totalCol-1)
         
         var btnWidth:Double  = (Double(frame.size.width) - paddingLR - totalGapX) / Double(totalCol)
-        print("btnWidth::\(btnWidth)")
+        //print("btnWidth::\(btnWidth)")
         
         //override width
         if let _info = info, _info.keys.count > 0 {
-            print("override info::\(_info)")
             
             //todo, check mismatch of floating point value
             var sum: Double = 0  //sum of override button width
@@ -114,14 +108,14 @@ extension KeyboardView{
             var diff:Double = 0 //total difference of all override button width
             
             for index in _info.keys{
-                print("info[\(index)] ::\(String(describing: _info[index]))")
+                //print("info[\(index)] ::\(String(describing: _info[index]))")
                 sum += Double(_info[index] ?? 0)
             }
             
             avg = sum / Double(_info.keys.count)
             diff = btnWidth - avg
             
-            if _info.keys.contains(colIndex) /*colIndex == 0 || colIndex == 10 */ {
+            if _info.keys.contains(colIndex){
                 btnWidth = Double(_info[colIndex] ?? 0) //replace override width
                 
             } else{//todo, need calculate
@@ -129,22 +123,20 @@ extension KeyboardView{
                 btnWidth += diffWidth
             }
             
-            print("\navg::\(avg)")
-            print("sum  ::\(sum)")
-            print("diff ::\(diff)")
-            print("new btnWidth::\(btnWidth)")
+//            print("\navg::\(avg)")
+//            print("sum  ::\(sum)")
+//            print("diff ::\(diff)")
+//            print("new btnWidth::\(btnWidth)")
         }
         return btnWidth
     }
     
     //calculate button height in a col
-    func getColX(index:Int,btnWidth:Double,preX:Double,info:[Int:Int]? = [:]) -> Double{
-        //let originColX:Double = paddingX + Double(index)*(gapX + btnWidth)
+    func getColX(index:Int,btnWidth:Double,preX:Double) -> Double{
         
         var originColX:Double = preX
         if index > 0 {
             originColX = originColX + gapX + btnWidth
-            
         }
         return originColX
     }
@@ -154,12 +146,11 @@ extension KeyboardView{
         //calculate height
         let totalPaddingY:Double = 2 * paddingY
         let totalGapY:Double     = gapY * (totalRow-1)
-        let btnHeight:Double = (216 - totalPaddingY - totalGapY) / (totalRow)//todo, 216 = keyboard height
+        let btnHeight:Double = (216 - totalPaddingY - totalGapY) / (totalRow) //todo, 216 = keyboard height
         return btnHeight
     }
     
     @objc func buttonPressed(sender:UIButton){
-        //[[UIDevice currentDevice] playInputClick];
         UIDevice.current.playInputClick()
     }
 }
