@@ -19,10 +19,30 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     
     
     //var textView:UITextDocumentProxy?
-    var nextKeyboardButton:KeyboardButton!
+//    #define kAltLabel @"১২৩"
+//    #define kReturnLabel @"Return"
+//    #define kSpaceLabel @"Space"
+    var nextButton   = KeyboardButton()
+    var altButton    = KeyboardButton()
+    var returnButton = KeyboardButton()
+    var shiftButton  = KeyboardButton()
+    var deleteButton = KeyboardButton()
+    var voiceButton  = KeyboardButton()
+    var spaceButton  = KeyboardButton()
+    
+    var shiftButtonIndex  = 33
+    var deleteButtonIndex = 40
+    var altButtonIndex    = 41
+    var nextButtonIndex   = 42
+    var returnButtonIndex = 44
+    
+    var spaceButtonIndex  = 43
+    var voiceButtonIndex  = 0
     
     var currentButtonIndex = 0;
-    var nextKeyboardButtonIndex = 39;
+    
+    let altButtonColor  = UIColor.init(red: 172/255, green: 176/255, blue: 188/255, alpha: 1)
+    let keyboardBGColor = UIColor.init(red: 209/255, green: 212/255, blue: 219/255, alpha: 1)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +55,15 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         
         //draw
         showLine()
-        //backgroundColor = .clear
+        backgroundColor = keyboardBGColor //#d1d4db, rgb(209,212,219)
+        nextButton.defaultBackgroundColor   = altButtonColor //rgb(172, 176, 188) //#acb0bc
+        altButton.defaultBackgroundColor    = altButtonColor
+        returnButton.defaultBackgroundColor = altButtonColor
+        shiftButton.defaultBackgroundColor  = altButtonColor
+        deleteButton.defaultBackgroundColor = altButtonColor
+        //
+        //spaceButton.defaultBackgroundColor = .white
+        //voiceButton.defaultBackgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -48,10 +76,10 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
 extension KeyboardView{
     func showLine(){
         showLine(row: 0, totalCol: 11)
-        showLine(row: 1, totalCol: 10)
-        showLine(row: 2, totalCol: 10)
+        showLine(row: 1, totalCol: 11)
+        showLine(row: 2, totalCol: 11)
         showLine(row: 3, totalCol: 8,info: [0:40,7:40])
-        showLine(row: 4, totalCol: 5,info: [0:50,1:26,2:170,3:26])
+        showLine(row: 4, totalCol: 4,info: [0:40,1:30,3:80])
     }
     
     func showLine(row:Int,totalCol:Int,info:[Int:Int]? = [:]){
@@ -80,12 +108,43 @@ extension KeyboardView{
             addSubview(keyboardButton)
             
             //print("button tag::\(keyboardButton.tag)")
-            
-            //set next keyboard button
-            if (currentButtonIndex == nextKeyboardButtonIndex){
-                nextKeyboardButton = keyboardButton
-                keyboardButton.setTitle("Next", for: .normal);
+            //set keyboard button
+            switch currentButtonIndex {
+            case nextButtonIndex:
+                self.nextButton = keyboardButton
+                keyboardButton.setTitle("", for: .normal)
+                keyboardButton.setImage(UIImage(named: "globe.png"), for: .normal)
+                break
+            case altButtonIndex:
+                self.altButton = keyboardButton
+                keyboardButton.setTitle("123", for: .normal)
+                break
+            case returnButtonIndex:
+                self.returnButton = keyboardButton
+                keyboardButton.setTitle("return", for: .normal)
+                break
+            case shiftButtonIndex:
+                self.shiftButton = keyboardButton
+                keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
+                keyboardButton.setTitle("", for: .normal)
+                break
+            case deleteButtonIndex:
+                self.deleteButton = keyboardButton
+                keyboardButton.setTitle("", for: .normal)
+                keyboardButton.setImage(UIImage(named: "delete.png"), for: .normal)
+                break
+            case spaceButtonIndex:
+                self.spaceButton = keyboardButton
+                keyboardButton.setTitle("space", for: .normal)
+                break
+            case voiceButtonIndex:
+                self.voiceButton = keyboardButton
+                break
+                
+            default:
+                break
             }
+            
             currentButtonIndex += 1
         }
     }

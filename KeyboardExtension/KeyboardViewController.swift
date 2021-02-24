@@ -9,7 +9,7 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
-    var nextKeyboardButton: KeyboardButton!
+    var nextButton: KeyboardButton!
     
 //    let customView: UIButton = UIButton()
     
@@ -30,8 +30,8 @@ class KeyboardViewController: UIInputViewController {
         view.addSubview(customView)
         
         //set keyboard switch target
-        nextKeyboardButton = customView.nextKeyboardButton
-        nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
+        nextButton = customView.nextButton
+        nextButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
         
     }
     
