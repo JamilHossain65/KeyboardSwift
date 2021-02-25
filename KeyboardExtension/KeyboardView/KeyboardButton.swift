@@ -11,7 +11,7 @@ import UIKit
 class KeyboardButton: UIButton {
     
     var defaultBackgroundColor: UIColor = .white
-    var highlightBackgroundColor: UIColor = .lightGray
+    var highlightBackgroundColor: UIColor = .white
     
     override init(frame: CGRect) {
         super.init(frame: frame)

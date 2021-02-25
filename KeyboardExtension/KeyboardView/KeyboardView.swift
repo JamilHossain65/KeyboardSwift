@@ -9,19 +9,16 @@ import UIKit
 
 class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice] playInputClick];
     // constants
-    let paddingX:Double = 3 //left and right padding
-    let paddingY:Double = 3 //top and bottom padding
+    var paddingX:Double = 3 //left and right padding
+    var paddingY:Double = 3 //top and bottom padding
     
-    let gapX:Double = 3 //gap between button in a row
-    let gapY:Double = 4 //gap between button in a col
+    var gapX:Double = 3 //gap between button in a row
+    var gapY:Double = 4 //gap between button in a col
     
-    let totalRow:Double = 5 //todo
+    var totalRow:Double = 5 //todo
     
     
     //var textView:UITextDocumentProxy?
-//    #define kAltLabel @"১২৩"
-//    #define kReturnLabel @"Return"
-//    #define kSpaceLabel @"Space"
     var nextButton   = KeyboardButton()
     var altButton    = KeyboardButton()
     var returnButton = KeyboardButton()
@@ -30,19 +27,16 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     var voiceButton  = KeyboardButton()
     var spaceButton  = KeyboardButton()
     
-    var shiftButtonIndex  = 33
-    var deleteButtonIndex = 40
-    var altButtonIndex    = 41
-    var nextButtonIndex   = 42
-    var returnButtonIndex = 44
-    
-    var spaceButtonIndex  = 43
+    var shiftButtonIndex  = 0
+    var deleteButtonIndex = 0
+    var altButtonIndex    = 0
+    var nextButtonIndex   = 0
+    var spaceButtonIndex  = 0
+    var returnButtonIndex = 0
     var voiceButtonIndex  = 0
-    
+
+    //set index for each button
     var currentButtonIndex = 0;
-    
-    let altButtonColor  = UIColor.init(red: 172/255, green: 176/255, blue: 188/255, alpha: 1)
-    let keyboardBGColor = UIColor.init(red: 209/255, green: 212/255, blue: 219/255, alpha: 1)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,13 +48,16 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         }
         
         //draw
-        showLine()
-        backgroundColor = keyboardBGColor //#d1d4db, rgb(209,212,219)
-        nextButton.defaultBackgroundColor   = altButtonColor //rgb(172, 176, 188) //#acb0bc
-        altButton.defaultBackgroundColor    = altButtonColor
-        returnButton.defaultBackgroundColor = altButtonColor
-        shiftButton.defaultBackgroundColor  = altButtonColor
-        deleteButton.defaultBackgroundColor = altButtonColor
+        //self.configure5Line()
+        self.configure4Line()
+        
+        //set color
+        backgroundColor = kKeyboardBGColor //#d1d4db, rgb(209,212,219)
+        nextButton.defaultBackgroundColor   = kAltButtonColor //rgb(172, 176, 188) //#acb0bc
+        altButton.defaultBackgroundColor    = kAltButtonColor
+        returnButton.defaultBackgroundColor = kAltButtonColor
+        shiftButton.defaultBackgroundColor  = kAltButtonColor
+        deleteButton.defaultBackgroundColor = kAltButtonColor
         //
         //spaceButton.defaultBackgroundColor = .white
         //voiceButton.defaultBackgroundColor = .white
@@ -74,16 +71,52 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
 
 //MARK:- configure keyboard button
 extension KeyboardView{
-    func showLine(){
-        showLine(row: 0, totalCol: 11)
-        showLine(row: 1, totalCol: 11)
-        showLine(row: 2, totalCol: 11)
-        showLine(row: 3, totalCol: 8,info: [0:40,7:40])
-        showLine(row: 4, totalCol: 4,info: [0:40,1:30,3:80])
+    func configure4Line(){
+        //set total rows in keyboard
+        paddingX = 3 //left and right padding
+        paddingY = 3 //top and bottom padding
+        
+        gapX = 5.5  //gap between button in a row
+        gapY = 18 //gap between button in a col
+        
+        totalRow = 4
+        
+        //set spetial button index
+        shiftButtonIndex  = 19
+        deleteButtonIndex = 27
+        altButtonIndex    = 28
+        nextButtonIndex   = 29
+        spaceButtonIndex  = 30
+        returnButtonIndex = 31
+        voiceButtonIndex  = 0
+        
+        //draw button in a row
+        drawLineFor(row: 0, totalCol: 10)
+        drawLineFor(row: 1, totalCol: 9, const: [0:15, 9:15])
+        drawLineFor(row: 2, totalCol: 9,  info: [0:40, 8:40], const: [1:7, 8:7])
+        drawLineFor(row: 3, totalCol: 4,  info: [0:40, 1:30, 3:80])
     }
     
-    func showLine(row:Int,totalCol:Int,info:[Int:Int]? = [:]){
-        print("frame::\(frame)")
+    func configure5Line(){
+        //set spetial button index
+        shiftButtonIndex  = 31
+        deleteButtonIndex = 40
+        altButtonIndex    = 41
+        nextButtonIndex   = 42
+        spaceButtonIndex  = 43
+        returnButtonIndex = 44
+        voiceButtonIndex  = 0
+        
+        //draw button in a row
+        drawLineFor(row: 0, totalCol: 11)
+        drawLineFor(row: 1, totalCol: 11)
+        drawLineFor(row: 2, totalCol:  9)
+        drawLineFor(row: 3, totalCol: 10, info: [0:40,9:40])
+        drawLineFor(row: 4, totalCol:  4, info: [0:40,1:30,3:80])
+    }
+    
+    func drawLineFor(row:Int, totalCol:Int, info:[Int:Int]? = [:], const:[Int:Int]? = [:]){
+        //print("frame::\(frame)")
         
         var preX = paddingX
         var preWidth:Double = 0
@@ -91,10 +124,13 @@ extension KeyboardView{
         for i in 0...totalCol-1 {
         
             //calculate width
-            let btnWidth = self.getButtonWidth(totalCol,colIndex:i,info: info)
+            let btnWidth = self.getButtonWidth(totalCol,colIndex:i,info: info,const: const)
             //calculate height
             let btnHeight = self.getButtonHeight()
             let colY:Double = paddingY + Double(row)*(gapY + btnHeight)
+            
+            preX += self.getExtraSpace(colIndex: i, const: const)
+            
             let colX:Double = self.getColX(index:i, btnWidth:preWidth, preX:preX)
             
             preX = colX
@@ -107,50 +143,15 @@ extension KeyboardView{
             keyboardButton.tag = currentButtonIndex
             addSubview(keyboardButton)
             
-            //print("button tag::\(keyboardButton.tag)")
-            //set keyboard button
-            switch currentButtonIndex {
-            case nextButtonIndex:
-                self.nextButton = keyboardButton
-                keyboardButton.setTitle("", for: .normal)
-                keyboardButton.setImage(UIImage(named: "globe.png"), for: .normal)
-                break
-            case altButtonIndex:
-                self.altButton = keyboardButton
-                keyboardButton.setTitle("123", for: .normal)
-                break
-            case returnButtonIndex:
-                self.returnButton = keyboardButton
-                keyboardButton.setTitle("return", for: .normal)
-                break
-            case shiftButtonIndex:
-                self.shiftButton = keyboardButton
-                keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
-                keyboardButton.setTitle("", for: .normal)
-                break
-            case deleteButtonIndex:
-                self.deleteButton = keyboardButton
-                keyboardButton.setTitle("", for: .normal)
-                keyboardButton.setImage(UIImage(named: "delete.png"), for: .normal)
-                break
-            case spaceButtonIndex:
-                self.spaceButton = keyboardButton
-                keyboardButton.setTitle("space", for: .normal)
-                break
-            case voiceButtonIndex:
-                self.voiceButton = keyboardButton
-                break
-                
-            default:
-                break
-            }
+            //set keyboard special button index
+            self.setButtonIndex(keyboardButton)
             
             currentButtonIndex += 1
         }
     }
     
     //calculate button width in a row
-    func getButtonWidth(_ totalCol:Int,colIndex:Int,info:[Int:Int]? = [:]) -> Double{
+    func getButtonWidth(_ totalCol:Int,colIndex:Int,info:[Int:Int]? = [:],const:[Int:Int]? = [:]) -> Double{
         
         let paddingLR:Double = 2 * paddingX //padding left and right
         let totalGapX:Double = gapX * Double(totalCol-1)
@@ -161,8 +162,7 @@ extension KeyboardView{
         //override width
         if let _info = info, _info.keys.count > 0 {
             
-            //todo, check mismatch of floating point value
-            var sum: Double = 0  //sum of override button width
+            var sum :Double = 0  //sum of override button width
             var avg :Double = 0  //avg of override button width
             var diff:Double = 0 //total difference of all override button width
             
@@ -177,7 +177,7 @@ extension KeyboardView{
             if _info.keys.contains(colIndex){
                 btnWidth = Double(_info[colIndex] ?? 0) //replace override width
                 
-            } else{//todo, need calculate
+            } else{
                 let diffWidth:Double = diff * Double(_info.keys.count) / Double(totalCol - _info.keys.count)
                 btnWidth += diffWidth
             }
@@ -187,6 +187,22 @@ extension KeyboardView{
 //            print("diff ::\(diff)")
 //            print("new btnWidth::\(btnWidth)")
         }
+        
+        //override constant value
+        if let _const = const, _const.keys.count > 0 {
+            
+            var sum :Double = 0 //sum of override button width
+            var avg :Double = 0 //avg of override button width
+            
+            for index in _const.keys{
+                sum += Double(_const[index] ?? 0)
+            }
+            avg  = sum / Double(_const.keys.count)
+             
+            let diffWidth:Double = avg * Double(_const.keys.count) / Double(totalCol)
+            btnWidth -= diffWidth
+        }
+        
         return btnWidth
     }
     
@@ -197,7 +213,22 @@ extension KeyboardView{
         if index > 0 {
             originColX = originColX + gapX + btnWidth
         }
+        
         return originColX
+    }
+    
+    func getExtraSpace(colIndex:Int,const:[Int:Int]? = [:]) -> Double{
+        if let _const = const, _const.keys.count > 0 {
+            if _const.keys.contains(colIndex){
+                return Double(_const[colIndex] ?? 0)
+                
+            }/*else if _const.keys.contains(kPADDING_RIGHT){
+                if colIndex == 8{//todo, do it dynamic
+                    return Double(_const[kPADDING_RIGHT] ?? 0)
+                }
+            }*/
+        }
+        return 0.0
     }
     
     //calculate button height in a col
@@ -209,7 +240,52 @@ extension KeyboardView{
         return btnHeight
     }
     
+    func setButtonIndex(_ keyboardButton:KeyboardButton){
+        //print("button tag::\(keyboardButton.tag)")
+        //set keyboard button
+        switch currentButtonIndex {
+        case nextButtonIndex:
+            self.nextButton = keyboardButton
+            keyboardButton.setTitle("", for: .normal)
+            keyboardButton.setImage(UIImage(named: "globe.png"), for: .normal)
+            break
+        case altButtonIndex:
+            self.altButton = keyboardButton
+            keyboardButton.setTitle(kAltString, for: .normal)
+            break
+        case returnButtonIndex:
+            self.returnButton = keyboardButton
+            keyboardButton.setTitle(kReturnString, for: .normal)
+            break
+        case shiftButtonIndex:
+            self.shiftButton = keyboardButton
+            keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
+            keyboardButton.setTitle("", for: .normal)
+            break
+        case deleteButtonIndex:
+            self.deleteButton = keyboardButton
+            keyboardButton.setTitle("", for: .normal)
+            keyboardButton.setImage(UIImage(named: "delete.png"), for: .normal)
+            break
+        case spaceButtonIndex:
+            self.spaceButton = keyboardButton
+            keyboardButton.setTitle(kSpaceString, for: .normal)
+            keyboardButton.highlightBackgroundColor = kAltButtonColor
+            break
+        case voiceButtonIndex:
+            self.voiceButton = keyboardButton
+            break
+            
+        default:
+            break
+        }
+    }
+}
+
+//MARK:- keyboard button presed
+extension KeyboardView {
     @objc func buttonPressed(sender:UIButton){
         UIDevice.current.playInputClick()
     }
+
 }
