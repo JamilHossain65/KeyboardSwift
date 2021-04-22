@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D06A3E325E6EC6800E3B47E /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A3E225E6EC6800E3B47E /* KeyboardUtils.swift */; };
-		8D06A3E425E6EC6800E3B47E /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A3E225E6EC6800E3B47E /* KeyboardUtils.swift */; };
+		8D06A3E325E6EC6800E3B47E /* JhUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A3E225E6EC6800E3B47E /* JhUtil.swift */; };
+		8D06A3E425E6EC6800E3B47E /* JhUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A3E225E6EC6800E3B47E /* JhUtil.swift */; };
+		8D2915F725E77C1000885077 /* unshift@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2915F525E77C1000885077 /* unshift@2x.png */; };
+		8D2915F825E77C1000885077 /* unshift.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2915F625E77C1000885077 /* unshift.png */; };
 		8D63DB1525E611EA00A9E2E5 /* shift@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D63DB0F25E611E900A9E2E5 /* shift@3x.png */; };
 		8D63DB1625E611EA00A9E2E5 /* shift@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D63DB1025E611E900A9E2E5 /* shift@2x.png */; };
 		8D63DB1725E611EA00A9E2E5 /* shift.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D63DB1125E611E900A9E2E5 /* shift.png */; };
@@ -18,6 +20,7 @@
 		8D63DB2425E612A700A9E2E5 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D63DB1F25E612A600A9E2E5 /* delete@2x.png */; };
 		8D63DB2525E612A700A9E2E5 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D63DB2025E612A600A9E2E5 /* delete.png */; };
 		8D63DB2625E612A700A9E2E5 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D63DB2125E612A700A9E2E5 /* globe@2x.png */; };
+		8DBB159C25EB04890092F88B /* JHkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB159B25EB04890092F88B /* JHkey.m */; };
 		8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94B25E4474A00D3C48A /* AppDelegate.swift */; };
 		8DE7F95025E4474A00D3C48A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */; };
 		8DE7F95325E4474A00D3C48A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -54,7 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8D06A3E225E6EC6800E3B47E /* KeyboardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
+		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
+		8D2915F525E77C1000885077 /* unshift@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unshift@2x.png"; sourceTree = "<group>"; };
+		8D2915F625E77C1000885077 /* unshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unshift.png; sourceTree = "<group>"; };
 		8D63DB0F25E611E900A9E2E5 /* shift@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shift@3x.png"; sourceTree = "<group>"; };
 		8D63DB1025E611E900A9E2E5 /* shift@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shift@2x.png"; sourceTree = "<group>"; };
 		8D63DB1125E611E900A9E2E5 /* shift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shift.png; sourceTree = "<group>"; };
@@ -64,6 +69,9 @@
 		8D63DB1F25E612A600A9E2E5 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 		8D63DB2025E612A600A9E2E5 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		8D63DB2125E612A700A9E2E5 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
+		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		8DBB159A25EB04890092F88B /* JHkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHkey.h; sourceTree = "<group>"; };
+		8DBB159B25EB04890092F88B /* JHkey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHkey.m; sourceTree = "<group>"; };
 		8DE7F94825E4474A00D3C48A /* KeyboardSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE7F94B25E4474A00D3C48A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +115,8 @@
 				8D63DB0F25E611E900A9E2E5 /* shift@3x.png */,
 				8D63DB1025E611E900A9E2E5 /* shift@2x.png */,
 				8D63DB1125E611E900A9E2E5 /* shift.png */,
+				8D2915F625E77C1000885077 /* unshift.png */,
+				8D2915F525E77C1000885077 /* unshift@2x.png */,
 				8D63DB1425E611E900A9E2E5 /* unshift@3x.png */,
 			);
 			path = images;
@@ -157,9 +167,12 @@
 		8DE7FA2225E4C6E700D3C48A /* KeyboardView */ = {
 			isa = PBXGroup;
 			children = (
-				8D06A3E225E6EC6800E3B47E /* KeyboardUtils.swift */,
-				8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */,
+				8DBB159A25EB04890092F88B /* JHkey.h */,
+				8DBB159B25EB04890092F88B /* JHkey.m */,
+				8D06A3E225E6EC6800E3B47E /* JhUtil.swift */,
 				8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */,
+				8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */,
+				8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */,
 			);
 			path = KeyboardView;
 			sourceTree = "<group>";
@@ -217,6 +230,7 @@
 					};
 					8DE7F9C025E4784200D3C48A = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -256,6 +270,8 @@
 			files = (
 				8D63DB2625E612A700A9E2E5 /* globe@2x.png in Resources */,
 				8D63DB2225E612A700A9E2E5 /* globe@3x.png in Resources */,
+				8D2915F725E77C1000885077 /* unshift@2x.png in Resources */,
+				8D2915F825E77C1000885077 /* unshift.png in Resources */,
 				8D63DB2425E612A700A9E2E5 /* delete@2x.png in Resources */,
 				8D63DB1525E611EA00A9E2E5 /* shift@3x.png in Resources */,
 				8D63DB1725E611EA00A9E2E5 /* shift.png in Resources */,
@@ -274,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE7F95025E4474A00D3C48A /* HomeViewController.swift in Sources */,
-				8D06A3E325E6EC6800E3B47E /* KeyboardUtils.swift in Sources */,
+				8D06A3E325E6EC6800E3B47E /* JhUtil.swift in Sources */,
 				8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,9 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D06A3E425E6EC6800E3B47E /* KeyboardUtils.swift in Sources */,
+				8D06A3E425E6EC6800E3B47E /* JhUtil.swift in Sources */,
 				8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */,
 				8DE7F9C425E4784200D3C48A /* KeyboardViewController.swift in Sources */,
+				8DBB159C25EB04890092F88B /* JHkey.m in Sources */,
 				8DE7FA2625E4C6E700D3C48A /* KeyboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +498,7 @@
 		8DE7F9CA25E4784200D3C48A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
@@ -493,6 +511,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.KeyboardSwift.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardExtension/KeyboardView/KeyboardExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -501,6 +521,7 @@
 		8DE7F9CB25E4784200D3C48A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
@@ -513,6 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.KeyboardSwift.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardExtension/KeyboardView/KeyboardExtension-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

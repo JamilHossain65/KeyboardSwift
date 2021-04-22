@@ -9,7 +9,7 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
-    var nextButton: KeyboardButton!
+    var nextButton: UIButton!
     
 //    let customView: UIButton = UIButton()
     

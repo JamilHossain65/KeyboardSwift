@@ -36,7 +36,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     var voiceButtonIndex  = 0
 
     //set index for each button
-    var currentButtonIndex = 0;
+    var currentButtonIndex = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,12 +66,12 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 //MARK:- configure keyboard button
 extension KeyboardView{
-    func configure4Line(){
+    func configure4Line() {
+        
         //set total rows in keyboard
         paddingX = 3 //left and right padding
         paddingY = 3 //top and bottom padding
@@ -88,7 +88,21 @@ extension KeyboardView{
         nextButtonIndex   = 29
         spaceButtonIndex  = 30
         returnButtonIndex = 31
-        voiceButtonIndex  = 0
+        voiceButtonIndex  = -1
+        currentButtonIndex = 0
+        
+        for view in subviews {
+            print("view tag::\(view.tag)")
+            if(view.tag != shiftButtonIndex   ||
+                view.tag != deleteButtonIndex ||
+                view.tag != altButtonIndex    ||
+                view.tag != nextButtonIndex   ||
+                view.tag != spaceButtonIndex  ||
+                view.tag != returnButtonIndex ||
+                view.tag != voiceButtonIndex) {
+                view.removeFromSuperview()
+            }
+        }
         
         //draw button in a row
         drawLineFor(row: 0, totalCol: 10)
@@ -105,7 +119,7 @@ extension KeyboardView{
         nextButtonIndex   = 42
         spaceButtonIndex  = 43
         returnButtonIndex = 44
-        voiceButtonIndex  = 0
+        voiceButtonIndex  = -1
         
         //draw button in a row
         drawLineFor(row: 0, totalCol: 11)
@@ -137,9 +151,12 @@ extension KeyboardView{
             preWidth = btnWidth
             
             let bFrame = CGRect(x: colX, y: colY, width: btnWidth, height: btnHeight)
+            let tempLetter = kLetters[currentButtonIndex % kLetters.count]
+            let letter = shiftButton.isSelected ? tempLetter : tempLetter.lowercased()
+            
             let keyboardButton = KeyboardButton(frame: bFrame)
-            keyboardButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .allTouchEvents)
-            keyboardButton.setTitle("\(Int(btnWidth))", for: .normal);
+            keyboardButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+            keyboardButton.setTitle(letter, for: .normal); //"\(Int(btnWidth))
             keyboardButton.tag = currentButtonIndex
             addSubview(keyboardButton)
             
@@ -260,6 +277,7 @@ extension KeyboardView{
         case shiftButtonIndex:
             self.shiftButton = keyboardButton
             keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
+            keyboardButton.setImage(UIImage(named: "shift.png"), for: .selected)
             keyboardButton.setTitle("", for: .normal)
             break
         case deleteButtonIndex:
@@ -277,15 +295,46 @@ extension KeyboardView{
             break
             
         default:
+            keyPopupOn(keyboardButton)
             break
         }
     }
 }
 
+//MARK:- keycap view show
+extension KeyboardView {
+    func keyPopupOn(_ keyButton:UIButton){
+        let jhKey = JHkey(type: .custom)
+        jhKey.frame = keyButton.frame
+        jhKey.setTitle("", for: .normal)
+        jhKey.backgroundColor = .clear
+        addSubview(jhKey)
+    }
+}
+
 //MARK:- keyboard button presed
 extension KeyboardView {
-    @objc func buttonPressed(sender:UIButton){
+    @objc func buttonPressed(sender:KeyboardButton){
         UIDevice.current.playInputClick()
+        if(sender.tag == shiftButtonIndex) {
+            print("sender.isSelected::\(sender.isSelected)")
+            sender.isSelected = !sender.isSelected
+            shiftButton = sender
+            
+            //configure4Line()
+            
+            sender.setImage(UIImage(named: "unshift.png"), for: .normal)
+            sender.setImage(UIImage(named: "shift.png"), for: .selected)
+            
+            if sender.isSelected {
+                sender.defaultBackgroundColor = .white
+            }else{
+                sender.defaultBackgroundColor = kAltButtonColor
+            }
+            
+        } else {
+            //sender.
+        }
     }
 
 }
