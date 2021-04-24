@@ -304,10 +304,12 @@ extension KeyboardView{
 //MARK:- keycap view show
 extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton){
+        let title   = kLetters[keyButton.tag].lowercased()
         let jhKey   = JHkey(type: .custom)
         jhKey.frame = keyButton.frame
         jhKey.tag   = keyButton.tag
-        jhKey.setTitle("", for: .normal)
+        jhKey.setTitle(title, for: .normal)
+        jhKey.setTitleColor(UIColor.black, for: .normal)
         jhKey.backgroundColor = .clear
         addSubview(jhKey)
     }

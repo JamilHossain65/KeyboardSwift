@@ -12,30 +12,30 @@
 
 #define ACKEY_POPUP_VIEV_TAG -13 //todo
 
-#define kKeyPopapAppearDuration 1
+#define kKeyPopapAppearDuration 0.1
 
-#define kKeyPopapStayAliveInterval 1
+#define kKeyPopapStayAliveInterval 0.1
 
 
-#define __FAR_SHIFT     (12 * [[UIScreen mainScreen] scale])
-#define __UPPER_WIDTH   (55.0 * [[UIScreen mainScreen] scale])
-#define __LOWER_WIDTH   (self.frame.size.width * [[UIScreen mainScreen] scale])
+#define __FAR_SHIFT         (12 * [[UIScreen mainScreen] scale])
+#define __UPPER_WIDTH       (55.0 * [[UIScreen mainScreen] scale])
+#define __LOWER_WIDTH       (self.frame.size.width * [[UIScreen mainScreen] scale])
 #define __PAN_UPPER_RADIUS  (10.0 * [[UIScreen mainScreen] scale])
 #define __PAN_LOWER_RADIUS  (5.0 * [[UIScreen mainScreen] scale])
-#define __PAN_UPPDER_WIDTH   (__UPPER_WIDTH-__PAN_UPPER_RADIUS*2)
-#define __PAN_UPPER_HEIGHT    (56.0 * [[UIScreen mainScreen] scale])
-#define __PAN_LOWER_WIDTH     (__LOWER_WIDTH-__PAN_LOWER_RADIUS*2)
-#define __PAN_LOWER_HEIGHT    (47.0 * [[UIScreen mainScreen] scale])
-#define __PAN_UL_WIDTH        ((__UPPER_WIDTH-__LOWER_WIDTH)/2)
-#define __PAN_MIDDLE_HEIGHT    (2.0 * [[UIScreen mainScreen] scale])
-#define __PAN_CURVE_SIZE      (10.0 * [[UIScreen mainScreen] scale])
-#define __PADDING_X     (15 * [[UIScreen mainScreen] scale])
-#define __PADDING_Y     (10 * [[UIScreen mainScreen] scale])
-#define __WIDTH   (__UPPER_WIDTH + __PADDING_X*2)
-#define __HEIGHT   (__PAN_UPPER_HEIGHT + __PAN_MIDDLE_HEIGHT + __PAN_LOWER_HEIGHT + __PADDING_Y*2)
-#define __OFFSET_X    (-25 * [[UIScreen mainScreen] scale])
-#define __OFFSET_Y    (59 * [[UIScreen mainScreen] scale])
-#define __GAP_X         (3 * [[UIScreen mainScreen] scale])
+#define __PAN_UPPDER_WIDTH  (__UPPER_WIDTH-__PAN_UPPER_RADIUS*2)
+#define __PAN_UPPER_HEIGHT  (56.0 * [[UIScreen mainScreen] scale])
+#define __PAN_LOWER_WIDTH   (__LOWER_WIDTH-__PAN_LOWER_RADIUS*2)
+#define __PAN_LOWER_HEIGHT  (47.0 * [[UIScreen mainScreen] scale])
+#define __PAN_UL_WIDTH      ((__UPPER_WIDTH-__LOWER_WIDTH)/2)
+#define __PAN_MIDDLE_HEIGHT (2.0 * [[UIScreen mainScreen] scale])
+#define __PAN_CURVE_SIZE    (10.0 * [[UIScreen mainScreen] scale])
+#define __PADDING_X         (15 * [[UIScreen mainScreen] scale])
+#define __PADDING_Y         (10 * [[UIScreen mainScreen] scale])
+#define __WIDTH             (__UPPER_WIDTH + __PADDING_X*2)
+#define __HEIGHT            (__PAN_UPPER_HEIGHT + __PAN_MIDDLE_HEIGHT + __PAN_LOWER_HEIGHT + __PADDING_Y*2)
+#define __OFFSET_X          (-25 * [[UIScreen mainScreen] scale])
+#define __OFFSET_Y          (59 * [[UIScreen mainScreen] scale])
+#define __GAP_X             (3 * [[UIScreen mainScreen] scale])
 
 /*  title for return button */
 NSString *returnTitleSearch = @"Search";
@@ -81,9 +81,27 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
             //NSLog(@"pos::%d",pos);
             
             if(pos >= tagValue){
-                self.hintPosition = ACHintPositionFarLeft;
+                switch (tagValue) {
+                    case 1:
+                        self.hintPosition = ACHintPositionFarLeft;
+                        break;
+                        
+                    default:
+                        self.hintPosition = ACHintPositionLeft;
+                        break;
+                }
+                
             }else{
-                self.hintPosition = ACHintPositionFarRight;
+                switch (tagValue) {
+                    case 10:
+                        self.hintPosition = ACHintPositionFarRight;
+                        break;
+                        
+                    default:
+                        self.hintPosition = ACHintPositionRight;
+                        break;
+                }
+                
             }
             return;
         }
@@ -144,7 +162,7 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
             [text setTextAlignment:NSTextAlignmentCenter];
             [text setBackgroundColor:[UIColor clearColor]];
             [text setAdjustsFontSizeToFitWidth:YES];
-            [text setText:@"A"];
+            [text setText:button.titleLabel.text];
             [text setTextColor:button.titleLabel.textColor];
             
             keyPop.layer.shadowColor    = [UIColor colorWithWhite:0.1 alpha:1.0].CGColor;
@@ -157,14 +175,14 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
         }
         
         [keyPop setTag:ACKEY_POPUP_VIEV_TAG];
-        [keyPop setAlpha:1.0];
+        [keyPop setAlpha:0.9];
         [button addSubview:keyPop];
         
         [UIView animateWithDuration:kKeyPopapAppearDuration
                          animations:^{
                              [keyPop setAlpha:1.0];
                          }];
-        [self startShowHintTimer]; //todo enable for keycap overlay view
+        //[self startShowHintTimer]; //todo enable for keycap overlay view
     }
 }
 
@@ -690,7 +708,6 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
-        //self.hintPosition = ACHintPositionRight;
         [self addPopupToButton:self];
     }
     [self updateState]; //todo enable code
@@ -823,7 +840,7 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
     
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
         
-        _showHintTimer = [NSTimer scheduledTimerWithTimeInterval:0.7 target:self selector:@selector(showKeyCapView) userInfo:nil repeats:NO];
+        _showHintTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(showKeyCapView) userInfo:nil repeats:NO];
     }
 }
 

@@ -27,8 +27,6 @@ class KeyboardButton: UIButton {
         super.layoutSubviews()
         backgroundColor = isHighlighted ? highlightBackgroundColor : defaultBackgroundColor
     }
-    
-    
 }
 
 
