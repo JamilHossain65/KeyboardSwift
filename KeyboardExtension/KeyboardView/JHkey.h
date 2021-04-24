@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** The position for long-tap hint - for "a" ACHintPositionFarLeft
  */
-@property (nonatomic, assign) ACHintPosition hintPosition;
+@property (nonatomic, assign) enum ACHintPosition hintPosition;
 
 /** List of strings for showing in hint popup
  */
@@ -34,8 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,   weak) NSTimer *hidePopupTimer;
 @property (nonatomic,   weak) NSTimer *showHintTimer;
 @property (nonatomic, strong) UIView  *hintView;
-@property (nonatomic, assign) CGFloat hintAdditionalWidth;
 @property (nonatomic, strong) NSArray *hintButtons;
+@property (nonatomic, assign) CGFloat hintAdditionalWidth;
 
 @end
 

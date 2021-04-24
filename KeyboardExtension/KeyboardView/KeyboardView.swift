@@ -105,10 +105,10 @@ extension KeyboardView{
         }
         
         //draw button in a row
-        drawLineFor(row: 0, totalCol: 10)
-        drawLineFor(row: 1, totalCol: 9, const: [0:15, 9:15])
-        drawLineFor(row: 2, totalCol: 9,  info: [0:40, 8:40], const: [1:7, 8:7])
-        drawLineFor(row: 3, totalCol: 4,  info: [0:40, 1:30, 3:80])
+        drawLineFor(row: 0, totalCol: kRowKeys[0]/*10*/)
+        drawLineFor(row: 1, totalCol: kRowKeys[1]/*9*/, const: [0:15, 9:15])
+        drawLineFor(row: 2, totalCol: kRowKeys[2]/*9*/,  info: [0:40, 8:40], const: [1:7, 8:7])
+        drawLineFor(row: 3, totalCol: kRowKeys[3]/*4*/,  info: [0:40, 1:30, 3:80])
     }
     
     func configure5Line(){
@@ -304,8 +304,9 @@ extension KeyboardView{
 //MARK:- keycap view show
 extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton){
-        let jhKey = JHkey(type: .custom)
+        let jhKey   = JHkey(type: .custom)
         jhKey.frame = keyButton.frame
+        jhKey.tag   = keyButton.tag
         jhKey.setTitle("", for: .normal)
         jhKey.backgroundColor = .clear
         addSubview(jhKey)

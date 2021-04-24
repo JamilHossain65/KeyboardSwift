@@ -61,9 +61,42 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
     // Drawing code
 }
 
-- (void)addPopupToButton:(UIButton*)button {
+-(void)checkHintPosition:(UIButton*)keyButton{
+    //let kRowKeys = [10,9,9,4]
+    NSArray *rowKeys = [NSArray arrayWithObjects:@10,@9,@9,@4, nil];
+    int value = 0;
+    int index = 0;
+    long tagValue = keyButton.tag + 1;
+    //NSLog(@"keyButton tag::%ld",tagValue);
     
+    while (index < rowKeys.count) {
+        int rowValue = [rowKeys[index] intValue];
+        value += rowValue;
+        
+        if (value >= tagValue){
+            int halfvalue = rowValue/2;
+            int pos = value - halfvalue;
+            
+            //NSLog(@"value::%d",value);
+            //NSLog(@"pos::%d",pos);
+            
+            if(pos >= tagValue){
+                self.hintPosition = ACHintPositionFarLeft;
+            }else{
+                self.hintPosition = ACHintPositionFarRight;
+            }
+            return;
+        }
+        
+        index += 1;
+    }
+}
+
+- (void)addPopupToButton:(UIButton*)button {
     [self hidePopup];
+    
+    [self checkHintPosition:button];
+    
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideButtonPopup
                                                         object:nil];
@@ -154,7 +187,7 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
     
     UIImage* image = [self hintImage];
     
-    NSLog(@"image::%@",image);
+    //NSLog(@"image::%@",image);
     
     self.hintView = [[UIImageView alloc] initWithImage:image];
     BOOL isRightHint = self.hintPosition == ACHintPositionFarRight || self.hintPosition == ACHintPositionRight;
@@ -657,7 +690,7 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
-        self.hintPosition = ACHintPositionRight;
+        //self.hintPosition = ACHintPositionRight;
         [self addPopupToButton:self];
     }
     [self updateState]; //todo enable code

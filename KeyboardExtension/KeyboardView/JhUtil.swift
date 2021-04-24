@@ -22,4 +22,7 @@ let kKeyboardBGColor = UIColor.init(red: 209/255, green: 212/255, blue: 219/255,
 
 //let kAlphabet = "q w e r t y u i o p a s d f g h j k l z x c v b n m"
 let kAlphabetEN = "Q W E R T Y U I O P A S D F G H J K L : Z X C V B N M"
-let kLetters    = kAlphabetEN.components(separatedBy: " ");
+let kLetters    = kAlphabetEN.components(separatedBy: " ")
+
+//set total keys in each row
+let kRowKeys = [10,9,9,4] //copy the same array in JHKey class //todo refctor this
