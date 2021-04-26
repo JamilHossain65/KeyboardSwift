@@ -249,7 +249,7 @@ extension KeyboardView{
     }
     
     //calculate button height in a col
-    func getButtonHeight() -> Double{
+    func getButtonHeight() -> Double {
         //calculate height
         let totalPaddingY:Double = 2 * paddingY
         let totalGapY:Double     = gapY * (totalRow-1)
@@ -339,5 +339,4 @@ extension KeyboardView {
             //sender.
         }
     }
-
 }

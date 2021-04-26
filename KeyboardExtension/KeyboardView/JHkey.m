@@ -41,7 +41,7 @@
 NSString *returnTitleSearch = @"Search";
 
   /* ±hints strings list */
-NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė Ę,I Î Ï Í Ī Į Ì,L Ł,N Ñ Ń,O Ô Ö Ò Ó Œ Ø Ō Õ,S Ś Š,U Û Ü Ù Ú Ū,Y Ÿ,Z Ž Ź Ż";
+NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i î ï í ī į ì,o ô ö ò ó œ ø ō ō,a à á â ä æ ã å ā,s ß ś š,l ł,z ž ź ż,c ç ć č,n ñ ń,z ž ź ż";
     
 //LocalizedTableSymbols.strings (French)
   /*  title for return button */
@@ -49,8 +49,6 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
 
   /* ±hints strings list */
 //NSString *hintsList = "E É,' ` ˆ ¨ ´,\" » « ” “ „,A À Â ª Æ Á Ä Ã Å Ā,C Ç Ć Č,E É È Ê Ë Ę Ė Ē,I Î Ï Ì Í Į Ī,N Ñ Ń,O Ô Œ º Ö Ò Ó Õ Ø Ō,U Û Ù Ü Ú Ū,Y Ÿ";
-
-
 
 @implementation JHkey
 
@@ -115,6 +113,19 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
     
     [self checkHintPosition:button];
     
+    NSString *title = button.titleLabel.text;
+    NSArray  *array = [hintsList componentsSeparatedByString:@","];
+    
+    for(NSString *text in array){
+        NSArray *letters = [text componentsSeparatedByString:@" "];
+        if(letters.firstObject == title){
+            self.hintSymbolsList = letters;
+            NSLog(@"letters::%@",self.hintSymbolsList);
+            break;
+        }
+    }
+    
+    //self.hintSymbolsList = [[NSArray alloc] initWithObjects:@"a",@"b",@"c",@"d",@"e", nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationHideButtonPopup
                                                         object:nil];
@@ -182,13 +193,11 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
                          animations:^{
                              [keyPop setAlpha:1.0];
                          }];
-        //[self startShowHintTimer]; //todo enable for keycap overlay view
+        [self startShowHintTimer]; //todo enable for keycap overlay view
     }
 }
 
 - (void)showKeyCapView {
-    self.hintSymbolsList = [[NSArray alloc] initWithObjects:@"a",@"b",@"c",@"d",@"e", nil];
-    //self.hintSymbolsList = [[NSArray alloc] initWithObjects:@"K", nil];
     
     if (!self.hintSymbolsList || ![self.hintSymbolsList count]) {
         return;
@@ -254,8 +263,15 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         //[button setBackgroundImage:[UIImage imageNamed:@"hint_button_back"] forState:UIControlStateHighlighted];
-        [button setBackgroundColor:[UIColor blueColor]];
+        
+        UIImage *imageBlue  = [JHkey imageWithColor:UIColor.blueColor];
+        UIImage *imageWhite = [JHkey imageWithColor:UIColor.whiteColor];
+        
+        [button setBackgroundImage:imageBlue forState:UIControlStateHighlighted];
+        [button setBackgroundImage:imageWhite forState:UIControlStateNormal];
+
         button.layer.cornerRadius = 5.0;
+        button.imageView.layer.cornerRadius = button.layer.cornerRadius;
         
         [self.hintView addSubview:button];
         [mArray addObject:button];
@@ -703,6 +719,18 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
     return image;
 }
 
++(UIImage*)imageWithColor:(UIColor*)color {
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
 #pragma mark - Touch handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -756,7 +784,7 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
     }
     
     [self updateState];
-    NSLog(@"T move");
+    //NSLog(@"T move");
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -777,10 +805,13 @@ NSString *hintsList = @"A À Á Â Ä Æ Ã Å Ā,C Ç Ć Č,E È É Ê Ë Ē Ė
             if (highlightedButton) {
                 //!!!: please refactor it
                 //[((KeyboardView*)self.superview) insertHintText:highlightedButton.titleLabel.text];//todo enable this code
+                NSLog(@"highlightedButton::%@",highlightedButton.titleLabel.text);
             }
         }
         [self hideHintView];
     } else {
+        NSLog(@"button title::%@",self.titleLabel.text);
+        
         [super touchesEnded:touches withEvent:event];
     }
     [self startHideTimerPopup];
