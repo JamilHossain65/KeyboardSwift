@@ -9,30 +9,40 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
-    var nextButton: UIButton!
+    var hintBarManager: HintBarManager = HintBarManager();
+    var keyboardView  : KeyboardView   = KeyboardView();
     
-//    let customView: UIButton = UIButton()
+    var textView : UITextView = UITextView();
+    var wordArray: NSArray  = [];
+    var context  : NSString = "";
+    
+    var nextButton: UIButton!
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     func showView(){
-        let customView = KeyboardView(frame: self.view.frame)
-        customView.sizeToFit()
-        view.addSubview(customView)
+        keyboardView = KeyboardView(frame: self.view.frame)
+        keyboardView.sizeToFit()
+        view.addSubview(keyboardView)
         
         //set keyboard switch target
-        nextButton = customView.nextButton
+        nextButton = keyboardView.nextButton
         nextButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
         
+        //add suggestion bar
+//        self.suggestionBarManager = [SuggestionBarManager sharedInstance];
+//        self.suggestionBarManager.delegate = self;
+//        //add suggestion  bar
+//        [self.suggestionBarManager addSuggestionBar:self.view subview:self.textView];
+        
+        let hintBarManager = HintBarManager.shared
+        //hintBarManager.addSuggestionBar(parentView: keyboardView, txtView: textView)
     }
     
     override func viewWillLayoutSubviews() {

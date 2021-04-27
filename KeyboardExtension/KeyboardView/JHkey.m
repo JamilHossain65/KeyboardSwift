@@ -266,11 +266,11 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
         
         UIImage *imageBlue  = [JHkey imageWithColor:UIColor.blueColor];
         UIImage *imageWhite = [JHkey imageWithColor:UIColor.whiteColor];
-        
         [button setBackgroundImage:imageBlue forState:UIControlStateHighlighted];
         [button setBackgroundImage:imageWhite forState:UIControlStateNormal];
 
-        button.layer.cornerRadius = 5.0;
+        button.layer.masksToBounds = false;
+        button.layer.cornerRadius  = 5.0;
         button.imageView.layer.cornerRadius = button.layer.cornerRadius;
         
         [self.hintView addSubview:button];
@@ -805,7 +805,7 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
             if (highlightedButton) {
                 //!!!: please refactor it
                 //[((KeyboardView*)self.superview) insertHintText:highlightedButton.titleLabel.text];//todo enable this code
-                NSLog(@"highlightedButton::%@",highlightedButton.titleLabel.text);
+                NSLog(@"tap::%@",highlightedButton.titleLabel.text);
             }
         }
         [self hideHintView];

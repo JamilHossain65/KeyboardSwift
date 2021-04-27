@@ -93,13 +93,7 @@ extension KeyboardView{
         
         for view in subviews {
             print("view tag::\(view.tag)")
-            if(view.tag != shiftButtonIndex   ||
-                view.tag != deleteButtonIndex ||
-                view.tag != altButtonIndex    ||
-                view.tag != nextButtonIndex   ||
-                view.tag != spaceButtonIndex  ||
-                view.tag != returnButtonIndex ||
-                view.tag != voiceButtonIndex) {
+            if !self.isSpecialButton(view) {
                 view.removeFromSuperview()
             }
         }
@@ -156,6 +150,13 @@ extension KeyboardView{
             
             let keyboardButton = KeyboardButton(frame: bFrame)
             keyboardButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+            
+            //keyboardButton.addTarget(self, action: #selector(multipleTap(_:event:)), for: .touchDownRepeat)
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+                tap.numberOfTapsRequired = 2
+            keyboardButton.addGestureRecognizer(tap)
+            
             keyboardButton.setTitle(letter, for: .normal); //"\(Int(btnWidth))
             keyboardButton.tag = currentButtonIndex
             addSubview(keyboardButton)
@@ -257,6 +258,19 @@ extension KeyboardView{
         return btnHeight
     }
     
+    func isSpecialButton(_ view:UIView) -> Bool{
+        if(view.tag == shiftButtonIndex   ||
+            view.tag == deleteButtonIndex ||
+            view.tag == altButtonIndex    ||
+            view.tag == nextButtonIndex   ||
+            view.tag == spaceButtonIndex  ||
+            view.tag == returnButtonIndex ||
+            view.tag == voiceButtonIndex) {
+            return true
+        }
+        return false
+    }
+    
     func setButtonIndex(_ keyboardButton:KeyboardButton){
         //print("button tag::\(keyboardButton.tag)")
         //set keyboard button
@@ -324,7 +338,13 @@ extension KeyboardView {
             sender.isSelected = !sender.isSelected
             shiftButton = sender
             
-            //configure4Line()
+            for view in subviews {
+               let button = view as! UIButton
+                if !self.isSpecialButton(view) {
+                    let _newTitle = sender.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
+                    button.setTitle(_newTitle, for: .normal)
+                }
+            }
             
             sender.setImage(UIImage(named: "unshift.png"), for: .normal)
             sender.setImage(UIImage(named: "shift.png"), for: .selected)
@@ -336,7 +356,30 @@ extension KeyboardView {
             }
             
         } else {
-            //sender.
+            
+        }
+    }
+
+    @objc func doubleTapped() {
+        // do something here
+        print("multipleTap")
+        shiftButton.isSelected = !shiftButton.isSelected
+        
+        for view in subviews{
+           let button = view as! UIButton
+            if !self.isSpecialButton(view) {
+                let _newTitle = shiftButton.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
+                button.setTitle(_newTitle, for: .normal)
+            }
+        }
+        
+        shiftButton.setImage(UIImage(named: "unshift.png"), for: .normal)
+        shiftButton.setImage(UIImage(named: "shift_double.png"), for: .selected)
+        
+        if shiftButton.isSelected {
+            shiftButton.defaultBackgroundColor = .white
+        }else{
+            shiftButton.defaultBackgroundColor = kAltButtonColor
         }
     }
 }
