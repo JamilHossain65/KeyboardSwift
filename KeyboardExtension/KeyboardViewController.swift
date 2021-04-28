@@ -17,9 +17,39 @@ class KeyboardViewController: UIInputViewController {
     var context  : NSString = "";
     
     var nextButton: UIButton!
+    var heightConstraint: NSLayoutConstraint?
+    var height: CGFloat = 216 + 46
+    
+    private func prepareHeightConstraint() {
+        guard self.heightConstraint != nil else {
+            let dummyView = UILabel(frame:view.frame)
+            dummyView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(dummyView)
+            
+            self.heightConstraint = NSLayoutConstraint( item:view, attribute:.height, relatedBy:.equal, toItem:nil, attribute:.notAnAttribute, multiplier:0.0, constant: height)
+            
+            //self.heightConstraint?.priority = UILayoutPriority(rawValue: 750)
+            view.addConstraint(self.heightConstraint!)
+            return
+        }
+        
+        // Update when change orientation etc..
+        self.heightConstraint?.constant = height
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // When keyboard is create
+        self.prepareHeightConstraint()
+    }
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
+        guard let viewKeyboard = self.inputView, viewKeyboard.frame.size.width != 0 && viewKeyboard.frame.size.width != 0 else {
+            return
+        }
+        //Update change orientation, update just the constant
+        self.prepareHeightConstraint()
     }
     
     override func viewDidLoad() {
@@ -27,7 +57,10 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func showView(){
-        keyboardView = KeyboardView(frame: self.view.frame)
+        var mFrame = self.view.frame
+        mFrame.origin.y = 46
+        
+        keyboardView = KeyboardView(frame: mFrame)
         keyboardView.sizeToFit()
         view.addSubview(keyboardView)
         
