@@ -12,13 +12,17 @@ class KeyboardViewController: UIInputViewController {
     var hintBarManager: HintBarManager = HintBarManager();
     var keyboardView  : KeyboardView   = KeyboardView();
     
-    var textView : UITextView = UITextView();
+    ///var textView:UITextDocumentProxy = UITextDocumentProxy();
     var wordArray: NSArray  = [];
     var context  : NSString = "";
     
     var nextButton: UIButton!
     var heightConstraint: NSLayoutConstraint?
+    
+    var hintBarHeight: CGFloat =  46
     var height: CGFloat = 216 + 46
+    
+    var relevantContextRange:NSRange?
     
     private func prepareHeightConstraint() {
         guard self.heightConstraint != nil else {
@@ -26,7 +30,7 @@ class KeyboardViewController: UIInputViewController {
             dummyView.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(dummyView)
             
-            self.heightConstraint = NSLayoutConstraint( item:view, attribute:.height, relatedBy:.equal, toItem:nil, attribute:.notAnAttribute, multiplier:0.0, constant: height)
+            self.heightConstraint = NSLayoutConstraint( item:view as Any, attribute:.height, relatedBy:.equal, toItem:nil, attribute:.notAnAttribute, multiplier:0.0, constant: height)
             
             //self.heightConstraint?.priority = UILayoutPriority(rawValue: 750)
             view.addConstraint(self.heightConstraint!)
@@ -50,6 +54,7 @@ class KeyboardViewController: UIInputViewController {
         }
         //Update change orientation, update just the constant
         self.prepareHeightConstraint()
+        self.relevantContextRange = NSRange(location: 0, length: 0);
     }
     
     override func viewDidLoad() {
@@ -58,11 +63,16 @@ class KeyboardViewController: UIInputViewController {
     
     func showView(){
         var mFrame = self.view.frame
-        mFrame.origin.y = 46
+        mFrame.origin.y = hintBarHeight
         
-        keyboardView = KeyboardView(frame: mFrame)
-        keyboardView.sizeToFit()
-        view.addSubview(keyboardView)
+//        keyboardView = KeyboardView(frame: mFrame)
+//        keyboardView.sizeToFit()
+//        view.addSubview(keyboardView)
+        
+        let keyboardView = KeyboardView(frame: mFrame)
+        keyboardView.delegate = self
+        guard let inputView = inputView else { return }
+        inputView.addSubview(keyboardView)
         
         //set keyboard switch target
         nextButton = keyboardView.nextButton
@@ -98,6 +108,47 @@ class KeyboardViewController: UIInputViewController {
             textColor = UIColor.black
         }
         //self.nextKeyboardButton.setTitleColor(textColor, for: [])
+        
+        var relevantContext:NSString;
+        /*
+        UITextView *myTextView = (UITextView*)self.textView;
+        UITextPosition *caretPosition = myTextView.selectedTextRange.start;
+        UITextRange *inputRange = [myTextView textRangeFromPosition:myTextView.beginningOfDocument
+                                                            toPosition:caretPosition];
+        
+        */
+        //var inputText:String = self.textView.documentContextBeforeInput ?? "" //[myTextView textInRange:inputRange];
+        
+        //print("inputText::\(textInput.)")
+        
+        /*
+        //var lastWordRange:Range = [inputText rangeOfString:" " options:NSBackwardsSearch];
+        
+        var lastWordRange:NSRange = inputText.range(of: " ", options: .backwards)
+        
+        if (lastWordRange.location == NSNotFound) {
+            relevantContext = inputText as NSString;
+            self.relevantContextRange = NSRange(location: 0, length: inputText.length);
+        } else {
+            let location = lastWordRange.location + 1;
+            relevantContext = inputText.substring(to: location) as NSString;
+            self.relevantContextRange = NSMakeRange(location, inputText.length - location);
+            
+        }
+ */
+        
+//        NSLog(@"context:%@",relevantContext);
+//        NSLog(@"range:(%ld,%ld)",self.relevantContextRange.location,self.relevantContextRange.length);
+//        if([self.delegate respondsToSelector:@selector(customKeyboard:currentContext:)]){
+//            [self.delegate customKeyboard:self currentContext:relevantContext];
+//        }
     }
 
 }
+
+extension KeyboardViewController: KeyboardViewDelegate {
+    func insertCharacter(_ newCharacter: String){
+        self.textDocumentProxy.insertText(newCharacter)
+    }
+}
+

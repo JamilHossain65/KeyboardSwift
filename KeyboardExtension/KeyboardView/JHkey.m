@@ -12,9 +12,9 @@
 
 #define ACKEY_POPUP_VIEV_TAG -13 //todo
 
-#define kKeyPopapAppearDuration 0.1
+#define kKeyPopapAppearDuration 0.05
 
-#define kKeyPopapStayAliveInterval 0.1
+#define kKeyPopapStayAliveInterval 0.05
 
 
 #define __FAR_SHIFT         (12 * [[UIScreen mainScreen] scale])
@@ -42,13 +42,6 @@ NSString *returnTitleSearch = @"Search";
 
   /* ±hints strings list */
 NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i î ï í ī į ì,o ô ö ò ó œ ø ō ō,a à á â ä æ ã å ā,s ß ś š,l ł,z ž ź ż,c ç ć č,n ñ ń,z ž ź ż";
-    
-//LocalizedTableSymbols.strings (French)
-  /*  title for return button */
-//NSString *returnTitleSearch = "Rechercher";
-
-  /* ±hints strings list */
-//NSString *hintsList = "E É,' ` ˆ ¨ ´,\" » « ” “ „,A À Â ª Æ Á Ä Ã Å Ā,C Ç Ć Č,E É È Ê Ë Ę Ė Ē,I Î Ï Ì Í Į Ī,N Ñ Ń,O Ô Œ º Ö Ò Ó Õ Ø Ō,U Û Ù Ü Ú Ū,Y Ÿ";
 
 @implementation JHkey
 
@@ -108,7 +101,19 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
     }
 }
 
+-(void)gestureHandler:(UILongPressGestureRecognizer*)gesture {
+    if(UIGestureRecognizerStateBegan == gesture.state) {
+        NSLog(@"gestureHandler");
+        [self startShowHintTimer];
+    }
+}
+
 - (void)addPopupToButton:(UIButton*)button {
+    
+//    UILongPressGestureRecognizer* longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
+//    [longPressGesture setMinimumPressDuration:0.5];
+//    [self addGestureRecognizer:longPressGesture];
+    
     [self hidePopup];
     
     [self checkHintPosition:button];
@@ -186,7 +191,7 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
         }
         
         [keyPop setTag:ACKEY_POPUP_VIEV_TAG];
-        [keyPop setAlpha:0.9];
+        [keyPop setAlpha:1.0];
         [button addSubview:keyPop];
         
         [UIView animateWithDuration:kKeyPopapAppearDuration
@@ -811,7 +816,6 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
         [self hideHintView];
     } else {
         NSLog(@"button title::%@",self.titleLabel.text);
-        
         [super touchesEnded:touches withEvent:event];
     }
     [self startHideTimerPopup];
@@ -870,8 +874,7 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
     [self stopShowHintTimer];
     
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
-        
-        _showHintTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(showKeyCapView) userInfo:nil repeats:NO];
+        _showHintTimer = [NSTimer scheduledTimerWithTimeInterval:0.0 target:self selector:@selector(showKeyCapView) userInfo:nil repeats:NO];
     }
 }
 

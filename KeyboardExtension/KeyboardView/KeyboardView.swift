@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol KeyboardViewDelegate: class {
+  func insertCharacter(_ newCharacter: String)
+//  func deleteCharacterBeforeCursor()
+//  func characterBeforeCursor() -> String?
+}
+
 class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice] playInputClick];
     // constants
     var paddingX:Double = 3 //left and right padding
@@ -37,6 +43,8 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
 
     //set index for each button
     var currentButtonIndex = 0
+    
+    weak var delegate: KeyboardViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -325,6 +333,7 @@ extension KeyboardView {
         jhKey.setTitle(title, for: .normal)
         jhKey.setTitleColor(UIColor.black, for: .normal)
         jhKey.backgroundColor = .clear
+        jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         addSubview(jhKey)
     }
 }
@@ -356,7 +365,9 @@ extension KeyboardView {
             }
             
         } else {
-            
+            if let _title = sender.titleLabel?.text{
+                delegate?.insertCharacter(_title)
+            }
         }
     }
 
