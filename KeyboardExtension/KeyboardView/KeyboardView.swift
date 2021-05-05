@@ -330,15 +330,25 @@ extension KeyboardView {
         let jhKey   = JHkey(type: .custom)
         jhKey.frame = keyButton.frame
         jhKey.tag   = keyButton.tag
+        jhKey.delegate = self
+        jhKey.backgroundColor = .clear
         jhKey.setTitle(title, for: .normal)
         jhKey.setTitleColor(UIColor.black, for: .normal)
-        jhKey.backgroundColor = .clear
         jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         addSubview(jhKey)
     }
 }
 
 //MARK:- keyboard button presed
+
+extension KeyboardView:JHkeyDelegate {
+    func didSelectHintButton(_ sender: UIButton!) {
+        if let _title = sender.titleLabel?.text {
+            delegate?.insertCharacter(_title)
+        }
+    }
+}
+
 extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
         UIDevice.current.playInputClick()

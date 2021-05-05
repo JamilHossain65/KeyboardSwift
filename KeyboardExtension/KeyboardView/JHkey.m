@@ -810,7 +810,12 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
             if (highlightedButton) {
                 //!!!: please refactor it
                 //[((KeyboardView*)self.superview) insertHintText:highlightedButton.titleLabel.text];//todo enable this code
-                NSLog(@"tap::%@",highlightedButton.titleLabel.text);
+                
+                
+                if ([self.delegate conformsToProtocol:@protocol(JHkeyDelegate)]) {
+                    [self.delegate didSelectHintButton:highlightedButton];
+                    NSLog(@"tap::%@",highlightedButton.titleLabel.text);
+                }
             }
         }
         [self hideHintView];

@@ -10,7 +10,7 @@ import UIKit
 
 class KeyboardButton: UIButton {
     
-    var defaultBackgroundColor: UIColor = .white
+    var defaultBackgroundColor  : UIColor = .white
     var highlightBackgroundColor: UIColor = .white
     
     override init(frame: CGRect) {

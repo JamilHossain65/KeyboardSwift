@@ -7,6 +7,10 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol JHkeyDelegate <NSObject>   //define delegate protocol
+    - (void)didSelectHintButton:(UIButton*)sender;
+@end //end protocol
+
 typedef NS_ENUM(NSUInteger, ACHintPosition) {
     ACHintPositionFarLeft,
     ACHintPositionLeft,
@@ -36,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView  *hintView;
 @property (nonatomic, strong) NSArray *hintButtons;
 @property (nonatomic, assign) CGFloat hintAdditionalWidth;
+@property (nonatomic, weak) id <JHkeyDelegate> delegate; //define MyClassDelegate as delegate
+
 
 @end
 
