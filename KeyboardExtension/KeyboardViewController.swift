@@ -64,6 +64,7 @@ class KeyboardViewController: UIInputViewController {
     func showView(){
         var mFrame = self.view.frame
         mFrame.origin.y = hintBarHeight
+        mFrame.size.height = height
         
 //        keyboardView = KeyboardView(frame: mFrame)
 //        keyboardView.sizeToFit()
@@ -85,7 +86,7 @@ class KeyboardViewController: UIInputViewController {
 //        [self.suggestionBarManager addSuggestionBar:self.view subview:self.textView];
         
         let hintBarManager = HintBarManager.shared
-        //hintBarManager.addSuggestionBar(parentView: keyboardView, txtView: textView)
+        hintBarManager.addSuggestionBar(parentView: keyboardView, txtView: self.textDocumentProxy)
     }
     
     override func viewWillLayoutSubviews() {

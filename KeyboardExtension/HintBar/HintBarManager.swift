@@ -30,43 +30,60 @@ let MAX_WORD = 10
 class HintBarManager: NSObject {
     public static let shared = HintBarManager()
     
-    func addSuggestionBar(parentView:UIView,txtView:UITextView) {
+    func addSuggestionBar(parentView:UIView,txtView:UITextDocumentProxy) {
         //wordArray = ["কান্ত","খা","খাকি","কি","কী","কাকতালিয়","কাকা","আচানক", "চুরমার","চানাচুর","পাগল","গলদ","ছাগল","বাবা","বাবর","আবার","কাকে","কিন্তু"]
         wordArray = ["কান্ত","আবার"]
         let _expandedHeight:CGFloat = CGFloat(216 + barHeight);
         //Add suggestion bar
         let border:CGFloat = 1;
-        let index = 0;
+        var index = 0;
         let screenWidth  = UIScreen.main.bounds.size.width - 2*border;
         let buttonWidth  = screenWidth/3;
         
         sgButton1 = UIButton.init(type: .custom)
         sgButton1.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: barHeight)
         sgButton1.backgroundColor = .red //[self color:174 g:179 b:189];
-        sgButton1.setTitle("", for: .normal)
+        sgButton1.setTitle("Jamil", for: .normal)
         sgButton1.addTarget(self, action: #selector(suggestionButtonDidClick), for: .touchUpInside)
+        
+        index += 1
+        sgButton2 = UIButton.init(type: .custom)
+        sgButton2.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: barHeight)
+        sgButton2.backgroundColor = .red //[self color:174 g:179 b:189];
+        sgButton2.setTitle("Hossain", for: .normal)
+        sgButton2.addTarget(self, action: #selector(suggestionButtonDidClick), for: .touchUpInside)
+        
+        index += 1
+        sgButton3 = UIButton.init(type: .custom)
+        sgButton3.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: barHeight)
+        sgButton3.backgroundColor = .red //[self color:174 g:179 b:189];
+        sgButton3.setTitle("go", for: .normal)
+        sgButton3.addTarget(self, action: #selector(suggestionButtonDidClick), for: .touchUpInside)
         
         //Keyboard bar
         suggestionBarScrollView = UIScrollView.init()
         
         suggestionBarScrollView.frame = CGRect(x:0, y:0, width: Int(UIScreen.main.bounds.size.width), height:barHeight);
         //barScrollView.delegate = self;
-        suggestionBarScrollView.backgroundColor  = .red //[UIColor colorWithRed:211/255.0 green:213/255.0 blue:219/255.0 alpha:1.0];
+        suggestionBarScrollView.backgroundColor  = .clear //[UIColor colorWithRed:211/255.0 green:213/255.0 blue:219/255.0 alpha:1.0];
         suggestionBarScrollView.bounces = false;
         suggestionBarScrollView.isScrollEnabled = false;
         suggestionBarScrollView.showsHorizontalScrollIndicator = false;
         suggestionBarScrollView.contentSize = CGSize(width: CGFloat((index+1))*(buttonWidth + border), height: suggestionBarScrollView.contentSize.height);
         
         suggestionBarScrollView.addSubview(sgButton1)
+        suggestionBarScrollView.addSubview(sgButton2)
+        suggestionBarScrollView.addSubview(sgButton3)
         
         //Keyboard bar
-        let barView:UIView         =  UIView.init(frame: CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.size.width), height: barHeight)) //[[UIView alloc] initWithFrame:CGRectMake(0,0, [[UIScreen mainScreen] bounds].size.width, barHeight)];
+        let barView:UIView =  UIView.init(frame: CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.size.width), height: barHeight))
         barView.backgroundColor = UIColor.clear
-        parentView.addSubview(barView)
+        parentView.superview?.addSubview(barView)
         barView.addSubview(suggestionBarScrollView)
+        barView.layer.zPosition = -10
         barView.sizeToFit()
         //
-        txtView.sizeToFit()
+        //txtView.sizeToFit()
         //txtView.translatesAutoresizingMaskIntoConstraints = NO;
         //[txtView.leftAnchor constraintEqualToAnchor:parentView.leftAnchor].active = YES;
         //[barView.bottomAnchor constraintEqualToAnchor:parentView.topAnchor].active = YES;
@@ -85,7 +102,7 @@ class HintBarManager: NSObject {
     }
     
     @objc func suggestionButtonDidClick(button:UIButton){
-        
+        print("\(button.titleLabel?.text)")
     }
 /*
     -(void)addSuggestionBar:(UIView*)parentView subview:(UITextView*)txtView{
@@ -213,3 +230,11 @@ class HintBarManager: NSObject {
     }
     */
 }
+
+//extension UIButton{
+//    override open var isHighlighted: Bool {
+//        didSet {
+//            //backgroundColor = isHighlighted ? UIColor.lightGray : UIColor.white
+//        }
+//    }
+//}
