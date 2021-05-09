@@ -12,9 +12,9 @@ class KeyboardViewController: UIInputViewController {
     var hintBarManager: HintBarManager = HintBarManager();
     var keyboardView  : KeyboardView   = KeyboardView();
     
-    ///var textView:UITextDocumentProxy = UITextDocumentProxy();
-    var wordArray: NSArray  = [];
-    var context  : NSString = "";
+    //var textView:UITextDocumentProxy = UITextDocumentProxy();
+    var wordArray: NSArray  = []
+    var context  : NSString = ""
     
     var nextButton: UIButton!
     var heightConstraint: NSLayoutConstraint?
@@ -86,6 +86,7 @@ class KeyboardViewController: UIInputViewController {
 //        [self.suggestionBarManager addSuggestionBar:self.view subview:self.textView];
         
         let hintBarManager = HintBarManager.shared
+        hintBarManager.delegate = self
         hintBarManager.addSuggestionBar(parentView: keyboardView, txtView: self.textDocumentProxy)
     }
     
@@ -144,12 +145,27 @@ class KeyboardViewController: UIInputViewController {
 //            [self.delegate customKeyboard:self currentContext:relevantContext];
 //        }
     }
+    
+    /*
+    func draw(_ rect: CGRect) {
+        print("rect")
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 32)]
+        let attributedString = NSAttributedString(string: "test", attributes: attrs)
+        attributedString.draw(in: rect)
+    }
+    */
 
 }
 
 extension KeyboardViewController: KeyboardViewDelegate {
     func insertCharacter(_ newCharacter: String){
-        self.textDocumentProxy.insertText(newCharacter)
+        let unicodeText = "\u{2145}" //"\u{24B7}" //"\u{1F18}" //todo
+        self.textDocumentProxy.insertText(unicodeText)
     }
 }
 
+extension KeyboardViewController: HintBarDelegate {
+    func didSelectHint(_ text: String) {
+        self.textDocumentProxy.insertText(text)
+    }
+}
