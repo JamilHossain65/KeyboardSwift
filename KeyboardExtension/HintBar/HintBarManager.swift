@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HintBarDelegate: class {
-  func didSelectHint(_ text: String)
+  func didSelectHint(_ sender: Any)
 }
 
 var wordArray:[String] = [String]()
@@ -27,11 +27,11 @@ class HintBarManager: NSObject {
     func addSuggestionBar(parentView:UIView,txtView:UITextDocumentProxy) {
         
         wordArray = ["কান্ত","খা","খাকি","কি","কী","কাকতালিয়","কাকা","আচানক", "চুরমার","চানাচুর","পাগল","গলদ","ছাগল","বাবা","বাবর","আবার","কাকে","কিন্তু"]
-        //wordArray = ["কান্ত","খা","খাকি","কি"]
+        //wordArray = kUnicodeFontNameArray
         
         //Keyboard bar
         suggestionBarScrollView = UIScrollView.init()
-        refresh(scrollView: suggestionBarScrollView, dataArray: wordArray)
+        refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
         
         //Keyboard bar
         let barView:UIView =  UIView.init(frame: CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.size.width), height: barHeight))
@@ -91,8 +91,8 @@ class HintBarManager: NSObject {
     
     @objc func suggestionButtonDidClick(button:UIButton){
         print("\(button.titleLabel?.text)")
-        if let _delegate = delegate, let text = button.titleLabel?.text {
-            self.delegate?.didSelectHint(text)
+        if let _delegate = delegate {
+            self.delegate?.didSelectHint(button)
         }
     }
 }

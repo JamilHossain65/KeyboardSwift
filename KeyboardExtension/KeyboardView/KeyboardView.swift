@@ -43,6 +43,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
 
     //set index for each button
     var currentButtonIndex = 0
+    var currentFontLetters:[String] =  []
     
     weak var delegate: KeyboardViewDelegate?
     
@@ -57,6 +58,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         
         //draw
         //self.configure5Line()
+        currentFontLetters = kUnicodeFontArray[0]
         self.configure4Line()
         
         //set color
@@ -100,7 +102,7 @@ extension KeyboardView{
         currentButtonIndex = 0
         
         for view in subviews {
-            print("view tag::\(view.tag)")
+            //print("view tag::\(view.tag)")
             if !self.isSpecialButton(view) {
                 view.removeFromSuperview()
             }
@@ -153,7 +155,12 @@ extension KeyboardView{
             preWidth = btnWidth
             
             let bFrame = CGRect(x: colX, y: colY, width: btnWidth, height: btnHeight)
-            let tempLetter = kLetters[currentButtonIndex % kLetters.count]
+            var tempLetter = kUnicodeLettersEnNormal[currentButtonIndex % kUnicodeLettersEnNormal.count]
+            
+            if currentFontLetters.count > 0 {
+                tempLetter = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+            }
+            
             let letter = shiftButton.isSelected ? tempLetter : tempLetter.lowercased()
             
             let keyboardButton = KeyboardButton(frame: bFrame)
@@ -321,12 +328,21 @@ extension KeyboardView{
             break
         }
     }
+    
+    func reloadFont(_ fontIndex:Int){
+        print("reload:\(fontIndex)")
+        currentFontLetters = kUnicodeFontArray[fontIndex]
+        configure4Line()
+    }
+    
+    
 }
 
 //MARK:- keycap view show
 extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton){
-        let title   = kLetters[keyButton.tag].lowercased()
+        let selectedLetter = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+        let title   = selectedLetter.lowercased()
         let jhKey   = JHkey(type: .custom)
         jhKey.frame = keyButton.frame
         jhKey.tag   = keyButton.tag

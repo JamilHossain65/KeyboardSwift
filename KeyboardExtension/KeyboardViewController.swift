@@ -70,7 +70,7 @@ class KeyboardViewController: UIInputViewController {
 //        keyboardView.sizeToFit()
 //        view.addSubview(keyboardView)
         
-        let keyboardView = KeyboardView(frame: mFrame)
+        keyboardView = KeyboardView(frame: mFrame)
         keyboardView.delegate = self
         guard let inputView = inputView else { return }
         inputView.addSubview(keyboardView)
@@ -78,12 +78,6 @@ class KeyboardViewController: UIInputViewController {
         //set keyboard switch target
         nextButton = keyboardView.nextButton
         nextButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        
-        //add suggestion bar
-//        self.suggestionBarManager = [SuggestionBarManager sharedInstance];
-//        self.suggestionBarManager.delegate = self;
-//        //add suggestion  bar
-//        [self.suggestionBarManager addSuggestionBar:self.view subview:self.textView];
         
         let hintBarManager = HintBarManager.shared
         hintBarManager.delegate = self
@@ -159,13 +153,15 @@ class KeyboardViewController: UIInputViewController {
 
 extension KeyboardViewController: KeyboardViewDelegate {
     func insertCharacter(_ newCharacter: String){
-        let unicodeText = "\u{2145}" //"\u{24B7}" //"\u{1F18}" //todo
-        self.textDocumentProxy.insertText(unicodeText)
+        self.textDocumentProxy.insertText(newCharacter)
     }
 }
 
 extension KeyboardViewController: HintBarDelegate {
-    func didSelectHint(_ text: String) {
-        self.textDocumentProxy.insertText(text)
+    func didSelectHint(_ sender: Any) {
+        //self.textDocumentProxy.insertText(text) //todo
+        let button = sender as! UIButton
+        keyboardView.reloadFont(button.tag)
+        
     }
 }
