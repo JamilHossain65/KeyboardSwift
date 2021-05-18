@@ -152,7 +152,11 @@ class KeyboardViewController: UIInputViewController {
 }
 
 extension KeyboardViewController: KeyboardViewDelegate {
-    func insertCharacter(_ newCharacter: String){
+    func deleteCharacter(_ newCharacter: String) {
+        self.textDocumentProxy.deleteBackward()
+    }
+    
+    func insertCharacter(_ newCharacter: String) {
         self.textDocumentProxy.insertText(newCharacter)
     }
 }

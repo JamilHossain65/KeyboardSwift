@@ -9,6 +9,7 @@ import UIKit
 
 protocol KeyboardViewDelegate: class {
   func insertCharacter(_ newCharacter: String)
+    func deleteCharacter(_ newCharacter: String)
 //  func deleteCharacterBeforeCursor()
 //  func characterBeforeCursor() -> String?
 }
@@ -168,9 +169,11 @@ extension KeyboardView{
             
             //keyboardButton.addTarget(self, action: #selector(multipleTap(_:event:)), for: .touchDownRepeat)
             
-            let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
-                tap.numberOfTapsRequired = 2
-            keyboardButton.addGestureRecognizer(tap)
+            if currentButtonIndex == shiftButtonIndex {
+                let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+                    tap.numberOfTapsRequired = 2
+                keyboardButton.addGestureRecognizer(tap)
+            }
             
             keyboardButton.setTitle(letter, for: .normal); //"\(Int(btnWidth))
             keyboardButton.tag = currentButtonIndex
@@ -390,9 +393,20 @@ extension KeyboardView {
                 sender.defaultBackgroundColor = kAltButtonColor
             }
             
+        } else if(sender.tag == deleteButtonIndex) {
+            delegate?.deleteCharacter("")
         } else {
             if let _title = sender.titleLabel?.text{
-                delegate?.insertCharacter(_title)
+                
+                switch _title {
+                case kSpaceString:
+                    delegate?.insertCharacter(" ")
+                case kReturnString:
+                    delegate?.insertCharacter("\n")
+                
+                default:
+                    delegate?.insertCharacter(_title)
+                }
             }
         }
     }
