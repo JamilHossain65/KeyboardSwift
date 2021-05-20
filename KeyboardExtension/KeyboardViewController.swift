@@ -12,7 +12,6 @@ class KeyboardViewController: UIInputViewController {
     var hintBarManager: HintBarManager = HintBarManager();
     var keyboardView  : KeyboardView   = KeyboardView();
     
-    //var textView:UITextDocumentProxy = UITextDocumentProxy();
     var wordArray: NSArray  = []
     var context  : NSString = ""
     
@@ -65,11 +64,7 @@ class KeyboardViewController: UIInputViewController {
         var mFrame = self.view.frame
         mFrame.origin.y = hintBarHeight
         mFrame.size.height = height
-        
-//        keyboardView = KeyboardView(frame: mFrame)
-//        keyboardView.sizeToFit()
-//        view.addSubview(keyboardView)
-        
+
         keyboardView = KeyboardView(frame: mFrame)
         keyboardView.delegate = self
         guard let inputView = inputView else { return }
@@ -166,6 +161,5 @@ extension KeyboardViewController: HintBarDelegate {
         //self.textDocumentProxy.insertText(text) //todo
         let button = sender as! UIButton
         keyboardView.reloadFont(button.tag)
-        
     }
 }

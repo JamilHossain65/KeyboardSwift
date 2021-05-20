@@ -8,7 +8,7 @@
 import UIKit
 
 protocol KeyboardViewDelegate: class {
-  func insertCharacter(_ newCharacter: String)
+    func insertCharacter(_ newCharacter: String)
     func deleteCharacter(_ newCharacter: String)
 //  func deleteCharacterBeforeCursor()
 //  func characterBeforeCursor() -> String?
@@ -34,13 +34,13 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     var voiceButton  = KeyboardButton()
     var spaceButton  = KeyboardButton()
     
-    var shiftButtonIndex  = 0
-    var deleteButtonIndex = 0
-    var altButtonIndex    = 0
-    var nextButtonIndex   = 0
-    var spaceButtonIndex  = 0
-    var returnButtonIndex = 0
-    var voiceButtonIndex  = 0
+    var shiftButtonIndex  = -1
+    var deleteButtonIndex = -1
+    var altButtonIndex    = -1
+    var nextButtonIndex   = -1
+    var spaceButtonIndex  = -1
+    var returnButtonIndex = -1
+    var voiceButtonIndex  = -1
 
     //set index for each button
     var currentButtonIndex = 0
@@ -395,6 +395,13 @@ extension KeyboardView {
             
         } else if(sender.tag == deleteButtonIndex) {
             delegate?.deleteCharacter("")
+        } else if(sender.tag == altButtonIndex) {
+            //delegate?.deleteCharacter("")
+            print("123 alt")
+            sender.isSelected = !sender.isSelected
+            altButton = sender
+            currentFontLetters = kUnicodeLettersEnNumList
+            configure4Line()
         } else {
             if let _title = sender.titleLabel?.text{
                 

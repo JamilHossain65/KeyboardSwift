@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         
         textView.becomeFirstResponder()
         
-        var str : String = "𝕆𝕦𝕥𝕝𝕚𝕟𝕖\n\n Sᴍᴀʟʟ Cᴀᴘs\n\n ᑕOᗰIᑕ\n\n 𝗦𝗮𝗻𝘀\n\n 𝙎𝙖𝙣𝙨\n\n ⒸⒾⓇⒸⓁⒺ\n\n H̆̈ă̈p̆̈p̆̈y̆̈\n\n S̑̈ȃ̈d̑̈\n\n 🅂🅀🅄🄰🅁🄴\n\n 🆂🆀🆄🅰︎🆁🅴 \n\n 🇸 🇶 🇺 🇦 🇷 🇪 \n\n S̾t̾i̾n̾k̾y̾ \n\n B̥ͦu̥ͦb̥ͦb̥ͦl̥ͦe̥ͦs̥ͦ \n\n U͟n͟d͟e͟r͟l͟i͟n͟e͟ \n\n R҉a҉y҉s҉ \n\n B҈i҈r҈d҈s҈ \n\n S̸l̸a̸s̸h̸ \n\n S⃠t⃠o⃠p⃠ \n\n S̺͆k̺͆y̺͆l̺͆i̺͆n̺͆e̺͆ \n\n A͎r͎r͎o͎w͎s͎ \n\n S̶t̶r̶i̶k̶e̶ \n\n"
+        let str : String = "𝕆𝕦𝕥𝕝𝕚𝕟𝕖\n\n Sᴍᴀʟʟ Cᴀᴘs\n\n ᑕOᗰIᑕ\n\n 𝗦𝗮𝗻𝘀\n\n 𝙎𝙖𝙣𝙨\n\n ⒸⒾⓇⒸⓁⒺ\n\n H̆̈ă̈p̆̈p̆̈y̆̈\n\n S̑̈ȃ̈d̑̈\n\n 🅂🅀🅄🄰🅁🄴\n\n 🆂🆀🆄🅰︎🆁🅴 \n\n 🇸 🇶 🇺 🇦 🇷 🇪 \n\n S̾t̾i̾n̾k̾y̾ \n\n B̥ͦu̥ͦb̥ͦb̥ͦl̥ͦe̥ͦs̥ͦ \n\n U͟n͟d͟e͟r͟l͟i͟n͟e͟ \n\n R҉a҉y҉s҉ \n\n B҈i҈r҈d҈s҈ \n\n S̸l̸a̸s̸h̸ \n\n S⃠t⃠o⃠p⃠ \n\n S̺͆k̺͆y̺͆l̺͆i̺͆n̺͆e̺͆ \n\n A͎r͎r͎o͎w͎s͎ \n\n S̶t̶r̶i̶k̶e̶ \n\n"
         
         /*
         𝕆𝕦𝕥𝕝𝕚𝕟𝕖

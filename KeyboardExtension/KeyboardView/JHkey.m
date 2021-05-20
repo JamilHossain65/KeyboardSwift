@@ -104,7 +104,7 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
 -(void)gestureHandler:(UILongPressGestureRecognizer*)gesture {
     if(UIGestureRecognizerStateBegan == gesture.state) {
         NSLog(@"gestureHandler");
-        [self startShowHintTimer];
+        //[self startShowHintTimer]; //todo enable it for long pressed mutiple keys
     }
 }
 
