@@ -101,8 +101,7 @@ let kUnicodeEnCircleWhite  = "Ⓠ,Ⓦ,Ⓔ,Ⓡ,Ⓣ,Ⓨ,Ⓤ,Ⓘ,Ⓞ,Ⓟ,Ⓐ,Ⓢ,�
 let kUnicodeEnSquareWhite  = "🅀,🅆,🄴,🅁,🅃,🅈,🅄,🄸,🄾,🄿,🄰,🅂,🄳,🄵,🄶,🄷,🄹,🄺,🄻,:,🅉,🅇,🄲,🅅,🄱,🄽,🄼"
 let kUnicodeEnSquareBlack  = "🆀,🆆,🅴,🆁,🆃,🆈,🆄,🅸,🅾︎,🅿︎,🅰︎,🆂,🅳,🅵,🅶,🅷,🅹,🅺,🅻,:,🆉,🆇,🅲,🆅,🅱︎,🅽,🅼"
 let kUnicodeEnSquareWLight = "🇶 ,🇼 ,🇪 ,🇷 ,🇹 ,🇾 ,🇺 ,🇮 ,🇴 ,🇵 ,🇦 ,🇸 ,🇩 ,🇫 ,🇬 ,🇭 ,🇯 ,🇰 ,🇱 ,:,🇿 ,🇽 ,🇨 ,🇻 ,🇧 ,🇳 ,🇲 "
-let kUnicodeEnUnderline    = "q,w͟,e͟,r͟,t͟,y,u͟,i͟,o͟,p,a͟,s͟,d͟,f͟,g,h͟,j,k͟,l͟,:,z͟,x͟,c͟,v͟,b͟,n͟,m͟"
-
+let kUnicodeEnUnderline    = " ͟q,w͟,e͟,r͟,t͟,y,u͟,i͟,o͟,p,a͟,s͟,d͟,f͟,g,h͟,j,k͟,l͟,:,z͟,x͟,c͟,v͟,b͟,n͟,m͟"
 let kUnicodeEnOutline      = "𝕢,𝕨,𝕖,𝕣,𝕥,𝕪,𝕦,𝕚,𝕠,𝕡,𝕒,𝕤,𝕕,𝕗,𝕘,𝕙,𝕛,𝕜,𝕝,:,𝕫,𝕩,𝕔,𝕧,𝕓,𝕟,𝕞"
 let kUnicodeEnSmallCaps    = "Q,ᴡ,ᴇ,ʀ,ᴛ,ʏ,ᴜ,ɪ,ᴏ,ᴘ,ᴀ,s,ᴅ,ғ,ɢ,ʜ,ᴊ,ᴋ,ʟ,:,ᴢ,x,ᴄ,ᴠ,ʙ,ɴ,ᴍ"
 let kUnicodeEnComic        = "ᑫ,ᗯ,ᗴ,ᖇ,T,Y,ᑌ,I,O,ᑭ,ᗩ,ᔕ,ᗪ,ᖴ,ᘜ,ᕼ,ᒍ,K,ᒪ,:,ᘔ,᙭,ᑕ,ᐯ,ᗷ,ᑎ,ᗰ"

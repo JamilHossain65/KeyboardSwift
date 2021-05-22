@@ -154,6 +154,10 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func insertCharacter(_ newCharacter: String) {
         self.textDocumentProxy.insertText(newCharacter)
     }
+    
+    func gotoNextKeyboard(_ button: UIButton){
+        button.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
+    }
 }
 
 extension KeyboardViewController: HintBarDelegate {

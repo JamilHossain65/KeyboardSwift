@@ -10,6 +10,7 @@ import UIKit
 protocol KeyboardViewDelegate: class {
     func insertCharacter(_ newCharacter: String)
     func deleteCharacter(_ newCharacter: String)
+    func gotoNextKeyboard(_ nextButton: UIButton)
 //  func deleteCharacterBeforeCursor()
 //  func characterBeforeCursor() -> String?
 }
@@ -60,8 +61,15 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         //draw
         //self.configure5Line()
         currentFontLetters = kUnicodeFontArray[0]
-        self.configure4Line()
-        
+        configure4Line()
+        setSpecialButtonColor()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setSpecialButtonColor(){
         //set color
         backgroundColor = kKeyboardBGColor //#d1d4db, rgb(209,212,219)
         nextButton.defaultBackgroundColor   = kAltButtonColor //rgb(172, 176, 188) //#acb0bc
@@ -72,10 +80,6 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         //
         //spaceButton.defaultBackgroundColor = .white
         //voiceButton.defaultBackgroundColor = .white
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -336,6 +340,7 @@ extension KeyboardView{
         print("reload:\(fontIndex)")
         currentFontLetters = kUnicodeFontArray[fontIndex]
         configure4Line()
+        setSpecialButtonColor()
     }
     
     
@@ -395,9 +400,10 @@ extension KeyboardView {
             
         } else if(sender.tag == deleteButtonIndex) {
             delegate?.deleteCharacter("")
+            
+        } else if(sender.tag == nextButtonIndex) {
+            delegate?.gotoNextKeyboard(sender)
         } else if(sender.tag == altButtonIndex) {
-            //delegate?.deleteCharacter("")
-            print("123 alt")
             sender.isSelected = !sender.isSelected
             altButton = sender
             currentFontLetters = kUnicodeLettersEnNumList
