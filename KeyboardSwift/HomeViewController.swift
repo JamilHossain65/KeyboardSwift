@@ -9,11 +9,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    //var IBOutlet textView:UITextView!;
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.layer.borderWidth  = 1.0
+        textView.layer.cornerRadius = 8.0
+        textView.layer.borderColor  = UIColor.gray.cgColor
         
         textView.becomeFirstResponder()
         
