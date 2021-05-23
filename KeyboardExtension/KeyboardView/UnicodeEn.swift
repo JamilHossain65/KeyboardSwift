@@ -57,6 +57,8 @@ let kUnicodeFontNameArray = ["Normal",
                              "S̶t̶r̶i̶k̶e̶",
                              "c͜͡l͜͡o͜͡u͜͡d͜͡s͜͡",]
 
+
+let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation.components(separatedBy: ",")
 let kUnicodeLettersEnNumList      = kUnicodeEnNumbers.components(separatedBy: ",")
 let kUnicodeLettersEnNormal       = kUnicodeEnNormal.components(separatedBy: ",")
 let kUnicodeLettersEnStinky       = kUnicodeEnStinky.components(separatedBy: ",")
@@ -82,6 +84,7 @@ let kUnicodeLettersEnSans         = kUnicodeEnSans.components(separatedBy: ",")
 let kUnicodeLettersEnSansItalic   = kUnicodeEnSansItalic.components(separatedBy: ",")
 let kUnicodeLettersEnStop         = kUnicodeEnStop.components(separatedBy: ",")
 
+let kUnicodeEnPuncuation = "[,],{,},#,%,^,*,+,=,_,/,|,~,<,>,€,$,¥,•,.,,,?,!,’" //\
 let kUnicodeEnNumbers = "1,2,3,4,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,\",.,,,?,!,'"
 let kUnicodeEnNormal  = "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
 let kUnicodeEnSerif   = "𝑄,𝑤,𝑒,𝑟,𝑡,𝑦,𝑢,𝑖,𝑜,𝑝,𝑎,𝑠,𝑑,𝑓,𝑔,ℎ,𝑗,𝑘,𝑙,:,𝑧,𝑥,𝑐,𝑣,𝑏,𝑛,𝑚"

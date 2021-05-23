@@ -13,7 +13,8 @@ let kPADDING_RIGHT  = "PADDING_RIGHT"
 let kPADDING_TOP    = "PADDING_TOP"
 let kPADDING_BOTTOM = "PADDING_BOTTOM"
 //
-let kAltString    = "123"
+let k123String    = "123"
+let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
 

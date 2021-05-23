@@ -81,6 +81,7 @@ class HintBarManager: NSObject {
             sgButton.tag = index
             sgButton.backgroundColor = kHintButtonColor  //[self color:174 g:179 b:189];
             sgButton.setTitle(dataArray[index], for: .normal)
+            sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
             sgButton.setTitleColor(.black, for: .normal)
             sgButton.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: barHeight)
             sgButton.addTarget(self, action: #selector(suggestionButtonDidClick(button:)), for: .touchUpInside)

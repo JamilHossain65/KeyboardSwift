@@ -61,8 +61,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         //draw
         //self.configure5Line()
         currentFontLetters = kUnicodeFontArray[0]
-        configure4Line()
-        setSpecialButtonColor()
+        refreshKeyboard()
     }
     
     required init?(coder: NSCoder) {
@@ -80,6 +79,11 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         //
         //spaceButton.defaultBackgroundColor = .white
         //voiceButton.defaultBackgroundColor = .white
+    }
+    
+    func refreshKeyboard(){
+        configure4Line()
+        setSpecialButtonColor()
     }
 }
 
@@ -303,8 +307,11 @@ extension KeyboardView{
             keyboardButton.setImage(UIImage(named: "globe.png"), for: .normal)
             break
         case altButtonIndex:
-            self.altButton = keyboardButton
-            keyboardButton.setTitle(kAltString, for: .normal)
+            keyboardButton.setTitle(k123String, for: .normal)
+            keyboardButton.setTitle(kAbcString, for: .selected)
+            keyboardButton.isSelected = altButton.isSelected
+            altButton = keyboardButton
+            
             break
         case returnButtonIndex:
             self.returnButton = keyboardButton
@@ -336,11 +343,10 @@ extension KeyboardView{
         }
     }
     
-    func reloadFont(_ fontIndex:Int){
+    func reloadFont(_ fontIndex:Int) {
         print("reload:\(fontIndex)")
         currentFontLetters = kUnicodeFontArray[fontIndex]
-        configure4Line()
-        setSpecialButtonColor()
+        refreshKeyboard()
     }
     
     
@@ -375,6 +381,8 @@ extension KeyboardView:JHkeyDelegate {
 
 extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
+        print("sender.tag\(sender.tag), isSelected:\(sender.isSelected)")
+        
         UIDevice.current.playInputClick()
         if(sender.tag == shiftButtonIndex) {
             print("sender.isSelected::\(sender.isSelected)")
@@ -400,14 +408,23 @@ extension KeyboardView {
             
         } else if(sender.tag == deleteButtonIndex) {
             delegate?.deleteCharacter("")
-            
         } else if(sender.tag == nextButtonIndex) {
             delegate?.gotoNextKeyboard(sender)
         } else if(sender.tag == altButtonIndex) {
             sender.isSelected = !sender.isSelected
             altButton = sender
-            currentFontLetters = kUnicodeLettersEnNumList
-            configure4Line()
+            
+            if altButton.isSelected {
+                currentFontLetters = kUnicodeLettersEnNumList
+                altButton.backgroundColor = .red
+                
+            } else {
+                currentFontLetters = kUnicodeLettersEnNormal
+                altButton.backgroundColor = .green
+            }
+            
+            refreshKeyboard()
+            
         } else {
             if let _title = sender.titleLabel?.text{
                 
