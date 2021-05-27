@@ -61,6 +61,11 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func showView(){
+        
+        //https://unsplash.com/backgrounds/phone/keyboard
+        kKeyboardBGColor = UIColor.init(patternImage: UIImage(named: "photo4")!)
+        kHintButtonColor = .clear
+        
         var mFrame = self.view.frame
         mFrame.origin.y = hintBarHeight
         mFrame.size.height = height
@@ -70,13 +75,63 @@ class KeyboardViewController: UIInputViewController {
         guard let inputView = inputView else { return }
         inputView.addSubview(keyboardView)
         
+        inputView.backgroundColor = kKeyboardBGColor
+        
         //set keyboard switch target
         nextButton = keyboardView.nextButton
         nextButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
         
+        //set word suggestion view
         let hintBarManager = HintBarManager.shared
         hintBarManager.delegate = self
         hintBarManager.addSuggestionBar(parentView: keyboardView, txtView: self.textDocumentProxy)
+        
+        //add a button on left side
+        let fontButton = UIButton(type: .custom)
+        fontButton.frame  = CGRect(x: 10, y: 0, width: 30, height: 30)
+        fontButton.setTitle("F", for: .normal)
+        fontButton.center = CGPoint(x: fontButton.center.x, y: hintBarHeight/2)
+        fontButton.layer.cornerRadius = fontButton.frame.height/2
+        fontButton.addTarget(self, action: #selector(fontButtonPressed), for: .touchUpInside)
+        fontButton.backgroundColor = .red
+        view.addSubview(fontButton)
+        
+        //add a button on right side
+        let colorButton = UIButton(type: .custom)
+        colorButton.setTitle("C", for: .normal)
+        colorButton.frame  = CGRect(x: UIScreen.main.bounds.width - 40, y: 0, width: 30, height: 30)
+        colorButton.center = CGPoint(x: colorButton.center.x, y: hintBarHeight/2)
+        colorButton.layer.cornerRadius = colorButton.frame.height/2
+        colorButton.addTarget(self, action: #selector(colorButtonPressed), for: .touchUpInside)
+        colorButton.backgroundColor = .red
+        view.addSubview(colorButton)
+        
+    }
+    
+    @objc func fontButtonPressed() {
+       print("fontButtonPressed")
+        openContainerApp()
+    }
+    
+    @objc func colorButtonPressed() {
+        print("colorButtonPressed")
+        openContainerApp()
+    }
+    
+    func openContainerApp() {
+        let url = URL(string: "SmartFonts://")
+        let selectorOpenURL = sel_registerName("openURL:")
+        let context = NSExtensionContext()
+        context.open(url! as URL, completionHandler: nil)
+        
+        var responder = self as UIResponder?
+        
+        while (responder != nil) {
+            if responder?.responds(to: selectorOpenURL) == true {
+                responder?.perform(selectorOpenURL, with: url)
+            }
+            responder = responder!.next
+        }
     }
     
     override func viewWillLayoutSubviews() {
