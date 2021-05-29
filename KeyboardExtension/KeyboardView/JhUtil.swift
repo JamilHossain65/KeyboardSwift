@@ -18,6 +18,11 @@ let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
 
+var kKeyButtonColor  = UIColor.white
+var kHighlightColor  = UIColor.white
+var kTextColor       = UIColor.black
+var kTextShadowColor = UIColor.black
+
 var kAltButtonColor  = UIColor.init(red: 172/255, green: 176/255, blue: 188/255, alpha: 1)
 var kKeyboardBGColor = UIColor.init(red: 209/255, green: 212/255, blue: 219/255, alpha: 1)
 var kHintButtonColor = UIColor.init(red: 174/255, green: 179/255, blue: 189/255, alpha: 1)

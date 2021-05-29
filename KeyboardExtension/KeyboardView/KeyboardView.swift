@@ -183,7 +183,10 @@ extension KeyboardView{
                 keyboardButton.addGestureRecognizer(tap)
             }
             
-            keyboardButton.setTitle(letter, for: .normal); //"\(Int(btnWidth))
+            keyboardButton.setTitle(letter, for: .normal)
+            keyboardButton.setTitleColor(kTextColor, for: .normal)
+            keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
+
             keyboardButton.tag = currentButtonIndex
             addSubview(keyboardButton)
             
@@ -363,7 +366,8 @@ extension KeyboardView {
         jhKey.delegate = self
         jhKey.backgroundColor = .clear
         jhKey.setTitle(title, for: .normal)
-        jhKey.setTitleColor(UIColor.black, for: .normal)
+        jhKey.setTitleColor(kTextColor, for: .normal)
+        jhKey.setTitleShadowColor(kTextShadowColor, for: .normal)
         jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         addSubview(jhKey)
     }

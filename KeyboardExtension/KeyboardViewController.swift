@@ -63,11 +63,17 @@ class KeyboardViewController: UIInputViewController {
     func showView(){
         
         //https://unsplash.com/backgrounds/phone/keyboard
-        kKeyboardBGColor = UIColor.init(patternImage: UIImage(named: "photo4")!)
+        kKeyboardBGColor = UIColor.init(patternImage: UIImage(named: "photo6")!)
         kHintButtonColor = .clear
+        kAltButtonColor  = .clear
         
-        var mFrame = self.view.frame
-        mFrame.origin.y = hintBarHeight
+        kKeyButtonColor  = UIColor.clear
+        kHighlightColor  = UIColor.white
+        kTextColor       = UIColor.red
+        kTextShadowColor = UIColor.black
+        
+        var  mFrame        = view.frame
+        mFrame.origin.y    = hintBarHeight
         mFrame.size.height = height
 
         keyboardView = KeyboardView(frame: mFrame)
