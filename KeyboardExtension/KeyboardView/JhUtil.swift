@@ -33,3 +33,6 @@ let kLetters    = kAlphabetEN.components(separatedBy: " ")
 
 //set total keys in each row
 let kRowKeys = [10,9,9,4] //copy the same array in JHKey class //todo refctor this
+
+let hintBarHeight:CGFloat = 44 //36;
+

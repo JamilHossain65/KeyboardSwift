@@ -18,8 +18,7 @@ class KeyboardViewController: UIInputViewController {
     var nextButton: UIButton!
     var heightConstraint: NSLayoutConstraint?
     
-    var hintBarHeight: CGFloat =  46
-    var height: CGFloat = 216 + 46
+    var height: CGFloat = 216 + hintBarHeight //216 is keyboard height //todo do it dynamic
     
     var relevantContextRange:NSRange?
     
@@ -90,7 +89,7 @@ class KeyboardViewController: UIInputViewController {
         //set word suggestion view
         let hintBarManager = HintBarManager.shared
         hintBarManager.delegate = self
-        hintBarManager.addSuggestionBar(parentView: keyboardView, txtView: self.textDocumentProxy)
+        hintBarManager.addSuggestionBar(parentView: view, txtView: self.textDocumentProxy)
         
         //add a button on left side
         let fontButton = UIButton(type: .custom)
@@ -114,14 +113,17 @@ class KeyboardViewController: UIInputViewController {
         
     }
     
-    @objc func fontButtonPressed() {
+    @objc func fontButtonPressed(_ sender: Any) {
        print("fontButtonPressed")
         openContainerApp()
     }
     
-    @objc func colorButtonPressed() {
+    @objc func colorButtonPressed(_ sender: Any) {
         print("colorButtonPressed")
         openContainerApp()
+        
+//        let button = sender as! UIButton
+//        keyboardView.reloadFont(button.tag)
     }
     
     func openContainerApp() {
