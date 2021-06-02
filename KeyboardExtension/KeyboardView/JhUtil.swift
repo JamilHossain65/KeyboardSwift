@@ -36,3 +36,11 @@ let kRowKeys = [10,9,9,4] //copy the same array in JHKey class //todo refctor th
 
 let hintBarHeight:CGFloat = 44 //36;
 
+enum KEYBOARD:Int {
+    case FONT
+    case COLOR
+    case TEXT_COLOR
+}
+
+var keyboard = KEYBOARD.FONT
+

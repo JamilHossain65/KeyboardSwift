@@ -7,7 +7,18 @@
 
 import UIKit
 
-//class UnicodeEn: NSObject { }
+//class UnicodeEn: NSObject {
+//}
+
+let kPatternArray:[UIColor] = [UIColor.init(patternImage: UIImage(named: "photo1")!),
+                               UIColor.init(patternImage: UIImage(named: "photo2")!),
+                               UIColor.init(patternImage: UIImage(named: "photo3")!),
+                               UIColor.init(patternImage: UIImage(named: "photo4")!),
+                               UIColor.init(patternImage: UIImage(named: "photo5")!),
+                               UIColor.init(patternImage: UIImage(named: "photo6")!),]
+
+var kColorArray:[UIColor] = kPatternArray + [.red,.green,.blue,.yellow,.cyan,.magenta,.cyan]
+
 
 let kUnicodeFontArray = [kUnicodeLettersEnNormal,
                          kUnicodeLettersEnOutline,

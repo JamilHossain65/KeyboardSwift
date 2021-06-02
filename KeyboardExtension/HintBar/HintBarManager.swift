@@ -8,7 +8,8 @@
 import UIKit
 
 protocol HintBarDelegate: class {
-  func didSelectHint(_ sender: Any)
+    func didSelectHint (_ sender: Any)
+    func didSelectColor(_ sender: Any)
 }
 
 var wordArray:[String] = [String]()
@@ -24,11 +25,28 @@ class HintBarManager: NSObject {
     func addSuggestionBar(parentView:UIView,txtView:UITextDocumentProxy) {
         parentView.addSubview(suggestionBarScrollView)
         suggestionBarScrollView.layer.zPosition = -10
-        refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
+        
+        switch keyboard {
+        case .FONT:
+            refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
+            break
+            
+        case .COLOR:
+            refreshColor(scrollView: suggestionBarScrollView, dataArray: kColorArray)
+            break
+            
+        default:
+            break
+        }
     }
     
     func refresh(scrollView:UIScrollView, dataArray:[String]){
         if dataArray.count <= 0 {return}
+        
+        for view in suggestionBarScrollView.subviews{
+            view.removeFromSuperview()
+        }
+        
         //Add suggestion bar
         let border:CGFloat = 1
         let screenWidth  = UIScreen.main.bounds.size.width - 2*border
@@ -57,10 +75,51 @@ class HintBarManager: NSObject {
         }
     }
     
+    func refreshColor(scrollView:UIScrollView, dataArray:[UIColor]){
+        if dataArray.count <= 0 {return}
+        
+        for view in suggestionBarScrollView.subviews{
+            view.removeFromSuperview()
+        }
+        
+        //Add suggestion bar
+        let border:CGFloat = 1
+        let screenWidth  = UIScreen.main.bounds.size.width - 2*border
+        let buttonWidth  = hintBarHeight //screenWidth/3
+        
+        
+        //Keyboard bar
+        scrollView.frame = CGRect(x:0, y:0, width: Int(UIScreen.main.bounds.size.width), height:Int(hintBarHeight))
+        scrollView.backgroundColor  = .clear //[UIColor colorWithRed:211/255.0 green:213/255.0 blue:219/255.0 alpha:1.0];
+        scrollView.bounces = false
+        scrollView.isScrollEnabled = true
+        scrollView.isPagingEnabled = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.contentSize = CGSize(width: CGFloat(CGFloat((dataArray.count))*(buttonWidth + border)), height: scrollView.contentSize.height)
+        
+        for index in 0...dataArray.count - 1  {
+            let sgButton = UIButton.init(type: .custom)
+            sgButton.tag = index
+            sgButton.layer.cornerRadius = buttonWidth/2
+            sgButton.backgroundColor = dataArray[index]
+            sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            sgButton.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: Int(hintBarHeight))
+            sgButton.addTarget(self, action: #selector(colorButtonDidClick(button:)), for: .touchUpInside)
+            scrollView.addSubview(sgButton)
+        }
+    }
+    
     @objc func suggestionButtonDidClick(button:UIButton){
         print("\(String(describing: button.titleLabel?.text))")
         if let _delegate = delegate {
             _delegate.didSelectHint(button)
+        }
+    }
+    
+    @objc func colorButtonDidClick(button:UIButton) {
+        print("color btn tag: \(String(describing: button.tag))")
+        if let _delegate = delegate {
+            _delegate.didSelectColor(button)
         }
     }
 }

@@ -70,7 +70,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     
     func setSpecialButtonColor(){
         //set color
-        backgroundColor = kKeyboardBGColor //#d1d4db, rgb(209,212,219)
+        backgroundColor = .clear //kKeyboardBGColor //#d1d4db, rgb(209,212,219)
         nextButton.defaultBackgroundColor   = kAltButtonColor //rgb(172, 176, 188) //#acb0bc
         altButton.defaultBackgroundColor    = kAltButtonColor
         returnButton.defaultBackgroundColor = kAltButtonColor
@@ -353,6 +353,19 @@ extension KeyboardView{
     }
     
     
+    func reloadColor(_ fontIndex:Int) {
+        print("reload:\(fontIndex)")
+        //currentColor = kColorArray[fontIndex]
+        //kKeyboardBGColor = UIColor.init(patternImage: UIImage(named: "photo\(fontIndex + 1)")!)
+        kHintButtonColor = .clear
+        kAltButtonColor  = .clear
+        
+        kKeyButtonColor  = UIColor.clear
+        kHighlightColor  = UIColor.white
+        kTextColor       = UIColor.red
+        kTextShadowColor = UIColor.black
+        refreshKeyboard()
+    }
 }
 
 //MARK:- keycap view show

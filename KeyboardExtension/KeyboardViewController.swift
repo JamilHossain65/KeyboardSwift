@@ -89,7 +89,7 @@ class KeyboardViewController: UIInputViewController {
         //set word suggestion view
         let hintBarManager = HintBarManager.shared
         hintBarManager.delegate = self
-        hintBarManager.addSuggestionBar(parentView: view, txtView: self.textDocumentProxy)
+        hintBarManager.addSuggestionBar(parentView: inputView, txtView: self.textDocumentProxy)
         
         //add a button on left side
         let fontButton = UIButton(type: .custom)
@@ -116,14 +116,37 @@ class KeyboardViewController: UIInputViewController {
     @objc func fontButtonPressed(_ sender: Any) {
        print("fontButtonPressed")
         openContainerApp()
+        keyboard = KEYBOARD.FONT
+        
+        guard let inputView = inputView else { return }
+        inputView.backgroundColor = kKeyboardBGColor
+        
+        //set word suggestion view
+//        let hintBarManager = HintBarManager.shared
+//        hintBarManager.delegate = self
+//        hintBarManager.addSuggestionBar(parentView: inputView, txtView: self.textDocumentProxy)
+        
+        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
+        
     }
     
     @objc func colorButtonPressed(_ sender: Any) {
         print("colorButtonPressed")
         openContainerApp()
         
-//        let button = sender as! UIButton
-//        keyboardView.reloadFont(button.tag)
+        keyboard = KEYBOARD.COLOR
+        
+        guard let inputView = inputView else { return }
+        inputView.backgroundColor = kKeyboardBGColor
+
+        //set word suggestion view
+//        let hintBarManager = HintBarManager.shared
+//        hintBarManager.delegate = self
+//        hintBarManager.addSuggestionBar(parentView: inputView, txtView: self.textDocumentProxy)
+        
+        
+        
+        HintBarManager.shared.refreshColor(scrollView: suggestionBarScrollView, dataArray: kColorArray)
     }
     
     func openContainerApp() {
@@ -224,9 +247,19 @@ extension KeyboardViewController: KeyboardViewDelegate {
 }
 
 extension KeyboardViewController: HintBarDelegate {
+    func didSelectColor(_ sender: Any) {
+        
+        let button = sender as! UIButton
+        //kKeyboardBGColor = UIColor.init(patternImage: UIImage(named: "photo\(button.tag + 1)")!)
+        kKeyboardBGColor = kColorArray[button.tag]
+        inputView?.backgroundColor = kKeyboardBGColor
+    }
+    
     func didSelectHint(_ sender: Any) {
         //self.textDocumentProxy.insertText(text) //todo
         let button = sender as! UIButton
-        keyboardView.reloadFont(button.tag)
+        //keyboardView.reloadFont(button.tag)
+        inputView?.backgroundColor = kKeyboardBGColor
+        keyboardView.reloadColor(button.tag)
     }
 }
