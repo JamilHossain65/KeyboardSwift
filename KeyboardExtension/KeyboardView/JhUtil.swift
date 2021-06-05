@@ -18,10 +18,24 @@ let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
 
+let kKeyBgColor   = "kKeyBgColor"
+let kKeyTextColor = "kKeyTextColor"
+let kKeyTextFont  = "kKeyTextFont"
+
+enum KEYBOARD_TYPE:Int {
+    case FONT
+    case COLOR
+    case TEXT_COLOR
+}
+
+var keyboard = KEYBOARD_TYPE.FONT
+
 var kKeyButtonColor  = UIColor.white
 var kHighlightColor  = UIColor.white
 var kTextColor       = UIColor.black
 var kTextShadowColor = UIColor.black
+var kTextFont        = "Normal"
+
 
 var kAltButtonColor  = UIColor.init(red: 172/255, green: 176/255, blue: 188/255, alpha: 1)
 var kKeyboardBGColor = UIColor.init(red: 209/255, green: 212/255, blue: 219/255, alpha: 1)
@@ -36,11 +50,12 @@ let kRowKeys = [10,9,9,4] //copy the same array in JHKey class //todo refctor th
 
 let hintBarHeight:CGFloat = 44 //36;
 
-enum KEYBOARD:Int {
-    case FONT
-    case COLOR
-    case TEXT_COLOR
+func setObject(_ value:Any, key:String) {
+    UserDefaults.standard.setValue(value, forKey: key)
 }
 
-var keyboard = KEYBOARD.FONT
+func getObject(_ forKey:String) -> Any {
+    return UserDefaults.standard.value(forKey: forKey) as Any
+}
+
 

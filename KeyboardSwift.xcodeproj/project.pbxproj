@@ -14,6 +14,7 @@
 		8D496A2826388E7D001DE455 /* SuggestionBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A1426388C73001DE455 /* SuggestionBarManager.m */; };
 		8D496A2D26388F7D001DE455 /* HintBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A2C26388F7D001DE455 /* HintBarManager.swift */; };
 		8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D552EE326484C4000866DEF /* UnicodeEn.swift */; };
+		8D59B2252669AD2C0034A967 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59B2242669AD2C0034A967 /* Extension.swift */; };
 		8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D769A0C265F3BED00C74FBA /* Assets.xcassets */; };
 		8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8DBB159C25EB04890092F88B /* JHkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB159B25EB04890092F88B /* JHkey.m */; };
@@ -59,6 +60,7 @@
 		8D496A1B26388C73001DE455 /* SuggestionBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionBarManager.h; sourceTree = "<group>"; };
 		8D496A2C26388F7D001DE455 /* HintBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintBarManager.swift; sourceTree = "<group>"; };
 		8D552EE326484C4000866DEF /* UnicodeEn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeEn.swift; sourceTree = "<group>"; };
+		8D59B2242669AD2C0034A967 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8D769A0C265F3BED00C74FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D91CD452655E7EE00404F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				8DBB159A25EB04890092F88B /* JHkey.h */,
 				8DBB159B25EB04890092F88B /* JHkey.m */,
 				8D06A3E225E6EC6800E3B47E /* JhUtil.swift */,
+				8D59B2242669AD2C0034A967 /* Extension.swift */,
 				8D552EE326484C4000866DEF /* UnicodeEn.swift */,
 				8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */,
 				8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */,
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D59B2252669AD2C0034A967 /* Extension.swift in Sources */,
 				8D06A3E425E6EC6800E3B47E /* JhUtil.swift in Sources */,
 				8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */,
 				8D496A2D26388F7D001DE455 /* HintBarManager.swift in Sources */,

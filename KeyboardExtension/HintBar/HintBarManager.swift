@@ -32,7 +32,7 @@ class HintBarManager: NSObject {
             break
             
         case .COLOR:
-            refreshColor(scrollView: suggestionBarScrollView, dataArray: kColorArray)
+            refreshColor(scrollView: suggestionBarScrollView, colorArray: kColorSmallArray)
             break
             
         default:
@@ -55,7 +55,7 @@ class HintBarManager: NSObject {
         
         //Keyboard bar
         scrollView.frame = CGRect(x:0, y:0, width: Int(UIScreen.main.bounds.size.width), height:Int(hintBarHeight))
-        scrollView.backgroundColor  = .clear //[UIColor colorWithRed:211/255.0 green:213/255.0 blue:219/255.0 alpha:1.0];
+        scrollView.backgroundColor  = .clear
         scrollView.bounces = false
         scrollView.isScrollEnabled = true
         scrollView.isPagingEnabled = false
@@ -65,7 +65,7 @@ class HintBarManager: NSObject {
         for index in 0...dataArray.count - 1  {
             let sgButton = UIButton.init(type: .custom)
             sgButton.tag = index
-            sgButton.backgroundColor = .clear //HintButtonColor  //[self color:174 g:179 b:189];
+            sgButton.backgroundColor = .clear 
             sgButton.setTitle(dataArray[index], for: .normal)
             sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
             sgButton.setTitleColor(.black, for: .normal)
@@ -75,8 +75,8 @@ class HintBarManager: NSObject {
         }
     }
     
-    func refreshColor(scrollView:UIScrollView, dataArray:[UIColor]){
-        if dataArray.count <= 0 {return}
+    func refreshColor(scrollView:UIScrollView, colorArray:[UIColor]){
+        if colorArray.count <= 0 {return}
         
         for view in suggestionBarScrollView.subviews{
             view.removeFromSuperview()
@@ -95,13 +95,15 @@ class HintBarManager: NSObject {
         scrollView.isScrollEnabled = true
         scrollView.isPagingEnabled = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: CGFloat(CGFloat((dataArray.count))*(buttonWidth + border)), height: scrollView.contentSize.height)
+        scrollView.contentSize = CGSize(width: CGFloat(CGFloat((colorArray.count))*(buttonWidth + border)), height: scrollView.contentSize.height)
         
-        for index in 0...dataArray.count - 1  {
+        for index in 0...colorArray.count - 1  {
             let sgButton = UIButton.init(type: .custom)
             sgButton.tag = index
             sgButton.layer.cornerRadius = buttonWidth/2
-            sgButton.backgroundColor = dataArray[index]
+            let size = CGSize(width: 70, height: 70*0.667)
+            let image = colorArray[index].image(size)
+            sgButton.backgroundColor = UIColor(patternImage: image)
             sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
             sgButton.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: Int(hintBarHeight))
             sgButton.addTarget(self, action: #selector(colorButtonDidClick(button:)), for: .touchUpInside)

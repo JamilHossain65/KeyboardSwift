@@ -82,6 +82,11 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     }
     
     func refreshKeyboard(){
+        //clear old view
+        for view in subviews {
+            view.removeFromSuperview()
+        }
+        
         configure4Line()
         setSpecialButtonColor()
     }
@@ -143,7 +148,6 @@ extension KeyboardView{
     }
     
     func drawLineFor(row:Int, totalCol:Int, info:[Int:Int]? = [:], const:[Int:Int]? = [:]){
-        //print("frame::\(frame)")
         
         var preX = paddingX
         var preWidth:Double = 0
@@ -185,7 +189,7 @@ extension KeyboardView{
             
             keyboardButton.setTitle(letter, for: .normal)
             keyboardButton.setTitleColor(kTextColor, for: .normal)
-            keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
+            //keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
 
             keyboardButton.tag = currentButtonIndex
             addSubview(keyboardButton)
@@ -353,24 +357,15 @@ extension KeyboardView{
     }
     
     
-    func reloadColor(_ fontIndex:Int) {
+    func reloadTextColor(_ fontIndex:Int) {
         print("reload:\(fontIndex)")
-        //currentColor = kColorArray[fontIndex]
-        //kKeyboardBGColor = UIColor.init(patternImage: UIImage(named: "photo\(fontIndex + 1)")!)
-        kHintButtonColor = .clear
-        kAltButtonColor  = .clear
-        
-        kKeyButtonColor  = UIColor.clear
-        kHighlightColor  = UIColor.white
-        kTextColor       = UIColor.red
-        kTextShadowColor = UIColor.black
         refreshKeyboard()
     }
 }
 
 //MARK:- keycap view show
 extension KeyboardView {
-    func keyPopupOn(_ keyButton:UIButton){
+    func keyPopupOn(_ keyButton:UIButton) {
         let selectedLetter = currentFontLetters[currentButtonIndex % currentFontLetters.count]
         let title   = selectedLetter.lowercased()
         let jhKey   = JHkey(type: .custom)

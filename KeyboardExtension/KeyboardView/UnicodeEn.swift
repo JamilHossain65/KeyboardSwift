@@ -10,15 +10,13 @@ import UIKit
 //class UnicodeEn: NSObject {
 //}
 
-let kPatternArray:[UIColor] = [UIColor.init(patternImage: UIImage(named: "photo1")!),
-                               UIColor.init(patternImage: UIImage(named: "photo2")!),
-                               UIColor.init(patternImage: UIImage(named: "photo3")!),
-                               UIColor.init(patternImage: UIImage(named: "photo4")!),
-                               UIColor.init(patternImage: UIImage(named: "photo5")!),
-                               UIColor.init(patternImage: UIImage(named: "photo6")!),]
+let kPatternColorArray:[UIColor] = ["photo0".color(), "photo1".color(), "photo2".color(), "photo3".color(), "photo4".color(), "photo5".color(), "photo6".color(), "photo7".color(), "photo8".color()]
 
-var kColorArray:[UIColor] = kPatternArray + [.red,.green,.blue,.yellow,.cyan,.magenta,.cyan]
+let kPatternSmallColorArray:[UIColor] = ["photo0".colorSmall(), "photo1".colorSmall(), "photo2".colorSmall(), "photo3".colorSmall(), "photo4".colorSmall(), "photo5".colorSmall(), "photo6".colorSmall(), "photo7".colorSmall(), "photo8".colorSmall()]
 
+var kColorArray:[UIColor] = [.red,.green,.blue,.yellow,.cyan,.magenta,.cyan,.purple,.brown,.gray] + kPatternColorArray
+
+var kColorSmallArray:[UIColor] = [.red,.green,.blue,.yellow,.cyan,.magenta,.cyan,.purple,.brown,.gray] + kPatternSmallColorArray
 
 let kUnicodeFontArray = [kUnicodeLettersEnNormal,
                          kUnicodeLettersEnOutline,
