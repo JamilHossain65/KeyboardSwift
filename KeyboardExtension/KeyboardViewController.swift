@@ -22,6 +22,10 @@ class KeyboardViewController: UIInputViewController {
     
     var relevantContextRange:NSRange?
     
+    var fontButton   :UIButton!
+    var bgColorButton:UIButton!
+    var textColorBtn :UIButton!
+    
     private func prepareHeightConstraint() {
         guard self.heightConstraint != nil else {
             let dummyView = UILabel(frame:view.frame)
@@ -63,14 +67,32 @@ class KeyboardViewController: UIInputViewController {
         
         //https://unsplash.com/backgrounds/phone/keyboard
         //let color = getObject(kKeyBgColor) as? UIColor ?? .red
-        kKeyboardBGColor = "photo6".color()
+        kKeyboardBGColor = UIColor.init(red: 0, green: 1, blue: 1, alpha: 1) //"photo6".color()
         kHintButtonColor = .clear
         kAltButtonColor  = .clear
         
         kKeyButtonColor  = UIColor.clear
         kHighlightColor  = UIColor.white
-        kTextColor       = .red
+        kKeyboardTextColor = .red
         kTextShadowColor = UIColor.black
+        
+        if let _fontName = getObject(kKeyAlphabetFont) as? [String] {
+            kTextFontAlphabet = _fontName
+        } else {
+            kTextFontAlphabet = kUnicodeFontArray[0]
+        }
+        
+        if let _bgColor:UIColor = UserDefaults.standard.keyboardBgColor {
+            kKeyboardBGColor = _bgColor
+        } else if let _imageName = getObject(kKeyBgImageName) as? String {
+            kKeyboardBGColor = _imageName.color()
+        }
+        
+        if let _keyboardTextColor:UIColor = UserDefaults.standard.keyboardTextColor {
+            kKeyboardTextColor = _keyboardTextColor
+        } else if let _textColorImageName = getObject(kKeyTextColor) as? String {
+            kKeyboardTextColor = _textColorImageName.color()
+        }
         
         var  mFrame        = view.frame
         mFrame.origin.y    = hintBarHeight
@@ -92,41 +114,53 @@ class KeyboardViewController: UIInputViewController {
         hintBarManager.addSuggestionBar(parentView: inputView, txtView: self.textDocumentProxy)
         
         //add a button on right side
-        let colorButton = UIButton(type: .custom)
-        colorButton.setTitle("", for: .normal)
-        colorButton.frame  = CGRect(x: 5, y: 0, width: 30, height: 30)
-        colorButton.center = CGPoint(x: colorButton.center.x, y: hintBarHeight/2)
-        colorButton.layer.cornerRadius = colorButton.frame.height/2
-        colorButton.addTarget(self, action: #selector(colorButtonPressed), for: .touchUpInside)
-        colorButton.setBackgroundImage(UIImage(named: "color_band"), for: .normal)
-        
-        view.addSubview(colorButton)
+        bgColorButton = UIButton(type: .custom)
+        bgColorButton.setTitle("bg", for: .normal)
+        bgColorButton.setTitleColor(kKeyboardTextColor, for: .normal)
+        bgColorButton.frame  = CGRect(x: 5, y: 0, width: 30, height: 30)
+        bgColorButton.center = CGPoint(x: bgColorButton.center.x, y: hintBarHeight/2)
+        bgColorButton.layer.cornerRadius = bgColorButton.frame.height/2
+        bgColorButton.addTarget(self, action: #selector(colorButtonPressed), for: .touchUpInside)
+        //bgColorButton.setBackgroundImage(UIImage(named: "photo0"), for: .normal)
+        bgColorButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        bgColorButton.layer.cornerRadius = bgColorButton.frame.height/2
+        bgColorButton.backgroundColor = "photo0".colorSmall(30)
+        view.addSubview(bgColorButton)
         
         //add a button on right side
-        let textColorBtn = UIButton(type: .custom)
-        textColorBtn.setTitle("T", for: .normal)
+        textColorBtn = UIButton(type: .custom)
+        textColorBtn.setTitle("txt", for: .normal)
+        textColorBtn.setTitleColor(kKeyboardTextColor, for: .normal)
         textColorBtn.frame  = CGRect(x: 40, y: 0, width: 30, height: 30)
         textColorBtn.center = CGPoint(x: textColorBtn.center.x, y: hintBarHeight/2)
         textColorBtn.layer.cornerRadius = textColorBtn.frame.height/2
         textColorBtn.addTarget(self, action: #selector(textColorButtonPressed), for: .touchUpInside)
+        textColorBtn.titleLabel?.adjustsFontSizeToFitWidth = true
         textColorBtn.backgroundColor = "photo0".colorSmall(30)
         view.addSubview(textColorBtn)
         
         //add a button on left side
-        let fontButton = UIButton(type: .custom)
+        fontButton = UIButton(type: .custom)
         fontButton.frame = CGRect(x: UIScreen.main.bounds.width - 35, y: 0, width: 30, height: 30)
-        fontButton.setTitle("ᗩ𝕒", for: .normal)
-        fontButton.setTitleColor(.black, for: .normal)
+        fontButton.setTitle("font", for: .normal)
+        fontButton.setTitleColor(kKeyboardTextColor, for: .normal)
         fontButton.center = CGPoint(x: fontButton.center.x, y: hintBarHeight/2)
         fontButton.layer.cornerRadius = fontButton.frame.height/2
         fontButton.addTarget(self, action: #selector(fontButtonPressed), for: .touchUpInside)
         fontButton.backgroundColor = .white
+        fontButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        fontButton.backgroundColor = "photo0".colorSmall(30)
         view.addSubview(fontButton)
+        
+        //set font button selected initialy
+        resetColor(fontButton as Any)
     }
     
     @objc func fontButtonPressed(_ sender: Any) {
         print("fontButtonPressed")
         openContainerApp()
+        resetColor(sender)
+        
         keyboard = KEYBOARD_TYPE.FONT
         
         guard let inputView = inputView else { return }
@@ -139,6 +173,7 @@ class KeyboardViewController: UIInputViewController {
     @objc func colorButtonPressed(_ sender: Any) {
         print("colorButtonPressed")
         openContainerApp()
+        resetColor(sender)
         
         keyboard = KEYBOARD_TYPE.COLOR
         
@@ -146,17 +181,34 @@ class KeyboardViewController: UIInputViewController {
         inputView.backgroundColor = kKeyboardBGColor
 
         //set suggestion view
-        HintBarManager.shared.refreshColor(scrollView: suggestionBarScrollView, colorArray: kColorSmallArray)
+        let colorArray = Color.shared.colorList()
+        let colorList:[UIColor] = colorArray.map({ $0.colorSmall})
+        
+        HintBarManager.shared.refreshColor(scrollView: suggestionBarScrollView, colorArray: colorList)
     }
     
     @objc func textColorButtonPressed(_ sender: Any) {
         print("textColorButtonPressed")
         openContainerApp()
+        resetColor(sender)
         keyboard = KEYBOARD_TYPE.TEXT_COLOR
-        let button = sender as! UIButton
-        kTextColor = kColorArray[button.tag]
-        keyboardView.reloadTextColor(button.tag)
+        
+        let colorArray = Color.shared.colorList()
+        let colorList:[UIColor] = colorArray.map({ $0.colorSmall})
+        
+        HintBarManager.shared.refreshColor(scrollView: suggestionBarScrollView, colorArray: colorList)
     }
+    
+    func resetColor(_ sender:Any) {
+        bgColorButton.backgroundColor = .lightGray
+        textColorBtn .backgroundColor = .lightGray
+        fontButton   .backgroundColor = .lightGray
+        
+        let button = sender as! UIButton
+        button.backgroundColor = "photo0".colorSmall(30)
+    }
+    
+    
     
     func openContainerApp() {
         let url = URL(string: "SmartFonts://")
@@ -264,14 +316,34 @@ extension KeyboardViewController: HintBarDelegate {
         case .COLOR:
             kKeyboardBGColor = kColorArray[button.tag]
             inputView?.backgroundColor = kKeyboardBGColor
-            //setObject(kKeyboardBGColor, key: kKeyBgColor)
+            print("pattern color:::\(kKeyboardBGColor)")
+            
+            if let _ = kKeyboardBGColor.cgColor.pattern {
+                let colorArray = Color.shared.colorList()
+                let color:Color = colorArray[button.tag]
+                setObject(color.imageName, key: kKeyBgImageName)
+            } else {
+                UserDefaults.standard.keyboardBgColor = kKeyboardBGColor
+            }
+            
             break
             
         case .TEXT_COLOR:
-            kTextColor = kColorArray[button.tag]
+            kKeyboardTextColor = kColorArray[button.tag]
             keyboardView.reloadTextColor(button.tag)
-            //setObject(kTextColor, key: kKeyTextColor)
             
+            if let _ = kKeyboardTextColor.cgColor.pattern {
+                let colorArray = Color.shared.colorList()
+                let color:Color = colorArray[button.tag]
+                setObject(color.imageName, key: kKeyTextColor)
+            } else {
+                UserDefaults.standard.keyboardTextColor = kKeyboardTextColor
+            }
+            
+            //set setting button text color
+            bgColorButton.setTitleColor(kKeyboardTextColor, for: .normal)
+            textColorBtn .setTitleColor(kKeyboardTextColor, for: .normal)
+            fontButton   .setTitleColor(kKeyboardTextColor, for: .normal)
             break
             
         default:
@@ -281,16 +353,16 @@ extension KeyboardViewController: HintBarDelegate {
     
     func didSelectHint(_ sender: Any) {
         
-        if let _inputView = inputView {
-            for view in _inputView.subviews {
-                //view.removeFromSuperview()
-            }
-        }
+//        if let _inputView = inputView {
+//            for view in _inputView.subviews {
+//                view.removeFromSuperview()
+//            }
+//        }
         
         let button = sender as! UIButton
         keyboard   = KEYBOARD_TYPE.FONT
-        //kTextFont  = kUnicodeFontNameArray[button.tag]
-        //setObject(kTextFont, key: kKeyTextFont)
+        kTextFontAlphabet  = kUnicodeFontArray[button.tag]
+        setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
         keyboardView.reloadFont(button.tag)
         keyboardView.backgroundColor = kKeyboardBGColor
     }

@@ -60,7 +60,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
         
         //draw
         //self.configure5Line()
-        currentFontLetters = kUnicodeFontArray[0]
+        currentFontLetters = kTextFontAlphabet  //kUnicodeFontArray[0]
         refreshKeyboard()
     }
     
@@ -188,7 +188,7 @@ extension KeyboardView{
             }
             
             keyboardButton.setTitle(letter, for: .normal)
-            keyboardButton.setTitleColor(kTextColor, for: .normal)
+            keyboardButton.setTitleColor(kKeyboardTextColor, for: .normal)
             //keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
 
             keyboardButton.tag = currentButtonIndex
@@ -351,8 +351,8 @@ extension KeyboardView{
     }
     
     func reloadFont(_ fontIndex:Int) {
-        print("reload:\(fontIndex)")
         currentFontLetters = kUnicodeFontArray[fontIndex]
+        //print("refresh font:\(currentFontLetters)")
         refreshKeyboard()
     }
     
@@ -366,6 +366,8 @@ extension KeyboardView{
 //MARK:- keycap view show
 extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton) {
+        if currentFontLetters.count <= 0 { return }
+        
         let selectedLetter = currentFontLetters[currentButtonIndex % currentFontLetters.count]
         let title   = selectedLetter.lowercased()
         let jhKey   = JHkey(type: .custom)
@@ -374,7 +376,7 @@ extension KeyboardView {
         jhKey.delegate = self
         jhKey.backgroundColor = .clear
         jhKey.setTitle(title, for: .normal)
-        jhKey.setTitleColor(kTextColor, for: .normal)
+        jhKey.setTitleColor(kKeyboardTextColor, for: .normal)
         jhKey.setTitleShadowColor(kTextShadowColor, for: .normal)
         jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         addSubview(jhKey)

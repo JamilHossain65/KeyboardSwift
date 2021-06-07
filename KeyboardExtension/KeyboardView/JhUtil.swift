@@ -18,9 +18,10 @@ let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
 
-let kKeyBgColor   = "kKeyBgColor"
-let kKeyTextColor = "kKeyTextColor"
-let kKeyTextFont  = "kKeyTextFont"
+//let kKeyBgColor   = "kKeyBgColor"
+let kKeyBgImageName  = "kKeyBgImageName"
+let kKeyTextColor    = "kKeyTextColor"
+let kKeyAlphabetFont = "kKeyAlphabetFont"
 
 enum KEYBOARD_TYPE:Int {
     case FONT
@@ -32,9 +33,9 @@ var keyboard = KEYBOARD_TYPE.FONT
 
 var kKeyButtonColor  = UIColor.white
 var kHighlightColor  = UIColor.white
-var kTextColor       = UIColor.black
+var kKeyboardTextColor = UIColor.black
 var kTextShadowColor = UIColor.black
-var kTextFont        = "Normal"
+var kTextFontAlphabet:[String] = []
 
 
 var kAltButtonColor  = UIColor.init(red: 172/255, green: 176/255, blue: 188/255, alpha: 1)
@@ -50,6 +51,19 @@ let kRowKeys = [10,9,9,4] //copy the same array in JHKey class //todo refctor th
 
 let hintBarHeight:CGFloat = 44 //36;
 
+func getBgColorPatternName(_ colorArray:[UIColor]) -> String? {
+    
+    for color in colorArray {
+        if let isPatternColor = color.cgColor.pattern {
+            if "\(kKeyboardBGColor)".contains("photo") {
+                print("contains :::photo")
+            }
+        }
+    }
+    return nil
+}
+
+//read and write userdefault data
 func setObject(_ value:Any, key:String) {
     UserDefaults.standard.setValue(value, forKey: key)
 }
