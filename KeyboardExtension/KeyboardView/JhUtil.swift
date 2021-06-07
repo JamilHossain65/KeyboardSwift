@@ -51,18 +51,6 @@ let kRowKeys = [10,9,9,4] //copy the same array in JHKey class //todo refctor th
 
 let hintBarHeight:CGFloat = 44 //36;
 
-func getBgColorPatternName(_ colorArray:[UIColor]) -> String? {
-    
-    for color in colorArray {
-        if let isPatternColor = color.cgColor.pattern {
-            if "\(kKeyboardBGColor)".contains("photo") {
-                print("contains :::photo")
-            }
-        }
-    }
-    return nil
-}
-
 //read and write userdefault data
 func setObject(_ value:Any, key:String) {
     UserDefaults.standard.setValue(value, forKey: key)

@@ -207,9 +207,7 @@ class KeyboardViewController: UIInputViewController {
         let button = sender as! UIButton
         button.backgroundColor = "photo0".colorSmall(30)
     }
-    
-    
-    
+
     func openContainerApp() {
         let url = URL(string: "SmartFonts://")
         let selectorOpenURL = sel_registerName("openURL:")
@@ -311,16 +309,16 @@ extension KeyboardViewController: HintBarDelegate {
     func didSelectColor(_ sender: Any) {
         
         let button = sender as! UIButton
+        let colorArray = Color.shared.colorList()
+        let color:Color = colorArray[button.tag]
         
         switch keyboard {
         case .COLOR:
-            kKeyboardBGColor = kColorArray[button.tag]
+            kKeyboardBGColor = color.color
             inputView?.backgroundColor = kKeyboardBGColor
             print("pattern color:::\(kKeyboardBGColor)")
             
-            if let _ = kKeyboardBGColor.cgColor.pattern {
-                let colorArray = Color.shared.colorList()
-                let color:Color = colorArray[button.tag]
+            if color.colorType == .PATTERN {
                 setObject(color.imageName, key: kKeyBgImageName)
             } else {
                 UserDefaults.standard.keyboardBgColor = kKeyboardBGColor
@@ -329,12 +327,10 @@ extension KeyboardViewController: HintBarDelegate {
             break
             
         case .TEXT_COLOR:
-            kKeyboardTextColor = kColorArray[button.tag]
+            kKeyboardTextColor = color.color //kColorArray[button.tag]
             keyboardView.reloadTextColor(button.tag)
             
-            if let _ = kKeyboardTextColor.cgColor.pattern {
-                let colorArray = Color.shared.colorList()
-                let color:Color = colorArray[button.tag]
+            if color.colorType == .PATTERN {
                 setObject(color.imageName, key: kKeyTextColor)
             } else {
                 UserDefaults.standard.keyboardTextColor = kKeyboardTextColor

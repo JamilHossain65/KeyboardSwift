@@ -32,7 +32,9 @@ class HintBarManager: NSObject {
             break
             
         case .COLOR:
-            refreshColor(scrollView: suggestionBarScrollView, colorArray: kColorSmallArray)
+            let colorArray = Color.shared.colorList()
+            let colorList:[UIColor] = colorArray.map({ $0.colorSmall})
+            refreshColor(scrollView: suggestionBarScrollView, colorArray: colorList)
             break
             
         default:
@@ -102,7 +104,7 @@ class HintBarManager: NSObject {
             sgButton.tag = index
             sgButton.layer.cornerRadius = buttonWidth/2
             let size = CGSize(width: 70, height: 70*0.667)
-            let image = colorArray[index].image1(size)
+            let image = colorArray[index].image(size)
             sgButton.backgroundColor = UIColor(patternImage: image)
             sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
             sgButton.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: Int(hintBarHeight))
