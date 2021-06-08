@@ -316,13 +316,15 @@ extension KeyboardViewController: HintBarDelegate {
         case .COLOR:
             kKeyboardBGColor = color.color
             inputView?.backgroundColor = kKeyboardBGColor
-            print("pattern color:::\(kKeyboardBGColor)")
+            //print("pattern color:::\(kKeyboardBGColor)")
             
             if color.colorType == .PATTERN {
                 setObject(color.imageName, key: kKeyBgImageName)
             } else {
                 UserDefaults.standard.keyboardBgColor = kKeyboardBGColor
             }
+            
+            keyboardView.backgroundColor = kKeyboardBGColor
             
             break
             

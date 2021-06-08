@@ -54,7 +54,6 @@ class HintBarManager: NSObject {
         let screenWidth  = UIScreen.main.bounds.size.width - 2*border
         let buttonWidth  = screenWidth/3
         
-        
         //Keyboard bar
         scrollView.frame = CGRect(x:0, y:0, width: Int(UIScreen.main.bounds.size.width), height:Int(hintBarHeight))
         scrollView.backgroundColor  = .clear
@@ -73,6 +72,7 @@ class HintBarManager: NSObject {
             sgButton.setTitleColor(.black, for: .normal)
             sgButton.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: Int(hintBarHeight))
             sgButton.addTarget(self, action: #selector(suggestionButtonDidClick(button:)), for: .touchUpInside)
+            sgButton.setTitleColor(kKeyboardTextColor, for: .normal)
             scrollView.addSubview(sgButton)
         }
     }

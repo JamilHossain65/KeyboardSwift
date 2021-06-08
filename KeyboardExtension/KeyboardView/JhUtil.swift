@@ -34,9 +34,8 @@ var keyboard = KEYBOARD_TYPE.FONT
 var kKeyButtonColor  = UIColor.white
 var kHighlightColor  = UIColor.white
 var kKeyboardTextColor = UIColor.black
-var kTextShadowColor = UIColor.black
+var kTextShadowColor   = UIColor.black
 var kTextFontAlphabet:[String] = []
-
 
 var kAltButtonColor  = UIColor.init(red: 172/255, green: 176/255, blue: 188/255, alpha: 1)
 var kKeyboardBGColor = UIColor.init(red: 209/255, green: 212/255, blue: 219/255, alpha: 1)
