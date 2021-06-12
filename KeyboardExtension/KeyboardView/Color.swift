@@ -22,7 +22,7 @@ class Color: NSObject {
     
     func colorList() -> [Color] {
         var colorPatternArray:[Color] = []
-        for i in 0...8 {
+        for i in 0...20 {
             let color = Color()
             color.imageName = "photo\(i)"
             color.colorType = ColorType.PATTERN
