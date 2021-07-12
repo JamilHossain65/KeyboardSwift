@@ -10,6 +10,9 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
+    var recordButton : UIButton!
+    var playButton : UIButton!
+    let audioManager = AudioManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,63 @@ class HomeViewController: UIViewController {
         textView.layer.borderColor  = UIColor.lightGray.cgColor
         
         textView.becomeFirstResponder()
+        
+        //record audio
+        audioManager.initAudio()
+        audioManager.delegate = self
+        loadRecordingUI()
+        playSoundUI()
+    }
+    
+    func loadRecordingUI(){
+        recordButton = UIButton(frame: CGRect(x: 25, y: 220, width: 120, height: 40))
+        recordButton.setTitle("Start Record", for: .normal)
+        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
+        view.addSubview(recordButton)
+        recordButton.backgroundColor = .red
+    }
+    
+    func playSoundUI(){
+        playButton = UIButton(frame: CGRect(x: 170, y: 220, width: 120, height: 40))
+        playButton.setTitle("Play", for: .normal)
+        playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
+        view.addSubview(playButton)
+        playButton.backgroundColor = .red
+    }
+    
+    @objc func recordTapped(){
+        audioManager.recordTapped()
+        recordButton.isSelected = !recordButton.isSelected
+        recordButton.setTitle("Start Record", for: .normal)
+        recordButton.setTitle("Stop Record", for: .selected)
+        recordButton.backgroundColor = recordButton.isSelected ? .green: .red
+    }
+    
+    @objc func playButtonTapped(){
+//        audioManager.playSound()
+//        playButton.setTitle("Stop", for: .normal)
+        
+        convertToText()
+    }
+    
+    func convertToText(){
+        let audioManager = AudioManager()
+        audioManager.delegate = self
+        let speechModel  = SpeechModel()
+        speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
+        
+        view.showProgressHUD()
+        speechModel.doTranslateRequest(completion: {(success,errorModel) in
+            self.view.hideProgressHUD()
+            self.textView.text += " \(speechModel.convertedText)"
+            print("text::\(speechModel.convertedText)")
+        })
     }
 }
 
+extension HomeViewController:AudioManagerDelegate {
+    func recordDidFinish() {
+        print("convert start.....")
+        convertToText()
+    }
+}

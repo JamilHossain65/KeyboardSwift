@@ -1,0 +1,10 @@
+use_frameworks!
+target 'KeyboardSwift' do
+  # Pods for Event
+  pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireImage'
+  pod 'Alamofire-SwiftyJSON'
+  pod 'MBProgressHUD'
+  pod 'CryptoSwift'
+  pod 'DropDown'
+end
