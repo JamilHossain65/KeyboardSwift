@@ -316,6 +316,10 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func gotoNextKeyboard(_ button: UIButton){
         button.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
     }
+    
+    func voiceButtonTapped(_ voiceButton: UIButton){
+        print("voice button tapped")
+    }
 }
 
 extension KeyboardViewController: HintBarDelegate {

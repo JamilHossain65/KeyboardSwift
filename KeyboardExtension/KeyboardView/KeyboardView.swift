@@ -11,6 +11,7 @@ protocol KeyboardViewDelegate: class {
     func insertCharacter(_ newCharacter: String)
     func deleteCharacter(_ newCharacter: String)
     func gotoNextKeyboard(_ nextButton: UIButton)
+    func voiceButtonTapped(_ voiceButton: UIButton)
 //  func deleteCharacterBeforeCursor()
 //  func characterBeforeCursor() -> String?
 }
@@ -110,9 +111,9 @@ extension KeyboardView{
         deleteButtonIndex = 27
         altButtonIndex    = 28
         nextButtonIndex   = 29
-        spaceButtonIndex  = 30
-        returnButtonIndex = 31
-        voiceButtonIndex  = -1
+        voiceButtonIndex  = 30
+        spaceButtonIndex  = 31
+        returnButtonIndex = 32
         currentButtonIndex = 0
         
         for view in subviews {
@@ -126,7 +127,7 @@ extension KeyboardView{
         drawLineFor(row: 0, totalCol: kRowKeys[0]/*10*/)
         drawLineFor(row: 1, totalCol: kRowKeys[1]/*9*/, const: [0:15, 9:15])
         drawLineFor(row: 2, totalCol: kRowKeys[2]/*9*/,  info: [0:40, 8:40], const: [1:7, 8:7])
-        drawLineFor(row: 3, totalCol: kRowKeys[3]/*4*/,  info: [0:40, 1:30, 3:80])
+        drawLineFor(row: 3, totalCol: kRowKeys[3]/*4*/,  info: [0:40, 1:30,2:30,4:80])
     }
     
     func configure5Line(){
@@ -342,6 +343,10 @@ extension KeyboardView{
             break
         case voiceButtonIndex:
             self.voiceButton = keyboardButton
+            keyboardButton.setTitle("", for: .normal)
+            keyboardButton.setImage(UIImage(named: "record_on.png"), for: .normal)
+            keyboardButton.setImage(UIImage(named: "record_off.png"), for: .selected)
+            keyboardButton.highlightBackgroundColor = kHighlightColor
             break
             
         default:
@@ -420,7 +425,9 @@ extension KeyboardView {
                 sender.defaultBackgroundColor = kAltButtonColor
             }
             
-        } else if(sender.tag == deleteButtonIndex) {
+        }else if(sender.tag == voiceButtonIndex) {
+            delegate?.voiceButtonTapped(sender)
+        }else if(sender.tag == deleteButtonIndex) {
             delegate?.deleteCharacter("")
         } else if(sender.tag == nextButtonIndex) {
             delegate?.gotoNextKeyboard(sender)

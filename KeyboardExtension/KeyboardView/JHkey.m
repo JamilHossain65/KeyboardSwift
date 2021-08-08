@@ -54,7 +54,7 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
 
 -(void)checkHintPosition:(UIButton*)keyButton{
     //let kRowKeys = [10,9,9,4]
-    NSArray *rowKeys = [NSArray arrayWithObjects:@10,@9,@9,@4, nil];
+    NSArray *rowKeys = [NSArray arrayWithObjects:@10,@9,@9,@5, nil];
     int value = 0;
     int index = 0;
     long tagValue = keyButton.tag + 1;
