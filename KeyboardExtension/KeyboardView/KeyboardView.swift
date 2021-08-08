@@ -395,11 +395,11 @@ extension KeyboardView:JHkeyDelegate {
 
 extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
-        print("sender.tag\(sender.tag), isSelected:\(sender.isSelected)")
+        //print("sender.tag\(sender.tag), isSelected:\(sender.isSelected)")
         
         UIDevice.current.playInputClick()
         if(sender.tag == shiftButtonIndex) {
-            print("sender.isSelected::\(sender.isSelected)")
+            //print("sender.isSelected::\(sender.isSelected)")
             sender.isSelected = !sender.isSelected
             shiftButton = sender
             

@@ -78,7 +78,7 @@ class AudioManager: NSObject,AVAudioRecorderDelegate {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
-
+            
         } catch {
             finishRecording(success: false)
         }

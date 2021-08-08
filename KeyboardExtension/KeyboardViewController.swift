@@ -25,6 +25,10 @@ class KeyboardViewController: UIInputViewController {
     var fontButton   :UIButton!
     var bgColorButton:UIButton!
     var textColorBtn :UIButton!
+    var floatingButtonView : UIView!
+    var coutTime   = 0
+    var countLimit = 5
+    var timer:Timer?
     
     private func prepareHeightConstraint() {
         guard self.heightConstraint != nil else {
@@ -61,20 +65,62 @@ class KeyboardViewController: UIInputViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    //MARK: SETTING VIEW METHODS
+    @objc func showSettingView() {
+        print("not writing....")
+        DispatchQueue.main.async {
+            self.floatingButtonView.isHidden = false
+        }
+        
+        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
+    }
+    
+    func hideSettingView() {
+        DispatchQueue.main.async {
+            self.floatingButtonView.isHidden = true
+        }
+        
+        //set word suggestion view
+        for view in suggestionBarScrollView.subviews{
+            view.removeFromSuperview()
+        }
+        
+        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: ["Hi","I","How","We"])
+        coutTime = 0
+        
+        if let _timer = timer {
+            _timer.invalidate()
+        }
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.checkWriting), userInfo: nil, repeats: true)
+            
+    }
+    
+    @objc func checkWriting(){
+        
+        coutTime += 1
+        print("coutTime::\(coutTime)")
+        if coutTime >= countLimit {
+            timer?.invalidate()
+            coutTime = 0
+            showSettingView()
+        }
     }
     
     func showView() {
         
         //https://unsplash.com/backgrounds/phone/keyboard
-        //let color = getObject(kKeyBgColor) as? UIColor ?? .red
-        kKeyboardBGColor = UIColor.init(red: 0, green: 1, blue: 1, alpha: 1) //"photo6".color()
-        kHintButtonColor = .clear
-        kAltButtonColor  = .clear
+        kKeyboardBGColor = Color.shared.color(209,212,218) 
+        kAltButtonColor  = Color.shared.color(171,177,188)
         
-        kKeyButtonColor  = UIColor.clear
-        kHighlightColor  = UIColor.white
-        kKeyboardTextColor = .red
-        kTextShadowColor = UIColor.black
+        kHintButtonColor   = .brown
+        kKeyButtonColor    = .white
+        kHighlightColor    = .white
+        kKeyboardTextColor = .black
+        kTextShadowColor   = .black
         
         if let _fontName = getObject(kKeyAlphabetFont) as? [String] {
             kTextFontAlphabet = _fontName
@@ -111,51 +157,62 @@ class KeyboardViewController: UIInputViewController {
         //set word suggestion view
         let hintBarManager = HintBarManager.shared
         hintBarManager.delegate = self
-        hintBarManager.addSuggestionBar(parentView: inputView, txtView: self.textDocumentProxy)
+        hintBarManager.addSuggestionBar(parentView: inputView, txtView: textDocumentProxy)
+        
+        
+        if let _floatingButtonView = floatingButtonView {
+            _floatingButtonView.removeFromSuperview()
+        }
+        floatingButtonView = UIView()
+        floatingButtonView.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        floatingButtonView.center = CGPoint(x: view.center.x, y: hintBarHeight/2)
+        floatingButtonView.backgroundColor = .clear
+        view.addSubview(floatingButtonView)
         
         //add a button on right side
         bgColorButton = UIButton(type: .custom)
         bgColorButton.setTitle("bg", for: .normal)
         bgColorButton.setTitleColor(kKeyboardTextColor, for: .normal)
-        bgColorButton.frame  = CGRect(x: 5, y: 0, width: 30, height: 30)
-        bgColorButton.center = CGPoint(x: bgColorButton.center.x, y: hintBarHeight/2)
+        bgColorButton.frame  = CGRect(x: 0, y: 0, width: 30, height: 30)
+        //bgColorButton.center = CGPoint(x: bgColorButton.center.x, y: hintBarHeight/2)
         bgColorButton.layer.cornerRadius = bgColorButton.frame.height/2
         bgColorButton.addTarget(self, action: #selector(colorButtonPressed), for: .touchUpInside)
         //bgColorButton.setBackgroundImage(UIImage(named: "photo0"), for: .normal)
         bgColorButton.titleLabel?.adjustsFontSizeToFitWidth = true
         bgColorButton.layer.cornerRadius = bgColorButton.frame.height/2
         bgColorButton.backgroundColor = "photo0".colorSmall(30)
-        view.addSubview(bgColorButton)
+        floatingButtonView.addSubview(bgColorButton)
         
         //add a button on right side
         textColorBtn = UIButton(type: .custom)
         textColorBtn.setTitle("txt", for: .normal)
         textColorBtn.setTitleColor(kKeyboardTextColor, for: .normal)
-        textColorBtn.frame  = CGRect(x: 40, y: 0, width: 30, height: 30)
-        textColorBtn.center = CGPoint(x: textColorBtn.center.x, y: hintBarHeight/2)
+        textColorBtn.frame  = CGRect(x: 35, y: 0, width: 30, height: 30)
+        //textColorBtn.center = CGPoint(x: textColorBtn.center.x, y: hintBarHeight/2)
         textColorBtn.layer.cornerRadius = textColorBtn.frame.height/2
         textColorBtn.addTarget(self, action: #selector(textColorButtonPressed), for: .touchUpInside)
         textColorBtn.titleLabel?.adjustsFontSizeToFitWidth = true
         textColorBtn.backgroundColor = "photo0".colorSmall(30)
-        view.addSubview(textColorBtn)
+        floatingButtonView.addSubview(textColorBtn)
         
         //add a button on left side
         fontButton = UIButton(type: .custom)
-        fontButton.frame = CGRect(x: UIScreen.main.bounds.width - 35, y: 0, width: 30, height: 30)
+        fontButton.frame = CGRect(x: 70, y: 0, width: 30, height: 30)
         fontButton.setTitle("font", for: .normal)
         fontButton.setTitleColor(kKeyboardTextColor, for: .normal)
-        fontButton.center = CGPoint(x: fontButton.center.x, y: hintBarHeight/2)
+        //fontButton.center = CGPoint(x: fontButton.center.x, y: hintBarHeight/2)
         fontButton.layer.cornerRadius = fontButton.frame.height/2
         fontButton.addTarget(self, action: #selector(fontButtonPressed), for: .touchUpInside)
         fontButton.backgroundColor = .white
         fontButton.titleLabel?.adjustsFontSizeToFitWidth = true
         fontButton.backgroundColor = "photo0".colorSmall(30)
-        view.addSubview(fontButton)
+        floatingButtonView.addSubview(fontButton)
         
         //set font button selected initialy
         resetColor(fontButton as Any)
     }
     
+    //MARK: SETTING BUTTON ACTION
     @objc func fontButtonPressed(_ sender: Any) {
         print("fontButtonPressed")
         openContainerApp()
@@ -208,6 +265,7 @@ class KeyboardViewController: UIInputViewController {
         button.backgroundColor = "photo0".colorSmall(30)
     }
 
+    //MARK: OPEN CONTAINER APP
     func openContainerApp() {
         let url = URL(string: "SmartFonts://")
         let selectorOpenURL = sel_registerName("openURL:")
@@ -235,7 +293,6 @@ class KeyboardViewController: UIInputViewController {
     
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
-        
         var textColor: UIColor
         let proxy = self.textDocumentProxy
         if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
@@ -243,61 +300,17 @@ class KeyboardViewController: UIInputViewController {
         } else {
             textColor = UIColor.black
         }
-        //self.nextKeyboardButton.setTitleColor(textColor, for: [])
-        
-        var relevantContext:NSString;
-        /*
-        UITextView *myTextView = (UITextView*)self.textView;
-        UITextPosition *caretPosition = myTextView.selectedTextRange.start;
-        UITextRange *inputRange = [myTextView textRangeFromPosition:myTextView.beginningOfDocument
-                                                            toPosition:caretPosition];
-        
-        */
-        //var inputText:String = self.textView.documentContextBeforeInput ?? "" //[myTextView textInRange:inputRange];
-        
-        //print("inputText::\(textInput.)")
-        
-        /*
-        //var lastWordRange:Range = [inputText rangeOfString:" " options:NSBackwardsSearch];
-        
-        var lastWordRange:NSRange = inputText.range(of: " ", options: .backwards)
-        
-        if (lastWordRange.location == NSNotFound) {
-            relevantContext = inputText as NSString;
-            self.relevantContextRange = NSRange(location: 0, length: inputText.length);
-        } else {
-            let location = lastWordRange.location + 1;
-            relevantContext = inputText.substring(to: location) as NSString;
-            self.relevantContextRange = NSMakeRange(location, inputText.length - location);
-            
-        }
- */
-        
-//        NSLog(@"context:%@",relevantContext);
-//        NSLog(@"range:(%ld,%ld)",self.relevantContextRange.location,self.relevantContextRange.length);
-//        if([self.delegate respondsToSelector:@selector(customKeyboard:currentContext:)]){
-//            [self.delegate customKeyboard:self currentContext:relevantContext];
-//        }
     }
-    
-    /*
-    func draw(_ rect: CGRect) {
-        print("rect")
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 32)]
-        let attributedString = NSAttributedString(string: "test", attributes: attrs)
-        attributedString.draw(in: rect)
-    }
-    */
-
 }
 
 extension KeyboardViewController: KeyboardViewDelegate {
     func deleteCharacter(_ newCharacter: String) {
-        self.textDocumentProxy.deleteBackward()
+        textDocumentProxy.deleteBackward()
     }
     
     func insertCharacter(_ newCharacter: String) {
-        self.textDocumentProxy.insertText(newCharacter)
+        textDocumentProxy.insertText(newCharacter)
+        hideSettingView()
     }
     
     func gotoNextKeyboard(_ button: UIButton){

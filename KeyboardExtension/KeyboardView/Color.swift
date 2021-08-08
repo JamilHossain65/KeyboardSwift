@@ -22,14 +22,6 @@ class Color: NSObject {
     
     func colorList() -> [Color] {
         var colorPatternArray:[Color] = []
-        for i in 0...20 {
-            let color = Color()
-            color.imageName = "photo\(i)"
-            color.colorType = ColorType.PATTERN
-            color.color = color.imageName.color()
-            color.colorSmall = color.imageName.colorSmall()
-            colorPatternArray.append(color)
-        }
         
         for _color in colorArray() {
             let color = Color()
@@ -39,12 +31,21 @@ class Color: NSObject {
             colorPatternArray.append(color)
         }
         
+        for i in 0...20 {
+            let color = Color()
+            color.imageName = "photo\(i)"
+            color.colorType = ColorType.PATTERN
+            color.color = color.imageName.color()
+            color.colorSmall = color.imageName.colorSmall()
+            colorPatternArray.append(color)
+        }
+        
         return colorPatternArray
     }
     
     func colorArray() -> [UIColor] {
         let colorArray:[UIColor] = [
-            color(0),color(152,1,0),color(230,184,175),color(221,126,107),color(204,65,38),color(166,28,0), color(133,32,12),color(91,15,0),
+            color(0),color(209,212,218),color(171,177,188), color(152,1,0),color(230,184,175),color(221,126,107),color(204,65,38),color(166,28,0), color(133,32,12),color(91,15,0),
             color(67), color(255,2,1), color(244,204,204), color(234,153,153), color(224,102,102), color(204,1,0), color(153,1,0), color(102,0,0),
             
             color(102), color(255,153,0), color(252,229,205), color(249,203,156),color(246,178,107), color(230,145,55), color(180,95,6), color(120,63,4),

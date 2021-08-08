@@ -48,8 +48,9 @@ class HomeViewController: UIViewController {
         recordButton = UIButton(frame: CGRect(x: 25, y: 220, width: 120, height: 40))
         recordButton.setTitle("Start Record", for: .normal)
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-        view.addSubview(recordButton)
         recordButton.backgroundColor = .red
+        restartSpeech(sec:5)
+        view.addSubview(recordButton)
     }
     
     func playSoundUI(){
@@ -61,11 +62,19 @@ class HomeViewController: UIViewController {
     }
     
     @objc func recordTapped(){
+        stopRecord()
+        
         audioManager.recordTapped()
         recordButton.isSelected = !recordButton.isSelected
         recordButton.setTitle("Start Record", for: .normal)
         recordButton.setTitle("Stop Record", for: .selected)
         recordButton.backgroundColor = recordButton.isSelected ? .green: .red
+    }
+    
+    func stopRecord(){
+        if audioManager.audioRecorder != nil {
+            audioManager.audioRecorder.stop()
+        }
     }
     
     @objc func playButtonTapped(){
@@ -81,9 +90,9 @@ class HomeViewController: UIViewController {
         let speechModel  = SpeechModel()
         speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
         
-        view.showProgressHUD()
+        //view.showProgressHUD()
         speechModel.doTranslateRequest(completion: {(success,errorModel) in
-            self.view.hideProgressHUD()
+            //self.view.hideProgressHUD()
             self.textView.text += " \(speechModel.convertedText)"
             print("text::\(speechModel.convertedText)")
         })
@@ -91,8 +100,17 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController:AudioManagerDelegate {
-    func recordDidFinish() {
+    func recordDidFinish(){
         print("convert start.....")
         convertToText()
+    }
+    
+    func restartSpeech(sec:Double){
+        self.perform(#selector(resetSpeech), with: nil, afterDelay: sec)
+    }
+    
+    @objc func resetSpeech(){
+        recordTapped()
+        //restartSpeech(sec:5)
     }
 }

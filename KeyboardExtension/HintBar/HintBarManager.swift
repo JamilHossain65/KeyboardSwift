@@ -74,6 +74,13 @@ class HintBarManager: NSObject {
             sgButton.addTarget(self, action: #selector(suggestionButtonDidClick(button:)), for: .touchUpInside)
             sgButton.setTitleColor(kKeyboardTextColor, for: .normal)
             scrollView.addSubview(sgButton)
+            
+            //add vertical seperator
+            let sepLbl = UILabel()
+            sepLbl.backgroundColor = .white
+            sepLbl.frame = CGRect(x: CGFloat(index)*(buttonWidth+border), y: 0.0, width: 0.7, height: hintBarHeight*0.5)
+            sepLbl.center = CGPoint(x: sepLbl.center.x, y: sgButton.center.y)
+            scrollView.addSubview(sepLbl)
         }
     }
     
