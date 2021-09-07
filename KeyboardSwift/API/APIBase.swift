@@ -45,7 +45,7 @@ class APIBase {
         let filename = "recording.flac" //"good-morning-google.flac" //"hello (16bit PCM).wav"
         let path = Bundle.main.path(forResource: filename, ofType: nil)
         let url:URL = params?[APIKey.file_url] as! URL
-        //print("request url:\(url)")
+        print("request url:\(url)")
         
         guard let data = try? Data(contentsOf:url /*URL(fileURLWithPath:path!)*/) else { return }
         

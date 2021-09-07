@@ -9,6 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    //access token
+    //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
+    
     @IBOutlet weak var textView: UITextView!
     var recordButton : UIButton!
     var playButton : UIButton!
@@ -78,10 +81,24 @@ class HomeViewController: UIViewController {
     }
     
     @objc func playButtonTapped(){
-//        audioManager.playSound()
-//        playButton.setTitle("Stop", for: .normal)
+        //        audioManager.playSound()
+        //        playButton.setTitle("Stop", for: .normal)
         
-        convertToText()
+        convertToText2()
+    }
+    
+    func convertToText2(){
+        let audioManager = AudioManager()
+        audioManager.delegate = self
+        let speechModel  = SpeechModel()
+        speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
+        
+        //view.showProgressHUD()
+        speechModel.doTranslateRequest2(completion: {(success,errorModel) in
+            //self.view.hideProgressHUD()
+            self.textView.text += " \(speechModel.convertedText)"
+            print("text::\(speechModel.convertedText)")
+        })
     }
     
     func convertToText(){
@@ -102,7 +119,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController:AudioManagerDelegate {
     func recordDidFinish(){
         print("convert start.....")
-        convertToText()
+        convertToText2()
     }
     
     func restartSpeech(sec:Double){

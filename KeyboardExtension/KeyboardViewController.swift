@@ -112,6 +112,10 @@ class KeyboardViewController: UIInputViewController {
     
     func showView() {
         
+//        let request = APIRequest.shared
+//        request.testAPI()
+       
+        
         //https://unsplash.com/backgrounds/phone/keyboard
         kKeyboardBGColor = Color.shared.color(209,212,218) 
         kAltButtonColor  = Color.shared.color(171,177,188)
@@ -319,6 +323,10 @@ extension KeyboardViewController: KeyboardViewDelegate {
     
     func voiceButtonTapped(_ voiceButton: UIButton){
         print("voice button tapped")
+        
+//        let request = APIRequest.shared
+//        request.uploadImage(paramName: "", fileName: "", image: UIImage())
+        openContainerApp()
     }
 }
 
