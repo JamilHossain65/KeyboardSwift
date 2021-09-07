@@ -84,7 +84,10 @@ class HomeViewController: UIViewController {
         //        audioManager.playSound()
         //        playButton.setTitle("Stop", for: .normal)
         
-        convertToText2()
+        //convertToText2()
+        
+        testSimpleAPI()
+        
     }
     
     func convertToText2(){
@@ -112,6 +115,23 @@ class HomeViewController: UIViewController {
             //self.view.hideProgressHUD()
             self.textView.text += " \(speechModel.convertedText)"
             print("text::\(speechModel.convertedText)")
+        })
+    }
+    
+    func testSimpleAPI(){
+        let url = BASE_URL + API_TEST
+        APIRequest(url).params([:], method:.get, header: "", completion: {(response,errors) in
+            if errors == nil {
+                //print("response:\(response.json)\n")
+                if let _response = response?.json {
+                    if let name = _response["test"] as? String {
+                        print(name)
+                    }
+                }
+                
+            } else {
+                print("error:\(errors?.message)")
+            }
         })
     }
 }

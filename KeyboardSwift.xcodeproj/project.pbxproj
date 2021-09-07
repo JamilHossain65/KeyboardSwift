@@ -15,9 +15,14 @@
 		8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D552EE326484C4000866DEF /* UnicodeEn.swift */; };
 		8D59B2252669AD2C0034A967 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59B2242669AD2C0034A967 /* Extension.swift */; };
 		8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D769A0C265F3BED00C74FBA /* Assets.xcassets */; };
+		8D8BCF5B26E7626400615097 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507402681596B00377CBD /* ErrorModel.swift */; };
+		8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF5E26E7638B00615097 /* Errors.swift */; };
+		8D8BCF6226E763C200615097 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF5E26E7638B00615097 /* Errors.swift */; };
+		8D8BCF7A26E76E2200615097 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
+		8D8BCF7F26E7790900615097 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
 		8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AA16D2682DEDC00EA136D /* AudioManager.swift */; };
-		8DD507462681596B00377CBD /* APIKeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKeyConstant.swift */; };
+		8DD507462681596B00377CBD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8DD507472681596B00377CBD /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073E2681596B00377CBD /* APIUrl.swift */; };
 		8DD507482681596B00377CBD /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073F2681596B00377CBD /* APIBase.swift */; };
 		8DD507492681596B00377CBD /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507402681596B00377CBD /* ErrorModel.swift */; };
@@ -79,12 +84,14 @@
 		8D552EE326484C4000866DEF /* UnicodeEn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeEn.swift; sourceTree = "<group>"; };
 		8D59B2242669AD2C0034A967 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8D769A0C265F3BED00C74FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D8BCF5E26E7638B00615097 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		8D8BCF7926E76E2200615097 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8D91CD452655E7EE00404F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DBB159A25EB04890092F88B /* JHkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHkey.h; sourceTree = "<group>"; };
 		8DBB159B25EB04890092F88B /* JHkey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHkey.m; sourceTree = "<group>"; };
-		8DD5073D2681596B00377CBD /* APIKeyConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeyConstant.swift; sourceTree = "<group>"; };
+		8DD5073D2681596B00377CBD /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8DD5073E2681596B00377CBD /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		8DD5073F2681596B00377CBD /* APIBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		8DD507402681596B00377CBD /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
@@ -177,9 +184,11 @@
 		8DD5073C2681596B00377CBD /* API */ = {
 			isa = PBXGroup;
 			children = (
-				8DD5073D2681596B00377CBD /* APIKeyConstant.swift */,
-				8DD5073E2681596B00377CBD /* APIUrl.swift */,
 				8DD5073F2681596B00377CBD /* APIBase.swift */,
+				8DD5073E2681596B00377CBD /* APIUrl.swift */,
+				8DD5073D2681596B00377CBD /* APIKey.swift */,
+				8D8BCF7926E76E2200615097 /* Response.swift */,
+				8D8BCF5E26E7638B00615097 /* Errors.swift */,
 				8DD507402681596B00377CBD /* ErrorModel.swift */,
 			);
 			path = API;
@@ -434,13 +443,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD507462681596B00377CBD /* APIKeyConstant.swift in Sources */,
+				8DD507462681596B00377CBD /* APIKey.swift in Sources */,
 				8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */,
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,
 				8DD507482681596B00377CBD /* APIBase.swift in Sources */,
 				8DD507492681596B00377CBD /* ErrorModel.swift in Sources */,
 				8DD507472681596B00377CBD /* APIUrl.swift in Sources */,
+				8D8BCF7A26E76E2200615097 /* Response.swift in Sources */,
 				8DD507762681644A00377CBD /* SpeechModel.swift in Sources */,
+				8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */,
 				8DD5074A2681596B00377CBD /* Reachability.swift in Sources */,
 				8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */,
 				8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */,
@@ -457,7 +468,10 @@
 				8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */,
 				8DF6E35626C357550031E094 /* HintBarManager.swift in Sources */,
 				8DE7F9C425E4784200D3C48A /* KeyboardViewController.swift in Sources */,
+				8D8BCF7F26E7790900615097 /* Response.swift in Sources */,
 				8DF6E32626C3563F0031E094 /* Color.swift in Sources */,
+				8D8BCF5B26E7626400615097 /* ErrorModel.swift in Sources */,
+				8D8BCF6226E763C200615097 /* Errors.swift in Sources */,
 				8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */,
 				8DF6E31E26C356380031E094 /* JHkey.m in Sources */,
 				8DE7FA2625E4C6E700D3C48A /* KeyboardView.swift in Sources */,

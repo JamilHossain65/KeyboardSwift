@@ -9,6 +9,9 @@ import UIKit
 
 struct APIKey {
     static let converted_text = "converted_text"
-    static let file_url = "file_url"//file
+    static let file_url = "file_url"
     static let success  = "success"
+    
+    static let language_en  = "en"
+    static let language_bn  = "bn"
 }

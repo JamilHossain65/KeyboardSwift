@@ -79,7 +79,7 @@ class SpeechModel: APIBase {
         
         guard let url2 = URL(string: urlString) else { return }
         
-        let request = APIRequest(url2)
+        let request = APIRequest(urlString)
         request.uploadFile(paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (json,error) in
             if let _response = json {
                 completion(JSON(_response),error)

@@ -7,14 +7,48 @@
 
 import UIKit
 
+enum Method {
+    case get, post
+}
+
 struct APIRequest {
     private let boundary: String = UUID().uuidString
     private var httpBody = NSMutableData()
     let url: URL
-    
-    init(_ url: URL) {
-        self.url = url
+
+    init(_ url: String) {
+        if let _url = URL(string: url){
+            self.url = _url
+        }else{
+            self.url = URL(string: "")!
+        }
     }
+    
+    //MARK:- REQUEST API WITH PARAMETERS
+    func params(_ params:[String: Any], method:Method,header:String, completion:@escaping (Response?, Errors?) -> () ){
+        //Debug Prints
+        print("calling api....")
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, error == nil {
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                if let json = jsonData as? [String: Any] {
+                    DispatchQueue.main.async {
+                        completion(Response(json),nil)
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    let message = error?.localizedDescription ?? ""
+                    var errors = Errors(message: message)
+                    errors.status = ""
+                    completion(nil,errors)
+                }
+            }
+        }
+        task.resume()
+    }
+    
     
     func uploadFile(paramName: String, fileName: String, fileData: Data, mimeType:String,completion:@escaping (Any?, Error?) -> Void) {
         //https://stackoverflow.com/questions/41032678/upload-image-to-server-swift-3
@@ -109,21 +143,6 @@ struct APIRequest {
         return paths[0]
     }
     
-    func testAPI(){
-        print("calling api....")
-        guard let url = URL(string: "http://jamilhossain.pythonanywhere.com/test") else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            let jsonData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            if let json = jsonData as? [String: Any] {
-                if let name = json["test"] as? String {
-                    print(name)
-                }
-            }
-        }
-        task.resume()
-    }
-    
     /*
      public func UPLOADIMG(url: String,parameters: Dictionary<String,AnyObject>?,filename:String,image:UIImage, success:((NSDictionary) -> Void)!, failed:((NSDictionary) -> Void)!, errord:((NSError) -> Void)!) {
      var TWITTERFON_FORM_BOUNDARY:String = "AaB03x"
@@ -193,5 +212,3 @@ extension NSMutableData {
 //        return dataTask(with: request.asURLRequest(), completionHandler: completionHandler)
 //    }
 //}
-
-
