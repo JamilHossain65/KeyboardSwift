@@ -8,7 +8,11 @@
 import UIKit
 
 enum Method {
-    case get, post
+    case GET, POST
+}
+
+enum MimeType {
+    case Image, Audio
 }
 
 struct APIRequest {
@@ -41,7 +45,7 @@ struct APIRequest {
                 DispatchQueue.main.async {
                     let message = error?.localizedDescription ?? ""
                     var errors = Errors(message: message)
-                    errors.status = ""
+                    errors.error_code = 0
                     completion(nil,errors)
                 }
             }
@@ -49,8 +53,7 @@ struct APIRequest {
         task.resume()
     }
     
-    
-    func uploadFile(paramName: String, fileName: String, fileData: Data, mimeType:String,completion:@escaping (Any?, Error?) -> Void) {
+    /*func uploadFile(paramName: String, fileName: String, fileData: Data, mimeType:String,completion:@escaping (Any?, Error?) -> Void) {
         //https://stackoverflow.com/questions/41032678/upload-image-to-server-swift-3
         print("calling api.....")
         //let url = URL(string: "http://jamilhossain.pythonanywhere.com/test/file/")
@@ -90,18 +93,71 @@ struct APIRequest {
             }
         }).resume()
     }
+    */
     
+    func uploadFile(paramName: String, fileName: String, fileData: Data, mimeType:String,completion:@escaping (Any?, Error?) -> Void) {
+        //https://stackoverflow.com/questions/41032678/upload-image-to-server-swift-3
+        print("calling api.....")
+        
+        // generate boundary string using a unique per-app string
+        let boundary = UUID().uuidString
+        let session = URLSession.shared
+        
+        // Set the URLRequest to POST and to the specified URL
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
+        // And the boundary is also set here
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        var data = Data()
+        
+        // Add the file data to the raw http request data
+        //data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+        data.NappendStringN("--\(boundary)")
+       
+        
+        //data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
+        
+        data.appendStringN("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"")
+        
+        //data.append("Content-Type: \(mimeType)\r\n\r\n".data(using: .utf8)!)//image/png
+        data.appendStringN("Content-Type: \(mimeType)")//image/png
+        data.appendString("\r\n")
+        
+        data.append(fileData)
+        
+        //data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+        data.NappendStringN("--\(boundary)--")
+        
+        // Send a POST request to the URL, with the data we created earlier
+        session.uploadTask(with: request, from: data, completionHandler: { responseData, response, error in
+            if error == nil {
+                let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+                completion(jsonData,nil)
+                if let json = jsonData as? [String: Any] {
+                    print(json)
+                }
+            }else{
+                completion(nil,error)
+            }
+        }).resume()
+    }
+    
+    /*
     func asURLRequest() -> URLRequest {
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        httpBody.append("--\(boundary)--".data(using: .utf8)!)
+        httpBody.append("--\(boundary)--")
         //httpBody.appendString("--\(boundary)--")
         request.httpBody = httpBody as Data
         return request
     }
+    */
     
     func addTextField(named name: String, value: String) {
         httpBody.append(textFormField(named: name, value: value))
@@ -114,7 +170,6 @@ struct APIRequest {
         fieldString += "Content-Transfer-Encoding: 8bit\r\n"
         fieldString += "\r\n"
         fieldString += "\(value)\r\n"
-        
         return fieldString
     }
     
@@ -197,6 +252,7 @@ struct APIRequest {
      */
 }
 
+//MARK:- CONVERT STRING TO DATA
 extension NSMutableData {
     func append(_ string: String) {
         if let data = string.data(using: .utf8) {
@@ -205,10 +261,23 @@ extension NSMutableData {
     }
 }
 
-//extension URLSession {
-//    func dataTask(with request: APIRequest,
-//                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
-//    -> URLSessionDataTask {
-//        return dataTask(with: request.asURLRequest(), completionHandler: completionHandler)
-//    }
-//}
+extension Data {
+    mutating func appendString(_ string: String) {
+        if let data = "\(string)".data(using: .utf8) {
+            self.append(data)
+        }
+    }
+    
+    mutating func appendStringN(_ string: String) {
+        if let data = "\(string)\r\n".data(using: .utf8) {
+            self.append(data)
+        }
+    }
+    
+    mutating func NappendStringN(_ string: String) {
+        if let data = "\r\n\(string)\r\n".data(using: .utf8) {
+            self.append(data)
+        }
+    }
+}
+
