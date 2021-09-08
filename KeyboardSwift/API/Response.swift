@@ -11,17 +11,13 @@ struct Response {
     //Api response
     let success:Bool =  true
     let json: [String:Any]?
-    //let array: [Any]?
+    var array: [Any]?
     
     init(_ json:[String:Any]) {
         self.json = json
     }
     
-//    init(_ array:[Any]) {
-//        if let _array = array {
-//            self.array = array
-//        }else{
-//            self.array = []
-//        }
-//    }
+    mutating func initWith(_ array:[Any]) {
+        self.array = array
+    }
 }

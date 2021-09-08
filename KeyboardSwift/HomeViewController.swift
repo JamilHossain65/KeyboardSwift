@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
         recordButton = UIButton(frame: CGRect(x: 25, y: 220, width: 120, height: 40))
         recordButton.setTitle("Start Record", for: .normal)
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-        recordButton.backgroundColor = .red
+        recordButton.backgroundColor = .gray
         restartSpeech(sec:5)
         view.addSubview(recordButton)
     }
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
         playButton.setTitle("Play", for: .normal)
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         view.addSubview(playButton)
-        playButton.backgroundColor = .red
+        playButton.backgroundColor = .gray
     }
     
     @objc func recordTapped(){
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
         recordButton.isSelected = !recordButton.isSelected
         recordButton.setTitle("Start Record", for: .normal)
         recordButton.setTitle("Stop Record", for: .selected)
-        recordButton.backgroundColor = recordButton.isSelected ? .green: .red
+        recordButton.backgroundColor = recordButton.isSelected ? .red: .gray
     }
     
     func stopRecord(){
@@ -84,9 +84,9 @@ class HomeViewController: UIViewController {
         //        audioManager.playSound()
         //        playButton.setTitle("Stop", for: .normal)
         
-        //convertToText2()
+        convertToText2()
         
-        testSimpleAPI()
+        //testSimpleAPI()
         
     }
     
@@ -97,10 +97,19 @@ class HomeViewController: UIViewController {
         speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
         
         //view.showProgressHUD()
-        speechModel.doTranslateRequest2(completion: {(success,errorModel) in
-            //self.view.hideProgressHUD()
-            self.textView.text += " \(speechModel.convertedText)"
-            print("text::\(speechModel.convertedText)")
+//        speechModel.doTranslateRequest2(completion: {(success,errorModel) in
+//            //self.view.hideProgressHUD()
+//            self.textView.text += " \(speechModel.convertedText)"
+//            print("text::\(speechModel.convertedText)")
+//        })
+        
+        speechModel.doTranslate2({errors in
+            if let _errors = errors {
+                print("error::\(_errors.message)")
+            } else {
+                self.textView.text += " \(speechModel.convertedText)"
+                print("text::\(speechModel.convertedText)")
+            }
         })
     }
     
@@ -120,7 +129,7 @@ class HomeViewController: UIViewController {
     
     func testSimpleAPI(){
         let url = BASE_URL + API_TEST
-        APIRequest(url).params([:], method:.get, header: "", completion: {(response,errors) in
+        APIRequest(url).params([:], method:.GET, header: "", completion: {(response,errors) in
             if errors == nil {
                 //print("response:\(response.json)\n")
                 if let _response = response?.json {
@@ -147,7 +156,7 @@ extension HomeViewController:AudioManagerDelegate {
     }
     
     @objc func resetSpeech(){
-        recordTapped()
+        //recordTapped() //enable this line for aumatic recording when app launch
         //restartSpeech(sec:5)
     }
 }
