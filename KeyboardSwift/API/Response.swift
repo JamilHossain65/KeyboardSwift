@@ -13,8 +13,8 @@ struct Response {
     let json: [String:Any]?
     var array: [Any]?
     
-    init(_ json:[String:Any]) {
-        self.json = json
+    init(_ json:Any) {
+        self.json = json as? [String:Any]
     }
     
     mutating func initWith(_ array:[Any]) {

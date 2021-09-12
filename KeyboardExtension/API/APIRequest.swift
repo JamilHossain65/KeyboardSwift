@@ -116,7 +116,6 @@ struct APIRequest {
         // Add the file data to the raw http request data
         //data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
         data.NappendStringN("--\(boundary)")
-       
         
         //data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
         
@@ -136,10 +135,13 @@ struct APIRequest {
             if error == nil {
                 let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
                 completion(jsonData,nil)
+                print("jsonData:\(jsonData)")
                 if let json = jsonData as? [String: Any] {
                     print(json)
                 }
             }else{
+                print("error:\(error)")
+                
                 completion(nil,error)
             }
         }).resume()

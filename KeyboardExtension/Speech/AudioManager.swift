@@ -41,7 +41,7 @@ class AudioManager: NSObject,AVAudioRecorderDelegate {
 
     func playSound() {
         let url = getDocumentsDirectory().appendingPathComponent("recording.flac")
-        //print("play url::\(url)")
+        print("play url::\(url)")
         
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)

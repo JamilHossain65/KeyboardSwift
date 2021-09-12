@@ -81,13 +81,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc func playButtonTapped(){
-        //        audioManager.playSound()
-        //        playButton.setTitle("Stop", for: .normal)
-        
         convertToText2()
-        
         //testSimpleAPI()
-        
     }
     
     func convertToText2(){
@@ -104,7 +99,7 @@ class HomeViewController: UIViewController {
 //        })
         
         speechModel.doTranslate2({errors in
-            if let _errors = errors {
+            if let _errors = errors,_errors.message?.count ?? 0 > 0 {
                 print("error::\(_errors.message)")
             } else {
                 self.textView.text += " \(speechModel.convertedText)"

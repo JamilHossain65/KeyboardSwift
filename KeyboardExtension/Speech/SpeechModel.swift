@@ -27,12 +27,12 @@ class SpeechModel {
         self.requestMultipartForm(url,method,header,params) { (result, error) in
             DispatchQueue.main.async {
                 if let _result = result {
-                    //todo active the flowing line code
-                    //self.convertedText = _result[APIKey.converted_text].stringValue
+                    //todo refactor this line
+                    let response = _result as? [String:Any]
+                    self.convertedText = response?[APIKey.converted_text] as? String ?? ""
                     completion(nil)
                 } else {
-                    let message = error?.localizedDescription
-                    let _error = Errors(message: message)
+                    let _error = Errors(message: error?.localizedDescription)
                     completion(_error)
                 }
             }
@@ -40,12 +40,12 @@ class SpeechModel {
     }
     
     //do request if params are inside of url request body
-    func requestMultipartFormData(url: String, method: String?, header: [String:String]?, params: [String:Any]?, completion: @escaping(Response?, Error?) -> ()){
+    func requestMultipartFormData(url: String, method: String?, header: [String:String]?, params: [String:Any]?, completion: @escaping(Any?, Error?) -> ()){
         requestMultipartForm(url, method, header, params, completion: completion)
     }
     
     //do request if params are inside of url request body
-    func requestMultipartForm(_ url: String, _ method: String?, _ header: [String:String]?, _ params: [String:Any]?, completion: @escaping(Response?, Error?) -> ()) {
+    func requestMultipartForm(_ url: String, _ method: String?, _ header: [String:String]?, _ params: [String:Any]?, completion: @escaping(Any?, Error?) -> ()) {
         
         //check internet
         if !Reachability.isConnectedToNetwork() {
@@ -65,18 +65,23 @@ class SpeechModel {
         
         print("[REQUEST URL]: \(url)")
         
+        //test static voice file
+        /*
+        let filename = "good-morning-google.flac"//"good-morning-google.flac" //"hello (16bit PCM).wav"
+        let fileUrl = Bundle.main.path(forResource: filename, ofType: nil)
+        guard let data = try? Data(contentsOf:URL(fileURLWithPath:fileUrl!)) else { return }
+        */
         
-        let filename = "recording.flac" //"good-morning-google.flac" //"hello (16bit PCM).wav"
-        //let path = Bundle.main.path(forResource: filename, ofType: nil)
+        let filename = "recording.flac" 
         let fileUrl:URL = params?[APIKey.file_url] as! URL
-        guard let data = try? Data(contentsOf:fileUrl/*URL(fileURLWithPath:path!)*/) else { return }
+        guard let data = try? Data(contentsOf:fileUrl) else { return }
         
-        //guard let url2 = URL(string: url) else { return }
+        print("data length:\(data.count)")
         
         let request = APIRequest(url)
-        request.uploadFile(paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (json,error) in
-            if let _response = json {
-                //completion(JSON(_response),nil)
+        request.uploadFile(paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (response,error) in
+            if let _response = response {
+                completion(_response,nil)
             } else {
                 completion(nil,error)
             }

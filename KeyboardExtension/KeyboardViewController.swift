@@ -7,10 +7,13 @@
 
 import UIKit
 
-class KeyboardViewController: UIInputViewController {
+class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
 
-    var hintBarManager: HintBarManager = HintBarManager();
-    var keyboardView  : KeyboardView   = KeyboardView();
+    var hintBarManager: HintBarManager = HintBarManager()
+    var keyboardView  : KeyboardView   = KeyboardView()
+    
+    let audioManager = AudioManager()
+    
     
     var wordArray: NSArray  = []
     var context  : NSString = ""
@@ -65,6 +68,10 @@ class KeyboardViewController: UIInputViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+   
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//                AudioServicesPlaySystemSound(1104);
+//            });
         
     }
     
@@ -111,10 +118,9 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func showView() {
-        
-//        let request = APIRequest.shared
-//        request.testAPI()
-       
+        //record audio
+        audioManager.initAudio()
+        audioManager.delegate = self
         
         //https://unsplash.com/backgrounds/phone/keyboard
         kKeyboardBGColor = Color.shared.color(209,212,218) 
@@ -323,10 +329,15 @@ extension KeyboardViewController: KeyboardViewDelegate {
     
     func voiceButtonTapped(_ voiceButton: UIButton){
         print("voice button tapped")
-        
-//        let request = APIRequest.shared
-//        request.uploadImage(paramName: "", fileName: "", image: UIImage())
         openContainerApp()
+        
+        if voiceButton.isSelected{
+            print("voice recording...")
+            recordTapped()
+        } else{
+            print("voice stoped....")
+            recordDidFinish()
+        }
     }
 }
 
@@ -388,5 +399,54 @@ extension KeyboardViewController: HintBarDelegate {
         setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
         keyboardView.reloadFont(button.tag)
         keyboardView.backgroundColor = kKeyboardBGColor
+    }
+}
+
+//MARK:- CONVERT TO TEXT
+
+extension KeyboardViewController:AudioManagerDelegate {
+ 
+    @objc func recordTapped(){
+        print("recordTapped.....")
+        
+        stopRecord()
+        audioManager.recordTapped()
+    }
+    
+    func stopRecord(){
+        if audioManager.audioRecorder != nil {
+            audioManager.audioRecorder.stop()
+        }
+    }
+    
+    func recordDidFinish(){
+        print("convert start.....")
+        convertToText2()
+    }
+    
+    func restartSpeech(sec:Double){
+        self.perform(#selector(resetSpeech), with: nil, afterDelay: sec)
+    }
+    
+    @objc func resetSpeech(){
+        //recordTapped() //enable this line for aumatic recording when app launch
+        //restartSpeech(sec:5)
+    }
+    
+    //convert recorded voice to text
+    func convertToText2(){
+        let audioManager = AudioManager()
+        audioManager.delegate = self
+        let speechModel  = SpeechModel()
+        speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
+        print("speechModel.fileUrl::\(speechModel.fileUrl)")
+        speechModel.doTranslate2({errors in
+            if let _errors = errors,_errors == nil {
+                print("error::\(_errors.message)")
+            } else {
+                self.textDocumentProxy.insertText(" \(speechModel.convertedText)")
+                print("text::\(speechModel.convertedText)")
+            }
+        })
     }
 }

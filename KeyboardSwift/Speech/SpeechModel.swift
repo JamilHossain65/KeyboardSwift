@@ -16,6 +16,7 @@ class SpeechModel: APIBase {
     func doTranslateRequest(completion: @escaping (Bool, ErrorModel?) -> ()) {
         var params:[String:Any] = [:]
         params[APIKey.file_url] = fileUrl
+        params[APIKey.language] = APIKey.language_en
         
         let header = ["Content-Type":"multipart/form-data"]
         let requestUrl = BASE_URL_TRANSLATE + API_TRANSLATE
@@ -37,15 +38,17 @@ class SpeechModel: APIBase {
     func doTranslateRequest2(completion: @escaping (Errors?) -> ()) {
         var params:[String:Any] = [:]
         params[APIKey.file_url] = self.fileUrl
+        params[APIKey.language] = APIKey.language_bn
+        
         let header = [APIKey.content_type:APIKey.multipart_form]
         let method = APIKey.POST
         let url = BASE_URL_TRANSLATE + API_TRANSLATE
         
-        
-        self.requestMultipartForm(url,method,header,params) { (result, error) in
+        self.requestMultipartForm(url,method,header,params) { (response, error) in
             DispatchQueue.main.async {
-                if let _result = result {
-                    self.convertedText = _result[APIKey.converted_text].stringValue
+                if let _response = response {
+                    //self.convertedText = _result[APIKey.converted_text].stringValue
+                    self.convertedText = _response.json?[APIKey.converted_text] as? String ?? ""
                     completion(nil)
                 } else {
                     let message = error?.localizedDescription
@@ -57,12 +60,12 @@ class SpeechModel: APIBase {
     }
     
     //do request if params are inside of url request body
-    func requestMultipartFormData(url: String, method: String?, header: [String:String]?, params: [String:Any]?, completion: @escaping(JSON?, Error?) -> ()){
+    func requestMultipartFormData(url: String, method: String?, header: [String:String]?, params: [String:Any]?, completion: @escaping(Response?, Error?) -> ()){
         requestMultipartForm(url, method, header, params, completion: completion)
     }
     
     //do request if params are inside of url request body
-    func requestMultipartForm(_ url: String, _ method: String?, _ header: [String:String]?, _ params: [String:Any]?, completion: @escaping(JSON?, Error?) -> ()) {
+    func requestMultipartForm(_ url: String, _ method: String?, _ header: [String:String]?, _ params: [String:Any]?, completion: @escaping(Response?, Error?) -> ()) {
         
         //check internet
         if !Reachability.isConnectedToNetwork() {
@@ -82,18 +85,25 @@ class SpeechModel: APIBase {
         
         print("[REQUEST URL]: \(url)")
         
+        /*
+        let filename = "hello (16bit PCM).wav"//"good-morning-google.flac" //"hello (16bit PCM).wav"
+        let fileUrl = Bundle.main.path(forResource: filename, ofType: nil)
+        guard let data = try? Data(contentsOf:URL(fileURLWithPath:fileUrl!)) else { return }
         
-        let filename = "recording.flac" //"good-morning-google.flac" //"hello (16bit PCM).wav"
-        //let path = Bundle.main.path(forResource: filename, ofType: nil)
+        */
+        
+        let filename = "recording.flac"
         let fileUrl:URL = params?[APIKey.file_url] as! URL
-        guard let data = try? Data(contentsOf:fileUrl/*URL(fileURLWithPath:path!)*/) else { return }
+        guard let data = try? Data(contentsOf:fileUrl) else { return }
+        //print("fileUrl:: \(fileUrl)")
         
-        //guard let url2 = URL(string: url) else { return }
         
         let request = APIRequest(url)
-        request.uploadFile(paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (json,error) in
-            if let _response = json {
-                completion(JSON(_response),nil)
+        request.uploadFile(params: ["lang":"bn"],paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (response,error) in
+            if let _response = response {
+                let json = _response as? [String:Any]
+                self.convertedText = json?[APIKey.converted_text] as? String ?? ""
+                completion(Response(json),nil)
             } else {
                 completion(nil,error)
             }

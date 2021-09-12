@@ -12,6 +12,8 @@
 		8D496A1E26388C73001DE455 /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D496A1826388C73001DE455 /* word.txt */; };
 		8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D552EE326484C4000866DEF /* UnicodeEn.swift */; };
 		8D59B2252669AD2C0034A967 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59B2242669AD2C0034A967 /* Extension.swift */; };
+		8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
+		8D68831826E8D6430008D7D8 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D6DA1C026E897D10080E630 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6CBEAE26E8960D00F8D7FC /* Errors.swift */; };
 		8D6DA1C526E897D40080E630 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6CBEAA26E8960D00F8D7FC /* APIKey.swift */; };
 		8D6DA1CA26E897D70080E630 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6CBEAD26E8960D00F8D7FC /* APIUrl.swift */; };
@@ -26,9 +28,9 @@
 		8D8BCF7A26E76E2200615097 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
 		8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AA16D2682DEDC00EA136D /* AudioManager.swift */; };
+		8DA5702F26EC568000FA3B81 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5702E26EC568000FA3B81 /* APIBase.swift */; };
 		8DD507462681596B00377CBD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8DD507472681596B00377CBD /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073E2681596B00377CBD /* APIUrl.swift */; };
-		8DD507482681596B00377CBD /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073F2681596B00377CBD /* APIBase.swift */; };
 		8DD507492681596B00377CBD /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507402681596B00377CBD /* ErrorModel.swift */; };
 		8DD5074A2681596B00377CBD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507422681596B00377CBD /* Reachability.swift */; };
 		8DD5075E26815EF800377CBD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5075D26815EF800377CBD /* Utils.swift */; };
@@ -100,12 +102,12 @@
 		8D8BCF7926E76E2200615097 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8D91CD452655E7EE00404F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		8DA5702E26EC568000FA3B81 /* APIBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DBB159A25EB04890092F88B /* JHkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHkey.h; sourceTree = "<group>"; };
 		8DBB159B25EB04890092F88B /* JHkey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHkey.m; sourceTree = "<group>"; };
 		8DD5073D2681596B00377CBD /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8DD5073E2681596B00377CBD /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
-		8DD5073F2681596B00377CBD /* APIBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		8DD507402681596B00377CBD /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		8DD507422681596B00377CBD /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8DD5075D26815EF800377CBD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -225,10 +227,10 @@
 		8DD5073C2681596B00377CBD /* API */ = {
 			isa = PBXGroup;
 			children = (
-				8DD5073F2681596B00377CBD /* APIBase.swift */,
+				8DA5702E26EC568000FA3B81 /* APIBase.swift */,
 				8DD5073E2681596B00377CBD /* APIUrl.swift */,
-				8D6DA1D526E897FA0080E630 /* APIRequest.swift */,
 				8DD5073D2681596B00377CBD /* APIKey.swift */,
+				8D6DA1D526E897FA0080E630 /* APIRequest.swift */,
 				8D8BCF7926E76E2200615097 /* Response.swift */,
 				8D8BCF5E26E7638B00615097 /* Errors.swift */,
 				8DD507402681596B00377CBD /* ErrorModel.swift */,
@@ -434,7 +436,9 @@
 			files = (
 				8D496A1E26388C73001DE455 /* word.txt in Resources */,
 				8D140F4A26C0E4A200512477 /* bangla.flac in Resources */,
+				8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */,
 				8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */,
+				8D68831826E8D6430008D7D8 /* hello (16bit PCM).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +494,6 @@
 				8DD507462681596B00377CBD /* APIKey.swift in Sources */,
 				8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */,
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,
-				8DD507482681596B00377CBD /* APIBase.swift in Sources */,
 				8DD507492681596B00377CBD /* ErrorModel.swift in Sources */,
 				8DD507472681596B00377CBD /* APIUrl.swift in Sources */,
 				8D8BCF7A26E76E2200615097 /* Response.swift in Sources */,
@@ -499,6 +502,7 @@
 				8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */,
 				8DD5074A2681596B00377CBD /* Reachability.swift in Sources */,
 				8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */,
+				8DA5702F26EC568000FA3B81 /* APIBase.swift in Sources */,
 				8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */,
 				8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */,
 			);

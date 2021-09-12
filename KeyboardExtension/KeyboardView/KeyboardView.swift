@@ -418,7 +418,7 @@ extension KeyboardView {
             
             sender.setImage(UIImage(named: "unshift.png"), for: .normal)
             sender.setImage(UIImage(named: "shift.png"), for: .selected)
-            
+            sender.isSelected = !sender.isSelected
             if sender.isSelected {
                 sender.defaultBackgroundColor = .white
             }else{
@@ -426,6 +426,18 @@ extension KeyboardView {
             }
             
         }else if(sender.tag == voiceButtonIndex) {
+            sender.setImage(UIImage(named: "record_off.png"), for: .normal)
+            sender.setImage(UIImage(named: "record_on.png"),  for: .selected)
+            
+            sender.isSelected = !sender.isSelected
+            voiceButton = sender
+            
+            if voiceButton.isSelected {
+                sender.defaultBackgroundColor = .red
+            } else {
+                sender.defaultBackgroundColor = .white
+            }
+            
             delegate?.voiceButtonTapped(sender)
         }else if(sender.tag == deleteButtonIndex) {
             delegate?.deleteCharacter("")

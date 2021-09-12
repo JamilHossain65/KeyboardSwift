@@ -50,8 +50,9 @@ class APIBase {
         guard let data = try? Data(contentsOf:url /*URL(fileURLWithPath:path!)*/) else { return }
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append("bn".data(using: .utf8)!, withName: "lang")
             multipartFormData.append(data, withName: "file", fileName: filename, mimeType: "audio/wave")
-            
+        
         }, to: urlString, method: method, headers: header) { (result) in
             
             switch result {
