@@ -37,7 +37,6 @@ class HomeViewController: UIViewController {
         textView.layer.borderWidth  = 1.0
         textView.layer.cornerRadius = 8.0
         textView.layer.borderColor  = UIColor.lightGray.cgColor
-        
         textView.becomeFirstResponder()
         
         //record audio
@@ -48,20 +47,32 @@ class HomeViewController: UIViewController {
     }
     
     func loadRecordingUI(){
-        recordButton = UIButton(frame: CGRect(x: 25, y: 220, width: 120, height: 40))
-        recordButton.setTitle("Start Record", for: .normal)
+        recordButton = UIButton(frame: CGRect(x: textView.frame.size.width - 75, y: textView.frame.size.height - 44, width: 70, height: 40))
+        recordButton.setTitle("Speak", for: .normal)
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
         recordButton.backgroundColor = .gray
+        recordButton.layer.cornerRadius = 7
         restartSpeech(sec:5)
-        view.addSubview(recordButton)
+        textView.addSubview(recordButton)
     }
     
     func playSoundUI(){
-        playButton = UIButton(frame: CGRect(x: 170, y: 220, width: 120, height: 40))
-        playButton.setTitle("Play", for: .normal)
+        let codeBd = flag(from: "bd")
+        let codeEn = flag(from: "us")
+        
+        playButton = UIButton(frame: CGRect(x: textView.frame.size.width - 122, y: textView.frame.size.height - 44, width: 40, height: 40))
+        
+        playButton.layer.borderWidth  = 1.0
+        playButton.layer.cornerRadius = 20.0
+        playButton.layer.borderColor  = UIColor.lightGray.cgColor
+        
+        playButton.titleLabel?.font   = UIFont(name: "Arial", size: 25)
+        
+        playButton.setTitle("\(codeEn)", for: .normal)
+        playButton.setTitle("\(codeBd)", for: .selected)
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
-        view.addSubview(playButton)
-        playButton.backgroundColor = .gray
+        textView.addSubview(playButton)
+        playButton.backgroundColor = .clear
     }
     
     @objc func recordTapped(){
@@ -69,8 +80,8 @@ class HomeViewController: UIViewController {
         
         audioManager.recordTapped()
         recordButton.isSelected = !recordButton.isSelected
-        recordButton.setTitle("Start Record", for: .normal)
-        recordButton.setTitle("Stop Record", for: .selected)
+        recordButton.setTitle("Record", for: .normal)
+        recordButton.setTitle("Stop", for: .selected)
         recordButton.backgroundColor = recordButton.isSelected ? .red: .gray
     }
     
@@ -81,44 +92,26 @@ class HomeViewController: UIViewController {
     }
     
     @objc func playButtonTapped(){
-        convertToText2()
+        playButton.isSelected = !playButton.isSelected
         //testSimpleAPI()
     }
     
-    func convertToText2(){
+    func convertToText2(lang:String){
         let audioManager = AudioManager()
         audioManager.delegate = self
         let speechModel  = SpeechModel()
+        speechModel.convertedLanguage = lang
         speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
         
-        //view.showProgressHUD()
-//        speechModel.doTranslateRequest2(completion: {(success,errorModel) in
-//            //self.view.hideProgressHUD()
-//            self.textView.text += " \(speechModel.convertedText)"
-//            print("text::\(speechModel.convertedText)")
-//        })
-        
+        //loading(view: self.textView, stop: false)
         speechModel.doTranslate2({errors in
+            
             if let _errors = errors,_errors.message?.count ?? 0 > 0 {
                 print("error::\(_errors.message)")
             } else {
                 self.textView.text += " \(speechModel.convertedText)"
                 print("text::\(speechModel.convertedText)")
             }
-        })
-    }
-    
-    func convertToText(){
-        let audioManager = AudioManager()
-        audioManager.delegate = self
-        let speechModel  = SpeechModel()
-        speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
-        
-        //view.showProgressHUD()
-        speechModel.doTranslateRequest(completion: {(success,errorModel) in
-            //self.view.hideProgressHUD()
-            self.textView.text += " \(speechModel.convertedText)"
-            print("text::\(speechModel.convertedText)")
         })
     }
     
@@ -143,7 +136,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController:AudioManagerDelegate {
     func recordDidFinish(){
         print("convert start.....")
-        convertToText2()
+        let language = playButton.isSelected ? "bn":"en"
+        convertToText2(lang: language)
     }
     
     func restartSpeech(sec:Double){

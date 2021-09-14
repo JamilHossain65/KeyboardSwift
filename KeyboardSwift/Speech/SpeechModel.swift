@@ -8,28 +8,11 @@
 import UIKit
 import SwiftyJSON
 
-class SpeechModel: APIBase {
+class SpeechModel: NSObject {
     static let sharedModel = SpeechModel()
     var convertedText:String = ""
+    var convertedLanguage:String = ""
     var fileUrl:URL?
-    
-    func doTranslateRequest(completion: @escaping (Bool, ErrorModel?) -> ()) {
-        var params:[String:Any] = [:]
-        params[APIKey.file_url] = fileUrl
-        params[APIKey.language] = APIKey.language_en
-        
-        let header = ["Content-Type":"multipart/form-data"]
-        let requestUrl = BASE_URL_TRANSLATE + API_TRANSLATE
-        
-        APIBase.shared.callAPIRequestWithMultipartFormData(urlString: requestUrl, method: .post, params: params, header: header) { (result, error) in
-            if let _result = result {
-                self.convertedText = _result[APIKey.converted_text].stringValue;
-                completion(true,nil)
-            }else{
-                completion(false,nil)
-            }
-        }
-    }
     
     func doTranslate2(_ completion: @escaping (Errors?) -> ()) {
         doTranslateRequest2(completion: completion)
@@ -38,7 +21,7 @@ class SpeechModel: APIBase {
     func doTranslateRequest2(completion: @escaping (Errors?) -> ()) {
         var params:[String:Any] = [:]
         params[APIKey.file_url] = self.fileUrl
-        params[APIKey.language] = APIKey.language_bn
+        params[APIKey.language] = self.convertedLanguage
         
         let header = [APIKey.content_type:APIKey.multipart_form]
         let method = APIKey.POST
@@ -97,9 +80,10 @@ class SpeechModel: APIBase {
         guard let data = try? Data(contentsOf:fileUrl) else { return }
         //print("fileUrl:: \(fileUrl)")
         
+        let lang = params?[APIKey.language]
         
         let request = APIRequest(url)
-        request.uploadFile(params: ["lang":"bn"],paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (response,error) in
+        request.uploadFile(params: ["lang":lang ?? "en"] ,paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (response,error) in
             if let _response = response {
                 let json = _response as? [String:Any]
                 self.convertedText = json?[APIKey.converted_text] as? String ?? ""

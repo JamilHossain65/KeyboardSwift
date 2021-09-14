@@ -106,6 +106,8 @@ struct APIRequest {
         // Set the URLRequest to POST and to the specified URL
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.timeoutInterval = 8
+        
         
         // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
         // And the boundary is also set here
@@ -119,8 +121,6 @@ struct APIRequest {
             bodyData.appendStringNN("Content-Disposition: form-data; name=\(key)")//lang
             bodyData.appendString("\(value)")//bn
         }
-       
-        
         
         // Add the file data to the raw http request data
         bodyData.NappendStringN("--\(boundary)")
