@@ -77,7 +77,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
     
     //MARK: SETTING VIEW METHODS
     @objc func showSettingView() {
-        print("not writing....")
+        //print("not writing....")
         DispatchQueue.main.async {
             self.floatingButtonView.isHidden = false
         }
@@ -109,7 +109,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
     @objc func checkWriting(){
         
         coutTime += 1
-        print("coutTime::\(coutTime)")
+        //print("coutTime::\(coutTime)")
         if coutTime >= countLimit {
             timer?.invalidate()
             coutTime = 0
@@ -277,6 +277,17 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
 
     //MARK: OPEN CONTAINER APP
     func openContainerApp() {
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+        let fullText  = textLeft + textRight
+        print("text::\(fullText)")
+        
+        let key = "full_text"
+        UserDefaults.standard.setValue(fullText, forKey: key)
+        let val = UserDefaults.standard.value(forKey: key) as! String
+        print("val::\(val)")
+        
+        
         let url = URL(string: "SmartFonts://")
         let selectorOpenURL = sel_registerName("openURL:")
         let context = NSExtensionContext()
@@ -341,7 +352,22 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
 }
 
+//MARK:- HINT BAR DELEGATE METHODS
 extension KeyboardViewController: HintBarDelegate {
+    @objc func showFlotingView(){
+        floatingButtonView.isHidden = false
+    }
+    
+    func didSartScroll(_ scrollView: UIScrollView) {
+        print("scrollView start")
+        floatingButtonView.isHidden = true
+    }
+    
+    func didEndScroll (_ scrollView: UIScrollView) {
+        print("scrollView end")
+        self.perform(#selector(showFlotingView), with: nil, afterDelay: 5)
+    }
+    
     func didSelectColor(_ sender: Any) {
         
         let button = sender as! UIButton
@@ -403,7 +429,6 @@ extension KeyboardViewController: HintBarDelegate {
 }
 
 //MARK:- CONVERT TO TEXT
-
 extension KeyboardViewController:AudioManagerDelegate {
  
     @objc func recordTapped(){

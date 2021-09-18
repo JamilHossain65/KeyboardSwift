@@ -10,6 +10,8 @@ import UIKit
 protocol HintBarDelegate: class {
     func didSelectHint (_ sender: Any)
     func didSelectColor(_ sender: Any)
+    func didSartScroll (_ scrollView: UIScrollView)
+    func didEndScroll  (_ scrollView: UIScrollView)
 }
 
 var wordArray:[String] = [String]()
@@ -25,6 +27,7 @@ class HintBarManager: NSObject {
     func addSuggestionBar(parentView:UIView,txtView:UITextDocumentProxy) {
         parentView.addSubview(suggestionBarScrollView)
         suggestionBarScrollView.layer.zPosition = -10
+        suggestionBarScrollView.delegate = self
         
         switch keyboard {
         case .FONT:
@@ -132,6 +135,20 @@ class HintBarManager: NSObject {
         print("color btn tag: \(String(describing: button.tag))")
         if let _delegate = delegate {
             _delegate.didSelectColor(button)
+        }
+    }
+}
+
+//MARK:- SCROLLVIEW DELEGATE METHODS
+extension HintBarManager:UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if let _delegate = delegate {
+            _delegate.didSartScroll(scrollView)
+        }
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let _delegate = delegate {
+            _delegate.didEndScroll(scrollView)
         }
     }
 }
