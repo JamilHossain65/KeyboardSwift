@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
+		8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D496A1C26388C73001DE455 /* SuggestionBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A1426388C73001DE455 /* SuggestionBarManager.m */; };
 		8D496A1E26388C73001DE455 /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D496A1826388C73001DE455 /* word.txt */; };
 		8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D552EE326484C4000866DEF /* UnicodeEn.swift */; };
@@ -80,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
+		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
 		8D496A1426388C73001DE455 /* SuggestionBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionBarManager.m; sourceTree = "<group>"; };
 		8D496A1826388C73001DE455 /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
 		8D496A1B26388C73001DE455 /* SuggestionBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionBarManager.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 		8D6DA1DD26E899050080E630 /* SpeechModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechModel.swift; sourceTree = "<group>"; };
 		8D713FDA26EEEACE0064DE3A /* busy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = busy.gif; sourceTree = "<group>"; };
 		8D769A0C265F3BED00C74FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D8754CB26F58D4800199FEB /* KeyboardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtension.entitlements; sourceTree = "<group>"; };
+		8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardSwift.entitlements; sourceTree = "<group>"; };
 		8D8BCF5E26E7638B00615097 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8D8BCF7926E76E2200615097 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8D91CD452655E7EE00404F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +290,7 @@
 		8DE7F94A25E4474A00D3C48A /* KeyboardSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */,
 				8DD5073C2681596B00377CBD /* API */,
 				8DD507742681644A00377CBD /* Speech */,
 				8DD507412681596B00377CBD /* Reachability */,
@@ -292,6 +298,7 @@
 				8D91CD452655E7EE00404F5D /* SceneDelegate.swift */,
 				8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */,
 				8DD5075D26815EF800377CBD /* Utils.swift */,
+				8D3129E127303B55001EE3C3 /* SharedClass.swift */,
 				8DE7F95125E4474A00D3C48A /* Main.storyboard */,
 				8DE7F95425E4476900D3C48A /* Assets.xcassets */,
 				8D713FDA26EEEACE0064DE3A /* busy.gif */,
@@ -305,6 +312,7 @@
 		8DE7F9C225E4784200D3C48A /* KeyboardExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8D8754CB26F58D4800199FEB /* KeyboardExtension.entitlements */,
 				8D6CBEA226E8955100F8D7FC /* API */,
 				8D6DA1DB26E899050080E630 /* Speech */,
 				8D6DA1D926E899050080E630 /* Reachability */,
@@ -494,6 +502,7 @@
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,
 				8DD507472681596B00377CBD /* APIUrl.swift in Sources */,
 				8D8BCF7A26E76E2200615097 /* Response.swift in Sources */,
+				8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */,
 				8DD507762681644A00377CBD /* SpeechModel.swift in Sources */,
 				8D6DA1D626E897FA0080E630 /* APIRequest.swift in Sources */,
 				8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */,
@@ -525,6 +534,7 @@
 				8DF36878266C20670098EA60 /* ColorExtension.swift in Sources */,
 				8D6DA1C526E897D40080E630 /* APIKey.swift in Sources */,
 				8D6DA1CA26E897D70080E630 /* APIUrl.swift in Sources */,
+				8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */,
 				8D6DA1D226E897DC0080E630 /* APIRequest.swift in Sources */,
 				8DF6E32126C3563B0031E094 /* JhUtil.swift in Sources */,
 			);
@@ -683,6 +693,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -709,6 +720,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -732,6 +744,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -759,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

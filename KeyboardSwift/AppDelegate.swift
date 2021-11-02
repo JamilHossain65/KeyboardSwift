@@ -27,12 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //
     }
     
-    /*
     //test for open continer app
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        
         print("url1::\(url)")
-        
         return true
         }
 
@@ -44,9 +41,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
             
             print("url3::\(url)")
+            let val = getObject(SUITE_KEY)
+            print("open with val::\(val)")
             
+//            let home = HomeViewController()
+//            home.viewWillAppear(true)
+            
+            NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: val, userInfo: nil)
             return true
         }
- */
+ 
 }
 

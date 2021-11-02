@@ -23,6 +23,8 @@ let kKeyBgImageName  = "kKeyBgImageName"
 let kKeyTextColor    = "kKeyTextColor"
 let kKeyAlphabetFont = "kKeyAlphabetFont"
 
+//let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
+
 enum KEYBOARD_TYPE:Int {
     case FONT
     case COLOR
@@ -50,13 +52,14 @@ let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //todo refctor th
 
 let hintBarHeight:CGFloat = 44 //36;
 
-//read and write userdefault data
-func setObject(_ value:Any, key:String) {
-    UserDefaults.standard.setValue(value, forKey: key)
-}
-
-func getObject(_ forKey:String) -> Any {
-    return UserDefaults.standard.value(forKey: forKey) as Any
-}
-
-
+////read and write userdefault data
+//func setObject(_ value:Any, key:String) {
+//    let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
+//    defaultSuite?.setValue(value, forKey: SUITE_KEY)
+//    defaultSuite?.synchronize()
+//}
+//
+//func getObject(_ forKey:String) -> Any {
+//    let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
+//    return defaultSuite?.value(forKey: SUITE_KEY) as Any
+//}

@@ -20,6 +20,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let val = getObject(SUITE_KEY)
+        print("found val::\(val)")
+        /*
         textView.text =
             "𝕥𝕙𝕖𝕣𝕖 𝕒𝕣𝕖 𝕞𝕒𝕟𝕪 𝕗𝕠𝕟𝕥𝕤 𝕚 𝕔𝕒𝕟 𝕦𝕤𝕖\n\n" +
             //"ᴛʜᴇʀᴇ ᴀʀᴇ ᴍᴀɴʏ ғᴏɴᴛs ɪ ᴄᴀɴ ᴜsᴇ\n" +
@@ -31,8 +34,8 @@ class HomeViewController: UIViewController {
             //"t͟h͟e͟r͟e͟ a͟r͟e͟  m͟a͟n͟y f͟o͟n͟t͟s͟ i͟ c͟a͟n͟ u͟s͟e͟\n" +
             "t҉h҉e҉r҉e҉ a҉r҉e҉ m҉a҉n҉y҉ f҉o҉n҉t҉s҉ i҉ c҉a҉n҉ u҉s҉e҉\n"  +
             "t̸h̸e̸r̸e̸ a̸r̸e̸ m̸a̸n̸y̸ f̸o̸n̸t̸s̸ i̸ c̸n̸ u̸s̸e̸\n"
-        
-        textView.text = ""
+        */
+        textView.text = val as? String
         
         textView.layer.borderWidth  = 1.0
         textView.layer.cornerRadius = 8.0
@@ -44,6 +47,35 @@ class HomeViewController: UIViewController {
         audioManager.delegate = self
         loadRecordingUI()
         playSoundUI()
+        
+        //set push
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.receivePushNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
+        
+    }
+    
+    @objc func receivePushNotification(notification:Notification){
+        let val = notification.object
+        //let val = getObject(SUITE_KEY)
+        print("found val hom::\(val)")
+        textView.text = val as? String
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        let val = getObject(SUITE_KEY)
+//        print("WillAppear found val::\(val)")
+//        textView.text = val as? String
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        setObject(textView.text as Any, key: SUITE_KEY)
+        
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("NotificationIdentifier"), object: nil)
+        
     }
     
     func loadRecordingUI(){

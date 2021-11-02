@@ -8,6 +8,8 @@
 import UIKit
 import MBProgressHUD
 
+//let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
+
 func log(_ msg: Any?) {
     #if DEBUG
     if let _msg = msg { print(String(describing: _msg)) }
@@ -20,7 +22,7 @@ func showAlertOkay(title: String? = "", message:String? = "", completion: @escap
     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
         completion(true)
     }))
-
+    
     let window = UIApplication.shared.keyWindow
     window?.rootViewController?.present(alert, animated: true, completion: nil)
 }
@@ -34,9 +36,39 @@ func flag(from country:String) -> String {
     return s
 }
 
-//class Utils:NSObject{
-//
+//MARK:- SHARED DATA
+//https://learnappmaking.com/notification-center-how-to-swift/
+//notification
+func setNotify(_ controller:UIViewController) {
+    // Register to receive notification in your class
+    //NotificationCenter.defaultCenter.addObserver(controller, selector: #selector(controller.loadRecordingUI), name: "notificationName", object: nil)
+}
+
+// handle notification
+func showSpinningWheel(notification: NSNotification) {
+    
+    
+    if let image = notification.userInfo?["image"] as? UIImage {
+        // do something with your image
+    }
+}
+
+//MARK:- SHARED DATA
+//read and write userdefault data
+//func setObject(_ value:Any, key:String) {
+//    let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
+//    defaultSuite?.setValue(value, forKey: SUITE_KEY)
+//    defaultSuite?.synchronize()
 //}
+//
+//func getObject(_ forKey:String) -> Any {
+//    let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
+//    return defaultSuite?.value(forKey: SUITE_KEY) as Any
+//}
+
+class Utils:NSObject{
+    
+}
 
 extension String {
     func toDate(formatter: String? = "yyyy-MM-dd HH:mm:ss") -> Date? {
@@ -94,7 +126,7 @@ extension UIImageView {
         }
         let url = URL(fileURLWithPath: path)
         guard let gifData = try? Data(contentsOf: url),
-            let source =  CGImageSourceCreateWithData(gifData as CFData, nil) else { return nil }
+              let source =  CGImageSourceCreateWithData(gifData as CFData, nil) else { return nil }
         var images = [UIImage]()
         let imageCount = CGImageSourceGetCount(source)
         for i in 0 ..< imageCount {

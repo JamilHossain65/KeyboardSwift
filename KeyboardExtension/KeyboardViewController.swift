@@ -33,6 +33,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
     var countLimit = 5
     var timer:Timer?
     
+    var counter = 0
+    
     private func prepareHeightConstraint() {
         guard self.heightConstraint != nil else {
             let dummyView = UILabel(frame:view.frame)
@@ -54,6 +56,26 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
         super.viewWillAppear(animated)
         // When keyboard is create
         self.prepareHeightConstraint()
+        
+        print("viewWillAppear")
+        
+        print("initialize keboard")
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+        let fullText  = textLeft + textRight
+        
+        let val = getObject(SUITE_KEY) as? String ?? ""
+        print("get val::\(val)")
+        
+        if fullText == val{
+            //textDocumentProxy.insertText("=")
+            return
+        }else{
+            //textDocumentProxy.insertText(fullText)
+        }
+        
+        textDocumentProxy.insertText(val)
+        
     }
     
     override func updateViewConstraints() {
@@ -220,6 +242,23 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
         
         //set font button selected initialy
         resetColor(fontButton as Any)
+        
+//        print("initialize keboard")
+//        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+//        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+//        let fullText  = textLeft + textRight
+//
+//        let val = getObject(SUITE_KEY) as? String ?? ""
+//        print("get val::\(val)")
+//
+//        if fullText == val{
+//            textDocumentProxy.insertText("=")
+//            return
+//        }else{
+//            textDocumentProxy.insertText(fullText)
+//        }
+        
+        counter = 0
     }
     
     //MARK: SETTING BUTTON ACTION
@@ -281,12 +320,17 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
         print("text::\(fullText)")
+
+        setObject(fullText, key: SUITE_KEY)
+        //textDocumentProxy.insertText(fullText)
         
-        let key = "full_text"
-        UserDefaults.standard.setValue(fullText, forKey: key)
-        let val = UserDefaults.standard.value(forKey: key) as! String
-        print("val::\(val)")
-        
+//        if counter == 0 || true {
+//            textDocumentProxy.insertText(fullText)
+//            setObject(fullText, key: SUITE_KEY)
+//            let val = getObject(SUITE_KEY)
+//            print("get val::\(val)")
+//            counter += 1
+//        }
         
         let url = URL(string: "SmartFonts://")
         let selectorOpenURL = sel_registerName("openURL:")
@@ -308,6 +352,15 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
         showView()
     }
     
+//    override func loadView() {
+//        super.loadView()
+//
+//        print("initialize keboard")
+//        let val = getObject(SUITE_KEY) as? String ?? ""
+//        print("get val::\(val)")
+//        textDocumentProxy.insertText("loadView")
+//    }
+    
     override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
@@ -321,16 +374,42 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
         } else {
             textColor = UIColor.black
         }
+        
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+        let fullText  = textLeft + textRight
+        
+        let val = getObject(SUITE_KEY) as? String ?? ""
+        print("get val::\(val)")
+        
+        if fullText == val{
+            return
+        }else{
+            setObject(val, key: SUITE_KEY)
+        }
+        
     }
 }
 
 extension KeyboardViewController: KeyboardViewDelegate {
     func deleteCharacter(_ newCharacter: String) {
         textDocumentProxy.deleteBackward()
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+        let fullText  = textLeft + textRight
+        
+        setObject(fullText, key: SUITE_KEY)
     }
     
     func insertCharacter(_ newCharacter: String) {
         textDocumentProxy.insertText(newCharacter)
+        
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+        let fullText  = textLeft + textRight
+        setObject(fullText, key: SUITE_KEY)
+        print("insert :: \(fullText)")
+        
         hideSettingView()
     }
     
@@ -342,13 +421,13 @@ extension KeyboardViewController: KeyboardViewDelegate {
         print("voice button tapped")
         openContainerApp()
         
-        if voiceButton.isSelected{
-            print("voice recording...")
-            recordTapped()
-        } else{
-            print("voice stoped....")
-            recordDidFinish()
-        }
+//        if voiceButton.isSelected{
+//            print("voice recording...")
+//            recordTapped()
+//        } else{
+//            print("voice stoped....")
+//            recordDidFinish()
+//        }
     }
 }
 
