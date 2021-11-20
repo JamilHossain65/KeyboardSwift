@@ -24,6 +24,23 @@ func getObject(_ forKey:String) -> Any {
     return defaultSuite?.value(forKey: SUITE_KEY) as Any
 }
 
+
+extension NSObject {
+    var thisClassName: String {
+        return NSStringFromClass(type(of: self))
+    }
+}
+
+
+//extension Range{
+//    func range(_ start:Int, _ length:Int) -> Range<String.Index> {
+//        let i = self.index(start >= 0 ? self.startIndex : self.endIndex,
+//            offsetBy: start)
+//        let j = self.index(i, offsetBy: length)
+//        return i..<j
+//    }
+//}
+
 //extension UITextDocumentProxy {
 //    func text() {
 //        let textLeft  = documentContextBeforeInput ?? ""

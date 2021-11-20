@@ -35,6 +35,48 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
     
     var counter = 0
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+   
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//                AudioServicesPlaySystemSound(1104);
+//            });
+        
+        //self.textDocumentProxy.insertText("load" + thisClassName)
+        print("load extension class name::\(thisClassName)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // When keyboard is create
+        self.prepareHeightConstraint()
+        
+        if thisClassName.contains("KeyboardViewController") {
+            let val = getObject(SUITE_KEY) as? String ?? ""
+            print("get val::\(val)")
+            //self.textDocumentProxy.insertText(val)
+            print("will extension class name::\(thisClassName)")
+            
+            // write to clipboard
+            UIPasteboard.general.string = val
+
+            // read from clipboard
+            let content = UIPasteboard.general.string
+            print("content::\(content)")
+            self.textDocumentProxy.insertText(content ?? "")
+        }
+    }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        guard let viewKeyboard = self.inputView, viewKeyboard.frame.size.width != 0 && viewKeyboard.frame.size.width != 0 else {
+            return
+        }
+        //Update change orientation, update just the constant
+        self.prepareHeightConstraint()
+        self.relevantContextRange = NSRange(location: 0, length: 0);
+    }
+    
     private func prepareHeightConstraint() {
         guard self.heightConstraint != nil else {
             let dummyView = UILabel(frame:view.frame)
@@ -50,51 +92,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
         
         // Update when change orientation etc..
         self.heightConstraint?.constant = height
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // When keyboard is create
-        self.prepareHeightConstraint()
-        
-        print("viewWillAppear")
-        
-        print("initialize keboard")
-        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
-        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
-        let fullText  = textLeft + textRight
-        
-        let val = getObject(SUITE_KEY) as? String ?? ""
-        print("get val::\(val)")
-        
-        if fullText == val{
-            //textDocumentProxy.insertText("=")
-            return
-        }else{
-            //textDocumentProxy.insertText(fullText)
-        }
-        
-        textDocumentProxy.insertText(val)
-        
-    }
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        guard let viewKeyboard = self.inputView, viewKeyboard.frame.size.width != 0 && viewKeyboard.frame.size.width != 0 else {
-            return
-        }
-        //Update change orientation, update just the constant
-        self.prepareHeightConstraint()
-        self.relevantContextRange = NSRange(location: 0, length: 0);
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-   
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//                AudioServicesPlaySystemSound(1104);
-//            });
-        
     }
     
     //MARK: SETTING VIEW METHODS
