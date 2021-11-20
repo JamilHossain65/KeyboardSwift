@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
+class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
     var hintBarManager: HintBarManager = HintBarManager()
     var keyboardView  : KeyboardView   = KeyboardView()
@@ -43,7 +43,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
 //            });
         
         //self.textDocumentProxy.insertText("load" + thisClassName)
-        print("load extension class name::\(thisClassName)")
+        //print("load extension class name::\(thisClassName)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,17 +52,17 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback {
         self.prepareHeightConstraint()
         
         if thisClassName.contains("KeyboardViewController") {
-            let val = getObject(SUITE_KEY) as? String ?? ""
-            print("get val::\(val)")
-            //self.textDocumentProxy.insertText(val)
-            print("will extension class name::\(thisClassName)")
             
+            let text = (textDocumentProxy.documentContextBeforeInput ?? "") + (textDocumentProxy.documentContextAfterInput ?? "")
+            for _: Int in 0 ..< text.count {
+                self.textDocumentProxy.deleteBackward()
+            }
+            
+            let val = getObject(SUITE_KEY) as? String ?? ""
             // write to clipboard
             UIPasteboard.general.string = val
-
             // read from clipboard
             let content = UIPasteboard.general.string
-            print("content::\(content)")
             self.textDocumentProxy.insertText(content ?? "")
         }
     }

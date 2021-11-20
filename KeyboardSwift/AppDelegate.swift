@@ -41,15 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
             
             print("url3::\(url)")
-//            let val = getObject(SUITE_KEY)
-//            print("open with val::\(val)")
-            
-//            let home = HomeViewController()
-//            home.viewWillAppear(true)
-            
-            //NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: val, userInfo: nil)
             return true
         }
- 
+
 }
 
