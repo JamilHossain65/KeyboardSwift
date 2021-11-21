@@ -41,9 +41,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //        dispatch_async(dispatch_get_main_queue(), ^{
 //                AudioServicesPlaySystemSound(1104);
 //            });
-        
-        //self.textDocumentProxy.insertText("load" + thisClassName)
-        //print("load extension class name::\(thisClassName)")
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,10 +51,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         if thisClassName.contains("KeyboardViewController") {
             
-            let text = (textDocumentProxy.documentContextBeforeInput ?? "") + (textDocumentProxy.documentContextAfterInput ?? "")
-            for _: Int in 0 ..< text.count {
-                self.textDocumentProxy.deleteBackward()
-            }
+            deleteDoccumentText()
             
             let val = getObject(SUITE_KEY) as? String ?? ""
             // write to clipboard
@@ -64,6 +59,14 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             // read from clipboard
             let content = UIPasteboard.general.string
             self.textDocumentProxy.insertText(content ?? "")
+        }
+    }
+    
+    func deleteDoccumentText(){
+        //remove text from document
+        let text = (textDocumentProxy.documentContextBeforeInput ?? "") + (textDocumentProxy.documentContextAfterInput ?? "")
+        for _: Int in 0 ..< text.count {
+            self.textDocumentProxy.deleteBackward()
         }
     }
     
@@ -239,22 +242,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         //set font button selected initialy
         resetColor(fontButton as Any)
-        
-//        print("initialize keboard")
-//        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
-//        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
-//        let fullText  = textLeft + textRight
-//
-//        let val = getObject(SUITE_KEY) as? String ?? ""
-//        print("get val::\(val)")
-//
-//        if fullText == val{
-//            textDocumentProxy.insertText("=")
-//            return
-//        }else{
-//            textDocumentProxy.insertText(fullText)
-//        }
-        
         counter = 0
     }
     
