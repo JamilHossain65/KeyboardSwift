@@ -113,6 +113,7 @@ class HomeViewController: UIViewController {
             
             if let _errors = errors,_errors.message?.count ?? 0 > 0 {
                 print("error::\(_errors.message)")
+                showAlertOkay(message: "Error found!", completion: { _ in})
             } else {
                 self.textView.text += " \(speechModel.convertedText)"
                 print("text::\(speechModel.convertedText)")
