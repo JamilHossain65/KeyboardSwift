@@ -12,8 +12,8 @@ protocol KeyboardViewDelegate: class {
     func deleteCharacter(_ newCharacter: String)
     func gotoNextKeyboard(_ nextButton: UIButton)
     func voiceButtonTapped(_ voiceButton: UIButton)
-//  func deleteCharacterBeforeCursor()
-//  func characterBeforeCursor() -> String?
+    func shiftButtonPressed(_ shiftButton: UIButton)
+    func didTapLongPressed()
 }
 
 class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice] playInputClick];
@@ -396,13 +396,19 @@ extension KeyboardView:JHkeyDelegate {
             delegate?.insertCharacter(_title)
         }
     }
+    
+    func didTapLong(on sender: UIButton!){
+        if let _title = sender.titleLabel?.text {
+            print("_title:::\(_title)")
+            delegate?.insertCharacter(_title)
+        }
+    }
 }
 
 extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
         //print("sender.tag\(sender.tag), isSelected:\(sender.isSelected)")
         
-        UIDevice.current.playInputClick()
         if(sender.tag == shiftButtonIndex) {
             //print("sender.isSelected::\(sender.isSelected)")
             sender.isSelected = !sender.isSelected
@@ -416,14 +422,14 @@ extension KeyboardView {
                 }
             }
             
-            sender.setImage(UIImage(named: "unshift.png"), for: .normal)
-            sender.setImage(UIImage(named: "shift.png"), for: .selected)
-            sender.isSelected = !sender.isSelected
+            //sender.isSelected = !sender.isSelected
             if sender.isSelected {
                 sender.defaultBackgroundColor = .white
             }else{
                 sender.defaultBackgroundColor = kAltButtonColor
             }
+            
+            delegate?.shiftButtonPressed(sender)
             
         }else if(sender.tag == voiceButtonIndex) {
             sender.setImage(UIImage(named: "record_off.png"), for: .normal)
@@ -433,7 +439,7 @@ extension KeyboardView {
             voiceButton = sender
             
             if voiceButton.isSelected {
-                sender.defaultBackgroundColor = .red
+                sender.defaultBackgroundColor = .brown
             } else {
                 sender.defaultBackgroundColor = .white
             }

@@ -12,9 +12,9 @@
 
 #define ACKEY_POPUP_VIEV_TAG -13 //todo
 
-#define kKeyPopapAppearDuration 0.05
+#define kKeyPopapAppearDuration 0.00
 
-#define kKeyPopapStayAliveInterval 0.05
+#define kKeyPopapStayAliveInterval 0.00
 
 
 #define __FAR_SHIFT         (12 * [[UIScreen mainScreen] scale])
@@ -41,7 +41,7 @@
 NSString *returnTitleSearch = @"Search";
 
   /* ±hints strings list */
-NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i î ï í ī į ì,o ô ö ò ó œ ø ō õ,a à á â ä æ ã å ā,s ß ś š,l ł,z ž ź ż,c ç ć č,n ñ ń,z ž ź ż";
+NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i î ï í ī į ì,o ô ö ò ó œ ø ō õ,a à á â ä æ ã å ā,s ß ś š,l ł,z ž ź ż,c ç ć č,n ñ ń,z ž ź ż";
 
 @implementation JHkey
 
@@ -113,6 +113,8 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
 //    UILongPressGestureRecognizer* longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
 //    [longPressGesture setMinimumPressDuration:0.5];
 //    [self addGestureRecognizer:longPressGesture];
+    
+    NSLog(@"tap tag::%ld",(long)button.tag);
     
     [self hidePopup];
     
@@ -205,12 +207,15 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
 - (void)showKeyCapView {
     
     if (!self.hintSymbolsList || ![self.hintSymbolsList count]) {
+        //NSLog(@"tap tag::%ld",(long)self.tag);
         return;
     }
     
+    if ([self.delegate conformsToProtocol:@protocol(JHkeyDelegate)]) {
+        [self.delegate didTapLongOnButton:self];
+        NSLog(@"tap long::%@",self.titleLabel.text);
+    }
     //NSLog(@"hintSymbolsList::%@", self.hintSymbolsList);
-    
-    //TODO: fix selection button and -updateState after it when hint view was added
     [self setHighlighted:NO];
     [self setSelected:NO];
     [self updateState];
@@ -243,7 +248,14 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
     
     UIButton *button;
     NSString *hint;
+    
     BOOL isLowCase = [self.titleLabel.text.lowercaseString isEqualToString:self.titleLabel.text];
+    
+    if (isLowCase == false){
+        NSPredicate *predicate =
+            [NSPredicate predicateWithFormat:@"SELF != 'ß'"];
+        self.hintSymbolsList = [self.hintSymbolsList filteredArrayUsingPredicate:predicate];
+    }
     
     NSMutableArray *hintStrings = [NSMutableArray array];
     if (isRightHint) {
@@ -263,7 +275,7 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
                                   20,
                                   self.frame.size.width,
                                   self.frame.size.height);
-        [button setTitle:(isLowCase ? hint.lowercaseString:hint) forState:UIControlStateNormal];
+        [button setTitle:(isLowCase ? hint.lowercaseString:hint.uppercaseString) forState:UIControlStateNormal];
         [button.titleLabel setFont:[UIFont systemFontOfSize:15]];//kKeyPhoneTitleFontSize+(isLowCase ? 2:0) //todo
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -744,7 +756,8 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
         [self addPopupToButton:self];
     }
     [self updateState]; //todo enable code
-    NSLog(@"T begin");
+    long long time = (long long)([[NSDate date] timeIntervalSince1970] * 1000.0);
+    NSLog(@"T begin:%lld",time);
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -794,6 +807,12 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
+//    [self startHideTimerPopup];
+//    [self updateState];
+//    long long ti = (long long)([[NSDate date] timeIntervalSince1970] * 1000.0);
+//    NSLog(@"Start T end:%lld",ti);
+//    return;
+    
     if (self.hintButtons) {
         
         [self setHighlighted:NO];
@@ -810,8 +829,6 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
             if (highlightedButton) {
                 //!!!: please refactor it
                 //[((KeyboardView*)self.superview) insertHintText:highlightedButton.titleLabel.text];//todo enable this code
-                
-                
                 if ([self.delegate conformsToProtocol:@protocol(JHkeyDelegate)]) {
                     [self.delegate didSelectHintButton:highlightedButton];
                     NSLog(@"tap::%@",highlightedButton.titleLabel.text);
@@ -825,7 +842,8 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
     }
     [self startHideTimerPopup];
     [self updateState];
-    NSLog(@"T end");
+    long long time = (long long)([[NSDate date] timeIntervalSince1970] * 1000.0);
+    NSLog(@"T end:%lld",time);
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -879,7 +897,7 @@ NSString *hintsList = @"w ŵ,e è e é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i
     [self stopShowHintTimer];
     
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
-        _showHintTimer = [NSTimer scheduledTimerWithTimeInterval:0.0 target:self selector:@selector(showKeyCapView) userInfo:nil repeats:NO];
+        _showHintTimer = [NSTimer scheduledTimerWithTimeInterval:0.6 target:self selector:@selector(showKeyCapView) userInfo:nil repeats:NO];
     }
 }
 

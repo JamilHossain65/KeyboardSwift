@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
@@ -376,6 +377,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 }
 
 extension KeyboardViewController: KeyboardViewDelegate {
+    func didTapLongPressed() {
+        hideSettingView()
+    }
     func deleteCharacter(_ newCharacter: String) {
         textDocumentProxy.deleteBackward()
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
@@ -386,6 +390,13 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func insertCharacter(_ newCharacter: String) {
+        
+        //MARK:- TODO: play sound when tap letter
+        //UIDevice.current.playInputClick()
+        //AudioServicesPlaySystemSound (1003);
+        //AudioServicesPlaySystemSound (1104);
+        //AudioServicesPlaySystemSound (0x450);
+        
         textDocumentProxy.insertText(newCharacter)
         
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
@@ -412,6 +423,10 @@ extension KeyboardViewController: KeyboardViewDelegate {
 //            print("voice stoped....")
 //            recordDidFinish()
 //        }
+    }
+    
+    func shiftButtonPressed(_ shiftButton:UIButton){
+        print("shift button tapped")
     }
 }
 
@@ -536,5 +551,12 @@ extension KeyboardViewController:AudioManagerDelegate {
                 print("text::\(speechModel.convertedText)")
             }
         })
+    }
+}
+
+extension UIInputView : UIInputViewAudioFeedback {
+
+    public var enableInputClicksWhenVisible: Bool {
+        return true
     }
 }

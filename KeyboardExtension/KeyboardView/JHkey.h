@@ -9,6 +9,8 @@
 
 @protocol JHkeyDelegate <NSObject>   //define delegate protocol
     - (void)didSelectHintButton:(UIButton*)sender;
+    - (void)didTapLongOnButton:(UIButton*)sender;
+
 @end //end protocol
 
 typedef NS_ENUM(NSUInteger, ACHintPosition) {
