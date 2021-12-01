@@ -104,17 +104,11 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
 -(void)gestureHandler:(UILongPressGestureRecognizer*)gesture {
     if(UIGestureRecognizerStateBegan == gesture.state) {
         NSLog(@"gestureHandler");
-        //[self startShowHintTimer]; //todo enable it for long pressed mutiple keys
+        [self startShowHintTimer]; //todo enable it for long pressed mutiple keys
     }
 }
 
 - (void)addPopupToButton:(UIButton*)button {
-    
-//    UILongPressGestureRecognizer* longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
-//    [longPressGesture setMinimumPressDuration:0.5];
-//    [self addGestureRecognizer:longPressGesture];
-    
-    NSLog(@"tap tag::%ld",(long)button.tag);
     
     [self hidePopup];
     
@@ -200,6 +194,13 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
                          animations:^{
                              [keyPop setAlpha:1.0];
                          }];
+        
+//        UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
+//        [longPressGesture setMinimumPressDuration:0.6];
+//        [button addGestureRecognizer:longPressGesture];
+        
+        NSLog(@"tap tag::%ld",(long)button.tag);
+        
         [self startShowHintTimer]; //todo enable for keycap overlay view
     }
 }
@@ -215,7 +216,7 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
         [self.delegate didTapLongOnButton:self];
         NSLog(@"tap long::%@",self.titleLabel.text);
     }
-    //NSLog(@"hintSymbolsList::%@", self.hintSymbolsList);
+    NSLog(@"hintSymbolsList::%@", self.hintSymbolsList);
     [self setHighlighted:NO];
     [self setSelected:NO];
     [self updateState];

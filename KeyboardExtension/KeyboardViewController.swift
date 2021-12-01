@@ -380,10 +380,11 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func didTapLongPressed() {
         hideSettingView()
     }
+    
     func deleteCharacter(_ newCharacter: String) {
         textDocumentProxy.deleteBackward()
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
-        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+        let textRight = textDocumentProxy.documentContextAfterInput  ?? ""
         let fullText  = textLeft + textRight
         
         setObject(fullText, key: SUITE_KEY)

@@ -16,7 +16,7 @@ protocol KeyboardViewDelegate: class {
     func didTapLongPressed()
 }
 
-class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice] playInputClick];
+class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate { //[[UIDevice currentDevice] playInputClick];
     // constants
     var paddingX:Double = 3 //left and right padding
     var paddingY:Double = 3 //top and bottom padding
@@ -48,6 +48,11 @@ class KeyboardView: UIView,UIInputViewAudioFeedback { //[[UIDevice currentDevice
     var currentButtonIndex = 0
     var currentFontLetters:[String] =  []
     
+    //long pressed delete
+    var currentDeleteCount = 0
+    var isDeleteEnd = false
+    
+    //delete
     weak var delegate: KeyboardViewDelegate?
     
     override init(frame: CGRect) {
@@ -178,10 +183,17 @@ extension KeyboardView{
             let letter = shiftButton.isSelected ? tempLetter : tempLetter.lowercased()
             
             let keyboardButton = KeyboardButton(frame: bFrame)
+            
+            //recognize button pressed
             keyboardButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
             
-            //keyboardButton.addTarget(self, action: #selector(multipleTap(_:event:)), for: .touchDownRepeat)
+            //recognize long pressed on button
+            if currentButtonIndex == deleteButtonIndex {
+                let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressDelete(_:)))
+                keyboardButton.addGestureRecognizer(longGesture)
+            }
             
+            //recognize Double Tap on button
             if currentButtonIndex == shiftButtonIndex {
                 let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
                     tap.numberOfTapsRequired = 2
@@ -399,15 +411,19 @@ extension KeyboardView:JHkeyDelegate {
     
     func didTapLong(on sender: UIButton!){
         if let _title = sender.titleLabel?.text {
-            print("_title:::\(_title)")
+            print("_title ::: \(_title)")
             delegate?.insertCharacter(_title)
+        }else{
+            if(sender.tag == shiftButtonIndex) {
+                
+            }
+            print("tag ::: \(sender.tag)")
         }
     }
 }
 
 extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
-        //print("sender.tag\(sender.tag), isSelected:\(sender.isSelected)")
         
         if(sender.tag == shiftButtonIndex) {
             //print("sender.isSelected::\(sender.isSelected)")
@@ -480,6 +496,7 @@ extension KeyboardView {
         }
     }
 
+    
     @objc func doubleTapped() {
         // do something here
         print("multipleTap")
@@ -502,4 +519,27 @@ extension KeyboardView {
             shiftButton.defaultBackgroundColor = kAltButtonColor
         }
     }
+    
+    @objc func handleLongPressDelete(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if gestureRecognizer.state == UIGestureRecognizer.State.ended {
+            print("end")
+            isDeleteEnd = true
+          return
+        }
+        print("long press")
+        isDeleteEnd = false
+        
+        perform(#selector(deleteLetter), with: false, afterDelay: 0.1)
+    }
+    
+    @objc func deleteLetter(){
+        print("delete letter")
+        
+        if !isDeleteEnd {
+            perform(#selector(deleteLetter), with: nil, afterDelay: 0.1)
+        }
+        self.delegate?.deleteCharacter("")
+    }
+    
 }
