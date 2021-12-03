@@ -15,7 +15,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     let audioManager = AudioManager()
     
-    
     var wordArray: NSArray  = []
     var context  : NSString = ""
     
@@ -394,9 +393,11 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         //MARK:- TODO: play sound when tap letter
         //UIDevice.current.playInputClick()
-        //AudioServicesPlaySystemSound (1003);
         //AudioServicesPlaySystemSound (1104);
         //AudioServicesPlaySystemSound (0x450);
+        
+        //https://picturetosound.com/en/a/26/iphone-typing-on-keyboard
+        audioManager.playSoundFile("key_sound.mp3")
         
         textDocumentProxy.insertText(newCharacter)
         
@@ -544,6 +545,7 @@ extension KeyboardViewController:AudioManagerDelegate {
         let speechModel  = SpeechModel()
         speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
         print("speechModel.fileUrl::\(speechModel.fileUrl)")
+       
         speechModel.doTranslate2({errors in
             if let _errors = errors,_errors == nil {
                 print("error::\(_errors.message)")
@@ -552,12 +554,5 @@ extension KeyboardViewController:AudioManagerDelegate {
                 print("text::\(speechModel.convertedText)")
             }
         })
-    }
-}
-
-extension UIInputView : UIInputViewAudioFeedback {
-
-    public var enableInputClicksWhenVisible: Bool {
-        return true
     }
 }

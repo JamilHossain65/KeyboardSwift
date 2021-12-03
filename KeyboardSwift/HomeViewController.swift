@@ -39,6 +39,8 @@ class HomeViewController: UIViewController {
         textView.layer.borderColor  = UIColor.lightGray.cgColor
         textView.becomeFirstResponder()
         
+        //showLoading(view: textView)
+        
         //record audio
         audioManager.initAudio()
         audioManager.delegate = self
@@ -49,6 +51,18 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    func showLoading(view:UIView){
+        textView.text = "mas high school this is hoss ajsmil jam ja ahs ajk ahsja   hsajkhs akjh sajk hasjkhs jakhsk hajks haksj"
+        let rect = textView.text.getRect(withConstrainedWidth: textView.frame.size.width, font: textView.font!)
+        print("rect::%@",rect)
+        
+        let loading = UIActivityIndicatorView(frame: CGRect(x: rect.width - 10, y: rect.height - 10, width: 20, height: 20))
+        loading.hidesWhenStopped = true
+        loading.style = UIActivityIndicatorView.Style.gray
+        loading.startAnimating()
+        view.addSubview(loading)
     }
     
     func loadRecordingUI(){
@@ -153,5 +167,14 @@ extension HomeViewController:AudioManagerDelegate {
     @objc func resetSpeech(){
         //recordTapped() //enable this line for aumatic recording when app launch
         //restartSpeech(sec:5)
+    }
+}
+
+
+extension String {
+    func getRect(withConstrainedWidth width: CGFloat, font: UIFont) -> CGRect {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return boundingBox
     }
 }

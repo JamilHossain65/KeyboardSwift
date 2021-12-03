@@ -42,6 +42,8 @@ var kTextFontAlphabet:[String] = []
 var kAltButtonColor  = UIColor.init(red: 172/255, green: 176/255, blue: 188/255, alpha: 1)
 var kKeyboardBGColor = UIColor.init(red: 209/255, green: 212/255, blue: 219/255, alpha: 1)
 var kHintButtonColor = UIColor.init(red: 174/255, green: 179/255, blue: 189/255, alpha: 1)
+var kOffWhiteColor   = UIColor.init(red: 248/255, green: 240/255, blue: 227/255, alpha: 1)
+var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255, alpha: 1)
 
 //let kAlphabet = "q w e r t y u i o p a s d f g h j k l z x c v b n m"
 let kAlphabetEN = "Q W E R T Y U I O P A S D F G H J K L : Z X C V B N M"

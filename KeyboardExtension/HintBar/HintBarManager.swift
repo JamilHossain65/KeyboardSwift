@@ -45,7 +45,7 @@ class HintBarManager: NSObject {
         }
     }
     
-    func refresh(scrollView:UIScrollView, dataArray:[String]){
+    func refresh(scrollView:UIScrollView, dataArray:[String], selectedIndex:Int? = 0){
         if dataArray.count <= 0 {return}
         
         for view in suggestionBarScrollView.subviews{
@@ -70,14 +70,23 @@ class HintBarManager: NSObject {
             let sgButton = UIButton.init(type: .custom)
             sgButton.tag = index
             sgButton.backgroundColor = .clear 
-            sgButton.setTitle(dataArray[index], for: .normal)
+            sgButton.setTitle(" \(dataArray[index]) ", for: .normal)
             sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
             sgButton.setTitleColor(.black, for: .normal)
             sgButton.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: Int(hintBarHeight))
             sgButton.addTarget(self, action: #selector(suggestionButtonDidClick(button:)), for: .touchUpInside)
             sgButton.setTitleColor(kKeyboardTextColor, for: .normal)
-            scrollView.addSubview(sgButton)
             
+            if sgButton.tag == selectedIndex {
+                sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
+                sgButton.titleLabel?.layer.masksToBounds = true;
+                sgButton.titleLabel?.layer.borderWidth = 1.0
+                
+                sgButton.titleLabel?.layer.cornerRadius = 5.0
+                sgButton.titleLabel?.backgroundColor = kOffWhiteColor
+            }
+            
+            scrollView.addSubview(sgButton)
             //add vertical seperator
             let sepLbl = UILabel()
             sepLbl.backgroundColor = .white
@@ -125,9 +134,10 @@ class HintBarManager: NSObject {
     }
     
     @objc func suggestionButtonDidClick(button:UIButton){
-        print("\(String(describing: button.titleLabel?.text))")
+        print("hint:\(String(describing: button.titleLabel?.text))")
         if let _delegate = delegate {
             _delegate.didSelectHint(button)
+            refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray,selectedIndex: button.tag)
         }
     }
     

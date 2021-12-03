@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
+		8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */; };
 		8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D496A1C26388C73001DE455 /* SuggestionBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A1426388C73001DE455 /* SuggestionBarManager.m */; };
@@ -82,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
+		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
 		8D496A1426388C73001DE455 /* SuggestionBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionBarManager.m; sourceTree = "<group>"; };
 		8D496A1826388C73001DE455 /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				8DE7FA2225E4C6E700D3C48A /* KeyboardView */,
 				8DE7F9C325E4784200D3C48A /* KeyboardViewController.swift */,
 				8D769A0C265F3BED00C74FBA /* Assets.xcassets */,
+				8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */,
 				8DE7F9C525E4784200D3C48A /* Info.plist */,
 			);
 			path = KeyboardExtension;
@@ -440,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */,
 				8D496A1E26388C73001DE455 /* word.txt in Resources */,
 				8D140F4A26C0E4A200512477 /* bangla.flac in Resources */,
 				8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */,

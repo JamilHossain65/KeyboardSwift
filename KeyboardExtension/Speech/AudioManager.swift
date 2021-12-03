@@ -62,6 +62,30 @@ class AudioManager: NSObject,AVAudioRecorderDelegate {
         }
     }
     
+    func playSoundFile(_ filename:String) {
+        guard let url = Bundle.main.url(forResource: filename, withExtension: nil) else { return }
+
+        //print("play url::\(url)")
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            player.volume = 0.1
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
     func startRecording() {
         print("startRecording")
         

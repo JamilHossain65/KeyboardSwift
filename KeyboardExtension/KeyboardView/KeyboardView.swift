@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 protocol KeyboardViewDelegate: class {
     func insertCharacter(_ newCharacter: String)
@@ -405,6 +406,8 @@ extension KeyboardView {
 extension KeyboardView:JHkeyDelegate {
     func didSelectHintButton(_ sender: UIButton!) {
         if let _title = sender.titleLabel?.text {
+            UIDevice.current.playInputClick()
+            AudioServicesPlaySystemSound(1104);
             delegate?.insertCharacter(_title)
         }
     }
@@ -542,4 +545,11 @@ extension KeyboardView {
         self.delegate?.deleteCharacter("")
     }
     
+}
+
+extension UIInputView : UIInputViewAudioFeedback {
+
+    public var enableInputClicksWhenVisible: Bool {
+        return true
+    }
 }

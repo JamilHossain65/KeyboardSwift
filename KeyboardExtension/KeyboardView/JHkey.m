@@ -280,16 +280,15 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
         [button.titleLabel setFont:[UIFont systemFontOfSize:15]];//kKeyPhoneTitleFontSize+(isLowCase ? 2:0) //todo
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        //[button setBackgroundImage:[UIImage imageNamed:@"hint_button_back"] forState:UIControlStateHighlighted];
         
-        UIImage *imageBlue  = [JHkey imageWithColor:UIColor.blueColor];
+        UIColor *blueColor  = [UIColor colorWithRed:3/255.0 green:122/255.0 blue:1.0 alpha:1.0];
+        UIImage *imageBlue  = [JHkey imageWithColor:blueColor];
         UIImage *imageWhite = [JHkey imageWithColor:UIColor.whiteColor];
-        [button setBackgroundImage:imageBlue forState:UIControlStateHighlighted];
+        [button setBackgroundImage:imageBlue  forState:UIControlStateHighlighted];
         [button setBackgroundImage:imageWhite forState:UIControlStateNormal];
 
-        button.layer.masksToBounds = false;
+        button.layer.masksToBounds = true;
         button.layer.cornerRadius  = 5.0;
-        button.imageView.layer.cornerRadius = button.layer.cornerRadius;
         
         [self.hintView addSubview:button];
         [mArray addObject:button];
@@ -747,6 +746,28 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
+}
+
+-(UIImageView*)cornerRadius:(UIImageView*)imageView{
+    // Get your image somehow
+    //UIImage *image = [UIImage imageNamed:@"image.jpg"];
+    
+    // Begin a new image that will be the new image with the rounded corners
+    // (here with the size of an UIImageView)
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, [UIScreen mainScreen].scale);
+    
+    // Add a clip before drawing anything, in the shape of an rounded rect
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:10.0] addClip];
+    // Draw your image
+    [imageView.image drawInRect:imageView.bounds];
+    
+    // Get the image, here setting the UIImageView image
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // Lets forget about that we were drawing
+    UIGraphicsEndImageContext();
+    return imageView;
 }
 
 #pragma mark - Touch handling
