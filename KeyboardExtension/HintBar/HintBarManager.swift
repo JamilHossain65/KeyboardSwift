@@ -77,7 +77,7 @@ class HintBarManager: NSObject {
             sgButton.addTarget(self, action: #selector(suggestionButtonDidClick(button:)), for: .touchUpInside)
             sgButton.setTitleColor(kKeyboardTextColor, for: .normal)
             
-            if sgButton.tag == selectedIndex {
+            if sgButton.tag == selectedIndex && hintBarType == .SETTING {
                 sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
                 sgButton.titleLabel?.layer.masksToBounds = true;
                 sgButton.titleLabel?.layer.borderWidth = 1.0
@@ -85,6 +85,7 @@ class HintBarManager: NSObject {
                 sgButton.titleLabel?.layer.cornerRadius = 5.0
                 sgButton.titleLabel?.backgroundColor = kOffWhiteColor
             }
+
             
             scrollView.addSubview(sgButton)
             //add vertical seperator

@@ -99,10 +99,15 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     //MARK: SETTING VIEW METHODS
     @objc func showSettingView() {
-        //print("not writing....")
+        print("user no longer writing....")
         DispatchQueue.main.async {
             self.floatingButtonView.isHidden = false
         }
+        
+        hintBarType = .SETTING
+        
+        let selectedFontName = getObject(kKeyAlphabetFont)
+        print("selectedFontName:::\(selectedFontName)")
         
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
     }
@@ -395,6 +400,8 @@ extension KeyboardViewController: KeyboardViewDelegate {
         //UIDevice.current.playInputClick()
         //AudioServicesPlaySystemSound (1104);
         //AudioServicesPlaySystemSound (0x450);
+        
+        hintBarType = .HINT_WORD
         
         //https://picturetosound.com/en/a/26/iphone-typing-on-keyboard
         audioManager.playSoundFile("key_sound.mp3")
