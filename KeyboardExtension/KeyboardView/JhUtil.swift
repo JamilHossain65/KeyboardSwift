@@ -22,16 +22,24 @@ let kSpaceString  = "Space"
 let kKeyBgImageName  = "kKeyBgImageName"
 let kKeyTextColor    = "kKeyTextColor"
 let kKeyAlphabetFont = "kKeyAlphabetFont"
+let kSelectedFontName = "kSelectedFontName"
 
 //let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 
-enum KEYBOARD_TYPE:Int {
+enum HINT_BAR_TYPE:Int {
+    case SETTING
+    case HINT_WORD
+}
+
+enum KEY_SETTING_TYPE:Int {
     case FONT
     case COLOR
     case TEXT_COLOR
 }
 
-var keyboard = KEYBOARD_TYPE.FONT
+var keySettingType:KEY_SETTING_TYPE = .FONT
+var hintBarType:HINT_BAR_TYPE = .SETTING
+
 
 var kKeyButtonColor  = UIColor.white
 var kHighlightColor  = UIColor.white

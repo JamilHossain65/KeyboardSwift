@@ -29,7 +29,7 @@ class HintBarManager: NSObject {
         suggestionBarScrollView.layer.zPosition = -10
         suggestionBarScrollView.delegate = self
         
-        switch keyboard {
+        switch keySettingType {
         case .FONT:
             refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
             break

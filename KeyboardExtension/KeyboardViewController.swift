@@ -251,7 +251,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         openContainerApp()
         resetColor(sender)
         
-        keyboard = KEYBOARD_TYPE.FONT
+        keySettingType = .FONT
         
         guard let inputView = inputView else { return }
         inputView.backgroundColor = kKeyboardBGColor
@@ -265,7 +265,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         openContainerApp()
         resetColor(sender)
         
-        keyboard = KEYBOARD_TYPE.COLOR
+        keySettingType = .COLOR
         
         guard let inputView = inputView else { return }
         inputView.backgroundColor = kKeyboardBGColor
@@ -281,7 +281,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         print("textColorButtonPressed")
         openContainerApp()
         resetColor(sender)
-        keyboard = KEYBOARD_TYPE.TEXT_COLOR
+        keySettingType = .TEXT_COLOR
         
         let colorArray = Color.shared.colorList()
         let colorList:[UIColor] = colorArray.map({ $0.colorSmall})
@@ -454,7 +454,7 @@ extension KeyboardViewController: HintBarDelegate {
         let colorArray = Color.shared.colorList()
         let color:Color = colorArray[button.tag]
         
-        switch keyboard {
+        switch keySettingType {
         case .COLOR:
             kKeyboardBGColor = color.color
             inputView?.backgroundColor = kKeyboardBGColor
@@ -500,7 +500,7 @@ extension KeyboardViewController: HintBarDelegate {
 //        }
         
         let button = sender as! UIButton
-        keyboard   = KEYBOARD_TYPE.FONT
+        keySettingType   = .FONT
         kTextFontAlphabet  = kUnicodeFontArray[button.tag]
         setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
         keyboardView.reloadFont(button.tag)
