@@ -106,9 +106,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         hintBarType = .SETTING
         
-        let selectedFontName = getObject(kKeyAlphabetFont)
-        print("selectedFontName:::\(selectedFontName)")
-        
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
     }
     
@@ -417,6 +414,17 @@ extension KeyboardViewController: KeyboardViewDelegate {
         hideSettingView()
     }
     
+    func insertHintWord(_ hintWord:String){
+        //MARK: - TODO: insert word before cursor
+        textDocumentProxy.insertText(hintWord)
+        
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+        let fullText  = textLeft + textRight
+        setObject(fullText, key: SUITE_KEY)
+        print("insert word :: \(fullText)")
+    }
+    
     func gotoNextKeyboard(_ button: UIButton){
         button.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
     }
@@ -506,12 +514,39 @@ extension KeyboardViewController: HintBarDelegate {
 //            }
 //        }
         
-        let button = sender as! UIButton
-        keySettingType   = .FONT
-        kTextFontAlphabet  = kUnicodeFontArray[button.tag]
-        setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-        keyboardView.reloadFont(button.tag)
-        keyboardView.backgroundColor = kKeyboardBGColor
+        switch hintBarType {
+                case .HINT_WORD:
+                    print("HINT_WORD")
+                    if let button = sender as? UIButton, let _hint = button.titleLabel?.text {
+                        insertHintWord(_hint)
+                    }
+                    
+                default:
+                    print("hintBarType default")
+                    switch keySettingType {
+                    case .FONT:
+                        print("FONT")
+                        if let button = sender as? UIButton {
+                            print("selected font tag::\(button.tag)")
+                            hintBarManager.refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray,selectedIndex: button.tag)
+                        }
+                    case .COLOR:
+                        print("COLOR")
+                        
+                    case .TEXT_COLOR:
+                        print("TEXT_COLOR")
+                    }
+                    
+                    let button = sender as! UIButton
+                    keySettingType   = .FONT
+                    kTextFontAlphabet  = kUnicodeFontArray[button.tag]
+                    setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
+                    keyboardView.reloadFont(button.tag)
+                    keyboardView.backgroundColor = kKeyboardBGColor
+                }
+        
+        
+        
     }
 }
 

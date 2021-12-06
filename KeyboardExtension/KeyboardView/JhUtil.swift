@@ -22,7 +22,7 @@ let kSpaceString  = "Space"
 let kKeyBgImageName  = "kKeyBgImageName"
 let kKeyTextColor    = "kKeyTextColor"
 let kKeyAlphabetFont = "kKeyAlphabetFont"
-let kSelectedFontName = "kSelectedFontName"
+//let kSelectedFontName = "kSelectedFontName"
 
 //let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 
