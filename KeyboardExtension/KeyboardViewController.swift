@@ -15,8 +15,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     let audioManager = AudioManager()
     
-    var wordArray: NSArray  = []
-    var context  : NSString = ""
+    var wordArray: [String]  = []
+    var currentWordArray: [String]  = []
+    var context  : String = ""
     
     var nextButton: UIButton!
     var heightConstraint: NSLayoutConstraint?
@@ -41,7 +42,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //        dispatch_async(dispatch_get_main_queue(), ^{
 //                AudioServicesPlaySystemSound(1104);
 //            });
-    
+        
+        let wordString = readf("words")
+        wordArray = wordString.components(separatedBy: "\n")
+        print("words count::\(wordArray.count)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,7 +123,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             view.removeFromSuperview()
         }
         
-        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: ["Hi","I","How","We"])
         coutTime = 0
         
         if let _timer = timer {
@@ -128,6 +131,26 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.checkWriting), userInfo: nil, repeats: true)
             
+    }
+    
+    func getHintWords() -> [String] {
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        context = textLeft.components(separatedBy: " ").last ?? ""
+        context = context.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        print("context[\(context.count)]::\(context)")
+        
+        let filteredArray = wordArray.filter (where: {$0.lowercased().hasPrefix(context)}, limit: 5)
+        
+        print("filteredArray::\(filteredArray)")
+        //let uniqueWords = Array(Set(filteredArray))
+        
+        var wordList:[String] = ["I","is","are","you"]
+        
+        if filteredArray.count > 0 {
+            wordList = filteredArray
+        }
+        
+        return wordList
     }
     
     @objc func checkWriting(){
@@ -389,6 +412,8 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let fullText  = textLeft + textRight
         
         setObject(fullText, key: SUITE_KEY)
+        
+        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
     }
     
     func insertCharacter(_ newCharacter: String) {
@@ -412,10 +437,22 @@ extension KeyboardViewController: KeyboardViewDelegate {
         print("insert :: \(fullText)")
         
         hideSettingView()
+        
+        //show hint word
+        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
     }
     
     func insertHintWord(_ hintWord:String){
         //MARK: - TODO: insert word before cursor
+        let deleteText  = textDocumentProxy.documentContextBeforeInput ?? ""
+        let deleteWord  = deleteText.components(separatedBy: " ").last
+        
+        if let _deleteWord = deleteWord {
+            for _ in 0..._deleteWord.count {
+                textDocumentProxy.deleteBackward()
+            }
+        }
+        
         textDocumentProxy.insertText(hintWord)
         
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""

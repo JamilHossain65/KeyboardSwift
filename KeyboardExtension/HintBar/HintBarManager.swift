@@ -150,7 +150,7 @@ class HintBarManager: NSObject {
     }
 }
 
-//MARK:- SCROLLVIEW DELEGATE METHODS
+//MARK: - SCROLLVIEW DELEGATE METHODS
 extension HintBarManager:UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if let _delegate = delegate {
@@ -161,5 +161,85 @@ extension HintBarManager:UIScrollViewDelegate {
         if let _delegate = delegate {
             _delegate.didEndScroll(scrollView)
         }
+    }
+}
+
+//MARK: - Read File
+
+//func read(_ filename: String) -> String {
+//    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+//        let fileURL = dir.appendingPathComponent(filename)
+//
+//        //reading
+//        do {
+//            let text = try String(contentsOf: fileURL, encoding: .utf8)
+//            print("text::\(text)")
+//            return text
+//        }
+//        catch {/* error handling here */}
+//    }
+//    return ""
+//}
+
+func readf(_ filename:String) -> String {
+    if let filepath = Bundle.main.path(forResource: filename, ofType: "txt") {
+        do {
+            let contents = try String(contentsOfFile: filepath)
+            //print(contents)
+            return contents
+        } catch {
+            // contents could not be loaded
+        }
+    } else {
+        // example.txt not found!
+    }
+    return ""
+}
+
+extension String {
+    func read() -> String {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(self)
+
+            //reading
+            do {
+                let text = try String(contentsOf: fileURL, encoding: .utf8)
+                print("text::\(text)")
+                return text
+            }
+            catch {/* error handling here */}
+        }
+        return ""
+    }
+    
+    func write(_ text:String) {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(self)
+
+            //writing
+            do {
+                try text.write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {/* error handling here */}
+        }
+    }
+}
+
+
+extension Sequence {
+    public func filter(where isIncluded: (Iterator.Element) -> Bool, limit: Int) -> [Iterator.Element] {
+        var result : [Iterator.Element] = []
+        result.reserveCapacity(limit)
+        var count = 0
+        var it = makeIterator()
+        
+        // While limit not reached and there are more elements ...
+        while count < limit, let element = it.next() {
+            if isIncluded(element) {
+                result.append(element)
+                count += 1
+            }
+        }
+        return result
     }
 }

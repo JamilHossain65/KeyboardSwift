@@ -41,6 +41,7 @@
 		8DD5076B26815FEB00377CBD /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8DD5076C26815FEB00377CBD /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8DD507762681644A00377CBD /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
+		8DD7781A276231920088E282 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DD77819276231920088E282 /* words.txt */; };
 		8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94B25E4474A00D3C48A /* AppDelegate.swift */; };
 		8DE7F95325E4474A00D3C48A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8DE7F95525E4476900D3C48A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95425E4476900D3C48A /* Assets.xcassets */; };
@@ -122,6 +123,7 @@
 		8DD5076726815FEA00377CBD /* good-morning-google.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "good-morning-google.flac"; sourceTree = "<group>"; };
 		8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "hello (16bit PCM).wav"; sourceTree = "<group>"; };
 		8DD507752681644A00377CBD /* SpeechModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechModel.swift; sourceTree = "<group>"; };
+		8DD77819276231920088E282 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		8DE7F94825E4474A00D3C48A /* KeyboardSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE7F94B25E4474A00D3C48A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				8D496A2C26388F7D001DE455 /* HintBarManager.swift */,
 				8D9F6700275B8756006E65BE /* words_en.txt */,
+				8DD77819276231920088E282 /* words.txt */,
 			);
 			path = HintBar;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				8D140F4A26C0E4A200512477 /* bangla.flac in Resources */,
 				8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */,
 				8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */,
+				8DD7781A276231920088E282 /* words.txt in Resources */,
 				8D68831826E8D6430008D7D8 /* hello (16bit PCM).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
