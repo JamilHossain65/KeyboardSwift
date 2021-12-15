@@ -86,7 +86,7 @@ let kUnicodeLettersEnSansItalic   = kUnicodeEnSansItalic.components(separatedBy:
 let kUnicodeLettersEnStop         = kUnicodeEnStop.components(separatedBy: ",")
 
 let kUnicodeEnPuncuation = "[,],{,},#,%,^,*,+,=,_,/,|,~,<,>,€,$,¥,•,.,,,?,!,’" //\
-let kUnicodeEnNumbers = "1,2,3,4,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,\",.,,,?,!,'"
+let kUnicodeEnNumbers = "1,2,3,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,\",.,^,%,?,!,',*," // ~ replace by ,
 let kUnicodeEnNormal  = "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
 let kUnicodeEnSerif   = "𝑄,𝑤,𝑒,𝑟,𝑡,𝑦,𝑢,𝑖,𝑜,𝑝,𝑎,𝑠,𝑑,𝑓,𝑔,ℎ,𝑗,𝑘,𝑙,:,𝑧,𝑥,𝑐,𝑣,𝑏,𝑛,𝑚"
 let kUnicodeEnStinky  = "q̾,w̾,e̾,r̾,t̾,y̾,u̾,i̾,o̾,p̾,a̾,s̾,d̾,f̾,g̾,h̾,j̾,k̾,l̾,:,z̾,x̾,c̾,v̾,b̾,n̾,m̾"
