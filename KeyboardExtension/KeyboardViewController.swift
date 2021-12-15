@@ -31,7 +31,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     var textColorBtn :UIButton!
     var floatingButtonView : UIView!
     var coutTime   = 0
-    var countLimit = 5
+    var countLimit = 15
     var timer:Timer?
     
     var counter = 0
