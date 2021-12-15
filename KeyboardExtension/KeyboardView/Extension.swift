@@ -85,3 +85,10 @@ extension UIColor {
         }
     }
 }
+
+extension UITextView {
+    var caret: CGRect? {
+        guard let selectedTextRange = self.selectedTextRange else { return nil }
+        return self.caretRect(for: selectedTextRange.end)
+    }
+}

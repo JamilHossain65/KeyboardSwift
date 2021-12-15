@@ -16,7 +16,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     let audioManager = AudioManager()
     
     var wordArray: [String]  = []
-    var currentWordArray: [String]  = []
+    //var currentWordArray: [String]  = []
     var context  : String = ""
     
     var nextButton: UIButton!
@@ -44,7 +44,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //            });
         
         let wordString = readf("words")
-        wordArray = wordString.components(separatedBy: "\n")
+        wordArray = wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
         print("words count::\(wordArray.count)")
     }
     

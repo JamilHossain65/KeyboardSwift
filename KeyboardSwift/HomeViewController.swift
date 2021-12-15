@@ -54,15 +54,19 @@ class HomeViewController: UIViewController {
     }
     
     func showLoading(view:UIView){
-        textView.text = "mas high school this is hoss ajsmil jam ja ahs ajk ahsja   hsajkhs akjh sajk hasjkhs jakhsk hajks haksj"
-        let rect = textView.text.getRect(withConstrainedWidth: textView.frame.size.width, font: textView.font!)
-        print("rect::%@",rect)
+        textView.text = "mas h this is hoss ajsmil jam ja ahs ajk ahsja   hsajkhs akjh sajk hasjkhs jakhsk hajks haksj test"
         
-        let loading = UIActivityIndicatorView(frame: CGRect(x: rect.width - 10, y: rect.height - 10, width: 20, height: 20))
-        loading.hidesWhenStopped = true
-        loading.style = UIActivityIndicatorView.Style.gray
-        loading.startAnimating()
-        view.addSubview(loading)
+        if let caret = textView.caret {
+            
+            let loading = UIActivityIndicatorView(frame: CGRect(x: caret.origin.x, y: caret.origin.y + 5, width: 17, height: 17))
+            loading.hidesWhenStopped = true
+            loading.style = UIActivityIndicatorView.Style.gray
+            loading.startAnimating()
+            view.addSubview(loading)
+            
+            print("caret::\(caret)")
+        }
+        
     }
     
     func loadRecordingUI(){
