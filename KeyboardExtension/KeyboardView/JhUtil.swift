@@ -35,10 +35,20 @@ enum KEY_SETTING_TYPE:Int {
     case FONT
     case COLOR
     case TEXT_COLOR
+    case LANGUAGE
 }
 
-var keySettingType:KEY_SETTING_TYPE = .FONT
-var hintBarType:HINT_BAR_TYPE = .SETTING
+enum KEY_LETTER_MODE:Int {
+    case LOWER_CASE
+    case UPPER_CASE
+    case DOUBLE_TAP
+    case NUMBERS
+    case PANCTUATIONS
+}
+
+var keySettingType: KEY_SETTING_TYPE = .FONT
+var hintBarType   : HINT_BAR_TYPE    = .SETTING
+var keyLetterMode : KEY_LETTER_MODE  = .LOWER_CASE
 
 
 var kKeyButtonColor  = UIColor.white
@@ -58,18 +68,8 @@ let kAlphabetEN = "Q W E R T Y U I O P A S D F G H J K L : Z X C V B N M"
 let kLetters    = kAlphabetEN.components(separatedBy: " ")
 
 //set total keys in each row
-let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //todo refctor this
+let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo refctor this
 
 let hintBarHeight:CGFloat = 44 //36;
 
-////read and write userdefault data
-//func setObject(_ value:Any, key:String) {
-//    let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
-//    defaultSuite?.setValue(value, forKey: SUITE_KEY)
-//    defaultSuite?.synchronize()
-//}
-//
-//func getObject(_ forKey:String) -> Any {
-//    let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
-//    return defaultSuite?.value(forKey: SUITE_KEY) as Any
-//}
+let kLanguageArray = ["Bangla","English","Arabic","Hindi"]

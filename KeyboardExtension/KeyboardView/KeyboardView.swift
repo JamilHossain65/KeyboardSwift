@@ -9,11 +9,12 @@ import UIKit
 import AudioToolbox
 
 protocol KeyboardViewDelegate: class {
-    func insertCharacter(_ newCharacter: String)
-    func deleteCharacter(_ newCharacter: String)
-    func gotoNextKeyboard(_ nextButton: UIButton)
-    func voiceButtonTapped(_ voiceButton: UIButton)
-    func shiftButtonPressed(_ shiftButton: UIButton)
+    func insertCharacter   (_ newCharacter: String)
+    func deleteCharacter   (_ newCharacter: String)
+    func gotoNextKeyboard  (_ nextButton  : UIButton)
+    func voiceButtonTapped (_ voiceButton : UIButton)
+    func shiftButtonPressed(_ shiftButton : UIButton)
+    func altButtonPressed  (_ altButton   : UIButton)
     func didTapLongPressed()
 }
 
@@ -201,7 +202,7 @@ extension KeyboardView{
                 keyboardButton.addGestureRecognizer(tap)
             }
             
-            keyboardButton.setTitle(letter, for: .normal)
+            keyboardButton.setTitle(letter.trimmingCharacters(in: .whitespaces), for: .normal)
             keyboardButton.setTitleColor(kKeyboardTextColor, for: .normal)
             //keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
 
@@ -339,10 +340,13 @@ extension KeyboardView{
             keyboardButton.setTitle(kReturnString, for: .normal)
             break
         case shiftButtonIndex:
-            self.shiftButton = keyboardButton
             keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
             keyboardButton.setImage(UIImage(named: "shift.png"), for: .selected)
             keyboardButton.setTitle("", for: .normal)
+            
+            keyboardButton.isSelected = shiftButton.isSelected
+            shiftButton = keyboardButton
+            
             break
         case deleteButtonIndex:
             self.deleteButton = keyboardButton
@@ -371,6 +375,13 @@ extension KeyboardView{
     func reloadFont(_ fontIndex:Int) {
         currentFontLetters = kUnicodeFontArray[fontIndex]
         //print("refresh font:\(currentFontLetters)")
+        refreshKeyboard()
+    }
+    
+    func reloadFontBn(_ fontIndex:Int) {
+        
+        currentFontLetters = getLetters(keyLetterMode)
+        print("refresh font:\(currentFontLetters)")
         refreshKeyboard()
     }
     
@@ -429,9 +440,19 @@ extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
         
         if(sender.tag == shiftButtonIndex) {
-            //print("sender.isSelected::\(sender.isSelected)")
+//            print("sender.isSelected::\(sender.isSelected)")
+//            isSelectedShiftButton = !isSelectedShiftButton
+//            sender.isSelected = isSelectedShiftButton
+//            print("isSelectedShiftButton::\(isSelectedShiftButton)")
+//            sender.isSelected = !sender.isSelected
+//            shiftButton = sender
+            
             sender.isSelected = !sender.isSelected
             shiftButton = sender
+            print("sender.isSelected::\(sender.isSelected)")
+            
+            keyLetterMode = shiftButton.isSelected ? .UPPER_CASE :.LOWER_CASE //MARK:- refactor, shift this code to delegate method
+            
             
             for view in subviews {
                let button = view as! UIButton
@@ -441,14 +462,13 @@ extension KeyboardView {
                 }
             }
             
-            //sender.isSelected = !sender.isSelected
-            if sender.isSelected {
-                sender.defaultBackgroundColor = .white
-            }else{
-                sender.defaultBackgroundColor = kAltButtonColor
-            }
-            
             delegate?.shiftButtonPressed(sender)
+            
+            if shiftButton.isSelected {
+                shiftButton.defaultBackgroundColor = .white
+            }else{
+                shiftButton.defaultBackgroundColor = kAltButtonColor
+            }
             
         }else if(sender.tag == voiceButtonIndex) {
             sender.setImage(UIImage(named: "record_off.png"), for: .normal)
@@ -472,6 +492,8 @@ extension KeyboardView {
             sender.isSelected = !sender.isSelected
             altButton = sender
             
+            print("alter button.isSelected::\(sender.isSelected)")
+            
             if altButton.isSelected {
                 currentFontLetters = kUnicodeLettersEnNumList
                 altButton.backgroundColor = .red
@@ -480,6 +502,8 @@ extension KeyboardView {
                 currentFontLetters = kUnicodeLettersEnNormal
                 altButton.backgroundColor = .green
             }
+            
+            delegate?.altButtonPressed(altButton)
             
             refreshKeyboard()
             

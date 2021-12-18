@@ -8,6 +8,7 @@
 import UIKit
 
 protocol HintBarDelegate: class {
+    func didSelectLanguage(_ sender: Any)
     func didSelectHint (_ sender: Any)
     func didSelectColor(_ sender: Any)
     func didSartScroll (_ scrollView: UIScrollView)
@@ -97,6 +98,58 @@ class HintBarManager: NSObject {
         }
     }
     
+    func refreshLanguage(scrollView:UIScrollView, dataArray:[String], selectedIndex:Int? = 0){
+        if dataArray.count <= 0 {return}
+        
+        for view in suggestionBarScrollView.subviews{
+            view.removeFromSuperview()
+        }
+        
+        //Add suggestion bar
+        let border:CGFloat = 1
+        let screenWidth  = UIScreen.main.bounds.size.width - 2*border
+        let buttonWidth  = screenWidth/3
+        
+        //Keyboard bar
+        scrollView.frame = CGRect(x:0, y:0, width: Int(UIScreen.main.bounds.size.width), height:Int(hintBarHeight))
+        scrollView.backgroundColor  = .clear
+        scrollView.bounces = false
+        scrollView.isScrollEnabled = true
+        scrollView.isPagingEnabled = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.contentSize = CGSize(width: CGFloat(CGFloat((dataArray.count))*(buttonWidth + border)), height: scrollView.contentSize.height)
+        
+        for index in 0...dataArray.count - 1  {
+            let sgButton = UIButton.init(type: .custom)
+            sgButton.tag = index
+            sgButton.backgroundColor = .clear
+            sgButton.setTitle(" \(dataArray[index]) ", for: .normal)
+            sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            sgButton.setTitleColor(.black, for: .normal)
+            sgButton.frame = CGRect(x: index*Int((buttonWidth+border)) ,y: 0, width: Int(buttonWidth), height: Int(hintBarHeight))
+            sgButton.addTarget(self, action: #selector(languageButtonDidClick(button:)), for: .touchUpInside)
+            sgButton.setTitleColor(kKeyboardTextColor, for: .normal)
+            
+            if sgButton.tag == selectedIndex && hintBarType == .SETTING {
+                sgButton.titleLabel?.adjustsFontSizeToFitWidth = true
+                sgButton.titleLabel?.layer.masksToBounds = true;
+                sgButton.titleLabel?.layer.borderWidth = 1.0
+                
+                sgButton.titleLabel?.layer.cornerRadius = 5.0
+                sgButton.titleLabel?.backgroundColor = kOffWhiteColor
+            }
+
+            
+            scrollView.addSubview(sgButton)
+            //add vertical seperator
+            let sepLbl = UILabel()
+            sepLbl.backgroundColor = .white
+            sepLbl.frame = CGRect(x: CGFloat(index)*(buttonWidth+border), y: 0.0, width: 0.7, height: hintBarHeight*0.5)
+            sepLbl.center = CGPoint(x: sepLbl.center.x, y: sgButton.center.y)
+            scrollView.addSubview(sepLbl)
+        }
+    }
+    
     func refreshColor(scrollView:UIScrollView, colorArray:[UIColor]){
         if colorArray.count <= 0 {return}
         
@@ -141,6 +194,17 @@ class HintBarManager: NSObject {
             refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray,selectedIndex: button.tag)
         }
     }
+    
+    @objc func languageButtonDidClick(button:UIButton){
+        print("hint:\(String(describing: button.titleLabel?.text))")
+        if let _delegate = delegate {
+            _delegate.didSelectLanguage(button)
+            refresh(scrollView: suggestionBarScrollView, dataArray: kLanguageArray,selectedIndex: button.tag)
+        }
+    }
+    
+    
+    
     
     @objc func colorButtonDidClick(button:UIButton) {
         print("color btn tag: \(String(describing: button.tag))")

@@ -30,6 +30,7 @@
 		8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D769A0C265F3BED00C74FBA /* Assets.xcassets */; };
 		8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF5E26E7638B00615097 /* Errors.swift */; };
 		8D8BCF7A26E76E2200615097 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
+		8D8BD6C6276A075000B77F6C /* UnicodeBn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */; };
 		8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AA16D2682DEDC00EA136D /* AudioManager.swift */; };
 		8D9F6701275B8756006E65BE /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
@@ -109,6 +110,7 @@
 		8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardSwift.entitlements; sourceTree = "<group>"; };
 		8D8BCF5E26E7638B00615097 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8D8BCF7926E76E2200615097 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeBn.swift; sourceTree = "<group>"; };
 		8D91CD452655E7EE00404F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8D9F6700275B8756006E65BE /* words_en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_en.txt; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				8D59B2242669AD2C0034A967 /* Extension.swift */,
 				8DF36877266C20670098EA60 /* ColorExtension.swift */,
 				8D552EE326484C4000866DEF /* UnicodeEn.swift */,
+				8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */,
 				8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */,
 				8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */,
 				8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */,
@@ -549,6 +552,7 @@
 				8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */,
 				8D6DA1D226E897DC0080E630 /* APIRequest.swift in Sources */,
 				8DF6E32126C3563B0031E094 /* JhUtil.swift in Sources */,
+				8D8BD6C6276A075000B77F6C /* UnicodeBn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
