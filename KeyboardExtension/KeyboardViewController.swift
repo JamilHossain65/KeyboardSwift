@@ -26,13 +26,14 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     var relevantContextRange:NSRange?
     
+    //var settingButton:UIButton!
     var langButton   :UIButton!
     var fontButton   :UIButton!
     var bgColorButton:UIButton!
     var textColorBtn :UIButton!
     var floatingButtonView : UIView!
     var coutTime   = 0
-    var countLimit = 5
+    var countLimit = 5 //MARK:- TODO: countLimit = 5
     var timer:Timer?
     
     var counter = 0
@@ -45,8 +46,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //            });
         
         let wordString = readf("words")
-        wordArray = wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
-        print("words count::\(wordArray.count)")
+        if let _wordString = wordString, _wordString.count > 0 {
+            wordArray = _wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
+            print("words count::\(wordArray.count)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,17 +109,26 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     @objc func showSettingView() {
         print("user no longer writing....")
         DispatchQueue.main.async {
-            self.floatingButtonView.isHidden = false
+            if let _floatingButtonView = self.floatingButtonView {
+                _floatingButtonView.isHidden = false
+            }
         }
         
+        context = ""
         hintBarType = .SETTING
-        
-        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
+        suggestionBarScrollView.isHidden = true
+        //HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray:["","",""])
     }
     
     func hideSettingView() {
+        
+        hintBarType = .HINT_WORD
+        suggestionBarScrollView.isHidden = false
+        
         DispatchQueue.main.async {
-            self.floatingButtonView.isHidden = true
+            if let _floatingButtonView = self.floatingButtonView {
+                _floatingButtonView.isHidden = true
+            }
         }
         
         //set word suggestion view
@@ -130,6 +142,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             _timer.invalidate()
         }
         
+        //MARK:- TODO: enable timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.checkWriting), userInfo: nil, repeats: true)
             
     }
@@ -140,15 +153,18 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         context = context.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         print("context[\(context.count)]::\(context)")
         
-        let filteredArray = wordArray.filter (where: {$0.lowercased().hasPrefix(context)}, limit: 5)
-        
-        print("filteredArray::\(filteredArray)")
+        var wordList:[String] = ["I","is","are","you"]
         //let uniqueWords = Array(Set(filteredArray))
         
-        var wordList:[String] = ["I","is","are","you"]
-        
-        if filteredArray.count > 0 {
-            wordList = filteredArray
+        if context.count <= 0 {
+            return wordList
+        } else {
+            let filteredArray = wordArray.filter (where: {$0.lowercased().hasPrefix(context)}, limit: 5)
+            
+            print("filteredArray::\(filteredArray)")
+            if filteredArray.count > 0 {
+                wordList = filteredArray
+            }
         }
         
         return wordList
@@ -217,7 +233,11 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         hintBarManager.delegate = self
         hintBarManager.addSuggestionBar(parentView: inputView, txtView: textDocumentProxy)
         
+        showSettingOptionView()
         
+    }
+    
+    func showSettingOptionView(){
         if let _floatingButtonView = floatingButtonView {
             _floatingButtonView.removeFromSuperview()
         }
@@ -278,16 +298,27 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         floatingButtonView.addSubview(langButton)
         
         //set font button selected initialy
-        resetColor(fontButton as Any)
+        resetColor(UIButton())
         counter = 0
     }
     
     //MARK: SETTING BUTTON ACTION
+    
+    @objc func settingButtonPressed(_ sender: UIButton) {
+        print("settingButtonPressed")
+        showSettingOptionView()
+    }
+    
+    
     @objc func fontButtonPressed(_ sender: Any) {
         print("fontButtonPressed")
         openContainerApp()
         resetColor(sender)
         
+        //hide setting view
+        hideSettingView()
+        
+        hintBarType = .SETTING
         keySettingType = .FONT
         
         guard let inputView = inputView else { return }
@@ -311,6 +342,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         let colorArray = Color.shared.colorList()
         let colorList:[UIColor] = colorArray.map({ $0.colorSmall})
         
+        //hide setting view
+        hideSettingView()
+        
         HintBarManager.shared.refreshColor(scrollView: suggestionBarScrollView, colorArray: colorList)
     }
     
@@ -322,6 +356,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         let colorArray = Color.shared.colorList()
         let colorList:[UIColor] = colorArray.map({ $0.colorSmall})
+        
+        //hide setting view
+        hideSettingView()
         
         HintBarManager.shared.refreshColor(scrollView: suggestionBarScrollView, colorArray: colorList)
     }
@@ -336,8 +373,11 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         guard let inputView = inputView else { return }
         inputView.backgroundColor = kKeyboardBGColor
         
+        //hide setting view
+        hideSettingView()
+        
         //set word suggestion view
-        HintBarManager.shared.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: ["Bangla","English","Arabic","Hindi"])
+        HintBarManager.shared.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kLanguageArray)
     }
     
     func resetColor(_ sender:Any) {
@@ -520,7 +560,8 @@ extension KeyboardViewController: KeyboardViewDelegate {
         //kTextFontAlphabet = kUnicodeBnFontArray[button.tag]
         kTextFontAlphabet = getLetters(keyLetterMode)
         setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-        keyboardView.reloadFontBn(0)
+        //keyboardView.reloadFontBn(0)
+        keyboardView.reloadFont(0)
         keyboardView.backgroundColor = kKeyboardBGColor
         
     }
@@ -538,7 +579,8 @@ extension KeyboardViewController: KeyboardViewDelegate {
         //kTextFontAlphabet = kUnicodeBnFontArray[button.tag]
         kTextFontAlphabet = getLetters(keyLetterMode)
         setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-        keyboardView.reloadFontBn(0)
+        //keyboardView.reloadFontBn(0)
+        keyboardView.reloadFont(0)
         keyboardView.backgroundColor = kKeyboardBGColor
     }
 }
@@ -546,12 +588,16 @@ extension KeyboardViewController: KeyboardViewDelegate {
 //MARK:- HINT BAR DELEGATE METHODS
 extension KeyboardViewController: HintBarDelegate {
     @objc func showFlotingView(){
-        floatingButtonView.isHidden = false
+        if let _floatingButtonView = floatingButtonView {
+            _floatingButtonView.isHidden = false
+        }
     }
     
     func didSartScroll(_ scrollView: UIScrollView) {
         print("scrollView start")
-        floatingButtonView.isHidden = true
+        if let _floatingButtonView = floatingButtonView {
+            _floatingButtonView.isHidden = true
+        }
     }
     
     func didEndScroll (_ scrollView: UIScrollView) {
@@ -610,14 +656,17 @@ extension KeyboardViewController: HintBarDelegate {
         //            }
         //        }
         
+        
         switch hintBarType {
         case .HINT_WORD:
-            print("HINT_WORD")
+            print("HINT_WORD...")
             if let button = sender as? UIButton, let _hint = button.titleLabel?.text {
                 insertHintWord(_hint)
+                context = ""
+                hintBarManager.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords(), selectedIndex: button.tag)
             }
             
-        default:
+        case .SETTING:
             print("hintBarType default")
             switch keySettingType {
             case .FONT:
@@ -625,6 +674,14 @@ extension KeyboardViewController: HintBarDelegate {
                 if let button = sender as? UIButton {
                     print("selected font tag::\(button.tag)")
                     hintBarManager.refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray,selectedIndex: button.tag)
+                    
+                    let button = sender as! UIButton
+                    keySettingType    = .FONT //MARK:- TODO: try to remove this line
+                    kTextFontAlphabet = kUnicodeFontArray[button.tag]
+                    setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
+                    keyboardView.reloadFont(button.tag)
+                    keyboardView.backgroundColor = kKeyboardBGColor
+                    
                 }
             case .COLOR:
                 print("COLOR")
@@ -635,33 +692,24 @@ extension KeyboardViewController: HintBarDelegate {
                 print("LANGUAGE")
             }
             
-            let button = sender as! UIButton
-            keySettingType     = .FONT
-            kTextFontAlphabet  = kUnicodeFontArray[button.tag]
-            setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-            keyboardView.reloadFont(button.tag)
-            keyboardView.backgroundColor = kKeyboardBGColor
         }
         
     }
     
     func didSelectLanguage(_ sender: Any) {
         print("didSelectLanguage")
-        if let button = sender as? UIButton, let _language = button.titleLabel?.text {
-            print("_language::\(_language)")
+        if let button = sender as? UIButton{
+            hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kLanguageArray,selectedIndex: button.tag)
             
-            hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kUnicodeBnFontNameArray,selectedIndex: button.tag)
-            
-            let button = sender as! UIButton
+            //let button = sender as! UIButton
             keySettingType    = .LANGUAGE
-            kTextFontAlphabet = kUnicodeBnFontArray[button.tag]
+            //kTextFontAlphabet = kUnicodeBnFontArray[button.tag]
+            kTextFontAlphabet = kUnicodeLanguageArray[button.tag]
             setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-            keyboardView.reloadFontBn(button.tag)
+            //keyboardView.reloadFontBn(button.tag)
+            keyboardView.reloadFont(button.tag)
             keyboardView.backgroundColor = kKeyboardBGColor
-            
-            
         }
-        
     }
 }
 

@@ -32,7 +32,7 @@ class HintBarManager: NSObject {
         
         switch keySettingType {
         case .FONT:
-            refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
+            //refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
             break
             
         case .COLOR:
@@ -87,7 +87,6 @@ class HintBarManager: NSObject {
                 sgButton.titleLabel?.backgroundColor = kOffWhiteColor
             }
 
-            
             scrollView.addSubview(sgButton)
             //add vertical seperator
             let sepLbl = UILabel()
@@ -191,15 +190,13 @@ class HintBarManager: NSObject {
         print("hint:\(String(describing: button.titleLabel?.text))")
         if let _delegate = delegate {
             _delegate.didSelectHint(button)
-            refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray,selectedIndex: button.tag)
         }
     }
     
     @objc func languageButtonDidClick(button:UIButton){
-        print("hint:\(String(describing: button.titleLabel?.text))")
+        print("lang:\(String(describing: button.titleLabel?.text))")
         if let _delegate = delegate {
             _delegate.didSelectLanguage(button)
-            refresh(scrollView: suggestionBarScrollView, dataArray: kLanguageArray,selectedIndex: button.tag)
         }
     }
     
@@ -245,7 +242,7 @@ extension HintBarManager:UIScrollViewDelegate {
 //    return ""
 //}
 
-func readf(_ filename:String) -> String {
+func readf(_ filename:String) -> String? {
     if let filepath = Bundle.main.path(forResource: filename, ofType: "txt") {
         do {
             let contents = try String(contentsOfFile: filepath)
@@ -257,7 +254,7 @@ func readf(_ filename:String) -> String {
     } else {
         // example.txt not found!
     }
-    return ""
+    return nil
 }
 
 extension String {

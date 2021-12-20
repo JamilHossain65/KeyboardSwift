@@ -176,7 +176,7 @@ extension KeyboardView{
             preWidth = btnWidth
             
             let bFrame = CGRect(x: colX, y: colY, width: btnWidth, height: btnHeight)
-            var tempLetter = kUnicodeLettersEnNormal[currentButtonIndex % kUnicodeLettersEnNormal.count]
+            var tempLetter = kUnicodeLettersEnNormal[currentButtonIndex % kUnicodeLettersEnNormal.count] //MARK:- TODO: refactor this code
             
             if currentFontLetters.count > 0 {
                 tempLetter = currentFontLetters[currentButtonIndex % currentFontLetters.count]
@@ -373,17 +373,18 @@ extension KeyboardView{
     }
     
     func reloadFont(_ fontIndex:Int) {
-        currentFontLetters = kUnicodeFontArray[fontIndex]
-        //print("refresh font:\(currentFontLetters)")
-        refreshKeyboard()
-    }
-    
-    func reloadFontBn(_ fontIndex:Int) {
-        
+        //currentFontLetters = kUnicodeFontArray[fontIndex]
         currentFontLetters = getLetters(keyLetterMode)
         print("refresh font:\(currentFontLetters)")
         refreshKeyboard()
     }
+    
+//    func reloadFontBn(_ fontIndex:Int) {
+//
+//        currentFontLetters = getLetters(keyLetterMode)
+//        print("refresh font:\(currentFontLetters)")
+//        refreshKeyboard()
+//    }
     
     
     func reloadTextColor(_ fontIndex:Int) {
