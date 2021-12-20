@@ -49,7 +49,8 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
     
     case .LOWER_CASE:
         print("LOWER_CASE")
-        return kUnicodeBnFontArray[tag!]
+        //return kUnicodeBnFontArray[tag!]
+        return kUnicodeLanguageArray[tag!]
     case .UPPER_CASE  :
         print("UPPER_CASE")
         return kUnicodeLettersBnUnshiftArray

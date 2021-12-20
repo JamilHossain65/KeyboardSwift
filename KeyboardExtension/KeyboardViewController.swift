@@ -701,12 +701,9 @@ extension KeyboardViewController: HintBarDelegate {
         if let button = sender as? UIButton{
             hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kLanguageArray,selectedIndex: button.tag)
             
-            //let button = sender as! UIButton
-            keySettingType    = .LANGUAGE
-            //kTextFontAlphabet = kUnicodeBnFontArray[button.tag]
+            keySettingType    = .LANGUAGE //MARK:- TODO: remove this line
             kTextFontAlphabet = kUnicodeLanguageArray[button.tag]
             setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-            //keyboardView.reloadFontBn(button.tag)
             keyboardView.reloadFont(button.tag)
             keyboardView.backgroundColor = kKeyboardBGColor
         }
