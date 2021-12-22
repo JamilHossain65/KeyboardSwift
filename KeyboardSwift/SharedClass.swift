@@ -9,19 +9,33 @@
 import Foundation
 
 let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
+let USER_INFO_KEY = "UserSelectedInfo"
 
 
 //MARK:- SHARED DATA
 //read and write userdefault data
 func setObject(_ value:Any, key:String) {
     let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
-    defaultSuite?.setValue(value, forKey: SUITE_KEY)
+    defaultSuite?.setValue(value, forKey: key)
     defaultSuite?.synchronize()
 }
 
 func getObject(_ forKey:String) -> Any {
     let defaultSuite = UserDefaults(suiteName: SUITE_KEY)
-    return defaultSuite?.value(forKey: SUITE_KEY) as Any
+    return defaultSuite?.value(forKey: forKey) as Any
+}
+
+
+//read and write userdefault data
+func setData(_ data:Any, key:String) {
+    let defaultSuite = UserDefaults()
+    defaultSuite.setValue(data, forKey: key)
+    defaultSuite.synchronize()
+}
+
+func getData(_ forKey:String) -> Any {
+    let defaultSuite = UserDefaults()
+    return defaultSuite.value(forKey: forKey) as Any
 }
 
 
