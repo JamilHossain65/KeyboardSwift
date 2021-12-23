@@ -656,7 +656,6 @@ extension KeyboardViewController: HintBarDelegate {
         //            }
         //        }
         
-        
         switch hintBarType {
         case .HINT_WORD:
             print("HINT_WORD...")
@@ -682,33 +681,14 @@ extension KeyboardViewController: HintBarDelegate {
                     keyboardView.reloadFont(button.tag)
                     keyboardView.backgroundColor = kKeyboardBGColor
                     
-                    //save hint
-                    var keyInfo = KeyInfo().getKeyInfo()
-                    print("keyInfo::\(keyInfo)")
-                    //print("font name::\(button.titleLabel?.text)")
                     
                     let selctedLang = "English"
+                    let fontname = kUnicodeFontNameArray[button.tag]
                     
-                    var langKey   = ""
-                    var langvalue = ""
-                    if let fontDic = keyInfo?.fontDic {
-                        for (key, value) in fontDic {
-                            let selectedFont = button.titleLabel?.text?.trimmingCharacters(in: .whitespaces)
-                            
-                            print("langKey:: \(key) = \(value)")
-                            
-                            if key == selctedLang {
-                                langKey = key
-                                langvalue = selectedFont ?? "Default"
-                            }
-                        }
-                    }
-                    
-                    
-                    if langKey.count > 0 {
-                        keyInfo?.fontDic[langKey] = langvalue
-                        print("keyInfo2::\(keyInfo)")
-                        KeyInfo().setKeyInfo(langKey: langKey, fontValue: langvalue)
+                    KeyInfo().setKeyInfo(langKey: selctedLang, fontValue: fontname)
+                    let info = KeyInfo().getKeyInfo()
+                    if let _info = info {
+                        print("name::\(_info.fontDic)")
                     }
                     
                 }
@@ -737,7 +717,7 @@ extension KeyboardViewController: HintBarDelegate {
             
             let selectedLang = kLanguageArray[button.tag]
             
-            KeyInfo().setKeyInfo(langKey: selectedLang, fontValue: "Arial")
+            KeyInfo().setKeyInfo(langKey: selectedLang, fontValue: "Normal")
             let info = KeyInfo().getKeyInfo()
             if let _info = info {
                 print("name::\(_info.fontDic)")

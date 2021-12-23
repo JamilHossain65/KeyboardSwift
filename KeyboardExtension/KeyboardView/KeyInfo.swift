@@ -19,8 +19,12 @@ class KeyInfo: NSObject {
     }
     
     func setKeyInfo(langKey:String, fontValue:String) {
+        let _langKey = langKey.trimmingCharacters(in: .whitespaces)
+        let _fontValue = fontValue.trimmingCharacters(in: .whitespaces)
+        
+        
         var info = getKeyInfo()
-        info?.fontDic[langKey] = fontValue
+        info?.fontDic[_langKey] = _fontValue
         let fontDic = info?.fontDic ?? [:]
         
         let keyboardInfo = KeyboardInfo(bgColor: "", txtColor: "", fontDic: fontDic)
