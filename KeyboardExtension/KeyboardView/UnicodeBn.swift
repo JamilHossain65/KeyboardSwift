@@ -61,6 +61,18 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
+            
+            let font = getObject(kSelectedFontName)
+            let lang = getObject(kSelectedLanguageName) as? String
+            
+            if let _lang = lang, _lang == "English" {
+                return kUnicodeFontArray[tag!]
+            } else if let _lang = lang, _lang == "Bangla" {
+                return kUnicodeBnFontArray[tag!]
+            }else{
+                return []
+            }
+            
             return kUnicodeFontArray[tag!]
             //return kUnicodeLanguageArray[tag!]
         case .UPPER_CASE  :

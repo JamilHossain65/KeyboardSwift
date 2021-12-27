@@ -200,9 +200,6 @@ class HintBarManager: NSObject {
         }
     }
     
-    
-    
-    
     @objc func colorButtonDidClick(button:UIButton) {
         print("color btn tag: \(String(describing: button.tag))")
         if let _delegate = delegate {

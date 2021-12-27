@@ -39,26 +39,27 @@ extension UIColor {
 }
 
 extension UserDefaults {
-    func set(_ color: UIColor?, forKey defaultName: String) {
+    func set(_ color: UIColor?, forKey key: String) {
         guard let data = color?.data else {
-            removeObject(forKey: defaultName)
+            removeObject(forKey: key)
             return
         }
-        set(data, forKey: defaultName)
+        set(data, forKey: key)
     }
-    func color(forKey defaultName: String) -> UIColor? {
-        data(forKey: defaultName)?.color
+    
+    func get(forKey name: String) -> UIColor? {
+        data(forKey: name)?.color
     }
 }
 
 extension UserDefaults {
     var keyboardBgColor: UIColor? {
-        get { color(forKey: "kKeyboardBgColorKey") }
+        get { get(forKey: "kKeyboardBgColorKey") }
         set { set(newValue, forKey: "kKeyboardBgColorKey") }
     }
     
     var keyboardTextColor: UIColor? {
-        get { color(forKey: "kKeyTextColor")}
+        get { get(forKey: "kKeyTextColor")}
         set { set(newValue, forKey: "kKeyTextColor") }
     }
 }
