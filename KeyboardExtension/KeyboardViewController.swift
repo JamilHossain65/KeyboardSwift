@@ -634,7 +634,7 @@ extension KeyboardViewController: HintBarDelegate {
             }
             
             keyboardView.backgroundColor = kKeyboardBGColor
-            
+            showSettingView()
             break
             
         case .TEXT_COLOR:
@@ -651,6 +651,7 @@ extension KeyboardViewController: HintBarDelegate {
             bgColorButton.setTitleColor(kKeyboardTextColor, for: .normal)
             textColorBtn .setTitleColor(kKeyboardTextColor, for: .normal)
             fontButton   .setTitleColor(kKeyboardTextColor, for: .normal)
+            showSettingView()
             break
             
         default:
