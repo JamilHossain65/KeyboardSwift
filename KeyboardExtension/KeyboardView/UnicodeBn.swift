@@ -45,24 +45,60 @@ let vowels = ["্","া","ি","ী","ু","ূ","ৃ","ে","ৈ","ো","ৌ",
 */
 
 func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
-    switch letterMode {
     
-    case .LOWER_CASE:
-        print("LOWER_CASE")
-        //return kUnicodeBnFontArray[tag!]
-        return kUnicodeLanguageArray[tag!]
-    case .UPPER_CASE  :
-        print("UPPER_CASE")
-        return kUnicodeLettersBnUnshiftArray
-    case .DOUBLE_TAP :
-        print("LETTER")
-    case .NUMBERS :
-        print("NUMBERS")
-        return kUnicodeLettersBnNumList
-    case .PANCTUATIONS:
-        print("PANCTUATION")
-        return kUnicodeLettersBnPuncuation
+    
+//    enum KEY_SETTING_TYPE:Int {
+//        case FONT
+//        case BG_COLOR
+//        case TEXT_COLOR
+//        case LANGUAGE
+//    }
+    
+    switch keySettingType {
+    case .FONT:
+        print("Setting FONT")
+        switch letterMode {
+        
+        case .LOWER_CASE:
+            print("LOWER_CASE")
+            return kUnicodeFontArray[tag!]
+            //return kUnicodeLanguageArray[tag!]
+        case .UPPER_CASE  :
+            print("UPPER_CASE")
+            return kUnicodeLettersBnUnshiftArray
+        case .DOUBLE_TAP :
+            print("LETTER")
+        case .NUMBERS :
+            print("NUMBERS")
+            return kUnicodeLettersBnNumList
+        case .PANCTUATIONS:
+            print("PANCTUATION")
+            return kUnicodeLettersBnPuncuation
+        }
+        
+    case .LANGUAGE:
+        print("Setting LANGUAGE")
+        
+        switch letterMode {
+        
+        case .LOWER_CASE:
+            print("LOWER_CASE")
+            return kUnicodeLanguageArray[tag!]
+        case .UPPER_CASE  :
+            print("UPPER_CASE")
+            return kUnicodeLettersBnUnshiftArray
+        case .DOUBLE_TAP :
+            print("LETTER")
+        case .NUMBERS :
+            print("NUMBERS")
+            return kUnicodeLettersBnNumList
+        case .PANCTUATIONS:
+            print("PANCTUATION")
+            return kUnicodeLettersBnPuncuation
+        }
+        
+    default:
+        print("Setting default color")
     }
-    
     return []
 }

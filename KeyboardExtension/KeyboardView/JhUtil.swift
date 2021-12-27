@@ -33,7 +33,7 @@ enum HINT_BAR_TYPE:Int {
 
 enum KEY_SETTING_TYPE:Int {
     case FONT
-    case COLOR
+    case BG_COLOR
     case TEXT_COLOR
     case LANGUAGE
 }
@@ -72,7 +72,9 @@ let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo ref
 
 let hintBarHeight:CGFloat = 44 //36;
 
-let kLanguageArray = ["English","Bangla"/*,"Arabic","Hindi"*/]
+let kLanguageArray  = ["English","Bangla"/*,"Arabic","Hindi"*/]
+let kLanguageArray2 = ["English":kUnicodeFontNameArray,"Bangla":kUnicodeBnFontNameArray]
+
 let kUnicodeLanguageArray = [kUnicodeLettersEnNormal,
                              kUnicodeLettersBnNormal,]
 

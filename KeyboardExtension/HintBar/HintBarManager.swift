@@ -35,7 +35,7 @@ class HintBarManager: NSObject {
             //refresh(scrollView: suggestionBarScrollView, dataArray: kUnicodeFontNameArray)
             break
             
-        case .COLOR:
+        case .BG_COLOR:
             let colorArray = Color.shared.colorList()
             let colorList:[UIColor] = colorArray.map({ $0.colorSmall})
             refreshColor(scrollView: suggestionBarScrollView, colorArray: colorList)

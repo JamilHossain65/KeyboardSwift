@@ -333,7 +333,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         openContainerApp()
         resetColor(sender)
         
-        keySettingType = .COLOR
+        keySettingType = .BG_COLOR
         
         guard let inputView = inputView else { return }
         inputView.backgroundColor = kKeyboardBGColor
@@ -612,7 +612,7 @@ extension KeyboardViewController: HintBarDelegate {
         let color:Color = colorArray[button.tag]
         
         switch keySettingType {
-        case .COLOR:
+        case .BG_COLOR:
             kKeyboardBGColor = color.color
             inputView?.backgroundColor = kKeyboardBGColor
             //print("pattern color:::\(kKeyboardBGColor)")
@@ -692,7 +692,7 @@ extension KeyboardViewController: HintBarDelegate {
                     }
                     
                 }
-            case .COLOR:
+            case .BG_COLOR:
                 print("COLOR")
                 
             case .TEXT_COLOR:
