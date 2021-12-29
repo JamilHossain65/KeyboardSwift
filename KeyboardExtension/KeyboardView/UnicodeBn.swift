@@ -10,6 +10,8 @@ import UIKit
 //class UnicodeBn: NSObject {
 //}
 
+let kUnicodeBnFontDic:[String:[String]] = ["Normal":kUnicodeLettersBnNormal]
+
 let kUnicodeBnFontArray = [kUnicodeLettersBnNormal]
 let kUnicodeBnFontNameArray = ["Normal"]
 
@@ -62,18 +64,17 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         case .LOWER_CASE:
             print("LOWER_CASE")
             
-            let font = getObject(kSelectedFontName)
-            let lang = getObject(kSelectedLanguageName) as? String
+            let font = getString(kSelectedFontName)
+            let lang = getString(kSelectedLanguageName) as? String
             
-            if let _lang = lang, _lang == "English" {
-                return kUnicodeFontArray[tag!]
-            } else if let _lang = lang, _lang == "Bangla" {
+            if let _lang = lang, _lang == English {
+                return fontLettersArray["Normal"]!
+            } else if let _lang = lang, _lang == Bangla {
                 return kUnicodeBnFontArray[tag!]
             }else{
                 return []
             }
             
-            return kUnicodeFontArray[tag!]
             //return kUnicodeLanguageArray[tag!]
         case .UPPER_CASE  :
             print("UPPER_CASE")
@@ -95,7 +96,8 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
-            return kUnicodeLanguageArray[tag!]
+            //return kUnicodeLanguageArray[tag!]
+            return kTextFontAlphabet
         case .UPPER_CASE  :
             print("UPPER_CASE")
             return kUnicodeLettersBnUnshiftArray

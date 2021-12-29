@@ -25,6 +25,18 @@ func getObject(_ forKey:String) -> Any {
     return defaultSuite?.value(forKey: forKey) as Any
 }
 
+//read and write userdefault string
+func setString(_ value:String, key:String) {
+    let defaults = UserDefaults()
+    defaults.setValue(value, forKey: key)
+    defaults.synchronize()
+}
+
+func getString(_ forKey:String) -> String {
+    let defaults = UserDefaults()
+    return defaults.string(forKey: forKey) ?? ""
+}
+
 
 //read and write userdefault data
 func setData(_ data:Any, key:String) {

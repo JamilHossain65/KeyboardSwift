@@ -25,6 +25,10 @@ let kKeyAlphabetFont = "kKeyAlphabetFont"
 let kSelectedFontName = "kSelectedFontName"
 let kSelectedLanguageName = "kSelectedLanguageName"
 
+
+let English = "English"
+let Bangla  = "Bangla"
+
 //let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 
 enum HINT_BAR_TYPE:Int {
@@ -73,9 +77,22 @@ let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo ref
 
 let hintBarHeight:CGFloat = 44 //36;
 
-let kLanguageArray  = ["English","Bangla"/*,"Arabic","Hindi"*/]
-let kLanguageArray2 = ["English":kUnicodeFontNameArray,"Bangla":kUnicodeBnFontNameArray]
+//let kLanguageArray2 = [English:kUnicodeFontNameArray,Bangla:kUnicodeBnFontNameArray]
 
-let kUnicodeLanguageArray = [kUnicodeLettersEnNormal,
-                             kUnicodeLettersBnNormal,]
+//let kLanguageArray  = [English,Bangla/*,"Arabic","Hindi"*/]
+//let kUnicodeLanguageArray = [kUnicodeLettersEnNormal,
+//                             kUnicodeLettersBnNormal,]
+
+
+let kAllLanguageDic = [English:kUnicodeFontEnDic,Bangla:kUnicodeBnFontDic]
+
+let kAllLanguageSortedDic = [
+    [English  : kUnicodeFontEnDic],
+    [Bangla   : kUnicodeBnFontDic],
+    ]
+
+let langNameArray = kAllLanguageSortedDic.map({$0.keys.first!})
+let fontLettersArray:[String:[String]] = kAllLanguageSortedDic.map({$0.values.first!}).first!
+let fontNameArray:[String] = fontLettersArray.map({$0.key})
+
 
