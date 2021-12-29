@@ -12,9 +12,6 @@ import UIKit
 
 let kUnicodeBnFontDic:[String:[String]] = ["Normal":kUnicodeLettersBnNormal]
 
-let kUnicodeBnFontArray = [kUnicodeLettersBnNormal]
-let kUnicodeBnFontNameArray = ["Normal"]
-
 
 let kUnicodeLettersBnUnshiftArray = kUnicodeBnLetterShift.components(separatedBy: ",")
 
