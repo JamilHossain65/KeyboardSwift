@@ -82,9 +82,7 @@ let hintBarHeight:CGFloat = 44 //36;
 //let kLanguageArray  = [English,Bangla/*,"Arabic","Hindi"*/]
 //let kUnicodeLanguageArray = [kUnicodeLettersEnNormal,
 //                             kUnicodeLettersBnNormal,]
-
-
-let kAllLanguageDic = [English:kUnicodeFontEnDic,Bangla:kUnicodeBnFontDic]
+//let kAllLanguageDic = [English:kUnicodeFontEnDic,Bangla:kUnicodeBnFontDic]
 
 let kAllLanguageSortedDic = [
     [English  : kUnicodeFontEnDic],
@@ -94,5 +92,3 @@ let kAllLanguageSortedDic = [
 let langNameArray = kAllLanguageSortedDic.map({$0.keys.first!})
 let fontLettersArray:[String:[String]] = kAllLanguageSortedDic.map({$0.values.first!}).first!
 let fontNameArray:[String] = fontLettersArray.map({$0.key})
-
-

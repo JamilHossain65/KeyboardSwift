@@ -206,7 +206,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         print("selected langName::\(langName)")
         print("selected fontName::\(fontName)")
         
-        kTextFontAlphabet = kAllLanguageDic[langName]?[fontName] ?? []
+        //kTextFontAlphabet = kAllLanguageDic[langName]?[fontName] ?? []
+        kTextFontAlphabet = fontLettersArray[fontName]!
         //print("selectedLangDic::\(kTextFontAlphabet)")
         
         
@@ -407,8 +408,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         hideSettingView()
         
         //set word suggestion view
-        let langNameList = kAllLanguageDic.compactMap({$0.0}).sorted()
-        print("langNameList::\(langNameList)")
+        //let langNameList = kAllLanguageDic.compactMap({$0.0}).sorted()
+        print("langNameList::\(langNameArray)")
         
         
         HintBarManager.shared.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: langNameArray)
@@ -756,7 +757,9 @@ extension KeyboardViewController: HintBarDelegate {
             print("selected Language ::\(selectedLang)")
             print("selected fontName::\(fontName)")
             
-            kTextFontAlphabet = kAllLanguageDic[selectedLang]?[fontName] ?? []
+            //kTextFontAlphabet = kAllLanguageDic[selectedLang]?[fontName] ?? []
+            kTextFontAlphabet = fontLettersArray[fontName]!
+            
             print("language array::\(kTextFontAlphabet)")
             
             kTextFontAlphabet = langNameArray

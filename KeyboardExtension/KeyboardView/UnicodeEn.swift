@@ -10,9 +10,7 @@ import UIKit
 //class UnicodeEn: NSObject {
 //}
 
-/*
- 
- */
+
 let kUnicodeFontEnDic:[String:[String]] = [
                        "Normal":kUnicodeLettersEnNormal,
                        "𝕆𝕦𝕥𝕝𝕚𝕟𝕖":kUnicodeLettersEnOutline,
