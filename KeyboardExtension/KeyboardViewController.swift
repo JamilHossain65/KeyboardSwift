@@ -211,7 +211,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         //print("selectedLangDic::\(kTextFontAlphabet)")
         
         
-        for dic in kAllLanguageSortedDic {
+        for dic in kAllLanguageDicArray {
             let key = dic.keys.first
             if key == Bangla{
                 let lettres = dic[Bangla]?["Normal"]
@@ -219,8 +219,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
                 kTextFontAlphabet = lettres!
             }
         }
-        
-        
+                
 //        let letterArray = kAllLanguageSortedDic[Bangla]
 //        print("letterArray :: \(letterArray)")
         

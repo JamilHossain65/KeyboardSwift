@@ -10,9 +10,7 @@ import UIKit
 //class UnicodeBn: NSObject {
 //}
 
-let kUnicodeBnFontDic:[String:[String]] = ["Normal":kUnicodeLettersBnNormal]
-
-
+let kFontBnDic:[String:[String]] = ["Normal":kUnicodeLettersBnNormal]
 let kUnicodeLettersBnUnshiftArray = kUnicodeBnLetterShift.components(separatedBy: ",")
 
 //MARK:- Numbers and puncuations Array
@@ -38,15 +36,15 @@ let kUnicodeBnStinky  = "q̾,w̾,e̾,r̾,t̾,y̾,u̾,i̾,o̾,p̾,a̾,s̾,d̾,f̾
 let vowels = ["্","া","ি","ী","ু","ূ","ৃ","ে","ৈ","ো","ৌ",]
 
 /*
-্, া, ি, ী, ু, ূ, ৃ, ে, ৈ, ো, ৌ,ক,খ,গ,ঘ,ঙ,চ,ছ,জ,ঝ,ঞ,ট,ঠ,ড,ঢ,ণ,থ,দ,ধ
-অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ,ন,প,ফ,ব,ভ,ম,য,র,ল,শ,ষ,স,হ,ড়,ঢ়,য়,ৎ,
-০,১,২,৩,৪,৫,৬,৭,৮,৯,৳,$,-,_,(,),@,।,?,!,., ঁ, ক  ক্ষক্সজ্ঞঞ্চঞ্ছঞ্জ
-*/
+ ্, া, ি, ী, ু, ূ, ৃ, ে, ৈ, ো, ৌ,ক,খ,গ,ঘ,ঙ,চ,ছ,জ,ঝ,ঞ,ট,ঠ,ড,ঢ,ণ,থ,দ,ধ
+ অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ,ন,প,ফ,ব,ভ,ম,য,র,ল,শ,ষ,স,হ,ড়,ঢ়,য়,ৎ,
+ ০,১,২,৩,৪,৫,৬,৭,৮,৯,৳,$,-,_,(,),@,।,?,!,., ঁ, ক  ক্ষক্সজ্ঞঞ্চঞ্ছঞ্জ
+ */
 
 func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
     
-    let font = getString(kSelectedFontName)
-    let lang = getString(kSelectedLanguageName)
+    let fontname = getString(kSelectedFontName)
+    let language = getString(kSelectedLanguageName)
     
     switch keySettingType {
     case .FONT:
@@ -55,7 +53,7 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
-            return letters(lang:lang , fontname: font)
+            return alphabetOf(language,fontname)
         case .UPPER_CASE  :
             print("UPPER_CASE")
             return kUnicodeLettersBnUnshiftArray
@@ -76,8 +74,7 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
-            let letterList = letters(lang:lang , fontname: font)
-            return letterList
+            return alphabetOf(language,fontname)
         case .UPPER_CASE  :
             print("UPPER_CASE")
             return kUnicodeLettersBnUnshiftArray

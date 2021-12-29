@@ -77,21 +77,21 @@ let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo ref
 
 let hintBarHeight:CGFloat = 44 //36;
 
-let kAllLanguageSortedDic = [
-    [English  : kUnicodeFontEnDic],
-    [Bangla   : kUnicodeBnFontDic],
-    ]
+let kAllLanguageDicArray = [
+    [English  : kFontEnDic],
+    [Bangla   : kFontBnDic],
+]
 
-let langNameArray = kAllLanguageSortedDic.map({$0.keys.first!})
-let fontLettersArray:[String:[String]] = kAllLanguageSortedDic.map({$0.values.first!}).first!
+let langNameArray = kAllLanguageDicArray.map({$0.keys.first!})
+let fontLettersArray:[String:[String]] = kAllLanguageDicArray.map({$0.values.first!}).first!
 let fontNameArray:[String] = fontLettersArray.map({$0.key})
 
-func letters(lang:String,fontname:String) -> [String] {
-    for dic in kAllLanguageSortedDic {
+func alphabetOf(_ language:String,_ fontname:String) -> [String] {
+    for dic in kAllLanguageDicArray {
         let key = dic.keys.first
-        if key == lang{
-            let letters = dic[lang]?[fontname]
-            print("dic::\(letters)")
+        if key == language {
+            let letters = dic[language]?[fontname]
+            print("letters::\(letters)")
             return letters!
         }
     }
