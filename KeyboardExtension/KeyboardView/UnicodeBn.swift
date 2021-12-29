@@ -48,13 +48,8 @@ let vowels = ["্","া","ি","ী","ু","ূ","ৃ","ে","ৈ","ো","ৌ",
 
 func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
     
-    
-//    enum KEY_SETTING_TYPE:Int {
-//        case FONT
-//        case BG_COLOR
-//        case TEXT_COLOR
-//        case LANGUAGE
-//    }
+    let font = getString(kSelectedFontName)
+    let lang = getString(kSelectedLanguageName)
     
     switch keySettingType {
     case .FONT:
@@ -63,19 +58,7 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
-            
-            let font = getString(kSelectedFontName)
-            let lang = getString(kSelectedLanguageName) as? String
-            
-            if let _lang = lang, _lang == English {
-                return fontLettersArray["Normal"]!
-            } else if let _lang = lang, _lang == Bangla {
-                return fontLettersArray["Normal"]!
-            }else{
-                return []
-            }
-            
-            //return kUnicodeLanguageArray[tag!]
+            return letters(lang:lang , fontname: font)
         case .UPPER_CASE  :
             print("UPPER_CASE")
             return kUnicodeLettersBnUnshiftArray
@@ -96,8 +79,8 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
-            //return kUnicodeLanguageArray[tag!]
-            return kTextFontAlphabet
+            let letterList = letters(lang:lang , fontname: font)
+            return letterList
         case .UPPER_CASE  :
             print("UPPER_CASE")
             return kUnicodeLettersBnUnshiftArray

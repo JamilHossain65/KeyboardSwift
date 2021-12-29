@@ -85,3 +85,15 @@ let kAllLanguageSortedDic = [
 let langNameArray = kAllLanguageSortedDic.map({$0.keys.first!})
 let fontLettersArray:[String:[String]] = kAllLanguageSortedDic.map({$0.values.first!}).first!
 let fontNameArray:[String] = fontLettersArray.map({$0.key})
+
+func letters(lang:String,fontname:String) -> [String] {
+    for dic in kAllLanguageSortedDic {
+        let key = dic.keys.first
+        if key == lang{
+            let letters = dic[lang]?[fontname]
+            print("dic::\(letters)")
+            return letters!
+        }
+    }
+    return []
+}

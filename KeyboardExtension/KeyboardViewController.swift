@@ -213,12 +213,20 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         for dic in kAllLanguageSortedDic {
             let key = dic.keys.first
-            print("keys::\(key)")
+            if key == Bangla{
+                let lettres = dic[Bangla]?["Normal"]
+                print("dic::\(lettres)")
+                kTextFontAlphabet = lettres!
+            }
         }
+        
+        
+//        let letterArray = kAllLanguageSortedDic[Bangla]
+//        print("letterArray :: \(letterArray)")
         
         //print("fontLettersArray :: \(fontLettersArray["𝕆𝕦𝕥𝕝𝕚𝕟𝕖"])")
         
-        print("fontNameArray :: \(fontNameArray)")
+        //print("fontNameArray :: \(fontNameArray)")
         
 //        if let _fontName = getObject(kKeyAlphabetFont) as? [String] {
 //            kTextFontAlphabet = _fontName
@@ -762,13 +770,9 @@ extension KeyboardViewController: HintBarDelegate {
             
             print("letters ::\(kTextFontAlphabet)")
             
-            //kTextFontAlphabet = langNameArray
             
             hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kTextFontAlphabet,selectedIndex: button.tag)
             keySettingType    = .LANGUAGE //MARK:- TODO: remove this line
-            //kTextFontAlphabet = kTextFontAlphabet[button.tag]
-            //kTextFontAlphabet = letterList[button.tag]
-            
             setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
             keyboardView.reloadFont(button.tag)
             keyboardView.backgroundColor = kKeyboardBGColor
