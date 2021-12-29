@@ -70,7 +70,7 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
             if let _lang = lang, _lang == English {
                 return fontLettersArray["Normal"]!
             } else if let _lang = lang, _lang == Bangla {
-                return kUnicodeBnFontArray[tag!]
+                return fontLettersArray["Normal"]!
             }else{
                 return []
             }

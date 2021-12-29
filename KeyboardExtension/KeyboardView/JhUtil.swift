@@ -77,13 +77,6 @@ let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo ref
 
 let hintBarHeight:CGFloat = 44 //36;
 
-//let kLanguageArray2 = [English:kUnicodeFontNameArray,Bangla:kUnicodeBnFontNameArray]
-
-//let kLanguageArray  = [English,Bangla/*,"Arabic","Hindi"*/]
-//let kUnicodeLanguageArray = [kUnicodeLettersEnNormal,
-//                             kUnicodeLettersBnNormal,]
-//let kAllLanguageDic = [English:kUnicodeFontEnDic,Bangla:kUnicodeBnFontDic]
-
 let kAllLanguageSortedDic = [
     [English  : kUnicodeFontEnDic],
     [Bangla   : kUnicodeBnFontDic],

@@ -755,14 +755,14 @@ extension KeyboardViewController: HintBarDelegate {
             let fontName = getString(kSelectedFontName)
             
             print("selected Language ::\(selectedLang)")
-            print("selected fontName::\(fontName)")
+            print("selected fontName ::\(fontName)")
             
             //kTextFontAlphabet = kAllLanguageDic[selectedLang]?[fontName] ?? []
             kTextFontAlphabet = fontLettersArray[fontName]!
             
-            print("language array::\(kTextFontAlphabet)")
+            print("letters ::\(kTextFontAlphabet)")
             
-            kTextFontAlphabet = langNameArray
+            //kTextFontAlphabet = langNameArray
             
             hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kTextFontAlphabet,selectedIndex: button.tag)
             keySettingType    = .LANGUAGE //MARK:- TODO: remove this line
