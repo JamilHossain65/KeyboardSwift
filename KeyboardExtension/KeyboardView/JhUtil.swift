@@ -133,7 +133,7 @@ func getAlphabetOf(_ language:String,_ fontname:String) -> [String] {
 func getFontNamesOf(_ language:String) -> [String]{
     for dic in kAllLanguageDicArray {
         let key = dic.keys.first
-        if key == English {
+        if key == language {
             for _dic in dic{
                 let fontList = _dic.value.map({$0.keys.first!})
                 print("fontList::\(fontList)")
@@ -142,5 +142,5 @@ func getFontNamesOf(_ language:String) -> [String]{
             }
         }
     }
-    return []
+    return ["Normal"]
 }

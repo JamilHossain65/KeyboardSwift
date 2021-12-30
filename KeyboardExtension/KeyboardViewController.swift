@@ -205,13 +205,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         print("selected langName::\(langName)")
         print("selected fontName::\(fontName)")
-        
-        //kTextFontAlphabet = fontLettersArray[fontName]!
-        
-        
-        let alphabet = alphabetOf(English,"Normal")
+        let alphabet = getAlphabetOf(langName,fontName)
         print("alphabet :: \(alphabet)")
         
+        //kTextFontAlphabet = fontLettersArray[fontName]!
         /*
         for dic in kAllLanguageDicArray {
             let key = dic.keys.first
@@ -729,19 +726,15 @@ extension KeyboardViewController: HintBarDelegate {
                     let fontname = button.titleLabel?.text?.trimmingCharacters(in:.whitespaces) ?? "Normal"
                     
                     let langName = getString(kSelectedLanguageName)
-                    //let fontNameArray:[String] = kAllLanguageDic[langName]?.compactMap({$0.0}) ?? []
-                    let fontNameArray = fontLettersArray["𝕆𝕦𝕥𝕝𝕚𝕟𝕖"]
+                    let fontNameList = getFontNamesOf(langName)
                     
-                    let tag = fontNameArray?.firstIndex(of: fontname)
-                    print("selected outline index::\(tag)")
+                    hintBarManager.refresh(scrollView: suggestionBarScrollView, dataArray: fontNameList,selectedIndex: button.tag)
                     
-                    hintBarManager.refresh(scrollView: suggestionBarScrollView, dataArray: fontNameArray!,selectedIndex: tag)//button.tag
-                    
-                    let button = sender as! UIButton
+                    //let button = sender as! UIButton
                     keySettingType    = .FONT //MARK:- TODO: try to remove this line
                     //kTextFontAlphabet = kUnicodeFontArray[button.tag]
                     //setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-                    keyboardView.reloadFont(tag ?? 0) //button.tag
+                    keyboardView.reloadFont(button.tag)
                     keyboardView.backgroundColor = kKeyboardBGColor
                     
                     setString(fontname, key: kSelectedFontName)
@@ -770,15 +763,10 @@ extension KeyboardViewController: HintBarDelegate {
             setString(selectedLang , key: kSelectedLanguageName)
             
             let fontName = getString(kSelectedFontName)
-            
             print("selected Language ::\(selectedLang)")
             print("selected fontName ::\(fontName)")
             
-            //kTextFontAlphabet = kAllLanguageDic[selectedLang]?[fontName] ?? []
-            //kTextFontAlphabet = fontLettersArray[fontName]!
-            
-            print("letters ::\(kTextFontAlphabet)")
-            
+            kTextFontAlphabet = getAlphabetOf(selectedLang, fontName)
             
             hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kTextFontAlphabet,selectedIndex: button.tag)
             keySettingType    = .LANGUAGE //MARK:- TODO: remove this line
