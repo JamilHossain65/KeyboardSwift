@@ -25,7 +25,13 @@ let kKeyAlphabetFont = "kKeyAlphabetFont"
 let kSelectedFontName = "kSelectedFontName"
 let kSelectedLanguageName = "kSelectedLanguageName"
 
+//letter mode
+let NORMAL  = "Normal"
+let SHIFT   = "Shift"
+let NUMERIC = "Numeric"
+let SYMBOL  = "Symbol"
 
+//supported language name
 let English = "English"
 let Bangla  = "Bangla"
 
@@ -47,8 +53,8 @@ enum KEY_LETTER_MODE:Int {
     case LOWER_CASE
     case UPPER_CASE
     case DOUBLE_TAP
-    case NUMBERS
-    case PANCTUATIONS
+    case NUMERIC
+    case SYMBOLS
 }
 
 var keySettingType: KEY_SETTING_TYPE = .FONT
@@ -84,15 +90,12 @@ let kAllLanguageDicArray = [
 
 let langNameArray = kAllLanguageDicArray.map({$0.keys.first!})
 //let fontLettersArray:[String:[String]] = kAllLanguageDicArray.map({$0.values.first!}).first!
-
-let fontLettersArray:[String:[String]] = [English:["a","s"]]
-
-let fontLettersArrayTemp = kAllLanguageDicArray.map({$0.values.first!}).first!
-
+//let fontLettersArrayTemp = kAllLanguageDicArray.map({$0.values.first!}).first!
 //let fontNameArray:[String] = fontLettersArray.map({$0.key})
-//let fontNameArray:[String] = ["Normal"]
+
 let fontNameArray:[String] = getFontNamesOf(English)
 
+/*
 func alphabetOf(_ language:String,_ fontname:String) -> [String] {
     for dic in kAllLanguageDicArray {
         let key = dic.keys.first
@@ -106,23 +109,29 @@ func alphabetOf(_ language:String,_ fontname:String) -> [String] {
     }
     return []
 }
+*/
 
-func getAlphabetOf(_ language:String,_ fontname:String) -> [String] {
+func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ letterMode:String) -> [String] {
     for dic in kAllLanguageDicArray {
         let key = dic.keys.first
         if key == language {
             for _dic in dic{
-                let fontList = _dic.value.map({$0.keys.first!})
-                print("fontList::\(fontList)")
                 for test in _dic.value {
-                    if test.keys.first == fontname{
-                        let fontAlphabet = test[fontname]
-                        print("test::\(fontAlphabet)")
-                        return fontAlphabet!
+                    if let _fontname = test.keys.filter({$0 == fontname}).first{
+                        print("_fontname::\(_fontname) letterMode::\(letterMode)")
+                        print("test1::\(test)")
+                        var _key = letterMode
+                        if letterMode == NORMAL  {
+                            _key = fontname!
+                        }
+                        
+                        print("_key::\(_key)")
+                        
+                        let alphabetList = test[_key]
+                        print("alphabetList::\(alphabetList)")
+                        return alphabetList!
                     }
-                    
                 }
-                
             }
         }
     }
@@ -135,12 +144,12 @@ func getFontNamesOf(_ language:String) -> [String]{
         let key = dic.keys.first
         if key == language {
             for _dic in dic{
-                let fontList = _dic.value.map({$0.keys.first!})
-                print("fontList::\(fontList)")
-                return fontList
-                
+                //print("_dic::\(_dic)")
+                let fontNameArray = _dic.value.compactMap({$0.keys.filter({$0 != SHIFT && $0 != NUMERIC && $0 != SYMBOL}).first})
+                print("fontNameArray::\(fontNameArray)")
+                return fontNameArray
             }
         }
     }
-    return ["Normal"]
+    return [NORMAL]
 }

@@ -10,7 +10,15 @@ import UIKit
 //class UnicodeBn: NSObject {
 //}
 
-let kFontBnDic:[[String:[String]]] = [["Normal":kUnicodeLettersBnNormal]]
+let kFontBnDic:[[String:[String]]] = [
+    [
+        NORMAL :kUnicodeLettersBnNormal,
+        SHIFT  :kUnicodeLettersBnUnshiftArray,
+        NUMERIC:kUnicodeLettersBnNumList,
+        SYMBOL :kUnicodeLettersBnPuncuation
+    ]
+]
+
 let kUnicodeLettersBnUnshiftArray = kUnicodeBnLetterShift.components(separatedBy: ",")
 
 //MARK:- Numbers and puncuations Array
@@ -41,7 +49,7 @@ let vowels = ["্","া","ি","ী","ু","ূ","ৃ","ে","ৈ","ো","ৌ",
  ০,১,২,৩,৪,৫,৬,৭,৮,৯,৳,$,-,_,(,),@,।,?,!,., ঁ, ক  ক্ষক্সজ্ঞঞ্চঞ্ছঞ্জ
  */
 
-func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
+func getLetters(_ letterMode:KEY_LETTER_MODE) -> [String]{
     
     let fontname = getString(kSelectedFontName)
     let language = getString(kSelectedLanguageName)
@@ -53,18 +61,20 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
-            return getAlphabetOf(language,fontname)
+            let alphabet = getAlphabetOf(language,fontname,NORMAL)
+            print("alphabet:::\(alphabet)")
+            return alphabet
         case .UPPER_CASE  :
             print("UPPER_CASE")
-            return kUnicodeLettersBnUnshiftArray
+            return getAlphabetOf(language,fontname,SHIFT)
         case .DOUBLE_TAP :
             print("LETTER")
-        case .NUMBERS :
+        case .NUMERIC :
             print("NUMBERS")
-            return kUnicodeLettersBnNumList
-        case .PANCTUATIONS:
-            print("PANCTUATION")
-            return kUnicodeLettersBnPuncuation
+            return getAlphabetOf(language,fontname,NUMERIC)
+        case .SYMBOLS:
+            print("SYMBOLS")
+            return getAlphabetOf(language,fontname,SYMBOL)
         }
         
     case .LANGUAGE:
@@ -74,18 +84,18 @@ func getLetters(tag:Int? = 0, _ letterMode:KEY_LETTER_MODE) -> [String]{
         
         case .LOWER_CASE:
             print("LOWER_CASE")
-            return getAlphabetOf(language,fontname)
+            return getAlphabetOf(language,fontname,NORMAL)
         case .UPPER_CASE  :
             print("UPPER_CASE")
-            return kUnicodeLettersBnUnshiftArray
+            return getAlphabetOf(language,fontname,SHIFT)
         case .DOUBLE_TAP :
             print("LETTER")
-        case .NUMBERS :
+        case .NUMERIC :
             print("NUMBERS")
-            return kUnicodeLettersBnNumList
-        case .PANCTUATIONS:
-            print("PANCTUATION")
-            return kUnicodeLettersBnPuncuation
+            return getAlphabetOf(language,fontname,NUMERIC)
+        case .SYMBOLS:
+            print("SYMBOLS")
+            return getAlphabetOf(language,fontname,SYMBOL)
         }
         
     default:

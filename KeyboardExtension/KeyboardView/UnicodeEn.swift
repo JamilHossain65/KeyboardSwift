@@ -12,8 +12,16 @@ import UIKit
 
 
 let kFontEnDic:[[String:[String]]] = [
-    ["Normal":kUnicodeLettersEnNormal],
-    ["𝕆𝕦𝕥𝕝𝕚𝕟𝕖":kUnicodeLettersEnOutline],
+    [NORMAL :kUnicodeLettersEnNormal,
+     SHIFT  :kUnicodeLettersEnNormalShift,
+     NUMERIC:kUnicodeLettersEnNumList,
+     SYMBOL :kUnicodeLettersEnPuncuation],
+    
+    ["𝕆𝕦𝕥𝕝𝕚𝕟𝕖":kUnicodeLettersEnOutline,
+     SHIFT  :kUnicodeLettersEnNormalShift,
+     NUMERIC:kUnicodeLettersEnNumList,
+     SYMBOL :kUnicodeLettersEnPuncuation],
+    
     ["Sᴍᴀʟʟ Cᴀᴘs":kUnicodeLettersEnSmallCaps],
     ["ᑕOᗰIᑕ":kUnicodeLettersEnComic],
     ["𝗦𝗮𝗻𝘀":kUnicodeLettersEnSans],
@@ -40,6 +48,7 @@ let kFontEnDic:[[String:[String]]] = [
 let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation.components(separatedBy: ",")
 let kUnicodeLettersEnNumList      = kUnicodeEnNumbers.components(separatedBy: ",")
 let kUnicodeLettersEnNormal       = kUnicodeEnNormal.components(separatedBy: ",")
+let kUnicodeLettersEnNormalShift  = kUnicodeEnNormalShift.components(separatedBy: ",")
 let kUnicodeLettersEnStinky       = kUnicodeEnStinky.components(separatedBy: ",")
 let kUnicodeLettersEnClouds       = kUnicodeEnClouds.components(separatedBy: ",")
 let kUnicodeLettersEnHappy        = kUnicodeEnHappy.components(separatedBy: ",")
@@ -63,9 +72,13 @@ let kUnicodeLettersEnSans         = kUnicodeEnSans.components(separatedBy: ",")
 let kUnicodeLettersEnSansItalic   = kUnicodeEnSansItalic.components(separatedBy: ",")
 let kUnicodeLettersEnStop         = kUnicodeEnStop.components(separatedBy: ",")
 
-let kUnicodeEnPuncuation = "[,],{,},#,%,^,*,+,=,_,/,|,~,<,>,€,$,¥,•,.,,,?,!,’" //\
-let kUnicodeEnNumbers = "1,2,3,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,\",.,^,%,?,!,',*," // ~ replace by ,
-let kUnicodeEnNormal  = "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
+//Default font
+let kUnicodeEnPuncuation  = "[,],{,},#,%,^,*,+,=,_,/,|,~,<,>,€,$,¥,•,.,,,?,!,’" //\
+let kUnicodeEnNumbers     = "1,2,3,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,\",.,^,%,?,!,',*," // ~ replace by ,
+let kUnicodeEnNormal      = "q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,:,z,x,c,v,b,n,m"
+let kUnicodeEnNormalShift = "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
+
+//Others suported font
 let kUnicodeEnSerif   = "𝑄,𝑤,𝑒,𝑟,𝑡,𝑦,𝑢,𝑖,𝑜,𝑝,𝑎,𝑠,𝑑,𝑓,𝑔,ℎ,𝑗,𝑘,𝑙,:,𝑧,𝑥,𝑐,𝑣,𝑏,𝑛,𝑚"
 let kUnicodeEnStinky  = "q̾,w̾,e̾,r̾,t̾,y̾,u̾,i̾,o̾,p̾,a̾,s̾,d̾,f̾,g̾,h̾,j̾,k̾,l̾,:,z̾,x̾,c̾,v̾,b̾,n̾,m̾"
 let kUnicodeEnClouds  = "q͜͡,w͜͡,e͜͡,r͜͡,t͜͡,y͜͡,u͜͡,i͜͡,o͜͡,p͜͡,a͜͡,s͜͡,d͜͡,f͜͡,g͜͡,h͜͡,j͜͡,k͜͡,l͜͡,:,z͜͡,x͜͡,c͜͡,v͜͡,b͜͡,n͜͡,m͜͡"

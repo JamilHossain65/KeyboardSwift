@@ -372,8 +372,8 @@ extension KeyboardView{
         }
     }
     
-    func reloadFont(_ fontIndex:Int) {
-        currentFontLetters = getLetters(tag:fontIndex,keyLetterMode)
+    func reloadFont() {
+        currentFontLetters = getLetters(keyLetterMode)
         print("refresh font:\(currentFontLetters)")
         refreshKeyboard()
     }
