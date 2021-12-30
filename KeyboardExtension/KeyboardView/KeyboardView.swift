@@ -68,7 +68,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
         
         //draw
         //self.configure5Line()
-        currentFontLetters = kTextFontAlphabet  //kUnicodeFontArray[0]
+        currentFontLetters = dataSource  //kUnicodeFontArray[0]
         refreshKeyboard()
     }
     
@@ -372,8 +372,11 @@ extension KeyboardView{
         }
     }
     
-    func reloadFont() {
-        currentFontLetters = getLetters(keyLetterMode)
+    func reloadFont(_ dataSource:[String]?) {
+        //currentFontLetters = getLetters(keyLetterMode)
+        if let _dataSource = dataSource{
+            currentFontLetters = _dataSource
+        }
         print("refresh font:\(currentFontLetters)")
         refreshKeyboard()
     }

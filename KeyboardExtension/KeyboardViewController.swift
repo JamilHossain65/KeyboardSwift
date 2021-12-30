@@ -202,7 +202,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         let langName = getString(kSelectedLanguageName)
         let fontName = getString(kSelectedFontName)
-        kTextFontAlphabet = getAlphabetOf(langName,fontName,NORMAL)
+        dataSource = getAlphabetOf(langName,fontName,NORMAL)
         
         
         if let _bgColor:UIColor = UserDefaults.standard.keyboardBgColor {
@@ -571,11 +571,30 @@ extension KeyboardViewController: KeyboardViewDelegate {
             keyLetterMode = .LOWER_CASE
         }
         
-        //kTextFontAlphabet = kUnicodeBnFontArray[button.tag]
-        kTextFontAlphabet = getLetters(keyLetterMode)
-        setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-        //keyboardView.reloadFontBn(0)
-        keyboardView.reloadFont()
+        var mode = NORMAL
+        
+        switch keyLetterMode {
+        case .UPPER_CASE:
+            mode = NORMAL
+        case .LOWER_CASE:
+            mode = SHIFT
+        case .NUMERIC:
+            mode = NUMERIC
+        case .SYMBOLS:
+            mode = SYMBOL
+            
+        default:
+            mode = NORMAL
+        }
+        
+        
+        let language = getString(kSelectedLanguageName)
+        let fontName = getString(kSelectedFontName)
+        
+        dataSource = getAlphabetOf(language,fontName,mode)
+        keyboardView.currentFontLetters = dataSource
+        
+        keyboardView.reloadFont(dataSource)
         keyboardView.backgroundColor = kKeyboardBGColor
         
     }
@@ -585,16 +604,35 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         if keyboardView.altButton.isSelected {
             keyLetterMode = shiftButton.isSelected ? .SYMBOLS : .NUMERIC
+            
         } else {
             keyLetterMode = shiftButton.isSelected ? .UPPER_CASE : .LOWER_CASE
         }
         
         
-        //kTextFontAlphabet = kUnicodeBnFontArray[button.tag]
-        kTextFontAlphabet = getLetters(keyLetterMode)
-        setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-        //keyboardView.reloadFontBn(0)
-        keyboardView.reloadFont()
+        let language = getString(kSelectedLanguageName)
+        let fontName = getString(kSelectedFontName)
+        
+        var mode = NORMAL
+        
+        switch keyLetterMode {
+        case .UPPER_CASE:
+            mode = NORMAL
+        case .LOWER_CASE:
+            mode = SHIFT
+        case .NUMERIC:
+            mode = NUMERIC
+        case .SYMBOLS:
+            mode = SYMBOL
+            
+        default:
+            mode = NORMAL
+        }
+        
+        dataSource = getAlphabetOf(language,fontName,mode)
+        keyboardView.currentFontLetters = dataSource
+        
+        keyboardView.reloadFont(dataSource)
         keyboardView.backgroundColor = kKeyboardBGColor
     }
 }
@@ -697,9 +735,8 @@ extension KeyboardViewController: HintBarDelegate {
                     hintBarManager.refresh(scrollView: suggestionBarScrollView, dataArray: fontNameList,selectedIndex: button.tag)
                     
                     keySettingType    = .FONT //MARK:- TODO: try to remove this line
-                    keyboardView.reloadFont()
+                    keyboardView.reloadFont([])
                     keyboardView.backgroundColor = kKeyboardBGColor
-                    keyboardView.reloadFont()
                     showSettingView()
                 }
             case .BG_COLOR:
@@ -733,14 +770,13 @@ extension KeyboardViewController: HintBarDelegate {
             }
             
             print("current fontName ::\(fontName)")
+            dataSource = getAlphabetOf(language,fontName,NORMAL)
+            print("kTextFontAlphabet ::\(dataSource)")
+            keyboardView.currentFontLetters = dataSource
             
-            kTextFontAlphabet = getAlphabetOf(language,fontName,NORMAL)
-            //keyboardView.currentFontLetters = kTextFontAlphabet
-            
-            hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: kTextFontAlphabet,selectedIndex: button.tag)
+            hintBarManager.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: dataSource,selectedIndex: button.tag)
             keySettingType    = .LANGUAGE //MARK:- TODO: remove this line
-            setObject(kTextFontAlphabet, key: kKeyAlphabetFont)
-            keyboardView.reloadFont()
+            keyboardView.reloadFont(dataSource)
             keyboardView.backgroundColor = kKeyboardBGColor
             
             showSettingView()
