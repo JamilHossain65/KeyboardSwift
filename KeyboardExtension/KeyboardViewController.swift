@@ -206,26 +206,36 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         print("selected langName::\(langName)")
         print("selected fontName::\(fontName)")
         
-        //kTextFontAlphabet = kAllLanguageDic[langName]?[fontName] ?? []
-        kTextFontAlphabet = fontLettersArray[fontName]!
-        //print("selectedLangDic::\(kTextFontAlphabet)")
+        //kTextFontAlphabet = fontLettersArray[fontName]!
         
         
+        let alphabet = alphabetOf(English,"Normal")
+        print("alphabet :: \(alphabet)")
+        
+        /*
         for dic in kAllLanguageDicArray {
             let key = dic.keys.first
-            if key == Bangla{
-                let lettres = dic[Bangla]?["Normal"]
-                print("dic::\(lettres)")
-                kTextFontAlphabet = lettres!
+            if key == English {
+                for _dic in dic{
+                    let fontList = _dic.value.map({$0.keys.first!})
+                    print("fontList::\(fontList)")
+                    for test in _dic.value {
+                        if test.keys.first == "𝕆𝕦𝕥𝕝𝕚𝕟𝕖"{
+                            let fontAlphabet = test["𝕆𝕦𝕥𝕝𝕚𝕟𝕖"]
+                            print("test::\(fontAlphabet)")
+                        }
+                        
+                    }
+                    
+                }
             }
         }
-                
-//        let letterArray = kAllLanguageSortedDic[Bangla]
-//        print("letterArray :: \(letterArray)")
         
-        //print("fontLettersArray :: \(fontLettersArray["𝕆𝕦𝕥𝕝𝕚𝕟𝕖"])")
+        */
         
-        //print("fontNameArray :: \(fontNameArray)")
+        
+        kTextFontAlphabet = (fontLettersArrayTemp.first?["Normal"])!
+        
         
 //        if let _fontName = getObject(kKeyAlphabetFont) as? [String] {
 //            kTextFontAlphabet = _fontName
@@ -765,7 +775,7 @@ extension KeyboardViewController: HintBarDelegate {
             print("selected fontName ::\(fontName)")
             
             //kTextFontAlphabet = kAllLanguageDic[selectedLang]?[fontName] ?? []
-            kTextFontAlphabet = fontLettersArray[fontName]!
+            //kTextFontAlphabet = fontLettersArray[fontName]!
             
             print("letters ::\(kTextFontAlphabet)")
             

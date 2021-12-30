@@ -10,7 +10,7 @@ import UIKit
 //class UnicodeBn: NSObject {
 //}
 
-let kFontBnDic:[String:[String]] = ["Normal":kUnicodeLettersBnNormal]
+let kFontBnDic:[[String:[String]]] = [["Normal":kUnicodeLettersBnNormal]]
 let kUnicodeLettersBnUnshiftArray = kUnicodeBnLetterShift.components(separatedBy: ",")
 
 //MARK:- Numbers and puncuations Array

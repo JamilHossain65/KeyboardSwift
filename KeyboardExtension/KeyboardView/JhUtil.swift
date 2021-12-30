@@ -83,16 +83,63 @@ let kAllLanguageDicArray = [
 ]
 
 let langNameArray = kAllLanguageDicArray.map({$0.keys.first!})
-let fontLettersArray:[String:[String]] = kAllLanguageDicArray.map({$0.values.first!}).first!
-let fontNameArray:[String] = fontLettersArray.map({$0.key})
+//let fontLettersArray:[String:[String]] = kAllLanguageDicArray.map({$0.values.first!}).first!
+
+let fontLettersArray:[String:[String]] = [English:["a","s"]]
+
+let fontLettersArrayTemp = kAllLanguageDicArray.map({$0.values.first!}).first!
+
+//let fontNameArray:[String] = fontLettersArray.map({$0.key})
+//let fontNameArray:[String] = ["Normal"]
+let fontNameArray:[String] = getFontNamesOf(English)
 
 func alphabetOf(_ language:String,_ fontname:String) -> [String] {
     for dic in kAllLanguageDicArray {
         let key = dic.keys.first
         if key == language {
-            let letters = dic[language]?[fontname]
-            print("letters::\(letters)")
-            return letters!
+            //MARK:- TODO: refactor
+//            let letters = dic[language]?[fontname]
+//            print("letters::\(letters)")
+//            return letters!
+            return []
+        }
+    }
+    return []
+}
+
+func getAlphabetOf(_ language:String,_ fontname:String) -> [String] {
+    for dic in kAllLanguageDicArray {
+        let key = dic.keys.first
+        if key == language {
+            for _dic in dic{
+                let fontList = _dic.value.map({$0.keys.first!})
+                print("fontList::\(fontList)")
+                for test in _dic.value {
+                    if test.keys.first == fontname{
+                        let fontAlphabet = test[fontname]
+                        print("test::\(fontAlphabet)")
+                        return fontAlphabet!
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+    return []
+}
+
+
+func getFontNamesOf(_ language:String) -> [String]{
+    for dic in kAllLanguageDicArray {
+        let key = dic.keys.first
+        if key == English {
+            for _dic in dic{
+                let fontList = _dic.value.map({$0.keys.first!})
+                print("fontList::\(fontList)")
+                return fontList
+                
+            }
         }
     }
     return []
