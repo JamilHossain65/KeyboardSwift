@@ -334,8 +334,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         let index = getFontNamesOf(langName).firstIndex(of: fontName)
         
+        let fontnameList = getFontNamesOf(langName)
+        
         //set word suggestion view
-        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: fontNameArray, selectedIndex: index)
+        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: fontnameList, selectedIndex: index)
     }
     
     @objc func colorButtonPressed(_ sender: Any) {
@@ -591,6 +593,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
             keyMode = shiftButton.isSelected ? SHIFT : NORMAL
         }
         
+        print("keyMode::\(keyMode)")
         
         dataSource = getAlphabetOf(langName,fontName,keyMode)
         keyboardView.reloadFont(dataSource)
