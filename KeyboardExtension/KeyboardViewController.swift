@@ -586,11 +586,10 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func shiftButtonPressed(_ shiftButton:UIButton){
         print("shift button tapped:\(shiftButton.isSelected)")
         
-        if keyboardView.altButton.isSelected {
-            keyMode = shiftButton.isSelected ? SYMBOL : NUMERIC
-            
+        if shiftButton.isSelected {
+            keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT //SYMBOL : NUMERIC
         } else {
-            keyMode = shiftButton.isSelected ? SHIFT : NORMAL
+            keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL //
         }
         
         print("keyMode::\(keyMode)")

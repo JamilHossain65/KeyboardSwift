@@ -14,6 +14,7 @@ let kPADDING_TOP    = "PADDING_TOP"
 let kPADDING_BOTTOM = "PADDING_BOTTOM"
 //
 let k123String    = "123"
+let kSymbolString = "#+="
 let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
