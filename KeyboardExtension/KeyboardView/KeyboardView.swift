@@ -435,18 +435,12 @@ extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
         
         if(sender.tag == shiftButtonIndex) {
-//            print("sender.isSelected::\(sender.isSelected)")
-//            isSelectedShiftButton = !isSelectedShiftButton
-//            sender.isSelected = isSelectedShiftButton
-//            print("isSelectedShiftButton::\(isSelectedShiftButton)")
-//            sender.isSelected = !sender.isSelected
-//            shiftButton = sender
-            
+
             sender.isSelected = !sender.isSelected
             shiftButton = sender
             print("sender.isSelected::\(sender.isSelected)")
             
-            keyLetterMode = shiftButton.isSelected ? .UPPER_CASE :.LOWER_CASE //MARK:- refactor, shift this code to delegate method
+            keyMode = shiftButton.isSelected ? SHIFT : NORMAL
             
             
             for view in subviews {

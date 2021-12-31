@@ -38,6 +38,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     var counter = 0
     
+    var langName = getString(kSelectedLanguageName)
+    var fontName = getString(kSelectedFontName)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
    
@@ -200,8 +204,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //        setString(English, key: kSelectedLanguageName)
 //        setString("𝕆𝕦𝕥𝕝𝕚𝕟𝕖", key: kSelectedFontName) //𝕆𝕦𝕥𝕝𝕚𝕟𝕖
         
-        let langName = getString(kSelectedLanguageName)
-        let fontName = getString(kSelectedFontName)
+//        let langName = getString(kSelectedLanguageName)
+//        let fontName = getString(kSelectedFontName)
+        
         dataSource = getAlphabetOf(langName,fontName,NORMAL)
         
         
@@ -326,13 +331,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         guard let inputView = inputView else { return }
         inputView.backgroundColor = kKeyboardBGColor
-        
-        
-//        let langName = getString(kSelectedLanguageName)
-//        let fontNameArray:[String] = kAllLanguageDic[langName]?.compactMap({$0.0}) ?? []
-        
-        //let fontNameList:[String] = fontNameArray.map({$0.key})
-        //print("fontNameList::\(fontNameList)")
         
         //set word suggestion view
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: fontNameArray)
@@ -566,32 +564,12 @@ extension KeyboardViewController: KeyboardViewDelegate {
         print("alt button tapped:\(altButton.isSelected)")
         
         if altButton.isSelected {
-            keyLetterMode = .NUMERIC
+            keyMode = NUMERIC
         } else {
-            keyLetterMode = .LOWER_CASE
+            keyMode = NORMAL
         }
         
-        var mode = NORMAL
-        
-        switch keyLetterMode {
-        case .UPPER_CASE:
-            mode = NORMAL
-        case .LOWER_CASE:
-            mode = SHIFT
-        case .NUMERIC:
-            mode = NUMERIC
-        case .SYMBOLS:
-            mode = SYMBOL
-            
-        default:
-            mode = NORMAL
-        }
-        
-        
-        let language = getString(kSelectedLanguageName)
-        let fontName = getString(kSelectedFontName)
-        
-        dataSource = getAlphabetOf(language,fontName,mode)
+        dataSource = getAlphabetOf(langName,fontName,keyMode)
         keyboardView.currentFontLetters = dataSource
         
         keyboardView.reloadFont(dataSource)
@@ -603,33 +581,18 @@ extension KeyboardViewController: KeyboardViewDelegate {
         print("shift button tapped:\(shiftButton.isSelected)")
         
         if keyboardView.altButton.isSelected {
-            keyLetterMode = shiftButton.isSelected ? .SYMBOLS : .NUMERIC
+            keyMode = shiftButton.isSelected ? SYMBOL : NUMERIC
             
         } else {
-            keyLetterMode = shiftButton.isSelected ? .UPPER_CASE : .LOWER_CASE
+            keyMode = shiftButton.isSelected ? SHIFT : NORMAL
         }
         
         
         let language = getString(kSelectedLanguageName)
         let fontName = getString(kSelectedFontName)
+
         
-        var mode = NORMAL
-        
-        switch keyLetterMode {
-        case .UPPER_CASE:
-            mode = NORMAL
-        case .LOWER_CASE:
-            mode = SHIFT
-        case .NUMERIC:
-            mode = NUMERIC
-        case .SYMBOLS:
-            mode = SYMBOL
-            
-        default:
-            mode = NORMAL
-        }
-        
-        dataSource = getAlphabetOf(language,fontName,mode)
+        dataSource = getAlphabetOf(language,fontName,keyMode)
         keyboardView.currentFontLetters = dataSource
         
         keyboardView.reloadFont(dataSource)
@@ -756,21 +719,20 @@ extension KeyboardViewController: HintBarDelegate {
         print("didSelectLanguage")
         if let button = sender as? UIButton{
             
-            let language = button.titleLabel?.text?.trimmingCharacters(in: .whitespaces) ?? English
-            setString(language , key: kSelectedLanguageName)
+            langName = button.titleLabel?.text?.trimmingCharacters(in: .whitespaces) ?? English
+            setString(langName , key: kSelectedLanguageName)
             
-            var fontName = getString(kSelectedFontName)
-            print("selected Language ::\(language)")
+            print("selected Language ::\(langName)")
             print("selected fontName ::\(fontName)")
             
-            let allFontNameArray = getFontNamesOf(language)
+            let allFontNameArray = getFontNamesOf(langName)
             
             if !allFontNameArray.contains(fontName){
                 fontName = NORMAL
             }
             
             print("current fontName ::\(fontName)")
-            dataSource = getAlphabetOf(language,fontName,NORMAL)
+            dataSource = getAlphabetOf(langName,fontName,NORMAL)
             print("kTextFontAlphabet ::\(dataSource)")
             keyboardView.currentFontLetters = dataSource
             
