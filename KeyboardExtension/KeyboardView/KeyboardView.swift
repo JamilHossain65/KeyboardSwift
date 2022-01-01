@@ -207,7 +207,10 @@ extension KeyboardView{
             //keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
 
             keyboardButton.tag = currentButtonIndex
-            addSubview(keyboardButton)
+            
+            if isSpecialButton(keyboardButton) {
+                addSubview(keyboardButton)
+            }
             
             //set keyboard special button index
             self.setButtonIndex(keyboardButton)
@@ -327,17 +330,19 @@ extension KeyboardView{
             self.nextButton = keyboardButton
             keyboardButton.setTitle("", for: .normal)
             keyboardButton.setImage(UIImage(named: "globe.png"), for: .normal)
+            //addSubview(nextButton)
             break
         case altButtonIndex:
             keyboardButton.setTitle(k123String, for: .normal)
             keyboardButton.setTitle(kAbcString, for: .selected)
             keyboardButton.isSelected = altButton.isSelected
             altButton = keyboardButton
-            
+            //addSubview(altButton)
             break
         case returnButtonIndex:
             self.returnButton = keyboardButton
             keyboardButton.setTitle(kReturnString, for: .normal)
+            //addSubview(returnButton)
             break
         case shiftButtonIndex:
             keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
@@ -346,17 +351,19 @@ extension KeyboardView{
             
             keyboardButton.isSelected = shiftButton.isSelected
             shiftButton = keyboardButton
-            
+            //addSubview(shiftButton)
             break
         case deleteButtonIndex:
             self.deleteButton = keyboardButton
             keyboardButton.setTitle("", for: .normal)
             keyboardButton.setImage(UIImage(named: "delete.png"), for: .normal)
+            //addSubview(deleteButton)
             break
         case spaceButtonIndex:
             self.spaceButton = keyboardButton
             keyboardButton.setTitle(kSpaceString, for: .normal)
             keyboardButton.highlightBackgroundColor = kAltButtonColor
+            //addSubview(spaceButton)
             break
         case voiceButtonIndex:
             self.voiceButton = keyboardButton
@@ -364,6 +371,7 @@ extension KeyboardView{
             keyboardButton.setImage(UIImage(named: "record_on.png"), for: .normal)
             keyboardButton.setImage(UIImage(named: "record_off.png"), for: .selected)
             keyboardButton.highlightBackgroundColor = kHighlightColor
+            //addSubview(voiceButton)
             break
             
         default:
@@ -392,18 +400,19 @@ extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton) {
         if currentFontLetters.count <= 0 { return }
         
-        let selectedLetter = currentFontLetters[currentButtonIndex % currentFontLetters.count]
-        let title   = selectedLetter.lowercased()
+        let title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
         let jhKey   = JHkey(type: .custom)
         jhKey.frame = keyButton.frame
         jhKey.tag   = keyButton.tag
         jhKey.delegate = self
-        jhKey.backgroundColor = .clear
+        jhKey.backgroundColor = .white
         jhKey.setTitle(title, for: .normal)
         jhKey.setTitleColor(kKeyboardTextColor, for: .normal)
         jhKey.setTitleShadowColor(kTextShadowColor, for: .normal)
         jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         addSubview(jhKey)
+        jhKey.clipsToBounds = true
+        jhKey.layer.cornerRadius = 5.0
     }
 }
 

@@ -774,6 +774,9 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
+    
+    self.clipsToBounds = NO;
+    
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
         [self addPopupToButton:self];
     }
@@ -828,6 +831,8 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    self.clipsToBounds = YES;
     
 //    [self startHideTimerPopup];
 //    [self updateState];
