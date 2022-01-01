@@ -81,9 +81,25 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
         backgroundColor = .clear //kKeyboardBGColor //#d1d4db, rgb(209,212,219)
         nextButton.defaultBackgroundColor   = kAltButtonColor //rgb(172, 176, 188) //#acb0bc
         altButton.defaultBackgroundColor    = kAltButtonColor
-        returnButton.defaultBackgroundColor = kAltButtonColor
-        shiftButton.defaultBackgroundColor  = kAltButtonColor
-        deleteButton.defaultBackgroundColor = kAltButtonColor
+        altButton.highlightBackgroundColor  = kAltButtonColor
+        
+        returnButton.defaultBackgroundColor  = kAltButtonColor
+        deleteButton.defaultBackgroundColor  = kAltButtonColor
+        
+        if altButton.isSelected{
+            shiftButton.highlightBackgroundColor = kAltButtonColor
+            shiftButton.defaultBackgroundColor   = kAltButtonColor
+        }else{
+            if shiftButton.isSelected {
+                shiftButton.highlightBackgroundColor = .white
+                shiftButton.defaultBackgroundColor   = .white
+            } else {
+                shiftButton.highlightBackgroundColor = kAltButtonColor
+                shiftButton.defaultBackgroundColor   = kAltButtonColor
+            }
+            
+        }
+        
         //
         //spaceButton.defaultBackgroundColor = .white
         //voiceButton.defaultBackgroundColor = .white
@@ -330,40 +346,41 @@ extension KeyboardView{
             self.nextButton = keyboardButton
             keyboardButton.setTitle("", for: .normal)
             keyboardButton.setImage(UIImage(named: "globe.png"), for: .normal)
-            //addSubview(nextButton)
             break
         case altButtonIndex:
             keyboardButton.setTitle(k123String, for: .normal)
             keyboardButton.setTitle(kAbcString, for: .selected)
             keyboardButton.isSelected = altButton.isSelected
             altButton = keyboardButton
-            //addSubview(altButton)
             break
         case returnButtonIndex:
             self.returnButton = keyboardButton
             keyboardButton.setTitle(kReturnString, for: .normal)
-            //addSubview(returnButton)
             break
         case shiftButtonIndex:
-            keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
-            keyboardButton.setImage(UIImage(named: "shift.png"), for: .selected)
-            keyboardButton.setTitle("", for: .normal)
+            if altButton.isSelected{
+                keyboardButton.setTitle(kSymbolString, for: .normal)
+                keyboardButton.setTitle(k123String, for: .selected
+                )
+            }else{
+                keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
+                keyboardButton.setImage(UIImage(named: "shift.png"), for: .selected)
+                keyboardButton.setTitle("", for: .normal)
+                keyboardButton.setTitle("", for: .selected)
+            }
             
             keyboardButton.isSelected = shiftButton.isSelected
             shiftButton = keyboardButton
-            //addSubview(shiftButton)
             break
         case deleteButtonIndex:
             self.deleteButton = keyboardButton
             keyboardButton.setTitle("", for: .normal)
             keyboardButton.setImage(UIImage(named: "delete.png"), for: .normal)
-            //addSubview(deleteButton)
             break
         case spaceButtonIndex:
             self.spaceButton = keyboardButton
             keyboardButton.setTitle(kSpaceString, for: .normal)
             keyboardButton.highlightBackgroundColor = kAltButtonColor
-            //addSubview(spaceButton)
             break
         case voiceButtonIndex:
             self.voiceButton = keyboardButton
@@ -371,7 +388,6 @@ extension KeyboardView{
             keyboardButton.setImage(UIImage(named: "record_on.png"), for: .normal)
             keyboardButton.setImage(UIImage(named: "record_off.png"), for: .selected)
             keyboardButton.highlightBackgroundColor = kHighlightColor
-            //addSubview(voiceButton)
             break
             
         default:
@@ -462,12 +478,6 @@ extension KeyboardView {
             
             delegate?.shiftButtonPressed(sender)
             
-            if shiftButton.isSelected {
-                shiftButton.defaultBackgroundColor = .white
-            }else{
-                shiftButton.defaultBackgroundColor = kAltButtonColor
-            }
-            
         }else if(sender.tag == voiceButtonIndex) {
             sender.setImage(UIImage(named: "record_off.png"), for: .normal)
             sender.setImage(UIImage(named: "record_on.png"),  for: .selected)
@@ -489,18 +499,6 @@ extension KeyboardView {
         } else if(sender.tag == altButtonIndex) {
             sender.isSelected = !sender.isSelected
             altButton = sender
-            
-            print("alter button.isSelected::\(sender.isSelected)")
-            
-            if altButton.isSelected {
-                currentFontLetters = kUnicodeLettersEnNumList
-                altButton.backgroundColor = .red
-                
-            } else {
-                currentFontLetters = kUnicodeLettersEnNormal
-                altButton.backgroundColor = .green
-            }
-            
             delegate?.altButtonPressed(altButton)
             
             refreshKeyboard()

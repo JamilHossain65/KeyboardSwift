@@ -576,11 +576,11 @@ extension KeyboardViewController: KeyboardViewDelegate {
             keyMode = NORMAL
         }
         
+        keyboardView.shiftButton.isSelected = !altButton.isSelected
         dataSource = getAlphabetOf(langName,fontName,keyMode)
         
         keyboardView.reloadFont(dataSource)
         keyboardView.backgroundColor = kKeyboardBGColor
-        
     }
     
     func shiftButtonPressed(_ shiftButton:UIButton){
@@ -593,7 +593,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         }
         
         print("keyMode::\(keyMode)")
-        
+       
         dataSource = getAlphabetOf(langName,fontName,keyMode)
         keyboardView.reloadFont(dataSource)
         keyboardView.backgroundColor = kKeyboardBGColor
