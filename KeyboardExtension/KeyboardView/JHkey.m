@@ -277,7 +277,7 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
                                   self.frame.size.width,
                                   self.frame.size.height);
         [button setTitle:(isLowCase ? hint.lowercaseString:hint.uppercaseString) forState:UIControlStateNormal];
-        [button.titleLabel setFont:[UIFont systemFontOfSize:15]];//kKeyPhoneTitleFontSize+(isLowCase ? 2:0) //todo
+        [button.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         

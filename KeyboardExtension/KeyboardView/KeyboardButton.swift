@@ -38,6 +38,6 @@ private extension KeyboardButton {
         layer.shadowRadius = 0.0
         layer.shadowOpacity = 0.35
         setTitleColor(.black, for: .normal)
-        titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
     }
 }
