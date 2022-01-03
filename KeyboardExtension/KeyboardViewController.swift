@@ -54,6 +54,19 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             wordArray = _wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
             print("words count::\(wordArray.count)")
         }
+        
+//        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+//        
+//        if textLeft.count <= 0 {
+//            if !keyboardView.altButton.isSelected {
+//                if !keyboardView.shiftButton.isSelected {
+//                    keyMode = SHIFT
+//                    keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+//                    print("calling...")
+//                }
+//            }
+//        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -208,6 +221,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //        let fontName = getString(kSelectedFontName)
         
         //dataSource = getAlphabetOf(langName,fontName,NORMAL)
+        
         refreshShiftKey()
         
         if let _bgColor:UIColor = UserDefaults.standard.keyboardBgColor {
@@ -500,6 +514,14 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         setObject(fullText, key: SUITE_KEY)
         
+//        if textLeft.count <= 0{
+//            if !keyboardView.altButton.isSelected {
+//                if !keyboardView.shiftButton.isSelected {
+//                    keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+//                }
+//            }
+//        }
+        
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
     }
     
@@ -522,6 +544,24 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let fullText  = textLeft + textRight
         setObject(fullText, key: SUITE_KEY)
         print("insert :: \(fullText)")
+        
+        if textLeft.count > 0 {
+            let last2 = String(textLeft.suffix(2))
+            print("last2::\(last2)")
+            if last2 == ". "{
+                if !keyboardView.altButton.isSelected {
+                    if !keyboardView.shiftButton.isSelected {
+                        keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+                    }
+                }
+            }else{
+                if !keyboardView.altButton.isSelected {
+                    if keyboardView.shiftButton.isSelected {
+                        keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+                    }
+                }
+            }
+        }
         
         hideSettingView()
         
@@ -571,17 +611,21 @@ extension KeyboardViewController: KeyboardViewDelegate {
     
     func altButtonPressed(_ altButton: UIButton) {
         print("alt button tapped:\(altButton.isSelected)")
-        
-//        if altButton.isSelected {
-//            keyMode = NUMERIC
-//        } else {
-//            keyMode = NORMAL
-//        }
-//
-//        keyboardView.shiftButton.isSelected = !altButton.isSelected
-//        dataSource = getAlphabetOf(langName,fontName,keyMode)
-//
-//        keyboardView.reloadFont(dataSource)
+
+        if keyboardView.altButton.isSelected {
+            if keyboardView.shiftButton.isSelected{
+                keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+            }
+        } else {
+            let leftText = self.textDocumentProxy.documentContextBeforeInput
+            if let _leftText = leftText,_leftText.count > 0 {
+                
+            }else{
+                if !keyboardView.shiftButton.isSelected {
+                    keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+                }
+            }
+        }
         
         refreshShiftKey()
         
@@ -596,9 +640,10 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func refreshShiftKey(){
-            let leftText = self.textDocumentProxy.documentContextBeforeInput
-            print("leftText::\(leftText)")
+            
             /*
+         let leftText = self.textDocumentProxy.documentContextBeforeInput
+         print("leftText::\(leftText)")
             if let _leftText = leftText {
                 print("leftText::\(_leftText.count)")
                 if _leftText.count > 0 {
