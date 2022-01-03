@@ -45,7 +45,7 @@ let kFontEnDic:[[String:[String]]] = [
     ["c͜͡l͜͡o͜͡u͜͡d͜͡s͜͡":kUnicodeLettersEnClouds],
 ]
 
-let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation.components(separatedBy: ",")
+let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation.components(separatedBy: ";")
 let kUnicodeLettersEnNumList      = kUnicodeEnNumbers.components(separatedBy: ",")
 let kUnicodeLettersEnNormal       = kUnicodeEnNormal.components(separatedBy: ",")
 let kUnicodeLettersEnNormalShift  = kUnicodeEnNormalShift.components(separatedBy: ",")
@@ -73,8 +73,8 @@ let kUnicodeLettersEnSansItalic   = kUnicodeEnSansItalic.components(separatedBy:
 let kUnicodeLettersEnStop         = kUnicodeEnStop.components(separatedBy: ",")
 
 //Default font
-let kUnicodeEnPuncuation  = "[,],{,},#,%,^,*,+,=,_,/,|,~,<,>,€,$,¥,•,.,,,?,!,’" //\
-let kUnicodeEnNumbers     = "1,2,3,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,\",.,^,%,?,!,',*," // ~ replace by ,
+let kUnicodeEnPuncuation  = "[;];{;};#;%;^;*;+;=;-;_;/;|;~;<;>;€;$;:;¥;•;.;,;?;!;’" //,exist in string
+let kUnicodeEnNumbers     = "1,2,3,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,:,\",.,^,%,?,!,',*,"
 let kUnicodeEnNormal      = "q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,:,z,x,c,v,b,n,m"
 let kUnicodeEnNormalShift = "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
 
