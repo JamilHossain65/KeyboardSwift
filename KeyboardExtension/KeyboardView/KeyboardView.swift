@@ -360,8 +360,7 @@ extension KeyboardView{
         case shiftButtonIndex:
             if altButton.isSelected{
                 keyboardButton.setTitle(kSymbolString, for: .normal)
-                keyboardButton.setTitle(k123String, for: .selected
-                )
+                keyboardButton.setTitle(k123String, for: .selected)
             }else{
                 keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
                 keyboardButton.setImage(UIImage(named: "shift.png"), for: .selected)

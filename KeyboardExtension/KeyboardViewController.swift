@@ -591,17 +591,6 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func shiftButtonPressed(_ shiftButton:UIButton){
         print("shift button tapped:\(shiftButton.isSelected)")
         
-//        if shiftButton.isSelected {
-//            keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT //SYMBOL : NUMERIC
-//        } else {
-//            keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL //
-//        }
-//
-//        print("keyMode::\(keyMode)")
-//
-//        dataSource = getAlphabetOf(langName,fontName,keyMode)
-//        keyboardView.reloadFont(dataSource)
-        
         refreshShiftKey()
         keyboardView.backgroundColor = kKeyboardBGColor
     }
@@ -609,12 +598,12 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func refreshShiftKey(){
             let leftText = self.textDocumentProxy.documentContextBeforeInput
             print("leftText::\(leftText)")
-            
+            /*
             if let _leftText = leftText {
                 print("leftText::\(_leftText.count)")
                 if _leftText.count > 0 {
                     
-                    if keyMode == NORMAL || keyMode == SHIFT || keyMode == DOUBLE_TAP{
+                    if keyboardView.altButton.isSelected {
                         let last2 = String(_leftText.suffix(2))
                         print("last2::\(last2)")
                         if last2 == ". "{
@@ -624,38 +613,33 @@ extension KeyboardViewController: KeyboardViewDelegate {
                             keyMode = NORMAL
                         }
                     }else{
-                        //todo handle case of numeric,symbol
-    //                    keyMode = NUMERIC
-    //                    keyboardView.shiftButton.isSelected = true
-                                if keyboardView.shiftButton.isSelected {
-                                    keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT
-                                } else {
-                                    keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL
-                                }
+                        if keyboardView.shiftButton.isSelected {
+                            keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT
+                        } else {
+                            keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL
+                        }
                     }
-                    
-                    
-                }else{
-                    keyMode = SHIFT
-                    keyboardView.shiftButton.isSelected = true
                 }
                 
             }else{
-                //keyboardView.shiftButton.isSelected = !keyboardView.shiftButton.isSelected
-                
-                if keyboardView.shiftButton.isSelected {
-                    keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT
+                if keyboardView.altButton.isSelected{ //NUMERIC,SYMBOL
                     //keyboardView.shiftButton.isSelected = false
-                } else {
-                    keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL
-                    //keyboardView.shiftButton.isSelected = true
+                    keyMode = keyboardView.shiftButton.isSelected ? SYMBOL : NUMERIC
+                }else{ //NORMAL,SHIFT
+                    keyMode = keyboardView.shiftButton.isSelected ? SHIFT : NORMAL
                 }
-                
-                //keyMode = SHIFT
-                //keyboardView.shiftButton.isSelected = true
             }
+        
+        */
+        
+        if keyboardView.altButton.isSelected{ //NUMERIC,SYMBOL
+            keyMode = keyboardView.shiftButton.isSelected ? SYMBOL : NUMERIC
+        } else { //NORMAL,SHIFT
+            keyMode = keyboardView.shiftButton.isSelected ? SHIFT : NORMAL
+        }
             
             print("keyboardView.altButton::\(keyboardView.altButton.isSelected)")
+            print("keyboardView.shiftButton::\(keyboardView.shiftButton.isSelected)")
             
             dataSource = getAlphabetOf(langName,fontName,keyMode)
             keyboardView.reloadFont(dataSource)
