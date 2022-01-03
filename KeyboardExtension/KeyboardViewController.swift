@@ -501,6 +501,19 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 }
 
 extension KeyboardViewController: KeyboardViewDelegate {
+    func shiftButtonDoubleTap(_ shiftButton: UIButton) {
+        print("shiftButtonDoubleTap::\(shiftButton.isSelected)")
+        
+        if !keyboardView.altButton.isSelected {
+            keyMode = DOUBLE_TAP
+            if !keyboardView.shiftButton.isSelected {
+                keyboardView.buttonPressed(sender:keyboardView.shiftButton)
+            }
+        }
+        
+        dataSource = getAlphabetOf(langName,fontName,keyMode)
+        keyboardView.reloadFont(dataSource)
+    }
     
     func didTapLongPressed() {
         hideSettingView()
@@ -557,7 +570,9 @@ extension KeyboardViewController: KeyboardViewDelegate {
             }else{
                 if !keyboardView.altButton.isSelected {
                     if keyboardView.shiftButton.isSelected {
-                        keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+                        if keyMode != DOUBLE_TAP{
+                            keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+                        }
                     }
                 }
             }
@@ -680,7 +695,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         if keyboardView.altButton.isSelected{ //NUMERIC,SYMBOL
             keyMode = keyboardView.shiftButton.isSelected ? SYMBOL : NUMERIC
         } else { //NORMAL,SHIFT
-            keyMode = keyboardView.shiftButton.isSelected ? SHIFT : NORMAL
+            keyMode = keyboardView.shiftButton.isSelected ? keyMode == DOUBLE_TAP ? DOUBLE_TAP:SHIFT : NORMAL
         }
             
             print("keyboardView.altButton::\(keyboardView.altButton.isSelected)")

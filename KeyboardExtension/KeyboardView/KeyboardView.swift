@@ -14,6 +14,7 @@ protocol KeyboardViewDelegate: class {
     func gotoNextKeyboard  (_ nextButton  : UIButton)
     func voiceButtonTapped (_ voiceButton : UIButton)
     func shiftButtonPressed(_ shiftButton : UIButton)
+    func shiftButtonDoubleTap(_ shiftButton : UIButton)
     func altButtonPressed  (_ altButton   : UIButton)
     func didTapLongPressed()
 }
@@ -192,13 +193,11 @@ extension KeyboardView{
             preWidth = btnWidth
             
             let bFrame = CGRect(x: colX, y: colY, width: btnWidth, height: btnHeight)
-            var tempLetter = kUnicodeLettersEnNormal[currentButtonIndex % kUnicodeLettersEnNormal.count] //MARK:- TODO: refactor this code
+            var title = ""
             
             if currentFontLetters.count > 0 {
-                tempLetter = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+                title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
             }
-            
-            let letter = shiftButton.isSelected ? tempLetter : tempLetter.lowercased()
             
             let keyboardButton = KeyboardButton(frame: bFrame)
             
@@ -218,7 +217,7 @@ extension KeyboardView{
                 keyboardButton.addGestureRecognizer(tap)
             }
             
-            keyboardButton.setTitle(letter.trimmingCharacters(in: .whitespaces), for: .normal)
+            keyboardButton.setTitle(title.trimmingCharacters(in: .whitespaces), for: .normal)
             keyboardButton.setTitleColor(kKeyboardTextColor, for: .normal)
             //keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
 
@@ -362,8 +361,9 @@ extension KeyboardView{
                 keyboardButton.setTitle(kSymbolString, for: .normal)
                 keyboardButton.setTitle(k123String, for: .selected)
             }else{
+                let selImageName = keyMode == DOUBLE_TAP ? "shift_double":"shift.png"
                 keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
-                keyboardButton.setImage(UIImage(named: "shift.png"), for: .selected)
+                keyboardButton.setImage(UIImage(named: selImageName), for: .selected)
                 keyboardButton.setTitle("", for: .normal)
                 keyboardButton.setTitle("", for: .selected)
             }
@@ -522,24 +522,26 @@ extension KeyboardView {
     @objc func doubleTapped() {
         // do something here
         print("multipleTap")
-        shiftButton.isSelected = !shiftButton.isSelected
+        //shiftButton.isSelected = !shiftButton.isSelected
         
-        for view in subviews{
-           let button = view as! UIButton
-            if !self.isSpecialButton(view) {
-                let _newTitle = shiftButton.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
-                button.setTitle(_newTitle, for: .normal)
-            }
-        }
+//        for view in subviews{
+//           let button = view as! UIButton
+//            if !self.isSpecialButton(view) {
+//                let _newTitle = shiftButton.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
+//                button.setTitle(_newTitle, for: .normal)
+//            }
+//        }
         
         shiftButton.setImage(UIImage(named: "unshift.png"), for: .normal)
         shiftButton.setImage(UIImage(named: "shift_double.png"), for: .selected)
         
-        if shiftButton.isSelected {
-            shiftButton.defaultBackgroundColor = .white
-        }else{
-            shiftButton.defaultBackgroundColor = kAltButtonColor
-        }
+//        if shiftButton.isSelected {
+//            shiftButton.defaultBackgroundColor = .white
+//        }else{
+//            shiftButton.defaultBackgroundColor = kAltButtonColor
+//        }
+        
+        delegate?.shiftButtonDoubleTap(shiftButton)
     }
     
     @objc func handleLongPressDelete(_ gestureRecognizer: UILongPressGestureRecognizer) {

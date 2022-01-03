@@ -101,6 +101,8 @@ func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ ke
                         var _key = keyMode
                         if keyMode == NORMAL  {
                             _key = fontname!
+                        }else if keyMode == DOUBLE_TAP {
+                            _key = SHIFT
                         }
                         //print("_key::\(_key)")
                         let alphabetList = test[_key]
