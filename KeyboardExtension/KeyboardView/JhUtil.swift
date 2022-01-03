@@ -97,16 +97,14 @@ func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ ke
                 for test in _dic.value {
                     if let _fontname = test.keys.filter({$0 == fontname}).first{
                         print("_fontname::\(_fontname) letterMode::\(keyMode)")
-                        print("test1::\(test)")
+                        //print("test1::\(test)")
                         var _key = keyMode
                         if keyMode == NORMAL  {
                             _key = fontname!
                         }
-                        
-                        print("_key::\(_key)")
-                        
+                        //print("_key::\(_key)")
                         let alphabetList = test[_key]
-                        print("alphabetList::\(alphabetList)")
+                        //print("alphabetList::\(alphabetList)")
                         return alphabetList ?? []
                     }
                 }

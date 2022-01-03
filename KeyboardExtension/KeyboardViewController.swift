@@ -207,8 +207,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //        let langName = getString(kSelectedLanguageName)
 //        let fontName = getString(kSelectedFontName)
         
-        dataSource = getAlphabetOf(langName,fontName,NORMAL)
-        
+        //dataSource = getAlphabetOf(langName,fontName,NORMAL)
+        refreshShiftKey()
         
         if let _bgColor:UIColor = UserDefaults.standard.keyboardBgColor {
             kKeyboardBGColor = _bgColor
@@ -525,6 +525,8 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         hideSettingView()
         
+        refreshShiftKey()
+        
         //show hint word
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
     }
@@ -570,34 +572,95 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func altButtonPressed(_ altButton: UIButton) {
         print("alt button tapped:\(altButton.isSelected)")
         
-        if altButton.isSelected {
-            keyMode = NUMERIC
-        } else {
-            keyMode = NORMAL
-        }
+//        if altButton.isSelected {
+//            keyMode = NUMERIC
+//        } else {
+//            keyMode = NORMAL
+//        }
+//
+//        keyboardView.shiftButton.isSelected = !altButton.isSelected
+//        dataSource = getAlphabetOf(langName,fontName,keyMode)
+//
+//        keyboardView.reloadFont(dataSource)
         
-        keyboardView.shiftButton.isSelected = !altButton.isSelected
-        dataSource = getAlphabetOf(langName,fontName,keyMode)
+        refreshShiftKey()
         
-        keyboardView.reloadFont(dataSource)
         keyboardView.backgroundColor = kKeyboardBGColor
     }
     
     func shiftButtonPressed(_ shiftButton:UIButton){
         print("shift button tapped:\(shiftButton.isSelected)")
         
-        if shiftButton.isSelected {
-            keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT //SYMBOL : NUMERIC
-        } else {
-            keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL //
-        }
+//        if shiftButton.isSelected {
+//            keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT //SYMBOL : NUMERIC
+//        } else {
+//            keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL //
+//        }
+//
+//        print("keyMode::\(keyMode)")
+//
+//        dataSource = getAlphabetOf(langName,fontName,keyMode)
+//        keyboardView.reloadFont(dataSource)
         
-        print("keyMode::\(keyMode)")
-       
-        dataSource = getAlphabetOf(langName,fontName,keyMode)
-        keyboardView.reloadFont(dataSource)
+        refreshShiftKey()
         keyboardView.backgroundColor = kKeyboardBGColor
     }
+    
+    func refreshShiftKey(){
+            let leftText = self.textDocumentProxy.documentContextBeforeInput
+            print("leftText::\(leftText)")
+            
+            if let _leftText = leftText {
+                print("leftText::\(_leftText.count)")
+                if _leftText.count > 0 {
+                    
+                    if keyMode == NORMAL || keyMode == SHIFT || keyMode == DOUBLE_TAP{
+                        let last2 = String(_leftText.suffix(2))
+                        print("last2::\(last2)")
+                        if last2 == ". "{
+                            keyMode = SHIFT
+                            keyboardView.shiftButton.isSelected = true
+                        }else{
+                            keyMode = NORMAL
+                        }
+                    }else{
+                        //todo handle case of numeric,symbol
+    //                    keyMode = NUMERIC
+    //                    keyboardView.shiftButton.isSelected = true
+                                if keyboardView.shiftButton.isSelected {
+                                    keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT
+                                } else {
+                                    keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL
+                                }
+                    }
+                    
+                    
+                }else{
+                    keyMode = SHIFT
+                    keyboardView.shiftButton.isSelected = true
+                }
+                
+            }else{
+                //keyboardView.shiftButton.isSelected = !keyboardView.shiftButton.isSelected
+                
+                if keyboardView.shiftButton.isSelected {
+                    keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT
+                    //keyboardView.shiftButton.isSelected = false
+                } else {
+                    keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL
+                    //keyboardView.shiftButton.isSelected = true
+                }
+                
+                //keyMode = SHIFT
+                //keyboardView.shiftButton.isSelected = true
+            }
+            
+            print("keyboardView.altButton::\(keyboardView.altButton.isSelected)")
+            
+            dataSource = getAlphabetOf(langName,fontName,keyMode)
+            keyboardView.reloadFont(dataSource)
+        }
+    
 }
 
 //MARK:- HINT BAR DELEGATE METHODS

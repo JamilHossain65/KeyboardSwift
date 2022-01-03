@@ -465,16 +465,16 @@ extension KeyboardView {
             shiftButton = sender
             print("sender.isSelected::\(sender.isSelected)")
             
-            keyMode = shiftButton.isSelected ? SHIFT : NORMAL
-            
-            
-            for view in subviews {
-               let button = view as! UIButton
-                if !self.isSpecialButton(view) {
-                    let _newTitle = sender.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
-                    button.setTitle(_newTitle, for: .normal)
-                }
-            }
+//            keyMode = shiftButton.isSelected ? SHIFT : NORMAL
+//            
+//            
+//            for view in subviews {
+//               let button = view as! UIButton
+//                if !self.isSpecialButton(view) {
+//                    let _newTitle = sender.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
+//                    button.setTitle(_newTitle, for: .normal)
+//                }
+//            }
             
             delegate?.shiftButtonPressed(sender)
             
