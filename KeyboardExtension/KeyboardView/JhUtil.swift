@@ -25,6 +25,7 @@ let kKeyTextColor    = "kKeyTextColor"
 let kKeyAlphabetFont = "kKeyAlphabetFont"
 let kSelectedFontName = "kSelectedFontName"
 let kSelectedLanguageName = "kSelectedLanguageName"
+let kSelectedHintString   = "kSelectedHintString"
 
 //letter mode
 let NORMAL  = "Normal"
@@ -130,4 +131,32 @@ func getFontNamesOf(_ language:String) -> [String]{
         }
     }
     return [NORMAL]
+}
+
+
+//MARK:- Hint words
+
+func getHintString() -> String {
+    let langName = getString(kSelectedLanguageName)
+    let fontName = getString(kSelectedFontName)
+    
+    switch langName {
+    case Bangla:
+        switch fontName {
+        case NORMAL:
+            return hintWordsBn
+        default:
+            return hintWordsBn
+        }
+        
+    default:
+        switch fontName {
+        case NORMAL:
+            return hintWordsEn
+        case "Comic":
+            return hintWordsEn
+        default:
+            return hintWordsEn
+        }
+    }
 }

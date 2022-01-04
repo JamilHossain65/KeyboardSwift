@@ -38,18 +38,13 @@
 #define __GAP_X             (3 * [[UIScreen mainScreen] scale])
 
 /*  title for return button */
-NSString *returnTitleSearch = @"Search";
-
-  /* ±hints strings list */
-NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i î ï í ī į ì,o ô ö ò ó œ ø ō õ,a à á â ä æ ã å ā,s ß ś š,l ł,z ž ź ż,c ç ć č,n ñ ń,z ž ź ż";
+//NSString *returnTitleSearch = @"Search";
 
 @implementation JHkey
 
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
+
 }
 
 -(void)checkHintPosition:(UIButton*)keyButton{
@@ -114,12 +109,16 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
     
     [self checkHintPosition:button];
     
+    NSUserDefaults *defaults =  [NSUserDefaults standardUserDefaults];
+    NSString *hintString = [defaults valueForKey:@"kSelectedHintString"];
+    NSLog(@"hintString: %@",hintString);
+    
     NSString *title = button.titleLabel.text;
-    NSArray  *array = [hintsList componentsSeparatedByString:@","];
+    NSArray  *array = [hintString componentsSeparatedByString:@","];//hintsList
     
     for(NSString *text in array){
         NSArray *letters = [text componentsSeparatedByString:@" "];
-        if(letters.firstObject == title){
+        if([letters.firstObject isEqual:title]){
             self.hintSymbolsList = letters;
             NSLog(@"letters::%@",self.hintSymbolsList);
             break;
@@ -250,13 +249,13 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
     UIButton *button;
     NSString *hint;
     
-    BOOL isLowCase = [self.titleLabel.text.lowercaseString isEqualToString:self.titleLabel.text];
-    
-    if (isLowCase == false){
-        NSPredicate *predicate =
-            [NSPredicate predicateWithFormat:@"SELF != 'ß'"];
-        self.hintSymbolsList = [self.hintSymbolsList filteredArrayUsingPredicate:predicate];
-    }
+//    BOOL isLowCase = [self.titleLabel.text.lowercaseString isEqualToString:self.titleLabel.text];
+//
+//    if (isLowCase == false){
+//        NSPredicate *predicate =
+//            [NSPredicate predicateWithFormat:@"SELF != 'ß'"];
+//        self.hintSymbolsList = [self.hintSymbolsList filteredArrayUsingPredicate:predicate];
+//    }
     
     NSMutableArray *hintStrings = [NSMutableArray array];
     if (isRightHint) {
@@ -276,7 +275,7 @@ NSString *hintsList = @"w ŵ,e è é ê ë ē ė ę,y ŷ ÿ,u û ü ù ú ū,i �
                                   20,
                                   self.frame.size.width,
                                   self.frame.size.height);
-        [button setTitle:(isLowCase ? hint.lowercaseString:hint.uppercaseString) forState:UIControlStateNormal];
+        [button setTitle:hint forState:UIControlStateNormal];
         [button.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

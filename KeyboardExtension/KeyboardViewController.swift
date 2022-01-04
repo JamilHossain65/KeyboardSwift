@@ -33,7 +33,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     var textColorBtn :UIButton!
     var floatingButtonView : UIView!
     var coutTime   = 0
-    var countLimit = 15 //MARK:- TODO: countLimit = 5
+    var countLimit = 5 //MARK:- TODO: countLimit = 5
     var timer:Timer?
     
     var counter = 0
@@ -558,7 +558,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         setObject(fullText, key: SUITE_KEY)
         print("insert :: \(fullText)")
         
-        if textLeft.count > 0 {
+        if textLeft.count > 0 { //MARK:- TODO: check verify logic
             let last2 = String(textLeft.suffix(2))
             print("last2::\(last2)")
             if last2 == ". "{
@@ -834,16 +834,13 @@ extension KeyboardViewController: HintBarDelegate {
             langName = button.titleLabel?.text?.trimmingCharacters(in: .whitespaces) ?? English
             setString(langName , key: kSelectedLanguageName)
             
-            print("selected Language ::\(langName)")
-            print("selected fontName ::\(fontName)")
-            
             let allFontNameArray = getFontNamesOf(langName)
-            
             if !allFontNameArray.contains(fontName){
                 fontName = NORMAL
             }
             
-            print("current fontName ::\(fontName)")
+            //set hint string for key cap view
+            setString(getHintString(), key: kSelectedHintString)
             dataSource = getAlphabetOf(langName,fontName,NORMAL)
             print("kTextFontAlphabet ::\(dataSource)")
             
