@@ -580,7 +580,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         hideSettingView()
         
-        refreshShiftKey()
+        //refreshShiftKey()
         
         //show hint word
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
