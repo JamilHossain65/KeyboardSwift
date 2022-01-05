@@ -111,7 +111,7 @@
     
     NSUserDefaults *defaults =  [NSUserDefaults standardUserDefaults];
     NSString *hintString = [defaults valueForKey:@"kSelectedHintString"];
-    NSLog(@"hintString: %@",hintString);
+    //NSLog(@"hintString: %@",hintString);
     
     NSString *title = button.titleLabel.text;
     NSArray  *array = [hintString componentsSeparatedByString:@","];//hintsList
@@ -120,7 +120,14 @@
         NSArray *letters = [text componentsSeparatedByString:@" "];
         if([letters.firstObject isEqual:title]){
             self.hintSymbolsList = letters;
+            NSMutableArray *newArray = [NSMutableArray new];
+            for (NSString *txt in self.hintSymbolsList){
+                NSString *mText = [txt stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                [newArray addObject:mText];
+            }
+            self.hintSymbolsList = newArray;
             NSLog(@"letters::%@",self.hintSymbolsList);
+            
             break;
         }
     }

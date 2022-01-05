@@ -134,8 +134,7 @@ func getFontNamesOf(_ language:String) -> [String]{
 }
 
 
-//MARK:- Hint words
-
+//MARK:- Hint Letters
 func getHintString() -> String {
     let langName = getString(kSelectedLanguageName)
     let fontName = getString(kSelectedFontName)
