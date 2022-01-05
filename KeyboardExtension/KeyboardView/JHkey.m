@@ -103,6 +103,11 @@
     }
 }
 
+-(NSString*)trim:(NSString*)text{
+    NSString *mText = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return  mText;
+}
+
 - (void)addPopupToButton:(UIButton*)button {
     
     [self hidePopup];
@@ -117,13 +122,13 @@
     NSArray  *array = [hintString componentsSeparatedByString:@","];//hintsList
     
     for(NSString *text in array){
-        NSArray *letters = [text componentsSeparatedByString:@" "];
-        if([letters.firstObject isEqual:title]){
+        NSArray *letters = [[self trim:text] componentsSeparatedByString:@" "];
+        
+        if([letters.firstObject isEqual:[self trim:title]]){
             self.hintSymbolsList = letters;
             NSMutableArray *newArray = [NSMutableArray new];
             for (NSString *txt in self.hintSymbolsList){
-                NSString *mText = [txt stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                [newArray addObject:mText];
+                [newArray addObject:[self trim:txt]];
             }
             self.hintSymbolsList = newArray;
             NSLog(@"letters::%@",self.hintSymbolsList);
