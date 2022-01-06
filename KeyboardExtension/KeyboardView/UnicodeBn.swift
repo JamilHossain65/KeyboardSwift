@@ -23,7 +23,7 @@ let kUnicodeLettersBnUnshiftArray = kUnicodeBnLetterShift.components(separatedBy
 
 //MARK:- Numbers and puncuations Array
 let kUnicodeLettersBnPuncuation = kUnicodeBnPuncuation.components(separatedBy: ";")
-let kUnicodeLettersBnNumList    = kUnicodeBnNumbers.components(separatedBy: ",") + constants
+let kUnicodeLettersBnNumList    = kUnicodeBnNumbers.components(separatedBy: ",")
 
 //Font Array
 let kUnicodeLettersBnNormal = kUnicodeBnNormal.components(separatedBy: ",") + vowels
@@ -31,7 +31,7 @@ let kUnicodeLettersBnStinky = kUnicodeBnStinky.components(separatedBy: ",")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
 let kUnicodeBnPuncuation  = "[;];{;};#;%;^;*;+;=;_;/;|;~;<;>;%;$;^;:;';,;?;!;’;*"
-let kUnicodeBnNumbers     = "১,২,৩,৪,৫,৬,৭,৮,৯,০,;,(,),।,:,৳,স,হ,ড়,:,ঢ়,য়,ৎ"
+let kUnicodeBnNumbers     = "১,২,৩,৪,৫,৬,৭,৮,৯,০,;,(,),।,:,৳,a,b,c,:,d,e,f,g,h,i,j"
 let kUnicodeBnNormal      = "ক,খ,গ,ঘ,ঙ,চ,ছ,জ,ঝ,ঞ,ট,ঠ,ড,ঢ,ণ,ত,থ,দ,ধ,:"
 let kUnicodeBnLetterShift = "ন,প,ফ,ব,ভ,ম,য,র,ল,শ,ষ,স,হ,ড়,ঢ়,য়,ৎ,:"
 //অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ

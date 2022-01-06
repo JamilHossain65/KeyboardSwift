@@ -428,6 +428,12 @@ extension KeyboardView {
         addSubview(jhKey)
         jhKey.clipsToBounds = true
         jhKey.layer.cornerRadius = 5.0
+        
+//        jhKey.titleLabel?.numberOfLines = 0
+//        jhKey.titleLabel?.lineBreakMode = .byWordWrapping
+//        jhKey.setTitle("খ\nক", for: .normal)
+//        jhKey.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        
     }
 }
 
