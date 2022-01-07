@@ -351,6 +351,17 @@
          */
 }
 
+-(BOOL)getIsRightHint{
+    BOOL isRightHint = self.hintPosition == ACHintPositionFarRight || self.hintPosition == ACHintPositionRight;
+    CGFloat xPos;
+    if (isRightHint) {
+        xPos = (self.frame.size.width - ([self hintImage].size.width + self.hintAdditionalWidth/2))/2;
+    } else { //ACHintPositionLeft & ACHintPositionFarLeft
+        xPos = -27;
+    }
+    return  isRightHint;
+}
+
 // scheme
 /*
 
@@ -845,31 +856,42 @@
     
     self.clipsToBounds = YES;
     
-//    [self startHideTimerPopup];
-//    [self updateState];
-//    long long ti = (long long)([[NSDate date] timeIntervalSince1970] * 1000.0);
-//    NSLog(@"Start T end:%lld",ti);
-//    return;
-    
     if (self.hintButtons) {
         
         [self setHighlighted:NO];
         
         NSArray *array = [self.hintButtons filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nonnull evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-            
             return ((UIButton*)evaluatedObject).highlighted;
         }]];
+        
+        for (UIButton *btn in self.hintButtons){
+            NSLog(@"btn title:[%d]::%@",btn.isHighlighted,btn.titleLabel.text);
+        }
         
         if ([array count]) {
             
             UIButton* highlightedButton = array.firstObject;
             
             if (highlightedButton) {
-                //!!!: please refactor it
-                //[((KeyboardView*)self.superview) insertHintText:highlightedButton.titleLabel.text];//todo enable this code
                 if ([self.delegate conformsToProtocol:@protocol(JHkeyDelegate)]) {
                     [self.delegate didSelectHintButton:highlightedButton];
-                    NSLog(@"tap::%@",highlightedButton.titleLabel.text);
+                    NSLog(@"highlightedButton tap::%@",highlightedButton.titleLabel.text);
+                    
+                    //Reset Hint Highlighted
+                    for (UIButton *btn in self.hintButtons){
+                        if (highlightedButton.titleLabel.text == btn.titleLabel.text){
+                            [btn setHighlighted:NO];
+                            break;
+                        }
+                    }
+                    
+                    //Set First Hint Highlighted
+                    if ([self getIsRightHint]) {
+                        [self.hintButtons.lastObject setHighlighted:YES];
+                    } else {
+                        [self.hintButtons.firstObject setHighlighted:YES];
+                    }
+                    
                 }
             }
         }

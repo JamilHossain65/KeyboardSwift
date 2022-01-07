@@ -31,9 +31,9 @@ let kUnicodeLettersBnStinky = kUnicodeBnStinky.components(separatedBy: ",")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
 let kUnicodeBnPuncuation  = "[;];{;};#;%;^;*;+;=;_;/;|;~;<;>;%;$;^;:;';,;?;!;’;*"
-let kUnicodeBnNumbers     = "১,২,৩,৪,৫,৬,৭,৮,৯,০,;,(,),।,:,৳,a,b,c,:,d,e,f,g,h,i,j"
-let kUnicodeBnNormal      = "ক,খ,গ,ঘ,ঙ,চ,ছ,জ,ঝ,ঞ,ট,ঠ,ড,ঢ,ণ,ত,থ,দ,ধ,:"
-let kUnicodeBnLetterShift = "ন,প,ফ,ব,ভ,ম,য,র,ল,শ,ষ,স,হ,ড়,ঢ়,য়,ৎ,:"
+let kUnicodeBnNumbers     = "১,২,৩,৪,৫,৬,৭,৮,৯,০,;,(,),।,:,৳,a,b,c,:,d,e,f,g,ৠ,ঌ,ৡ"
+let kUnicodeBnNormal      = "ক,খ,গ,ঘ,ঙ,চ,ছ,জ,ঝ,ঞ,ট,ঠ,ড,ঢ,ণ,ত,দ,ন,স,:"//থ,ধ,
+let kUnicodeBnLetterShift = "অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ,প,ফ,ব,ভ,ম,য,র,ল,:,শ,ষ,স,হ,ড়,ঢ়,য়"//,ৎ
 //অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ
 //"জ,গ,ত,য,হ,ক,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
 
@@ -53,5 +53,5 @@ let constants = ["ং"," ঁ","ঃ","ৃ"]
 
 
 //MARK:- Hint Letters
-let hintWordsBn = "ঙ ঞ,ছ স শ ষ,জ য য়,ট ঠ,ঠ ট,ড ড়,ঢ ঢ়,ন ণ,ণ ন,ত থ ৎ,দ ধ,প ফ,ফ প,ব র ভ,ম ন ণ,  ্ অ,  া আ, ি ী ই ঈ, ু  ূ  ৃ উ ঊ ঋ, ে ো ৈ ৌ এ ও ঐ ঔ, ং ঃ  ঁ,জ্ঞ ক্ষ ক্স ঞ্চ ঞ্ছ ঞ্জ"
+let hintWordsBn = "ঙ ঞ,ছ স শ ষ,জ য য়,ট ঠ,ঠ ট,ড ড়,ঢ ঢ়,ন ণ,ণ ন,ত থ ৎ,দ ধ,প ফ,ফ প,ব র ভ,স শ ষ ছ,ম ন ণ,  ্ অ,  া আ, ি ী ই ঈ, ু  ূ  ৃ উ ঊ ঋ, ে ো ৈ ৌ এ ও ঐ ঔ, ং ঃ  ঁ,জ্ঞ ক্ষ ক্স ঞ্চ ঞ্ছ ঞ্জ,অ  ্,আ  া,ই ঈ  ি ী, উ ঊ,ঋ  ৃ,এ ঐ,ও ঔ"
 //
