@@ -52,7 +52,7 @@ enum KEY_SETTING_TYPE:Int {
     case LANGUAGE
 }
 
-var keySettingType: KEY_SETTING_TYPE = .FONT
+var keySettingType: KEY_SETTING_TYPE = .LANGUAGE
 var hintBarType   : HINT_BAR_TYPE    = .SETTING
 var keyMode : String  = NORMAL
 

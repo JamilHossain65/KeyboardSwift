@@ -32,9 +32,9 @@ func setString(_ value:String, key:String) {
     defaults.synchronize()
 }
 
-func getString(_ forKey:String) -> String {
+func getString(_ forKey:String) -> String? {
     let defaults = UserDefaults()
-    return defaults.string(forKey: forKey) ?? ""
+    return defaults.string(forKey: forKey)
 }
 
 

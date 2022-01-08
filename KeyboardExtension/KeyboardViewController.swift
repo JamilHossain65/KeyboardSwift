@@ -38,8 +38,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     var counter = 0
     
-    var langName = getString(kSelectedLanguageName)
-    var fontName = getString(kSelectedFontName)
+    var langName = getString(kSelectedLanguageName) ?? English
+    var fontName = getString(kSelectedFontName)     ?? NORMAL
     
     
     override func viewDidLoad() {
@@ -54,19 +54,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             wordArray = _wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
             print("words count::\(wordArray.count)")
         }
-        
-//        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
-//        
-//        if textLeft.count <= 0 {
-//            if !keyboardView.altButton.isSelected {
-//                if !keyboardView.shiftButton.isSelected {
-//                    keyMode = SHIFT
-//                    keyboardView.buttonPressed(sender: keyboardView.shiftButton)
-//                    print("calling...")
-//                }
-//            }
-//        }
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -700,6 +688,10 @@ extension KeyboardViewController: KeyboardViewDelegate {
             
             print("keyboardView.altButton::\(keyboardView.altButton.isSelected)")
             print("keyboardView.shiftButton::\(keyboardView.shiftButton.isSelected)")
+        
+        print("langName::\(langName)")
+        print("fontName::\(fontName)")
+        print("keyMode ::\(keyMode)")
             
             dataSource = getAlphabetOf(langName,fontName,keyMode)
             keyboardView.reloadFont(dataSource)
