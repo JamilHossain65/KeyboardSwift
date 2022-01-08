@@ -201,16 +201,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         kKeyboardTextColor = .black
         kTextShadowColor   = .black
         
-        
-//        setString(English, key: kSelectedLanguageName)
-//        setString("𝕆𝕦𝕥𝕝𝕚𝕟𝕖", key: kSelectedFontName) //𝕆𝕦𝕥𝕝𝕚𝕟𝕖
-        
-//        let langName = getString(kSelectedLanguageName)
-//        let fontName = getString(kSelectedFontName)
-        
-        //dataSource = getAlphabetOf(langName,fontName,NORMAL)
-        
         refreshShiftKey()
+        setString(getHintString(), key: kSelectedHintString)
         
         if let _bgColor:UIColor = UserDefaults.standard.keyboardBgColor {
             kKeyboardBGColor = _bgColor
