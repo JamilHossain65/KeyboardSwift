@@ -16,6 +16,7 @@ protocol KeyboardViewDelegate: class {
     func shiftButtonPressed(_ shiftButton : UIButton)
     func shiftButtonDoubleTap(_ shiftButton : UIButton)
     func altButtonPressed  (_ altButton   : UIButton)
+    func didReleaseLong    (_ button      : UIButton)
     func didTapLongPressed()
 }
 
@@ -446,6 +447,10 @@ extension KeyboardView:JHkeyDelegate {
             AudioServicesPlaySystemSound(1104);
             delegate?.insertCharacter(_title)
         }
+    }
+    
+    func didReleaseLong(on sender: UIButton!) {
+        delegate?.didReleaseLong(sender)
     }
     
     func didTapLong(on sender: UIButton!){

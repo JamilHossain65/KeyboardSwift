@@ -10,6 +10,7 @@
 @protocol JHkeyDelegate <NSObject>   //define delegate protocol
     - (void)didSelectHintButton:(UIButton*)sender;
     - (void)didTapLongOnButton:(UIButton*)sender;
+    - (void)didReleaseLongOn:(UIButton*)sender;
 
 @end //end protocol
 

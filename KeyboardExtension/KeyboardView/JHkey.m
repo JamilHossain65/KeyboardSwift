@@ -904,6 +904,11 @@
     [self updateState];
     long long time = (long long)([[NSDate date] timeIntervalSince1970] * 1000.0);
     NSLog(@"T end:%lld",time);
+    
+    if ([self.delegate conformsToProtocol:@protocol(JHkeyDelegate)]) {
+        [self.delegate didReleaseLongOn:self];
+        NSLog(@"release long on::%@",self.titleLabel.text);
+    }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {

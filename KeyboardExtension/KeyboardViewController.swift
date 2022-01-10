@@ -441,20 +441,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         }
     }
     
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//        showView()
-//    }
-    
-//    override func loadView() {
-//        super.loadView()
-//
-//        print("initialize keboard")
-//        let val = getObject(SUITE_KEY) as? String ?? ""
-//        print("get val::\(val)")
-//        textDocumentProxy.insertText("loadView")
-//    }
-    
     override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
@@ -488,16 +474,14 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 extension KeyboardViewController: KeyboardViewDelegate {
     func shiftButtonDoubleTap(_ shiftButton: UIButton) {
         print("shiftButtonDoubleTap::\(shiftButton.isSelected)")
-        
-        if !keyboardView.altButton.isSelected {
+        if !keyboardView.altButton.isSelected{
             keyMode = DOUBLE_TAP
-            if !keyboardView.shiftButton.isSelected {
-                keyboardView.buttonPressed(sender:keyboardView.shiftButton)
-            }
+            refreshShiftKey()
         }
-        
-        dataSource = getAlphabetOf(langName,fontName,keyMode)
-        keyboardView.reloadFont(dataSource)
+    }
+    
+    func didReleaseLong( _ button:UIButton){
+        refreshShiftKey()
     }
     
     func didTapLongPressed() {
@@ -512,13 +496,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         setObject(fullText, key: SUITE_KEY)
         
-//        if textLeft.count <= 0{
-//            if !keyboardView.altButton.isSelected {
-//                if !keyboardView.shiftButton.isSelected {
-//                    keyboardView.buttonPressed(sender: keyboardView.shiftButton)
-//                }
-//            }
-//        }
+        //refreshStatus()
         
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
     }
@@ -543,25 +521,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         setObject(fullText, key: SUITE_KEY)
         print("insert :: \(fullText)")
         
-        if textLeft.count > 0 { //MARK:- TODO: check verify logic
-            let last2 = String(textLeft.suffix(2))
-            print("last2::\(last2)")
-            if last2 == ". "{
-                if !keyboardView.altButton.isSelected {
-                    if !keyboardView.shiftButton.isSelected {
-                        //keyboardView.buttonPressed(sender: keyboardView.shiftButton)
-                    }
-                }
-            }else{
-                if !keyboardView.altButton.isSelected {
-                    if keyboardView.shiftButton.isSelected {
-                        if keyMode != DOUBLE_TAP{
-                            //keyboardView.buttonPressed(sender: keyboardView.shiftButton)
-                        }
-                    }
-                }
-            }
-        }
+        refreshStatus()
         
         hideSettingView()
         
@@ -634,11 +594,32 @@ extension KeyboardViewController: KeyboardViewDelegate {
     
     func shiftButtonPressed(_ shiftButton:UIButton){
         print("shift button tapped:\(shiftButton.isSelected)")
+        if !keyboardView.altButton.isSelected {
+            keyMode = keyMode == NORMAL ? SHIFT : NORMAL
+        }
         
         refreshShiftKey()
         keyboardView.backgroundColor = kKeyboardBGColor
     }
-    
+    func refreshStatus(){
+        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        if textLeft.count > 0 {
+            let last2 = String(textLeft.suffix(2))
+            print("last2::\(last2)")
+            if last2 == kStopSpace{
+                keyMode = SHIFT
+                keyboardView.altButton.isSelected = false
+                refreshShiftKey()
+            }else{
+                if !keyboardView.altButton.isSelected {
+                    keyMode = keyMode == SHIFT ? NORMAL : keyMode
+                }
+            }
+        }else{
+            keyboardView.altButton.isSelected = false
+            keyMode = SHIFT
+        }
+    }
     func refreshShiftKey(){
             
             /*
@@ -680,6 +661,12 @@ extension KeyboardViewController: KeyboardViewDelegate {
         if keyboardView.altButton.isSelected{ //NUMERIC,SYMBOL
             keyMode = keyboardView.shiftButton.isSelected ? SYMBOL : NUMERIC
         } else { //NORMAL,SHIFT
+            if keyMode == SHIFT || keyMode == DOUBLE_TAP {
+                keyboardView.shiftButton.isSelected = true
+            }else{
+                keyboardView.shiftButton.isSelected = false
+            }
+            
             keyMode = keyboardView.shiftButton.isSelected ? keyMode == DOUBLE_TAP ? DOUBLE_TAP:SHIFT : NORMAL
         }
             

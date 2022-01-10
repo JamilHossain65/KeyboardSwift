@@ -18,6 +18,7 @@ let kSymbolString = "#+="
 let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
+let kStopSpace    = ". "
 
 //let kKeyBgColor   = "kKeyBgColor"
 let kKeyBgImageName  = "kKeyBgImageName"
@@ -54,7 +55,7 @@ enum KEY_SETTING_TYPE:Int {
 
 var keySettingType: KEY_SETTING_TYPE = .LANGUAGE
 var hintBarType   : HINT_BAR_TYPE    = .SETTING
-var keyMode : String  = NORMAL
+var keyMode : String  = SHIFT
 
 
 var kKeyButtonColor  = UIColor.white
