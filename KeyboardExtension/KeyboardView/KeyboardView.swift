@@ -15,6 +15,7 @@ protocol KeyboardViewDelegate: class {
     func voiceButtonTapped (_ voiceButton : UIButton)
     func shiftButtonPressed(_ shiftButton : UIButton)
     func shiftButtonDoubleTap(_ shiftButton : UIButton)
+    func spaceButtonDoubleTap(_ spaceButton : UIButton)
     func altButtonPressed  (_ altButton   : UIButton)
     func didReleaseLong    (_ button      : UIButton)
     func didTapLongPressed()
@@ -211,8 +212,9 @@ extension KeyboardView{
             }
             
             //recognize Double Tap on button
-            if currentButtonIndex == shiftButtonIndex {
-                let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+            if currentButtonIndex == shiftButtonIndex ||
+                currentButtonIndex == spaceButtonIndex {
+                let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTappedOn(_:)))
                     tap.numberOfTapsRequired = 2
                 keyboardButton.addGestureRecognizer(tap)
             }
@@ -361,9 +363,20 @@ extension KeyboardView{
                 keyboardButton.setTitle(kSymbolString, for: .normal)
                 keyboardButton.setTitle(k123String, for: .selected)
             }else{
-                let selImageName = keyMode == DOUBLE_TAP ? "shift_double":"shift.png"
-                keyboardButton.setImage(UIImage(named: "unshift.png"), for: .normal)
-                keyboardButton.setImage(UIImage(named: selImageName), for: .selected)
+                var imName = ""
+                switch keyMode {
+                case DOUBLE_TAP:
+                    imName = "shift_double.png"
+                case SHIFT:
+                    imName = "shift.png"
+                default:
+                    imName = "unshift.png"
+                }
+                
+                keyboardButton.setImage(UIImage(named: imName), for: .normal)
+                keyboardButton.setImage(UIImage(named: imName), for: .selected)
+                keyboardButton.setImage(UIImage(named: imName), for: .highlighted)
+                
                 keyboardButton.setTitle("", for: .normal)
                 keyboardButton.setTitle("", for: .selected)
             }
@@ -516,13 +529,19 @@ extension KeyboardView {
     }
 
     
-    @objc func doubleTapped() {
+    @objc func doubleTappedOn(_ sender:UITapGestureRecognizer) {
         // do something here
-        print("multipleTap")
-        shiftButton.setImage(UIImage(named: "unshift.png"), for: .normal)
-        shiftButton.setImage(UIImage(named: "shift_double.png"), for: .selected)
+        let button = sender.view as! UIButton
+        print("multipleTap:\(button.titleLabel?.text)")
         
-        delegate?.shiftButtonDoubleTap(shiftButton)
+        if button.titleLabel?.text == kSpaceString{
+            delegate?.spaceButtonDoubleTap(spaceButton)
+        }else{
+            shiftButton.setImage(UIImage(named: "unshift.png"), for: .normal)
+            shiftButton.setImage(UIImage(named: "shift_double.png"), for: .selected)
+            
+            delegate?.shiftButtonDoubleTap(shiftButton)
+        }
     }
     
     @objc func handleLongPressDelete(_ gestureRecognizer: UILongPressGestureRecognizer) {

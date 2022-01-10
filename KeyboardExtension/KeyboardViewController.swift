@@ -177,6 +177,17 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             }
         }
         
+        //set word capitalization according to shift button status
+        switch keyMode {
+        case DOUBLE_TAP:
+            wordList = wordList.map({$0.uppercased()})
+        case SHIFT:
+            wordList = wordList.map({$0.capitalized})
+        default:
+            wordList = wordList.map({$0.lowercased()})
+        }
+        
+        print("wordList::\(wordList)")
         return wordList
     }
     
@@ -463,6 +474,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 }
 
 extension KeyboardViewController: KeyboardViewDelegate {
+    func spaceButtonDoubleTap(_ spaceButton : UIButton){
+        insertCharacter(kStopSpace)
+    }
+    
     func shiftButtonDoubleTap(_ shiftButton: UIButton) {
         print("shiftButtonDoubleTap::\(shiftButton.isSelected)")
         if !keyboardView.altButton.isSelected{
@@ -512,14 +527,13 @@ extension KeyboardViewController: KeyboardViewDelegate {
         setObject(fullText, key: SUITE_KEY)
         print("insert :: \(fullText)")
         
-        //Refresh Shift Button Status
-        refreshStatus()
-        
         //Hide setting view from suggestion bar
         hideSettingView()
         
         //show hint word
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
+        //Refresh Shift Button Status
+        refreshStatus()
     }
     
     func insertHintWord(_ hintWord:String){
@@ -592,11 +606,11 @@ extension KeyboardViewController: KeyboardViewDelegate {
         refreshShiftKey()
         keyboardView.backgroundColor = kKeyboardBGColor
     }
+    
     func refreshStatus(){
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         if textLeft.count > 0 {
             let last2 = String(textLeft.suffix(2))
-            print("last2::\(last2)")
             if last2 == kStopSpace{
                 keyMode = SHIFT
                 keyboardView.altButton.isSelected = false
