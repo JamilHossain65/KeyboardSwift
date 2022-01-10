@@ -75,6 +75,11 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showView()
+    }
+    
     func deleteDoccumentText(){
         //remove text from document
         let text = (textDocumentProxy.documentContextBeforeInput ?? "") + (textDocumentProxy.documentContextAfterInput ?? "")
@@ -201,9 +206,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         kKeyboardTextColor = .black
         kTextShadowColor   = .black
         
-        refreshShiftKey()
-        setString(getHintString(), key: kSelectedHintString)
-        
         if let _bgColor:UIColor = UserDefaults.standard.keyboardBgColor {
             kKeyboardBGColor = _bgColor
         } else if let _imageName = getObject(kKeyBgImageName) as? String {
@@ -225,6 +227,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         guard let inputView = inputView else { return }
         inputView.addSubview(keyboardView)
         inputView.backgroundColor = kKeyboardBGColor
+        
+        refreshShiftKey()
+        setString(getHintString(), key: kSelectedHintString)
         
         //set keyboard switch target
         nextButton = keyboardView.nextButton
@@ -436,10 +441,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         }
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        showView()
-    }
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        showView()
+//    }
     
 //    override func loadView() {
 //        super.loadView()
@@ -544,14 +549,14 @@ extension KeyboardViewController: KeyboardViewDelegate {
             if last2 == ". "{
                 if !keyboardView.altButton.isSelected {
                     if !keyboardView.shiftButton.isSelected {
-                        keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+                        //keyboardView.buttonPressed(sender: keyboardView.shiftButton)
                     }
                 }
             }else{
                 if !keyboardView.altButton.isSelected {
                     if keyboardView.shiftButton.isSelected {
                         if keyMode != DOUBLE_TAP{
-                            keyboardView.buttonPressed(sender: keyboardView.shiftButton)
+                            //keyboardView.buttonPressed(sender: keyboardView.shiftButton)
                         }
                     }
                 }

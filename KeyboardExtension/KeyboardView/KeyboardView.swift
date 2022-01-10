@@ -70,7 +70,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
         //draw
         //self.configure5Line()
         currentFontLetters = dataSource  //kUnicodeFontArray[0]
-        refreshKeyboard()
+        //refreshKeyboard()
     }
     
     required init?(coder: NSCoder) {
