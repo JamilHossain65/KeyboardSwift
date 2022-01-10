@@ -85,11 +85,6 @@ let kAllLanguageDicArray = [
 ]
 
 let langNameArray = kAllLanguageDicArray.map({$0.keys.first!})
-//let fontLettersArray:[String:[String]] = kAllLanguageDicArray.map({$0.values.first!}).first!
-//let fontLettersArrayTemp = kAllLanguageDicArray.map({$0.values.first!}).first!
-//let fontNameArray:[String] = fontLettersArray.map({$0.key})
-
-//let fontNameArray:[String] = getFontNamesOf(English)
 
 func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ keyMode:String) -> [String] {
     for dic in kAllLanguageDicArray {

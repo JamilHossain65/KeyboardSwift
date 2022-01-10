@@ -416,16 +416,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         print("text::\(fullText)")
 
         setObject(fullText, key: SUITE_KEY)
-        //textDocumentProxy.insertText(fullText)
-        
-//        if counter == 0 || true {
-//            textDocumentProxy.insertText(fullText)
-//            setObject(fullText, key: SUITE_KEY)
-//            let val = getObject(SUITE_KEY)
-//            print("get val::\(val)")
-//            counter += 1
-//        }
-        
+
         let url = URL(string: "SmartFonts://")
         let selectorOpenURL = sel_registerName("openURL:")
         let context = NSExtensionContext()
@@ -521,11 +512,11 @@ extension KeyboardViewController: KeyboardViewDelegate {
         setObject(fullText, key: SUITE_KEY)
         print("insert :: \(fullText)")
         
+        //Refresh Shift Button Status
         refreshStatus()
         
+        //Hide setting view from suggestion bar
         hideSettingView()
-        
-        //refreshShiftKey()
         
         //show hint word
         HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
@@ -620,43 +611,8 @@ extension KeyboardViewController: KeyboardViewDelegate {
             keyMode = SHIFT
         }
     }
+    
     func refreshShiftKey(){
-            
-            /*
-         let leftText = self.textDocumentProxy.documentContextBeforeInput
-         print("leftText::\(leftText)")
-            if let _leftText = leftText {
-                print("leftText::\(_leftText.count)")
-                if _leftText.count > 0 {
-                    
-                    if keyboardView.altButton.isSelected {
-                        let last2 = String(_leftText.suffix(2))
-                        print("last2::\(last2)")
-                        if last2 == ". "{
-                            keyMode = SHIFT
-                            keyboardView.shiftButton.isSelected = true
-                        }else{
-                            keyMode = NORMAL
-                        }
-                    }else{
-                        if keyboardView.shiftButton.isSelected {
-                            keyMode = keyboardView.altButton.isSelected ? NUMERIC : SHIFT
-                        } else {
-                            keyMode = keyboardView.altButton.isSelected ? SYMBOL : NORMAL
-                        }
-                    }
-                }
-                
-            }else{
-                if keyboardView.altButton.isSelected{ //NUMERIC,SYMBOL
-                    //keyboardView.shiftButton.isSelected = false
-                    keyMode = keyboardView.shiftButton.isSelected ? SYMBOL : NUMERIC
-                }else{ //NORMAL,SHIFT
-                    keyMode = keyboardView.shiftButton.isSelected ? SHIFT : NORMAL
-                }
-            }
-        
-        */
         
         if keyboardView.altButton.isSelected{ //NUMERIC,SYMBOL
             keyMode = keyboardView.shiftButton.isSelected ? SYMBOL : NUMERIC
@@ -669,17 +625,17 @@ extension KeyboardViewController: KeyboardViewDelegate {
             
             keyMode = keyboardView.shiftButton.isSelected ? keyMode == DOUBLE_TAP ? DOUBLE_TAP:SHIFT : NORMAL
         }
-            
-            print("keyboardView.altButton::\(keyboardView.altButton.isSelected)")
-            print("keyboardView.shiftButton::\(keyboardView.shiftButton.isSelected)")
+        
+        print("keyboardView.altButton::\(keyboardView.altButton.isSelected)")
+        print("keyboardView.shiftButton::\(keyboardView.shiftButton.isSelected)")
         
         print("langName::\(langName)")
         print("fontName::\(fontName)")
         print("keyMode ::\(keyMode)")
-            
-            dataSource = getAlphabetOf(langName,fontName,keyMode)
-            keyboardView.reloadFont(dataSource)
-        }
+        
+        dataSource = getAlphabetOf(langName,fontName,keyMode)
+        keyboardView.reloadFont(dataSource)
+    }
     
 }
 

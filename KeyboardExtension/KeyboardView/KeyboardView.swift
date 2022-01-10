@@ -71,7 +71,6 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
         //draw
         //self.configure5Line()
         currentFontLetters = dataSource  //kUnicodeFontArray[0]
-        //refreshKeyboard()
     }
     
     required init?(coder: NSCoder) {
@@ -473,19 +472,6 @@ extension KeyboardView {
 
             sender.isSelected = !sender.isSelected
             shiftButton = sender
-            print("sender.isSelected::\(sender.isSelected)")
-            
-//            keyMode = shiftButton.isSelected ? SHIFT : NORMAL
-//            
-//            
-//            for view in subviews {
-//               let button = view as! UIButton
-//                if !self.isSpecialButton(view) {
-//                    let _newTitle = sender.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
-//                    button.setTitle(_newTitle, for: .normal)
-//                }
-//            }
-            
             delegate?.shiftButtonPressed(sender)
             
         }else if(sender.tag == voiceButtonIndex) {
@@ -533,24 +519,8 @@ extension KeyboardView {
     @objc func doubleTapped() {
         // do something here
         print("multipleTap")
-        //shiftButton.isSelected = !shiftButton.isSelected
-        
-//        for view in subviews{
-//           let button = view as! UIButton
-//            if !self.isSpecialButton(view) {
-//                let _newTitle = shiftButton.isSelected ? button.titleLabel?.text?.capitalized : button.titleLabel?.text?.lowercased()
-//                button.setTitle(_newTitle, for: .normal)
-//            }
-//        }
-        
         shiftButton.setImage(UIImage(named: "unshift.png"), for: .normal)
         shiftButton.setImage(UIImage(named: "shift_double.png"), for: .selected)
-        
-//        if shiftButton.isSelected {
-//            shiftButton.defaultBackgroundColor = .white
-//        }else{
-//            shiftButton.defaultBackgroundColor = kAltButtonColor
-//        }
         
         delegate?.shiftButtonDoubleTap(shiftButton)
     }

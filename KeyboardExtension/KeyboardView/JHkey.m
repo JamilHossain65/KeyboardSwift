@@ -37,8 +37,6 @@
 #define __OFFSET_Y          (59 * [[UIScreen mainScreen] scale])
 #define __GAP_X             (3 * [[UIScreen mainScreen] scale])
 
-/*  title for return button */
-//NSString *returnTitleSearch = @"Search";
 
 @implementation JHkey
 
@@ -261,14 +259,6 @@
     UIButton *button;
     NSString *hint;
     
-//    BOOL isLowCase = [self.titleLabel.text.lowercaseString isEqualToString:self.titleLabel.text];
-//
-//    if (isLowCase == false){
-//        NSPredicate *predicate =
-//            [NSPredicate predicateWithFormat:@"SELF != 'ß'"];
-//        self.hintSymbolsList = [self.hintSymbolsList filteredArrayUsingPredicate:predicate];
-//    }
-    
     NSMutableArray *hintStrings = [NSMutableArray array];
     if (isRightHint) {
         for (int i = (int)[self.hintSymbolsList count]-1; i >= 0; i--) {
@@ -320,35 +310,6 @@
     self.hintView.clipsToBounds       = NO;
     
     [self addSubview:self.hintView];
-    
-    
-        /*
-         UIImage* image = [self keytopImage];
-         
-         keyPop = [[UIImageView alloc] initWithImage:image];
-         
-         keyPop.frame = CGRectMake((self.frame.size.width - image.size.width) / 2,
-         -71,
-         keyPop.frame.size.width,
-         keyPop.frame.size.height);
-         
-         CGFloat shift = 0;
-         CGFloat amount = self.frame.size.width/3;
-         if (self.hintPosition == ACHintPositionFarLeft) {
-         shift = amount;
-         }else if (self.hintPosition == ACHintPositionFarRight) {
-         shift = -amount;
-         }
-         
-         UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(shift, 10, keyPop.frame.size.width, 60)];
-         
-         [text setFont:[UIFont systemFontOfSize:35]];
-         [text setTextAlignment:NSTextAlignmentCenter];
-         [text setBackgroundColor:[UIColor clearColor]];
-         [text setAdjustsFontSizeToFitWidth:YES];
-         [text setText:b.title];
-         [text setTextColor:self.label.textColor];
-         */
 }
 
 -(BOOL)getIsRightHint{
