@@ -64,11 +64,19 @@ enum WRITING_HAND:Int {
     case RIGHT
 }
 
-var keySettingType: KEY_SETTING_TYPE = .LANGUAGE
-var hintBarType   : HINT_BAR_TYPE    = .SETTING
-var keyMode : String  = SHIFT
-var writingMode : WRITING_MODE  = .INSERTING
+enum LANGUAGE_GROUP:Int {
+    case ENGLISH
+    case ARABIC
+    case INDIAN
+    case CHINESE
+}
 
+var keyMode : String = SHIFT
+var writingMode : WRITING_MODE  = .INSERTING
+var hintBarType : HINT_BAR_TYPE = .SETTING
+
+var languageGroup : LANGUAGE_GROUP   = .ENGLISH
+var keySettingType: KEY_SETTING_TYPE = .LANGUAGE
 
 var kKeyButtonColor  = UIColor.white
 var kHighlightColor  = UIColor.white
