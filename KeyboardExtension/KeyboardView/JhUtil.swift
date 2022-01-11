@@ -175,3 +175,15 @@ func getHintString() -> String {
         }
     }
 }
+
+//MARK:- Read File Names of Selected Lanuage
+func getFileName() -> String {
+    let langName = getString(kSelectedLanguageName)
+    
+    switch langName {
+    case Bangla:
+        return "word"
+    default:
+        return "words"
+    }
+}

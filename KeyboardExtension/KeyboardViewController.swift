@@ -49,7 +49,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //                AudioServicesPlaySystemSound(1104);
 //            });
         
-        let wordString = readf("words")
+        let filename = getFileName()
+        let wordString = readf(filename)
         if let _wordString = wordString, _wordString.count > 0 {
             wordArray = _wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
             print("words count::\(wordArray.count)")
