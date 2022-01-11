@@ -49,13 +49,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //                AudioServicesPlaySystemSound(1104);
 //            });
         
-        let filename = getFileName()
-        let wordString = readf(filename)
-        if let _wordString = wordString, _wordString.count > 0 {
-            wordArray = _wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
-            print("words count::\(wordArray.count)")
-        }
-
+        refreshWordFile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +73,14 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showView()
+    }
+    
+    func refreshWordFile(){
+        let filename = getFileName()
+        guard let wordString = readf(filename)else {return}
+        
+        wordArray = wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
+        print("words count::\(wordArray.count)")
     }
     
     func deleteDoccumentText(){
@@ -829,6 +831,9 @@ extension KeyboardViewController: HintBarDelegate {
             keyboardView.reloadFont(dataSource)
             keyboardView.backgroundColor = kKeyboardBGColor
             
+            //update file from selected language
+            refreshWordFile()
+            //show setting option view
             showSettingView()
         }
     }
