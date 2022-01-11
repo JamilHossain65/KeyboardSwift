@@ -19,6 +19,7 @@ let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
 let kStopSpace    = ". "
+let kDoubleSpace    = "  "
 
 //let kKeyBgColor   = "kKeyBgColor"
 let kKeyBgImageName  = "kKeyBgImageName"
@@ -53,9 +54,15 @@ enum KEY_SETTING_TYPE:Int {
     case LANGUAGE
 }
 
+enum WRITING_MODE:Int {
+    case FORWARD
+    case BACKWORD
+}
+
 var keySettingType: KEY_SETTING_TYPE = .LANGUAGE
 var hintBarType   : HINT_BAR_TYPE    = .SETTING
 var keyMode : String  = SHIFT
+var writingMode : WRITING_MODE  = .FORWARD
 
 
 var kKeyButtonColor  = UIColor.white

@@ -475,7 +475,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
 extension KeyboardViewController: KeyboardViewDelegate {
     func spaceButtonDoubleTap(_ spaceButton : UIButton){
-        insertCharacter(kStopSpace)
+        insertCharacter(kDoubleSpace)
     }
     
     func shiftButtonDoubleTap(_ shiftButton: UIButton) {
@@ -495,6 +495,8 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func deleteCharacter(_ newCharacter: String) {
+        writingMode = .BACKWORD
+        
         textDocumentProxy.deleteBackward()
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput  ?? ""
@@ -519,7 +521,13 @@ extension KeyboardViewController: KeyboardViewDelegate {
         //https://picturetosound.com/en/a/26/iphone-typing-on-keyboard
         audioManager.playSoundFile("key_sound.mp3")
         
-        textDocumentProxy.insertText(newCharacter)
+        //check and update fullstop
+        if newCharacter == kDoubleSpace {
+            updateFullStop(newCharacter)
+        }else{
+            textDocumentProxy.insertText(newCharacter)
+        }
+        
         
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
@@ -605,6 +613,30 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         refreshShiftKey()
         keyboardView.backgroundColor = kKeyboardBGColor
+    }
+    
+    func updateFullStop(_ newCharacter:String){
+        let text  = textDocumentProxy.documentContextBeforeInput ?? ""
+        print("full stop text::\(text)")
+        
+        if writingMode == .FORWARD{
+            if String(text.suffix(2)) == kStopSpace{
+                textDocumentProxy.insertText(kDoubleSpace)
+            }else if String(text.suffix(2)) == kDoubleSpace{
+                textDocumentProxy.insertText(kDoubleSpace)
+            }else{
+                if String(text.suffix(1)) == " "{
+                    textDocumentProxy.deleteBackward()
+                    textDocumentProxy.insertText(kStopSpace)
+                }else{
+                    textDocumentProxy.insertText(kStopSpace)
+                }
+            }
+            
+        }else{
+            textDocumentProxy.insertText(newCharacter)
+        }
+        writingMode = .FORWARD
     }
     
     func refreshStatus(){
