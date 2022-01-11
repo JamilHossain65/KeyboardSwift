@@ -222,7 +222,7 @@
     }
     
     if ([self.delegate conformsToProtocol:@protocol(JHkeyDelegate)]) {
-        [self.delegate didTapLongOnButton:self];
+        //[self.delegate didTapLongOnButton:self];
         NSLog(@"tap long::%@",self.titleLabel.text);
     }
     NSLog(@"hintSymbolsList::%@", self.hintSymbolsList);
