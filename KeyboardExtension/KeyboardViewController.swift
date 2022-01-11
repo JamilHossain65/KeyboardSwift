@@ -495,7 +495,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func deleteCharacter(_ newCharacter: String) {
-        writingMode = .BACKWORD
+        writingMode = .DELETING
         
         textDocumentProxy.deleteBackward()
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
@@ -619,7 +619,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let text  = textDocumentProxy.documentContextBeforeInput ?? ""
         print("full stop text::\(text)")
         
-        if writingMode == .FORWARD{
+        if writingMode == .INSERTING{
             if String(text.suffix(2)) == kStopSpace{
                 textDocumentProxy.insertText(kDoubleSpace)
             }else if String(text.suffix(2)) == kDoubleSpace{
@@ -636,7 +636,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         }else{
             textDocumentProxy.insertText(newCharacter)
         }
-        writingMode = .FORWARD
+        writingMode = .INSERTING
     }
     
     func refreshStatus(){

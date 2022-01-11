@@ -55,14 +55,19 @@ enum KEY_SETTING_TYPE:Int {
 }
 
 enum WRITING_MODE:Int {
-    case FORWARD
-    case BACKWORD
+    case INSERTING
+    case DELETING
+}
+
+enum WRITING_HAND:Int {
+    case LEFT
+    case RIGHT
 }
 
 var keySettingType: KEY_SETTING_TYPE = .LANGUAGE
 var hintBarType   : HINT_BAR_TYPE    = .SETTING
 var keyMode : String  = SHIFT
-var writingMode : WRITING_MODE  = .FORWARD
+var writingMode : WRITING_MODE  = .INSERTING
 
 
 var kKeyButtonColor  = UIColor.white
