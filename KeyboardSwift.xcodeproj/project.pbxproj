@@ -35,6 +35,7 @@
 		8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AA16D2682DEDC00EA136D /* AudioManager.swift */; };
 		8D9F632B27720CE200436892 /* KeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9F632A27720CE200436892 /* KeyInfo.swift */; };
 		8D9F6701275B8756006E65BE /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
+		8DCFBF21278ED17D0093140C /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
 		8DD507462681596B00377CBD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8DD507472681596B00377CBD /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073E2681596B00377CBD /* APIUrl.swift */; };
 		8DD5074A2681596B00377CBD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507422681596B00377CBD /* Reachability.swift */; };
@@ -119,6 +120,7 @@
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DBB159A25EB04890092F88B /* JHkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHkey.h; sourceTree = "<group>"; };
 		8DBB159B25EB04890092F88B /* JHkey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHkey.m; sourceTree = "<group>"; };
+		8DCFBF20278ED17D0093140C /* bahasa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bahasa.txt; sourceTree = "<group>"; };
 		8DD5073D2681596B00377CBD /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8DD5073E2681596B00377CBD /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		8DD507422681596B00377CBD /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				8D496A2C26388F7D001DE455 /* HintBarManager.swift */,
 				8D9F6700275B8756006E65BE /* words_en.txt */,
 				8DD77819276231920088E282 /* words.txt */,
+				8DCFBF20278ED17D0093140C /* bahasa.txt */,
 			);
 			path = HintBar;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				8D140F4A26C0E4A200512477 /* bangla.flac in Resources */,
 				8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */,
 				8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */,
+				8DCFBF21278ED17D0093140C /* bahasa.txt in Resources */,
 				8DD7781A276231920088E282 /* words.txt in Resources */,
 				8D68831826E8D6430008D7D8 /* hello (16bit PCM).wav in Resources */,
 			);

@@ -81,6 +81,15 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         wordArray = wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
         print("words count::\(wordArray.count)")
+        
+        
+//        var index = 0
+//        for word in wordArray{
+//            index = index + 1
+//            if index%3 == 2{
+//                print("\(word)")
+//            }
+//        }
     }
     
     func deleteDoccumentText(){
@@ -403,12 +412,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         hintBarType = .SETTING
         
         //set word suggestion view
-        //let langNameList = kAllLanguageDic.compactMap({$0.0}).sorted()
         print("langNameList::\(langNameArray)")
-        
         let index = langNameArray.firstIndex(of: langName) ?? 0
-        print("index::\(index)")
-        
         HintBarManager.shared.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: langNameArray,selectedIndex: index)
     }
     

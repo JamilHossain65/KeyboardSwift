@@ -10,7 +10,20 @@ import Foundation
 
 let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"
+let kActiveLanguages  = "kActiveLanguages"
 
+let CountryCode  = "CountryCode"
+let LanguageCode = "LanguageCode"
+
+
+//supported language name
+let English = "English"
+let Bangla  = "Bangla"
+let Bahasa  = "Indonesian"
+
+var activeLanguages = [English:true, Bahasa:true, Bangla:false]
+var countryCodes  = [English:"us",Bahasa:"id",Bangla:"bd"]
+var languageCodes = [English:"en",Bahasa:"id",Bangla:"bn"]
 
 //MARK:- SHARED DATA
 //read and write userdefault data

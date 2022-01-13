@@ -240,7 +240,12 @@ extension HintBarManager:UIScrollViewDelegate {
 //}
 
 func readf(_ filename:String) -> String? {
-    if let filepath = Bundle.main.path(forResource: filename, ofType: "txt") {
+    var fileExtension = "txt"
+    if filename.contains(fileExtension){
+        fileExtension = ""
+    }
+    
+    if let filepath = Bundle.main.path(forResource: filename, ofType: fileExtension) {
         do {
             let contents = try String(contentsOfFile: filepath)
             //print(contents)

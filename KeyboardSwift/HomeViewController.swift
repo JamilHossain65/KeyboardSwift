@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
         audioManager.delegate = self
         loadRecordingUI()
         playSoundUI()
-                
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,8 +80,27 @@ class HomeViewController: UIViewController {
     }
     
     func playSoundUI(){
-        let codeBd = flag(from: "bd")
-        let codeEn = flag(from: "us")
+        
+        let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
+        let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
+        let countryCode2 = countryCodes[actLanguages.last ?? ""] ?? ""
+        
+        print("countryCode1::\(countryCode1)")
+        print("countryCode2::\(countryCode2)")
+        
+        var codeBd = flag(from: "bd")//bd
+        var codeEn = flag(from: "us") //us
+        
+        if countryCode1 == "us"{
+            codeEn = flag(from: countryCode1)
+            codeBd = flag(from: countryCode2)
+        }else{
+            codeEn = flag(from: countryCode2)
+            codeBd = flag(from: countryCode1)
+        }
+        
+        print("codeBd::\(codeBd)")
+        print("codeEn::\(codeEn)")
         
         playButton = UIButton(frame: CGRect(x: textView.frame.size.width - 122, y: textView.frame.size.height - 44, width: 40, height: 40))
         
@@ -91,8 +110,8 @@ class HomeViewController: UIViewController {
         
         playButton.titleLabel?.font   = UIFont(name: "Arial", size: 25)
         
-        playButton.setTitle("\(codeEn)", for: .normal)
-        playButton.setTitle("\(codeBd)", for: .selected)
+        playButton.setTitle("\(codeBd)", for: .normal)
+        playButton.setTitle("\(codeEn)", for: .selected)
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         textView.addSubview(playButton)
         playButton.backgroundColor = .clear
@@ -160,7 +179,28 @@ class HomeViewController: UIViewController {
 extension HomeViewController:AudioManagerDelegate {
     func recordDidFinish(){
         print("convert start.....")
-        let language = playButton.isSelected ? "bn":"en"
+        
+        let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
+        let countryCode1 = languageCodes[actLanguages.first ?? ""] ?? ""
+        let countryCode2 = languageCodes[actLanguages.last ?? ""] ?? ""
+        
+        print("Code1::\(countryCode1)")
+        print("Code2::\(countryCode2)")
+        
+        
+        var codeBd = "bn"
+        var codeEn = "en"
+        
+        if countryCode1 == "en"{
+            codeEn = countryCode1
+            codeBd = countryCode2
+        }else{
+            codeEn = countryCode2
+            codeBd = countryCode1
+        }
+        
+        
+        let language = playButton.isSelected ? codeEn:codeBd //id,bn
         convertToText2(lang: language)
     }
     

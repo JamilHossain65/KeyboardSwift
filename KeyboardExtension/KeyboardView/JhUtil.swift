@@ -27,7 +27,7 @@ let kKeyTextColor    = "kKeyTextColor"
 let kKeyAlphabetFont = "kKeyAlphabetFont"
 let kSelectedFontName = "kSelectedFontName"
 let kSelectedLanguageName = "kSelectedLanguageName"
-let kSelectedHintString   = "kSelectedHintString"
+let kSelectedHintString = "kSelectedHintString"
 
 //letter mode
 let NORMAL  = "Normal"
@@ -36,9 +36,10 @@ let NUMERIC = "Numeric"
 let SYMBOL  = "Symbol"
 let DOUBLE_TAP = "DoubleTap"
 
-//supported language name
-let English = "English"
-let Bangla  = "Bangla"
+////supported language name
+//let English = "English"
+//let Bangla  = "Bangla"
+//let Bahasa  = "Bahasa"
 
 //let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 
@@ -99,12 +100,21 @@ let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo ref
 
 let hintBarHeight:CGFloat = 44 //36;
 
+//Note: this is complex because this is ordered list,
+//so this order you will see the language setting
 let kAllLanguageDicArray = [
     [English  : kFontEnDic],
     [Bangla   : kFontBnDic],
+    [Bahasa   : kFontEnDic],
 ]
 
-let langNameArray = kAllLanguageDicArray.map({$0.keys.first!})
+//this is all languages list of [String]
+let supportedLanguages:[String] = kAllLanguageDicArray.map({$0.keys.first!})
+
+//this not ordered list of type [String:Bool]
+//var activeLanguages = [English:true,Bahasa:true,Bangla:true]
+let langNameArray = supportedLanguages.filter({ activeLanguages.filter({$0.1}).map({$0.0})
+                                                .contains($0)})
 
 func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ keyMode:String) -> [String] {
     for dic in kAllLanguageDicArray {
@@ -182,8 +192,10 @@ func getFileName() -> String {
     
     switch langName {
     case Bangla:
-        return "word"
+        return "word.txt"
+    case Bahasa:
+        return "bahasa.txt"
     default:
-        return "words"
+        return "words.txt"
     }
 }

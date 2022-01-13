@@ -164,6 +164,68 @@ extension UITextView {
     }
 }
 
+extension Locale {
+//    func countryCode(by countryName: String) -> String? {
+//        return Locale.isoRegionCodes.first(where: { code -> Bool in
+//            guard let localizedCountryName = localizedString(forRegionCode: code) else {
+//                return false
+//            }
+//            return localizedCountryName.lowercased() == countryName.lowercased()
+//        })
+//    }
+    
+    func languageCode(by languageName: String) -> String? {
+        return Locale.isoLanguageCodes.first(where: { code -> Bool in
+            guard let localizedLangName = localizedString(forLanguageCode: code) else {
+                return false
+            }
+            return localizedLangName.lowercased() == languageName.lowercased()
+        })
+    }
+    
+    func languageCodes(by languageNames: [String]) -> [String]? {
+        var langCodes:[String] = []
+        
+        for langName in languageNames{
+            let locale = Locale(identifier: "en_US")
+            let languageCode = locale.languageCode(by: langName) ?? ""
+            langCodes.append(languageCode)
+        }
+        
+        langCodes = langCodes.filter({$0.count > 0})
+        return langCodes
+    }
+    
+//    func countryCode(by languageName: String) -> String? {
+//        return Locale.isoRegionCodes.first(where: { code -> Bool in
+//            guard let localizedLangName = localizedString(forRegionCode: code) else {
+//                return false
+//            }
+//            return localizedLangName.lowercased() == languageName.lowercased()
+//        })
+//    }
+    
+    func countryCode(by languageName: String) -> String? {
+        let _languageName = languageName + "_"
+        let _countryCode = Locale.availableIdentifiers.filter({$0.contains(_languageName)}).last?.replacingOccurrences(of: _languageName, with: "")
+        return _countryCode
+    }
+    
+    func countryCodes(by languageNames: [String]) -> [String]? {
+        var cntryCodes:[String] = []
+        
+        for langName in languageNames{
+            let locale = Locale(identifier: "en_US")
+            if let languageCode = locale.languageCode(by: langName){
+                if let countryCode  = locale.countryCode(by: languageCode){
+                    cntryCodes.append(countryCode)
+                }
+            }
+        }
+        return cntryCodes //cntryCodes.filter({$0.count > 0})
+    }
+}
+
 
 
 
