@@ -39,7 +39,7 @@ let DOUBLE_TAP = "DoubleTap"
 ////supported language name
 //let English = "English"
 //let Bangla  = "Bangla"
-//let Bahasa  = "Bahasa"
+//let Indonesian  = "Indonesian"
 
 //let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 
@@ -105,14 +105,14 @@ let hintBarHeight:CGFloat = 44 //36;
 let kAllLanguageDicArray = [
     [English  : kFontEnDic],
     [Bangla   : kFontBnDic],
-    [Bahasa   : kFontEnDic],
+    [Indonesian   : kFontEnDic],
 ]
 
 //this is all languages list of [String]
 let supportedLanguages:[String] = kAllLanguageDicArray.map({$0.keys.first!})
 
 //this not ordered list of type [String:Bool]
-//var activeLanguages = [English:true,Bahasa:true,Bangla:true]
+//var activeLanguages = [English:true,Indonesian:true,Bangla:true]
 let langNameArray = supportedLanguages.filter({ activeLanguages.filter({$0.1}).map({$0.0})
                                                 .contains($0)})
 
@@ -193,7 +193,7 @@ func getFileName() -> String {
     switch langName {
     case Bangla:
         return "word.txt"
-    case Bahasa:
+    case Indonesian:
         return "bahasa.txt"
     default:
         return "words.txt"

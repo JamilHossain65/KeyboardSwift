@@ -19,11 +19,11 @@ let LanguageCode = "LanguageCode"
 //supported language name
 let English = "English"
 let Bangla  = "Bangla"
-let Bahasa  = "Indonesian"
+let Indonesian  = "Indonesian"
 
-var activeLanguages = [English:true, Bahasa:true, Bangla:false]
-var countryCodes  = [English:"us",Bahasa:"id",Bangla:"bd"]
-var languageCodes = [English:"en",Bahasa:"id",Bangla:"bn"]
+var activeLanguages = [English:true, Indonesian:true, Bangla:false]
+var countryCodes  = [English:"us",Indonesian:"id",Bangla:"bd"]
+var languageCodes = [English:"en",Indonesian:"id",Bangla:"bn"]
 
 //MARK:- SHARED DATA
 //read and write userdefault data
