@@ -499,6 +499,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func didTapLongPressed() {
+        print("didTapLongPressed")
         hideSettingView()
     }
     

@@ -310,6 +310,10 @@
     self.hintView.clipsToBounds       = NO;
     
     [self addSubview:self.hintView];
+    
+    if ([self.delegate conformsToProtocol:@protocol(JHkeyDelegate)]) {
+        [self.delegate didTapLongOnButton:self];
+    }
 }
 
 -(BOOL)getIsRightHint{

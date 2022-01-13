@@ -466,6 +466,8 @@ extension KeyboardView:JHkeyDelegate {
     }
     
     func didTapLong(on sender: UIButton!){
+        delegate?.didTapLongPressed()
+        
         if let _title = sender.titleLabel?.text {
             print("_title ::: \(_title)")
             delegate?.insertCharacter(_title)
