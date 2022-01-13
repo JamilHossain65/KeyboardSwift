@@ -345,7 +345,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     @objc func fontButtonPressed(_ sender: Any) {
         print("fontButtonPressed")
-        openContainerApp()
+        //openContainerApp()
         resetColor(sender)
         
         //hide setting view
@@ -367,7 +367,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     @objc func colorButtonPressed(_ sender: Any) {
         print("colorButtonPressed")
-        openContainerApp()
+        //openContainerApp()
         resetColor(sender)
         
         keySettingType = .BG_COLOR
@@ -387,7 +387,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     @objc func textColorButtonPressed(_ sender: Any) {
         print("textColorButtonPressed")
-        openContainerApp()
+        //openContainerApp()
         resetColor(sender)
         keySettingType = .TEXT_COLOR
         
@@ -402,7 +402,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     @objc func languageButtonPressed(_ sender: Any) {
         print("languageButtonPressed")
-        openContainerApp()
+        //openContainerApp()
         resetColor(sender)
         
         guard let inputView = inputView else { return }
