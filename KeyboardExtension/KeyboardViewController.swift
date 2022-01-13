@@ -177,6 +177,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         var wordList:[String] = ["I","is","are","you"]
         //let uniqueWords = Array(Set(filteredArray))
+        if langName == Indonesian{
+            wordList = ["saya","hai","anda","mereka"]
+        }
         
         if context.count <= 0 {
             return wordList
