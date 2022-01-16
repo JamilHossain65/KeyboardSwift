@@ -105,7 +105,7 @@ let hintBarHeight:CGFloat = 44 //36;
 let kAllLanguageDicArray = [
     [English  : kFontEnDic],
     [Bangla   : kFontBnDic],
-    [Indonesian   : kFontEnDic],
+    [Indonesian   : kFontIdDic],
 ]
 
 //this is all languages list of [String]
@@ -174,7 +174,13 @@ func getHintString() -> String {
             return hintWordsBn
         }
         
-    default:
+    case Indonesian:
+        switch fontName {
+        default:
+            return hintWordsId
+        }
+        
+    default://English
         switch fontName {
         case NORMAL:
             return hintWordsEn

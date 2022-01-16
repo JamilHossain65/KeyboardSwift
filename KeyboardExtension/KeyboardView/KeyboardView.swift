@@ -497,7 +497,7 @@ extension KeyboardView {
             voiceButton = sender
             
             if voiceButton.isSelected {
-                sender.defaultBackgroundColor = .brown
+                sender.defaultBackgroundColor = kAltButtonColor
             } else {
                 sender.defaultBackgroundColor = .white
             }
