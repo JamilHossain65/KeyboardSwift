@@ -150,9 +150,9 @@ extension KeyboardView{
         
         //draw button in a row
         drawLineFor(row: 0, totalCol: kRowKeys[0]/*10*/)
-        drawLineFor(row: 1, totalCol: kRowKeys[1]/*9*/, const: [0:15, 9:15])
-        drawLineFor(row: 2, totalCol: kRowKeys[2]/*9*/,  info: [0:40, 8:40], const: [1:7, 8:7])
-        drawLineFor(row: 3, totalCol: kRowKeys[3]/*4*/,  info: [0:40, 1:30,2:30,4:80])
+        drawLineFor(row: 1, totalCol: kRowKeys[1]/*9*/, const: getConst(1))
+        drawLineFor(row: 2, totalCol: kRowKeys[2]/*9*/,  info: getInfo(2), const: getConst(2))
+        drawLineFor(row: 3, totalCol: kRowKeys[3]/*4*/,  info: getInfo(3))
     }
     
     func configure5Line(){
@@ -301,6 +301,105 @@ extension KeyboardView{
         }
         
         return originColX
+    }
+    
+    func getConst(_ row:Int) -> [Int:Int]{
+        
+        switch row {
+        case 0:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                break
+            }
+            
+            break
+        case 1:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                return [0:15, 9:15]
+            }
+            break
+        case 2:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                return [1:7, 8:7]
+            }
+            break
+        case 3:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                break
+            }
+            break
+        default:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                break
+            }
+            break
+        }
+        
+        
+        return [:]
+    }
+    
+    func getInfo(_ row:Int)-> [Int:Int]{
+        
+        switch row {
+        case 0:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                break
+            }
+            
+            break
+        case 1:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                break
+            }
+            break
+        case 2:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                return [0:40, 8:40]
+            }
+            break
+        case 3:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                return [0:40, 1:30,2:30,4:80]
+            }
+            break
+        default:
+            switch languageName {
+            case Russian:
+                break
+            default:
+                break
+            }
+            break
+        }
+        
+        return [:]
     }
     
     func getExtraSpace(colIndex:Int,const:[Int:Int]? = [:]) -> Double{

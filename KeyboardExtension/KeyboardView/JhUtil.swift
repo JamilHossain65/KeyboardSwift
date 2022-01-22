@@ -19,7 +19,7 @@ let kAbcString    = "ABC"
 let kReturnString = "Return"
 let kSpaceString  = "Space"
 let kStopSpace    = ". "
-let kDoubleSpace    = "  "
+let kDoubleSpace  = "  "
 
 //let kKeyBgColor   = "kKeyBgColor"
 let kKeyBgImageName  = "kKeyBgImageName"
@@ -92,8 +92,10 @@ var kOffWhiteColor   = UIColor.init(red: 248/255, green: 240/255, blue: 227/255,
 var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255, alpha: 1)
 
 //let kAlphabet = "q w e r t y u i o p a s d f g h j k l z x c v b n m"
-let kAlphabetEN = "Q W E R T Y U I O P A S D F G H J K L : Z X C V B N M"
-let kLetters    = kAlphabetEN.components(separatedBy: " ")
+//let kAlphabetEN = "Q W E R T Y U I O P A S D F G H J K L : Z X C V B N M"
+//let kLetters    = kAlphabetEN.components(separatedBy: " ")
+
+var languageName = getString(kSelectedLanguageName) ?? English
 
 //set total keys in each row
 let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo refctor this
@@ -103,9 +105,10 @@ let hintBarHeight:CGFloat = 44 //36;
 //Note: this is complex because this is ordered list,
 //so this order you will see the language setting
 let kAllLanguageDicArray = [
-    [English  : kFontEnDic],
-    [Bangla   : kFontBnDic],
-    [Indonesian   : kFontIdDic],
+    [English   : kFontEnDic],
+    [Bangla    : kFontBnDic],
+    [Indonesian: kFontIdDic],
+    [Russian   : kFontRuDic],
 ]
 
 //this is all languages list of [String]
@@ -201,6 +204,8 @@ func getFileName() -> String {
         return "word.txt"
     case Indonesian:
         return "bahasa.txt"
+    case Russian:
+        return "russian.txt"
     default:
         return "words.txt"
     }

@@ -17,13 +17,14 @@ let LanguageCode = "LanguageCode"
 
 
 //supported language name
-let English = "English"
-let Bangla  = "Bangla"
-let Indonesian  = "Indonesian"
+let English    = "English"
+let Bangla     = "Bangla"
+let Indonesian = "Indonesian"
+let Russian    = "Russian"
 
-var activeLanguages = [English:true, Indonesian:false, Bangla:true]
-var countryCodes  = [English:"us",Indonesian:"id",Bangla:"bd"]
-var languageCodes = [English:"en",Indonesian:"id",Bangla:"bn"]
+var activeLanguages = [English:true, Indonesian:false, Bangla:false, Russian:true]
+var countryCodes  = [English:"us", Indonesian:"id", Bangla:"bd", Russian:"ru"]
+var languageCodes = [English:"en", Indonesian:"id", Bangla:"bn", Russian:"ru"]
 
 //MARK:- SHARED DATA
 //read and write userdefault data

@@ -11,6 +11,8 @@
 		8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */; };
 		8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8D3E230C279BCF280067DC30 /* russian.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E230B279BCF280067DC30 /* russian.txt */; };
+		8D3E2310279BCFAB0067DC30 /* UnicodeRu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */; };
 		8D496A1C26388C73001DE455 /* SuggestionBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A1426388C73001DE455 /* SuggestionBarManager.m */; };
 		8D496A1E26388C73001DE455 /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D496A1826388C73001DE455 /* word.txt */; };
 		8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D552EE326484C4000866DEF /* UnicodeEn.swift */; };
@@ -91,6 +93,8 @@
 		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
 		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
+		8D3E230B279BCF280067DC30 /* russian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russian.txt; sourceTree = "<group>"; };
+		8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeRu.swift; sourceTree = "<group>"; };
 		8D496A1426388C73001DE455 /* SuggestionBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionBarManager.m; sourceTree = "<group>"; };
 		8D496A1826388C73001DE455 /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
 		8D496A1B26388C73001DE455 /* SuggestionBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionBarManager.h; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				8D9F6700275B8756006E65BE /* words_en.txt */,
 				8DD77819276231920088E282 /* words.txt */,
 				8DCFBF20278ED17D0093140C /* bahasa.txt */,
+				8D3E230B279BCF280067DC30 /* russian.txt */,
 			);
 			path = HintBar;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				8D552EE326484C4000866DEF /* UnicodeEn.swift */,
 				8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */,
 				8D75AE1F2794338200CB1E0B /* UnicodeId.swift */,
+				8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */,
 				8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */,
 				8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */,
 				8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */,
@@ -461,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3E230C279BCF280067DC30 /* russian.txt in Resources */,
 				8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */,
 				8D9F6701275B8756006E65BE /* words_en.txt in Resources */,
 				8D496A1E26388C73001DE455 /* word.txt in Resources */,
@@ -550,6 +557,7 @@
 				8D6DA1CF26E897D90080E630 /* Response.swift in Sources */,
 				8D9F632B27720CE200436892 /* KeyInfo.swift in Sources */,
 				8D6DA1C026E897D10080E630 /* Errors.swift in Sources */,
+				8D3E2310279BCFAB0067DC30 /* UnicodeRu.swift in Sources */,
 				8D6DA1DF26E899050080E630 /* AudioManager.swift in Sources */,
 				8D6DA1DE26E899050080E630 /* Reachability.swift in Sources */,
 				8DF6E32626C3563F0031E094 /* Color.swift in Sources */,
