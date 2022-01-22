@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         textView.layer.cornerRadius = 8.0
         textView.layer.borderColor  = UIColor.lightGray.cgColor
         textView.becomeFirstResponder()
-        
+        //textView.text = "saya bisa menulis bahasa indonesia dengan berbicara"
         //showLoading(view: textView)
         
         //record audio

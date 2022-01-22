@@ -21,7 +21,7 @@ let English = "English"
 let Bangla  = "Bangla"
 let Indonesian  = "Indonesian"
 
-var activeLanguages = [English:true, Indonesian:true, Bangla:false]
+var activeLanguages = [English:true, Indonesian:false, Bangla:true]
 var countryCodes  = [English:"us",Indonesian:"id",Bangla:"bd"]
 var languageCodes = [English:"en",Indonesian:"id",Bangla:"bn"]
 
