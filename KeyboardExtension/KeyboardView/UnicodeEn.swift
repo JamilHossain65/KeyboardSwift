@@ -45,10 +45,11 @@ let kFontEnDic:[[String:[String]]] = [
     ["c͜͡l͜͡o͜͡u͜͡d͜͡s͜͡":kUnicodeLettersEnClouds],
 ]
 
-let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation.components(separatedBy: ";")
-let kUnicodeLettersEnNumList      = kUnicodeEnNumbers.components(separatedBy: ",")
-let kUnicodeLettersEnNormal       = kUnicodeEnNormal.components(separatedBy: ",")
-let kUnicodeLettersEnNormalShift  = kUnicodeEnNormalShift.components(separatedBy: ",")
+let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation.components(separatedBy: ", ")
+let kUnicodeLettersEnNumList      = kUnicodeEnNumbers.components(separatedBy: ", ")
+let kUnicodeLettersEnNormal       = kUnicodeEnNormal.components(separatedBy: ", ")
+let kUnicodeLettersEnNormalShift  = kUnicodeEnNormalShift.components(separatedBy: ", ")
+
 let kUnicodeLettersEnStinky       = kUnicodeEnStinky.components(separatedBy: ",")
 let kUnicodeLettersEnClouds       = kUnicodeEnClouds.components(separatedBy: ",")
 let kUnicodeLettersEnHappy        = kUnicodeEnHappy.components(separatedBy: ",")
@@ -73,10 +74,10 @@ let kUnicodeLettersEnSansItalic   = kUnicodeEnSansItalic.components(separatedBy:
 let kUnicodeLettersEnStop         = kUnicodeEnStop.components(separatedBy: ",")
 
 //Default font
-let kUnicodeEnPuncuation  = "[;];{;};#;%;^;*;+;=;-;_;/;|;~;<;>;€;$;:;¥;•;.;,;?;!;’" //,exist in string
-let kUnicodeEnNumbers     = "1,2,3,4,5,6,7,8,9,0,-,/,:,;,(,),$,&,@,:,\",.,^,%,?,!,',*,"
-let kUnicodeEnNormal      = "q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,:,z,x,c,v,b,n,m"
-let kUnicodeEnNormalShift = "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
+let kUnicodeEnNormal = "q, w, e, r, t, y, u, i, o, p\(kNL), a, s, d, f, g, h, j, k, l\(kNL), \(kSHIFT), z, x, c, v, b, n, m, \(kSPECIAL)"
+let kUnicodeEnNormalShift = "Q, W, E, R, T, Y, U, I, O, P\(kNL), A, S, D, F, G, H, J, K, L\(kNL), \(kSHIFT), Z, X, C, V, B, N, M, \(kSPECIAL)"
+let kUnicodeEnNumbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0\(kNL), -, /, :, ;, (, ), $, &, @\(kNL), \(kSHIFT), \", ., ^, %, ?, !, *, \(kSPECIAL)"
+let kUnicodeEnPuncuation = "[, ], {, }, #, %, ^, *, +, =\(kNL), -, _, /, |, ~, <, >, €, $\(kNL), \(kSHIFT), ¥, •, ., ?, !, \(kSPECIAL)"//todo need to implement comma
 
 //Others suported font
 let kUnicodeEnSerif   = "𝑄,𝑤,𝑒,𝑟,𝑡,𝑦,𝑢,𝑖,𝑜,𝑝,𝑎,𝑠,𝑑,𝑓,𝑔,ℎ,𝑗,𝑘,𝑙,:,𝑧,𝑥,𝑐,𝑣,𝑏,𝑛,𝑚"

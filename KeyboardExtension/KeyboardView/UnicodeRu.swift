@@ -18,16 +18,16 @@ let kFontRuDic:[[String:[String]]] = [
      SYMBOL :kUnicodeLettersRuPuncuation],
 ]
 
-let kUnicodeLettersRuNormal       = kUnicodeRuNormal.components(separatedBy: ",")
-let kUnicodeLettersRuNormalShift  = kUnicodeRuNormalShift.components(separatedBy: ",")
+let kUnicodeLettersRuNormal       = kUnicodeRuNormal.components(separatedBy: ", ")
+let kUnicodeLettersRuNormalShift  = kUnicodeRuNormalShift.components(separatedBy: ", ")
 let kUnicodeLettersRuNumList      = kUnicodeRuNumbers.components(separatedBy: ", ")
-let kUnicodeLettersRuPuncuation   = kUnicodeRuPuncuation.components(separatedBy: ", ")
+let kUnicodeLettersRuPuncuation   = kUnicodeRuPuncuation.components(separatedBy:", ")
 
 //Default font
-let kUnicodeRuNormal      = "й,ц,у,к,е,н,г,ш,щ,з,х,ф,ы,в,а,п,о,о,л,д,ж,э,я,с,с,с,и,т,ь,б,ю"
-let kUnicodeRuNormalShift = "Й,Ц,У,К,Е,Н,Г,Ш,Щ,З,Х,Ф,Ы,В,А,П,Р,О,Л,Д,Ж,Э,Я,Ч,С,М,И,Т,Ь,Б,Ю"
-let kUnicodeRuNumbers     = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0, -, /, :, ;, (, ), ₽, &, @, «, ., ?, !, ’"
-let kUnicodeRuPuncuation  = "[, ], {, }, #, %, ^, *, +, =, _, \\, |, ~, <, >, $, €, £, •, ., ?, !, ’" //,exist in string
+let kUnicodeRuNormal = "й, ц, у, к, е, н, г, ш, щ, з, х\(kNL), ф, ы, в, а, п, о, о, л, д, ж, э\(kNL), \(kSHIFT), я, с, с, с, и, т, ь, б, ю, \(kSPECIAL)"
+let kUnicodeRuNormalShift = "Й, Ц, У, К, Е, Н, Г, Ш, Щ, З, Х\(kNL), Ф, Ы, В, А, П, Р, О, Л, Д, Ж, Э\(kNL), \(kSHIFT), Я, Ч, С, М, И, Т, Ь, Б, Ю, \(kSPECIAL)"
+let kUnicodeRuNumbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0\(kNL), -, /, ;, (, ), ₽, &, @, «, 0\(kNL), \(kSHIFT), ., ?, !, ’, 0, 0, \(kSPECIAL)"
+let kUnicodeRuPuncuation  = "[, ], {, }, #, %, ^, *, +, =, _\(kNL), \\, |, ~, <, >, $, €, £, •, .\(kNL), \(kSHIFT), ?, !, ’, 0, 0, \(kSPECIAL)"
 
 /*
  й у у к е н г ш щ з х ф ы в а п о о л д ж э я с с с и т ь б ю

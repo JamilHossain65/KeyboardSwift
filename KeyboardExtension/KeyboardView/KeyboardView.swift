@@ -132,13 +132,13 @@ extension KeyboardView{
         totalRow = 4
         
         //set spetial button index
-        shiftButtonIndex  = 19
-        deleteButtonIndex = 27
-        altButtonIndex    = 28
-        nextButtonIndex   = 29
-        voiceButtonIndex  = 30
-        spaceButtonIndex  = 31
-        returnButtonIndex = 32
+        shiftButtonIndex  = getIndex(kSHIFT, currentFontLetters)
+        deleteButtonIndex = getIndex(kDELETE,currentFontLetters)
+        altButtonIndex    = getIndex(kALTER, currentFontLetters)
+        nextButtonIndex   = getIndex(kGLOBE, currentFontLetters)
+        voiceButtonIndex  = getIndex(kVOICE, currentFontLetters)
+        spaceButtonIndex  = getIndex(kSPACE, currentFontLetters)
+        returnButtonIndex = getIndex(kRETURN,currentFontLetters)
         currentButtonIndex = 0
         
         for view in subviews {
@@ -148,11 +148,14 @@ extension KeyboardView{
             }
         }
         
+        print("currentFontLetters::\(currentFontLetters)")
+        let fontLetters = currentFontLetters.joined(separator: ",")
+        
         //draw button in a row
-        drawLineFor(row: 0, totalCol: kRowKeys[0]/*10*/)
-        drawLineFor(row: 1, totalCol: kRowKeys[1]/*9*/, const: getConst(1))
-        drawLineFor(row: 2, totalCol: kRowKeys[2]/*9*/,  info: getInfo(2), const: getConst(2))
-        drawLineFor(row: 3, totalCol: kRowKeys[3]/*4*/,  info: getInfo(3))
+        drawLineFor(row:0,totalCol:getKeys(0,fontLetters), info:getInfo(0),const:getConst(0))
+        drawLineFor(row:1,totalCol:getKeys(1,fontLetters), info:getInfo(1),const:getConst(1))
+        drawLineFor(row:2,totalCol:getKeys(2,fontLetters), info:getInfo(2),const:getConst(2))
+        drawLineFor(row:3,totalCol:getKeys(3,fontLetters), info:getInfo(3),const:getConst(3))
     }
     
     func configure5Line(){
@@ -198,6 +201,7 @@ extension KeyboardView{
             
             if currentFontLetters.count > 0 {
                 title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+                title = title.trimmingCharacters(in: .newlines)
             }
             
             let keyboardButton = KeyboardButton(frame: bFrame)
@@ -307,7 +311,7 @@ extension KeyboardView{
         
         switch row {
         case 0:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:
@@ -316,7 +320,7 @@ extension KeyboardView{
             
             break
         case 1:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:
@@ -324,7 +328,7 @@ extension KeyboardView{
             }
             break
         case 2:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:
@@ -332,7 +336,7 @@ extension KeyboardView{
             }
             break
         case 3:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:
@@ -340,7 +344,7 @@ extension KeyboardView{
             }
             break
         default:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:
@@ -357,7 +361,7 @@ extension KeyboardView{
         
         switch row {
         case 0:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:
@@ -366,7 +370,7 @@ extension KeyboardView{
             
             break
         case 1:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:
@@ -374,23 +378,22 @@ extension KeyboardView{
             }
             break
         case 2:
-            switch languageName {
+            switch langName {
             case Russian:
-                break
+                return [0:30, 10:30]
             default:
                 return [0:40, 8:40]
             }
-            break
+            //break
         case 3:
-            switch languageName {
-            case Russian:
-                break
+            switch langName {
+            
             default:
                 return [0:40, 1:30,2:30,4:80]
             }
-            break
+            //break
         default:
-            switch languageName {
+            switch langName {
             case Russian:
                 break
             default:

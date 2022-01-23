@@ -38,8 +38,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     var counter = 0
     
-    var langName = getString(kSelectedLanguageName) ?? English
-    var fontName = getString(kSelectedFontName)     ?? NORMAL
+    //duplicate of 'langName' and 'fontName' in JhUtil
+//    var langName = getString(kSelectedLanguageName) ?? English
+//    var fontName = getString(kSelectedFontName)     ?? NORMAL
     
     
     override func viewDidLoad() {

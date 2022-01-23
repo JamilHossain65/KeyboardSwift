@@ -21,6 +21,18 @@ let kSpaceString  = "Space"
 let kStopSpace    = ". "
 let kDoubleSpace  = "  "
 
+//Constant Button Identifier
+let kNL     = "\n"
+let kSHIFT  = "SHIFT"
+let kDELETE = "DELETE"
+let kALTER  = "ALTER"
+let kGLOBE  = "GLOBE"
+let kVOICE  = "VOICE"
+let kSPACE  = "SPACE"
+let kRETURN = "RETURN"
+let kSPECIAL = "\(kDELETE)\(kNL), \(kALTER), \(kGLOBE), \(kVOICE), \(kSPACE), \(kRETURN)"
+
+
 //let kKeyBgColor   = "kKeyBgColor"
 let kKeyBgImageName  = "kKeyBgImageName"
 let kKeyTextColor    = "kKeyTextColor"
@@ -95,10 +107,15 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //let kAlphabetEN = "Q W E R T Y U I O P A S D F G H J K L : Z X C V B N M"
 //let kLetters    = kAlphabetEN.components(separatedBy: " ")
 
-var languageName = getString(kSelectedLanguageName) ?? English
+//var languageName = getString(kSelectedLanguageName) ?? English
+//var fontsName    = getString(kSelectedFontName)     ?? NORMAL
+
+var langName = getString(kSelectedLanguageName) ?? English
+var fontName = getString(kSelectedFontName)     ?? NORMAL
+
 
 //set total keys in each row
-let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo refctor this
+//let kRowKeys = [10,9,9,5] //copy the same array in JHKey class //MARK:- todo refctor this
 
 let hintBarHeight:CGFloat = 44 //36;
 
@@ -118,6 +135,58 @@ let supportedLanguages:[String] = kAllLanguageDicArray.map({$0.keys.first!})
 //var activeLanguages = [English:true,Indonesian:true,Bangla:true]
 let langNameArray = supportedLanguages.filter({ activeLanguages.filter({$0.1}).map({$0.0})
                                                 .contains($0)})
+
+func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
+    print("fontString::\(fontString ?? "")")
+
+    guard let rows = fontString?.components(separatedBy: kNL) else { return 0}
+    
+    var keys:[Int] = []
+    for var str in rows {
+        
+        if str.prefix(1) == "," {
+            str = String(str.dropFirst())
+        }
+        
+        print("str<>::\(str)")
+        let _str = str.trimmingCharacters(in: .init(charactersIn: ","))
+        let letters = _str.components(separatedBy: ",")
+        keys.append(letters.count)
+    }
+    
+    print("keys==::\(keys)")
+    
+    
+    /*
+    var keys = [10,9,9,5]
+    switch languageName {
+    case Russian:
+
+        keys = [11,11,11,5]
+    default:
+        keys = [10,9,9,5]
+    }
+    */
+    return keys[row]
+}
+
+func getIndex(_ title:String,_ fontString:[String]? = [])-> Int{
+    /*
+    print("fontString::\(fontString)")
+    guard let rowLetters = fontString?.trimmingCharacters(in: .newlines) else{ return 0 }
+    print("rowLetters::\(rowLetters)")
+    let letters = rowLetters.components(separatedBy: title)
+    let letterArray = letters.first!.components(separatedBy: ",")
+    print("letterArray :::\(letterArray)")
+    print("index of keys::\(title) == \(letterArray.count)")
+    return letterArray.count - 1
+    */
+    let _fontString = fontString?.map({$0.trimmingCharacters(in: .newlines)})
+
+    let index = _fontString?.firstIndex(of: title) ?? 0
+    print("index::<\(title)>\(index)")
+    return index
+}
 
 func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ keyMode:String) -> [String] {
     for dic in kAllLanguageDicArray {
