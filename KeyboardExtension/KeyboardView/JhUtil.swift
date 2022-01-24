@@ -31,6 +31,8 @@ let kVOICE  = "VOICE"
 let kSPACE  = "SPACE"
 let kRETURN = "RETURN"
 let kSPECIAL = "\(kDELETE)\(kNL), \(kALTER), \(kGLOBE), \(kVOICE), \(kSPACE), \(kRETURN)"
+let kSPECIALArray = [kDELETE+kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
+
 
 
 //let kKeyBgColor   = "kKeyBgColor"
@@ -171,16 +173,6 @@ func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
 }
 
 func getIndex(_ title:String,_ fontString:[String]? = [])-> Int{
-    /*
-    print("fontString::\(fontString)")
-    guard let rowLetters = fontString?.trimmingCharacters(in: .newlines) else{ return 0 }
-    print("rowLetters::\(rowLetters)")
-    let letters = rowLetters.components(separatedBy: title)
-    let letterArray = letters.first!.components(separatedBy: ",")
-    print("letterArray :::\(letterArray)")
-    print("index of keys::\(title) == \(letterArray.count)")
-    return letterArray.count - 1
-    */
     let _fontString = fontString?.map({$0.trimmingCharacters(in: .newlines)})
 
     let index = _fontString?.firstIndex(of: title) ?? 0

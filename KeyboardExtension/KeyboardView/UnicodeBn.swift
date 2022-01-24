@@ -19,21 +19,22 @@ let kFontBnDic:[[String:[String]]] = [
     ]
 ]
 
-let kUnicodeLettersBnUnshiftArray = kUnicodeBnLetterShift.components(separatedBy: ",")
+let kUnicodeLettersBnUnshiftArray = kUnicodeBnLetterShift.components(separatedBy: ", ")
 
 //MARK:- Numbers and puncuations Array
-let kUnicodeLettersBnPuncuation = kUnicodeBnPuncuation.components(separatedBy: ";")
-let kUnicodeLettersBnNumList    = kUnicodeBnNumbers.components(separatedBy: ",")
+let kUnicodeLettersBnPuncuation = kUnicodeBnPuncuation.components(separatedBy: ", ")
+let kUnicodeLettersBnNumList    = kUnicodeBnNumbers.components(separatedBy: ", ")
 
 //Font Array
-let kUnicodeLettersBnNormal = kUnicodeBnNormal.components(separatedBy: ",") + vowels
+let kUnicodeLettersBnNormal = kUnicodeBnNormal.components(separatedBy: ", ") + vowels + kSPECIALArray
 let kUnicodeLettersBnStinky = kUnicodeBnStinky.components(separatedBy: ",")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
-let kUnicodeBnPuncuation  = "[;];{;};#;%;^;*;+;=;_;/;|;~;<;>;%;$;^;:;';,;?;!;’;*"
-let kUnicodeBnNumbers     = "১,২,৩,৪,৫,৬,৭,৮,৯,০,;,(,),।,:,৳,a,b,c,:,d,e,f,g,ৠ,ঌ,ৡ"
-let kUnicodeBnNormal      = "ক,খ,গ,ঘ,ঙ,চ,ছ,জ,ঝ,ঞ,ট,ঠ,ড,ঢ,ণ,ত,দ,ন,স,:"//থ,ধ,
-let kUnicodeBnLetterShift = "অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ,প,ফ,ব,ভ,ম,য,র,ল,:,শ,ষ,স,হ,ড়,ঢ়,য়"//,ৎ
+let kUnicodeBnNormal = "ক, খ, গ, ঘ, ঙ, চ, ছ, জ, ঝ, ঞ\(kNL), ট, ঠ, ড, ঢ, ণ, ত, দ, ন, স\(kNL), \(kSHIFT)"//থ,ধ,
+let kUnicodeBnLetterShift = "অ, আ, ই, ঈ, উ, ঊ, ঋ, এ, ঐ, ও\(kNL), ঔ, প, ফ, ব, ভ, ম, য, র, ল\(kNL), \(kSHIFT), শ, ষ, স, হ, ড়, ঢ়, য়, \(kSPECIAL)" //,ৎ
+let kUnicodeBnNumbers = "১, ২, ৩, ৪, ৫, ৬, ৭, ৮, ৯, ০\(kNL), ;, (, ), ।, :, ৳, a, b, c\(kNL), \(kSHIFT), d, e, f, g, ৠ, ঌ, ৡ, \(kSPECIAL)"
+let kUnicodeBnPuncuation = "[, ], {, }, #, %, ^, *, +, =\(kNL), _, /, |, ~, <, >, %, $, ^\(kNL), \(kSHIFT), ', 0, ?, !, ’, *, \(kSPECIAL)"
+
 //অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ
 //"জ,গ,ত,য,হ,ক,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
 
