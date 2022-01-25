@@ -201,7 +201,7 @@ extension KeyboardView{
             
             if currentFontLetters.count > 0 {
                 title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
-                title = title.trimmingCharacters(in: .newlines)
+                title = title.trimmingCharacters(in: .whitespaces)
             }
             
             let keyboardButton = KeyboardButton(frame: bFrame)
@@ -530,7 +530,9 @@ extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton) {
         if currentFontLetters.count <= 0 { return }
         
-        let title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+        var title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+        title = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        
         let jhKey   = JHkey(type: .custom)
         jhKey.frame = keyButton.frame
         jhKey.tag   = keyButton.tag
