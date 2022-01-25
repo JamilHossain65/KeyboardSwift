@@ -321,7 +321,7 @@ extension KeyboardView{
             break
         case 1:
             switch langName {
-            case Russian:
+            case Russian,Bangla:
                 break
             default:
                 return [0:15, 9:15]

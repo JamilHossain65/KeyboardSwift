@@ -30,7 +30,7 @@ let kUnicodeLettersBnNormal = kUnicodeBnNormal.components(separatedBy: ", ") + v
 let kUnicodeLettersBnStinky = kUnicodeBnStinky.components(separatedBy: ",")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
-let kUnicodeBnNormal = "ক, খ, গ, ঘ, ঙ, চ, ছ, জ, ঝ, ঞ\(kNL), ট, ঠ, ড, ঢ, ণ, ত, দ, ন, স\(kNL), \(kSHIFT)"//থ,ধ,
+let kUnicodeBnNormal = "ক, খ, গ, ঘ, ঙ, চ, ছ, জ, ঝ, k, ঞ\(kNL), ট, ঠ, ড, ঢ, ণ, ত, দ, ন, k, স\(kNL), \(kSHIFT)"//থ,ধ,
 let kUnicodeBnLetterShift = "অ, আ, ই, ঈ, উ, ঊ, ঋ, এ, ঐ, ও\(kNL), ঔ, প, ফ, ব, ভ, ম, য, র, ল\(kNL), \(kSHIFT), শ, ষ, স, হ, ড়, ঢ়, য়, \(kSPECIAL)" //,ৎ
 let kUnicodeBnNumbers = "১, ২, ৩, ৪, ৫, ৬, ৭, ৮, ৯, ০\(kNL), ;, (, ), ।, :, ৳, a, b, c\(kNL), \(kSHIFT), d, e, f, g, ৠ, ঌ, ৡ, \(kSPECIAL)"
 let kUnicodeBnPuncuation = "[, ], {, }, #, %, ^, *, +, =\(kNL), _, /, |, ~, <, >, %, $, ^\(kNL), \(kSHIFT), ', 0, ?, !, ’, *, \(kSPECIAL)"
