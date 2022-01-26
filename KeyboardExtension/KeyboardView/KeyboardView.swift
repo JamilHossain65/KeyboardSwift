@@ -62,7 +62,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //print("frame::\(frame)")
+        //log("frame::\(frame)")
         
         //clear old view
         for view in subviews{
@@ -142,13 +142,13 @@ extension KeyboardView{
         currentButtonIndex = 0
         
         for view in subviews {
-            //print("view tag::\(view.tag)")
+            //log("view tag::\(view.tag)")
             if !self.isSpecialButton(view) {
                 view.removeFromSuperview()
             }
         }
         
-        print("currentFontLetters::\(currentFontLetters)")
+        log("currentFontLetters::\(currentFontLetters)")
         let fontLetters = currentFontLetters.joined(separator: kSEPERATOR)
         
         //draw button in a row
@@ -247,7 +247,7 @@ extension KeyboardView{
         let totalGapX:Double = gapX * Double(totalCol-1)
         
         var btnWidth:Double  = (Double(frame.size.width) - paddingLR - totalGapX) / Double(totalCol)
-        //print("btnWidth::\(btnWidth)")
+        //log("btnWidth::\(btnWidth)")
         
         //override width
         if let _info = info, _info.keys.count > 0 {
@@ -257,7 +257,7 @@ extension KeyboardView{
             var diff:Double = 0 //total difference of all override button width
             
             for index in _info.keys{
-                //print("info[\(index)] ::\(String(describing: _info[index]))")
+                //log("info[\(index)] ::\(String(describing: _info[index]))")
                 sum += Double(_info[index] ?? 0)
             }
             
@@ -272,10 +272,10 @@ extension KeyboardView{
                 btnWidth += diffWidth
             }
             
-//            print("\navg::\(avg)")
-//            print("sum  ::\(sum)")
-//            print("diff ::\(diff)")
-//            print("new btnWidth::\(btnWidth)")
+//            log("\navg::\(avg)")
+//            log("sum  ::\(sum)")
+//            log("diff ::\(diff)")
+//            log("new btnWidth::\(btnWidth)")
         }
         
         //override constant value
@@ -442,7 +442,7 @@ extension KeyboardView{
     }
     
     func setButtonIndex(_ keyboardButton:KeyboardButton){
-        //print("button tag::\(keyboardButton.tag)")
+        //log("button tag::\(keyboardButton.tag)")
         //set keyboard button
         switch currentButtonIndex {
         case nextButtonIndex:
@@ -515,12 +515,12 @@ extension KeyboardView{
         if let _dataSource = dataSource{
             currentFontLetters = _dataSource
         }
-        print("refresh font:\(currentFontLetters)")
+        log("refresh font:\(currentFontLetters)")
         refreshKeyboard()
     }
     
     func reloadTextColor(_ fontIndex:Int) {
-        print("reload:\(fontIndex)")
+        log("reload:\(fontIndex)")
         refreshKeyboard()
     }
 }
@@ -573,13 +573,13 @@ extension KeyboardView:JHkeyDelegate {
         delegate?.didTapLongPressed()
         
         if let _title = sender.titleLabel?.text {
-            print("_title ::: \(_title)")
+            log("_title ::: \(_title)")
             delegate?.insertCharacter(_title)
         }else{
             if(sender.tag == shiftButtonIndex) {
                 
             }
-            print("tag ::: \(sender.tag)")
+            log("tag ::: \(sender.tag)")
         }
     }
 }
@@ -638,7 +638,7 @@ extension KeyboardView {
     @objc func doubleTappedOn(_ sender:UITapGestureRecognizer) {
         // do something here
         let button = sender.view as! UIButton
-        print("multipleTap:\(button.titleLabel?.text)")
+        log("multipleTap:\(button.titleLabel?.text)")
         
         if button.titleLabel?.text == kSpaceString{
             delegate?.spaceButtonDoubleTap(spaceButton)
@@ -653,18 +653,18 @@ extension KeyboardView {
     @objc func handleLongPressDelete(_ gestureRecognizer: UILongPressGestureRecognizer) {
         
         if gestureRecognizer.state == UIGestureRecognizer.State.ended {
-            print("end")
+            log("end")
             isDeleteEnd = true
           return
         }
-        print("long press")
+        log("long press")
         isDeleteEnd = false
         
         perform(#selector(deleteLetter), with: false, afterDelay: 0.1)
     }
     
     @objc func deleteLetter(){
-        print("delete letter")
+        log("delete letter")
         
         if !isDeleteEnd {
             perform(#selector(deleteLetter), with: nil, afterDelay: 0.1)

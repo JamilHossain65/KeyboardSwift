@@ -7,6 +7,14 @@
 
 import UIKit
 
+func log(_ msg: Any?) {
+    #if DEBUG
+    if let _msg = msg {
+        //log(String(describing: _msg))
+    }
+    #endif
+}
+
 //padding constant
 let kPADDING_LEFT   = "PADDING_LEFT"
 let kPADDING_RIGHT  = "PADDING_RIGHT"
@@ -112,7 +120,7 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //var languageName = getString(kSelectedLanguageName) ?? English
 //var fontsName    = getString(kSelectedFontName)     ?? NORMAL
 
-var langName = getString(kSelectedLanguageName) ?? English
+var langName = getString(kSelectedLanguageName) ?? Russian
 var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 
@@ -139,7 +147,7 @@ let langNameArray = supportedLanguages.filter({ activeLanguages.filter({$0.1}).m
                                                 .contains($0)})
 
 func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
-    print("fontString::\(fontString ?? "")")
+    log("fontString::\(fontString ?? "")")
 
     guard let rows = fontString?.components(separatedBy: kNL) else { return 0}
     
@@ -153,13 +161,18 @@ func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
         
         let _str = str.trimmingCharacters(in: .init(charactersIn: kSEPERATOR))
         let letters = _str.components(separatedBy: kSEPERATOR)
-        print("Row[\(row)]<>::\(letters)")
+        log("Row[\(row)]<>::\(letters)")
         keys.append(letters.count)
     }
     
-    print("keys==::\(keys)")
+    log("keys==::\(keys)")
     
     if row >= keys.count{
+        //MARK:- TODO: remove this crash
+        keySettingType = .LANGUAGE
+        setString(English, key: kSelectedLanguageName)
+        setString(NORMAL, key: kSelectedFontName)
+        
         return 0
     }
     return keys[row]
@@ -168,7 +181,7 @@ func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
 func getIndex(_ title:String,_ fontString:[String]? = [])-> Int{
     let _fontString = fontString?.map({$0.trimmingCharacters(in: .whitespacesAndNewlines)})
     let index = _fontString?.firstIndex(of: title) ?? 0
-    print("index::<\(title)>\(index)")
+    log("index::<\(title)>\(index)")
     return index
 }
 
@@ -179,17 +192,17 @@ func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ ke
             for _dic in dic{
                 for test in _dic.value {
                     if let _fontname = test.keys.filter({$0 == fontname}).first{
-                        print("_fontname::\(_fontname) letterMode::\(keyMode)")
-                        //print("test1::\(test)")
+                        log("_fontname::\(_fontname) letterMode::\(keyMode)")
+                        //log("test1::\(test)")
                         var _key = keyMode
                         if keyMode == NORMAL  {
                             _key = fontname!
                         }else if keyMode == DOUBLE_TAP {
                             _key = SHIFT
                         }
-                        //print("_key::\(_key)")
+                        //log("_key::\(_key)")
                         let alphabetList = test[_key]
-                        //print("alphabetList::\(alphabetList)")
+                        //log("alphabetList::\(alphabetList)")
                         return alphabetList ?? []
                     }
                 }
@@ -205,9 +218,9 @@ func getFontNamesOf(_ language:String) -> [String]{
         let key = dic.keys.first
         if key == language {
             for _dic in dic{
-                //print("_dic::\(_dic)")
+                //log("_dic::\(_dic)")
                 let fontNameArray = _dic.value.compactMap({$0.keys.filter({$0 != SHIFT && $0 != NUMERIC && $0 != SYMBOL}).first})
-                print("fontNameArray[\(fontNameArray)]::\(fontNameArray)")
+                log("fontNameArray[\(fontNameArray)]::\(fontNameArray)")
                 return fontNameArray
             }
         }

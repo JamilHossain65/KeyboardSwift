@@ -81,20 +81,20 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         guard let wordString = readf(filename)else {return}
         
         wordArray = wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
-        print("words count::\(wordArray.count)")
+        log("words count::\(wordArray.count)")
         
         
 //        var index = 0
 //        for word in wordArray{
 //            index = index + 1
 //            if index%3 == 2{
-//                print("\(word)")
+//                log("\(word)")
 //            }
 //        }
         
 //        for word in wordArray{
 //            let _word = word.components(separatedBy: "/")
-//            print("\(_word.first ?? "")")
+//            log("\(_word.first ?? "")")
 //        }
         
     }
@@ -136,7 +136,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     //MARK: SETTING VIEW METHODS
     @objc func showSettingView() {
-        print("user no longer writing....")
+        log("user no longer writing....")
         DispatchQueue.main.async {
             if let _floatingButtonView = self.floatingButtonView {
                 _floatingButtonView.isHidden = false
@@ -180,7 +180,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         context = textLeft.components(separatedBy: " ").last ?? ""
         context = context.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        print("context[\(context.count)]::\(context)")
+        log("context[\(context.count)]::\(context)")
         
         var wordList:[String] = ["I","is","are","you"]
         //let uniqueWords = Array(Set(filteredArray))
@@ -195,7 +195,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         } else {
             let filteredArray = wordArray.filter (where: {$0.lowercased().hasPrefix(context)}, limit: 5)
             
-            print("filteredArray::\(filteredArray)")
+            log("filteredArray::\(filteredArray)")
             if filteredArray.count > 0 {
                 wordList = filteredArray
             }
@@ -211,14 +211,14 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             wordList = wordList.map({$0.lowercased()})
         }
         
-        print("wordList::\(wordList)")
+        log("wordList::\(wordList)")
         return wordList
     }
     
     @objc func checkWriting(){
         
         coutTime += 1
-        //print("coutTime::\(coutTime)")
+        //log("coutTime::\(coutTime)")
         if coutTime >= countLimit {
             timer?.invalidate()
             coutTime = 0
@@ -347,13 +347,13 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     //MARK: SETTING BUTTON ACTION
     
     @objc func settingButtonPressed(_ sender: UIButton) {
-        print("settingButtonPressed")
+        log("settingButtonPressed")
         showSettingOptionView()
     }
     
     
     @objc func fontButtonPressed(_ sender: Any) {
-        print("fontButtonPressed")
+        log("fontButtonPressed")
         //openContainerApp()
         resetColor(sender)
         
@@ -375,7 +375,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     @objc func colorButtonPressed(_ sender: Any) {
-        print("colorButtonPressed")
+        log("colorButtonPressed")
         //openContainerApp()
         resetColor(sender)
         
@@ -395,7 +395,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     @objc func textColorButtonPressed(_ sender: Any) {
-        print("textColorButtonPressed")
+        log("textColorButtonPressed")
         //openContainerApp()
         resetColor(sender)
         keySettingType = .TEXT_COLOR
@@ -410,7 +410,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     @objc func languageButtonPressed(_ sender: Any) {
-        print("languageButtonPressed")
+        log("languageButtonPressed")
         //openContainerApp()
         resetColor(sender)
         
@@ -424,7 +424,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         hintBarType = .SETTING
         
         //set word suggestion view
-        print("langNameList::\(langNameArray)")
+        log("langNameList::\(langNameArray)")
         let index = langNameArray.firstIndex(of: langName) ?? 0
         HintBarManager.shared.refreshLanguage(scrollView: suggestionBarScrollView, dataArray: langNameArray,selectedIndex: index)
     }
@@ -444,7 +444,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
-        print("text::\(fullText)")
+        log("text::\(fullText)")
 
         setObject(fullText, key: SUITE_KEY)
 
@@ -482,7 +482,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         let fullText  = textLeft + textRight
         
         let val = getObject(SUITE_KEY) as? String ?? ""
-        print("get val::\(val)")
+        log("get val::\(val)")
         
         if fullText == val{
             return
@@ -499,7 +499,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func shiftButtonDoubleTap(_ shiftButton: UIButton) {
-        print("shiftButtonDoubleTap::\(shiftButton.isSelected)")
+        log("shiftButtonDoubleTap::\(shiftButton.isSelected)")
         if !keyboardView.altButton.isSelected{
             keyMode = DOUBLE_TAP
             refreshShiftKey()
@@ -511,7 +511,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func didTapLongPressed() {
-        print("didTapLongPressed")
+        log("didTapLongPressed")
         hideSettingView()
     }
     
@@ -554,7 +554,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
         setObject(fullText, key: SUITE_KEY)
-        print("insert :: \(fullText)")
+        log("insert :: \(fullText)")
         
         //Hide setting view from suggestion bar
         hideSettingView()
@@ -582,7 +582,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
         setObject(fullText, key: SUITE_KEY)
-        print("insert word :: \(fullText)")
+        log("insert word :: \(fullText)")
     }
     
     //MARK:- Keyboard special buttion action
@@ -591,20 +591,20 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func voiceButtonTapped(_ voiceButton: UIButton){
-        print("voice button tapped")
+        log("voice button tapped")
         openContainerApp()
         
 //        if voiceButton.isSelected{
-//            print("voice recording...")
+//            log("voice recording...")
 //            recordTapped()
 //        } else{
-//            print("voice stoped....")
+//            log("voice stoped....")
 //            recordDidFinish()
 //        }
     }
     
     func altButtonPressed(_ altButton: UIButton) {
-        print("alt button tapped:\(altButton.isSelected)")
+        log("alt button tapped:\(altButton.isSelected)")
 
         if keyboardView.altButton.isSelected {
             if keyboardView.shiftButton.isSelected{
@@ -627,7 +627,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func shiftButtonPressed(_ shiftButton:UIButton){
-        print("shift button tapped:\(shiftButton.isSelected)")
+        log("shift button tapped:\(shiftButton.isSelected)")
         if !keyboardView.altButton.isSelected {
             keyMode = keyMode == NORMAL ? SHIFT : NORMAL
         }
@@ -638,7 +638,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     
     func updateFullStop(_ newCharacter:String){
         let text  = textDocumentProxy.documentContextBeforeInput ?? ""
-        print("full stop text::\(text)")
+        log("full stop text::\(text)")
         
         if writingMode == .INSERTING{
             if String(text.suffix(2)) == kStopSpace{
@@ -693,12 +693,12 @@ extension KeyboardViewController: KeyboardViewDelegate {
             keyMode = keyboardView.shiftButton.isSelected ? keyMode == DOUBLE_TAP ? DOUBLE_TAP:SHIFT : NORMAL
         }
         
-        print("keyboardView.altButton::\(keyboardView.altButton.isSelected)")
-        print("keyboardView.shiftButton::\(keyboardView.shiftButton.isSelected)")
+        log("keyboardView.altButton::\(keyboardView.altButton.isSelected)")
+        log("keyboardView.shiftButton::\(keyboardView.shiftButton.isSelected)")
         
-        print("langName::\(langName)")
-        print("fontName::\(fontName)")
-        print("keyMode ::\(keyMode)")
+        log("langName::\(langName)")
+        log("fontName::\(fontName)")
+        log("keyMode ::\(keyMode)")
         
         dataSource = getAlphabetOf(langName,fontName,keyMode)
         keyboardView.reloadFont(dataSource)
@@ -715,14 +715,14 @@ extension KeyboardViewController: HintBarDelegate {
     }
     
     func didSartScroll(_ scrollView: UIScrollView) {
-        print("scrollView start")
+        log("scrollView start")
         if let _floatingButtonView = floatingButtonView {
             _floatingButtonView.isHidden = true
         }
     }
     
     func didEndScroll (_ scrollView: UIScrollView) {
-        print("scrollView end")
+        log("scrollView end")
         self.perform(#selector(showFlotingView), with: nil, afterDelay: 5)
     }
     
@@ -736,7 +736,7 @@ extension KeyboardViewController: HintBarDelegate {
         case .BG_COLOR:
             kKeyboardBGColor = color.color
             inputView?.backgroundColor = kKeyboardBGColor
-            //print("pattern color:::\(kKeyboardBGColor)")
+            //log("pattern color:::\(kKeyboardBGColor)")
             
             if color.colorType == .PATTERN {
                 setObject(color.imageName, key: kKeyBgImageName)
@@ -780,7 +780,7 @@ extension KeyboardViewController: HintBarDelegate {
         
         switch hintBarType {
         case .HINT_WORD:
-            print("HINT_WORD...")
+            log("HINT_WORD...")
             if let button = sender as? UIButton, let _hint = button.titleLabel?.text {
                 insertHintWord(_hint)
                 context = ""
@@ -788,18 +788,18 @@ extension KeyboardViewController: HintBarDelegate {
             }
             
         case .SETTING:
-            print("hintBarType default")
+            log("hintBarType default")
             switch keySettingType {
             case .FONT:
-                print("FONT")
+                log("FONT")
                 if let button = sender as? UIButton {
-                    print("selected font tag::\(button.tag)")
+                    log("selected font tag::\(button.tag)")
                     fontName = button.titleLabel?.text?.trimmingCharacters(in:.whitespaces) ?? NORMAL
                     
                     setString(fontName, key: kSelectedFontName)
                     
                     dataSource = getAlphabetOf(langName,fontName,NORMAL)
-                    print("kTextFontAlphabet ::\(dataSource)")
+                    log("kTextFontAlphabet ::\(dataSource)")
                     
                     let fontNameList = getFontNamesOf(langName)
                     let index = fontNameList.firstIndex(of: fontName) ?? 0
@@ -812,12 +812,12 @@ extension KeyboardViewController: HintBarDelegate {
                     showSettingView()
                 }
             case .BG_COLOR:
-                print("COLOR")
+                log("COLOR")
                 
             case .TEXT_COLOR:
-                print("TEXT_COLOR")
+                log("TEXT_COLOR")
             case .LANGUAGE:
-                print("LANGUAGE")
+                log("LANGUAGE")
             }
             
         }
@@ -825,7 +825,7 @@ extension KeyboardViewController: HintBarDelegate {
     }
     
     func didSelectLanguage(_ sender: Any) {
-        print("didSelectLanguage")
+        log("didSelectLanguage")
         if let button = sender as? UIButton{
             
             keySettingType = .LANGUAGE
@@ -841,7 +841,7 @@ extension KeyboardViewController: HintBarDelegate {
             //set hint string for key cap view
             setString(getHintString(), key: kSelectedHintString)
             dataSource = getAlphabetOf(langName,fontName,NORMAL)
-            print("kTextFontAlphabet ::\(dataSource)")
+            log("kTextFontAlphabet ::\(dataSource)")
             
             let index = langNameArray.firstIndex(of: langName) ?? 0
             
@@ -861,7 +861,7 @@ extension KeyboardViewController: HintBarDelegate {
 extension KeyboardViewController:AudioManagerDelegate {
  
     @objc func recordTapped(){
-        print("recordTapped.....")
+        log("recordTapped.....")
         
         stopRecord()
         audioManager.recordTapped()
@@ -874,7 +874,7 @@ extension KeyboardViewController:AudioManagerDelegate {
     }
     
     func recordDidFinish(){
-        print("convert start.....")
+        log("convert start.....")
         convertToText2()
     }
     
@@ -893,14 +893,14 @@ extension KeyboardViewController:AudioManagerDelegate {
         audioManager.delegate = self
         let speechModel  = SpeechModel()
         speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
-        print("speechModel.fileUrl::\(speechModel.fileUrl)")
+        log("speechModel.fileUrl::\(speechModel.fileUrl)")
        
         speechModel.doTranslate2({errors in
             if let _errors = errors,_errors == nil {
-                print("error::\(_errors.message)")
+                log("error::\(_errors.message)")
             } else {
                 self.textDocumentProxy.insertText(" \(speechModel.convertedText)")
-                print("text::\(speechModel.convertedText)")
+                log("text::\(speechModel.convertedText)")
             }
         })
     }
