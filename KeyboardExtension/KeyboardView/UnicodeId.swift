@@ -7,9 +7,10 @@
 
 import UIKit
 
+//App display name: 'Bahasa Key'
+
 //class UnicodeEn: NSObject {
 //}
-
 
 let kFontIdDic:[[String:[String]]] = kFontEnDic
 

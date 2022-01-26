@@ -149,7 +149,7 @@ extension KeyboardView{
         }
         
         print("currentFontLetters::\(currentFontLetters)")
-        let fontLetters = currentFontLetters.joined(separator: ", ")
+        let fontLetters = currentFontLetters.joined(separator: "ৡ")
         
         //draw button in a row
         drawLineFor(row:0,totalCol:getKeys(0,fontLetters), info:getInfo(0),const:getConst(0))

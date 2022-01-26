@@ -146,13 +146,13 @@ func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
     var keys:[Int] = []
     for var str in rows {
         
-        if str.prefix(1) == "," {
+        if str.prefix(1) == "ৡ" {
             str = String(str.dropFirst())
         }
         
         print("str<>::\(str)")
-        let _str = str.trimmingCharacters(in: .init(charactersIn: ","))
-        let letters = _str.components(separatedBy: ",")
+        let _str = str.trimmingCharacters(in: .init(charactersIn: "ৡ"))
+        let letters = _str.components(separatedBy: "ৡ")
         keys.append(letters.count)
     }
     
@@ -242,6 +242,12 @@ func getHintString() -> String {
         switch fontName {
         default:
             return hintWordsId
+        }
+        
+    case Russian:
+        switch fontName {
+        default:
+            return hintWordsRu
         }
         
     default://English
