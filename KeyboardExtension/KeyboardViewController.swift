@@ -91,6 +91,12 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //                print("\(word)")
 //            }
 //        }
+        
+//        for word in wordArray{
+//            let _word = word.components(separatedBy: "/")
+//            print("\(_word.first ?? "")")
+//        }
+        
     }
     
     func deleteDoccumentText(){
@@ -180,6 +186,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         //let uniqueWords = Array(Set(filteredArray))
         if langName == Indonesian{
             wordList = ["saya","hai","anda","mereka"]
+        }else if langName == Russian{
+            wordList = ["он","я","ты","Oни"]
         }
         
         if context.count <= 0 {

@@ -18,16 +18,16 @@ let kFontRuDic:[[String:[String]]] = [
      SYMBOL :kUnicodeLettersRuPuncuation],
 ]
 
-let kUnicodeLettersRuNormal       = kUnicodeRuNormal.components(separatedBy: ", ")
-let kUnicodeLettersRuNormalShift  = kUnicodeRuNormalShift.components(separatedBy: ", ")
-let kUnicodeLettersRuNumList      = kUnicodeRuNumbers.components(separatedBy: ", ")
-let kUnicodeLettersRuPuncuation   = kUnicodeRuPuncuation.components(separatedBy:", ")
+let kUnicodeLettersRuNormal       = kUnicodeRuNormal     .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersRuNormalShift  = kUnicodeRuNormalShift.components(separatedBy: kSEPERATOR)
+let kUnicodeLettersRuNumList      = kUnicodeRuNumbers    .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersRuPuncuation   = kUnicodeRuPuncuation .components(separatedBy:kSEPERATOR)
 
 //Default font
-let kUnicodeRuNormal = "й, ц, у, к, е, н, г, ш, щ, з, х\(kNL), ф, ы, в, а, п, р, о, л, д, ж, э\(kNL), \(kSHIFT), я, ч, с, м, и, т, ь, б, ю, \(kSPECIAL)"
-let kUnicodeRuNormalShift = "Й, Ц, У, К, Е, Н, Г, Ш, Щ, З, Х\(kNL), Ф, Ы, В, А, П, Р, О, Л, Д, Ж, Э\(kNL), \(kSHIFT), Я, Ч, С, М, И, Т, Ь, Б, Ю, \(kSPECIAL)"
-let kUnicodeRuNumbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0\(kNL), -, /, :, ;, (, ), ₽, &, «, @\(kNL), \(kSHIFT), ., ,, ?, !, ’, \(kSPECIAL)"
-let kUnicodeRuPuncuation = "[, ], {, }, #, %, ^, *, +, =\(kNL), _ , \\, |, ~, <, >, $, €, £, •\(kNL), \(kSHIFT), ., ,, ?, !, ’, \(kSPECIAL)"
+let kUnicodeRuNormal = "й৹ ц৹ у৹ к৹ е৹ н৹ г৹ ш৹ щ৹ з৹ х\(kNL)৹ ф৹ ы৹ в৹ а৹ п৹ р৹ о৹ л৹ д৹ ж৹ э\(kNL)৹ \(kSHIFT)৹ я৹ ч৹ с৹ м৹ и৹ т৹ ь৹ б৹ ю৹ \(kSPECIAL)"
+let kUnicodeRuNormalShift = "Й৹ Ц৹ У৹ К৹ Е৹ Н৹ Г৹ Ш৹ Щ৹ З৹ Х\(kNL)৹ Ф৹ Ы৹ В৹ А৹ П৹ Р৹ О৹ Л৹ Д৹ Ж৹ Э\(kNL)৹ \(kSHIFT)৹ Я৹ Ч৹ С৹ М৹ И৹ Т৹ Ь৹ Б৹ Ю৹ \(kSPECIAL)"
+let kUnicodeRuNumbers = "1৹ 2৹ 3৹ 4৹ 5৹ 6৹ 7৹ 8৹ 9৹ 0\(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ₽৹ &৹ «৹ @\(kNL)৹ \(kSHIFT)৹ .৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
+let kUnicodeRuPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =\(kNL)৹ _ ৹ \\৹ |৹ ~৹ <৹ >৹ $৹ €৹ £৹ •\(kNL)৹ \(kSHIFT)৹ .৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
 
 /*
  й у у к е н г ш щ з х ф ы в а п р о л д ж э я ч с м и т ь б ю

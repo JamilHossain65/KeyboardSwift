@@ -28,8 +28,8 @@ let kFontEnDic:[[String:[String]]] = [
     ["𝙎𝙖𝙣𝙨":kUnicodeLettersEnSansItalic],
     ["ⒸⒾⓇⒸⓁⒺ":kUnicodeLettersEnCircleWhite],
     ["🅂🅀🅄🄰🅁🄴":kUnicodeLettersEnSquareWhite],
-    ["🆂🆀🆄🅰︎🆁🅴":kUnicodeLettersEnSquareBlack],
-    ["🇸 🇶 🇺 🇦 🇷 🇪":kUnicodeLettersEnSquareWLight],
+//    ["🆂🆀🆄🅰︎🆁🅴":kUnicodeLettersEnSquareBlack],
+//    ["🇸 🇶 🇺 🇦 🇷 🇪":kUnicodeLettersEnSquareWLight],
     ["H̆̈ă̈p̆̈p̆̈y̆̈":kUnicodeLettersEnHappy],
     ["S̑̈ȃ̈d̑̈":kUnicodeLettersEnSad],
     ["S̾t̾i̾n̾k̾y̾":kUnicodeLettersEnStinky],
@@ -45,65 +45,65 @@ let kFontEnDic:[[String:[String]]] = [
     ["c͜͡l͜͡o͜͡u͜͡d͜͡s͜͡":kUnicodeLettersEnClouds],
 ]
 
-let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation.components(separatedBy: ", ")
-let kUnicodeLettersEnNumList      = kUnicodeEnNumbers.components(separatedBy: ", ")
-let kUnicodeLettersEnNormal       = kUnicodeEnNormal.components(separatedBy: ", ")
-let kUnicodeLettersEnNormalShift  = kUnicodeEnNormalShift.components(separatedBy: ", ")
+let kUnicodeLettersEnPuncuation   = kUnicodeEnPuncuation  .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnNumList      = kUnicodeEnNumbers     .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnNormal       = kUnicodeEnNormal      .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnNormalShift  = kUnicodeEnNormalShift .components(separatedBy: kSEPERATOR)
 
-let kUnicodeLettersEnStinky       = kUnicodeEnStinky.components(separatedBy: ",")
-let kUnicodeLettersEnClouds       = kUnicodeEnClouds.components(separatedBy: ",")
-let kUnicodeLettersEnHappy        = kUnicodeEnHappy.components(separatedBy: ",")
-let kUnicodeLettersEnSad          = kUnicodeEnSad.components(separatedBy: ",")
-let kUnicodeLettersEnBubbles      = kUnicodeEnBubbles.components(separatedBy: ",")
-let kUnicodeLettersEnUnderline    = kUnicodeEnUnderline.components(separatedBy: ",")
-let kUnicodeLettersEnRays         = kUnicodeEnRays.components(separatedBy: ",")
-let kUnicodeLettersEnBirds        = kUnicodeEnBirds.components(separatedBy: ",")
-let kUnicodeLettersEnSlash        = kUnicodeEnSlash.components(separatedBy: ",")
-let kUnicodeLettersEnSkyline      = kUnicodeEnSkyline.components(separatedBy: ",")
-let kUnicodeLettersEnArrows       = kUnicodeEnArrows.components(separatedBy: ",")
-let kUnicodeLettersEnStrike       = kUnicodeEnStrike.components(separatedBy: ",")
-let kUnicodeLettersEnCircleWhite  = kUnicodeEnCircleWhite.components(separatedBy: ",")
-let kUnicodeLettersEnSquareWhite  = kUnicodeEnSquareWhite.components(separatedBy: ",")
-let kUnicodeLettersEnSquareBlack  = kUnicodeEnSquareBlack.components(separatedBy: ",")
-let kUnicodeLettersEnSquareWLight = kUnicodeEnSquareWLight.components(separatedBy: ",")
-let kUnicodeLettersEnOutline      = kUnicodeEnOutline.components(separatedBy: ",")
-let kUnicodeLettersEnSmallCaps    = kUnicodeEnSmallCaps.components(separatedBy: ",")
-let kUnicodeLettersEnComic        = kUnicodeEnComic.components(separatedBy: ",")
-let kUnicodeLettersEnSans         = kUnicodeEnSans.components(separatedBy: ",")
-let kUnicodeLettersEnSansItalic   = kUnicodeEnSansItalic.components(separatedBy: ",")
-let kUnicodeLettersEnStop         = kUnicodeEnStop.components(separatedBy: ",")
+let kUnicodeLettersEnStinky       = kUnicodeEnStinky      .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnClouds       = kUnicodeEnClouds      .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnHappy        = kUnicodeEnHappy       .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSad          = kUnicodeEnSad         .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnBubbles      = kUnicodeEnBubbles     .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnUnderline    = kUnicodeEnUnderline   .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnRays         = kUnicodeEnRays        .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnBirds        = kUnicodeEnBirds       .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSlash        = kUnicodeEnSlash       .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSkyline      = kUnicodeEnSkyline     .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnArrows       = kUnicodeEnArrows      .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnStrike       = kUnicodeEnStrike      .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnCircleWhite  = kUnicodeEnCircleWhite .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSquareWhite  = kUnicodeEnSquareWhite .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSquareBlack  = kUnicodeEnSquareBlack .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSquareWLight = kUnicodeEnSquareWLight.components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnOutline      = kUnicodeEnOutline     .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSmallCaps    = kUnicodeEnSmallCaps   .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnComic        = kUnicodeEnComic       .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSans         = kUnicodeEnSans        .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnSansItalic   = kUnicodeEnSansItalic  .components(separatedBy: kSEPERATOR)
+let kUnicodeLettersEnStop         = kUnicodeEnStop        .components(separatedBy: kSEPERATOR)
 
 //Default font
-let kUnicodeEnNormal = "q, w, e, r, t, y, u, i, o, p\(kNL), a, s, d, f, g, h, j, k, l\(kNL), \(kSHIFT), z, x, c, v, b, n, m, \(kSPECIAL)"
-let kUnicodeEnNormalShift = "Q, W, E, R, T, Y, U, I, O, P\(kNL), A, S, D, F, G, H, J, K, L\(kNL), \(kSHIFT), Z, X, C, V, B, N, M, \(kSPECIAL)"
-let kUnicodeEnNumbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0\(kNL), -, /, :, ;, (, ), $, &, @\(kNL), \(kSHIFT), \", ., ^, %, ?, !, *, \(kSPECIAL)"
-let kUnicodeEnPuncuation = "[, ], {, }, #, %, ^, *, +, =\(kNL), -, _, /, |, ~, <, >, €, $\(kNL), \(kSHIFT), ¥, •, ., ?, !, \(kSPECIAL)"//todo need to implement comma
+let kUnicodeEnNormal = "q৹ w৹ e৹ r৹ t৹ y৹ u৹ i৹ o৹ p\(kNL)৹ a৹ s৹ d৹ f৹ g৹ h৹ j৹ k৹ l\(kNL)৹ \(kSHIFT)৹ z৹ x৹ c৹ v৹ b৹ n৹ m৹ \(kSPECIAL)"
+let kUnicodeEnNormalShift = "Q৹ W৹ E৹ R৹ T৹ Y৹ U৹ I৹ O৹ P\(kNL)৹ A৹ S৹ D৹ F৹ G৹ H৹ J৹ K৹ L\(kNL)৹ \(kSHIFT)৹ Z৹ X৹ C৹ V৹ B৹ N৹ M৹ \(kSPECIAL)"
+let kUnicodeEnNumbers = "1৹ 2৹ 3৹ 4৹ 5৹ 6৹ 7৹ 8৹ 9৹ 0\(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ $৹ &৹ @\(kNL)৹ \(kSHIFT)৹ \"৹ .৹ ^৹ %৹ ?৹ !৹ *৹ \(kSPECIAL)"
+let kUnicodeEnPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =\(kNL)৹ -৹ _৹ /৹ |৹ ~৹ <৹ >৹ €৹ $\(kNL)৹ \(kSHIFT)৹ ¥৹ •৹ .৹ ?৹ !৹ \(kSPECIAL)" //todo need to implement comma
 
 //Others suported font
-let kUnicodeEnSerif   = "𝑄,𝑤,𝑒,𝑟,𝑡,𝑦,𝑢,𝑖,𝑜,𝑝,𝑎,𝑠,𝑑,𝑓,𝑔,ℎ,𝑗,𝑘,𝑙,:,𝑧,𝑥,𝑐,𝑣,𝑏,𝑛,𝑚"
-let kUnicodeEnStinky  = "q̾,w̾,e̾,r̾,t̾,y̾,u̾,i̾,o̾,p̾,a̾,s̾,d̾,f̾,g̾,h̾,j̾,k̾,l̾,:,z̾,x̾,c̾,v̾,b̾,n̾,m̾"
-let kUnicodeEnClouds  = "q͜͡,w͜͡,e͜͡,r͜͡,t͜͡,y͜͡,u͜͡,i͜͡,o͜͡,p͜͡,a͜͡,s͜͡,d͜͡,f͜͡,g͜͡,h͜͡,j͜͡,k͜͡,l͜͡,:,z͜͡,x͜͡,c͜͡,v͜͡,b͜͡,n͜͡,m͜͡"
-let kUnicodeEnHappy   = "q̆̈,w̆̈,ĕ̈,r̆̈,t̆̈,y̆̈,ŭ̈,ĭ̈,ŏ̈,p̆̈,ă̈,s̆̈,d̆̈,f̆̈,ğ̈,h̆̈,j̆̈,k̆̈,l̆̈,:,z̆̈,x̆̈,c̆̈,v̆̈,b̆̈,n̆̈,m̆̈"
-let kUnicodeEnSad     = "q̑̈,w̑̈,ȇ̈,ȓ̈,t̑̈,y̑̈,ȗ̈,ȋ̈,ȏ̈,p̑̈,ȃ̈,s̑̈,d̑̈,f̑̈,g̑̈,h̑̈,j̑̈,k̑̈,l̑̈,:,z̑̈,x̑̈,c̑̈,v̑̈,b̑̈,n̑̈,m̑̈"
-let kUnicodeEnBubbles = "q̥ͦ,w̥ͦ,e̥ͦ,r̥ͦ,t̥ͦ,y̥ͦ,u̥ͦ,i̥ͦ,o̥ͦ,p̥ͦ,ḁͦ,s̥ͦ,d̥ͦ,f̥ͦ,g̥ͦ,h̥ͦ,j̥ͦ,k̥ͦ,l̥ͦ,:,z̥ͦ,x̥ͦ,c̥ͦ,v̥ͦ,b̥ͦ,n̥ͦ,m̥ͦ"
-let kUnicodeEnRays    = "q҉,w҉,e҉,r҉,t҉,y҉,u҉,i҉,o҉,p҉,a҉,s҉,d҉,f҉,g҉,h҉,j҉,k҉,l҉,:,z҉,x҉,c҉,v҉,b҉,n҉,m҉"
-let kUnicodeEnBirds   = "q҈,w҈,e҈,r҈,t҈,y҈,u҈,i҈,o҈,p҈,a҈,s҈,d҈,f҈,g҈,h҈,j҈,k҈,l҈,:,z҈,x҈,c҈,v҈,b҈,n҈,m҈"
-let kUnicodeEnSlash   = "q̸,w̸,e̸,r̸,t̸,y̸,u̸,i̸,o̸,p̸,a̸,s̸,d̸,f̸,g̸,h̸,j̸,k̸,l̸,:,z̸,x̸,c̸,v̸,b̸,n̸,m̸"
-let kUnicodeEnSkyline = "q̺͆,w̺͆,e̺͆,r̺͆,t̺͆,y̺͆,u̺͆,i̺͆,o̺͆,p̺͆,a̺͆,z̺͆,d̺͆,f̺͆,g̺͆,h̺͆,j̺͆,k̺͆,l̺͆,:,z̺͆,x̺͆,c̺͆,v̺͆,b̺͆,n̺͆,m̺͆"
-let kUnicodeEnArrows  = "q͎,w͎,e͎,r͎,t͎,y͎,u͎,i͎,o͎,p͎,a͎,s͎,d͎,f͎,g͎,h͎,j͎,k͎,l͎,:,z͎,x͎,c͎,v͎,b͎,n͎,m͎"
-let kUnicodeEnStrike  = "q̶,w̶,e̶,r̶,t̶,y̶,u̶,i̶,o̶,p̶,a̶,s̶,d̶,f̶,g̶,h̶,j̶,k̶,l̶,:,z̶,x̶,c̶,v̶,b̶,n̶,m̶"
-let kUnicodeEnRunes   = "ዒ,ሠ,ቿ,ዪ,ፕ,ሃ,ሁ,ጎ,ዐ,የ,ል,ነ,ዕ,ቻ,ኗ,ዘ,ጋ,ጕ,ረ,:,ጊ,ሸ,ር,ሀ,ጌ,ክ,ጠ"
-let kUnicodeEnCircleWhite  = "Ⓠ,Ⓦ,Ⓔ,Ⓡ,Ⓣ,Ⓨ,Ⓤ,Ⓘ,Ⓞ,Ⓟ,Ⓐ,Ⓢ,Ⓓ,Ⓕ,Ⓖ,Ⓗ,Ⓙ,Ⓚ,Ⓛ,:,Ⓩ,Ⓧ,Ⓒ,Ⓥ,Ⓑ,Ⓝ,Ⓜ︎"
-let kUnicodeEnSquareWhite  = "🅀,🅆,🄴,🅁,🅃,🅈,🅄,🄸,🄾,🄿,🄰,🅂,🄳,🄵,🄶,🄷,🄹,🄺,🄻,:,🅉,🅇,🄲,🅅,🄱,🄽,🄼"
-let kUnicodeEnSquareBlack  = "🆀,🆆,🅴,🆁,🆃,🆈,🆄,🅸,🅾︎,🅿︎,🅰︎,🆂,🅳,🅵,🅶,🅷,🅹,🅺,🅻,:,🆉,🆇,🅲,🆅,🅱︎,🅽,🅼"
-let kUnicodeEnSquareWLight = "🇶 ,🇼 ,🇪 ,🇷 ,🇹 ,🇾 ,🇺 ,🇮 ,🇴 ,🇵 ,🇦 ,🇸 ,🇩 ,🇫 ,🇬 ,🇭 ,🇯 ,🇰 ,🇱 ,:,🇿 ,🇽 ,🇨 ,🇻 ,🇧 ,🇳 ,🇲 "
-let kUnicodeEnUnderline    = " ͟q,w͟,e͟,r͟,t͟,y,u͟,i͟,o͟,p,a͟,s͟,d͟,f͟,g,h͟,j,k͟,l͟,:,z͟,x͟,c͟,v͟,b͟,n͟,m͟"
-let kUnicodeEnOutline      = "𝕢,𝕨,𝕖,𝕣,𝕥,𝕪,𝕦,𝕚,𝕠,𝕡,𝕒,𝕤,𝕕,𝕗,𝕘,𝕙,𝕛,𝕜,𝕝,:,𝕫,𝕩,𝕔,𝕧,𝕓,𝕟,𝕞"
-let kUnicodeEnSmallCaps    = "Q,ᴡ,ᴇ,ʀ,ᴛ,ʏ,ᴜ,ɪ,ᴏ,ᴘ,ᴀ,s,ᴅ,ғ,ɢ,ʜ,ᴊ,ᴋ,ʟ,:,ᴢ,x,ᴄ,ᴠ,ʙ,ɴ,ᴍ"
-let kUnicodeEnComic        = "ᑫ,ᗯ,ᗴ,ᖇ,T,Y,ᑌ,I,O,ᑭ,ᗩ,ᔕ,ᗪ,ᖴ,ᘜ,ᕼ,ᒍ,K,ᒪ,:,ᘔ,᙭,ᑕ,ᐯ,ᗷ,ᑎ,ᗰ"
-let kUnicodeEnSans         = "𝗤,𝘄,𝗲,𝗿,𝘁,𝘆,𝘂,𝗶,𝗼,𝗽,𝗮,𝘀,𝗱,𝗳,𝗴,𝗵,𝗷,𝗸,𝗹,:,𝘇,𝘅,𝗰,𝘃,𝗯,𝗻,𝗺" //𝗤𝘄𝗲𝗿𝘁𝘆𝘂𝗶𝗼𝗽𝗮𝘀𝗱𝗳𝗴𝗵𝗷𝗸𝗹𝘇𝘅𝗰𝘃𝗯𝗻𝗺
-let kUnicodeEnSansItalic   = "𝙦,𝙬,𝙚,𝙧,𝙩,𝙮,𝙪,𝙞,𝙤,𝙥,𝙖,𝙨,𝙙,𝙛,𝙜,𝙝,𝙟,𝙠,𝙡,:,𝙯,𝙭,𝙘,𝙫,𝙗,𝙣,𝙢" //𝙦𝙬𝙚𝙧𝙩𝙮𝙪𝙞𝙤𝙥𝙖𝙨𝙙𝙛𝙜𝙝𝙟𝙠𝙡𝙯𝙭𝙘𝙫𝙗𝙣𝙢
-let kUnicodeEnStop         = "q⃠,w⃠,e⃠,r⃠,t⃠,y⃠,u⃠,i⃠,o⃠,p⃠,a⃠,s⃠,d⃠,f⃠,g⃠,h⃠,j⃠,k⃠,l⃠,:,®z⃠,x⃠,c⃠,v⃠,b⃠,n⃠,m⃠"  //q⃠w⃠e⃠r⃠t⃠y⃠u⃠i⃠o⃠p⃠a⃠s⃠d⃠f⃠g⃠h⃠j⃠k⃠l⃠z⃠x⃠c⃠v⃠b⃠n⃠m⃠
+let kUnicodeEnSerif = "𝑄৹ 𝑤৹ 𝑒৹ 𝑟৹ 𝑡৹ 𝑦৹ 𝑢৹ 𝑖৹ 𝑜৹ 𝑝\(kNL)৹ 𝑎৹ 𝑠৹ 𝑑৹ 𝑓৹ 𝑔৹ ℎ৹ 𝑗৹ 𝑘৹ 𝑙\(kNL)৹ \(kSHIFT)৹ 𝑧৹ 𝑥৹ 𝑐৹ 𝑣৹ 𝑏৹ 𝑛৹ 𝑚৹ \(kSPECIAL)"
+let kUnicodeEnStinky = "q̾৹ w̾৹ e̾৹ r̾৹ t̾৹ y̾৹ u̾৹ i̾৹ o̾৹ p̾\(kNL)৹ a̾৹ s̾৹ d̾৹ f̾৹ g̾৹ h̾৹ j̾৹ k̾৹ l̾\(kNL)৹ \(kSHIFT)৹ z̾৹ x̾৹ c̾৹ v̾৹ b̾৹ n̾৹ m̾৹ \(kSPECIAL)"
+let kUnicodeEnClouds = "q͜͡৹ w͜͡৹ e͜͡৹ r͜͡৹ t͜͡৹ y͜͡৹ u͜͡৹ i͜͡৹ o͜͡৹ p͜͡\(kNL)৹ a͜͡৹ s͜͡৹ d͜͡৹ f͜͡৹ g͜͡৹ h͜͡৹ j͜͡৹ k͜͡৹ l͜͡\(kNL)৹ \(kSHIFT)৹ z͜͡৹ x͜͡৹ c͜͡৹ v͜͡৹ b͜͡৹ n͜͡৹ m͜͡৹ \(kSPECIAL)"
+let kUnicodeEnHappy = "q̆̈৹ w̆̈৹ ĕ̈৹ r̆̈৹ t̆̈৹ y̆̈৹ ŭ̈৹ ĭ̈৹ ŏ̈৹ p̆̈\(kNL)৹ ă̈৹ s̆̈৹ d̆̈৹ f̆̈৹ ğ̈৹ h̆̈৹ j̆̈৹ k̆̈৹ l̆̈\(kNL)৹ \(kSHIFT)৹ z̆̈৹ x̆̈৹ c̆̈৹ v̆̈৹ b̆̈৹ n̆̈৹ m̆̈৹ \(kSPECIAL)"
+let kUnicodeEnSad = "q̑̈৹ w̑̈৹ ȇ̈৹ ȓ̈৹ t̑̈৹ y̑̈৹ ȗ̈৹ ȋ̈৹ ȏ̈৹ p̑̈\(kNL)৹ ȃ̈৹ s̑̈৹ d̑̈৹ f̑̈৹ g̑̈৹ h̑̈৹ j̑̈৹ k̑̈৹ l̑̈\(kNL)৹ \(kSHIFT)৹ z̑̈৹ x̑̈৹ c̑̈৹ v̑̈৹ b̑̈৹ n̑̈৹ m̑̈৹ \(kSPECIAL)"
+let kUnicodeEnBubbles = "q̥ͦ৹ w̥ͦ৹ e̥ͦ৹ r̥ͦ৹ t̥ͦ৹ y̥ͦ৹ u̥ͦ৹ i̥ͦ৹ o̥ͦ৹ p̥ͦ\(kNL)৹ ḁͦ৹ s̥ͦ৹ d̥ͦ৹ f̥ͦ৹ g̥ͦ৹ h̥ͦ৹ j̥ͦ৹ k̥ͦ৹ l̥ͦ\(kNL)৹ \(kSHIFT)৹ z̥ͦ৹ x̥ͦ৹ c̥ͦ৹ v̥ͦ৹ b̥ͦ৹ n̥ͦ৹ m̥ͦ৹ \(kSPECIAL)"
+let kUnicodeEnRays = "q҉৹ w҉৹ e҉৹ r҉৹ t҉৹ y҉৹ u҉৹ i҉৹ o҉৹ p҉\(kNL)৹ a҉৹ s҉৹ d҉৹ f҉৹ g҉৹ h҉৹ j҉৹ k҉৹ l҉\(kNL)৹ \(kSHIFT)৹ z҉৹ x҉৹ c҉৹ v҉৹ b҉৹ n҉৹ m҉৹ \(kSPECIAL)"
+let kUnicodeEnBirds = "q҈৹ w҈৹ e҈৹ r҈৹ t҈৹ y҈৹ u҈৹ i҈৹ o҈৹ p҈\(kNL)৹ a҈৹ s҈৹ d҈৹ f҈৹ g҈৹ h҈৹ j҈৹ k҈৹ l҈\(kNL)৹ \(kSHIFT)৹ z҈৹ x҈৹ c҈৹ v҈৹ b҈৹ n҈৹ m҈৹ \(kSPECIAL)"
+let kUnicodeEnSlash = "q̸৹ w̸৹ e̸৹ r̸৹ t̸৹ y̸৹ u̸৹ i̸৹ o̸৹ p̸\(kNL)৹ a̸৹ s̸৹ d̸৹ f̸৹ g̸৹ h̸৹ j̸৹ k̸৹ l̸\(kNL)৹ \(kSHIFT)৹ z̸৹ x̸৹ c̸৹ v̸৹ b̸৹ n̸৹ m̸৹ \(kSPECIAL)"
+let kUnicodeEnSkyline = "q̺͆৹ w̺͆৹ e̺͆৹ r̺͆৹ t̺͆৹ y̺͆৹ u̺͆৹ i̺͆৹ o̺͆৹ p̺͆\(kNL)৹ a̺͆৹ z̺͆৹ d̺͆৹ f̺͆৹ g̺͆৹ h̺͆৹ j̺͆৹ k̺͆৹ l̺͆\(kNL)৹ \(kSHIFT)৹ z̺͆৹ x̺͆৹ c̺͆৹ v̺͆৹ b̺͆৹ n̺͆৹ m̺͆৹ \(kSPECIAL)"
+let kUnicodeEnArrows = "q͎৹ w͎৹ e͎৹ r͎৹ t͎৹ y͎৹ u͎৹ i͎৹ o͎৹ p͎\(kNL)৹ a͎৹ s͎৹ d͎৹ f͎৹ g͎৹ h͎৹ j͎৹ k͎৹ l͎\(kNL)৹ \(kSHIFT)৹ z͎৹ x͎৹ c͎৹ v͎৹ b͎৹ n͎৹ m͎৹ \(kSPECIAL)"
+let kUnicodeEnStrike = "q̶৹ w̶৹ e̶৹ r̶৹ t̶৹ y̶৹ u̶৹ i̶৹ o̶৹ p̶\(kNL)৹ a̶৹ s̶৹ d̶৹ f̶৹ g̶৹ h̶৹ j̶৹ k̶৹ l̶\(kNL)৹ \(kSHIFT)৹ z̶৹ x̶৹ c̶৹ v̶৹ b̶৹ n̶৹ m̶৹ \(kSPECIAL)"
+let kUnicodeEnRunes = "ዒ৹ ሠ৹ ቿ৹ ዪ৹ ፕ৹ ሃ৹ ሁ৹ ጎ৹ ዐ৹ የ\(kNL)৹ ል৹ ነ৹ ዕ৹ ቻ৹ ኗ৹ ዘ৹ ጋ৹ ጕ৹ ረ\(kNL)৹ \(kSHIFT)৹ ጊ৹ ሸ৹ ር৹ ሀ৹ ጌ৹ ክ৹ ጠ৹ \(kSPECIAL)"
+let kUnicodeEnCircleWhite = "Ⓠ৹ Ⓦ৹ Ⓔ৹ Ⓡ৹ Ⓣ৹ Ⓨ৹ Ⓤ৹ Ⓘ৹ Ⓞ৹ Ⓟ\(kNL)৹ Ⓐ৹ Ⓢ৹ Ⓓ৹ Ⓕ৹ Ⓖ৹ Ⓗ৹ Ⓙ৹ Ⓚ৹ Ⓛ\(kNL)৹ \(kSHIFT)৹ Ⓩ৹ Ⓧ৹ Ⓒ৹ Ⓥ৹ Ⓑ৹ Ⓝ৹ Ⓜ︎৹ \(kSPECIAL)"
+let kUnicodeEnSquareWhite = "🅀৹ 🅆৹ 🄴৹ 🅁৹ 🅃৹ 🅈৹ 🅄৹ 🄸৹ 🄾৹ 🄿\(kNL)৹ 🄰৹ 🅂৹ 🄳৹ 🄵৹ 🄶৹ 🄷৹ 🄹৹ 🄺৹ 🄻\(kNL)৹ \(kSHIFT)৹ 🅉৹ 🅇৹ 🄲৹ 🅅৹ 🄱৹ 🄽৹ 🄼৹ \(kSPECIAL)"
+let kUnicodeEnSquareBlack = "🆀৹ 🆆৹ 🅴৹ 🆁৹ 🆃৹ 🆈৹ 🆄৹ 🅸৹ 🅾︎৹ 🅿︎\(kNL)৹🅰︎ ৹🆂 ৹🅳 ৹🅵 ৹🅶 ৹🅷৹ 🅹৹ 🅺৹ 🅻\(kNL)৹ \(kSHIFT)৹ 🆉৹ 🆇৹ 🅲৹ 🆅৹ 🅱︎৹ 🅽৹ 🅼৹ \(kSPECIAL)"
+let kUnicodeEnSquareWLight = "🇶৹ 🇼৹ 🇪৹ 🇷৹ 🇹৹ 🇾৹ 🇺৹ 🇮৹ 🇴৹ 🇵\(kNL)৹ 🇦৹ 🇸৹ 🇩৹ 🇫৹ 🇬৹ 🇭৹ 🇯৹ 🇰 ৹🇱\(kNL)৹ \(kSHIFT)৹ 🇿 ৹🇽৹ 🇨৹ 🇻৹ 🇧৹ 🇳৹ 🇲৹ \(kSPECIAL)"
+let kUnicodeEnUnderline = "q৹ w͟৹ e͟৹ r͟৹ t͟৹ y৹ u͟৹ i͟৹ o͟৹ p\(kNL)৹ a͟৹ s͟৹ d͟৹ f͟৹ g৹ h͟৹ j৹ k͟৹ l͟\(kNL)৹ \(kSHIFT)৹ z͟৹ x͟৹ c͟৹ v͟৹ b͟৹ n͟৹ m͟৹ \(kSPECIAL)"
+let kUnicodeEnOutline = "𝕢৹ 𝕨৹ 𝕖৹ 𝕣৹ 𝕥৹ 𝕪৹ 𝕦৹ 𝕚৹ 𝕠৹ 𝕡\(kNL)৹ 𝕒৹ 𝕤৹ 𝕕৹ 𝕗৹ 𝕘৹ 𝕙৹ 𝕛৹ 𝕜৹ 𝕝\(kNL)৹ \(kSHIFT)৹ 𝕫৹ 𝕩৹ 𝕔৹ 𝕧৹ 𝕓৹ 𝕟৹ 𝕞৹ \(kSPECIAL)"
+let kUnicodeEnSmallCaps = "Q৹ ᴡ৹ ᴇ৹ ʀ৹ ᴛ৹ ʏ৹ ᴜ৹ ɪ৹ ᴏ৹ ᴘ\(kNL)৹ ᴀ৹ s৹ ᴅ৹ ғ৹ ɢ৹ ʜ৹ ᴊ৹ ᴋ৹ ʟ\(kNL)৹ \(kSHIFT)৹ ᴢ৹ x৹ ᴄ৹ ᴠ৹ ʙ৹ ɴ৹ ᴍ৹ \(kSPECIAL)"
+let kUnicodeEnComic = "ᑫ৹ ᗯ৹ ᗴ৹ ᖇ৹ T৹ Y৹ ᑌ৹ I৹ O৹ ᑭ\(kNL)৹ ᗩ৹ ᔕ৹ ᗪ৹ ᖴ৹ ᘜ৹ ᕼ৹ ᒍ৹ K৹ ᒪ\(kNL)৹ \(kSHIFT)৹ ᘔ৹ ᙭৹ ᑕ৹ ᐯ৹ ᗷ৹ ᑎ৹ ᗰ৹ \(kSPECIAL)"
+let kUnicodeEnSans = "𝗤৹ 𝘄৹ 𝗲৹ 𝗿৹ 𝘁৹ 𝘆৹ 𝘂৹ 𝗶৹ 𝗼৹ 𝗽\(kNL)৹ 𝗮৹ 𝘀৹ 𝗱৹ 𝗳৹ 𝗴৹ 𝗵৹ 𝗷৹ 𝗸৹ 𝗹\(kNL)৹ \(kSHIFT)৹ 𝘇৹ 𝘅৹ 𝗰৹ 𝘃৹ 𝗯৹ 𝗻৹ 𝗺৹ \(kSPECIAL)"
+let kUnicodeEnSansItalic = "𝙦৹ 𝙬৹ 𝙚৹ 𝙧৹ 𝙩৹ 𝙮৹ 𝙪৹ 𝙞৹ 𝙤৹ 𝙥\(kNL)৹ 𝙖৹ 𝙨৹ 𝙙৹ 𝙛৹ 𝙜৹ 𝙝৹ 𝙟৹ 𝙠৹ 𝙡\(kNL)৹ \(kSHIFT)৹ 𝙯৹ 𝙭৹ 𝙘৹ 𝙫৹ 𝙗৹ 𝙣৹ 𝙢৹ \(kSPECIAL)"
+let kUnicodeEnStop = "q⃠৹ w⃠৹ e⃠৹ r⃠৹ t⃠৹ y⃠৹ u⃠৹ i⃠৹ o⃠৹ p⃠\(kNL)৹ a⃠৹ s⃠৹ d⃠৹ f⃠৹ g⃠৹ h⃠৹ j⃠৹ k⃠৹ l⃠\(kNL)৹ \(kSHIFT)৹ ®z⃠৹ x⃠৹ c⃠৹ v⃠৹ b⃠৹ n⃠৹ m⃠৹ \(kSPECIAL)"
 
 //Normal Stinky Clouds Happy Sad Bubbles Underline Rays Birds Slash Skyline Arrows Strike CircleWhite CircleBlack SquareWhite SquareBlack SquareWhiteLight Outline
 

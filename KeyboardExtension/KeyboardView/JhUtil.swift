@@ -30,9 +30,9 @@ let kGLOBE  = "GLOBE"
 let kVOICE  = "VOICE"
 let kSPACE  = "SPACE"
 let kRETURN = "RETURN"
-let kSPECIAL = "\(kDELETE)\(kNL), \(kALTER), \(kGLOBE), \(kVOICE), \(kSPACE), \(kRETURN)"
+let kSPECIAL = "\(kDELETE)\(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kRETURN)"
 let kSPECIALArray = [kDELETE+kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
-
+let kSEPERATOR = "৹ "
 
 
 //let kKeyBgColor   = "kKeyBgColor"
@@ -146,35 +146,27 @@ func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
     var keys:[Int] = []
     for var str in rows {
         
-        if str.prefix(1) == "ৡ" {
+        if str.prefix(1) == kSEPERATOR {
             str = String(str.dropFirst())
         }
         
-        print("str<>::\(str)")
-        let _str = str.trimmingCharacters(in: .init(charactersIn: "ৡ"))
-        let letters = _str.components(separatedBy: "ৡ")
+        
+        let _str = str.trimmingCharacters(in: .init(charactersIn: kSEPERATOR))
+        let letters = _str.components(separatedBy: kSEPERATOR)
+        print("Row[\(row)]<>::\(letters)")
         keys.append(letters.count)
     }
     
     print("keys==::\(keys)")
     
-    
-    /*
-    var keys = [10,9,9,5]
-    switch languageName {
-    case Russian:
-
-        keys = [11,11,11,5]
-    default:
-        keys = [10,9,9,5]
+    if row >= keys.count{
+        return 0
     }
-    */
     return keys[row]
 }
 
 func getIndex(_ title:String,_ fontString:[String]? = [])-> Int{
-    let _fontString = fontString?.map({$0.trimmingCharacters(in: .newlines)})
-
+    let _fontString = fontString?.map({$0.trimmingCharacters(in: .whitespacesAndNewlines)})
     let index = _fontString?.firstIndex(of: title) ?? 0
     print("index::<\(title)>\(index)")
     return index
