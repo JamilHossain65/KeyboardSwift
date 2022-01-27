@@ -51,7 +51,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
 
     //set index for each button
     var currentButtonIndex = 0
-    var currentFontLetters:[String] =  []
+    //var currentFontLetters:[String] =  []
     
     //long pressed delete
     var currentDeleteCount = 0
@@ -132,13 +132,14 @@ extension KeyboardView{
         totalRow = 4
         
         //set spetial button index
-        shiftButtonIndex  = getIndex(kSHIFT, currentFontLetters)
-        deleteButtonIndex = getIndex(kDELETE,currentFontLetters)
-        altButtonIndex    = getIndex(kALTER, currentFontLetters)
-        nextButtonIndex   = getIndex(kGLOBE, currentFontLetters)
-        voiceButtonIndex  = getIndex(kVOICE, currentFontLetters)
-        spaceButtonIndex  = getIndex(kSPACE, currentFontLetters)
-        returnButtonIndex = getIndex(kRETURN,currentFontLetters)
+        let _currentLetters = currentFontLetters.filter({$0 != kNL})
+        shiftButtonIndex  = getIndex(kSHIFT, _currentLetters)
+        deleteButtonIndex = getIndex(kDELETE,_currentLetters)
+        altButtonIndex    = getIndex(kALTER, _currentLetters)
+        nextButtonIndex   = getIndex(kGLOBE, _currentLetters)
+        voiceButtonIndex  = getIndex(kVOICE, _currentLetters)
+        spaceButtonIndex  = getIndex(kSPACE, _currentLetters)
+        returnButtonIndex = getIndex(kRETURN,_currentLetters)
         currentButtonIndex = 0
         
         for view in subviews {
@@ -148,14 +149,18 @@ extension KeyboardView{
             }
         }
         
-        log("currentFontLetters::\(currentFontLetters)")
-        let fontLetters = currentFontLetters.joined(separator: kSEPERATOR)
+        let keyArray = currentFontLetters.split(whereSeparator: {$0.contains(kNL)})
+        
+        //draw Keyboard
+        for (index,letters) in keyArray.enumerated(){
+            drawLineFor(row:index,totalCol:letters.count, info:getInfo(index),const:getConst(index))
+        }
         
         //draw button in a row
-        drawLineFor(row:0,totalCol:getKeys(0,fontLetters), info:getInfo(0),const:getConst(0))
-        drawLineFor(row:1,totalCol:getKeys(1,fontLetters), info:getInfo(1),const:getConst(1))
-        drawLineFor(row:2,totalCol:getKeys(2,fontLetters), info:getInfo(2),const:getConst(2))
-        drawLineFor(row:3,totalCol:getKeys(3,fontLetters), info:getInfo(3),const:getConst(3))
+//        drawLineFor(row:0,totalCol:getKeys(0,fontLetters), info:getInfo(0),const:getConst(0))
+//        drawLineFor(row:1,totalCol:getKeys(1,fontLetters), info:getInfo(1),const:getConst(1))
+//        drawLineFor(row:2,totalCol:getKeys(2,fontLetters), info:getInfo(2),const:getConst(2))
+//        drawLineFor(row:3,totalCol:getKeys(3,fontLetters), info:getInfo(3),const:getConst(3))
     }
     
     func configure5Line(){
@@ -199,10 +204,16 @@ extension KeyboardView{
             let bFrame = CGRect(x: colX, y: colY, width: btnWidth, height: btnHeight)
             var title = ""
             
-            if currentFontLetters.count > 0 {
-                title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
-                title = title.trimmingCharacters(in: .whitespaces)
-            }
+//            if currentFontLetters.count > 0 {
+//                title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+//                title = title.trimmingCharacters(in: .whitespaces)
+//            }
+            
+            
+            let keyArray = currentFontLetters.split(whereSeparator: {$0.contains(kNL)})
+            let rowLetters = Array(keyArray[row])
+            title = rowLetters[i]
+            //title = title.trimmingCharacters(in: .whitespaces)
             
             let keyboardButton = KeyboardButton(frame: bFrame)
             
@@ -528,10 +539,11 @@ extension KeyboardView{
 //MARK:- keycap view show
 extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton) {
-        if currentFontLetters.count <= 0 { return }
+        //if currentFontLetters.count <= 0 { return }
         
-        var title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
-        title = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        //var title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
+        var title = keyButton.titleLabel?.text
+        title = title?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         let jhKey   = JHkey(type: .custom)
         jhKey.frame = keyButton.frame

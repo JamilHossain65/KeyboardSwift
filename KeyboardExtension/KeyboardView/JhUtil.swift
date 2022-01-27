@@ -10,7 +10,7 @@ import UIKit
 func log(_ msg: Any?) {
     #if DEBUG
     if let _msg = msg {
-        //log(String(describing: _msg))
+        print(String(describing: _msg))
     }
     #endif
 }
@@ -38,8 +38,8 @@ let kGLOBE  = "GLOBE"
 let kVOICE  = "VOICE"
 let kSPACE  = "SPACE"
 let kRETURN = "RETURN"
-let kSPECIAL = "\(kDELETE)\(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kRETURN)"
-let kSPECIALArray = [kDELETE+kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
+let kSPECIAL = "\(kDELETE)৹ \(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kRETURN)"
+let kSPECIALArray = [kDELETE,kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
 let kSEPERATOR = "৹ "
 
 
@@ -137,6 +137,8 @@ let kAllLanguageDicArray = [
     [Indonesian: kFontIdDic],
     [Russian   : kFontRuDic],
 ]
+
+var currentFontLetters:[String] =  []
 
 //this is all languages list of [String]
 let supportedLanguages:[String] = kAllLanguageDicArray.map({$0.keys.first!})
