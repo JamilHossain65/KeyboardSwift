@@ -22,7 +22,7 @@ let Bangla     = "Bangla"
 let Indonesian = "Indonesian"
 let Russian    = "Russian"
 
-var activeLanguages = [English:true, Indonesian:false, Bangla:false, Russian:true]
+var activeLanguages = [English:true, Indonesian:false, Bangla:true, Russian:false]
 var countryCodes  = [English:"us", Indonesian:"id", Bangla:"bd", Russian:"ru"]
 var languageCodes = [English:"en", Indonesian:"id", Bangla:"bn", Russian:"ru"]
 
