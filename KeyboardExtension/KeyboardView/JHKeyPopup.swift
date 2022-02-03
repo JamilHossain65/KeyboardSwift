@@ -93,7 +93,7 @@ let __UPPER_WIDTH = (55.0 * UIScreen.main.scale)
 var __LOWER_WIDTH = CGFloat(51.174603) //self.frame.size.width * UIScreen.main.scale //todo
 let __PAN_UPPER_RADIUS  = (10.0 * UIScreen.main.scale)
 let __PAN_LOWER_RADIUS  = (5.0 * UIScreen.main.scale)
-let __PAN_UPPDER_WIDTH  = ((55.0 * UIScreen.main.scale) - (10.0 * UIScreen.main.scale)*2)
+let __PAN_UPPDER_WIDTH  = (__UPPER_WIDTH-__PAN_UPPER_RADIUS*2)
 let __PAN_UPPER_HEIGHT  = (56.0 * UIScreen.main.scale)
 let __PAN_LOWER_WIDTH   = (__LOWER_WIDTH - __PAN_LOWER_RADIUS*2)
 let __PAN_LOWER_HEIGHT  = (47.0 * UIScreen.main.scale)
@@ -692,7 +692,7 @@ class JHKeyPopup: UIButton {
         self.hintView?.layer.shadowOpacity = 0.30
         self.hintView?.layer.shadowRadius = 3.0
         self.hintView?.clipsToBounds = false
-        self.hintView?.backgroundColor = .red
+        self.hintView?.backgroundColor = .clear
         
 //        UIButton *button;
 //        NSString *hint;
@@ -1121,7 +1121,7 @@ class JHKeyPopup: UIButton {
         p.y += __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS;
         if hintPosition == .ACHintPositionFarRight ||
                 hintPosition == .ACHintPositionRight {//MARK:- TODO: -
-            p.y += (-2*__PAN_UPPER_RADIUS + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT);
+            p.y += -(2*__PAN_UPPER_RADIUS) + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT;
         } else { //ACHintPositionLeft & ACHintPositionFarLeft
             p.y -= __PAN_CURVE_SIZE;
         }
@@ -1242,7 +1242,7 @@ class JHKeyPopup: UIButton {
 //                     1.0*M_PI/2.0,
 //                     false);
         
-        path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(4.0*Double.pi/2.0), endAngle: CGFloat(1.0*Double.pi/2.0), clockwise: false)
+        path.addArc(center: p, radius: __PAN_LOWER_RADIUS, startAngle: CGFloat(4.0*Double.pi/2.0), endAngle: CGFloat(1.0*Double.pi/2.0), clockwise: false)
         
         
         //8
