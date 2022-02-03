@@ -57,6 +57,7 @@
 		8DE7FA2625E4C6E700D3C48A /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */; };
 		8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */; };
 		8DF36878266C20670098EA60 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF36877266C20670098EA60 /* ColorExtension.swift */; };
+		8DF3FC2227AC18160062BE1E /* JHKeyPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */; };
 		8DF6E31E26C356380031E094 /* JHkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB159B25EB04890092F88B /* JHkey.m */; };
 		8DF6E32126C3563B0031E094 /* JhUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A3E225E6EC6800E3B47E /* JhUtil.swift */; };
 		8DF6E32626C3563F0031E094 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E8152266D8F770073B3B6 /* Color.swift */; };
@@ -149,6 +150,7 @@
 		8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		8DF36877266C20670098EA60 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHKeyPopup.swift; sourceTree = "<group>"; };
 		CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8C7C06C69151D7EB853273 /* Pods-KeyboardSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.release.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.release.xcconfig"; sourceTree = "<group>"; };
 		E3FF41B884FEBDE88E1CD54E /* Pods-KeyboardSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			children = (
 				8DBB159A25EB04890092F88B /* JHkey.h */,
 				8DBB159B25EB04890092F88B /* JHkey.m */,
+				8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */,
 				8D06A3E225E6EC6800E3B47E /* JhUtil.swift */,
 				8D4E8152266D8F770073B3B6 /* Color.swift */,
 				8D59B2242669AD2C0034A967 /* Extension.swift */,
@@ -550,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D59B2252669AD2C0034A967 /* Extension.swift in Sources */,
+				8DF3FC2227AC18160062BE1E /* JHKeyPopup.swift in Sources */,
 				8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */,
 				8DF6E35626C357550031E094 /* HintBarManager.swift in Sources */,
 				8DE7F9C425E4784200D3C48A /* KeyboardViewController.swift in Sources */,
