@@ -544,7 +544,7 @@ extension KeyboardView {
         //var title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
         var title = keyButton.titleLabel?.text
         title = title?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if langName == Bangla{
+        if langName == Bangla {
             let jhKey   = JHKeyPopup(frame: keyButton.frame)
             //jhKey.frame = keyButton.frame
             jhKey.tag   = keyButton.tag
