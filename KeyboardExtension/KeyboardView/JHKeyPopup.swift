@@ -710,10 +710,7 @@ class JHKeyPopup: UIButton {
         var hint: String
         
         var hintStrings:[String] = [];
-        if (isRightHint) {//MARK:- active for loop
-//            for i = self.hintSymbolsList.count]-1; i >= 0; i-- {
-//                hintStrings.append(self.hintSymbolsList[i])
-//            }
+        if (isRightHint) {
             var newArray:[String] = []
             for revHint in self.hintSymbolsList ?? []{
                 newArray.append(revHint)
@@ -764,9 +761,6 @@ class JHKeyPopup: UIButton {
             }
             
             button  = UIButton.init(type: .custom)
-            //MARK: - translate this line
-            
-//            var xx = __PAN_UL_WIDTH + i*(Int(self.frame.size.width) + Int(__GAP_X)) + isRightHint ? 0 : __GAP_X - 1
             
             var xx:CGFloat = __PAN_UL_WIDTH
             xx = xx + CGFloat(i)*self.frame.size.width + __GAP_X
@@ -806,8 +800,6 @@ class JHKeyPopup: UIButton {
             //            [button setBackgroundImage:imageWhite forState:UIControlStateNormal];
             
             let blueColor = UIColor.init(red:3/255.0 , green: 122/255.0, blue: 1.0, alpha: 1.0)
-            //MARK: - translate this line
-            
             let imageBlue:UIImage  = imageWithColor(color: blueColor)
             let imageWhite:UIImage = imageWithColor(color: .white)
             //[button setBackgroundImage:imageBlue  forState:UIControlStateHighlighted];
@@ -913,7 +905,7 @@ class JHKeyPopup: UIButton {
               8
         */
         
-        let path:CGMutablePath = CGMutablePath()//MARK:- check this line
+        let path:CGMutablePath = CGMutablePath()
         var p = CGPoint(x: __PADDING_X, y: __PADDING_Y)
         var p1 = CGPoint(x: 0, y: 0)
         var p2 = CGPoint(x: 0, y: 0)
@@ -1082,9 +1074,7 @@ class JHKeyPopup: UIButton {
         path.move(to: p)
         
         let hintCount:UInt = UInt(self.hintSymbolsList!.count)
-        //!!!:magic numbers //MARK:- TODO:dynamic logic
-        //hintAdditionalWidth = 189.523810 // 2 * (hintCount - 1) * (self.frame.size.width + __GAP_X);//189.523810
-        
+        //!!!:magic numbers
         let newWidth:CGFloat = CGFloat(2*(hintCount - 1))
         hintAdditionalWidth = newWidth*(self.frame.size.width + __GAP_X)
         
@@ -1120,7 +1110,7 @@ class JHKeyPopup: UIButton {
         //4
         p.y += __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS;
         if hintPosition == .ACHintPositionFarRight ||
-                hintPosition == .ACHintPositionRight {//MARK:- TODO: -
+                hintPosition == .ACHintPositionRight {
             p.y += -(2*__PAN_UPPER_RADIUS) + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT;
         } else { //ACHintPositionLeft & ACHintPositionFarLeft
             p.y -= __PAN_CURVE_SIZE;
@@ -1175,7 +1165,7 @@ class JHKeyPopup: UIButton {
 //        //4
 //        p.y += __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS;
 //        if hintPosition == .ACHintPositionFarRight ||
-//            hintPosition == .ACHintPositionRight {//MARK:- Todo -
+//            hintPosition == .ACHintPositionRight {
 //            p.y += /*-*/ 2*__PAN_UPPER_RADIUS + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT;
 //        } else { //ACHintPositionLeft & ACHintPositionFarLeft
 //            p.y -= __PAN_CURVE_SIZE;
@@ -1506,7 +1496,6 @@ class JHKeyPopup: UIButton {
         stopHideTimerPopup()
         self.viewWithTag(ACKEY_POPUP_VIEV_TAG)?.removeFromSuperview()
         for view in superview?.subviews ?? []{
-            //if view == JHKeyPopup{ } //MARK:- TODO: check
             guard let keyModify:JHKeyPopup = view as? JHKeyPopup else {return}
             keyModify.hintView?.removeFromSuperview()
         }
@@ -1808,8 +1797,6 @@ class JHKeyPopup: UIButton {
              */
             if let _array = array, _array.count > 0 {
                 let highlightedButton:UIButton = _array.first!
-                //if let _highlightedButton = highlightedButton {
-                    //MARK:- TODO: enable delegate
                 if let _delegate = self.delegate2{
                     _delegate.didSelectHintButtonSwift(highlightedButton)
                     print("highlightedButton tap::\(highlightedButton.titleLabel!.text)")
