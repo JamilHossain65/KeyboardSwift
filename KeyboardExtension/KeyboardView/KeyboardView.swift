@@ -546,7 +546,7 @@ extension KeyboardView {
         title = title?.trimmingCharacters(in: .whitespacesAndNewlines)
         if langName == Bangla{
             let jhKey   = JHKeyPopup(frame: keyButton.frame)
-            jhKey.frame = keyButton.frame
+            //jhKey.frame = keyButton.frame
             jhKey.tag   = keyButton.tag
             jhKey.delegate2 = self
             jhKey.backgroundColor = .white

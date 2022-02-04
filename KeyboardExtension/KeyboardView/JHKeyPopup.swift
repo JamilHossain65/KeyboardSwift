@@ -808,7 +808,7 @@ class JHKeyPopup: UIButton {
             let blueColor = UIColor.init(red:3/255.0 , green: 122/255.0, blue: 1.0, alpha: 1.0)
             //MARK: - translate this line
             
-            let imageBlue:UIImage  = imageWithColor(color: .blue)
+            let imageBlue:UIImage  = imageWithColor(color: blueColor)
             let imageWhite:UIImage = imageWithColor(color: .white)
             //[button setBackgroundImage:imageBlue  forState:UIControlStateHighlighted];
             button?.setBackgroundImage(imageBlue, for: .highlighted)
@@ -1813,6 +1813,7 @@ class JHKeyPopup: UIButton {
                 if let _delegate = self.delegate2{
                     _delegate.didSelectHintButtonSwift(highlightedButton)
                     print("highlightedButton tap::\(highlightedButton.titleLabel!.text)")
+                    hideHintView()
                 }
                 
                 //Reset Hint Highlighted
@@ -1861,7 +1862,9 @@ class JHKeyPopup: UIButton {
         print("T end::\(time)")
         
         print("release long on::\(self.titleLabel!.text)");
-        //self.delegate.didReleaseLongOn MARK:- //TODO: missing delegate
+        if let _delegate = self.delegate2{
+            _delegate.didReleaseLongOnSwift(self)
+        }
         
     }
     
