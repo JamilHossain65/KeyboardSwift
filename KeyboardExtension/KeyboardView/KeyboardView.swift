@@ -29,7 +29,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
     var gapX:Double = 3 //gap between button in a row
     var gapY:Double = 4 //gap between button in a col
     
-    var totalRow:Double = 5 //todo
+    var totalRow:Int = 5 //todo
     
     
     //var textView:UITextDocumentProxy?
@@ -113,14 +113,17 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
             view.removeFromSuperview()
         }
         
-        configure4Line()
+        let keyArray = currentFontLetters.split(whereSeparator: {$0.contains(kNL)})
+        totalRow = keyArray.count
+        
+        configure4Line(totalRow)
         setSpecialButtonColor()
     }
 }
 
 //MARK:- configure keyboard button
 extension KeyboardView{
-    func configure4Line() {
+    func configure4Line(_ totalLines:Int? = 4) {
         
         //set total rows in keyboard
         paddingX = 3 //left and right padding
@@ -128,8 +131,11 @@ extension KeyboardView{
         
         gapX = 5.5  //gap between button in a row
         gapY = 18 //gap between button in a col
+        if let _totalLines = totalLines, _totalLines >= 5{
+            gapY = 1
+        }
         
-        totalRow = 4
+        //totalRow = 4
         
         //set spetial button index
         let _currentLetters = currentFontLetters.filter({$0 != kNL})
@@ -155,12 +161,6 @@ extension KeyboardView{
         for (index,letters) in keyArray.enumerated(){
             drawLineFor(row:index,totalCol:letters.count, info:getInfo(index),const:getConst(index))
         }
-        
-        //draw button in a row
-//        drawLineFor(row:0,totalCol:getKeys(0,fontLetters), info:getInfo(0),const:getConst(0))
-//        drawLineFor(row:1,totalCol:getKeys(1,fontLetters), info:getInfo(1),const:getConst(1))
-//        drawLineFor(row:2,totalCol:getKeys(2,fontLetters), info:getInfo(2),const:getConst(2))
-//        drawLineFor(row:3,totalCol:getKeys(3,fontLetters), info:getInfo(3),const:getConst(3))
     }
     
     func configure5Line(){
@@ -434,8 +434,8 @@ extension KeyboardView{
     func getButtonHeight() -> Double {
         //calculate height
         let totalPaddingY:Double = 2 * paddingY
-        let totalGapY:Double     = gapY * (totalRow-1)
-        let btnHeight:Double = (216 - totalPaddingY - totalGapY) / (totalRow) //todo, 216 = keyboard height
+        let totalGapY:Double     = gapY * Double((totalRow-1))
+        let btnHeight:Double = (216 - totalPaddingY - totalGapY) / Double((totalRow)) //todo, 216 = keyboard height
         return btnHeight
     }
     
