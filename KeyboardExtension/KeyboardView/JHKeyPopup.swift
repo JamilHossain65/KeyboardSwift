@@ -26,6 +26,7 @@ enum appearance:Int {
 }
 
 var isLongPressing = false
+var kTOP_IMAGE:UIImage? = nil
 
 /** The position for long-tap hint - for "a" ACHintPositionFarLeft
  */

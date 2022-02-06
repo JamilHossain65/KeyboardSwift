@@ -57,7 +57,6 @@ let SHIFT   = "Shift"
 let NUMERIC = "Numeric"
 let SYMBOL  = "Symbol"
 let DOUBLE_TAP = "DoubleTap"
-var kTOP_IMAGE:UIImage? = nil
 
 ////supported language name
 //let English = "English"
