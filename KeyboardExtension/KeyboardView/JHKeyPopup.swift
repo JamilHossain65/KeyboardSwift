@@ -25,6 +25,8 @@ enum appearance:Int {
     case ACKeyAppearanceLight
 }
 
+var isLongPressing = false
+
 /** The position for long-tap hint - for "a" ACHintPositionFarLeft
  */
 var hintPosition:ACHintPosition = .ACHintPositionLeft
@@ -73,10 +75,7 @@ class JHKeyPopup: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         __LOWER_WIDTH = frame.size.width * UIScreen.main.scale
-        
-        print("__LOWER_WIDTH::\(__LOWER_WIDTH)")
     }
     
     required init?(coder: NSCoder) {
@@ -152,11 +151,11 @@ class JHKeyPopup: UIButton {
         NotificationCenter.default.addObserver(self, selector: #selector(hidePopup), name: NSNotification.Name(rawValue: kNotificationHideButtonPopup), object: nil)
         
         
-        if true{
+        //if true{
             var keyPop:UIImageView? = nil;
-            if false{
-                
-            }else{
+//            if false{
+//                
+//            }else{
                 let image:UIImage = keytopImage()
                 keyPop = UIImageView.init(image: image)
                 keyPop?.frame = CGRect(x: (self.frame.size.width - image.size.width) / 2, y: -71, width: keyPop!.frame.size.width, height: keyPop!.frame.size.height)
@@ -183,7 +182,7 @@ class JHKeyPopup: UIButton {
                 keyPop?.clipsToBounds = false
                 keyPop?.addSubview(text)
                 
-            }
+            //}
             
             keyPop?.tag = ACKEY_POPUP_VIEV_TAG
             keyPop?.alpha = 1.0
@@ -195,7 +194,7 @@ class JHKeyPopup: UIButton {
             
             print("tap tag::\(button.tag)");
             startShowHintTimer()
-        }
+        //}//
         
     }
     
@@ -207,6 +206,7 @@ class JHKeyPopup: UIButton {
             return;
         }
         
+        isLongPressing = true
         //self.delegate2?.didTapLongOnButtonSwift(self)
         print("tap long::\(self.titleLabel?.text)");
         print("hintSymbolsList::\(self.hintSymbolsList)");
@@ -714,6 +714,11 @@ class JHKeyPopup: UIButton {
         }
     }
     
+    func startHideTimerPopup(){
+        stopHideTimerPopup()
+        hidePopup()
+    }
+    
     func stopHideTimerPopup(){
         hidePopupTimer?.invalidate()
     }
@@ -802,7 +807,8 @@ class JHKeyPopup: UIButton {
                 if let _delegate = self.delegate2{
                     _delegate.didSelectHintButtonSwift(highlightedButton)
                     print("highlightedButton tap::\(highlightedButton.titleLabel!.text)")
-                    hideHintView()
+                    //hideHintView()
+                    isLongPressing = false
                 }
                 
                 //Reset Hint Highlighted
@@ -830,7 +836,7 @@ class JHKeyPopup: UIButton {
             print("button title::\(self.titleLabel!.text)");
         }
 
-        startShowHintTimer()
+        startHideTimerPopup()
         updateState()
         
         let time = Date().timeIntervalSince1970 * 1000.0

@@ -539,45 +539,27 @@ extension KeyboardView{
 //MARK:- keycap view show
 extension KeyboardView {
     func keyPopupOn(_ keyButton:UIButton) {
-        //if currentFontLetters.count <= 0 { return }
-        
-        //var title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
         var title = keyButton.titleLabel?.text
         title = title?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if langName == Bangla {
-            let jhKey   = JHKeyPopup(frame: keyButton.frame)
-            //jhKey.frame = keyButton.frame
-            jhKey.tag   = keyButton.tag
-            jhKey.delegate2 = self
-            jhKey.backgroundColor = .white
-            jhKey.setTitle(title, for: .normal)
-            jhKey.setTitleColor(kKeyboardTextColor, for: .normal)
-            jhKey.setTitleShadowColor(kTextShadowColor, for: .normal)
-            jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
-            addSubview(jhKey)
-            jhKey.clipsToBounds = true
-            jhKey.layer.cornerRadius = 5.0
-            
-        }else{
-            let jhKey   = JHkey(type: .custom)
-            jhKey.frame = keyButton.frame
-            jhKey.tag   = keyButton.tag
-            jhKey.delegate = self
-            jhKey.backgroundColor = .white
-            jhKey.setTitle(title, for: .normal)
-            jhKey.setTitleColor(kKeyboardTextColor, for: .normal)
-            jhKey.setTitleShadowColor(kTextShadowColor, for: .normal)
-            jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
-            addSubview(jhKey)
-            jhKey.clipsToBounds = true
-            jhKey.layer.cornerRadius = 5.0
-        }
-        
-
+        //let jhKey   = JHkey(type: .custom)
+        let jhKey   = JHKeyPopup(frame: keyButton.frame)
+        //jhKey.frame = keyButton.frame
+        jhKey.tag   = keyButton.tag
+        jhKey.delegate2 = self
+        //jhKey.delegate = self
+        jhKey.backgroundColor = .white
+        jhKey.setTitle(title, for: .normal)
+        jhKey.setTitleColor(kKeyboardTextColor, for: .normal)
+        jhKey.setTitleShadowColor(kTextShadowColor, for: .normal)
+        jhKey.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+        addSubview(jhKey)
+        jhKey.clipsToBounds = true
+        jhKey.layer.cornerRadius = 5.0
     }
 }
 
 //MARK:- keyboard button presed
+/*
 extension KeyboardView:JHkeyDelegate {
     func didSelectHintButton(_ sender: UIButton!) {
         if let _title = sender.titleLabel?.text {
@@ -605,12 +587,13 @@ extension KeyboardView:JHkeyDelegate {
         }
     }
 }
+ */
 
 extension KeyboardView:JHKeyPopupDelegate{
     func didSelectHintButtonSwift(_ sender: UIButton) {
         if let _title = sender.titleLabel?.text {
-            UIDevice.current.playInputClick()
-            AudioServicesPlaySystemSound(1104);
+//            UIDevice.current.playInputClick()
+//            AudioServicesPlaySystemSound(1104);
             delegate?.insertCharacter(_title)
         }
     }
@@ -678,7 +661,9 @@ extension KeyboardView {
                     delegate?.insertCharacter("\n")
                 
                 default:
-                    delegate?.insertCharacter(_title)
+                    if !isLongPressing {
+                        delegate?.insertCharacter(_title)
+                    }
                 }
             }
         }

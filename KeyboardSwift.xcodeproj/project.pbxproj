@@ -58,7 +58,6 @@
 		8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */; };
 		8DF36878266C20670098EA60 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF36877266C20670098EA60 /* ColorExtension.swift */; };
 		8DF3FC2227AC18160062BE1E /* JHKeyPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */; };
-		8DF6E31E26C356380031E094 /* JHkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB159B25EB04890092F88B /* JHkey.m */; };
 		8DF6E32126C3563B0031E094 /* JhUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A3E225E6EC6800E3B47E /* JhUtil.swift */; };
 		8DF6E32626C3563F0031E094 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E8152266D8F770073B3B6 /* Color.swift */; };
 		8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */; };
@@ -125,8 +124,6 @@
 		8D9F632A27720CE200436892 /* KeyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInfo.swift; sourceTree = "<group>"; };
 		8D9F6700275B8756006E65BE /* words_en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_en.txt; sourceTree = "<group>"; };
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
-		8DBB159A25EB04890092F88B /* JHkey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHkey.h; sourceTree = "<group>"; };
-		8DBB159B25EB04890092F88B /* JHkey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHkey.m; sourceTree = "<group>"; };
 		8DCFBF20278ED17D0093140C /* bahasa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bahasa.txt; sourceTree = "<group>"; };
 		8DD5073D2681596B00377CBD /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8DD5073E2681596B00377CBD /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
@@ -354,9 +351,6 @@
 		8DE7FA2225E4C6E700D3C48A /* KeyboardView */ = {
 			isa = PBXGroup;
 			children = (
-				8DBB159A25EB04890092F88B /* JHkey.h */,
-				8DBB159B25EB04890092F88B /* JHkey.m */,
-				8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */,
 				8D06A3E225E6EC6800E3B47E /* JhUtil.swift */,
 				8D4E8152266D8F770073B3B6 /* Color.swift */,
 				8D59B2242669AD2C0034A967 /* Extension.swift */,
@@ -367,6 +361,7 @@
 				8D75AE1F2794338200CB1E0B /* UnicodeId.swift */,
 				8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */,
 				8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */,
+				8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */,
 				8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */,
 				8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */,
 			);
@@ -566,7 +561,6 @@
 				8D6DA1DE26E899050080E630 /* Reachability.swift in Sources */,
 				8DF6E32626C3563F0031E094 /* Color.swift in Sources */,
 				8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */,
-				8DF6E31E26C356380031E094 /* JHkey.m in Sources */,
 				8DE7FA2625E4C6E700D3C48A /* KeyboardView.swift in Sources */,
 				8D496A1C26388C73001DE455 /* SuggestionBarManager.m in Sources */,
 				8D6DA1E026E899050080E630 /* SpeechModel.swift in Sources */,
