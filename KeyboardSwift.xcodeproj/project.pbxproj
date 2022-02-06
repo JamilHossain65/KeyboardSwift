@@ -34,7 +34,6 @@
 		8D8BD6C6276A075000B77F6C /* UnicodeBn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */; };
 		8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AA16D2682DEDC00EA136D /* AudioManager.swift */; };
-		8D9F632B27720CE200436892 /* KeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9F632A27720CE200436892 /* KeyInfo.swift */; };
 		8D9F6701275B8756006E65BE /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
 		8D9F89EB27AFF77800D6E517 /* bangla.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F89EA27AFF77800D6E517 /* bangla.txt */; };
 		8DCFBF21278ED17D0093140C /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
@@ -117,7 +116,6 @@
 		8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeBn.swift; sourceTree = "<group>"; };
 		8D91CD452655E7EE00404F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		8D9F632A27720CE200436892 /* KeyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInfo.swift; sourceTree = "<group>"; };
 		8D9F6700275B8756006E65BE /* words_en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_en.txt; sourceTree = "<group>"; };
 		8D9F89EA27AFF77800D6E517 /* bangla.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bangla.txt; sourceTree = "<group>"; };
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -353,7 +351,6 @@
 				8D06A3E225E6EC6800E3B47E /* JhUtil.swift */,
 				8D4E8152266D8F770073B3B6 /* Color.swift */,
 				8D59B2242669AD2C0034A967 /* Extension.swift */,
-				8D9F632A27720CE200436892 /* KeyInfo.swift */,
 				8DF36877266C20670098EA60 /* ColorExtension.swift */,
 				8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */,
 				8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */,
@@ -549,7 +546,6 @@
 				8DE7F9C425E4784200D3C48A /* KeyboardViewController.swift in Sources */,
 				8D75AE202794338200CB1E0B /* UnicodeId.swift in Sources */,
 				8D6DA1CF26E897D90080E630 /* Response.swift in Sources */,
-				8D9F632B27720CE200436892 /* KeyInfo.swift in Sources */,
 				8D6DA1C026E897D10080E630 /* Errors.swift in Sources */,
 				8D3E2310279BCFAB0067DC30 /* UnicodeRu.swift in Sources */,
 				8D6DA1DF26E899050080E630 /* AudioManager.swift in Sources */,
