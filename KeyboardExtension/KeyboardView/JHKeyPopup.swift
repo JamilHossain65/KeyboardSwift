@@ -84,7 +84,8 @@ class JHKeyPopup: UIButton {
     }
     
     func checkHintPosition(keyButton:UIButton){
-        let rowKeys = [10,9,9,5]
+        let rowKeys = getLettersInRows() //[10,9,9,5]
+        print("rowKeys::\(rowKeys)")
         var value = 0
         var index = 0
         let tagValue = keyButton.tag + 1;

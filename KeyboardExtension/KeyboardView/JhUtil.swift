@@ -180,6 +180,15 @@ func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
     return keys[row]
 }
 
+func getLettersInRows() -> [Int] {
+    let keyArray = currentFontLetters.split(whereSeparator: {$0.contains(kNL)})
+    var rows:[Int] = []
+    for letters in keyArray{
+        rows.append(letters.count)
+    }
+    return rows
+}
+
 func getIndex(_ title:String,_ fontString:[String]? = [])-> Int{
     let _fontString = fontString?.map({$0.trimmingCharacters(in: .whitespacesAndNewlines)})
     let index = _fontString?.firstIndex(of: title) ?? 0
