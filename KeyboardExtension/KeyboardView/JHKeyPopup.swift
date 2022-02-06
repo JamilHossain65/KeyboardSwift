@@ -359,7 +359,7 @@ class JHKeyPopup: UIButton {
         
         if let _image = kTOP_IMAGE {
             log("already image exist")
-            return _image
+            //return _image
         }
         
         /*
