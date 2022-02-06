@@ -275,7 +275,7 @@ func getFileName() -> String {
     
     switch langName {
     case Bangla:
-        return "word.txt"
+        return "bangla.txt"
     case Indonesian:
         return "bahasa.txt"
     case Russian:
