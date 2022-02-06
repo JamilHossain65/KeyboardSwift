@@ -57,6 +57,7 @@ let SHIFT   = "Shift"
 let NUMERIC = "Numeric"
 let SYMBOL  = "Symbol"
 let DOUBLE_TAP = "DoubleTap"
+var kTOP_IMAGE:UIImage? = nil
 
 ////supported language name
 //let English = "English"
@@ -183,7 +184,7 @@ func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
 func getIndex(_ title:String,_ fontString:[String]? = [])-> Int{
     let _fontString = fontString?.map({$0.trimmingCharacters(in: .whitespacesAndNewlines)})
     let index = _fontString?.firstIndex(of: title) ?? 0
-    log("index::<\(title)>\(index)")
+    //log("index::<\(title)>\(index)")
     return index
 }
 
