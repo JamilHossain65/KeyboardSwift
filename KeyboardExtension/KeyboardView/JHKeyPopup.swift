@@ -357,7 +357,7 @@ class JHKeyPopup: UIButton {
     func keytopImage()-> UIImage {
         
         if let _image = kTOP_IMAGE {
-            print("already image exist")
+            log("already image exist")
             return _image
         }
         
