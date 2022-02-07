@@ -209,16 +209,17 @@ class JHKeyPopup: UIButton {
         }
         
         isLongPressing = true
-        //self.delegate2?.didTapLongOnButtonSwift(self)
-        print("tap long::\(self.titleLabel?.text)")
-        print("hintSymbolsList::\(self.hintSymbolsList)")
+        
+        if let _delegate = self.delegate2{
+            _delegate.didTapLongOnButtonSwift(self)
+        }
+        
         self.isHighlighted = false
         self.isSelected = false
         updateState()
         hidePopup()
         
         let image:UIImage = hintImage()
-        print("image::\(image)")
         self.hintView = UIImageView.init(image: image)
         let isRightHint:Bool = hintPosition == .ACHintPositionFarRight || hintPosition == .ACHintPositionRight
         var xPos:CGFloat

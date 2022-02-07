@@ -601,15 +601,15 @@ extension KeyboardView:JHKeyPopupDelegate{
     func didTapLongOnButtonSwift(_ sender: UIButton) {
         delegate?.didTapLongPressed()
         
-        if let _title = sender.titleLabel?.text {
-            print("_title ::: \(_title)")
-            delegate?.insertCharacter(_title)
-        }else{
-            if(sender.tag == shiftButtonIndex) {
-                
-            }
-            print("tag ::: \(sender.tag)")
-        }
+//        if let _title = sender.titleLabel?.text {
+//            print("_title ::: \(_title)")
+//            delegate?.insertCharacter(_title)
+//        }else{
+//            if(sender.tag == shiftButtonIndex) {
+//                
+//            }
+//            print("tag ::: \(sender.tag)")
+//        }
     }
 
     func didReleaseLongOnSwift(_ sender: UIButton) {
