@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 protocol JHKeyPopupDelegate: class {
     func didSelectHintButtonSwift(_ sender : UIButton)
@@ -748,6 +749,9 @@ class JHKeyPopup: UIButton {
     //MARK:- Touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        
+        AudioServicesPlaySystemSound (1104)
+        
         self.clipsToBounds = false
         addPopupToButton(button: self)
         self.updateState()
