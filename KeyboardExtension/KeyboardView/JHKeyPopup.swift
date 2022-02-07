@@ -88,36 +88,36 @@ class JHKeyPopup: UIButton {
         print("rowKeys::\(rowKeys)")
         var value = 0
         var index = 0
-        let tagValue = keyButton.tag + 1;
+        let tagValue = keyButton.tag + 1
         while (index < rowKeys.count) {
             let rowValue:Int = rowKeys[index]
-            value += rowValue;
+            value += rowValue
             if (value >= tagValue){
-                let halfvalue = rowValue/2;
-                let pos = value - halfvalue;
+                let halfvalue = rowValue/2
+                let pos = value - halfvalue
                 if(pos >= tagValue){
                     switch (tagValue) {
                     case 1:
-                        hintPosition = .ACHintPositionFarLeft;
-                        break;
+                        hintPosition = .ACHintPositionFarLeft
+                        break
                     default:
-                        hintPosition = .ACHintPositionLeft;
-                        break;
+                        hintPosition = .ACHintPositionLeft
+                        break
                     }
                 }else{
                     switch (tagValue) {
                         case 10:
-                            hintPosition = .ACHintPositionFarRight;
-                            break;
+                            hintPosition = .ACHintPositionFarRight
+                            break
                             
                         default:
-                            hintPosition = .ACHintPositionRight;
-                            break;
+                            hintPosition = .ACHintPositionRight
+                            break
                     }
                 }
-                return;
+                return
             }
-            index += 1;
+            index += 1
         }
     }
   
@@ -143,7 +143,7 @@ class JHKeyPopup: UIButton {
                 for txt in self.hintSymbolsList ?? []{
                     newArray.append(trim(txt))
                 }
-                self.hintSymbolsList = newArray;
+                self.hintSymbolsList = newArray
                 break
             }
         }
@@ -154,7 +154,7 @@ class JHKeyPopup: UIButton {
         
         
         //if true{
-            var keyPop:UIImageView? = nil;
+            var keyPop:UIImageView? = nil
 //            if false{
 //                
 //            }else{
@@ -162,11 +162,11 @@ class JHKeyPopup: UIButton {
                 keyPop = UIImageView.init(image: image)
                 keyPop?.frame = CGRect(x: (self.frame.size.width - image.size.width) / 2, y: -71, width: keyPop!.frame.size.width, height: keyPop!.frame.size.height)
                 var shift:CGFloat = 0.0
-                var amount:CGFloat = self.frame.size.width/3;
+                var amount:CGFloat = self.frame.size.width/3
                 if (hintPosition == .ACHintPositionFarLeft) {
-                    shift = amount;
+                    shift = amount
                 }else if (hintPosition == .ACHintPositionFarRight) {
-                    shift = -amount;
+                    shift = -amount
                 }
                 let text = UILabel.init(frame: CGRect(x: shift, y: 10, width: keyPop!.frame.size.width, height: 60))
                 
@@ -194,38 +194,38 @@ class JHKeyPopup: UIButton {
                 keyPop?.alpha = 1.0
             })
             
-            print("tap tag::\(button.tag)");
+            print("tap tag::\(button.tag)")
             startShowHintTimer()
         //}//
         
     }
     
     @objc func showKeyCapView(){
-        print("showKeyCapView...");
+        print("showKeyCapView...")
 
         if ((self.hintSymbolsList == nil) || (self.hintSymbolsList!.count == 0)) {
-            print("tap tag::\(self.tag)");
-            return;
+            print("tap tag::\(self.tag)")
+            return
         }
         
         isLongPressing = true
         //self.delegate2?.didTapLongOnButtonSwift(self)
-        print("tap long::\(self.titleLabel?.text)");
-        print("hintSymbolsList::\(self.hintSymbolsList)");
+        print("tap long::\(self.titleLabel?.text)")
+        print("hintSymbolsList::\(self.hintSymbolsList)")
         self.isHighlighted = false
         self.isSelected = false
         updateState()
         hidePopup()
         
         let image:UIImage = hintImage()
-        print("image::\(image)");
+        print("image::\(image)")
         self.hintView = UIImageView.init(image: image)
-        let isRightHint:Bool = hintPosition == .ACHintPositionFarRight || hintPosition == .ACHintPositionRight;
-        var xPos:CGFloat;
+        let isRightHint:Bool = hintPosition == .ACHintPositionFarRight || hintPosition == .ACHintPositionRight
+        var xPos:CGFloat
         if (isRightHint) {
-            xPos = (self.frame.size.width - (image.size.width + self.hintAdditionalWidth/2))/2;
+            xPos = (self.frame.size.width - (image.size.width + self.hintAdditionalWidth/2))/2
         } else { //ACHintPositionLeft & ACHintPositionFarLeft
-            xPos = -27;
+            xPos = -27
         }
         
         self.hintView?.frame = CGRect(x: xPos, y: -71, width: self.hintView!.frame.size.width, height: self.hintView!.frame.size.height)
@@ -239,15 +239,12 @@ class JHKeyPopup: UIButton {
         var button:UIButton?
         var hint: String
         
-        var hintStrings:[String] = [];
-        if (isRightHint) {
+        var hintStrings:[String] = []
+        if isRightHint {
             var newArray:[String] = []
             for revHint in self.hintSymbolsList ?? []{
-                newArray.append(revHint)
+                newArray.insert(revHint, at: 0)
             }
-            
-            print("hintStrings:::\(hintStrings)")
-            print("newArray:::\(newArray)")
             hintStrings = newArray
             
         }else{
@@ -256,7 +253,7 @@ class JHKeyPopup: UIButton {
         
         var mArray:[UIButton] = []
         var i = 0
-        for txt in hintSymbolsList ?? [] {
+        for _ in hintSymbolsList ?? [] {
             if hintStrings.count > 0{
                 hint = hintStrings[i]
             }else{
@@ -265,14 +262,7 @@ class JHKeyPopup: UIButton {
             
             button  = UIButton.init(type: .custom)
             
-            var xx:CGFloat = __PAN_UL_WIDTH
-            xx = xx + CGFloat(i)*self.frame.size.width + __GAP_X
-            if isRightHint{
-                //
-            }else{
-                xx += __GAP_X - 1
-            }
-            
+            let xx:CGFloat = __PAN_UL_WIDTH + CGFloat(i)*(self.frame.size.width + __GAP_X) + (isRightHint ? 0 : __GAP_X - 1)
             button!.frame = CGRect(x:xx ,
                                   y: 20, width: self.frame.size.width, height: self.frame.size.height)
             
@@ -287,14 +277,14 @@ class JHKeyPopup: UIButton {
             let blueColor = UIColor.init(red:3/255.0 , green: 122/255.0, blue: 1.0, alpha: 1.0)
             let imageBlue:UIImage  = imageWithColor(color: blueColor)
             let imageWhite:UIImage = imageWithColor(color: .white)
-            //[button setBackgroundImage:imageBlue  forState:UIControlStateHighlighted];
+            //[button setBackgroundImage:imageBlue  forState:UIControlStateHighlighted]
             button?.setBackgroundImage(imageBlue, for: .highlighted)
             button?.setBackgroundImage(imageWhite,for: .normal)
             
-            button?.layer.masksToBounds = true;
-            button?.layer.cornerRadius  = 5.0;
+            button?.layer.masksToBounds = true
+            button?.layer.cornerRadius  = 5.0
             
-            self.hintView!.addSubview(button!);
+            self.hintView!.addSubview(button!)
             mArray.append(button!)
             
             i = i+1
@@ -317,12 +307,12 @@ class JHKeyPopup: UIButton {
     }
     
     func getIsRightHint() -> Bool{
-        let isRightHint:Bool = hintPosition == .ACHintPositionFarRight || hintPosition == .ACHintPositionRight;
-        var xPos:CGFloat;
+        let isRightHint:Bool = hintPosition == .ACHintPositionFarRight || hintPosition == .ACHintPositionRight
+        var xPos:CGFloat
         if (isRightHint) {
-            xPos = (self.frame.size.width - (hintImage().size.width + self.hintAdditionalWidth/2))/2;
+            xPos = (self.frame.size.width - (hintImage().size.width + self.hintAdditionalWidth/2))/2
         } else { //ACHintPositionLeft & ACHintPositionFarLeft
-            xPos = -27;
+            xPos = -27
         }
         return isRightHint
     }
@@ -383,110 +373,110 @@ class JHKeyPopup: UIButton {
         var p2 = CGPoint(x: 0, y: 0)
         
         //1
-        p.x += __PAN_UPPER_RADIUS;
+        p.x += __PAN_UPPER_RADIUS
         path.move(to: p)
         
         //2
-        p.x += __PAN_UPPDER_WIDTH;
+        p.x += __PAN_UPPDER_WIDTH
         path.addLine(to: p)
         //3
-        p.y += __PAN_UPPER_RADIUS;
+        p.y += __PAN_UPPER_RADIUS
         path.addArc(center: CGPoint(x: p.x, y: p.y), radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(3.0*Double.pi/2.0), endAngle: CGFloat(4.0*Double.pi/2.0), clockwise: false)
         
         //4
-        p.x += __PAN_UPPER_RADIUS;
-        p.y += __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS - __PAN_CURVE_SIZE;
+        p.x += __PAN_UPPER_RADIUS
+        p.y += __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS - __PAN_CURVE_SIZE
         path.addLine(to: p)
         //5
-        p1 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE);
+        p1 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE)
         
         switch (hintPosition) {
         case .ACHintPositionFarRight:
-            p.x -= __PAN_UL_WIDTH*2;
-            break;
+            p.x -= __PAN_UL_WIDTH*2
+            break
         case .ACHintPositionLeft:
-            p.x -= __PAN_UL_WIDTH;
-            break;
+            p.x -= __PAN_UL_WIDTH
+            break
         case .ACHintPositionRight:
-            p.x -= __PAN_UL_WIDTH;
-            break;
+            p.x -= __PAN_UL_WIDTH
+            break
         case .ACHintPositionFarLeft:
-            break;
+            break
         
         }
         
-        p.y += __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2;
-        p2 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE);
+        p.y += __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2
+        p2 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE)
         path.addCurve(to: p, control1: p1, control2: p2)
         //6
-        p.y += __PAN_LOWER_HEIGHT - __PAN_CURVE_SIZE - __PAN_LOWER_RADIUS;
+        p.y += __PAN_LOWER_HEIGHT - __PAN_CURVE_SIZE - __PAN_LOWER_RADIUS
         path.addLine(to: p)
         //7
-        p.x -= __PAN_LOWER_RADIUS;
+        p.x -= __PAN_LOWER_RADIUS
         path.addArc(center: p, radius: __PAN_LOWER_RADIUS, startAngle: CGFloat(4.0*Double.pi/2.0), endAngle: CGFloat(1.0*Double.pi/2.0), clockwise: false)
         //8
-        p.x -= __PAN_LOWER_WIDTH;
-        p.y += __PAN_LOWER_RADIUS;
+        p.x -= __PAN_LOWER_WIDTH
+        p.y += __PAN_LOWER_RADIUS
         path.addLine(to: p)
         //9
-        p.y -= __PAN_LOWER_RADIUS;
+        p.y -= __PAN_LOWER_RADIUS
         path.addArc(center: p, radius: __PAN_LOWER_RADIUS, startAngle: CGFloat(1.0*Double.pi/2.0), endAngle: CGFloat(2.0*Double.pi/2.0), clockwise: false)
         //10
-        p.x -= __PAN_LOWER_RADIUS;
-        p.y -= __PAN_LOWER_HEIGHT - __PAN_LOWER_RADIUS - __PAN_CURVE_SIZE;
+        p.x -= __PAN_LOWER_RADIUS
+        p.y -= __PAN_LOWER_HEIGHT - __PAN_LOWER_RADIUS - __PAN_CURVE_SIZE
         path.addLine(to: p)
         //11
-        p1 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE);
+        p1 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE)
         switch (hintPosition) {
         case .ACHintPositionFarRight:
-                break;
+                break
                 
         case .ACHintPositionLeft:
-            p.x -= __PAN_UL_WIDTH;
-            break;
+            p.x -= __PAN_UL_WIDTH
+            break
         case .ACHintPositionRight:
-                p.x -= __PAN_UL_WIDTH;
-                break;
+                p.x -= __PAN_UL_WIDTH
+                break
                 
         case .ACHintPositionFarLeft:
-                p.x -= __PAN_UL_WIDTH*2;
-                break;
+                p.x -= __PAN_UL_WIDTH*2
+                break
         }
-        p.y -= __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2;
-        p2 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE);
+        p.y -= __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2
+        p2 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE)
         path.addCurve(to:p, control1: p1, control2: p2)
         //12
-        p.y -= __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS - __PAN_CURVE_SIZE;
+        p.y -= __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS - __PAN_CURVE_SIZE
         path.addLine(to: p)
         //13
-        p.x += __PAN_UPPER_RADIUS;
+        p.x += __PAN_UPPER_RADIUS
         path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(2.0*Double.pi/2.0), endAngle: CGFloat(3.0*Double.pi/2.0), clockwise: false)
         
-        var context:CGContext?;
+        var context:CGContext?
         UIGraphicsBeginImageContext(CGSize(width: __WIDTH,
-                                           height: __HEIGHT));
-        context = UIGraphicsGetCurrentContext();
+                                           height: __HEIGHT))
+        context = UIGraphicsGetCurrentContext()
         switch (hintPosition) {
         case .ACHintPositionFarRight:
-            context!.translateBy(x: __FAR_SHIFT, y: __HEIGHT);
-                break;
+            context!.translateBy(x: __FAR_SHIFT, y: __HEIGHT)
+                break
                 
         case .ACHintPositionLeft:
-            context!.translateBy(x: 0.0, y: __HEIGHT);
-            break;
+            context!.translateBy(x: 0.0, y: __HEIGHT)
+            break
         case .ACHintPositionRight:
-            context!.translateBy(x: 0.0, y: __HEIGHT);
-            break;
+            context!.translateBy(x: 0.0, y: __HEIGHT)
+            break
                 
         case .ACHintPositionFarLeft:
-            context!.translateBy(x: (-1)*__FAR_SHIFT, y: __HEIGHT);
-                break;
+            context!.translateBy(x: (-1)*__FAR_SHIFT, y: __HEIGHT)
+                break
         }
         
-        context!.scaleBy(x: 1.0, y: -1.0);
+        context!.scaleBy(x: 1.0, y: -1.0)
         
-        context!.addPath(path);
-        context?.clip();
+        context!.addPath(path)
+        context?.clip()
         
         let frame:CGRect = path.boundingBox
         let backColor:CGColor = UIColor.white.cgColor
@@ -509,7 +499,7 @@ class JHKeyPopup: UIButton {
         var p2 = CGPoint(x: 0, y: 0)
         
         //1
-        p.x += __PAN_UPPER_RADIUS;
+        p.x += __PAN_UPPER_RADIUS
         path.move(to: p)
         
         let hintCount:UInt = UInt(self.hintSymbolsList!.count)
@@ -518,173 +508,173 @@ class JHKeyPopup: UIButton {
         hintAdditionalWidth = newWidth*(self.frame.size.width + __GAP_X)
         
         //2
-        p.x += __PAN_UPPDER_WIDTH + self.hintAdditionalWidth;
-        //!!!:+hintCount*(__PAN_LOWER_WIDTH+__GAP_X);
+        p.x += __PAN_UPPDER_WIDTH + self.hintAdditionalWidth
+        //!!!:+hintCount*(__PAN_LOWER_WIDTH+__GAP_X)
         path.addLine(to: p)
         //3
-        p.y += __PAN_UPPER_RADIUS;
+        p.y += __PAN_UPPER_RADIUS
         path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(3.0*Double.pi/2.0), endAngle: CGFloat(4.0*Double.pi/2.0), clockwise: false)
-        p.x += __PAN_UPPER_RADIUS;
+        p.x += __PAN_UPPER_RADIUS
         //4
-        p.y += __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS;
+        p.y += __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS
         if hintPosition == .ACHintPositionFarRight ||
                 hintPosition == .ACHintPositionRight {
-            p.y += -(2*__PAN_UPPER_RADIUS) + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT;
+            p.y += -(2*__PAN_UPPER_RADIUS) + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT
         } else { //ACHintPositionLeft & ACHintPositionFarLeft
-            p.y -= __PAN_CURVE_SIZE;
+            p.y -= __PAN_CURVE_SIZE
         }
         path.addLine(to: p)
 
         if hintPosition == .ACHintPositionFarRight ||
                 hintPosition == .ACHintPositionRight {
             //5.1
-            p.x -= __PAN_UPPER_RADIUS;
+            p.x -= __PAN_UPPER_RADIUS
             path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(4.0*Double.pi/2.0), endAngle: CGFloat(1.0*Double.pi/2.0), clockwise: false)
             
-            p.y += __PAN_UPPER_RADIUS;
+            p.y += __PAN_UPPER_RADIUS
             
             //5.2
-            p.x -= self.hintAdditionalWidth + __PAN_UL_WIDTH-2*__PAN_UPPER_RADIUS;
+            p.x -= self.hintAdditionalWidth + __PAN_UL_WIDTH-2*__PAN_UPPER_RADIUS
             path.addLine(to: p)
             
             //5.3
-            p.y += __PAN_UPPER_RADIUS;
+            p.y += __PAN_UPPER_RADIUS
             path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(3.0*Double.pi/2.0), endAngle: CGFloat(2.0*Double.pi/2.0), clockwise: true)
             
-            p.x -= __PAN_UPPER_RADIUS;
+            p.x -= __PAN_UPPER_RADIUS
         } else { //ACHintPositionLeft & ACHintPositionFarLeft
             //5
-            p1 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE);
-            p.x -= __PAN_UL_WIDTH;
-            p.y += __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2;
-            p2 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE);
+            p1 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE)
+            p.x -= __PAN_UL_WIDTH
+            p.y += __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2
+            p2 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE)
             path.addCurve(to: p, control1: p1, control2: p2)
         
         }
 
         //6
-        p.y += __PAN_LOWER_HEIGHT - __PAN_CURVE_SIZE - __PAN_LOWER_RADIUS;
+        p.y += __PAN_LOWER_HEIGHT - __PAN_CURVE_SIZE - __PAN_LOWER_RADIUS
         path.addLine(to: p)
         
         //7
-        p.x -= __PAN_LOWER_RADIUS;
+        p.x -= __PAN_LOWER_RADIUS
         path.addArc(center: p, radius: __PAN_LOWER_RADIUS, startAngle: CGFloat(4.0*Double.pi/2.0), endAngle: CGFloat(1.0*Double.pi/2.0), clockwise: false)
         //8
-        p.x -= __PAN_LOWER_WIDTH;
-        p.y += __PAN_LOWER_RADIUS;
+        p.x -= __PAN_LOWER_WIDTH
+        p.y += __PAN_LOWER_RADIUS
         path.addLine(to: p)
         
         //9
-        p.y -= __PAN_LOWER_RADIUS;
+        p.y -= __PAN_LOWER_RADIUS
         
         path.addArc(center: p, radius: __PAN_LOWER_RADIUS, startAngle: CGFloat(1.0*Double.pi/2.0), endAngle: CGFloat(2.0*Double.pi/2.0), clockwise: false)
         
         //10
-        p.x -= __PAN_LOWER_RADIUS;
-        p.y -= __PAN_LOWER_HEIGHT - __PAN_LOWER_RADIUS - __PAN_CURVE_SIZE;
+        p.x -= __PAN_LOWER_RADIUS
+        p.y -= __PAN_LOWER_HEIGHT - __PAN_LOWER_RADIUS - __PAN_CURVE_SIZE
         
         path.addLine(to: p)
         
         if hintPosition == .ACHintPositionFarRight ||
             hintPosition == .ACHintPositionRight {
             //11
-            p1 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE);
-            p.x -= __PAN_UL_WIDTH;
-            p.y -= __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2;
-            p2 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE);
+            p1 = CGPoint(x:p.x, y:p.y - __PAN_CURVE_SIZE)
+            p.x -= __PAN_UL_WIDTH
+            p.y -= __PAN_MIDDLE_HEIGHT + __PAN_CURVE_SIZE*2
+            p2 = CGPoint(x:p.x, y:p.y + __PAN_CURVE_SIZE)
             path.addCurve(to: p, control1: p1, control2: p2)
             
         } else { //ACHintPositionLeft & ACHintPositionFarLeft
             
             //11.1
-            p.x -= __PAN_UPPER_RADIUS;
+            p.x -= __PAN_UPPER_RADIUS
             path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(4.0*Double.pi/2.0), endAngle: CGFloat(3.0*Double.pi/2.0), clockwise: true)
             
-            p.y -= __PAN_UPPER_RADIUS;
+            p.y -= __PAN_UPPER_RADIUS
             
             //11.2
-            p.x -= self.hintAdditionalWidth + __PAN_UL_WIDTH-2*__PAN_UPPER_RADIUS;
-            //CGPathAddLineToPoint(path, NULL, p.x, p.y);
+            p.x -= self.hintAdditionalWidth + __PAN_UL_WIDTH-2*__PAN_UPPER_RADIUS
+            //CGPathAddLineToPoint(path, NULL, p.x, p.y)
             path.addLine(to: p)
             
             //11.3
-            p.y -= __PAN_UPPER_RADIUS;
+            p.y -= __PAN_UPPER_RADIUS
             path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(1.0*Double.pi/2.0), endAngle: CGFloat(2.0*Double.pi/2.0), clockwise: false)
             
-            p.x -= __PAN_UPPER_RADIUS;
+            p.x -= __PAN_UPPER_RADIUS
         }
         
         //12
-        p.y -= __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS;
+        p.y -= __PAN_UPPER_HEIGHT - __PAN_UPPER_RADIUS
         if (hintPosition == .ACHintPositionFarRight ||
                 hintPosition == .ACHintPositionRight) {
-            p.y += __PAN_CURVE_SIZE;
+            p.y += __PAN_CURVE_SIZE
         } else {
-            p.y -= -(2*__PAN_UPPER_RADIUS) + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT;
+            p.y -= -(2*__PAN_UPPER_RADIUS) + __PAN_CURVE_SIZE + __PAN_MIDDLE_HEIGHT
         }
         
         path.addLine(to: p)
             
         //13
-        p.x += __PAN_UPPER_RADIUS;
+        p.x += __PAN_UPPER_RADIUS
         
         path.addArc(center: p, radius: __PAN_UPPER_RADIUS, startAngle: CGFloat(2.0*Double.pi/2.0), endAngle: CGFloat(3.0*Double.pi/2.0), clockwise: false)
         
         /*
         //----
-        CGContextRef context;
+        CGContextRef context
         UIGraphicsBeginImageContext(CGSizeMake(__WIDTH+self.hintAdditionalWidth,
-                                               __HEIGHT));
-        context = UIGraphicsGetCurrentContext();
+                                               __HEIGHT))
+        context = UIGraphicsGetCurrentContext()
         
-        CGContextTranslateCTM(context, 0.0, __HEIGHT);
+        CGContextTranslateCTM(context, 0.0, __HEIGHT)
         
-        CGContextScaleCTM(context, 1.0, -1.0);
+        CGContextScaleCTM(context, 1.0, -1.0)
         
-        CGContextAddPath(context, path);
-        CGContextClip(context);
+        CGContextAddPath(context, path)
+        CGContextClip(context)
         */
         
-        var context:CGContext?;
+        var context:CGContext?
         UIGraphicsBeginImageContext(CGSize(width: __WIDTH + hintAdditionalWidth,
-                                           height: __HEIGHT));
-        context = UIGraphicsGetCurrentContext();
+                                           height: __HEIGHT))
+        context = UIGraphicsGetCurrentContext()
         context!.translateBy(x: 0.0, y: __HEIGHT)
-        context!.scaleBy(x: 1.0, y: -1.0);
+        context!.scaleBy(x: 1.0, y: -1.0)
         
-        context!.addPath(path);
-        context?.clip();
+        context!.addPath(path)
+        context?.clip()
         
         /*
         //----
-        CGRect frame = CGPathGetBoundingBox(path);
-        CGColorRef backColor = [UIColor whiteColor].CGColor; //todo enable code
+        CGRect frame = CGPathGetBoundingBox(path)
+        CGColorRef backColor = [UIColor whiteColor].CGColor //todo enable code
     //    switch (self.appearance) {
     //        case ACKeyAppearanceDark:
-    //            backColor = [ACDarkAppearance lightKeyColor].CGColor;
-    //            break;
+    //            backColor = [ACDarkAppearance lightKeyColor].CGColor
+    //            break
     //
     //        case ACKeyAppearanceLight:
-    //            backColor = [ACLightAppearance lightKeyColor].CGColor;
-    //            break;
+    //            backColor = [ACLightAppearance lightKeyColor].CGColor
+    //            break
     //
     //        default:
-    //            break;
+    //            break
     //    }
         
-        CGContextSetFillColorWithColor(context, backColor);
-        CGContextFillRect(context, frame);
+        CGContextSetFillColorWithColor(context, backColor)
+        CGContextFillRect(context, frame)
         
-        CGImageRef imageRef = CGBitmapContextCreateImage(context);
+        CGImageRef imageRef = CGBitmapContextCreateImage(context)
         
-        UIImage * image = [UIImage imageWithCGImage:imageRef scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationDown];
-        CGImageRelease(imageRef);
+        UIImage * image = [UIImage imageWithCGImage:imageRef scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationDown]
+        CGImageRelease(imageRef)
         
-        UIGraphicsEndImageContext();
+        UIGraphicsEndImageContext()
         
-        CFRelease(path);
+        CFRelease(path)
         
-        return image;
+        return image
          
          
         */
@@ -742,10 +732,10 @@ class JHKeyPopup: UIButton {
     func imageWithColor(color:UIColor) -> UIImage {
         let rect = CGRect(x:0.0, y:0.0, width:1.0, height: 1.0)
         
-        var context:CGContext?;
+        var context:CGContext?
         
         UIGraphicsBeginImageContext(rect.size)
-        context = UIGraphicsGetCurrentContext();
+        context = UIGraphicsGetCurrentContext()
         context!.setFillColor(color.cgColor)
         context!.fill(rect)
         let imageRef:CGImage = context!.makeImage()!
@@ -760,7 +750,7 @@ class JHKeyPopup: UIButton {
         self.clipsToBounds = false
         addPopupToButton(button: self)
         self.updateState()
-        let time = Date().timeIntervalSince1970 * 1000.0  //([[NSDate date] timeIntervalSince1970] * 1000.0);
+        let time = Date().timeIntervalSince1970 * 1000.0  //([[NSDate date] timeIntervalSince1970] * 1000.0)
         print("time::\(time)")
     }
     
@@ -822,9 +812,9 @@ class JHKeyPopup: UIButton {
                 //Reset Hint Highlighted
                 for btn in _hintButtons {
                     if highlightedButton.titleLabel!.text == btn.titleLabel!.text{
-                        //[btn setHighlighted:NO];
+                        //[btn setHighlighted:NO]
                         btn.isHighlighted = false
-                        break;
+                        break
                     }
                 }
                 
@@ -841,7 +831,7 @@ class JHKeyPopup: UIButton {
             hideHintView()
      
         }else{
-            print("button title::\(self.titleLabel!.text)");
+            print("button title::\(self.titleLabel!.text)")
         }
 
         startHideTimerPopup()
@@ -850,7 +840,7 @@ class JHKeyPopup: UIButton {
         let time = Date().timeIntervalSince1970 * 1000.0
         print("T end::\(time)")
         
-        print("release long on::\(self.titleLabel!.text)");
+        print("release long on::\(self.titleLabel!.text)")
         if let _delegate = self.delegate2{
             _delegate.didReleaseLongOnSwift(self)
         }
