@@ -116,14 +116,14 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
         let keyArray = currentFontLetters.split(whereSeparator: {$0.contains(kNL)})
         totalRow = keyArray.count
         
-        configure4Line(totalRow)
+        configureKeys(totalRow)
         setSpecialButtonColor()
     }
 }
 
 //MARK:- configure keyboard button
 extension KeyboardView{
-    func configure4Line(_ totalLines:Int? = 4) {
+    func configureKeys(_ totalLines:Int? = 4) {
         
         //set total rows in keyboard
         paddingX = 3 //left and right padding
@@ -134,8 +134,6 @@ extension KeyboardView{
         if let _totalLines = totalLines, _totalLines >= 5{
             gapY = 1
         }
-        
-        //totalRow = 4
         
         //set spetial button index
         let _currentLetters = currentFontLetters.filter({$0 != kNL})
@@ -159,7 +157,11 @@ extension KeyboardView{
         
         //draw Keyboard
         for (index,letters) in keyArray.enumerated(){
-            drawLineFor(row:index,totalCol:letters.count, info:getInfo(index),const:getConst(index))
+            drawLineFor(row     :index,
+                        totalCol:letters.count,
+                        info    :getModifiedWidth(index),
+                        const   :getModifiedSpace(index)
+            )
         }
     }
     
@@ -202,18 +204,10 @@ extension KeyboardView{
             preWidth = btnWidth
             
             let bFrame = CGRect(x: colX, y: colY, width: btnWidth, height: btnHeight)
-            var title = ""
-            
-//            if currentFontLetters.count > 0 {
-//                title = currentFontLetters[currentButtonIndex % currentFontLetters.count]
-//                title = title.trimmingCharacters(in: .whitespaces)
-//            }
-            
-            
+           
             let keyArray = currentFontLetters.split(whereSeparator: {$0.contains(kNL)})
             let rowLetters = Array(keyArray[row])
-            title = rowLetters[i]
-            //title = title.trimmingCharacters(in: .whitespaces)
+            let title = rowLetters[i]
             
             let keyboardButton = KeyboardButton(frame: bFrame)
             
@@ -318,7 +312,8 @@ extension KeyboardView{
         return originColX
     }
     
-    func getConst(_ row:Int) -> [Int:Int]{
+    //get modified space between two buttons
+    func getModifiedSpace(_ row:Int) -> [Int:Int]{
         
         switch row {
         case 0:
@@ -368,7 +363,8 @@ extension KeyboardView{
         return [:]
     }
     
-    func getInfo(_ row:Int)-> [Int:Int]{
+    //get modified button width
+    func getModifiedWidth(_ row:Int)-> [Int:Int]{
         
         switch row {
         case 0:
