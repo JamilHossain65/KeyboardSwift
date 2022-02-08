@@ -39,7 +39,7 @@
 		8D74D7A527B24079006642E0 /* UnicodeEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D7A027B24079006642E0 /* UnicodeEs.swift */; };
 		8D74D7A927B27A98006642E0 /* UnicodeTr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D7A827B27A98006642E0 /* UnicodeTr.swift */; };
 		8D74D7AD27B27AAD006642E0 /* turkish.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D74D7AC27B27AAD006642E0 /* turkish.txt */; };
-		8D74D7B127B284C5006642E0 /* Portuguese.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D74D7B027B284C5006642E0 /* Portuguese.txt */; };
+		8D74D7B127B284C5006642E0 /* portuguese.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D74D7B027B284C5006642E0 /* portuguese.txt */; };
 		8D74D7B527B284DE006642E0 /* UnicodePt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D7B427B284DE006642E0 /* UnicodePt.swift */; };
 		8D75AE202794338200CB1E0B /* UnicodeId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75AE1F2794338200CB1E0B /* UnicodeId.swift */; };
 		8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D769A0C265F3BED00C74FBA /* Assets.xcassets */; };
@@ -133,7 +133,7 @@
 		8D74D7A027B24079006642E0 /* UnicodeEs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeEs.swift; sourceTree = "<group>"; };
 		8D74D7A827B27A98006642E0 /* UnicodeTr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeTr.swift; sourceTree = "<group>"; };
 		8D74D7AC27B27AAD006642E0 /* turkish.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = turkish.txt; sourceTree = "<group>"; };
-		8D74D7B027B284C5006642E0 /* Portuguese.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Portuguese.txt; sourceTree = "<group>"; };
+		8D74D7B027B284C5006642E0 /* portuguese.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = portuguese.txt; sourceTree = "<group>"; };
 		8D74D7B427B284DE006642E0 /* UnicodePt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodePt.swift; sourceTree = "<group>"; };
 		8D75AE1F2794338200CB1E0B /* UnicodeId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeId.swift; sourceTree = "<group>"; };
 		8D769A0C265F3BED00C74FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				8D02F5F527B178B9008AA6E3 /* italian.txt */,
 				8D02F5F627B178B9008AA6E3 /* korean.txt */,
 				8D74D7AC27B27AAD006642E0 /* turkish.txt */,
-				8D74D7B027B284C5006642E0 /* Portuguese.txt */,
+				8D74D7B027B284C5006642E0 /* portuguese.txt */,
 			);
 			path = Words;
 			sourceTree = "<group>";
@@ -276,11 +276,11 @@
 				8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */,
 				8D75AE1F2794338200CB1E0B /* UnicodeId.swift */,
 				8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */,
+				8D74D7A027B24079006642E0 /* UnicodeEs.swift */,
 				8D74D79E27B24079006642E0 /* UnicodeFr.swift */,
 				8D74D79C27B24079006642E0 /* UnicodeGe.swift */,
 				8D74D79F27B24079006642E0 /* UnicodeIt.swift */,
 				8D74D79D27B24079006642E0 /* UnicodeKo.swift */,
-				8D74D7A027B24079006642E0 /* UnicodeEs.swift */,
 				8D74D7A827B27A98006642E0 /* UnicodeTr.swift */,
 				8D74D7B427B284DE006642E0 /* UnicodePt.swift */,
 			);
@@ -501,7 +501,7 @@
 			files = (
 				8D3E230C279BCF280067DC30 /* russian.txt in Resources */,
 				8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */,
-				8D74D7B127B284C5006642E0 /* Portuguese.txt in Resources */,
+				8D74D7B127B284C5006642E0 /* portuguese.txt in Resources */,
 				8D02F5FA27B178B9008AA6E3 /* korean.txt in Resources */,
 				8D74D7AD27B27AAD006642E0 /* turkish.txt in Resources */,
 				8D02F5F927B178B9008AA6E3 /* italian.txt in Resources */,

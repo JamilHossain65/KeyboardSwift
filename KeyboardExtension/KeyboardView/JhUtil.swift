@@ -137,11 +137,11 @@ let kAllLanguageDicArray = [
     [Indonesian: kFontIdDic],
     [Russian   : kFontRuDic],
     
+    [Spanish   : kFontEsDic],
     [French    : kFontFrDic],
     [German    : kFontGeDic],
     [Italian   : kFontItDic],
-    [Korian    : kFontKoDic],
-    [Spanish   : kFontEsDic],
+    [Korean    : kFontKoDic],
     [Turkish   : kFontTrDic],
     [Portuguese: kFontPtDic],
     
@@ -275,6 +275,43 @@ func getHintString() -> String {
             return hintWordsRu
         }
         
+        
+    case Spanish:
+        switch fontName {
+        default:
+            return hintWordsEs
+        }
+    case French:
+        switch fontName {
+        default:
+            return hintWordsFr
+        }
+    case German:
+        switch fontName {
+        default:
+            return hintWordsGe
+        }
+    case Italian:
+        switch fontName {
+        default:
+            return hintWordsIt
+        }
+    case Korean:
+        switch fontName {
+        default:
+            return hintWordsKo
+        }
+    case Turkish:
+        switch fontName {
+        default:
+            return hintWordsTr
+        }
+    case Portuguese:
+        switch fontName {
+        default:
+            return hintWordsPt
+        }
+        
     default://English
         switch fontName {
         case NORMAL:
@@ -298,6 +335,22 @@ func getFileName() -> String {
         return "bahasa.txt"
     case Russian:
         return "russian.txt"
+        
+    case French:
+        return "french.txt"
+    case German:
+        return "german.txt"
+    case Italian:
+        return "italian.txt"
+    case Korean:
+        return "korean.txt"
+    case Spanish:
+        return "spanish.txt"
+    case Turkish:
+        return "turkish.txt"
+    case Portuguese:
+        return "portuguese.txt"
+        
     default:
         return "words.txt"
     }

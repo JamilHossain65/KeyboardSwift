@@ -25,24 +25,24 @@ let Spanish    = "Spanish"
 let French     = "French"
 let German     = "German"
 let Italian    = "Italian"
-let Korian     = "Korian"
+let Korean     = "Korean"
 let Turkish    = "Turkish"
 let Portuguese = "Portuguese"
 
 var activeLanguages = [
     English:true, Indonesian:false, Bangla    :false, Russian:false,
-    Spanish:true, French    :false, German    :false, Italian:false,
-    Korian :false,Turkish   :false, Portuguese:false,
+    Spanish:true, French    :true,  German    :true,  Italian:true,
+    Korean :true, Turkish   :true,  Portuguese:true,
 ]
 var countryCodes  = [
     English:"us", Indonesian:"id", Bangla    :"bd", Russian:"ru",
     Spanish:"sp", French    :"fr", German    :"gr", Italian:"it",
-    Korian :"ku", Turkish   :"tr", Portuguese:"pt",
+    Korean :"ko", Turkish   :"tr", Portuguese:"pt",
 ]
 var languageCodes = [
     English:"en", Indonesian:"id", Bangla    :"bn", Russian:"ru",
     Spanish:"es", French    :"fr", German    :"gr", Italian:"it",
-    Korian :"ku", Turkish   :"tr", Portuguese:"pt",
+    Korean :"ko", Turkish   :"tr", Portuguese:"pt",
 ]
 
 //MARK:- SHARED DATA
