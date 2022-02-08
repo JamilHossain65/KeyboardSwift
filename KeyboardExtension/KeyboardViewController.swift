@@ -78,19 +78,23 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     func refreshWordFile(){
         let filename = getFileName()
-        guard let wordString = readf(filename)else {return}
+        guard let wordString = readf(filename) else {return}
         
         wordArray = wordString.components(separatedBy: "\n") //MARK: - TODO: crash sometimes
         log("words count::\(wordArray.count)")
         
-        
-//        var index = 0
-//        for word in wordArray{
-//            index = index + 1
-//            if index%3 == 2{
-//                log("\(word)")
-//            }
-//        }
+        /*
+        var index = 0
+        for str in wordArray{
+            index = index + 1
+            let word = str.components(separatedBy: "\t")
+            //if index%3 == 2{
+            let wordTrimmed = word[1].trimmingCharacters(in: .whitespaces)
+            //log("\(word[0])")
+            log("\(wordTrimmed)")
+            //}
+        }
+        */
         
 //        for word in wordArray{
 //            let _word = word.components(separatedBy: "/")

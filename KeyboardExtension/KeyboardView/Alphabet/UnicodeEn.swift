@@ -10,7 +10,18 @@ import UIKit
 //class UnicodeEn: NSObject {
 //}
 
-
+//Steps of adding a new language
+/*
+ 
+Step1: Add New Class:UnicodeEn.swift[i.e: UnicodeBn.swift], folder: KeyboardView/Alphabet
+Step2: Add New Class:LanguageName.txt[i.e: bangla.txt], folder: HintBar/Alphabet
+ 
+Step3: Class:JhUtil,      veriable: kAllLanguageDicArray
+Step4: Class:SharedClass, veriable: activeLanguages
+Step5: Class:SharedClass, veriable: countryCodes
+Step6: Class:SharedClass, veriable: languageCodes
+ 
+*/
 let kFontEnDic:[[String:[String]]] = [
     [NORMAL :kUnicodeLettersEnNormal,
      SHIFT  :kUnicodeLettersEnNormalShift,
