@@ -132,7 +132,8 @@ extension KeyboardView{
         gapX = 5.5  //gap between button in a row
         gapY = 18 //gap between button in a col
         if let _totalLines = totalLines, _totalLines >= 5{
-            gapY = 1
+            gapX = 1.5
+            gapY = 1.5
         }
         
         //set spetial button index
@@ -312,9 +313,24 @@ extension KeyboardView{
         return originColX
     }
     
-    //get modified space between two buttons
+    //get modified space before a button
     func getModifiedSpace(_ row:Int) -> [Int:Int]{
+        let array = getLettersInRows()
+        //print("array:::\(array[row])")
         
+        switch row {
+        case array.count - 1 ://Last row
+            break
+        case array.count - 2 ://shift and delete row
+            return [1:7, abs(array[row]-1):7] //'array[row] - 1' delete button index
+        default:
+            if array[row] == 9 { //Handle case for 2nd row of english language
+                return [0:15, 9:15]
+            }
+            break
+        }
+        
+        /*
         switch row {
         case 0:
             switch langName {
@@ -358,14 +374,32 @@ extension KeyboardView{
             }
             break
         }
-        
+        */
         
         return [:]
     }
     
     //get modified button width
     func getModifiedWidth(_ row:Int)-> [Int:Int]{
+        let array = getLettersInRows()
+        //print("array:::\(array[row])")
         
+        switch row {
+        case abs(array.count - 1) ://Last row
+            return [0:40, 1:30,2:30,4:80]
+        case abs(array.count - 2) ://shift and delete row
+            switch langName { //MARK:- TODO: make this dynamic
+            case Russian:
+                return [0:30, 10:30]
+            default:
+                return [0:40, 8:40]
+            }
+            
+        default:
+            break
+        }
+        
+        /*
         switch row {
         case 0:
             switch langName {
@@ -408,7 +442,7 @@ extension KeyboardView{
             }
             break
         }
-        
+        */
         return [:]
     }
     
@@ -686,7 +720,8 @@ extension KeyboardView {
     }
     
     @objc func playSound(){
-        AudioServicesPlaySystemSound (1104)
+        //MARK:- todo: implement double tap sound
+        //AudioServicesPlaySystemSound (1104)
     }
     
     @objc func handleLongPressDelete(_ gestureRecognizer: UILongPressGestureRecognizer) {

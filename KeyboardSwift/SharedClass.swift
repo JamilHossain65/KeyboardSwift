@@ -30,13 +30,13 @@ let Turkish    = "Turkish"
 let Portuguese = "Portuguese"
 
 var activeLanguages = [
-    English:true, Indonesian:false, Bangla    :false, Russian:false,
-    Spanish:true, French    :true,  German    :true,  Italian:true,
-    Korean :true, Turkish   :true,  Portuguese:true,
+    English:true,  Indonesian:false,  Bangla    :false,  Russian:false,
+    Spanish:true,  French    :false,  German    :false,  Italian:false,
+    Korean :false, Turkish   :false,  Portuguese:false,
 ]
 var countryCodes  = [
     English:"us", Indonesian:"id", Bangla    :"bd", Russian:"ru",
-    Spanish:"sp", French    :"fr", German    :"gr", Italian:"it",
+    Spanish:"es", French    :"fr", German    :"gr", Italian:"it",
     Korean :"ko", Turkish   :"tr", Portuguese:"pt",
 ]
 var languageCodes = [

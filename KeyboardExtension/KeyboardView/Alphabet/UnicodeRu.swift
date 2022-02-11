@@ -1,5 +1,5 @@
 //
-//  UnicodeEn.swift
+//  UnicodeRu.swift
 //  KeyboardExtension
 //
 //  Created by Jamil on 9/5/21.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-//class UnicodeEn: NSObject {
+//class UnicodeRu: NSObject {
 //}
 
+//App Name: 'Russian Key'
 
 let kFontRuDic:[[String:[String]]] = [
     [NORMAL :kUnicodeLettersRuNormal,

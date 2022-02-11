@@ -264,8 +264,17 @@ class JHKeyPopup: UIButton {
             
             button  = UIButton.init(type: .custom)
             
-            let xx:CGFloat = __PAN_UL_WIDTH + CGFloat(i)*(self.frame.size.width + __GAP_X) + (isRightHint ? 0 : __GAP_X - 1)
-            button!.frame = CGRect(x:xx ,
+            var posX:CGFloat = __PAN_UL_WIDTH + CGFloat(i)*(self.frame.size.width + __GAP_X) + (isRightHint ? 0 : __GAP_X - 1)
+            
+            if let _hintSymbolsList = hintSymbolsList,_hintSymbolsList.count > 9 {
+                if isRightHint {
+                    posX = __PAN_UL_WIDTH*2.5 + CGFloat(i)*self.frame.size.width
+                }else{
+                    posX = __PAN_UL_WIDTH + CGFloat(i)*self.frame.size.width
+                }
+            }
+            
+            button!.frame = CGRect(x:posX ,
                                   y: 20, width: self.frame.size.width, height: self.frame.size.height)
             
             button?.setTitle(hint, for: .normal)
