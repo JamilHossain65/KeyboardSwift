@@ -11,6 +11,8 @@
 "kAbcString"    = "ABC";
 "kReturnString" = "Return";
 "kSpaceString"  = "Space";
+"kStopSpace"    = ". ";
+"kDoubleSpace"  = "  ";
 
 // MARK: - Record
 "recording" = "Recording";

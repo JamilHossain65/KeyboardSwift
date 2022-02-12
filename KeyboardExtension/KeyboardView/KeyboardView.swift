@@ -492,19 +492,19 @@ extension KeyboardView{
             keyboardButton.setImage(UIImage(named: "globe.png"), for: .normal)
             break
         case altButtonIndex:
-            keyboardButton.setTitle(k123String, for: .normal)
-            keyboardButton.setTitle(kAbcString, for: .selected)
+            keyboardButton.setTitle("k123String".localized(), for: .normal)
+            keyboardButton.setTitle("kAbcString".localized(), for: .selected)
             keyboardButton.isSelected = altButton.isSelected
             altButton = keyboardButton
             break
         case returnButtonIndex:
             self.returnButton = keyboardButton
-            keyboardButton.setTitle(kReturnString, for: .normal)
+            keyboardButton.setTitle("kReturnString".localized(), for: .normal)
             break
         case shiftButtonIndex:
             if altButton.isSelected{
-                keyboardButton.setTitle(kSymbolString, for: .normal)
-                keyboardButton.setTitle(k123String, for: .selected)
+                keyboardButton.setTitle("kSymbolString".localized(), for: .normal)
+                keyboardButton.setTitle("k123String".localized(), for: .selected)
             }else{
                 var imName = ""
                 switch keyMode {
@@ -534,7 +534,7 @@ extension KeyboardView{
             break
         case spaceButtonIndex:
             self.spaceButton = keyboardButton
-            keyboardButton.setTitle(kSpaceString, for: .normal)
+            keyboardButton.setTitle("kSpaceString".localized(), for: .normal)
             keyboardButton.highlightBackgroundColor = kAltButtonColor
             break
         case voiceButtonIndex:
@@ -688,10 +688,10 @@ extension KeyboardView {
             if let _title = sender.titleLabel?.text{
                 
                 switch _title {
-                case kSpaceString:
+                case "kSpaceString".localized():
                     AudioServicesPlaySystemSound (1104)
                     delegate?.insertCharacter(" ")
-                case kReturnString:
+                case "kReturnString".localized():
                     AudioServicesPlaySystemSound (1104)
                     delegate?.insertCharacter("\n")
                 
@@ -710,7 +710,7 @@ extension KeyboardView {
         self.perform(#selector(playSound), with: nil, afterDelay: 0.25)
         
         let button = sender.view as! UIButton
-        if button.titleLabel?.text == kSpaceString{
+        if button.titleLabel?.text == "kSpaceString".localized(){
             delegate?.spaceButtonDoubleTap(spaceButton)
         }else{
             shiftButton.setImage(UIImage(named: "unshift.png"), for: .normal)

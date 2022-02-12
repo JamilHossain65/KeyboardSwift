@@ -11,6 +11,38 @@ import UIKit
 //
 //}
 
+extension String{
+    // Localized string
+//    func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
+//        return NSLocalizedString(self, tableName: tableName, bundle: bundle, value: "**\(self)**", comment: "")
+//    }
+    
+    func localized() -> String{
+       return NSLocalizedString(self, comment: "")
+        
+//        if let path = Bundle.main.path(forResource: "Settings", ofType: "bundle") {
+//             let settingBundle = Bundle.init(path: path)
+//             print(settingBundle)
+//             let lString = NSLocalizedString("Color Name", tableName: "Root", bundle: settingBundle!, value: "Not found", comment: "")
+//             print(lString)
+//            return lString
+//        }
+        
+//        let path = Bundle.main.path(forResource: "Settings", ofType: "bundle")
+//        print("path:\(path)")
+//
+//        let path2 = Bundle.main.path(forResource: "Root", ofType: "strings", inDirectory: "Settings.bundle/en.lproj")
+//
+//        if let serverStringsUrl = Bundle.main.url(forResource: "Root", withExtension: "strings", subdirectory: "Settings.bundle/en.lproj"){
+//
+//            print("serverStringsDict:\(serverStringsUrl.path)")
+//            return serverStringsUrl.path
+//          }
+        
+       
+    }
+}
+
 extension UIImage {
     func resize(_ toSize: CGSize) -> UIImage {
         let size = self.size

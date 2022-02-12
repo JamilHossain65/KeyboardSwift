@@ -280,7 +280,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         hintBarManager.addSuggestionBar(parentView: inputView, txtView: textDocumentProxy)
         
         showSettingOptionView()
-        
+        refreshWordFile()
     }
     
     func showSettingOptionView(){
@@ -499,7 +499,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
 extension KeyboardViewController: KeyboardViewDelegate {
     func spaceButtonDoubleTap(_ spaceButton : UIButton){
-        insertCharacter(kDoubleSpace)
+        insertCharacter("kDoubleSpace".localized())
     }
     
     func shiftButtonDoubleTap(_ shiftButton: UIButton) {
@@ -547,7 +547,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         audioManager.playSoundFile("key_sound.mp3")
         
         //check and update fullstop
-        if newCharacter == kDoubleSpace {
+        if newCharacter == "kDoubleSpace".localized() {
             updateFullStop(newCharacter)
         }else{
             textDocumentProxy.insertText(newCharacter)
@@ -645,16 +645,16 @@ extension KeyboardViewController: KeyboardViewDelegate {
         log("full stop text::\(text)")
         
         if writingMode == .INSERTING{
-            if String(text.suffix(2)) == kStopSpace{
-                textDocumentProxy.insertText(kDoubleSpace)
-            }else if String(text.suffix(2)) == kDoubleSpace{
-                textDocumentProxy.insertText(kDoubleSpace)
+            if String(text.suffix(2)) == "kStopSpace".localized(){
+                textDocumentProxy.insertText("kDoubleSpace".localized())
+            }else if String(text.suffix(2)) == "kDoubleSpace".localized(){
+                textDocumentProxy.insertText("kDoubleSpace".localized())
             }else{
                 if String(text.suffix(1)) == " "{
                     textDocumentProxy.deleteBackward()
-                    textDocumentProxy.insertText(kStopSpace)
+                    textDocumentProxy.insertText("kStopSpace".localized())
                 }else{
-                    textDocumentProxy.insertText(kStopSpace)
+                    textDocumentProxy.insertText("kStopSpace".localized())
                 }
             }
             
@@ -668,7 +668,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         if textLeft.count > 0 {
             let last2 = String(textLeft.suffix(2))
-            if last2 == kStopSpace{
+            if last2 == "kStopSpace".localized(){
                 keyMode = SHIFT
                 keyboardView.altButton.isSelected = false
                 refreshShiftKey()

@@ -21,13 +21,13 @@ let kPADDING_RIGHT  = "PADDING_RIGHT"
 let kPADDING_TOP    = "PADDING_TOP"
 let kPADDING_BOTTOM = "PADDING_BOTTOM"
 //
-let k123String    = "123"
-let kSymbolString = "#+="
-let kAbcString    = "ABC"
-let kReturnString = "Return"
-let kSpaceString  = "Space"
-let kStopSpace    = ". "
-let kDoubleSpace  = "  "
+//let k123String    = "123"
+//let kSymbolString = "#+="
+//let kAbcString    = "ABC"
+//let kReturnString = "Return"
+//let kSpaceString  = "Space"
+//let kStopSpace    = ". "
+//let kDoubleSpace  = "  "
 
 //Constant Button Identifier
 let kNL     = "\n"
@@ -120,7 +120,7 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //var languageName = getString(kSelectedLanguageName) ?? English
 //var fontsName    = getString(kSelectedFontName)     ?? NORMAL
 
-var langName = getString(kSelectedLanguageName) ?? French
+var langName = getString(kSelectedLanguageName) ?? German
 var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 
