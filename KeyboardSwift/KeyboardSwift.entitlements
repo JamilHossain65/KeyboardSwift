@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.vaticsoft.french.keyboard</string>
+		<string>group.com.vaticsoft.german.keyboard</string>
 	</array>
 </dict>
 </plist>
