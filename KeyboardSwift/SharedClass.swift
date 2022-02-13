@@ -31,8 +31,8 @@ let Portuguese = "Portuguese"
 
 var activeLanguages = [
     English:true,  Indonesian:false,  Bangla    :false,  Russian:false,
-    Spanish:false,  French   :false,   German   :false,  Italian:true,
-    Korean :false, Turkish   :false,  Portuguese:false,
+    Spanish:false, French    :false,  German    :false,  Italian:false,
+    Korean :false, Turkish   :false,   Portuguese:true,
 ]
 var countryCodes  = [
     English:"us", Indonesian:"id", Bangla    :"bd", Russian:"ru",
