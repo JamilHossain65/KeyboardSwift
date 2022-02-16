@@ -555,6 +555,21 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+        //MARK: - Todo: implement korean jamo
+        if langName == Korean {
+            if shouldCombined(textLeft){
+                let newText = combinedUnicode(textLeft)
+                
+                if kOREAN_BLOCK_TYPE == .INITIAL || kOREAN_BLOCK_TYPE == .MEDIAL || kOREAN_BLOCK_TYPE == .FINAL {
+                    for _ in 0...1{
+                        textDocumentProxy.deleteBackward()
+                    }
+                    textDocumentProxy.insertText(newText)
+                    log("newText :: \(newText)")
+                }
+            }
+        }
+        
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
         setObject(fullText, key: SUITE_KEY)
