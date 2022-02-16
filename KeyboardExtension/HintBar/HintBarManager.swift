@@ -13,6 +13,7 @@ protocol HintBarDelegate: class {
     func didSelectColor(_ sender: Any)
     func didSartScroll (_ scrollView: UIScrollView)
     func didEndScroll  (_ scrollView: UIScrollView)
+    func doingScroll   (_ scrollView: UIScrollView)
 }
 
 var wordArray:[String] = [String]()
@@ -218,6 +219,12 @@ extension HintBarManager:UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let _delegate = delegate {
             _delegate.didEndScroll(scrollView)
+        }
+    }
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        print("Decelerating....")
+        if let _delegate = delegate {
+            _delegate.doingScroll(scrollView)
         }
     }
 }
