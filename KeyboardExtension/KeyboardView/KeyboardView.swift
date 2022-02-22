@@ -386,7 +386,12 @@ extension KeyboardView{
         
         switch row {
         case abs(array.count - 1) ://Last row
-            return [0:40, 1:30,2:30,4:80]
+            switch langName { //MARK:- TODO: make this dynamic
+            case Korean:
+                return [0:40, 1:30,2:30,4:30,5:50]
+            default:
+                return [0:40, 1:30,2:30,4:80]
+            }
         case abs(array.count - 2) ://shift and delete row
             switch langName { //MARK:- TODO: make this dynamic
             case Russian:

@@ -152,6 +152,9 @@ func shouldCombined(_ text:String)-> Bool {
 }
 
 func combinedUnicode(_ text:String)-> String {
+    //Equation
+    //finalUnicode = initialBlock[0] * 588 + medialBlock[0]*28 + finalBlock[0] + 44032
+    
     var counter  = 0
     switch kOREAN_BLOCK_TYPE {
     case .INITIAL:
@@ -173,79 +176,61 @@ func combinedUnicode(_ text:String)-> String {
         let medialValue = medialBlock.firstIndex(of: String(letter2)) ?? 0
         counter += medialValue*28
         counter += 44032
-        let hexString = String(format: "%02X", counter)
-        print("hexString2:::\(hexString)")
-        
-        let data = hexString.data(using: .unicode)!
-        let str = String.init(data:data , encoding: .unicode) ?? ""
-        
-        kOREAN_BLOCK_TYPE = .FINAL
-        return "\u{B9AC}"
-    case .FINAL:
-        
-        counter = 47532
-        let letterFinal = text.suffix(1)
-        let finalValue = initialBlock.firstIndex(of: String(letterFinal)) ?? 0
-        counter += finalValue
         let hex = String(format: "%02X", counter)
-        print("hex::\(hex)")
-        kOREAN_BLOCK_TYPE = .INITIAL
+        print("hexString2:::\(hex)")
+        kOREAN_BLOCK_TYPE = .FINAL
+        if let hexValue = Int(hex, radix: 16).map({ Character(UnicodeScalar($0)!) }){
+            return String(hexValue)
+        }
         
-        let data = hex.data(using: .unicode)!
-        let str = String.init(data:data , encoding: .unicode) ?? ""
+        return String(letter2) //"\u{B9AC}"
+    case .FINAL:
+        let medialLetter = text.suffix(2).prefix(1)
+        let asciValue  = medialLetter.unicodeScalars.compactMap({$0.value}).first!
         
-        return "\u{B9AE}"
+        log("asciValue::\(asciValue)")
+        counter = Int(asciValue)
         
-        /*
-        let letter1 = word.prefix(1)
-        let letter2 = word.prefix(2).suffix(1)
-        let letter3 = word.suffix(1)
-        
-        print("letter1:::\(letter1)")
-        print("letter2:::\(letter2)")
-        print("letter3:::\(letter3)")
-        
-        let initalValue = initialBlock.firstIndex(of: String(letter1)) ?? 0
-        counter = initalValue*588
-        
-        let medialValue = medialBlock.firstIndex(of: String(letter2)) ?? 0
-        counter += medialValue*28
-        let finalValue = finalBlock.firstIndex(of: String(letter3)) ?? 0
+        let letterFinal = text.suffix(1)
+        let finalValue = finalBlock.firstIndex(of: String(letterFinal)) ?? 0
         counter += finalValue
-        counter += 44032
-        print("unicodeValue::\(counter)")
-        let hexString = String(format: "%02X", counter)
-        print("hexString::\(hexString)")
-        let emoji: String = hexString.hexToString()  //"\u{B9B0}"
-        print("finalString::\(emoji)")
-        //47536  B9B0 린
-        //47536 B9B0 린
+        log("finalValue::\(finalValue)")
+        
+        let hex = String(format: "%02X", counter)
+        log("hex::\(hex)")
         kOREAN_BLOCK_TYPE = .INITIAL
-        return word + "\\u" + "{B9B0}"
- */
-    
-//    default:
-//        break
+        
+        if let hexValue = Int(hex, radix: 16).map({ Character(UnicodeScalar($0)!) }){
+            return String(hexValue)
+        }
+        return String(medialLetter) //"\u{B9AE}"
     }
-    
-    
-    //let finalUnicode = initialBlock[0] * 588 + medialBlock[0]*28 + finalBlock[0] + 44032
-    
-    return text
 }
+
+//Special Letters
+let kSPECIAL_KO = "\u{2715}৹ \(kNL)৹ \(kALTER)৹ \u{1F310}৹ \(kVOICE)৹ \(kSPACE)৹ \u{2192}৹ \u{2B90}" //U+23CE ⏎,U+21B5 ↵ or U+21A9 ↩ U+2B90
+//globe 1F310
+//arrow // \u{2192}, \u{27F6}
+//upword arrow black \u{2B06} \u{2191}
+//upword arrow white \u{21E7}
+
+//Arrows, U+2190 - U+21FF[3]
+//U+1F805
+//⬆
 
 let kUnicodeKoNormal      = "ㅂ৹ ㅈ৹ ㄷ৹ ㄱ৹ ㅅ৹ ㅛ৹ ㅕ৹ ㅑ৹ ㅐ৹ ㅔ৹ \(kNL)৹ " +
                             "ㅁ৹ ㄴ৹ ㅇ৹ ㄹ৹ ㅎ৹ ㅗ৹ ㅓ৹ ㅏ৹ ㅣ৹ \(kNL)৹ " +
-                            "\(kSHIFT)৹ ㅋ৹ ㅌ৹ ㅊ৹ ㅍ৹ ㅠ৹ ㅜ৹ ㅡ৹ \(kSPECIAL)"
+                            //"\(kSHIFT)৹ ㅋ৹ ㅌ৹ ㅊ৹ ㅍ৹ ㅠ৹ ㅜ৹ ㅡ৹ \(kSPECIAL_KO)"
+                            "\u{21E7}৹ \u{1F805}৹ \u{1F310}৹ ⬆৹ ㅍ৹ ㅠ৹ ㅜ৹ ㅡ৹ \(kSPECIAL_KO)"
 let kUnicodeKoNormalShift = "ㅃ৹ ㅉ৹ ㄸ৹ ㄲ৹ ㅆ৹ ㅛ৹ ㅕ৹ ㅑ৹ ㅒ৹ ㅖ৹ \(kNL)৹ " +
                             "ㅁ৹ ㄴ৹ ㅇ৹ ㄹ৹ ㅎ৹ ㅗ৹ ㅓ৹ ㅏ৹ ㅣ৹ \(kNL)৹ " +
-                            "\(kSHIFT)৹ ㅋ৹ ㅌ৹ ㅊ৹ ㅍ৹ ㅠ৹ ㅜ৹ ㅡ৹ \(kSPECIAL)"
+                            "\u{2B06}\u{FE0E}৹ \u{1f310}\u{FE0F}৹ ⇧৹ ⬆৹ ㅍ৹ ㅠ৹ ㅜ৹ ㅡ৹ \(kSPECIAL_KO)"
 let kUnicodeKoNumbers     = "1৹ 2৹ 3৹ 4৹ 5৹ 6৹ 7৹ 8৹ 9৹ 0৹ \(kNL)৹ " +
                             "-৹ /৹ :৹ ;৹ (৹ )৹ $৹ &৹ @৹ \(kNL)৹ " +
-                            "\(kSHIFT)৹ \"৹ .৹ ^৹ %৹ ?৹ !৹ *৹ \(kSPECIAL)"
+                            "\(kSHIFT)৹ \"৹ .৹ ^৹ %৹ ?৹ !৹ *৹ \(kSPECIAL_KO)"
 let kUnicodeKoPuncuation  = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ " +
                             "-৹ _৹ /৹ |৹ ~৹ <৹ >৹ €৹ $৹ \(kNL)৹ " +
-                            "\(kSHIFT)৹ ¥৹ •৹ .৹ ?৹ !৹ \(kSPECIAL)"
+                            "\(kSHIFT)৹ ¥৹ •৹ .৹ ?৹ !৹ \(kSPECIAL_KO)"
 
 /*
  ₩ $ € ¥ £ ₽
