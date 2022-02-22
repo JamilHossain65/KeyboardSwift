@@ -29,20 +29,45 @@ let Korean     = "Korean"
 let Turkish    = "Turkish"
 let Portuguese = "Portuguese"
 
+let Gujarati   = "Gujarati"
+let Hindi      = "Hindi"
+let Kannada    = "Kannada"
+let Malayalam  = "Malayalam"
+let Marathi    = "Marathi"
+let Nepali     = "Nepali"
+let Oriya      = "Oriya"
+let Punjabi    = "Punjabi"
+let Sanskrit   = "Sanskrit"
+let Tamil      = "Tamil"
+let Telugu     = "Telugu"
+let Urdu       = "Urdu"
+
+
 var activeLanguages = [
-    English:true,  Indonesian:true,  Bangla    :true,  Russian:true,
-    Spanish:true,  French    :true,  German    :true,  Italian:true,
-    Korean :false, Turkish   :true,  Portuguese:true,
+    English:true,  Indonesian:false,  Bangla    :true,  Russian:false,
+    Spanish:false,  French    :false,  German    :false,  Italian:false,
+    Korean :false, Turkish   :false,  Portuguese:false,
+    Gujarati:true, Hindi :false, Kannada :true,  Malayalam:true,
+    Marathi :true, Nepali:false, Oriya   :true,  Punjabi:true,
+    Sanskrit:true, Tamil :false, Telugu  :true,  Urdu:true,
 ]
+
 var countryCodes  = [
     English:"us", Indonesian:"id", Bangla    :"bd", Russian:"ru",
     Spanish:"es", French    :"fr", German    :"gr", Italian:"it",
     Korean :"ko", Turkish   :"tr", Portuguese:"pt",
+    Gujarati:"", Hindi :"In", Kannada :"",  Malayalam:"",
+    Marathi :"", Nepali:"", Oriya   :"",  Punjabi:"",
+    Sanskrit:"", Tamil :"", Telugu  :"",  Urdu:"",
 ]
+
 var languageCodes = [
     English:"en", Indonesian:"id", Bangla    :"bn", Russian:"ru",
     Spanish:"es", French    :"fr", German    :"gr", Italian:"it",
     Korean :"ko", Turkish   :"tr", Portuguese:"pt",
+    Gujarati:"", Hindi :"Hi", Kannada :"",  Malayalam:"",
+    Marathi :"", Nepali:"", Oriya   :"",  Punjabi:"",
+    Sanskrit:"", Tamil :"", Telugu  :"",  Urdu:"",
 ]
 
 //MARK:- SHARED DATA

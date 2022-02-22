@@ -145,6 +145,19 @@ let kAllLanguageDicArray = [
     [Turkish   : kFontTrDic],
     [Portuguese: kFontPtDic],
     
+    [Gujarati : kFontGuDic],
+    [Hindi    : kFontHiDic],
+    [Kannada  : kFontKnDic],
+    [Malayalam: kFontMlDic],
+    [Marathi  : kFontMrDic],
+    [Nepali   : kFontNeDic],
+    [Oriya    : kFontOrDic],
+    [Punjabi  : kFontPaDic],
+    [Sanskrit : kFontSaDic],
+    [Tamil    : kFontTaDic],
+    [Telugu   : kFontTeDic],
+    [Urdu     : kFontUrDic],
+    
 ]
 
 var currentFontLetters:[String] =  []

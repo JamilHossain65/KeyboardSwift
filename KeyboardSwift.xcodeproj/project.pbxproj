@@ -18,6 +18,18 @@
 		8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3E230C279BCF280067DC30 /* russian.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E230B279BCF280067DC30 /* russian.txt */; };
 		8D3E2310279BCFAB0067DC30 /* UnicodeRu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */; };
+		8D4D347327C48FA90007396F /* UnicodeKannada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346827C48FA90007396F /* UnicodeKannada.swift */; };
+		8D4D347427C48FA90007396F /* UnicodeTamil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346927C48FA90007396F /* UnicodeTamil.swift */; };
+		8D4D347527C48FA90007396F /* UnicodeGujarati.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346A27C48FA90007396F /* UnicodeGujarati.swift */; };
+		8D4D347627C48FA90007396F /* UnicodeTelugu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346B27C48FA90007396F /* UnicodeTelugu.swift */; };
+		8D4D347727C48FA90007396F /* UnicodeMalayalam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346C27C48FA90007396F /* UnicodeMalayalam.swift */; };
+		8D4D347827C48FA90007396F /* UnicodeSanskrit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346D27C48FA90007396F /* UnicodeSanskrit.swift */; };
+		8D4D347927C48FA90007396F /* UnicodeOriya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346E27C48FA90007396F /* UnicodeOriya.swift */; };
+		8D4D347A27C48FA90007396F /* UnicodePunjabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D346F27C48FA90007396F /* UnicodePunjabi.swift */; };
+		8D4D347B27C48FA90007396F /* UnicodeNepali.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D347027C48FA90007396F /* UnicodeNepali.swift */; };
+		8D4D347C27C48FA90007396F /* UnicodeHindi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D347127C48FA90007396F /* UnicodeHindi.swift */; };
+		8D4D347D27C48FA90007396F /* UnicodeMarathi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D347227C48FA90007396F /* UnicodeMarathi.swift */; };
+		8D4D348B27C495BA0007396F /* UnicodeUrdu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D348A27C495BA0007396F /* UnicodeUrdu.swift */; };
 		8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D552EE326484C4000866DEF /* UnicodeEn.swift */; };
 		8D59B2252669AD2C0034A967 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59B2242669AD2C0034A967 /* Extension.swift */; };
 		8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
@@ -115,6 +127,18 @@
 		8D3E230B279BCF280067DC30 /* russian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russian.txt; sourceTree = "<group>"; };
 		8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeRu.swift; sourceTree = "<group>"; };
 		8D496A2C26388F7D001DE455 /* HintBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintBarManager.swift; sourceTree = "<group>"; };
+		8D4D346827C48FA90007396F /* UnicodeKannada.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeKannada.swift; sourceTree = "<group>"; };
+		8D4D346927C48FA90007396F /* UnicodeTamil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeTamil.swift; sourceTree = "<group>"; };
+		8D4D346A27C48FA90007396F /* UnicodeGujarati.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeGujarati.swift; sourceTree = "<group>"; };
+		8D4D346B27C48FA90007396F /* UnicodeTelugu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeTelugu.swift; sourceTree = "<group>"; };
+		8D4D346C27C48FA90007396F /* UnicodeMalayalam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeMalayalam.swift; sourceTree = "<group>"; };
+		8D4D346D27C48FA90007396F /* UnicodeSanskrit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeSanskrit.swift; sourceTree = "<group>"; };
+		8D4D346E27C48FA90007396F /* UnicodeOriya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeOriya.swift; sourceTree = "<group>"; };
+		8D4D346F27C48FA90007396F /* UnicodePunjabi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodePunjabi.swift; sourceTree = "<group>"; };
+		8D4D347027C48FA90007396F /* UnicodeNepali.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeNepali.swift; sourceTree = "<group>"; };
+		8D4D347127C48FA90007396F /* UnicodeHindi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeHindi.swift; sourceTree = "<group>"; };
+		8D4D347227C48FA90007396F /* UnicodeMarathi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeMarathi.swift; sourceTree = "<group>"; };
+		8D4D348A27C495BA0007396F /* UnicodeUrdu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeUrdu.swift; sourceTree = "<group>"; };
 		8D4E8152266D8F770073B3B6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8D552EE326484C4000866DEF /* UnicodeEn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeEn.swift; sourceTree = "<group>"; };
 		8D59B2242669AD2C0034A967 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -226,6 +250,24 @@
 			path = HintBar;
 			sourceTree = "<group>";
 		};
+		8D4D346727C48FA90007396F /* Indian */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D346A27C48FA90007396F /* UnicodeGujarati.swift */,
+				8D4D347127C48FA90007396F /* UnicodeHindi.swift */,
+				8D4D346827C48FA90007396F /* UnicodeKannada.swift */,
+				8D4D346C27C48FA90007396F /* UnicodeMalayalam.swift */,
+				8D4D347227C48FA90007396F /* UnicodeMarathi.swift */,
+				8D4D347027C48FA90007396F /* UnicodeNepali.swift */,
+				8D4D346E27C48FA90007396F /* UnicodeOriya.swift */,
+				8D4D346F27C48FA90007396F /* UnicodePunjabi.swift */,
+				8D4D346D27C48FA90007396F /* UnicodeSanskrit.swift */,
+				8D4D346927C48FA90007396F /* UnicodeTamil.swift */,
+				8D4D346B27C48FA90007396F /* UnicodeTelugu.swift */,
+			);
+			path = Indian;
+			sourceTree = "<group>";
+		};
 		8D6CBEA226E8955100F8D7FC /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,8 +319,10 @@
 		8D9F8A0827AFFF2000D6E517 /* Alphabet */ = {
 			isa = PBXGroup;
 			children = (
+				8D4D346727C48FA90007396F /* Indian */,
 				8D552EE326484C4000866DEF /* UnicodeEn.swift */,
 				8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */,
+				8D4D348A27C495BA0007396F /* UnicodeUrdu.swift */,
 				8D75AE1F2794338200CB1E0B /* UnicodeId.swift */,
 				8D3E230F279BCFAB0067DC30 /* UnicodeRu.swift */,
 				8D74D7A027B24079006642E0 /* UnicodeEs.swift */,
@@ -601,6 +645,7 @@
 				8D59B2252669AD2C0034A967 /* Extension.swift in Sources */,
 				8DF3FC2227AC18160062BE1E /* JHKeyPopup.swift in Sources */,
 				8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */,
+				8D4D347A27C48FA90007396F /* UnicodePunjabi.swift in Sources */,
 				8DF6E35626C357550031E094 /* HintBarManager.swift in Sources */,
 				8DE7F9C425E4784200D3C48A /* KeyboardViewController.swift in Sources */,
 				8D75AE202794338200CB1E0B /* UnicodeId.swift in Sources */,
@@ -609,17 +654,28 @@
 				8D6DA1C026E897D10080E630 /* Errors.swift in Sources */,
 				8D3E2310279BCFAB0067DC30 /* UnicodeRu.swift in Sources */,
 				8D6DA1DF26E899050080E630 /* AudioManager.swift in Sources */,
+				8D4D347D27C48FA90007396F /* UnicodeMarathi.swift in Sources */,
 				8D74D7A527B24079006642E0 /* UnicodeEs.swift in Sources */,
+				8D4D347427C48FA90007396F /* UnicodeTamil.swift in Sources */,
+				8D4D347327C48FA90007396F /* UnicodeKannada.swift in Sources */,
+				8D4D347527C48FA90007396F /* UnicodeGujarati.swift in Sources */,
+				8D4D347727C48FA90007396F /* UnicodeMalayalam.swift in Sources */,
+				8D4D347927C48FA90007396F /* UnicodeOriya.swift in Sources */,
 				8D6DA1DE26E899050080E630 /* Reachability.swift in Sources */,
 				8D74D7A427B24079006642E0 /* UnicodeIt.swift in Sources */,
 				8DF6E32626C3563F0031E094 /* Color.swift in Sources */,
 				8D74D7A927B27A98006642E0 /* UnicodeTr.swift in Sources */,
+				8D4D348B27C495BA0007396F /* UnicodeUrdu.swift in Sources */,
 				8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */,
 				8DE7FA2625E4C6E700D3C48A /* KeyboardView.swift in Sources */,
 				8D6DA1E026E899050080E630 /* SpeechModel.swift in Sources */,
 				8DF36878266C20670098EA60 /* ColorExtension.swift in Sources */,
 				8D6DA1C526E897D40080E630 /* APIKey.swift in Sources */,
 				8D74D7B527B284DE006642E0 /* UnicodePt.swift in Sources */,
+				8D4D347B27C48FA90007396F /* UnicodeNepali.swift in Sources */,
+				8D4D347627C48FA90007396F /* UnicodeTelugu.swift in Sources */,
+				8D4D347827C48FA90007396F /* UnicodeSanskrit.swift in Sources */,
+				8D4D347C27C48FA90007396F /* UnicodeHindi.swift in Sources */,
 				8D6DA1CA26E897D70080E630 /* APIUrl.swift in Sources */,
 				8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */,
 				8D74D7A227B24079006642E0 /* UnicodeKo.swift in Sources */,

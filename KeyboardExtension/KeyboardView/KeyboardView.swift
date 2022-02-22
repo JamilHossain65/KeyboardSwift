@@ -316,65 +316,22 @@ extension KeyboardView{
     //get modified space before a button
     func getModifiedSpace(_ row:Int) -> [Int:Int]{
         let array = getLettersInRows()
-        //print("array:::\(array[row])")
+        //print("array[row]:::\(array[row])")
         
         switch row {
         case array.count - 1 ://Last row
             break
         case array.count - 2 ://shift and delete row
-            return [1:7, abs(array[row]-1):7] //'array[row] - 1' delete button index
+            if array[row] <= 9{
+                return [1:7, abs(array[row]-1):7]
+            }
+            break
         default:
             if array[row] == 9 { //Handle case for 2nd row of english language
                 return [0:15, 9:15]
             }
             break
         }
-        
-        /*
-        switch row {
-        case 0:
-            switch langName {
-            case Russian:
-                break
-            default:
-                break
-            }
-            
-            break
-        case 1:
-            switch langName {
-            case Russian,Bangla:
-                break
-            default:
-                return [0:15, 9:15]
-            }
-            break
-        case 2:
-            switch langName {
-            case Russian:
-                break
-            default:
-                return [1:7, 8:7]
-            }
-            break
-        case 3:
-            switch langName {
-            case Russian:
-                break
-            default:
-                break
-            }
-            break
-        default:
-            switch langName {
-            case Russian:
-                break
-            default:
-                break
-            }
-            break
-        }
-        */
         
         return [:]
     }
@@ -397,57 +354,13 @@ extension KeyboardView{
             case Russian:
                 return [0:30, 10:30]
             default:
-                return [0:40, 8:40]
+                return [0:40, abs(array[row]-1):40]
             }
             
         default:
             break
         }
         
-        /*
-        switch row {
-        case 0:
-            switch langName {
-            case Russian:
-                break
-            default:
-                break
-            }
-            
-            break
-        case 1:
-            switch langName {
-            case Russian:
-                break
-            default:
-                break
-            }
-            break
-        case 2:
-            switch langName {
-            case Russian:
-                return [0:30, 10:30]
-            default:
-                return [0:40, 8:40]
-            }
-            //break
-        case 3:
-            switch langName {
-            
-            default:
-                return [0:40, 1:30,2:30,4:80]
-            }
-            //break
-        default:
-            switch langName {
-            case Russian:
-                break
-            default:
-                break
-            }
-            break
-        }
-        */
         return [:]
     }
     
