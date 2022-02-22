@@ -131,7 +131,12 @@ extension KeyboardView{
         
         gapX = 5.5  //gap between button in a row
         gapY = 18 //gap between button in a col
-        if let _totalLines = totalLines, _totalLines >= 5{
+        
+        if langName == Malayalam {
+            gapX = 3
+        }
+        
+        if let _totalLines = totalLines, _totalLines >= 5 {
             gapX = 1.5
             gapY = 1.5
         }
@@ -232,7 +237,8 @@ extension KeyboardView{
             keyboardButton.setTitle(title.trimmingCharacters(in: .whitespaces), for: .normal)
             keyboardButton.setTitleColor(kKeyboardTextColor, for: .normal)
             //keyboardButton.setTitleShadowColor(kTextShadowColor, for: .normal)
-
+            
+            
             keyboardButton.tag = currentButtonIndex
             
             if isSpecialButton(keyboardButton) {
@@ -241,8 +247,11 @@ extension KeyboardView{
             
             //set keyboard special button index
             self.setButtonIndex(keyboardButton)
+            keyboardButton.titleLabel?.adjustsFontSizeToFitWidth = true
             
             currentButtonIndex += 1
+            
+            
         }
     }
     

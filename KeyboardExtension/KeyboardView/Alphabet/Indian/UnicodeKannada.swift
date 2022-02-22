@@ -26,17 +26,31 @@ let kUnicodeLettersKnPuncuation = kUnicodeKnPuncuation.components(separatedBy: "
 let kUnicodeLettersKnNumList    = kUnicodeKnNumbers.components(separatedBy: "৹ ")
 
 //Font Array
-let kUnicodeLettersKnNormal = kUnicodeKnNormal.components(separatedBy: "৹ ") + vowelsKn + kSPECIALArray
-let kUnicodeLettersKnStinky = kUnicodeKnStinky.components(separatedBy: "৹")
+let kUnicodeLettersKnNormal = kUnicodeKnNormal.components(separatedBy: "৹ ")
+//let kUnicodeLettersKnStinky = kUnicodeKnStinky.components(separatedBy: "৹")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
-let kUnicodeKnNormal = "ক৹ খ৹ গ৹ ঘ৹ ঙ৹ চ৹ ছ৹ জ৹ ঝ৹ ঞ৹ \(kNL)৹ ট৹ ঠ৹ ড৹ ঢ৹ ণ৹ ত৹ দ৹ ন৹ k৹ স৹ \(kNL)৹ \(kSHIFT)"//থ৹ধ৹
-let kUnicodeKnLetterShift = "অ৹ আ৹ ই৹ ঈ৹ উ৹ ঊ৹ ঋ৹ এ৹ ঐ৹ ও৹ \(kNL)৹ ঔ৹ প৹ ফ৹ ব৹ ভ৹ ম৹ য৹ র৹ ল৹ \(kNL)৹ \(kSHIFT)৹ শ৹ ষ৹ স৹ হ৹ ড়৹ ঢ়৹ য়৹ \(kSPECIAL)" //৹ৎ
-let kUnicodeKnNumbers = "১৹ ২৹ ৩৹ ৪৹ ৫৹ ৬৹ ৭৹ ৮৹ ৯৹ ০৹ \(kNL)৹ ;৹ (৹ )৹ ।৹ :৹ ৳৹ a৹ b৹ c৹ \(kNL)৹ \(kSHIFT)৹ d৹ e৹ f৹ g৹ ৠ৹ ঌ৹ ৡ৹ \(kSPECIAL)"
-let kUnicodeKnPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ /৹ |৹ ~৹ <৹ >৹ %৹ $৹ ^৹ \(kNL)৹ \(kSHIFT)৹ '৹ 0৹ ?৹ !৹ ’৹ *৹ \(kSPECIAL)"
+let kUnicodeKnNormal = " ೌ৹  ೈ৹  ೈ৹  ಾ৹  ೀ৹  ೂ৹ ಬ৹ ಹ৹ ಗ৹ ದ৹ ಜ৹ ಡ৹ \(kNL)৹  ೋ৹ ೋ৹  ೇ ್৹  ಿ৹  ು৹ ಪ৹ ರ৹ ಕ৹ ತ৹ ಚ৹ ಟ৹ \(kNL)৹ \(kSHIFT)৹   ೊ৹  ೆ৹ ಮ৹ ನ৹ ವ৹ ಲ৹ ಸ৹ ಯ৹ \(kSPECIAL)"
+let kUnicodeKnLetterShift = "ಔ৹ ಐ৹ ಆ৹ ಈ৹ ಊ৹ ಭ৹  ಃ৹ ಘ৹ ಧ৹ ಝ৹ ಢ৹ \(kNL)৹ ಓ৹ ಏ৹ ಅ৹ ಇ৹ ಉ৹ ಫ৹ ಱ৹ ಖ৹ ಥ৹ ಛ৹ ಠ৹ ಒ৹ \(kNL)৹ \(kSHIFT)৹ ಎ৹ ಒ৹ ಎ৹  ಂ৹ ಣ৹ ಞ৹ ಳ৹ ಶ৹ ಷ৹ ಋ৹ \(kSPECIAL)"
+let kUnicodeKnNumbers = "1৹ 2৹ 3৹ 4৹ 5৹ 6৹ 7৹ 8৹ 9৹ 0৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ₹৹ &৹ @৹ “৹ \(kNL)৹ \(kSHIFT)৹ .৹ ।৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
+let kUnicodeKnPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ $৹ £৹ €৹ •৹ \(kNL)৹ \(kSHIFT)৹ .৹ ॥৹ ಽ৹  ಃ৹  ಼৹ ‘৹ \(kSPECIAL)"
 
-//অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ
-//"জ,গ,ত,য,হ,ক,U,I,O,P,A,S,D,F,G,H,J,K,L,:,Z,X,C,V,B,N,M"
+/*
+ Kannada
+ ೌೌ ೈ ಾ ೀ ೂ ಬ ಹ ಗ ದ ಜ ಡ
+ ೋೋ ೇ ್ ಿ ು ಪ ರ ಕ ತ ಚ ಟ
+ ೊೊ ೆ ಮ ನ ವ ಲ ಸ ಯ
+
+ ಔ ಐ ಆ ಈ ಊ ಭ ಃ ಘ ಧ ಝ ಢ
+ ಓ ಏ ಅ ಇ ಉ ಫ ಱ ಖ ಥ ಛ ಠ ಒ ಎ ಒ ಎ ಂ  ಣ ಞ ಳ ಶ ಷ ಋ
+ 1234567890
+ -/:;()₹&@“
+ .।,?!’
+
+ []{}#%^*+=
+ _\|~<>$£€•
+ .॥ಽ ಃ ಼ ‘
+ */
 
 //Font strings
 let kUnicodeKnSerif   = "𝑄,𝑤,𝑒,𝑟,𝑡,𝑦,𝑢,𝑖,𝑜,𝑝,𝑎,𝑠,𝑑,𝑓,𝑔,ℎ,𝑗,𝑘,𝑙,:,𝑧,𝑥,𝑐,𝑣,𝑏,𝑛,𝑚"
