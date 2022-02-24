@@ -503,7 +503,7 @@ extension KeyboardView {
         jhKey.layer.shadowOpacity = 0.35
         jhKey.layer.masksToBounds = false
         
-        self.semanticContentAttribute = .forceRightToLeft
+        //self.semanticContentAttribute = .forceRightToLeft
         
     }
 }
