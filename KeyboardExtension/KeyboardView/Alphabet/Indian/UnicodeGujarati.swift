@@ -33,7 +33,7 @@ let kUnicodeLettersGuNormal = kUnicodeGuNormal.components(separatedBy: "৹ ")
 let kUnicodeGuNormal = " ૌ৹  ૈ৹  ા৹  ી৹  ૂ৹ બ৹ હ৹ ગ৹ દ৹ જ৹ ડ৹ \(kNL)৹  ો৹  ે৹  ્৹  િ৹  ુ৹ પ৹ ર৹ ક৹ ત৹ ચ৹ ટ৹ \(kNL)৹ \(kSHIFT)৹  ં৹ ત৹ ર৹ મ৹ ન৹ વ৹ લ৹ સ৹ ય৹ \(kSPECIAL)"
 let kUnicodeGuLetterShift = "ઔ৹ ઐ৹ આ৹ ઈ৹ ઊ৹ ભ৹ ઋ৹ ઘ৹ ધ৹ ઝ৹ ઢ৹ \(kNL)৹ ઓ৹ એ৹ અ৹ ઇ৹ ઉ৹ ફ৹  ૃ৹ ખ৹ થ৹ છ৹ ઠ৹ \(kNL)৹ \(kSHIFT)৹ ઑ৹  ઁ৹ જ્ઞ৹ ણ৹ ક્৹ ષ৹ ળ৹ શ৹ ષ৹ \(kSPECIAL)" //৹ৎ
 let kUnicodeGuNumbers = "૧৹ ૨৹ ૩৹ ૪৹ ૫৹ ૬৹ ૭৹ ૮৹ ૯৹ ૦৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ₹৹ &৹ @৹ “৹ \(kNL)৹ \(kSHIFT)৹ ।৹ .৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
-let kUnicodeGuPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ₹৹ &৹ @৹ \(kNL)৹ \(kSHIFT)৹ ॥৹ .৹ ઽ৹  ઃ৹  ઼৹  ૐ৹ \(kSPECIAL)"
+let kUnicodeGuPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ ૱৹ $৹ £৹ •৹ \(kNL)৹ \(kSHIFT)৹ ॥৹ .৹ ઽ৹  ઃ৹  ઼৹ ૐ৹ \(kSPECIAL)"
 
 /*
 //Font strings

@@ -39,6 +39,7 @@ let kVOICE  = "VOICE"
 let kSPACE  = "SPACE"
 let kRETURN = "RETURN"
 let kSPECIAL = "\(kDELETE)৹ \(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kRETURN)"
+let kSPECIAL2 = "\(kDELETE) \(kNL) \(kALTER) \(kGLOBE) \(kVOICE) \(kSPACE) \(kRETURN)"
 let kSPECIALArray = [kDELETE,kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
 let kSEPERATOR = "৹ "
 

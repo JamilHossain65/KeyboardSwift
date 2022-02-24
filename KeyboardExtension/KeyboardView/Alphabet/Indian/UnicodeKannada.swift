@@ -30,12 +30,13 @@ let kUnicodeLettersKnNormal = kUnicodeKnNormal.components(separatedBy: "৹ ")
 //let kUnicodeLettersKnStinky = kUnicodeKnStinky.components(separatedBy: "৹")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
-let kUnicodeKnNormal = " ೌ৹  ೈ৹  ೈ৹  ಾ৹  ೀ৹  ೂ৹ ಬ৹ ಹ৹ ಗ৹ ದ৹ ಜ৹ ಡ৹ \(kNL)৹  ೋ৹ ೋ৹  ೇ ್৹  ಿ৹  ು৹ ಪ৹ ರ৹ ಕ৹ ತ৹ ಚ৹ ಟ৹ \(kNL)৹ \(kSHIFT)৹   ೊ৹  ೆ৹ ಮ৹ ನ৹ ವ৹ ಲ৹ ಸ৹ ಯ৹ \(kSPECIAL)"
+let kUnicodeKnNormal = " ೌ৹  ೈ৹  ಾ৹  ೀ৹  ೂ৹ ಬ৹ ಹ৹ ಗ৹ ದ৹ ಜ৹ ಡ৹ \(kNL)৹  ೋ৹  ೇ৹  ್৹  ಿ৹  ು৹ ಪ৹ ರ৹ ಕ৹ ತ৹ ಚ৹ ಟ৹ \(kNL)৹ \(kSHIFT)৹   ೊ৹  ೆ৹ ಮ৹ ನ৹ ವ৹ ಲ৹ ಸ৹ ಯ৹ \(kSPECIAL)"
 let kUnicodeKnLetterShift = "ಔ৹ ಐ৹ ಆ৹ ಈ৹ ಊ৹ ಭ৹  ಃ৹ ಘ৹ ಧ৹ ಝ৹ ಢ৹ \(kNL)৹ ಓ৹ ಏ৹ ಅ৹ ಇ৹ ಉ৹ ಫ৹ ಱ৹ ಖ৹ ಥ৹ ಛ৹ ಠ৹ ಒ৹ \(kNL)৹ \(kSHIFT)৹ ಎ৹ ಒ৹ ಎ৹  ಂ৹ ಣ৹ ಞ৹ ಳ৹ ಶ৹ ಷ৹ ಋ৹ \(kSPECIAL)"
 let kUnicodeKnNumbers = "1৹ 2৹ 3৹ 4৹ 5৹ 6৹ 7৹ 8৹ 9৹ 0৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ₹৹ &৹ @৹ “৹ \(kNL)৹ \(kSHIFT)৹ .৹ ।৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
 let kUnicodeKnPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ $৹ £৹ €৹ •৹ \(kNL)৹ \(kSHIFT)৹ .৹ ॥৹ ಽ৹  ಃ৹  ಼৹ ‘৹ \(kSPECIAL)"
 
 /*
+ ೋ ೇ ್ ಿ ು 
  Kannada
  ೌೌ ೈ ಾ ೀ ೂ ಬ ಹ ಗ ದ ಜ ಡ
  ೋೋ ೇ ್ ಿ ು ಪ ರ ಕ ತ ಚ ಟ

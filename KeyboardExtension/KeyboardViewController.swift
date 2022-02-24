@@ -186,12 +186,14 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         context = context.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         log("context[\(context.count)]::\(context)")
         
-        var wordList:[String] = ["I","is","are","you"]
+        var wordList:[String] = [" "," "," "]
         //let uniqueWords = Array(Set(filteredArray))
         if langName == Indonesian{
             wordList = ["saya","hai","anda","mereka"]
         }else if langName == Russian{
             wordList = ["он","я","ты","Oни"]
+        }else if langName == English{
+            wordList = ["I","is","are","you"]
         }
         
         if context.count <= 0 {

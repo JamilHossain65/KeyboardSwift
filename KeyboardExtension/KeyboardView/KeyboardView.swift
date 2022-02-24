@@ -132,10 +132,6 @@ extension KeyboardView{
         gapX = 5.5  //gap between button in a row
         gapY = 18 //gap between button in a col
         
-        if langName == Malayalam {
-            gapX = 3
-        }
-        
         if let _totalLines = totalLines, _totalLines >= 5 {
             gapX = 1.5
             gapY = 1.5
@@ -171,28 +167,15 @@ extension KeyboardView{
         }
     }
     
-    func configure5Line(){
-        //set spetial button index
-        shiftButtonIndex  = 31
-        deleteButtonIndex = 40
-        altButtonIndex    = 41
-        nextButtonIndex   = 42
-        spaceButtonIndex  = 43
-        returnButtonIndex = 44
-        voiceButtonIndex  = -1
-        
-        //draw button in a row
-        drawLineFor(row: 0, totalCol: 11)
-        drawLineFor(row: 1, totalCol: 11)
-        drawLineFor(row: 2, totalCol:  9)
-        drawLineFor(row: 3, totalCol: 10, info: [0:40,9:40])
-        drawLineFor(row: 4, totalCol:  4, info: [0:40,1:30,3:80])
-    }
-    
     func drawLineFor(row:Int, totalCol:Int, info:[Int:Int]? = [:], const:[Int:Int]? = [:]){
         
         var preX = paddingX
         var preWidth:Double = 0
+        let array = getLettersInRows()
+        
+        if array[row] >= 11 {
+            gapX = 3
+        }
         
         for i in 0...totalCol-1 {
         
@@ -247,7 +230,6 @@ extension KeyboardView{
             
             //set keyboard special button index
             self.setButtonIndex(keyboardButton)
-            keyboardButton.titleLabel?.adjustsFontSizeToFitWidth = true
             
             currentButtonIndex += 1
             
@@ -512,6 +494,17 @@ extension KeyboardView {
         addSubview(jhKey)
         jhKey.clipsToBounds = true
         jhKey.layer.cornerRadius = 5.0
+        //jhKey.titleEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: -10)
+        jhKey.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        jhKey.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        jhKey.layer.shadowOffset = CGSize(width: 0.1, height: 1.0)
+        jhKey.layer.shadowRadius = 0.0
+        jhKey.layer.shadowOpacity = 0.35
+        jhKey.layer.masksToBounds = false
+        
+        self.semanticContentAttribute = .forceRightToLeft
+        
     }
 }
 

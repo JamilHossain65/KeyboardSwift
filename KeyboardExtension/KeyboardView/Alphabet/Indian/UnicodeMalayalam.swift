@@ -30,10 +30,10 @@ let kUnicodeLettersMlNormal = kUnicodeMlNormal.components(separatedBy: "৹ ")
 let kUnicodeLettersMlStinky = kUnicodeMlStinky.components(separatedBy: "৹")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
-let kUnicodeMlNormal = "ൗ৹  ൈ৹  ാ৹  ീ৹  ൂ৹ ബ৹ ഹ৹ ഗ৹ ദ৹ ജ৹ ഡ৹ \(kNL)৹ ോ৹  േ৹  ്৹  ി৹  ു৹ പ৹ ര৹ ക৹ ത৹ ച৹ ട৹ \(kNL)৹ \(kSHIFT)৹ ോ৹  െ৹ മ৹ ന৹ വ৹ ല৹ സ৹ യ৹  ൃ৹ \(kSPECIAL)"
+let kUnicodeMlNormal = " ൗ৹  ൈ৹  ാ৹  ീ৹  ൂ৹ ബ৹ ഹ৹ ഗ৹ ദ৹ ജ৹ ഡ৹ \(kNL)৹  ോ৹  േ৹  ്৹  ി৹  ു৹ പ৹ ര৹ ക৹ ത৹ ച৹ ട৹ \(kNL)৹ \(kSHIFT)৹ ോ৹  െ৹ മ৹ ന৹ വ৹ ല৹ സ৹ യ৹  ൃ৹ \(kSPECIAL)"
 let kUnicodeMlLetterShift = "ഔ৹ ഐ৹ ആ৹ ഈ৹ ഊ৹ ഭ৹ ഴ৹ ഘ৹ ധ৹ ഝ৹ ഢ৹ \(kNL)৹ ഓ৹ ഏ৹ അ৹ ഇ৹ ഉ৹ ഫ৹ റ৹ ഖ৹ ഥ৹ ഛ৹ ഠ৹ \(kNL)৹ \(kSHIFT)৹ ഒ৹ എ৹  ം৹ ണ৹ ഞ৹ ള৹ ശ৹ ഷ৹ ഋ৹ \(kSPECIAL)"
 let kUnicodeMlNumbers = "1৹ 2৹ 3৹ 4৹ 5৹ 6৹ 7৹ 8৹ 9৹ 0৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ₹৹ &৹ @৹ “৹ \(kNL)৹ \(kSHIFT)৹ .৹ ।৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
-let kUnicodeMlPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ $৹ £৹ €৹ •৹ \(kNL)৹ \(kSHIFT)৹ .৹ ॥৹ ഽ৹ ഽഃ৹ !৹ ’৹ \(kSPECIAL)"
+let kUnicodeMlPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ $৹ £৹ €৹ •৹ \(kNL)৹ \(kSHIFT)৹ .৹ ॥৹ ഽ৹  ഃ৹ !৹ ’৹ \(kSPECIAL)"
 
 /*
  Malayalam
@@ -50,7 +50,7 @@ let kUnicodeMlPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(
 
  []{}#%^*+=
  _\|~<>$£€•
- .॥ഽഃ!’
+ . ॥ ഽ  ഃ ! ’
  */
 
 //Font strings
