@@ -35,7 +35,7 @@ let Kannada    = "Kannada"
 let Malayalam  = "Malayalam"
 let Marathi    = "Marathi"
 let Nepali     = "Nepali"
-let Oriya      = "Oriya"
+let Oriya      = "Odia"
 let Punjabi    = "Punjabi"
 let Sanskrit   = "Sanskrit"
 let Tamil      = "Tamil"
@@ -49,7 +49,7 @@ var activeLanguages = [
     Korean :false, Turkish   :false,  Portuguese:false,
     Gujarati:true, Hindi :true,  Kannada :true,  Malayalam:true,
     Marathi :true, Nepali:false, Oriya   :true,  Punjabi:true,
-    Sanskrit:true, Tamil :false, Telugu  :true,  Urdu:true,
+    Sanskrit:false,Tamil :true,  Telugu  :true,  Urdu:false,
 ]
 
 var countryCodes  = [

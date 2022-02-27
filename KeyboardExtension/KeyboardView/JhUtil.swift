@@ -38,6 +38,8 @@ let kGLOBE  = "GLOBE"
 let kVOICE  = "VOICE"
 let kSPACE  = "SPACE"
 let kRETURN = "RETURN"
+let kAT_BUTTON = "@"
+
 let kSPECIAL = "\(kDELETE)৹ \(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kRETURN)"
 let kSPECIAL2 = "\(kDELETE) \(kNL) \(kALTER) \(kGLOBE) \(kVOICE) \(kSPACE) \(kRETURN)"
 let kSPECIALArray = [kDELETE,kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
@@ -276,6 +278,72 @@ func getHintString() -> String {
         default:
             return hintWordsBn
         }
+        
+    case Gujarati:
+        switch fontName {
+        default:
+            return hintWordsGu
+        }
+        
+    case Hindi:
+        switch fontName {
+        default:
+            return hintWordsHi
+        }
+        
+    case Kannada:
+        switch fontName {
+        default:
+            return hintWordsKn
+        }
+    case Malayalam:
+        switch fontName {
+        default:
+            return hintWordsMl
+        }
+    case Marathi:
+        switch fontName {
+        default:
+            return hintWordsMr
+        }
+    case Nepali:
+        switch fontName {
+        default:
+            return hintWordsNe
+        }
+    case Oriya:
+        switch fontName {
+        default:
+            return hintWordsOr
+        }
+    case Punjabi:
+        switch fontName {
+        default:
+            return hintWordsPa
+        }
+    case Sanskrit:
+        switch fontName {
+        default:
+            return hintWordsSa
+        }
+    case Tamil:
+        switch fontName {
+        default:
+            return hintWordsTa
+        }
+    case Telugu:
+        switch fontName {
+        default:
+            return hintWordsTe
+        }
+        
+    case Urdu:
+        switch fontName {
+        default:
+            return hintWordsUr
+        }
+        
+        //indian end
         
     case Indonesian:
         switch fontName {

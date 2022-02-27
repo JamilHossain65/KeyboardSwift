@@ -30,10 +30,29 @@ let kUnicodeLettersBnNormal = kUnicodeBnNormal.components(separatedBy: "৹ ")
 //let kUnicodeLettersBnStinky = kUnicodeBnStinky.components(separatedBy: "৹")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
-let kUnicodeBnNormal = "ক৹ খ৹ গ৹ ঘ৹ ঙ৹ চ৹ ছ৹ জ৹ ঝ৹ ঞ৹ \(kNL)৹ ট৹ ঠ৹ ড৹ ঢ৹ ণ৹ ত৹ দ৹ ন৹ k৹ স৹ \(kNL)৹ \(kSHIFT)৹ জ্ঞ৹  ্৹  ্৹  া৹  ি৹  ু৹  ে৹ \(kSPECIAL)"//থ৹ধ৹
+let kUnicodeBnNormal = " ৈ৹  া৹  ী৹  ূ৹ ব৹ হ৹ গ৹ দ৹ জ৹ ড৹ \(kNL)৹  ো৹  ে৹  ্৹  ি৹  ু৹ প৹ র৹ ক৹ ত৹ চ৹ ট৹ \(kNL)৹ \(kSHIFT)৹  ং৹ ম৹ ন৹ ল৹ স৹ শ৹ য৹  ্য৹ \(kSPECIAL)"
+let kUnicodeBnLetterShift = "ঔ৹ ঐ৹ আ৹ ঈ৹ ঊ৹ ভ৹ ঙ৹ ঘ৹ ধ৹ ঝ৹ ঢ৹ \(kNL)৹ ও৹ এ৹ অ৹ ই৹ উ৹ ফ৹  ৃ৹ খ৹ থ৹ ছ৹ ঠ৹ \(kNL)৹ \(kSHIFT)৹  ঁ৹ জ্ঞ৹ ণ৹ ক্ষ৹ ষ৹ ঋ৹ য়৹ ৎ৹ \(kSPECIAL)"
+let kUnicodeBnNumbers = "১৹ ২৹ ৩৹ ৪৹ ৫৹ ৬৹ ৭৹ ৮৹ ৯৹ ০৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ৳৹ &৹ @৹ “৹ \(kNL)৹ \(kSHIFT)৹ ।৹ .৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
+let kUnicodeBnPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ ₹৹ $৹ ৲৹ •৹ \(kNL)৹ \(kSHIFT)৹ ॥৹ ়৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
+
+/*
+ ৈ া ী ূ ব হ গ দ জ ড
+ো ে ্ ি ু প র ক ত চ ট
+ং ম ন ল স শ য ্য
+
+ঔ ঐ আ ঈ ঊ ভ ঙ ঘ ধ ঝ ঢ
+ও এ অ ই উ ফ ৃ খ থ ছ ঠ
+ঁ জ্ঞ ণ ক্ষ ষ ঋ য় ৎ
+ */
+
+/*
+//MARK:- Numbers,punctuations,shift and unshift letters
+let kUnicodeBnNormal = "ক৹ খ৹ গ৹ ঘ৹ ঙ৹ চ৹ ছ৹ জ৹ ঝ৹ ঞ৹ \(kNL)৹ ট৹ ঠ৹ ড৹ ঢ৹ ণ৹ ত৹ দ৹ ন৹ k৹ স৹ \(kNL)৹ \(kSHIFT)৹ জ্ঞ৹  ং৹  ্৹  া৹  ি৹  ু৹  ে৹ \(kSPECIAL)"//থ৹ধ৹
 let kUnicodeBnLetterShift = "অ৹ আ৹ ই৹ ঈ৹ উ৹ ঊ৹ ঋ৹ এ৹ ঐ৹ ও৹ \(kNL)৹ ঔ৹ প৹ ফ৹ ব৹ ভ৹ ম৹ য৹ র৹ ল৹ \(kNL)৹ \(kSHIFT)৹ শ৹ ষ৹ স৹ হ৹ ড়৹ ঢ়৹ য়৹ \(kSPECIAL)" //৹ৎ
-let kUnicodeBnNumbers = "১৹ ২৹ ৩৹ ৪৹ ৫৹ ৬৹ ৭৹ ৮৹ ৯৹ ০৹ \(kNL)৹ ;৹ (৹ )৹ ।৹ :৹ ৳৹ a৹ b৹ c৹ \(kNL)৹ \(kSHIFT)৹ d৹ e৹ f৹ g৹ ৠ৹ ঌ৹ ৡ৹ \(kSPECIAL)"
-let kUnicodeBnPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ /৹ |৹ ~৹ <৹ >৹ %৹ $৹ ^৹ \(kNL)৹ \(kSHIFT)৹ '৹ 0৹ ?৹ !৹ ’৹ *৹ \(kSPECIAL)"
+let kUnicodeBnNumbers = "১৹ ২৹ ৩৹ ৪৹ ৫৹ ৬৹ ৭৹ ৮৹ ৯৹ ০৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ৳৹ &৹ @৹ “৹ \(kNL)৹ \(kSHIFT)৹ ।৹ .৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
+let kUnicodeBnPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ ₹৹ $৹ ৲৹ •৹ \(kNL)৹ \(kSHIFT)৹ ॥৹ ়৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
+
+ */
 
 
 //Font strings
@@ -48,6 +67,15 @@ let constants = ["ং"," ঁ","ঃ","ৃ"]
  ্, া, ি, ী, ু, ূ, ৃ, ে, ৈ, ো, ৌ,ক,খ,গ,ঘ,ঙ,চ,ছ,জ,ঝ,ঞ,ট,ঠ,ড,ঢ,ণ,থ,দ,ধ
  অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ,ন,প,ফ,ব,ভ,ম,য,র,ল,শ,ষ,স,হ,ড়,ঢ়,য়,ৎ,
  ০,১,২,৩,৪,৫,৬,৭,৮,৯,৳,$,-,_,(,),@,।,?,!,., ঁ, ক  ক্ষ ক্স জ্ঞ ঞ্চ ঞ্ছ ঞ্জ
+ 
+ ১২৩৪৫৬৭৮৯০
+ -/:;()৳&@“
+ ।.,?!’
+
+ []{}#%^*+=
+ _\|~<>₹$৲•
+ ॥ ় ,?!’
+ 
  */
 
 

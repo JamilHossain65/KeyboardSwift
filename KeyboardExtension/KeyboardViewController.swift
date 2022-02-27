@@ -904,6 +904,19 @@ extension KeyboardViewController: HintBarDelegate {
             refreshWordFile()
             //show setting option view
             resetTimerToShowSettingOption()
+            
+//            let paragraphStyle = NSMutableParagraphStyle()
+//            if(true){
+//                paragraphStyle.alignment = .justified
+//                paragraphStyle.baseWritingDirection = .rightToLeft
+//                
+//            }else{
+//                paragraphStyle.alignment = .justified
+//                paragraphStyle.baseWritingDirection = .leftToRight
+//            }
+//            
+//            inputView?.makeTextWritingDirectionRightToLeft(button)
+            
         }
     }
 }
