@@ -41,7 +41,7 @@ let kRETURN = "RETURN"
 let kAT_BUTTON = "@"
 
 let kSPECIAL = "\(kDELETE)৹ \(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kRETURN)"
-let kSPECIAL2 = "\(kDELETE) \(kNL) \(kALTER) \(kGLOBE) \(kVOICE) \(kSPACE) \(kRETURN)"
+let kSPECIAL2 = "\(kDELETE) \(kNL) \(kALTER) \(kGLOBE) \(kVOICE) \(kSPACE) \(kAT_BUTTON) \(kRETURN)"
 let kSPECIALArray = [kDELETE,kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
 let kSEPERATOR = "৹ "
 
@@ -436,4 +436,55 @@ func getFileName() -> String {
     default:
         return "words.txt"
     }
+}
+
+//get modified space before a button
+func getModifiedSpace(_ row:Int) -> [Int:Int]{
+    let array = getLettersInRows()
+    //print("array[row]:::\(array[row])")
+    
+    switch row {
+    case array.count - 1 ://Last row
+        break
+    case array.count - 2 ://shift and delete row
+        if array[row] <= 9{
+            return [1:7, abs(array[row]-1):7]
+        }
+        break
+    default:
+        if array[row] == 9 { //Handle case for 2nd row of english language
+            return [0:15, 9:15]
+        }
+        break
+    }
+    
+    return [:]
+}
+
+//get modified button width
+func getModifiedWidth(_ row:Int)-> [Int:Int]{
+    let array = getLettersInRows()
+    //print("array:::\(array[row])")
+    
+    switch row {
+    case abs(array.count - 1) ://Last row
+        switch langName {
+        case Korean: //an extra '@' button
+            return [0:40, 1:30,2:30,4:30,5:50]
+        default:
+            return [0:40, 1:30,2:30,4:80]
+        }
+    case abs(array.count - 2) ://shift and delete row
+        switch langName {
+        case Russian:
+            return [0:30, 10:30]
+        default:
+            return [0:40, abs(array[row]-1):40]
+        }
+        
+    default:
+        break
+    }
+    
+    return [:]
 }

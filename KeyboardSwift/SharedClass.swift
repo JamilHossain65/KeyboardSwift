@@ -49,7 +49,7 @@ var activeLanguages = [
     Korean :false, Turkish   :false,  Portuguese:false,
     Gujarati:true, Hindi :true,  Kannada :true,  Malayalam:true,
     Marathi :true, Nepali:false, Oriya   :true,  Punjabi:true,
-    Sanskrit:false,Tamil :true,  Telugu  :true,  Urdu:false,
+    Sanskrit:false,Tamil :true,  Telugu  :true,  Urdu:true,
 ]
 
 var countryCodes  = [
