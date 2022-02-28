@@ -12,7 +12,9 @@ import MBProgressHUD
 
 func log(_ msg: Any?) {
     #if DEBUG
-    if let _msg = msg { print(String(describing: _msg)) }
+    if let _msg = msg {
+        print(String(describing: _msg))
+    }
     #endif
 }
 

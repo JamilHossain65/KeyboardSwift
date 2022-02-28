@@ -45,7 +45,7 @@
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Recording voice for converting into text</string>
-	<key>RequestsOpenAccess</key>
+	<key>NSExtension | NSExtensionAttributes | RequestsOpenAccess</key>
 	<true/>
 </dict>
 </plist>

@@ -86,7 +86,7 @@ class JHKeyPopup: UIButton {
     
     func checkHintPosition(keyButton:UIButton){
         let rowKeys = getLettersInRows() //[10,9,9,5]
-        print("rowKeys::\(rowKeys)")
+        log("rowKeys::\(rowKeys)")
         var value = 0
         var index = 0
         let tagValue = keyButton.tag + 1
@@ -195,17 +195,17 @@ class JHKeyPopup: UIButton {
                 keyPop?.alpha = 1.0
             })
             
-            print("tap tag::\(button.tag)")
+            log("tap tag::\(button.tag)")
             startShowHintTimer()
         //}//
         
     }
     
     @objc func showKeyCapView(){
-        print("showKeyCapView...")
+        log("showKeyCapView...")
 
         if ((self.hintSymbolsList == nil) || (self.hintSymbolsList!.count == 0)) {
-            print("tap tag::\(self.tag)")
+            log("tap tag::\(self.tag)")
             return
         }
         
@@ -759,13 +759,13 @@ class JHKeyPopup: UIButton {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        AudioServicesPlaySystemSound (1104)
+        //AudioServicesPlaySystemSound (1104)
         
         self.clipsToBounds = false
         addPopupToButton(button: self)
         self.updateState()
         let time = Date().timeIntervalSince1970 * 1000.0  //([[NSDate date] timeIntervalSince1970] * 1000.0)
-        print("time::\(time)")
+        log("time::\(time)")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -811,14 +811,14 @@ class JHKeyPopup: UIButton {
             let array = self.hintButtons?.filter({$0.isHighlighted})
             
             for btn in _hintButtons {
-                print("btn title:\(btn.isHighlighted)::\(btn.titleLabel!.text)")
+                log("btn title:\(btn.isHighlighted)::\(btn.titleLabel!.text)")
             }
             
             if let _array = array, _array.count > 0 {
                 let highlightedButton:UIButton = _array.first!
                 if let _delegate = self.delegate2{
                     _delegate.didSelectHintButtonSwift(highlightedButton)
-                    print("highlightedButton tap::\(highlightedButton.titleLabel!.text)")
+                    log("highlightedButton tap::\(highlightedButton.titleLabel!.text)")
                     //hideHintView()
                     isLongPressing = false
                 }
@@ -845,16 +845,16 @@ class JHKeyPopup: UIButton {
             hideHintView()
      
         }else{
-            print("button title::\(self.titleLabel!.text)")
+            log("button title::\(self.titleLabel!.text)")
         }
 
         startHideTimerPopup()
         updateState()
         
         let time = Date().timeIntervalSince1970 * 1000.0
-        print("T end::\(time)")
+        log("T end::\(time)")
         
-        print("release long on::\(self.titleLabel!.text)")
+        log("release long on::\(self.titleLabel!.text)")
         if let _delegate = self.delegate2{
             _delegate.didReleaseLongOnSwift(self)
         }
@@ -865,7 +865,7 @@ class JHKeyPopup: UIButton {
         super.touchesCancelled(touches, with: event)
         startShowHintTimer()
         updateState()
-        print("T cancel")
+        log("T cancel")
     }
 }
 

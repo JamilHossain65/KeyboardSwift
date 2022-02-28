@@ -414,7 +414,7 @@ extension KeyboardView{
         if let _dataSource = dataSource{
             currentFontLetters = _dataSource
         }
-        log("refresh font:\(currentFontLetters)")
+        //log("refresh font:\(currentFontLetters)")
         refreshKeyboard()
     }
     
@@ -520,7 +520,7 @@ extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
         
         if(sender.tag == shiftButtonIndex) {
-            AudioServicesPlaySystemSound (1104)
+            //AudioServicesPlaySystemSound (1104)
             sender.isSelected = !sender.isSelected
             shiftButton = sender
             delegate?.shiftButtonPressed(sender)
@@ -540,13 +540,13 @@ extension KeyboardView {
             
             delegate?.voiceButtonTapped(sender)
         }else if(sender.tag == deleteButtonIndex) {
-            AudioServicesPlaySystemSound (1104)
+            //AudioServicesPlaySystemSound (1104)
             delegate?.deleteCharacter("")
         } else if(sender.tag == nextButtonIndex) {
-            AudioServicesPlaySystemSound (1104)
+            //AudioServicesPlaySystemSound (1104)
             delegate?.gotoNextKeyboard(sender)
         } else if(sender.tag == altButtonIndex) {
-            AudioServicesPlaySystemSound (1104)
+            //AudioServicesPlaySystemSound (1104)
             sender.isSelected = !sender.isSelected
             altButton = sender
             delegate?.altButtonPressed(altButton)
@@ -558,10 +558,10 @@ extension KeyboardView {
                 
                 switch _title {
                 case "kSpaceString".localized():
-                    AudioServicesPlaySystemSound (1104)
+                    //AudioServicesPlaySystemSound (1104)
                     delegate?.insertCharacter(" ")
                 case "kReturnString".localized():
-                    AudioServicesPlaySystemSound (1104)
+                    //AudioServicesPlaySystemSound (1104)
                     delegate?.insertCharacter("\n")
                 
                 default:
@@ -575,7 +575,7 @@ extension KeyboardView {
 
     
     @objc func doubleTappedOn(_ sender:UITapGestureRecognizer) {
-        AudioServicesPlaySystemSound (1104)
+        //AudioServicesPlaySystemSound (1104)
         self.perform(#selector(playSound), with: nil, afterDelay: 0.25)
         
         let button = sender.view as! UIButton
@@ -590,7 +590,7 @@ extension KeyboardView {
     
     @objc func playSound(){
         //MARK:- todo: implement double tap sound
-        //AudioServicesPlaySystemSound (1104)
+        ////AudioServicesPlaySystemSound (1104)
     }
     
     @objc func handleLongPressDelete(_ gestureRecognizer: UILongPressGestureRecognizer) {
@@ -608,7 +608,7 @@ extension KeyboardView {
     
     @objc func deleteLetter(){
         log("delete letter")
-        AudioServicesPlaySystemSound (1104)
+        //AudioServicesPlaySystemSound (1104)
         
         if !isDeleteEnd {
             perform(#selector(deleteLetter), with: nil, afterDelay: 0.1)

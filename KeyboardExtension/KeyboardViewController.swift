@@ -547,13 +547,14 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         //MARK:- TODO: play sound when tap letter
         //UIDevice.current.playInputClick()
-        //AudioServicesPlaySystemSound (1104);
+        ////AudioServicesPlaySystemSound (1104);
         //AudioServicesPlaySystemSound (0x450);
         
         hintBarType = .HINT_WORD
         
         //https://picturetosound.com/en/a/26/iphone-typing-on-keyboard
-        audioManager.playSoundFile("key_sound.mp3")
+        //audioManager.playSoundFile("key_sound.mp3")
+        UIDevice.current.playInputClick()
         
         //check and update fullstop
         if newCharacter == "kDoubleSpace".localized() {
