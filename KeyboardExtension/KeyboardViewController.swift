@@ -880,6 +880,7 @@ extension KeyboardViewController: HintBarDelegate {
         if let button = sender as? UIButton{
             
             keySettingType = .LANGUAGE
+            keyMode = NORMAL
             
             langName = button.titleLabel?.text?.trimmingCharacters(in: .whitespaces) ?? English
             setString(langName , key: kSelectedLanguageName)
