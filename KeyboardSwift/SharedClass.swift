@@ -44,12 +44,12 @@ let Urdu       = "Urdu"
 
 
 var activeLanguages = [
-    English:true,  Indonesian:false,  Bangla    :true,  Russian:false,
-    Spanish:false,  French    :false,  German    :false,  Italian:false,
-    Korean :false, Turkish   :false,  Portuguese:false,
-    Gujarati:true, Hindi :true,  Kannada :true,  Malayalam:true,
-    Marathi :true, Nepali:false, Oriya   :true,  Punjabi:true,
-    Sanskrit:false,Tamil :true,  Telugu  :true,  Urdu:true,
+    English :true, Indonesian:false, Bangla    :true,  Russian  :false,
+    Spanish :false,French    :false, German    :false, Italian  :false,
+    Korean  :false,Turkish   :false, Portuguese:false,
+    Gujarati:true, Hindi     :true,  Kannada   :true,  Malayalam:true,
+    Marathi :true, Nepali    :false, Oriya     :true,  Punjabi  :true,
+    Sanskrit:false,Tamil     :true,  Telugu    :true,  Urdu     :false,
 ]
 
 var countryCodes  = [
