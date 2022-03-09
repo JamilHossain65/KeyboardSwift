@@ -53,21 +53,21 @@ var activeLanguages = [
 ]
 
 var countryCodes  = [
-    English:"us", Indonesian:"id", Bangla    :"bd", Russian:"ru",
-    Spanish:"es", French    :"fr", German    :"gr", Italian:"it",
-    Korean :"ko", Turkish   :"tr", Portuguese:"pt",
-    Gujarati:"", Hindi :"In", Kannada :"",  Malayalam:"",
-    Marathi :"", Nepali:"", Oriya   :"",  Punjabi:"",
-    Sanskrit:"", Tamil :"", Telugu  :"",  Urdu:"",
+    English :"us", Indonesian:"id", Bangla    :"bd", Russian  :"ru",
+    Spanish :"es", French    :"fr", German    :"gr", Italian  :"it",
+    Korean  :"ko", Turkish   :"tr", Portuguese:"pt",
+    Gujarati:"",   Hindi     :"In", Kannada   :"",   Malayalam:"",
+    Marathi :"",   Nepali    :"",   Oriya     :"",   Punjabi  :"",
+    Sanskrit:"",   Tamil     :"",   Telugu    :"",   Urdu     :"",
 ]
 
 var languageCodes = [
-    English:"en", Indonesian:"id", Bangla    :"bn", Russian:"ru",
-    Spanish:"es", French    :"fr", German    :"gr", Italian:"it",
-    Korean :"ko", Turkish   :"tr", Portuguese:"pt",
-    Gujarati:"", Hindi :"Hi", Kannada :"",  Malayalam:"",
-    Marathi :"", Nepali:"", Oriya   :"",  Punjabi:"",
-    Sanskrit:"", Tamil :"", Telugu  :"",  Urdu:"",
+    English :"en", Indonesian:"id", Bangla    :"bn", Russian  :"ru",
+    Spanish :"es", French    :"fr", German    :"gr", Italian  :"it",
+    Korean  :"ko", Turkish   :"tr", Portuguese:"pt",
+    Gujarati:"",   Hindi     :"Hi", Kannada   :"",   Malayalam:"",
+    Marathi :"",   Nepali    :"",   Oriya     :"",   Punjabi  :"",
+    Sanskrit:"",   Tamil     :"",   Telugu    :"",   Urdu     :"",
 ]
 
 //MARK:- SHARED DATA

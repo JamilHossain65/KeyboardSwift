@@ -411,6 +411,31 @@ func getFileName() -> String {
     let langName = getString(kSelectedLanguageName)
     
     switch langName {
+    case Gujarati:
+        return "gujrati.txt"
+    case Hindi:
+        return "hindi.txt"
+    case Kannada:
+        return "kannada.txt"
+    case Malayalam:
+        return "malayalam.txt"
+    case Marathi:
+        return "marathi.txt"
+    case Nepali:
+        return "nepali.txt"
+    case Oriya:
+        return "oriya.txt"
+    case Punjabi:
+        return "punjabi.txt"
+    case Sanskrit:
+        return "sanskrit.txt"
+    case Tamil:
+        return "tamil.txt"
+    case Telugu:
+        return "telugu.txt"
+    case Urdu:
+        return "urdu.txt"
+        //
     case Bangla:
         return "bangla.txt"
     case Indonesian:

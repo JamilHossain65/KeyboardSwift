@@ -84,23 +84,32 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         log("words count::\(wordArray.count)")
         
         /*
-        var index = 0
         for str in wordArray{
-            index = index + 1
-            let word = str.components(separatedBy: "\t")
-            //if index%3 == 2{
-            let wordTrimmed = word[1].trimmingCharacters(in: .whitespaces)
-            //log("\(word[0])")
-            log("\(wordTrimmed)")
-            //}
+            let word = str.components(separatedBy: "   ")
+            
+            if word.count == 3 {
+                let wordTrimmed = word[1].trimmingCharacters(in: .whitespaces)
+                //log("\(word[0])")
+                log("\(wordTrimmed)")
+            }
         }
         */
         
-//        for word in wordArray{
-//            let _word = word.components(separatedBy: "/")
-//            log("\(_word.first ?? "")")
-//        }
+        /*
+        //oria
+        //https://www.punjabalerts.com/2020/10/1002003005001000-most-common-word-in_26.html
+        var index = 0
+        wordArray = wordArray.filter({$0 != ""})
         
+        for str in wordArray{
+            //log("index[\(index)]: \(str)")
+            
+            if index % 3 == 2 {
+                log("\(str)")
+            }
+            index = index + 1
+        }
+        */
     }
     
     func deleteDoccumentText(){
@@ -224,7 +233,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     @objc func checkWriting(){
         
         coutTime += 1
-        log("coutTime::\(coutTime)")
+        //log("coutTime::\(coutTime)")
         if coutTime >= countLimit {
             timer?.invalidate()
             coutTime = 0

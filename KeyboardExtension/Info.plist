@@ -43,9 +43,9 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).KeyboardViewController</string>
 	</dict>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Recording voice for converting into text</string>
 	<key>NSExtension | NSExtensionAttributes | RequestsOpenAccess</key>
 	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Recording voice for converting into text</string>
 </dict>
 </plist>
