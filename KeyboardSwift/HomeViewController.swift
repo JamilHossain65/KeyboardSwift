@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 class HomeViewController: UIViewController {
 
@@ -17,8 +18,21 @@ class HomeViewController: UIViewController {
     var playButton : UIButton!
     let audioManager = AudioManager()
     
+    let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
+    
+    let dropDown = DropDown()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: - Todo make it dynamic
+        let selectedIndex = 3
+        dropDown.dataSource = actLanguages
+        dropDown.selectRow(at: selectedIndex)
+        dropDown.dismissMode = .onTap
+        
+        setObject(selectedIndex, key: SelectedLanguage)
         
         /*
         textView.text =
@@ -80,7 +94,7 @@ class HomeViewController: UIViewController {
     }
     
     func playSoundUI(){
-        
+        /*
         let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
         let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
         let countryCode2 = countryCodes[actLanguages.last ?? ""] ?? ""
@@ -101,6 +115,13 @@ class HomeViewController: UIViewController {
         
         print("codeBd::\(codeBd)")
         print("codeEn::\(codeEn)")
+        */
+        
+        let index:Int   = getObject(SelectedLanguage) as? Int ?? 0
+        let countryName = self.actLanguages[index]
+        let countryCode:[String] = countryCodes.filter({$0.0 == countryName}).map({$0.1})
+        let _countryCode:String = countryCode.first ?? ""
+        let countryFlag = flag(from: _countryCode)
         
         playButton = UIButton(frame: CGRect(x: textView.frame.size.width - 122, y: textView.frame.size.height - 44, width: 40, height: 40))
         
@@ -109,10 +130,14 @@ class HomeViewController: UIViewController {
         playButton.layer.borderColor  = UIColor.lightGray.cgColor
         
         playButton.titleLabel?.font   = UIFont(name: "Arial", size: 25)
+        playButton.setTitle(countryFlag, for: .normal)
         
-        playButton.setTitle("\(codeBd)", for: .normal)
-        playButton.setTitle("\(codeEn)", for: .selected)
-        playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
+//        playButton.setTitle("\(codeBd)", for: .normal)
+//        playButton.setTitle("\(codeEn)", for: .selected)
+        playButton.setTitleColor(.black, for: .normal)
+        playButton.setTitleColor(.black, for: .selected)
+        
+        playButton.addTarget(self, action: #selector(playButtonTapped(sender:)), for: .touchUpInside)
         textView.addSubview(playButton)
         playButton.backgroundColor = .clear
     }
@@ -133,9 +158,38 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @objc func playButtonTapped(){
-        playButton.isSelected = !playButton.isSelected
-        //testSimpleAPI()
+    @objc func playButtonTapped(sender:UIButton){
+        //log("playButtonTapped...")
+        let button = UIButton()
+        var mFrame = sender.frame
+        mFrame.origin.y = 0
+        button.frame = mFrame
+        
+        dropDown.anchorView = button
+        dropDown.direction = .any
+        //dropDown.bottomOffset = CGPoint(x: 0, y: 0)
+        dropDown.show()
+        
+        dropDown.selectionAction = { [] (index, item) in
+            
+            setObject(index, key: SelectedLanguage)
+            
+            let countryCode:[String] = countryCodes.filter({$0.0 == item}).map({$0.1})
+            let _countryCode:String = countryCode.first ?? ""
+            //log("countryCode :: \(_countryCode)")
+            
+            if _countryCode.count > 0 {
+                let countryFlag = flag(from: _countryCode)
+                //log("countryFlag :: \(countryFlag)")
+                self.playButton.setTitle(countryFlag , for: .normal)
+            }else{
+                let langCode:[String] = languageCodes.filter({$0.0 == item}).map({$0.1})
+                let _langCode:String = langCode.first ?? ""
+                //log("selected value :: \(_langCode)")
+                self.playButton.setTitle(_langCode.capitalized , for: .normal)
+                
+            }
+        }
     }
     
     func convertToText2(lang:String){
@@ -149,11 +203,11 @@ class HomeViewController: UIViewController {
         speechModel.doTranslate2({errors in
             
             if let _errors = errors,_errors.message?.count ?? 0 > 0 {
-                print("error::\(_errors.message)")
+                log("error::\(_errors.message)")
                 showAlertOkay(message: "Error found!", completion: { _ in})
             } else {
                 self.textView.text += " \(speechModel.convertedText)"
-                print("text::\(speechModel.convertedText)")
+                log("text::\(speechModel.convertedText)")
             }
         })
     }
@@ -165,12 +219,12 @@ class HomeViewController: UIViewController {
                 //print("response:\(response.json)\n")
                 if let _response = response?.json {
                     if let name = _response["test"] as? String {
-                        print(name)
+                        log(name)
                     }
                 }
                 
             } else {
-                print("error:\(errors?.message)")
+                log("error:\(errors?.message)")
             }
         })
     }
@@ -179,7 +233,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController:AudioManagerDelegate {
     func recordDidFinish(){
         print("convert start.....")
-        
+        /*
         let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
         let countryCode1 = languageCodes[actLanguages.first ?? ""] ?? ""
         let countryCode2 = languageCodes[actLanguages.last ?? ""] ?? ""
@@ -202,6 +256,12 @@ extension HomeViewController:AudioManagerDelegate {
         
         let language = playButton.isSelected ? codeEn:codeBd //id,bn
         convertToText2(lang: language)
+ */
+        let index:Int   = getObject(SelectedLanguage) as? Int ?? 0
+        let countryName = self.actLanguages[index]
+        let countryCode:[String] = countryCodes.filter({$0.0 == countryName}).map({$0.1})
+        let _countryCode:String = countryCode.first ?? ""
+        convertToText2(lang: _countryCode)
     }
     
     func restartSpeech(sec:Double){

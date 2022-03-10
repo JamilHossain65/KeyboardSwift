@@ -12,6 +12,7 @@ let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"
 let kActiveLanguages  = "kActiveLanguages"
 
+let SelectedLanguage = "SelectedLanguage"
 let CountryCode  = "CountryCode"
 let LanguageCode = "LanguageCode"
 
@@ -65,9 +66,9 @@ var languageCodes = [
     English :"en", Indonesian:"id", Bangla    :"bn", Russian  :"ru",
     Spanish :"es", French    :"fr", German    :"gr", Italian  :"it",
     Korean  :"ko", Turkish   :"tr", Portuguese:"pt",
-    Gujarati:"",   Hindi     :"Hi", Kannada   :"",   Malayalam:"",
-    Marathi :"",   Nepali    :"",   Oriya     :"",   Punjabi  :"",
-    Sanskrit:"",   Tamil     :"",   Telugu    :"",   Urdu     :"",
+    Gujarati:"gu", Hindi     :"hi", Kannada   :"kn", Malayalam:"ml",
+    Marathi :"mr", Nepali    :"",   Oriya     :"or", Punjabi  :"pa",
+    Sanskrit:"",   Tamil     :"ta", Telugu    :"te", Urdu     :"",
 ]
 
 //MARK:- SHARED DATA

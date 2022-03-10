@@ -163,8 +163,6 @@ let kAllLanguageDicArray = [
     
 ]
 
-var currentFontLetters:[String] =  []
-
 //this is all languages list of [String]
 let supportedLanguages:[String] = kAllLanguageDicArray.map({$0.keys.first!})
 
@@ -172,6 +170,8 @@ let supportedLanguages:[String] = kAllLanguageDicArray.map({$0.keys.first!})
 //var activeLanguages = [English:true,Indonesian:true,Bangla:true]
 let langNameArray = supportedLanguages.filter({ activeLanguages.filter({$0.1}).map({$0.0})
                                                 .contains($0)})
+
+var currentFontLetters:[String] =  []
 
 func getKeys(_ row:Int,_ fontString:String? = kUnicodeEnNormal) -> Int {
     log("fontString::\(fontString ?? "")")
