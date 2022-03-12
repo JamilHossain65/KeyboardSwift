@@ -97,7 +97,7 @@ enum LANGUAGE_GROUP:Int {
     case CHINESE
 }
 
-var keyMode : String = SHIFT
+var keyMode : String = NORMAL
 var writingMode : WRITING_MODE  = .INSERTING
 var hintBarType : HINT_BAR_TYPE = .SETTING
 
@@ -123,7 +123,7 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //var languageName = getString(kSelectedLanguageName) ?? English
 //var fontsName    = getString(kSelectedFontName)     ?? NORMAL
 
-var langName = getString(kSelectedLanguageName) ?? Turkish
+var langName = getString(kSelectedLanguageName) ?? Hindi
 var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 
