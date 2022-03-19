@@ -7,6 +7,11 @@
 
 import UIKit
 
+import Appodeal;
+import FirebaseCore;
+import FirebaseAuth;
+import GoogleMobileAds;
+
 @main
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window:UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        //[FIRApp configure];
+        FirebaseApp.configure();
+        
         return true
     }
 
@@ -41,8 +50,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
             
             print("url3::\(url)")
+            
+            guard let rootVC:UIViewController =  UIApplication.shared.windows.first?.rootViewController else { return true }
+            
+            print("rootVC::\(rootVC)")
+            
+            let adManager = AdManager()
+            adManager.showAdMobAdsOnParrent(rootVC)
+            
             return true
         }
-
+    
 }
 

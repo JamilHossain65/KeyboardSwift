@@ -25,6 +25,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This has come with Third-party framework, I did not use this in this app.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This has come with Third-party framework, I did not use this in this app.</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -47,5 +51,7 @@
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Recording voice for converting into text</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This identifier will be used to deliver personalized ads to you.</string>
 </dict>
 </plist>

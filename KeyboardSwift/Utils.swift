@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 import MBProgressHUD
 
 //let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
@@ -69,7 +70,62 @@ func showSpinningWheel(notification: NSNotification) {
 //}
 
 class Utils:NSObject{
-    
+    //MARK: - FROM OLD CODE BR KEBOARD
+    class func showAlertOkay(title: String? = "", message:String? = "", completion: @escaping (Bool) -> () = {_ in}) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        //alert.view.tintColor = UIColor.hex_17181a()
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+            completion(false)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Buy", style: .default, handler: { (_) in
+            completion(true)
+        }))
+
+//        let adsManager:AdsManager =  AdsManager.sharedInstance() as! AdsManager
+//        let window = adsManager.application.keyWindow
+//        window?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
+
+    class func showAlert(title: String? = "", message:String? = "", completion: @escaping (Bool) -> () = {_ in}) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            completion(true)
+        }))
+
+//        let adsManager:AdsManager =  AdsManager.sharedInstance() as! AdsManager
+//        let window = adsManager.application.keyWindow
+//        window?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
+
+    class func getIpLocation(completion: @escaping(NSDictionary?, Error?) -> Void)
+    {
+        let url     = URL(string: "http://ip-api.com/json")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+
+        URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
+            DispatchQueue.main.async {
+                if let content = data {
+                    do {
+                        if let object = try JSONSerialization.jsonObject(with: content, options: .allowFragments) as? NSDictionary {
+                            completion(object, error)
+                        }
+                        else {
+                            // TODO: Create custom error.
+                            completion(nil, nil)
+                        }
+                    }
+                    catch {
+                        // TODO: Create custom error.
+                        completion(nil, nil)
+                    }
+                } else {
+                    completion(nil, error)
+                }
+            }
+        }).resume()
+    }
 }
 
 extension String {

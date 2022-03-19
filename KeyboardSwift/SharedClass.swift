@@ -8,6 +8,8 @@
 
 import Foundation
 
+let  AD_MIN_TIME:TimeInterval = 10*60 //10 min
+
 let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"
 let kActiveLanguages  = "kActiveLanguages"

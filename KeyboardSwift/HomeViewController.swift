@@ -48,10 +48,13 @@ class HomeViewController: UIViewController {
             //"t̸h̸e̸r̸e̸ a̸r̸e̸ m̸a̸n̸y̸ f̸o̸n̸t̸s̸ i̸ c̸n̸ u̸s̸e̸\n"
         */
         
-        textView.layer.borderWidth  = 1.0
-        textView.layer.cornerRadius = 8.0
-        textView.layer.borderColor  = UIColor.lightGray.cgColor
-        textView.becomeFirstResponder()
+        if let _ = textView{
+            textView.layer.borderWidth  = 1.0
+            textView.layer.cornerRadius = 8.0
+            textView.layer.borderColor  = UIColor.lightGray.cgColor
+            textView.becomeFirstResponder()
+        }
+        
         //textView.text = "saya bisa menulis bahasa indonesia dengan berbicara"
         //showLoading(view: textView)
         
@@ -60,6 +63,10 @@ class HomeViewController: UIViewController {
         audioManager.delegate = self
         loadRecordingUI()
         playSoundUI()
+        
+        //show admob ad
+        let adManager = AdManager()
+        adManager.showAdMobAdsOnParrent(self)
         
     }
     

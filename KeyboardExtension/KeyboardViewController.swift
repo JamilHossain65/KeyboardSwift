@@ -51,6 +51,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //            });
         
         refreshWordFile()
+        
+        self.perform(#selector(openContainerApp), with: nil, afterDelay: AD_MIN_TIME)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -461,7 +463,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
 
     //MARK: OPEN CONTAINER APP
-    func openContainerApp() {
+    @objc func openContainerApp() {
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight

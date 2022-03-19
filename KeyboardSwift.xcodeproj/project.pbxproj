@@ -55,6 +55,8 @@
 		8D74D7B527B284DE006642E0 /* UnicodePt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D7B427B284DE006642E0 /* UnicodePt.swift */; };
 		8D75AE202794338200CB1E0B /* UnicodeId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75AE1F2794338200CB1E0B /* UnicodeId.swift */; };
 		8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D769A0C265F3BED00C74FBA /* Assets.xcassets */; };
+		8D8323D527E437640068CBA1 /* AdUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8323D427E437630068CBA1 /* AdUtil.swift */; };
+		8D83240C27E450B60068CBA1 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83240B27E450B60068CBA1 /* AdManager.swift */; };
 		8D8631DA27D7B1730078D877 /* punjabi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631CE27D7B1700078D877 /* punjabi.txt */; };
 		8D8631DB27D7B1730078D877 /* telugu.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631CF27D7B1700078D877 /* telugu.txt */; };
 		8D8631DC27D7B1730078D877 /* malayalam.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631D027D7B1700078D877 /* malayalam.txt */; };
@@ -76,6 +78,15 @@
 		8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AA16D2682DEDC00EA136D /* AudioManager.swift */; };
 		8D9F6701275B8756006E65BE /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
 		8D9F89EB27AFF77800D6E517 /* bangla.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F89EA27AFF77800D6E517 /* bangla.txt */; };
+		8DB2747627E222B3000518B0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747327E222B3000518B0 /* LoadingView.swift */; };
+		8DB2747727E222B3000518B0 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747427E222B3000518B0 /* Triangle.swift */; };
+		8DB274BD27E226C4000518B0 /* AdmobAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B327E226C4000518B0 /* AdmobAd.m */; };
+		8DB274BF27E226C4000518B0 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
+		8DB274C027E226C4000518B0 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
+		8DB274C127E226C4000518B0 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
+		8DB274C227E226C4000518B0 /* AdmobAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B827E226C4000518B0 /* AdmobAd.xib */; };
+		8DBF98E727E3866200119E68 /* AdmobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF98E527E3866200119E68 /* AdmobController.swift */; };
+		8DBF98E827E3866200119E68 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
 		8DCFBF21278ED17D0093140C /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
 		8DD507462681596B00377CBD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8DD507472681596B00377CBD /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073E2681596B00377CBD /* APIUrl.swift */; };
@@ -100,6 +111,9 @@
 		8DF6E32626C3563F0031E094 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E8152266D8F770073B3B6 /* Color.swift */; };
 		8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */; };
 		8DF6E35626C357550031E094 /* HintBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A2C26388F7D001DE455 /* HintBarManager.swift */; };
+		8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
+		8DFDDA8827E2F9C5005AD90B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */; };
+		8DFDDB3027E2FF16005AD90B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		9FC6BAA61BF598B1DCB0F57A /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +189,9 @@
 		8D74D7B427B284DE006642E0 /* UnicodePt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodePt.swift; sourceTree = "<group>"; };
 		8D75AE1F2794338200CB1E0B /* UnicodeId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeId.swift; sourceTree = "<group>"; };
 		8D769A0C265F3BED00C74FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D8323D427E437630068CBA1 /* AdUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdUtil.swift; sourceTree = "<group>"; };
+		8D8323DC27E438600068CBA1 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		8D83240B27E450B60068CBA1 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		8D8631CE27D7B1700078D877 /* punjabi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = punjabi.txt; sourceTree = "<group>"; };
 		8D8631CF27D7B1700078D877 /* telugu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = telugu.txt; sourceTree = "<group>"; };
 		8D8631D027D7B1700078D877 /* malayalam.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = malayalam.txt; sourceTree = "<group>"; };
@@ -199,7 +216,19 @@
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8D9F6700275B8756006E65BE /* words_en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_en.txt; sourceTree = "<group>"; };
 		8D9F89EA27AFF77800D6E517 /* bangla.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bangla.txt; sourceTree = "<group>"; };
+		8DB2747327E222B3000518B0 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8DB2747427E222B3000518B0 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		8DB274B127E226C4000518B0 /* AdAppodeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdAppodeal.h; sourceTree = "<group>"; };
+		8DB274B327E226C4000518B0 /* AdmobAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdmobAd.m; sourceTree = "<group>"; };
+		8DB274B527E226C4000518B0 /* AdsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdsManager.m; sourceTree = "<group>"; };
+		8DB274B627E226C4000518B0 /* AdAppodeal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdAppodeal.xib; sourceTree = "<group>"; };
+		8DB274B727E226C4000518B0 /* AdAppodeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdAppodeal.m; sourceTree = "<group>"; };
+		8DB274B827E226C4000518B0 /* AdmobAd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdmobAd.xib; sourceTree = "<group>"; };
+		8DB274B927E226C4000518B0 /* AdmobAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmobAd.h; sourceTree = "<group>"; };
+		8DB274BB27E226C4000518B0 /* AdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdsManager.h; sourceTree = "<group>"; };
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		8DBF98E527E3866200119E68 /* AdmobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobController.swift; sourceTree = "<group>"; };
+		8DBF98E627E3866200119E68 /* AdmobController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobController.xib; sourceTree = "<group>"; };
 		8DCFBF20278ED17D0093140C /* bahasa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bahasa.txt; sourceTree = "<group>"; };
 		8DD5073D2681596B00377CBD /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8DD5073E2681596B00377CBD /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
@@ -224,6 +253,11 @@
 		8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		8DF36877266C20670098EA60 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHKeyPopup.swift; sourceTree = "<group>"; };
+		8DFDDA2A27E2F947005AD90B /* KeyboardSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		8DFDDA8427E2F9C5005AD90B /* FirebaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
+		8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
+		8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8C7C06C69151D7EB853273 /* Pods-KeyboardSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.release.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.release.xcconfig"; sourceTree = "<group>"; };
 		E3FF41B884FEBDE88E1CD54E /* Pods-KeyboardSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -380,6 +414,34 @@
 			path = Alphabet;
 			sourceTree = "<group>";
 		};
+		8DB2747127E222B3000518B0 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				8DB2747327E222B3000518B0 /* LoadingView.swift */,
+				8DB2747427E222B3000518B0 /* Triangle.swift */,
+			);
+			path = LoadingView;
+			sourceTree = SOURCE_ROOT;
+		};
+		8DB274B027E226C4000518B0 /* AdsManager */ = {
+			isa = PBXGroup;
+			children = (
+				8D83240B27E450B60068CBA1 /* AdManager.swift */,
+				8DBF98E527E3866200119E68 /* AdmobController.swift */,
+				8DBF98E627E3866200119E68 /* AdmobController.xib */,
+				8DB274BB27E226C4000518B0 /* AdsManager.h */,
+				8DB274B527E226C4000518B0 /* AdsManager.m */,
+				8DB274B927E226C4000518B0 /* AdmobAd.h */,
+				8DB274B327E226C4000518B0 /* AdmobAd.m */,
+				8DB274B827E226C4000518B0 /* AdmobAd.xib */,
+				8DB274B127E226C4000518B0 /* AdAppodeal.h */,
+				8DB274B727E226C4000518B0 /* AdAppodeal.m */,
+				8DB274B627E226C4000518B0 /* AdAppodeal.xib */,
+				8D8323D427E437630068CBA1 /* AdUtil.swift */,
+			);
+			path = AdsManager;
+			sourceTree = SOURCE_ROOT;
+		};
 		8DD5073C2681596B00377CBD /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +485,7 @@
 		8DE7F93F25E4474A00D3C48A = {
 			isa = PBXGroup;
 			children = (
+				8DFDDA2A27E2F947005AD90B /* KeyboardSwift-Bridging-Header.h */,
 				8DE7F94A25E4474A00D3C48A /* KeyboardSwift */,
 				8DE7F9C225E4784200D3C48A /* KeyboardExtension */,
 				8DE7F94925E4474A00D3C48A /* Products */,
@@ -444,6 +507,9 @@
 			isa = PBXGroup;
 			children = (
 				8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */,
+				8DFDDA8327E2F9C5005AD90B /* Firebase */,
+				8DB274B027E226C4000518B0 /* AdsManager */,
+				8DB2747127E222B3000518B0 /* LoadingView */,
 				8DD5073C2681596B00377CBD /* API */,
 				8DD507742681644A00377CBD /* Speech */,
 				8DD507412681596B00377CBD /* Reachability */,
@@ -451,12 +517,14 @@
 				8D91CD452655E7EE00404F5D /* SceneDelegate.swift */,
 				8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */,
 				8DD5075D26815EF800377CBD /* Utils.swift */,
+				8D8323DC27E438600068CBA1 /* Utility.h */,
 				8D3129E127303B55001EE3C3 /* SharedClass.swift */,
 				8DE7F95125E4474A00D3C48A /* Main.storyboard */,
 				8DE7F95425E4476900D3C48A /* Assets.xcassets */,
 				8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */,
 				8D713FDA26EEEACE0064DE3A /* busy.gif */,
 				8DE7F95925E4476900D3C48A /* Info.plist */,
+				8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */,
 				8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */,
 				8DD5076526815FEA00377CBD /* sound */,
 			);
@@ -496,6 +564,16 @@
 			path = KeyboardView;
 			sourceTree = "<group>";
 		};
+		8DFDDA8327E2F9C5005AD90B /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8DFDDA8427E2F9C5005AD90B /* FirebaseHelper.h */,
+				8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */,
+				8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -509,6 +587,7 @@
 				8DE7F94625E4474A00D3C48A /* Resources */,
 				8DE7F9CC25E4784200D3C48A /* Embed App Extensions */,
 				8A052C281F5841A3E4D17FC3 /* [CP] Embed Pods Frameworks */,
+				7A6FF71D49CC9C06C7FE2307 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -582,13 +661,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD5076C26815FEB00377CBD /* hello (16bit PCM).wav in Resources */,
+				8DB274C227E226C4000518B0 /* AdmobAd.xib in Resources */,
 				8DE7F95825E4476900D3C48A /* LaunchScreen.storyboard in Resources */,
 				8DE7F95525E4476900D3C48A /* Assets.xcassets in Resources */,
 				8DE7F95325E4474A00D3C48A /* Main.storyboard in Resources */,
+				8DB274C027E226C4000518B0 /* AdAppodeal.xib in Resources */,
 				8DD5076A26815FEB00377CBD /* bangla.flac in Resources */,
 				8D91D30F27B7C3EC001BB9A4 /* Localizable.strings in Resources */,
+				8DFDDB3027E2FF16005AD90B /* GoogleService-Info.plist in Resources */,
 				8D713FDB26EEEACE0064DE3A /* busy.gif in Resources */,
 				8DD5076B26815FEB00377CBD /* good-morning-google.flac in Resources */,
+				8DBF98E827E3866200119E68 /* AdmobController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +715,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7A6FF71D49CC9C06C7FE2307 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8A052C281F5841A3E4D17FC3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -678,19 +778,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB274BD27E226C4000518B0 /* AdmobAd.m in Sources */,
 				8DD507462681596B00377CBD /* APIKey.swift in Sources */,
 				8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */,
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,
+				8D8323D527E437640068CBA1 /* AdUtil.swift in Sources */,
+				8DB2747727E222B3000518B0 /* Triangle.swift in Sources */,
+				8DBF98E727E3866200119E68 /* AdmobController.swift in Sources */,
 				8DD507472681596B00377CBD /* APIUrl.swift in Sources */,
+				8DB274C127E226C4000518B0 /* AdAppodeal.m in Sources */,
 				8D8BCF7A26E76E2200615097 /* Response.swift in Sources */,
 				8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */,
+				8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */,
+				8DB274BF27E226C4000518B0 /* AdsManager.m in Sources */,
 				8DD507762681644A00377CBD /* SpeechModel.swift in Sources */,
+				8DFDDA8827E2F9C5005AD90B /* FirebaseManager.swift in Sources */,
 				8D6DA1D626E897FA0080E630 /* APIRequest.swift in Sources */,
 				8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */,
 				8DD5074A2681596B00377CBD /* Reachability.swift in Sources */,
 				8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */,
 				8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */,
+				8D83240C27E450B60068CBA1 /* AdManager.swift in Sources */,
 				8D9AA16E2682DEDC00EA136D /* AudioManager.swift in Sources */,
+				8DB2747627E222B3000518B0 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,6 +950,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -894,6 +1005,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -908,7 +1020,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -916,10 +1028,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.0.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.HindiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -935,7 +1049,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -943,10 +1057,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.0.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.HindiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -959,7 +1075,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -968,8 +1084,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.HindiKeyboard.KeyboardExtension;
+				MARKETING_VERSION = 1.0.11;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.HindiKeyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -987,7 +1104,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -996,8 +1113,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.HindiKeyboard.KeyboardExtension;
+				MARKETING_VERSION = 1.0.11;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.HindiKeyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
