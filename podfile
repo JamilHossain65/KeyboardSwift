@@ -43,3 +43,4 @@ target 'KeyboardSwift' do
   pod 'Google-Mobile-Ads-SDK'
   #pod 'FBAudienceNetwork' #installation error so integrated mannually
 end
+
