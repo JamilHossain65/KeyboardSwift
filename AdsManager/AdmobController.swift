@@ -13,7 +13,7 @@ class AdmobController: UIViewController,/*GADFullScreenContentDelegate,*/ GADInt
     typealias admobCompletion = (_ success:Bool) -> Void
     
     var interstitial: GADInterstitial?
-    var admobAdKey = "ca-app-pub-9133033983333483/2368759846"
+    var admobAdKey = "ca-app-pub-9133033983333483/6077303084"
 
     //var void (^adFailWithCompletion)(BOOL success);
 
@@ -27,11 +27,14 @@ class AdmobController: UIViewController,/*GADFullScreenContentDelegate,*/ GADInt
         interstitial?.delegate = self
         
         let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        //print("deviceID::\(String(describing: deviceID))")
-        let staticID = "7B9B8DBE-E8EB-44B3-957C-43AD0F2EAFA2"
+        print("deviceID::\(String(describing: deviceID))")
+        //let staticID = "7B9B8DBE-E8EB-44B3-957C-43AD0F2EAFA2"
         
+        //app setting:: 3
         //this check avoid admob policy violation
-        if(deviceID == staticID){
+        if(deviceID == "7B9B8DBE-E8EB-44B3-957C-43AD0F2EAFA2" || //indian
+           deviceID == "AC3DABB5-98CD-4CE0-98F8-EA42F686A6E0"    // russain
+        ){
             GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["06fa119d4743dd21237899a32e0d1031"]
         }
         

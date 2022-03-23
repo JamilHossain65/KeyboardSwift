@@ -19,8 +19,10 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     var recordButton : UIButton!
     var playButton : UIButton!
     let audioManager = AudioManager()
+    //app setting:: 4
+    //let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
     
-    let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
+    let actLanguages =  [English,Russian]
     
     let dropDown = DropDown()
     var IS_LAUNCHING_AD = false
@@ -31,7 +33,8 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         IS_LAUNCHING_AD = true
         
         //MARK: - Todo make it dynamic
-        let selectedIndex = 3
+        //app setting:: 5
+        let selectedIndex = 1
         dropDown.dataSource = actLanguages
         dropDown.selectRow(at: selectedIndex)
         dropDown.dismissMode = .onTap

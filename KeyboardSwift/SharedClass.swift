@@ -45,14 +45,15 @@ let Tamil      = "Tamil"
 let Telugu     = "Telugu"
 let Urdu       = "Urdu"
 
-
+//app setting::2
 var activeLanguages = [
-    English :true, Indonesian:false, Bangla    :true,  Russian  :false,
+    English :true, Indonesian:false, Bangla    :false,  Russian :true,
     Spanish :false,French    :false, German    :false, Italian  :false,
     Korean  :false,Turkish   :false, Portuguese:false,
-    Gujarati:true, Hindi     :true,  Kannada   :true,  Malayalam:true,
-    Marathi :true, Nepali    :false, Oriya     :true,  Punjabi  :true,
-    Sanskrit:false,Tamil     :true,  Telugu    :true,  Urdu     :false,
+    //indian group
+    Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
+    Marathi :false, Nepali   :false, Oriya     :false,  Punjabi  :false,
+    Sanskrit:false,Tamil     :false,  Telugu   :false,  Urdu     :false,
 ]
 
 var countryCodes  = [
