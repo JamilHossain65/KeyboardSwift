@@ -7,10 +7,12 @@
 
 import UIKit
 
-import Appodeal;
-import FirebaseCore;
-import FirebaseAuth;
-import GoogleMobileAds;
+import Appodeal
+import FirebaseCore
+import FirebaseAuth
+import GoogleMobileAds
+import AppTrackingTransparency
+import AdSupport
 
 @main
 
@@ -22,19 +24,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         //[FIRApp configure];
-        FirebaseApp.configure();
+        FirebaseApp.configure()
         
         return true
     }
-
-    //MARK: - Life Cycle
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        //
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        perform(#selector(adAcknoledge), with: nil, afterDelay: 5)
     }
     
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        //
+    @objc func adAcknoledge(){
+        if #available(iOS 15.0, *) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    
+                })
+            }
+        }
     }
+
+    //MARK: - Life Cycle
     
     //test for open continer app
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

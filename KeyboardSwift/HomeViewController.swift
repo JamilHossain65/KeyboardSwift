@@ -7,8 +7,10 @@
 
 import UIKit
 import DropDown
+import AppTrackingTransparency
+import AdSupport
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 
     //access token
     //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
@@ -21,10 +23,12 @@ class HomeViewController: UIViewController {
     let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
     
     let dropDown = DropDown()
-    
+    var IS_LAUNCHING_AD = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        IS_LAUNCHING_AD = true
         
         //MARK: - Todo make it dynamic
         let selectedIndex = 3
@@ -49,6 +53,7 @@ class HomeViewController: UIViewController {
         */
         
         if let _ = textView{
+            textView.delegate = self
             textView.layer.borderWidth  = 1.0
             textView.layer.cornerRadius = 8.0
             textView.layer.borderColor  = UIColor.lightGray.cgColor
@@ -63,11 +68,6 @@ class HomeViewController: UIViewController {
         audioManager.delegate = self
         loadRecordingUI()
         playSoundUI()
-        
-        //show admob ad
-        let adManager = AdManager()
-        adManager.showAdMobAdsOnParrent(self)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -234,6 +234,34 @@ class HomeViewController: UIViewController {
                 log("error:\(errors?.message)")
             }
         })
+    }
+}
+
+extension HomeViewController:UITextViewDelegate {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool{
+        if #available(iOS 15.0, *) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    if (self.IS_LAUNCHING_AD){
+                        self.perform(#selector(self.showAd), with: nil, afterDelay: 10)
+                        self.IS_LAUNCHING_AD = false
+                    }
+                })
+            }
+        }else{
+            if (self.IS_LAUNCHING_AD){
+                self.perform(#selector(self.showAd), with: nil, afterDelay: 10)
+                self.IS_LAUNCHING_AD = false
+            }
+        }
+        
+        return true
+    }
+    
+     @objc func showAd(){
+        perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
+        let adManager = AdManager()
+        adManager.showAdMobAdsOnParrent(self)
     }
 }
 
