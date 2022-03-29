@@ -17,12 +17,13 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var textView: UITextView!
     var recordButton : UIButton!
-    var playButton : UIButton!
+    var languageButton : UIButton!
     let audioManager = AudioManager()
     //app setting:: 4
     //let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
     
-    let actLanguages =  [English,Russian]
+    //let actLanguages = [English,Russian]
+    let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})//MARK: - make it ordered array
     
     let dropDown = DropDown()
     var IS_LAUNCHING_AD = false
@@ -32,12 +33,14 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         
         IS_LAUNCHING_AD = true
         
-        //MARK: - Todo make it dynamic
         //app setting:: 5
-        let selectedIndex = 1
-        dropDown.dataSource = actLanguages
-        dropDown.selectRow(at: selectedIndex)
-        dropDown.dismissMode = .onTap
+        var selectedIndex = 0
+        if actLanguages.count > 2 {
+            selectedIndex = 1
+            dropDown.dataSource = actLanguages
+            dropDown.selectRow(at: selectedIndex)
+            dropDown.dismissMode = .onTap
+        }
         
         setObject(selectedIndex, key: SelectedLanguage)
         
@@ -69,8 +72,8 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         //record audio
         audioManager.initAudio()
         audioManager.delegate = self
-        loadRecordingUI()
-        playSoundUI()
+        addLanguageButtonUI()
+        addSpeakButtonUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +96,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         
     }
     
-    func loadRecordingUI(){
+    func addSpeakButtonUI(){
         recordButton = UIButton(frame: CGRect(x: textView.frame.size.width - 75, y: textView.frame.size.height - 44, width: 70, height: 40))
         recordButton.setTitle("Speak", for: .normal)
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
@@ -103,7 +106,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         textView.addSubview(recordButton)
     }
     
-    func playSoundUI(){
+    func addLanguageButtonUI(){
         /*
         let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
         let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
@@ -126,30 +129,60 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         print("codeBd::\(codeBd)")
         print("codeEn::\(codeEn)")
         */
+        print("actLanguages::\(actLanguages)")
         
-        let index:Int   = getObject(SelectedLanguage) as? Int ?? 0
-        let countryName = self.actLanguages[index]
-        let countryCode:[String] = countryCodes.filter({$0.0 == countryName}).map({$0.1})
-        let _countryCode:String = countryCode.first ?? ""
-        let countryFlag = flag(from: _countryCode)
+        languageButton = UIButton(frame: CGRect(x: textView.frame.size.width - 122, y: textView.frame.size.height - 44, width: 40, height: 40))
         
-        playButton = UIButton(frame: CGRect(x: textView.frame.size.width - 122, y: textView.frame.size.height - 44, width: 40, height: 40))
+        languageButton.layer.borderWidth  = 1.0
+        languageButton.layer.cornerRadius = 20.0
+        languageButton.layer.borderColor  = UIColor.lightGray.cgColor
         
-        playButton.layer.borderWidth  = 1.0
-        playButton.layer.cornerRadius = 20.0
-        playButton.layer.borderColor  = UIColor.lightGray.cgColor
-        
-        playButton.titleLabel?.font   = UIFont(name: "Arial", size: 25)
-        playButton.setTitle(countryFlag, for: .normal)
+        languageButton.titleLabel?.font   = UIFont(name: "Arial", size: 25)
+        //languageButton.setTitle(countryFlag, for: .normal)
         
 //        playButton.setTitle("\(codeBd)", for: .normal)
 //        playButton.setTitle("\(codeEn)", for: .selected)
-        playButton.setTitleColor(.black, for: .normal)
-        playButton.setTitleColor(.black, for: .selected)
+        languageButton.setTitleColor(.black, for: .normal)
+        languageButton.setTitleColor(.black, for: .selected)
         
-        playButton.addTarget(self, action: #selector(playButtonTapped(sender:)), for: .touchUpInside)
-        textView.addSubview(playButton)
-        playButton.backgroundColor = .clear
+        languageButton.addTarget(self, action: #selector(playButtonTapped(sender:)), for: .touchUpInside)
+        textView.addSubview(languageButton)
+        languageButton.backgroundColor = .clear
+        
+        if actLanguages.count > 2{
+            let index:Int   = getObject(SelectedLanguage) as? Int ?? 0
+            let countryName = self.actLanguages[index]
+            let countryCode:[String] = countryCodes.filter({$0.0 == countryName}).map({$0.1})
+            let _countryCode:String = countryCode.first ?? ""
+            let countryFlag = flag(from: _countryCode)
+            languageButton.setTitle(countryFlag, for: .normal)
+            
+        }else{
+            let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
+            print("actLanguages::\(actLanguages)")
+            
+            let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
+            let countryCode2 = countryCodes[actLanguages.last ?? ""] ?? ""
+            
+            print("countryCode1::\(countryCode1)")
+            print("countryCode2::\(countryCode2)")
+            
+            var codeBd = flag(from: "bd")//bd
+            var codeEn = flag(from: "us") //us
+            
+            if countryCode1 == "us"{
+                codeEn = flag(from: countryCode1)
+                codeBd = flag(from: countryCode2)
+            }else{
+                codeEn = flag(from: countryCode2)
+                codeBd = flag(from: countryCode1)
+            }
+            
+            print("codeBd::\(codeBd)")
+            print("codeEn::\(codeEn)")
+            languageButton.setTitle("\(codeBd)", for: .normal)
+            languageButton.setTitle("\(codeEn)", for: .selected)
+        }
     }
     
     @objc func recordTapped(){
@@ -169,36 +202,52 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     }
     
     @objc func playButtonTapped(sender:UIButton){
-        //log("playButtonTapped...")
-        let button = UIButton()
-        var mFrame = sender.frame
-        mFrame.origin.y = 0
-        button.frame = mFrame
+        log("playButtonTapped::\(actLanguages)")
         
-        dropDown.anchorView = button
-        dropDown.direction = .any
-        //dropDown.bottomOffset = CGPoint(x: 0, y: 0)
-        dropDown.show()
-        
-        dropDown.selectionAction = { [] (index, item) in
+        if actLanguages.count > 2{
+            let button = UIButton()
+            var mFrame = sender.frame
+            mFrame.origin.y = 0
+            button.frame = mFrame
             
-            setObject(index, key: SelectedLanguage)
+            dropDown.anchorView = button
+            dropDown.direction = .any
+            //dropDown.bottomOffset = CGPoint(x: 0, y: 0)
+            dropDown.show()
             
-            let countryCode:[String] = countryCodes.filter({$0.0 == item}).map({$0.1})
-            let _countryCode:String = countryCode.first ?? ""
-            //log("countryCode :: \(_countryCode)")
-            
-            if _countryCode.count > 0 {
-                let countryFlag = flag(from: _countryCode)
-                //log("countryFlag :: \(countryFlag)")
-                self.playButton.setTitle(countryFlag , for: .normal)
-            }else{
-                let langCode:[String] = languageCodes.filter({$0.0 == item}).map({$0.1})
-                let _langCode:String = langCode.first ?? ""
-                //log("selected value :: \(_langCode)")
-                self.playButton.setTitle(_langCode.capitalized , for: .normal)
+            dropDown.selectionAction = { [] (index, item) in
                 
+                setObject(index, key: SelectedLanguage)
+                
+                let countryCode:[String] = countryCodes.filter({$0.0 == item}).map({$0.1})
+                let _countryCode:String = countryCode.first ?? ""
+                //log("countryCode :: \(_countryCode)")
+                
+                if _countryCode.count > 0 {
+                    let countryFlag = flag(from: _countryCode)
+                    //log("countryFlag :: \(countryFlag)")
+                    self.languageButton.setTitle(countryFlag , for: .normal)
+                }else{
+                    let langCode:[String] = languageCodes.filter({$0.0 == item}).map({$0.1})
+                    let _langCode:String = langCode.first ?? ""
+                    //log("selected value :: \(_langCode)")
+                    self.languageButton.setTitle(_langCode.capitalized , for: .normal)
+                    
+                }
             }
+        }else{
+            let _non_english = actLanguages.filter({$0 != English}).first ?? ""
+            let countryEn:[String] = countryCodes.filter({$0.0 == English}).map({$0.1})
+            let countryBd:[String] = countryCodes.filter({$0.0 == _non_english}).map({$0.1})
+            
+            let _countryEn:String = countryEn.first ?? ""
+            let _countryBd:String = countryBd.last ?? ""
+            
+            let flagEn = flag(from: _countryEn)
+            let flagBd = flag(from: _countryBd)
+            self.languageButton.setTitle(flagEn, for: .selected)
+            self.languageButton.setTitle(flagBd, for: .normal)
+            self.languageButton.isSelected = !sender.isSelected
         }
     }
     

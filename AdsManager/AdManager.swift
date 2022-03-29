@@ -27,6 +27,7 @@ class AdManager: UIViewController {
         [viewController addChildViewController:adVC];
          */
         
+        //app setting::7
         let admobController = AdmobController()
         admobController.showOn(viewController)
     }

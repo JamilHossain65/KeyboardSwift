@@ -13,7 +13,8 @@ class AdmobController: UIViewController,/*GADFullScreenContentDelegate,*/ GADInt
     typealias admobCompletion = (_ success:Bool) -> Void
     
     var interstitial: GADInterstitial?
-    var admobAdKey = "ca-app-pub-9133033983333483/6077303084"
+    //app setting:: 6
+    var admobAdKey = "ca-app-pub-9133033983333483/4720877434"
 
     //var void (^adFailWithCompletion)(BOOL success);
 
