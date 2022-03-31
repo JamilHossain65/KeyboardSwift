@@ -150,6 +150,7 @@
 		8D02F5F627B178B9008AA6E3 /* korean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = korean.txt; sourceTree = "<group>"; };
 		8D02F5F727B178B9008AA6E3 /* german.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = german.txt; sourceTree = "<group>"; };
 		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
+		8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = submit_info.rtf; sourceTree = "<group>"; };
 		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
 		8D3E230B279BCF280067DC30 /* russian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russian.txt; sourceTree = "<group>"; };
@@ -494,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				8DFDDA2A27E2F947005AD90B /* KeyboardSwift-Bridging-Header.h */,
+				8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */,
 				8DE7F94A25E4474A00D3C48A /* KeyboardSwift */,
 				8DE7F9C225E4784200D3C48A /* KeyboardExtension */,
 				8DE7F94925E4474A00D3C48A /* Products */,
@@ -1036,8 +1038,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -1065,8 +1067,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -1094,7 +1096,7 @@
 				);
 				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1123,7 +1125,7 @@
 				);
 				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

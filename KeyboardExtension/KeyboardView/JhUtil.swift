@@ -124,7 +124,7 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //var fontsName    = getString(kSelectedFontName)     ?? NORMAL
 
 //app setting:: 1
-var langName = getString(kSelectedLanguageName) ?? Spanish
+var langName = getString(kSelectedLanguageName) ?? German
 var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 
