@@ -52,7 +52,7 @@ let Urdu       = "Urdu"
 //app setting::2
 var activeLanguages = [
     English :true,  Indonesian:false, Bangla    :false, Russian  :false,
-    Spanish :false, French    :false, German    :true,  Italian  :false,
+    Spanish :false, French    :true,  German    :false,  Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,

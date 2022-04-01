@@ -34,7 +34,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         IS_LAUNCHING_AD = true
         
         //app setting:: 5
-        var selectedIndex = 0
+        var selectedIndex = 1
         if actLanguages.count > 2 {
             selectedIndex = 1
             dropDown.dataSource = actLanguages
