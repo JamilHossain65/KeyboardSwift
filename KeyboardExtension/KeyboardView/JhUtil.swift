@@ -124,7 +124,7 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //var fontsName    = getString(kSelectedFontName)     ?? NORMAL
 
 //app setting:: 1
-var langName = getString(kSelectedLanguageName) ?? French
+var langName = getString(kSelectedLanguageName) ?? BanglaGoti
 var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 
@@ -138,6 +138,7 @@ let hintBarHeight:CGFloat = 44 //36;
 let kAllLanguageDicArray = [
     [English   : kFontEnDic],
     [Bangla    : kFontBnDic],
+    [BanglaGoti: kFontBnGotiDic],
     [Indonesian: kFontIdDic],
     [Russian   : kFontRuDic],
     
@@ -438,6 +439,8 @@ func getFileName() -> String {
         return "urdu.txt"
         //
     case Bangla:
+        return "bangla.txt"
+    case BanglaGoti:
         return "bangla.txt"
     case Indonesian:
         return "bahasa.txt"

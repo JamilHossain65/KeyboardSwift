@@ -12,11 +12,12 @@ import FirebaseCore
 import FirebaseAuth
 import GoogleMobileAds
 import AppTrackingTransparency
+import UserNotifications
 import AdSupport
 
 @main
-
-class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window:UIWindow?
     
@@ -30,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        perform(#selector(adAcknoledge), with: nil, afterDelay: 5)
+        setNotification()
     }
     
     @objc func adAcknoledge(){
@@ -42,7 +43,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    func setNotification(){
+        //Ask for notification permission
+        let n = NotificationHandler()
+        n.askNotificationPermission {
+            //n.scheduleAllNotifications()
+            
+            //IMPORTANT: wait for 1 second to display another alert
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                if #available(iOS 14, *) {
+                  ATTrackingManager.requestTrackingAuthorization { (status) in
+                    //print("IDFA STATUS: \(status.rawValue)")
+                    //FBAdSettings.setAdvertiserTrackingEnabled(true)
+                  }
+                }
+            }
+        }
+    }
+    
     //MARK: - Life Cycle
     
     //test for open continer app
@@ -70,5 +89,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
     
+}
+
+class NotificationHandler{
+    //Permission function
+    func askNotificationPermission(completion: @escaping ()->Void){
+        
+        //Permission to send notifications
+        let center = UNUserNotificationCenter.current()
+        // Request permission to display alerts and play sounds.
+        center.requestAuthorization(options: [.alert, .badge, .sound])
+        { (granted, error) in
+            // Enable or disable features based on authorization.
+            completion()
+        }
+    }
 }
 

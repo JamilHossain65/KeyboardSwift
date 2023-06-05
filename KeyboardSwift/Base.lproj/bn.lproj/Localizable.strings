@@ -6,9 +6,9 @@
 //
 
 // MARK: - Keboard Constants
-"k123String"    = "123";
+"k123String"    = "১২৩";
 "kSymbolString" = "#+=";
-"kAbcString"    = "ABC";
+"kAbcString"    = "কখগ";
 "kReturnString" = "ফেরত";
 "kSpaceString"  = "স্পেস";
 "kStopSpace"    = ". ";

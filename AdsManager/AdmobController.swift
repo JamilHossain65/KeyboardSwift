@@ -14,7 +14,7 @@ class AdmobController: UIViewController,/*GADFullScreenContentDelegate,*/ GADInt
     
     var interstitial: GADInterstitial?
     //app setting:: 6
-    var admobAdKey = "ca-app-pub-9133033983333483/8504193861"
+    var admobAdKey = "ca-app-pub-9133033983333483/1612139034"
 
     //var void (^adFailWithCompletion)(BOOL success);
 
@@ -59,9 +59,6 @@ class AdmobController: UIViewController,/*GADFullScreenContentDelegate,*/ GADInt
         if interstitial != nil {
             //let _interstitial = interstitial, _interstitial.isReady
             interstitial?.present(fromRootViewController: self)
-
-        } else {
-            print("Ad wasn't ready")
         }
     }
     

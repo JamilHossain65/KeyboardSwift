@@ -6,19 +6,20 @@
 //
 
 import UIKit
+import Foundation
 
 //class Extension: NSObject {
 //
 //}
 
-extension String{
+//extension String{
     // Localized string
 //    func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
 //        return NSLocalizedString(self, tableName: tableName, bundle: bundle, value: "**\(self)**", comment: "")
-//    }
+    //}
     
-    func localized() -> String{
-       return NSLocalizedString(self, comment: "")
+//    func localized() -> String{
+//       return NSLocalizedString(self, comment: "")
         
 //        if let path = Bundle.main.path(forResource: "Settings", ofType: "bundle") {
 //             let settingBundle = Bundle.init(path: path)
@@ -40,6 +41,43 @@ extension String{
 //          }
         
        
+    //}
+//}
+
+
+
+//https://stackoverflow.com/questions/29985614/how-can-i-change-locale-programmatically-with-swift
+extension Bundle {
+    private static var bundle: Bundle!
+
+    public static func localizedBundle() -> Bundle! {
+        if bundle == nil {
+            let appLang = UserDefaults.standard.string(forKey: "app_lang") ?? "bn"
+            let path = Bundle.main.path(forResource: appLang, ofType: "lproj")
+            bundle = Bundle(path: path!)
+        }
+        return bundle
+    }
+
+    public static func setLanguage(lang: String) {
+        UserDefaults.standard.set(lang, forKey: "app_lang")
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        bundle = Bundle(path: path!)
+    }
+}
+
+extension String {
+//    func localized(_ lang:String) ->String {
+//        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+//        let bundle = Bundle(path: path!)
+//        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+//    }
+    func localized() -> String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.localizedBundle(), value: "", comment: "")
+    }
+    
+    func localizeWithFormat(arguments: CVarArg...) -> String{
+        return String(format: self.localized(), arguments: arguments)
     }
 }
 

@@ -72,8 +72,9 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         //record audio
         audioManager.initAudio()
         audioManager.delegate = self
-        addLanguageButtonUI()
-        addSpeakButtonUI()
+        //MARK: - Enable speek button
+//        addLanguageButtonUI()
+//        addSpeakButtonUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -292,17 +293,13 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 extension HomeViewController:UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool{
         if #available(iOS 15.0, *) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                    if (self.IS_LAUNCHING_AD){
-                        self.perform(#selector(self.showAd), with: nil, afterDelay: 10)
-                        self.IS_LAUNCHING_AD = false
-                    }
-                })
+            if (self.IS_LAUNCHING_AD){
+                self.perform(#selector(self.showAd), with: nil, afterDelay: 20)
+                self.IS_LAUNCHING_AD = false
             }
         }else{
             if (self.IS_LAUNCHING_AD){
-                self.perform(#selector(self.showAd), with: nil, afterDelay: 10)
+                self.perform(#selector(self.showAd), with: nil, afterDelay: 20)
                 self.IS_LAUNCHING_AD = false
             }
         }

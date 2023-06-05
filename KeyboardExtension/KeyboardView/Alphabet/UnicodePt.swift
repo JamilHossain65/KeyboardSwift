@@ -1,5 +1,5 @@
 //
-//  UnicodeEn.swift
+//  UnicodePt.swift
 //  KeyboardExtension
 //
 //  Created by Jamil on 9/5/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-//class UnicodeEn: NSObject {
+//class UnicodePt: NSObject {
 //}
 
 let kFontPtDic:[[String:[String]]] = [
