@@ -49,6 +49,7 @@ let Sanskrit   = "Sanskrit"
 let Tamil      = "Tamil"
 let Telugu     = "Telugu"
 let Urdu       = "Urdu"
+let Thai       = "Thai"
 
 //app setting::2
 var activeLanguages = [
@@ -59,7 +60,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti :true,
+    BanglaGoti:false, Thai    :true
 ]
 
 var countryCodes  = [
@@ -69,7 +70,7 @@ var countryCodes  = [
     Gujarati:"",   Hindi     :"In", Kannada   :"",   Malayalam:"",
     Marathi :"",   Nepali    :"",   Oriya     :"",   Punjabi  :"",
     Sanskrit:"",   Tamil     :"",   Telugu    :"",   Urdu     :"",
-    BanglaGoti    :"bd",
+    BanglaGoti:"bd",Thai :"th"
 ]
 
 var languageCodes = [
@@ -79,7 +80,7 @@ var languageCodes = [
     Gujarati:"gu", Hindi     :"hi", Kannada   :"kn", Malayalam:"ml",
     Marathi :"mr", Nepali    :"",   Oriya     :"or", Punjabi  :"pa",
     Sanskrit:"",   Tamil     :"ta", Telugu    :"te", Urdu     :"",
-    BanglaGoti:"bn",
+    BanglaGoti:"bn",Thai :"th"
 ]
 
 //MARK:- SHARED DATA

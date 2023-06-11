@@ -1,0 +1,19 @@
+//
+//  Localizable.swift
+//  KeyboardSwift
+//
+//  Created by Jamil on 12/2/22.
+//
+
+// MARK: - Keboard Constants
+"k123String"    = "๑๒๓";
+"kSymbolString" = "#+=";
+"kAbcString"    = "กขฃ";
+"kReturnString" = "กลับ";
+"kSpaceString"  = "ช่องว่าง";
+"kStopSpace"    = ". ";
+"kDoubleSpace"  = "  ";
+
+// MARK: - Record
+"recording" = "Recording";
+"stop"      = "Stop";

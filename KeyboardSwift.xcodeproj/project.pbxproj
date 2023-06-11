@@ -13,6 +13,7 @@
 		8D02F5FA27B178B9008AA6E3 /* korean.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F627B178B9008AA6E3 /* korean.txt */; };
 		8D02F5FB27B178B9008AA6E3 /* german.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F727B178B9008AA6E3 /* german.txt */; };
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
+		8D1C0A2E2A2E44F700E61C3B /* UnicodeTh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */; };
 		8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */; };
 		8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
@@ -90,6 +91,7 @@
 		8DB274C227E226C4000518B0 /* AdmobAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B827E226C4000518B0 /* AdmobAd.xib */; };
 		8DBF98E727E3866200119E68 /* AdmobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF98E527E3866200119E68 /* AdmobController.swift */; };
 		8DBF98E827E3866200119E68 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
+		8DC34FEB2A2E468C0032E52D /* thai.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DC34FEA2A2E468B0032E52D /* thai.txt */; };
 		8DCFBF21278ED17D0093140C /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
 		8DD507462681596B00377CBD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8DD507472681596B00377CBD /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073E2681596B00377CBD /* APIUrl.swift */; };
@@ -152,6 +154,7 @@
 		8D02F5F727B178B9008AA6E3 /* german.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = german.txt; sourceTree = "<group>"; };
 		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
 		8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = submit_info.rtf; sourceTree = "<group>"; };
+		8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeTh.swift; sourceTree = "<group>"; };
 		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
 		8D3E230B279BCF280067DC30 /* russian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russian.txt; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DBF98E527E3866200119E68 /* AdmobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobController.swift; sourceTree = "<group>"; };
 		8DBF98E627E3866200119E68 /* AdmobController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobController.xib; sourceTree = "<group>"; };
+		8DC34FEA2A2E468B0032E52D /* thai.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thai.txt; sourceTree = "<group>"; };
 		8DCFBF20278ED17D0093140C /* bahasa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bahasa.txt; sourceTree = "<group>"; };
 		8DD5073D2681596B00377CBD /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8DD5073E2681596B00377CBD /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 		8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		8DF36877266C20670098EA60 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHKeyPopup.swift; sourceTree = "<group>"; };
+		8DF622DD2A34454800061C6B /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = Base.lproj/th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8DFDDA2A27E2F947005AD90B /* KeyboardSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DFDDA8427E2F9C5005AD90B /* FirebaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
 		8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
@@ -401,6 +406,7 @@
 				8D02F5F627B178B9008AA6E3 /* korean.txt */,
 				8D74D7AC27B27AAD006642E0 /* turkish.txt */,
 				8D74D7B027B284C5006642E0 /* portuguese.txt */,
+				8DC34FEA2A2E468B0032E52D /* thai.txt */,
 			);
 			path = Words;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				8D74D79D27B24079006642E0 /* UnicodeKo.swift */,
 				8D74D7A827B27A98006642E0 /* UnicodeTr.swift */,
 				8D74D7B427B284DE006642E0 /* UnicodePt.swift */,
+				8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */,
 			);
 			path = Alphabet;
 			sourceTree = "<group>";
@@ -656,6 +663,7 @@
 				Base,
 				fr,
 				bn,
+				th,
 			);
 			mainGroup = 8DE7F93F25E4474A00D3C48A;
 			productRefGroup = 8DE7F94925E4474A00D3C48A /* Products */;
@@ -709,6 +717,7 @@
 				8D8631E027D7B1730078D877 /* gujrati.txt in Resources */,
 				8D8631E127D7B1730078D877 /* nepali.txt in Resources */,
 				8D9F89EB27AFF77800D6E517 /* bangla.txt in Resources */,
+				8DC34FEB2A2E468C0032E52D /* thai.txt in Resources */,
 				8D8631DA27D7B1730078D877 /* punjabi.txt in Resources */,
 				8D140F4A26C0E4A200512477 /* bangla.flac in Resources */,
 				8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */,
@@ -823,6 +832,7 @@
 			files = (
 				8D59B2252669AD2C0034A967 /* Extension.swift in Sources */,
 				8DF3FC2227AC18160062BE1E /* JHKeyPopup.swift in Sources */,
+				8D1C0A2E2A2E44F700E61C3B /* UnicodeTh.swift in Sources */,
 				8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */,
 				8D4D347A27C48FA90007396F /* UnicodePunjabi.swift in Sources */,
 				8DF6E35626C357550031E094 /* HintBarManager.swift in Sources */,
@@ -883,6 +893,7 @@
 				8D91D30E27B7C3EB001BB9A4 /* en */,
 				8D91D31227B7C403001BB9A4 /* fr */,
 				8D91D33327B7F59E001BB9A4 /* bn */,
+				8DF622DD2A34454800061C6B /* th */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1043,7 +1054,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.6.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.ThaiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -1073,7 +1084,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.6.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.ThaiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -1090,7 +1101,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1099,16 +1110,16 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.ThaiKeyboard.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardExtension/KeyboardView/KeyboardExtension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1119,7 +1130,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1128,15 +1139,15 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.ThaiKeyboard.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardExtension/KeyboardView/KeyboardExtension-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -168,7 +168,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
             print("countryCode1::\(countryCode1)")
             print("countryCode2::\(countryCode2)")
             
-            var codeBd = flag(from: "bd")//bd
+            var codeBd = flag(from: "th")//bd //MARK: -  initally selected language
             var codeEn = flag(from: "us") //us
             
             if countryCode1 == "us"{
