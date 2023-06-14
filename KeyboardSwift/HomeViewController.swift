@@ -48,9 +48,9 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         
         self.textView.frame.origin.y = SizeConfig.navBarHeight
         
-        PKIAPHandler.shared.isLogEnabled = true
-        PKIAPHandler.shared.setProductIds(ids: [fullVersionID])
-        PKIAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
+        IAPHandler.shared.isLogEnabled = true
+        IAPHandler.shared.setProductIds(ids: [fullVersionID])
+        IAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
            guard let sSelf = self else {return}
            sSelf.productsArray = products
            //sSelf.tableView.reloadData() //reload you table or collection view
@@ -106,12 +106,12 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
     @objc func restoreButtonPressed(){
         print("restoreButtonPressed")
-        PKIAPHandler.shared.restorePurchase()
+        IAPHandler.shared.restorePurchase()
     }
     
     @objc func buyButtonPressed(){
         print("buyButtonPressed::\(self.productsArray[0])")
-        PKIAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
+        IAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
             if let tran = transaction, let prod = product {
                 //use transaction details and purchased product as you want
             }

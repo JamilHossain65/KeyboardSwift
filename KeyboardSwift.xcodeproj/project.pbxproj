@@ -60,7 +60,7 @@
 		8D83240C27E450B60068CBA1 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83240B27E450B60068CBA1 /* AdManager.swift */; };
 		8D8477BD2A36F47100E89677 /* Primitive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477BB2A36F47100E89677 /* Primitive+Extension.swift */; };
 		8D8477BE2A36F47100E89677 /* SizeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477BC2A36F47100E89677 /* SizeConfig.swift */; };
-		8D8477C12A370A5F00E89677 /* PKIAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* PKIAPHandler.swift */; };
+		8D8477C12A370A5F00E89677 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D8631DA27D7B1730078D877 /* punjabi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631CE27D7B1700078D877 /* punjabi.txt */; };
 		8D8631DB27D7B1730078D877 /* telugu.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631CF27D7B1700078D877 /* telugu.txt */; };
 		8D8631DC27D7B1730078D877 /* malayalam.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631D027D7B1700078D877 /* malayalam.txt */; };
@@ -205,7 +205,7 @@
 		8D83240B27E450B60068CBA1 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		8D8477BB2A36F47100E89677 /* Primitive+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Primitive+Extension.swift"; sourceTree = "<group>"; };
 		8D8477BC2A36F47100E89677 /* SizeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeConfig.swift; sourceTree = "<group>"; };
-		8D8477C02A370A5F00E89677 /* PKIAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKIAPHandler.swift; sourceTree = "<group>"; };
+		8D8477C02A370A5F00E89677 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		8D8631CE27D7B1700078D877 /* punjabi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = punjabi.txt; sourceTree = "<group>"; };
 		8D8631CF27D7B1700078D877 /* telugu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = telugu.txt; sourceTree = "<group>"; };
 		8D8631D027D7B1700078D877 /* malayalam.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = malayalam.txt; sourceTree = "<group>"; };
@@ -393,7 +393,7 @@
 		8D8477BF2A370A3200E89677 /* InAppPurchase */ = {
 			isa = PBXGroup;
 			children = (
-				8D8477C02A370A5F00E89677 /* PKIAPHandler.swift */,
+				8D8477C02A370A5F00E89677 /* IAPHandler.swift */,
 			);
 			path = InAppPurchase;
 			sourceTree = "<group>";
@@ -839,7 +839,7 @@
 				8DBF98E727E3866200119E68 /* AdmobController.swift in Sources */,
 				8DD507472681596B00377CBD /* APIUrl.swift in Sources */,
 				8DB274C127E226C4000518B0 /* AdAppodeal.m in Sources */,
-				8D8477C12A370A5F00E89677 /* PKIAPHandler.swift in Sources */,
+				8D8477C12A370A5F00E89677 /* IAPHandler.swift in Sources */,
 				8D8BCF7A26E76E2200615097 /* Response.swift in Sources */,
 				8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */,
 				8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */,
@@ -1077,7 +1077,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1085,7 +1085,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.ThaiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1106,7 +1106,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1115,7 +1115,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.ThaiKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

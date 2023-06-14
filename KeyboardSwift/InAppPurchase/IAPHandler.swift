@@ -1,5 +1,5 @@
 //
-//  PKIAPHandler.swift
+//  IAPHandler.swift
 //  KeyboardSwift
 //
 //  Created by Jamil on 6/12/23.
@@ -8,7 +8,7 @@
 import UIKit
 import StoreKit
 
-enum PKIAPHandlerAlertType {
+enum IAPHandlerAlertType {
     case setProductIds
     case disabled
     case restored
@@ -25,11 +25,11 @@ enum PKIAPHandlerAlertType {
 }
 
 
-class PKIAPHandler: NSObject {
+class IAPHandler: NSObject {
     
     //MARK:- Shared Object
     //MARK:-
-    static let shared = PKIAPHandler()
+    static let shared = IAPHandler()
     private override init() { }
     
     //MARK:- Properties
@@ -40,7 +40,7 @@ class PKIAPHandler: NSObject {
     fileprivate var fetchProductComplition: (([SKProduct])->Void)?
     
     fileprivate var productToPurchase: SKProduct?
-    fileprivate var purchaseProductComplition: ((PKIAPHandlerAlertType, SKProduct?, SKPaymentTransaction?)->Void)?
+    fileprivate var purchaseProductComplition: ((IAPHandlerAlertType, SKProduct?, SKPaymentTransaction?)->Void)?
     
     //MARK:- Public
     var isLogEnabled: Bool = true
@@ -56,7 +56,7 @@ class PKIAPHandler: NSObject {
     //MAKE PURCHASE OF A PRODUCT
     func canMakePurchases() -> Bool {  return SKPaymentQueue.canMakePayments()  }
     
-    func purchase(product: SKProduct, complition: @escaping ((PKIAPHandlerAlertType, SKProduct?, SKPaymentTransaction?)->Void)) {
+    func purchase(product: SKProduct, complition: @escaping ((IAPHandlerAlertType, SKProduct?, SKPaymentTransaction?)->Void)) {
         
         self.purchaseProductComplition = complition
         self.productToPurchase = product
@@ -69,7 +69,7 @@ class PKIAPHandler: NSObject {
             log("PRODUCT TO PURCHASE: \(product.productIdentifier)")
             productID = product.productIdentifier
         } else {
-            complition(PKIAPHandlerAlertType.disabled, nil, nil)
+            complition(IAPHandlerAlertType.disabled, nil, nil)
         }
     }
     
@@ -86,8 +86,8 @@ class PKIAPHandler: NSObject {
         self.fetchProductComplition = complition
         // Put here your IAP Products ID's
         if self.productIds.isEmpty {
-            log(PKIAPHandlerAlertType.setProductIds.message)
-            fatalError(PKIAPHandlerAlertType.setProductIds.message)
+            log(IAPHandlerAlertType.setProductIds.message)
+            fatalError(IAPHandlerAlertType.setProductIds.message)
         }
         else {
             productsRequest = SKProductsRequest(productIdentifiers: Set(self.productIds))
@@ -106,7 +106,7 @@ class PKIAPHandler: NSObject {
 
 //MARK:- Product Request Delegate and Payment Transaction Methods
 //MARK:-
-extension PKIAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
+extension IAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
     
     // REQUEST IAP PRODUCTS
     func productsRequest (_ request:SKProductsRequest, didReceive response:SKProductsResponse) {
@@ -120,7 +120,7 @@ extension PKIAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         if let complition = self.purchaseProductComplition {
-            complition(PKIAPHandlerAlertType.restored, nil, nil)
+            complition(IAPHandlerAlertType.restored, nil, nil)
         }
     }
     
@@ -135,7 +135,7 @@ extension PKIAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
                     log("Product purchase done")
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     if let complition = self.purchaseProductComplition {
-                        complition(PKIAPHandlerAlertType.purchased, self.productToPurchase, trans)
+                        complition(IAPHandlerAlertType.purchased, self.productToPurchase, trans)
                     }
                     break
                     
