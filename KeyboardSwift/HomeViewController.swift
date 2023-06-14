@@ -9,13 +9,19 @@ import UIKit
 import DropDown
 import AppTrackingTransparency
 import AdSupport
+import StoreKit
 
 class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
-
+    
     //access token
     //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
     
     @IBOutlet weak var textView: UITextView!
+//    let monthlySubID = "MyApp.sub.allaccess.monthly"
+//    let yearlySubID = "MyApp.sub.allaccess.yearly"
+    let fullVersionID = "com.vaticsoft.iap.ThaiKeyboardFullVersion"
+    var productsArray: [SKProduct] = []
+    
     var recordButton : UIButton!
     var languageButton : UIButton!
     let audioManager = AudioManager()
@@ -33,6 +39,23 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         
         IS_LAUNCHING_AD = true
         
+        let restore = UIBarButtonItem(title: "Restore", style: .plain, target: self, action: #selector(restoreButtonPressed))
+        let buy = UIBarButtonItem(title: "Buy", style: .plain, target: self, action: #selector(buyButtonPressed))
+        let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonPressed))
+        
+        self.navigationItem.leftBarButtonItems = [restore,buy]
+        self.navigationItem.rightBarButtonItems = [done]
+        
+        self.textView.frame.origin.y = SizeConfig.navBarHeight
+        
+        PKIAPHandler.shared.isLogEnabled = true
+        PKIAPHandler.shared.setProductIds(ids: [fullVersionID])
+        PKIAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
+           guard let sSelf = self else {return}
+           sSelf.productsArray = products
+           //sSelf.tableView.reloadData() //reload you table or collection view
+        }
+
         //app setting:: 5
         var selectedIndex = 1
         if actLanguages.count > 2 {
@@ -79,6 +102,26 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    @objc func restoreButtonPressed(){
+        print("restoreButtonPressed")
+        PKIAPHandler.shared.restorePurchase()
+    }
+    
+    @objc func buyButtonPressed(){
+        print("buyButtonPressed::\(self.productsArray[0])")
+        PKIAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
+            if let tran = transaction, let prod = product {
+                //use transaction details and purchased product as you want
+            }
+            //Globals.shared.showWarnigMessage(alert.message)
+        }
+    }
+    
+    @objc func doneButtonPressed(){
+        print("doneButtonPressed")
+        view.endEditing(true)
     }
     
     func showLoading(view:UIView){

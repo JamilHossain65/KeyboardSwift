@@ -58,6 +58,9 @@
 		8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D769A0C265F3BED00C74FBA /* Assets.xcassets */; };
 		8D8323D527E437640068CBA1 /* AdUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8323D427E437630068CBA1 /* AdUtil.swift */; };
 		8D83240C27E450B60068CBA1 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83240B27E450B60068CBA1 /* AdManager.swift */; };
+		8D8477BD2A36F47100E89677 /* Primitive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477BB2A36F47100E89677 /* Primitive+Extension.swift */; };
+		8D8477BE2A36F47100E89677 /* SizeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477BC2A36F47100E89677 /* SizeConfig.swift */; };
+		8D8477C12A370A5F00E89677 /* PKIAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* PKIAPHandler.swift */; };
 		8D8631DA27D7B1730078D877 /* punjabi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631CE27D7B1700078D877 /* punjabi.txt */; };
 		8D8631DB27D7B1730078D877 /* telugu.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631CF27D7B1700078D877 /* telugu.txt */; };
 		8D8631DC27D7B1730078D877 /* malayalam.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631D027D7B1700078D877 /* malayalam.txt */; };
@@ -70,6 +73,7 @@
 		8D8631E327D7B1730078D877 /* oriya.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631D727D7B1720078D877 /* oriya.txt */; };
 		8D8631E427D7B1730078D877 /* urdu.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631D827D7B1720078D877 /* urdu.txt */; };
 		8D8631E527D7B1730078D877 /* kannada.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D8631D927D7B1720078D877 /* kannada.txt */; };
+		8D8741152A383F43009E1A85 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
 		8D8B0C3D29CCED6A000FE362 /* UnicodeBnGoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B0C3C29CCED6A000FE362 /* UnicodeBnGoti.swift */; };
 		8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF5E26E7638B00615097 /* Errors.swift */; };
 		8D8BCF7A26E76E2200615097 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
@@ -199,6 +203,9 @@
 		8D8323D427E437630068CBA1 /* AdUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdUtil.swift; sourceTree = "<group>"; };
 		8D8323DC27E438600068CBA1 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		8D83240B27E450B60068CBA1 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		8D8477BB2A36F47100E89677 /* Primitive+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Primitive+Extension.swift"; sourceTree = "<group>"; };
+		8D8477BC2A36F47100E89677 /* SizeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeConfig.swift; sourceTree = "<group>"; };
+		8D8477C02A370A5F00E89677 /* PKIAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKIAPHandler.swift; sourceTree = "<group>"; };
 		8D8631CE27D7B1700078D877 /* punjabi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = punjabi.txt; sourceTree = "<group>"; };
 		8D8631CF27D7B1700078D877 /* telugu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = telugu.txt; sourceTree = "<group>"; };
 		8D8631D027D7B1700078D877 /* malayalam.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = malayalam.txt; sourceTree = "<group>"; };
@@ -211,6 +218,7 @@
 		8D8631D727D7B1720078D877 /* oriya.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oriya.txt; sourceTree = "<group>"; };
 		8D8631D827D7B1720078D877 /* urdu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = urdu.txt; sourceTree = "<group>"; };
 		8D8631D927D7B1720078D877 /* kannada.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kannada.txt; sourceTree = "<group>"; };
+		8D8741142A383F43009E1A85 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8D8754CB26F58D4800199FEB /* KeyboardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtension.entitlements; sourceTree = "<group>"; };
 		8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardSwift.entitlements; sourceTree = "<group>"; };
 		8D8B0C3C29CCED6A000FE362 /* UnicodeBnGoti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeBnGoti.swift; sourceTree = "<group>"; };
@@ -283,6 +291,7 @@
 				9FC6BAA61BF598B1DCB0F57A /* Pods_KeyboardSwift.framework in Frameworks */,
 				8DA96A8627E972B9009CF1E9 /* AppTrackingTransparency.framework in Frameworks */,
 				8DA96A8827E98E08009CF1E9 /* AdSupport.framework in Frameworks */,
+				8D8741152A383F43009E1A85 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +317,7 @@
 		7EDB6B80959915E54933A114 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D8741142A383F43009E1A85 /* StoreKit.framework */,
 				8DA96A8727E98E08009CF1E9 /* AdSupport.framework */,
 				8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */,
 				CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */,
@@ -369,6 +379,23 @@
 				8D6DA1DD26E899050080E630 /* SpeechModel.swift */,
 			);
 			path = Speech;
+			sourceTree = "<group>";
+		};
+		8D8477BA2A36F47100E89677 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D8477BB2A36F47100E89677 /* Primitive+Extension.swift */,
+				8D8477BC2A36F47100E89677 /* SizeConfig.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8D8477BF2A370A3200E89677 /* InAppPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				8D8477C02A370A5F00E89677 /* PKIAPHandler.swift */,
+			);
+			path = InAppPurchase;
 			sourceTree = "<group>";
 		};
 		8D8631BF27D7921D0078D877 /* Indian */ = {
@@ -527,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */,
+				8D8477BF2A370A3200E89677 /* InAppPurchase */,
 				8DFDDA8327E2F9C5005AD90B /* Firebase */,
 				8DB274B027E226C4000518B0 /* AdsManager */,
 				8DB2747127E222B3000518B0 /* LoadingView */,
@@ -538,6 +566,7 @@
 				8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */,
 				8DD5075D26815EF800377CBD /* Utils.swift */,
 				8D8323DC27E438600068CBA1 /* Utility.h */,
+				8D8477BA2A36F47100E89677 /* Utils */,
 				8D3129E127303B55001EE3C3 /* SharedClass.swift */,
 				8DE7F95125E4474A00D3C48A /* Main.storyboard */,
 				8DE7F95425E4476900D3C48A /* Assets.xcassets */,
@@ -805,10 +834,12 @@
 				8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */,
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,
 				8D8323D527E437640068CBA1 /* AdUtil.swift in Sources */,
+				8D8477BD2A36F47100E89677 /* Primitive+Extension.swift in Sources */,
 				8DB2747727E222B3000518B0 /* Triangle.swift in Sources */,
 				8DBF98E727E3866200119E68 /* AdmobController.swift in Sources */,
 				8DD507472681596B00377CBD /* APIUrl.swift in Sources */,
 				8DB274C127E226C4000518B0 /* AdAppodeal.m in Sources */,
+				8D8477C12A370A5F00E89677 /* PKIAPHandler.swift in Sources */,
 				8D8BCF7A26E76E2200615097 /* Response.swift in Sources */,
 				8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */,
 				8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */,
@@ -817,6 +848,7 @@
 				8DFDDA8827E2F9C5005AD90B /* FirebaseManager.swift in Sources */,
 				8D6DA1D626E897FA0080E630 /* APIRequest.swift in Sources */,
 				8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */,
+				8D8477BE2A36F47100E89677 /* SizeConfig.swift in Sources */,
 				8DD5074A2681596B00377CBD /* Reachability.swift in Sources */,
 				8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */,
 				8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */,
