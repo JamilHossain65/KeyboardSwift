@@ -349,6 +349,7 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.12)
+  - Siren (5.5.1)
   - SwiftyJSON (4.0.0)
   - YandexMobileMetrica (3.17.0):
     - YandexMobileMetrica/Static (= 3.17.0)
@@ -380,6 +381,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - IAPHelper
   - MBProgressHUD
+  - Siren
 
 SPEC REPOS:
   trunk:
@@ -419,6 +421,7 @@ SPEC REPOS:
     - MBProgressHUD
     - nanopb
     - PromisesObjC
+    - Siren
     - SwiftyJSON
     - YandexMobileMetrica
 
@@ -459,9 +462,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Siren: 645909bdb55ace938ea73a85942acb5a88494284
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   YandexMobileMetrica: 9e713c16bb6aca0ba63b84c8d7b8b86d32f4ecc4
 
-PODFILE CHECKSUM: 5cc66653447ebaa7617ddd81c798f841522c6cf0
+PODFILE CHECKSUM: 7ccbde4c3be603eacd8bd4b62443c74767d0bd5f
 
 COCOAPODS: 1.11.3

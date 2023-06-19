@@ -19,7 +19,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     @IBOutlet weak var textView: UITextView!
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
-    let fullVersionID = "com.vaticsoft.iap.ThaiKeyboardFullVersion"
+    let fullVersionID = "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
     var productsArray: [SKProduct] = []
     
     var recordButton : UIButton!
@@ -36,6 +36,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         
         IS_LAUNCHING_AD = true
         
@@ -211,7 +212,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
             print("countryCode1::\(countryCode1)")
             print("countryCode2::\(countryCode2)")
             
-            var codeBd = flag(from: "th")//bd //MARK: -  initally selected language
+            var codeBd = flag(from: "bd")//bd //MARK: -  initally selected language
             var codeEn = flag(from: "us") //us
             
             if countryCode1 == "us"{
