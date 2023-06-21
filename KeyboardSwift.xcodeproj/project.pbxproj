@@ -12,6 +12,7 @@
 		8D02F5F927B178B9008AA6E3 /* italian.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F527B178B9008AA6E3 /* italian.txt */; };
 		8D02F5FA27B178B9008AA6E3 /* korean.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F627B178B9008AA6E3 /* korean.txt */; };
 		8D02F5FB27B178B9008AA6E3 /* german.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F727B178B9008AA6E3 /* german.txt */; };
+		8D0D37482A40BE020006741B /* AdAppodeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D37472A40BE010006741B /* AdAppodeal.swift */; };
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D1C0A2E2A2E44F700E61C3B /* UnicodeTh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */; };
 		8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */; };
@@ -158,6 +159,7 @@
 		8D02F5F727B178B9008AA6E3 /* german.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = german.txt; sourceTree = "<group>"; };
 		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
 		8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = submit_info.rtf; sourceTree = "<group>"; };
+		8D0D37472A40BE010006741B /* AdAppodeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdAppodeal.swift; sourceTree = "<group>"; };
 		8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeTh.swift; sourceTree = "<group>"; };
 		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 				8DB274B927E226C4000518B0 /* AdmobAd.h */,
 				8DB274B327E226C4000518B0 /* AdmobAd.m */,
 				8DB274B827E226C4000518B0 /* AdmobAd.xib */,
+				8D0D37472A40BE010006741B /* AdAppodeal.swift */,
 				8DB274B127E226C4000518B0 /* AdAppodeal.h */,
 				8DB274B727E226C4000518B0 /* AdAppodeal.m */,
 				8DB274B627E226C4000518B0 /* AdAppodeal.xib */,
@@ -850,6 +853,7 @@
 				8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */,
 				8D8477BE2A36F47100E89677 /* SizeConfig.swift in Sources */,
 				8DD5074A2681596B00377CBD /* Reachability.swift in Sources */,
+				8D0D37482A40BE020006741B /* AdAppodeal.swift in Sources */,
 				8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */,
 				8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */,
 				8D83240C27E450B60068CBA1 /* AdManager.swift in Sources */,

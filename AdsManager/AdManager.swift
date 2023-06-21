@@ -31,4 +31,9 @@ class AdManager: UIViewController {
         let admobController = AdmobController()
         admobController.showOn(viewController)
     }
+    
+    func showAppodealAdsOnParrent(_ viewController:UIViewController){
+        let appodealController = AdAppodeal()
+        appodealController.showOn(viewController)
+    }
 }

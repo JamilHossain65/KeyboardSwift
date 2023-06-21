@@ -10,6 +10,7 @@ import DropDown
 import AppTrackingTransparency
 import AdSupport
 import StoreKit
+import Appodeal
 
 class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
@@ -99,6 +100,8 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         //MARK: - Enable speek button
 //        addLanguageButtonUI()
 //        addSpeakButtonUI()
+        
+        Appodeal.setInterstitialDelegate(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -339,11 +342,13 @@ extension HomeViewController:UITextViewDelegate {
         if #available(iOS 15.0, *) {
             if (self.IS_LAUNCHING_AD){
                 self.perform(#selector(self.showAd), with: nil, afterDelay: 20)
+                //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)
                 self.IS_LAUNCHING_AD = false
             }
         }else{
             if (self.IS_LAUNCHING_AD){
                 self.perform(#selector(self.showAd), with: nil, afterDelay: 20)
+                //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)
                 self.IS_LAUNCHING_AD = false
             }
         }
@@ -355,6 +360,20 @@ extension HomeViewController:UITextViewDelegate {
         perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
         let adManager = AdManager()
         adManager.showAdMobAdsOnParrent(self)
+    }
+    
+    @objc func showAppodealAd(){
+//        perform(#selector(showAppodealAd), with: nil, afterDelay: AD_APPODEAL_MIN_TIME)
+//        let adManager = AdManager()
+//        adManager.showAppodealAdsOnParrent(self)
+        
+        let placement = "default"
+        Appodeal.isInitalized(for: .interstitial)
+        Appodeal.canShow(.interstitial, forPlacement: placement)
+
+        Appodeal.showAd(.interstitial,
+                        forPlacement: placement,
+                        rootViewController: self)
     }
 }
 
@@ -409,4 +428,13 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return boundingBox
     }
+}
+
+extension HomeViewController: AppodealInterstitialDelegate {
+    func interstitialDidLoadAdIsPrecache(_ precache: Bool) {}
+    func interstitialDidFailToLoadAd() {}
+    func interstitialDidFailToPresent() {}
+    func interstitialWillPresent() {}
+    func interstitialDidDismiss() {}
+    func interstitialDidClick() {}
 }

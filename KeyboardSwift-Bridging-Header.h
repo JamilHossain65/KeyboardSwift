@@ -14,6 +14,7 @@
 #import "FirebaseHelper.h"
 #import "AdmobAd.h"
 #import "Utility.h"
+#import "AdAppodeal.h"
 
 //#import "FirebaseManager-Swift.h" 
 #endif /* Header_h */
