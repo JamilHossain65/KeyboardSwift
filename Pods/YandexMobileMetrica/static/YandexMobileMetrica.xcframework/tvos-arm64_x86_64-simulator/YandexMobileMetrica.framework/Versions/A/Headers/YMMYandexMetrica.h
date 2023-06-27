@@ -23,6 +23,8 @@
 @class YMMRevenueInfo;
 @class YMMECommerce;
 @protocol YMMYandexMetricaReporting;
+@protocol YMMYandexMetricaPlugins;
+@class YMMAdRevenueInfo;
 #if !TARGET_OS_TV
 @class WKUserContentController;
 #endif
@@ -39,6 +41,8 @@ typedef NS_ENUM(NSInteger, YMMYandexMetricaEventErrorCode) {
     YMMYandexMetricaEventErrorCodeEmptyUserProfile = 1004,
     YMMYandexMetricaEventErrorCodeNoCrashLibrary = 1005,
     YMMYandexMetricaEventErrorCodeInternalInconsistency = 1006,
+    YMMYandexMetricaEventErrorCodeInvalidBacktrace = 1007,
+    YMMYandexMetricaEventErrorCodeInvalidAdRevenueInfo = 1008,
 };
 
 @interface YMMYandexMetrica : NSObject
@@ -310,6 +314,28 @@ DEPRECATED_MSG_ATTRIBUTE("Use reportError:options:onFailure: or reportNSError:op
 + (void)initWebViewReporting:(WKUserContentController *)userContentController
                    onFailure:(nullable void (^)(NSError *error))onFailure;
 #endif
+
+/**
+ * Creates a `YMMYandexMetricaPlugins` that can send plugin events to main API key.
+ * Only one `YMMYandexMetricaPlugins` instance is created.
+ * You can either query it each time you need it, or save the reference by yourself.
+ * NOTE: to use this extension you must activate AppMetrica first
+ * via `[YMMYandexMetrica activateWithConfiguration:]`.
+ *
+ * @return plugin extension instance
+ */
++ (id<YMMYandexMetricaPlugins>)getPluginExtension;
+
+/**
+ * Sends information about ad revenue.
+ * @note See `YMMAdRevenueInfo` for more info.
+ *
+ * @param adRevenue Object containing the information about ad revenue.
+ * @param onFailure Block to be executed if an error occurs while sending ad revenue,
+ *                  the error is passed as block argument.
+ */
++ (void)reportAdRevenue:(YMMAdRevenueInfo *)adRevenue
+              onFailure:(nullable void (^)(NSError *error))onFailure NS_SWIFT_NAME(report(adRevenue:onFailure:));
 @end
 
 NS_ASSUME_NONNULL_END

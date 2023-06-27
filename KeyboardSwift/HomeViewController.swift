@@ -43,10 +43,11 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         
         let restore = UIBarButtonItem(title: "Restore", style: .plain, target: self, action: #selector(restoreButtonPressed))
         let buy = UIBarButtonItem(title: "Buy", style: .plain, target: self, action: #selector(buyButtonPressed))
+        let adButton = UIBarButtonItem(title: " ", style: .plain, target: self, action: #selector(rewardedAdButtonPressed))
         let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonPressed))
         
         self.navigationItem.leftBarButtonItems = [restore,buy]
-        self.navigationItem.rightBarButtonItems = [done]
+        self.navigationItem.rightBarButtonItems = [adButton,done]
         
         self.textView.frame.origin.y = SizeConfig.navBarHeight
         
@@ -101,7 +102,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 //        addLanguageButtonUI()
 //        addSpeakButtonUI()
         
-        Appodeal.setInterstitialDelegate(self)
+        //Appodeal.setInterstitialDelegate(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -126,6 +127,11 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     @objc func doneButtonPressed(){
         print("doneButtonPressed")
         view.endEditing(true)
+    }
+    
+    @objc func rewardedAdButtonPressed(){
+        print("rewardedAdButtonPressed")
+        showAppodealAd()
     }
     
     func showLoading(view:UIView){
@@ -339,18 +345,12 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 
 extension HomeViewController:UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool{
-        if #available(iOS 15.0, *) {
-            if (self.IS_LAUNCHING_AD){
-                self.perform(#selector(self.showAd), with: nil, afterDelay: 20)
-                //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)
-                self.IS_LAUNCHING_AD = false
-            }
-        }else{
-            if (self.IS_LAUNCHING_AD){
-                self.perform(#selector(self.showAd), with: nil, afterDelay: 20)
-                //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)
-                self.IS_LAUNCHING_AD = false
-            }
+        //if #available(iOS 15.0, *) { }
+        
+        if (self.IS_LAUNCHING_AD){
+            self.perform(#selector(self.showAd), with: nil, afterDelay: 0)
+            self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 60)
+            self.IS_LAUNCHING_AD = false
         }
         
         return true
@@ -368,7 +368,6 @@ extension HomeViewController:UITextViewDelegate {
 //        adManager.showAppodealAdsOnParrent(self)
         
         let placement = "default"
-        Appodeal.isInitalized(for: .interstitial)
         Appodeal.canShow(.interstitial, forPlacement: placement)
 
         Appodeal.showAd(.interstitial,

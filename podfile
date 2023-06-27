@@ -1,22 +1,42 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '12.0'
+workspace 'KeyboardSwift.xcworkspace'
+
+source 'https://github.com/appodeal/CocoaPods.git'
+source 'https://cdn.cocoapods.org/'
+
+install! 'cocoapods',
+  :deterministic_uuids => false,
+  :warn_for_multiple_pod_sources => false
 
 def appodeal
-    #pod 'APDAdColonyAdapter', '2.7.5.1'
-    pod 'APDAmazonAdsAdapter', '2.7.5.1'
-    pod 'APDAppLovinAdapter', '2.7.5.1'
-    pod 'APDAppodealAdExchangeAdapter', '2.7.5.1'
-    #pod 'APDFacebookAudienceAdapter', '2.7.5.1'
-    #pod 'APDGoogleAdMobAdapter', '2.7.5.1'
-    #pod 'APDIronSourceAdapter', '2.7.5.1'
-    pod 'APDMyTargetAdapter', '2.7.5.1'
-    pod 'APDOguryAdapter', '2.7.5.1'
-    #pod 'APDSmaatoAdapter', '2.7.5.1'
-    #pod 'APDStartAppAdapter', '2.7.5.1'
-    pod 'APDUnityAdapter', '2.7.5.1'
-    pod 'APDVungleAdapter', '2.7.5.1'
-    pod 'APDYandexAdapter', '2.7.5.1'
+  pod 'APDAdColonyAdapter', '3.0.2.1'
+  pod 'BidMachineAdColonyAdapter', '~> 2.0.0.0'
+  pod 'APDAdjustAdapter', '3.0.2.1'
+  pod 'APDAppLovinAdapter', '3.0.2.1'
+  pod 'APDAppsFlyerAdapter', '3.0.2.1'
+  pod 'APDBidMachineAdapter', '3.0.2.1' # Required
+  pod 'BidMachineAmazonAdapter', '~> 2.0.0.0'
+  pod 'BidMachineCriteoAdapter', '~> 2.0.0.0'
+  pod 'BidMachineSmaatoAdapter', '~> 2.0.0.0'
+  pod 'BidMachineTapjoyAdapter', '~> 2.0.0.0'
+  pod 'BidMachinePangleAdapter', '~> 2.0.0.0'
+  pod 'BidMachineNotsyAdapter', '~> 2.0.0.4'
+  pod 'APDFirebaseAdapter', '3.0.2.1'
+  pod 'APDGoogleAdMobAdapter', '3.0.2.1'
+  pod 'APDIABAdapter', '3.0.2.1' # Required
+  pod 'APDIronSourceAdapter', '3.0.2.1'
+  pod 'APDFacebookAdapter', '3.0.2.1'
+  pod 'APDMetaAudienceNetworkAdapter', '3.0.2.1'
+  pod 'BidMachineMetaAudienceAdapter', '~> 2.0.0.0'
+  pod 'APDMyTargetAdapter', '3.0.2.1'
+  pod 'BidMachineMyTargetAdapter', '~> 2.0.0.2'
+  pod 'APDStackAnalyticsAdapter', '3.0.2.1' # Required
+  pod 'APDUnityAdapter', '3.0.2.1'
+  pod 'APDVungleAdapter', '3.0.2.1'
+  pod 'BidMachineVungleAdapter', '~> 2.0.0.1'
+  pod 'APDYandexAdapter', '3.0.2.1'
 end
 
 
@@ -41,6 +61,6 @@ target 'KeyboardSwift' do
   # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
   pod 'Google-Mobile-Ads-SDK'
-  #pod 'FBAudienceNetwork' #installation error so integrated mannually
+  pod 'FBAudienceNetwork' #installation error so integrated mannually
 end
 

@@ -89,11 +89,9 @@
 		8DA96A8827E98E08009CF1E9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8DB2747627E222B3000518B0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747327E222B3000518B0 /* LoadingView.swift */; };
 		8DB2747727E222B3000518B0 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747427E222B3000518B0 /* Triangle.swift */; };
-		8DB274BD27E226C4000518B0 /* AdmobAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B327E226C4000518B0 /* AdmobAd.m */; };
 		8DB274BF27E226C4000518B0 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8DB274C027E226C4000518B0 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8DB274C127E226C4000518B0 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
-		8DB274C227E226C4000518B0 /* AdmobAd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B827E226C4000518B0 /* AdmobAd.xib */; };
 		8DBF98E727E3866200119E68 /* AdmobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF98E527E3866200119E68 /* AdmobController.swift */; };
 		8DBF98E827E3866200119E68 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
 		8DC34FEB2A2E468C0032E52D /* thai.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DC34FEA2A2E468B0032E52D /* thai.txt */; };
@@ -239,12 +237,9 @@
 		8DB2747327E222B3000518B0 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8DB2747427E222B3000518B0 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		8DB274B127E226C4000518B0 /* AdAppodeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdAppodeal.h; sourceTree = "<group>"; };
-		8DB274B327E226C4000518B0 /* AdmobAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdmobAd.m; sourceTree = "<group>"; };
 		8DB274B527E226C4000518B0 /* AdsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdsManager.m; sourceTree = "<group>"; };
 		8DB274B627E226C4000518B0 /* AdAppodeal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdAppodeal.xib; sourceTree = "<group>"; };
 		8DB274B727E226C4000518B0 /* AdAppodeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdAppodeal.m; sourceTree = "<group>"; };
-		8DB274B827E226C4000518B0 /* AdmobAd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdmobAd.xib; sourceTree = "<group>"; };
-		8DB274B927E226C4000518B0 /* AdmobAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmobAd.h; sourceTree = "<group>"; };
 		8DB274BB27E226C4000518B0 /* AdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdsManager.h; sourceTree = "<group>"; };
 		8DBB158825EAEA840092F88B /* KeyboardExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8DBF98E527E3866200119E68 /* AdmobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobController.swift; sourceTree = "<group>"; };
@@ -479,9 +474,6 @@
 				8DBF98E627E3866200119E68 /* AdmobController.xib */,
 				8DB274BB27E226C4000518B0 /* AdsManager.h */,
 				8DB274B527E226C4000518B0 /* AdsManager.m */,
-				8DB274B927E226C4000518B0 /* AdmobAd.h */,
-				8DB274B327E226C4000518B0 /* AdmobAd.m */,
-				8DB274B827E226C4000518B0 /* AdmobAd.xib */,
 				8D0D37472A40BE010006741B /* AdAppodeal.swift */,
 				8DB274B127E226C4000518B0 /* AdAppodeal.h */,
 				8DB274B727E226C4000518B0 /* AdAppodeal.m */,
@@ -714,7 +706,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD5076C26815FEB00377CBD /* hello (16bit PCM).wav in Resources */,
-				8DB274C227E226C4000518B0 /* AdmobAd.xib in Resources */,
 				8DE7F95825E4476900D3C48A /* LaunchScreen.storyboard in Resources */,
 				8DE7F95525E4476900D3C48A /* Assets.xcassets in Resources */,
 				8DE7F95325E4474A00D3C48A /* Main.storyboard in Resources */,
@@ -832,7 +823,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB274BD27E226C4000518B0 /* AdmobAd.m in Sources */,
 				8DD507462681596B00377CBD /* APIKey.swift in Sources */,
 				8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */,
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,

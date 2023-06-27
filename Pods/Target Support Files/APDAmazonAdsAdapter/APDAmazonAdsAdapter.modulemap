@@ -1,6 +1,0 @@
-framework module APDAmazonAdsAdapter {
-  umbrella header "APDAmazonAdsAdapter-umbrella.h"
-
-  export *
-  module * { export * }
-}

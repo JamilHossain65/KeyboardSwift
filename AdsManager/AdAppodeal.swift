@@ -7,7 +7,7 @@
 
 import UIKit
 import Appodeal
-import APDAppodealAdExchangeAdapter
+//import APDAppodealAdExchangeAdapter
 
 private struct AppodealConstants {
     static let key: String = "eeee4e1c555fb055153b45b9444be6636ca4ac238babdc69"
@@ -32,13 +32,7 @@ class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
         
         //sample code
         //https://github.com/appodeal/appodeal-ios-demo
-        
-        //Appodeal.setInterstitialDelegate(self)
-        //Appodeal.setTestingEnabled(false)
-        
-//        Appodeal.cacheAd(.interstitial)
-//        Appodeal.setAutocache(false, types: .interstitial)
-//        Appodeal.initialize( withApiKey: appodealAdKey, types: .interstitial)
+        Appodeal.setInterstitialDelegate(self)
         
         showAd()
     }
@@ -65,7 +59,7 @@ class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
         perform(#selector(showAd), with: nil, afterDelay: 1)
         
         let placement = "default"
-        Appodeal.isInitalized(for: .interstitial)
+        //Appodeal.isInitalized(for: .interstitial)
         Appodeal.canShow(.interstitial, forPlacement: placement)
         
         Appodeal.showAd(.interstitial,

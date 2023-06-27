@@ -14,6 +14,7 @@ import GoogleMobileAds
 import AppTrackingTransparency
 import UserNotifications
 import AdSupport
+import UserMessagingPlatform
 
 @main
     
@@ -24,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-        //[FIRApp configure];
         FirebaseApp.configure()
-        
+        AdManager.shared.appodealInitializeSDK()
+        perform(#selector(requestConcent), with: nil, afterDelay: 0)
         return true
     }
     
@@ -34,11 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         setNotification()
     }
     
+    @objc func requestConcent(){
+        let adManager = AdManager()
+        adManager.requestConsentInfo()
+    }
+    
     @objc func adAcknoledge(){
         if #available(iOS 15.0, *) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                    
+                    print("requestTrackingAuthorization completed...")
                 })
             }
         }
@@ -85,7 +91,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             let adManager = AdManager()
             adManager.showAdMobAdsOnParrent(rootVC)
-            
             return true
         }
     

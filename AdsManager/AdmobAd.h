@@ -12,8 +12,8 @@
 
 @import GoogleMobileAds;
 
-@interface AdmobAd : UIViewController<GADInterstitialDelegate>
-@property(nonatomic, strong) GADInterstitial *interstitial;
+@interface AdmobAd : UIViewController /*<GADInterstitialDelegate>*/
+//@property(nonatomic, strong) GADInterstitial *interstitial;
 @property(nonatomic, strong) NSString *admobAdKey;
 
 @property (nonatomic, copy) void (^adFailWithCompletion)(BOOL success);

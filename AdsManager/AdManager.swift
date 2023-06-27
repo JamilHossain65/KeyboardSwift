@@ -32,8 +32,24 @@ class AdManager: UIViewController {
         admobController.showOn(viewController)
     }
     
+    func requestConsentInfo(){
+        let admobController = AdmobController()
+        admobController.requestConsentInfoUpdate()
+    }
+    
+    func loadConsentForm(){
+        let admobController = AdmobController()
+        admobController.loadForm()
+    }
+    
+    //MARK: - Appodeal
+    func appodealInitializeSDK(){
+        let appodealController = AdAppodeal()
+        appodealController.initializeAppodealSDK()
+    }
     func showAppodealAdsOnParrent(_ viewController:UIViewController){
         let appodealController = AdAppodeal()
         appodealController.showOn(viewController)
     }
+    
 }

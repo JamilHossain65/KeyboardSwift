@@ -17,6 +17,8 @@
 @class YMMUserProfile;
 @class YMMRevenueInfo;
 @class YMMECommerce;
+@protocol YMMYandexMetricaPluginReporting;
+@class YMMAdRevenueInfo;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -174,6 +176,26 @@ DEPRECATED_MSG_ATTRIBUTE("Use reportError:options:onFailure: or reportNSError:op
  */
 - (void)reportECommerce:(YMMECommerce *)eCommerce
               onFailure:(nullable void (^)(NSError *error))onFailure NS_SWIFT_NAME(report(eCommerce:onFailure:));
+
+/**
+ * Creates a `YMMYandexMetricaPluginReporting` that can send plugin events to this reporter.
+ * For every reporter only one `YMMYandexMetricaPluginReporting` instance is created.
+ * You can either query it each time you need it, or save the reference by yourself.
+ *
+ * @return plugin extension instance for this reporter
+ */
+- (id<YMMYandexMetricaPluginReporting>)getPluginExtension;
+
+/**
+ * Sends information about ad revenue.
+ * @note See `YMMAdRevenueInfo` for more info.
+ *
+ * @param adRevenue Object containing the information about ad revenue.
+ * @param onFailure Block to be executed if an error occurs while sending ad revenue,
+ *                  the error is passed as block argument.
+ */
+- (void)reportAdRevenue:(YMMAdRevenueInfo *)adRevenue
+              onFailure:(nullable void (^)(NSError *error))onFailure NS_SWIFT_NAME(report(adRevenue:onFailure:));
 
 @end
 

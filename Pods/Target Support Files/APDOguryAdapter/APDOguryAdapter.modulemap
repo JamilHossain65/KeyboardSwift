@@ -1,6 +1,0 @@
-framework module APDOguryAdapter {
-  umbrella header "APDOguryAdapter-umbrella.h"
-
-  export *
-  module * { export * }
-}
