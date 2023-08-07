@@ -7,22 +7,19 @@
 
 import UIKit
 import Appodeal
-//import APDAppodealAdExchangeAdapter
 
+//app setting:16
 private struct AppodealConstants {
-    static let key: String = "eeee4e1c555fb055153b45b9444be6636ca4ac238babdc69"
-    static let adTypes: AppodealAdType = [.interstitial, .rewardedVideo, .banner, .nativeAd]
+    static let key: String = "8d27e0858ace2ac52cee20d53ad32bc2beb523fa0fde604b"
+    static let adTypes: AppodealAdType = [.interstitial,.rewardedVideo]
     static let logLevel: APDLogLevel = .debug
-    static let testMode: Bool = true
+    static let testMode: Bool = false
 }
 
 class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
     public static let shared = AdAppodeal()
     typealias AdAppodealCompletion = (_ success:Bool) -> Void
     
-    //var interstitial: GADInterstitial?
-    var appodealAdKey = "eeee4e1c555fb055153b45b9444be6636ca4ac238babdc69"
-
     //var void (^adFailWithCompletion)(BOOL success);
 
     override func viewDidLoad() {
@@ -33,8 +30,7 @@ class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
         //sample code
         //https://github.com/appodeal/appodeal-ios-demo
         Appodeal.setInterstitialDelegate(self)
-        
-        showAd()
+        self.showAd()
     }
     
     func showOn(_ viewController:UIViewController){
@@ -46,20 +42,9 @@ class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
     }
     
     @objc func showAd(){
-//        if let _interstitial = interstitial, _interstitial.hasBeenUsed == false {
-//            perform(#selector(showAd), with: nil, afterDelay: 1)
-//        }else{
-//            interstitial = nil
-//        }
-//
-//        if interstitial != nil {
-//            //let _interstitial = interstitial, _interstitial.isReady
-//            interstitial?.present(fromRootViewController: self)
-//        }
-        perform(#selector(showAd), with: nil, afterDelay: 1)
-        
+        print("appodeal ad should show here")
+        perform(#selector(showAd), with: nil, afterDelay: 10*60)
         let placement = "default"
-        //Appodeal.isInitalized(for: .interstitial)
         Appodeal.canShow(.interstitial, forPlacement: placement)
         
         Appodeal.showAd(.interstitial,
@@ -86,12 +71,6 @@ class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
         // Initialise Appodeal SDK
         Appodeal.setInterstitialDelegate(self)
         Appodeal.initialize(withApiKey: AppodealConstants.key, types: AppodealConstants.adTypes)
-    }
-    
-    func appodealSDKDidInitialize() {
-        // Appodeal SDK did complete initialization
-        print("appodealSDKDidInitialize")
-        perform(#selector(showAd), with: nil, afterDelay: 0)
     }
     
     func interstitialDidLoadAdIsPrecache(_ precache: Bool) {

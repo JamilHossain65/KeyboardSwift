@@ -284,6 +284,50 @@ extension Locale {
     }
 }
 
+extension String {
+    func read() -> String {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(self)
+            print("fileURL::\(fileURL)")
+            
+            //reading
+            do {
+                let text = try String(contentsOf: fileURL, encoding: .utf8)
+                print("text::\(text)")
+                return text
+            }
+            catch {/* error handling here */}
+        }
+        return ""
+    }
+    
+    func write(_ text:String) {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(self)
+
+            //writing
+            do {
+                try text.write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {/* error handling here */}
+        }
+    }
+    
+    func readFile() -> String{
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(self)
+
+            //reading
+            do {
+                let text2 = try String(contentsOf: fileURL, encoding: .utf8)
+                return text2
+            }
+            catch {/* error handling here */}
+        }
+        return ""
+    }
+}
+
 
 
 

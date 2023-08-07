@@ -139,6 +139,14 @@ class JHKeyPopup: UIButton {
             let letters = trim(text).components(separatedBy: " ")
             if letters.first == trim(title!){
                 self.hintSymbolsList = letters
+                
+                //check for showing and replacing alphabet are different
+                if langName == BanglaDruti && letterKeyType == .REPLACE{
+                    //for hint remove first english letter and remove space
+                    self.hintSymbolsList?.removeFirst()
+                    self.hintSymbolsList = self.hintSymbolsList?.filter{!$0.isEmpty}
+                }
+                
                 var newArray:[String] = []
                 
                 for txt in self.hintSymbolsList ?? []{

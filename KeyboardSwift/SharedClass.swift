@@ -28,6 +28,7 @@ let LanguageCode = "LanguageCode"
 let English    = "English"
 let Bangla     = "Bangla"
 let BanglaGoti = "বাংলা"
+let BanglaDruti = "দ্রুতি"
 let Indonesian = "Indonesian"
 let Russian    = "Russian"
 let Spanish    = "Spanish"
@@ -51,17 +52,21 @@ let Tamil      = "Tamil"
 let Telugu     = "Telugu"
 let Urdu       = "Urdu"
 let Thai       = "Thai"
+let JpHiragana = "ひらがな" //MARK: - Todo
+let JpKatakana = "Katakana"
+let Burmese    = "မြန်မာ"
 
 //app setting::2
 var activeLanguages = [
     English :true,  Indonesian:false, Bangla    :false, Russian  :false,
-    Spanish :false, French    :false,  German    :false,  Italian  :false,
+    Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:true, Thai    :false
+    BanglaGoti:false, BanglaDruti:false, Thai   :false,  JpHiragana:false,
+    JpKatakana:false, Burmese:false
 ]
 
 var countryCodes  = [
@@ -71,7 +76,8 @@ var countryCodes  = [
     Gujarati:"",   Hindi     :"In", Kannada   :"",   Malayalam:"",
     Marathi :"",   Nepali    :"",   Oriya     :"",   Punjabi  :"",
     Sanskrit:"",   Tamil     :"",   Telugu    :"",   Urdu     :"",
-    BanglaGoti:"bd",Thai :"th"
+    BanglaGoti:"bdG", BanglaDruti:"bd", Thai :"th",     JpHiragana :"jp", //Goti need change 'bd'
+    JpKatakana :"jpk", Burmese:"mm"
 ]
 
 var languageCodes = [
@@ -81,7 +87,8 @@ var languageCodes = [
     Gujarati:"gu", Hindi     :"hi", Kannada   :"kn", Malayalam:"ml",
     Marathi :"mr", Nepali    :"",   Oriya     :"or", Punjabi  :"pa",
     Sanskrit:"",   Tamil     :"ta", Telugu    :"te", Urdu     :"",
-    BanglaGoti:"bn",Thai :"th"
+    BanglaGoti:"bn", BanglaDruti:"bn", Thai :"th", JpHiragana :"ja",
+    JpKatakana :"jak", Burmese:"my"
 ]
 
 //MARK:- SHARED DATA

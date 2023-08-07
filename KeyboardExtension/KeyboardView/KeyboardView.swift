@@ -519,6 +519,20 @@ extension KeyboardView:JHKeyPopupDelegate{
 extension KeyboardView {
     @objc func buttonPressed(sender:KeyboardButton){
         
+        let dataSource = getReplacedAlphabetOf(langName,fontName,NORMAL_REPLACE)
+        let originalLetters =  getAlphabetOf(langName,fontName,NORMAL)
+        let selectedLetter = sender.titleLabel?.text
+        
+        //if seeing letter and typing letter is not same
+        if langName == BanglaDruti{ //MARK: - get index directly, not calculated
+            for (index,letterString) in originalLetters.enumerated(){
+                if letterString == selectedLetter{
+                    sender.setTitle("\(dataSource[index])", for: .normal)
+                    break
+                }
+            }
+        }
+        
         if(sender.tag == shiftButtonIndex) {
             //AudioServicesPlaySystemSound (1104)
             sender.isSelected = !sender.isSelected

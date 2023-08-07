@@ -50,10 +50,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 //                AudioServicesPlaySystemSound(1104);
 //            });
         
-        Bundle.setLanguage(lang: "bn") //bn
+        Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::10
-        button.setTitle(BanglaGoti, for: .normal) //MARK: - do it dynamic
+        button.setTitle(English, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         
@@ -576,7 +576,11 @@ extension KeyboardViewController: KeyboardViewDelegate {
         if newCharacter == "kDoubleSpace".localized() {
             updateFullStop(newCharacter)
         }else{
-            textDocumentProxy.insertText(newCharacter)
+            if langName == BanglaDruti && newCharacter != " "{
+                textDocumentProxy.insertText(newCharacter.trimmingCharacters(in: .whitespaces))
+            }else{
+                textDocumentProxy.insertText(newCharacter)
+            }
         }
         
         
@@ -901,9 +905,21 @@ extension KeyboardViewController: HintBarDelegate {
             langName = button.titleLabel?.text?.trimmingCharacters(in: .whitespaces) ?? English
             setString(langName , key: kSelectedLanguageName)
             print("langName::\(langName)")
+            
+            if langName == BanglaDruti{
+                letterKeyType = .REPLACE
+            }
+            
+            //MARK: - TODO: Do it dynamic
             //app setting::11
-            if langName == "বাংলা" {
-                Bundle.setLanguage(lang: "bn")
+            if langName == JpHiragana || langName == JpKatakana { //"বাংলা"
+                Bundle.setLanguage(lang: "ja") //bn, my, ja
+            }else if langName == BanglaDruti{
+                Bundle.setLanguage(lang: "bn") //bn
+            }else if langName == Spanish{
+                Bundle.setLanguage(lang: "es")
+            }else if langName == Russian{
+                Bundle.setLanguage(lang: "ru")
             }else{
                 Bundle.setLanguage(lang: "en")
             }

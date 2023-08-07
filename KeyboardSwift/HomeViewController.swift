@@ -20,7 +20,10 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     @IBOutlet weak var textView: UITextView!
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
-    let fullVersionID = "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
+    //app setting::12
+    //let fullVersionID = "com.vaticsoft.iap.russianKeyboard"
+    let fullVersionID = "SmartFontRemoveAds"
+    
     var productsArray: [SKProduct] = []
     
     var recordButton : UIButton!
@@ -102,7 +105,6 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 //        addLanguageButtonUI()
 //        addSpeakButtonUI()
         
-        //Appodeal.setInterstitialDelegate(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,7 +133,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
     @objc func rewardedAdButtonPressed(){
         print("rewardedAdButtonPressed")
-        showAppodealAd()
+        //showAppodealAd()
     }
     
     func showLoading(view:UIView){
@@ -346,10 +348,10 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 extension HomeViewController:UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool{
         //if #available(iOS 15.0, *) { }
-        
-        if (self.IS_LAUNCHING_AD){
+        //app setting::14
+        if (self.IS_LAUNCHING_AD){ //MARK:- todo enable this keyboard
             self.perform(#selector(self.showAd), with: nil, afterDelay: 0)
-            self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 60)
+            //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
             self.IS_LAUNCHING_AD = false
         }
         
@@ -363,16 +365,20 @@ extension HomeViewController:UITextViewDelegate {
     }
     
     @objc func showAppodealAd(){
-//        perform(#selector(showAppodealAd), with: nil, afterDelay: AD_APPODEAL_MIN_TIME)
 //        let adManager = AdManager()
 //        adManager.showAppodealAdsOnParrent(self)
         
+        /*
+        //app setting::15
+        print("appodeal ad should show here")
+        perform(#selector(showAppodealAd), with: nil, afterDelay: 10*60)
         let placement = "default"
         Appodeal.canShow(.interstitial, forPlacement: placement)
-
+        
         Appodeal.showAd(.interstitial,
                         forPlacement: placement,
                         rootViewController: self)
+         */
     }
 }
 

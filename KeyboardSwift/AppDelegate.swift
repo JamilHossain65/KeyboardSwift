@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             print("rootVC::\(rootVC)")
             
             let adManager = AdManager()
-            adManager.showAdMobAdsOnParrent(rootVC)
+            //adManager.showAdMobAdsOnParrent(rootVC)
             return true
         }
     

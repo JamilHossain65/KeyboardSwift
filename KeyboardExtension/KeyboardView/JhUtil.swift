@@ -59,6 +59,12 @@ let NORMAL  = "Normal"
 let SHIFT   = "Shift"
 let NUMERIC = "Numeric"
 let SYMBOL  = "Symbol"
+
+let NORMAL_REPLACE  = "NormalReplace"
+let SHIFT_REPLACE   = "ShiftReplace"
+let NUMERIC_REPLACE = "NumericReplace"
+let SYMBOL_REPLACE  = "SymbolReplace"
+
 let DOUBLE_TAP = "DoubleTap"
 
 ////supported language name
@@ -97,12 +103,18 @@ enum LANGUAGE_GROUP:Int {
     case CHINESE
 }
 
+enum LETTER_KEY_TYPE:Int {
+    case ORIGINAL
+    case REPLACE
+}
+
 var keyMode : String = NORMAL
 var writingMode : WRITING_MODE  = .INSERTING
 var hintBarType : HINT_BAR_TYPE = .SETTING
 
 var languageGroup : LANGUAGE_GROUP   = .ENGLISH
 var keySettingType: KEY_SETTING_TYPE = .LANGUAGE
+var letterKeyType : LETTER_KEY_TYPE  = .ORIGINAL
 
 var kKeyButtonColor  = UIColor.white
 var kHighlightColor  = UIColor.white
@@ -124,7 +136,7 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //var fontsName    = getString(kSelectedFontName)     ?? NORMAL
 
 //app setting:: 1
-var langName = getString(kSelectedLanguageName) ?? BanglaGoti
+var langName = getString(kSelectedLanguageName) ?? English
 var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 
@@ -133,12 +145,14 @@ var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 let hintBarHeight:CGFloat = 44 //36;
 
+//app setting:: 13
 //Note: this is complex because this is ordered list,
 //so this order you will see the language setting
 let kAllLanguageDicArray = [
     [English   : kFontEnDic],
     [Bangla    : kFontBnDic],
     [BanglaGoti: kFontBnGotiDic],
+    [BanglaDruti: kFontBnDrutiDic],
     [Indonesian: kFontIdDic],
     [Russian   : kFontRuDic],
     
@@ -163,6 +177,9 @@ let kAllLanguageDicArray = [
     [Telugu   : kFontTeDic],
     [Urdu     : kFontUrDic],
     [Thai     : kFontThDic],
+    [Burmese  : kFontBrDic],
+    [JpHiragana  : kFontJpHiraDic],
+    [JpKatakana  : kFontJpKataDic],
     
 ]
 
@@ -251,6 +268,33 @@ func getAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ ke
     return []
 }
 
+func getReplacedAlphabetOf(_ language:String? = English,_ fontname:String? = NORMAL,_ keyMode:String) -> [String] {
+    for dic in kAllLanguageDicArray {
+        let key = dic.keys.first
+        if key == language {
+            for _dic in dic{
+                for test in _dic.value {
+                    if let _fontname = test.keys.filter({$0 == fontname}).first{
+                        log("_fontname::\(_fontname) letterMode::\(keyMode)")
+                        //log("test1::\(test)")
+                        var _key = keyMode
+                        if keyMode == NORMAL  {
+                            _key = fontname!
+                        }else if keyMode == DOUBLE_TAP {
+                            _key = SHIFT
+                        }
+                        //log("_key::\(_key)")
+                        let alphabetList = test[_key]
+                        //log("alphabetList::\(alphabetList)")
+                        return alphabetList ?? []
+                    }
+                }
+            }
+        }
+    }
+    return []
+}
+
 
 func getFontNamesOf(_ language:String) -> [String]{
     for dic in kAllLanguageDicArray {
@@ -288,6 +332,13 @@ func getHintString() -> String {
             return hintWordsBnGoti
         default:
             return hintWordsBnGoti
+        }
+    case BanglaDruti:
+        switch fontName {
+        case NORMAL:
+            return hintWordsBnDruti
+        default:
+            return hintWordsBnDruti
         }
         
     case Gujarati:
@@ -405,6 +456,22 @@ func getHintString() -> String {
             return hintWordsPt
         }
         
+    case Portuguese:
+        switch fontName {
+        default:
+            return hintWordsPt
+        }
+    case JpHiragana:
+        switch fontName {
+        default:
+            return hintWordsJpHiragana
+        }
+    case JpKatakana:
+        switch fontName {
+        default:
+            return hintWordsJpKata
+        }
+        
     default://English
         switch fontName {
         case NORMAL:
@@ -451,6 +518,8 @@ func getFileName() -> String {
         return "bangla.txt"
     case BanglaGoti:
         return "bangla.txt"
+    case BanglaDruti:
+        return "bangla.txt"
     case Indonesian:
         return "bahasa.txt"
     case Russian:
@@ -472,6 +541,12 @@ func getFileName() -> String {
         return "portuguese.txt"
     case Thai:
         return "thai.txt"
+    case Burmese:
+        return "burmese.txt"
+    case JpHiragana:
+        return "japanese.txt"
+    case JpKatakana:
+        return "japanese.txt"
         
     default:
         return "words.txt"
@@ -517,7 +592,9 @@ func getModifiedWidth(_ row:Int)-> [Int:Int]{
     case abs(array.count - 2) ://shift and delete row
         switch langName {
         case Russian:
-            return [0:30, 10:30]
+            if keyMode == NORMAL || keyMode == SHIFT{
+                return [0:30, abs(array[row]-1):30]
+            }
         default:
             return [0:40, abs(array[row]-1):40]
         }
