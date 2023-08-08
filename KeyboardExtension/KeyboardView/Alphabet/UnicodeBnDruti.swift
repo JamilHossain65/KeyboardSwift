@@ -52,5 +52,5 @@ let kUnicodeBnDrutiReplacePuncuation  = kUnicodeBnDrutiPuncuation
 
 
 //MARK:- Hint Letters
-let hintWordsBnDruti = "a আ,w অ  ঃ,e এ ঐ  ৈ,u উ ঊ  ূ,i ই ঈ ী,o ও ঔ  ৌ  ্,k খ,g ঘ,n ণ ঙ ঞ ং  ঁ,c ছ,j ঝ য,t ট ঠ থ ৎ,d ধ ড ঢ,p ফ,b ভ,m ঙ ঞ,y য,r ড় ঢ় ঋ  ৃ,s শ ষ"
+let hintWordsBnDruti = "a আ,w অ  ঃ,e এ ঐ  ৈ,u উ ঊ  ূ,i ই ঈ ী,o ও ঔ  ৌ  ্,k খ,g ঘ,n ণ ঙ ঞ ং  ঁ,c ছ,j ঝ য,t ট ঠ থ ৎ,d ধ ড ঢ,p ফ,b ভ,m ঙ ঞ,y য,r ড় ঢ় ঋ  ৃ,s শ ষ,. ? ; !,@ ৳ & $ # %"
 

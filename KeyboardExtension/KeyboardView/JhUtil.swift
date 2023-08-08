@@ -38,12 +38,14 @@ let kGLOBE  = "GLOBE"
 let kVOICE  = "VOICE"
 let kSPACE  = "SPACE"
 let kRETURN = "RETURN"
-let kAT_BUTTON = "@"
+let kAT     = "@"
+let kDOT    = "."
 
-let kSPECIAL = "\(kDELETE)৹ \(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kRETURN)"
-let kSPECIAL2 = "\(kDELETE) \(kNL) \(kALTER) \(kGLOBE) \(kVOICE) \(kSPACE) \(kAT_BUTTON) \(kRETURN)"
+let kSPECIAL = "\(kDELETE)৹ \(kNL)৹ \(kALTER)৹ \(kGLOBE)৹ \(kVOICE)৹ \(kSPACE)৹ \(kDOT)৹ \(kAT)৹ \(kRETURN)"
+let kSPECIAL2 = "\(kDELETE) \(kNL) \(kALTER) \(kGLOBE) \(kVOICE) \(kSPACE) \(kAT) \(kRETURN)"
 let kSPECIALArray = [kDELETE,kNL, kALTER, kGLOBE, kVOICE, kSPACE, kRETURN]
 let kSEPERATOR = "৹ "
+let kSEPERATOR2 = ","
 
 
 //let kKeyBgColor   = "kKeyBgColor"
@@ -587,7 +589,7 @@ func getModifiedWidth(_ row:Int)-> [Int:Int]{
         case Korean: //an extra '@' button
             return [0:40, 1:30,2:30,4:30,5:50]
         default:
-            return [0:40, 1:30,2:30,4:80]
+            return [0:40, 1:30,2:30,4:30,5:30,6:80] //[0:40, 1:30,2:30,4:80]
         }
     case abs(array.count - 2) ://shift and delete row
         switch langName {

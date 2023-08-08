@@ -568,7 +568,7 @@ extension KeyboardView {
             refreshKeyboard()
             
         } else {
-            if let _title = sender.titleLabel?.text{
+            if var _title = sender.titleLabel?.text{
                 
                 switch _title {
                 case "kSpaceString".localized():
@@ -579,6 +579,10 @@ extension KeyboardView {
                     delegate?.insertCharacter("\n")
                 
                 default:
+                    if langName == BanglaDruti && keyMode == NORMAL && _title == "."{
+                        _title = "।" //replace . by । dari
+                    }
+                    
                     if !isLongPressing {
                         delegate?.insertCharacter(_title)
                     }

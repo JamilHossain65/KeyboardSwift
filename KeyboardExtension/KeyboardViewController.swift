@@ -56,6 +56,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         button.setTitle(BanglaDruti, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
+        hideSettingView()
         
         self.perform(#selector(openContainerApp), with: nil, afterDelay: AD_MIN_TIME)
     }
