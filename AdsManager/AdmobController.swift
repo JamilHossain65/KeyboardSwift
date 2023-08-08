@@ -39,7 +39,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         print("deviceID::\(String(describing: deviceID))")
         //let staticID = "7B9B8DBE-E8EB-44B3-957C-43AD0F2EAFA2"
         
-        //app setting:: 3
+        //app setting:: 103
         //this check avoid admob policy violation
         if(deviceID == "7B9B8DBE-E8EB-44B3-957C-43AD0F2EAFA2" || //indian
            deviceID == "AC3DABB5-98CD-4CE0-98F8-EA42F686A6E0"    // russain

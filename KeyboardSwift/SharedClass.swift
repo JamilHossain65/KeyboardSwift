@@ -8,9 +8,9 @@
 
 import Foundation
 
-//app setting::9
+//app setting::109
 //change app icon and bundle id in both app target and extension target
-//app setting::8
+//app setting::108
 var isProduction = false
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 60*60 //60 min
@@ -56,10 +56,10 @@ let JpHiragana = "ひらがな" //MARK: - Todo
 let JpKatakana = "Katakana"
 let Burmese    = "မြန်မာ"
 
-//app setting::2
+//app setting::1
 var activeLanguages = [
     English :true,  Indonesian:false, Bangla    :false, Russian  :false,
-    Spanish :false, French    :false, German    :false, Italian  :false,
+    Spanish :true, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,

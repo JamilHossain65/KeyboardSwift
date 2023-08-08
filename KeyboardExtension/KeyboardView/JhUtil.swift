@@ -135,8 +135,8 @@ var kBlueColor       = UIColor.init(red: 000/255, green: 122/255, blue: 255/255,
 //var languageName = getString(kSelectedLanguageName) ?? English
 //var fontsName    = getString(kSelectedFontName)     ?? NORMAL
 
-//app setting:: 1
-var langName = getString(kSelectedLanguageName) ?? English
+//app setting:: 2
+var langName = getString(kSelectedLanguageName) ?? Spanish
 var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 
@@ -145,7 +145,7 @@ var fontName = getString(kSelectedFontName)     ?? NORMAL
 
 let hintBarHeight:CGFloat = 44 //36;
 
-//app setting:: 13
+//app setting:: 113
 //Note: this is complex because this is ordered list,
 //so this order you will see the language setting
 let kAllLanguageDicArray = [

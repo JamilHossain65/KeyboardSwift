@@ -29,7 +29,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     var recordButton : UIButton!
     var languageButton : UIButton!
     let audioManager = AudioManager()
-    //app setting:: 4
+    //app setting:: 104
     //let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
     
     //let actLanguages = [English,Russian]
@@ -62,7 +62,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
            //sSelf.tableView.reloadData() //reload you table or collection view
         }
 
-        //app setting:: 5
+        //app setting:: 105
         var selectedIndex = 1
         if actLanguages.count > 2 {
             selectedIndex = 1
@@ -348,7 +348,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 extension HomeViewController:UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool{
         //if #available(iOS 15.0, *) { }
-        //app setting::14
+        //app setting::114
         if (self.IS_LAUNCHING_AD){ //MARK:- todo enable this keyboard
             self.perform(#selector(self.showAd), with: nil, afterDelay: 0)
             //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
@@ -369,7 +369,7 @@ extension HomeViewController:UITextViewDelegate {
 //        adManager.showAppodealAdsOnParrent(self)
         
         /*
-        //app setting::15
+        //app setting::115
         print("appodeal ad should show here")
         perform(#selector(showAppodealAd), with: nil, afterDelay: 10*60)
         let placement = "default"
