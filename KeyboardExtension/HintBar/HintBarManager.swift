@@ -7,7 +7,8 @@
 
 import UIKit
 
-protocol HintBarDelegate: class {
+protocol HintBarDelegate: AnyObject {
+    func didTapRefreshSetting(_ button: UIButton)
     func didSelectLanguage(_ sender: Any)
     func didSelectHint (_ sender: Any)
     func didSelectColor(_ sender: Any)
@@ -28,6 +29,12 @@ class HintBarManager: NSObject {
     
     func addSuggestionBar(parentView:UIView,txtView:UITextDocumentProxy) {
         parentView.addSubview(suggestionBarScrollView)
+        //right side reload button
+        let reloadButton = getReloadButton()
+        reloadButton.frame = CGRect(x: Int(parentView.frame.width) - Int(21) ,y: 0, width: Int(21), height: Int(21))
+        reloadButton.center = CGPoint(x: reloadButton.center.x, y: suggestionBarScrollView.center.y)
+        parentView.addSubview(reloadButton)
+        
         suggestionBarScrollView.layer.zPosition = -10
         suggestionBarScrollView.delegate = self
         
@@ -56,7 +63,7 @@ class HintBarManager: NSObject {
         
         //Add suggestion bar
         let border:CGFloat = 1
-        let screenWidth  = UIScreen.main.bounds.size.width - 2*border
+        let screenWidth  = UIScreen.main.bounds.size.width - 2*border - 23 //setting button width
         let buttonWidth  = screenWidth/3
         
         //Keyboard bar
@@ -187,6 +194,14 @@ class HintBarManager: NSObject {
         }
     }
     
+    func getReloadButton() -> UIButton{
+        let reloadButton = UIButton.init(type: .custom)
+        reloadButton.tag = 100
+        reloadButton.setImage(UIImage(named: "reload4"), for: .normal)
+        reloadButton.addTarget(self, action: #selector(reloadDidClick(button:)), for: .touchUpInside)
+        return reloadButton
+    }
+    
     @objc func suggestionButtonDidClick(button:UIButton){
         print("hint:\(String(describing: button.titleLabel?.text))")
         if let _delegate = delegate {
@@ -225,6 +240,12 @@ extension HintBarManager:UIScrollViewDelegate {
         print("Decelerating....")
         if let _delegate = delegate {
             _delegate.doingScroll(scrollView)
+        }
+    }
+    
+    @objc func reloadDidClick(button:UIButton){
+        if let _delegate = delegate {
+            _delegate.didTapRefreshSetting(button)
         }
     }
 }

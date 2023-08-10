@@ -758,39 +758,31 @@ extension KeyboardViewController: KeyboardViewDelegate {
 
 //MARK:- HINT BAR & SCROLL VIEW DELEGATE METHODS
 extension KeyboardViewController: HintBarDelegate {
-//    @objc func showFlotingView(){
-//        if let _floatingButtonView = floatingButtonView {
-//            _floatingButtonView.isHidden = false
-//        }
-//    }
-//
-//    @objc func hideFlotingView(){
-//        if let _floatingButtonView = floatingButtonView {
-//            _floatingButtonView.isHidden = true
-//        }
-//    }
+    func didTapRefreshSetting(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected{
+            //Hide setting view from suggestion bar
+            hideSettingView()
+            
+            //show hint word
+            HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
+        }else{
+            showSettingView()
+        }
+    }
     
     func didSartScroll(_ scrollView: UIScrollView) {
         log("scrollView start")
         resetTimerToShowSettingOption()
-//        if let _floatingButtonView = floatingButtonView {
-//            _floatingButtonView.isHidden = true
-//        }
     }
     
     func doingScroll(_ scrollView: UIScrollView) {
         log("doingScroll.....")
         resetTimerToShowSettingOption()
-//        if let _floatingButtonView = floatingButtonView {
-//            _floatingButtonView.isHidden = true
-//        }
     }
     func didEndScroll (_ scrollView: UIScrollView) {
         log("scrollView end")
         resetTimerToShowSettingOption()
-        //self.perform(#selector(showFlotingView), with: nil, afterDelay: 5)
-//        timer?.invalidate()
-//        timer = Timer.scheduledTimer(timeInterval: Double(countLimit), target: self, selector: #selector(showFlotingView), userInfo: nil, repeats: false)
     }
     
     func didSelectColor(_ sender: Any) {

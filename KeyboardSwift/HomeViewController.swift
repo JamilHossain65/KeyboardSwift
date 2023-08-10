@@ -22,7 +22,8 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
     //app setting::12
     //let fullVersionID = "com.vaticsoft.iap.russianKeyboard"
-    let fullVersionID = "SmartFontRemoveAds"
+    //let fullVersionID = "SmartFontRemoveAds"
+    let fullVersionID = "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
     
     var productsArray: [SKProduct] = []
     
@@ -121,6 +122,9 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         IAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
             if let tran = transaction, let prod = product {
                 //use transaction details and purchased product as you want
+                setObject(1, key: kIsPurchaed)
+                let isPurchased = getObject(kIsPurchaed)
+                print("isPurchased::\(isPurchased)")
             }
             //Globals.shared.showWarnigMessage(alert.message)
         }
@@ -350,8 +354,12 @@ extension HomeViewController:UITextViewDelegate {
         //if #available(iOS 15.0, *) { }
         //app setting::114
         if (self.IS_LAUNCHING_AD){ //MARK:- todo enable this keyboard
-            self.perform(#selector(self.showAd), with: nil, afterDelay: 0)
-            //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
+            let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
+            if !isPurchased{
+                self.perform(#selector(self.showAd), with: nil, afterDelay: 0)
+                //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
+            }
+            
             self.IS_LAUNCHING_AD = false
         }
         

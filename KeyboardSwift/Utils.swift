@@ -11,6 +11,8 @@ import MBProgressHUD
 
 //let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 
+let kIsPurchaed = "kIsPurchaed"
+
 func log(_ msg: Any?) {
     #if DEBUG
     if let _msg = msg {
