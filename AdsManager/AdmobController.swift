@@ -16,7 +16,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     private var interstitial: GADInterstitialAd?
     
     //app setting:: 6
-    var admobAdKey = "ca-app-pub-9133033983333483/2540966764"
+    var admobAdKey = "ca-app-pub-9133033983333483/6077303084"
 
     //var void (^adFailWithCompletion)(BOOL success);
 
@@ -46,7 +46,12 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         ){
             GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["06fa119d4743dd21237899a32e0d1031"]
         }
-        perform(#selector(showAd), with: nil, afterDelay: 0)
+        let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
+        if !isPurchased{
+            perform(#selector(showAd), with: nil, afterDelay: 0)
+        }
+        
+        
     }
     
     func showOn(_ viewController:UIViewController){

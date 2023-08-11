@@ -15,6 +15,9 @@ var isProduction = false
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 60*60 //60 min
 
+let kIsPurchaed = "kIsPurchaed"
+let kIsAdLoaded = "kIsAdLoaded"
+
 let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"
 let kActiveLanguages  = "kActiveLanguages"
@@ -58,14 +61,14 @@ let Burmese    = "မြန်မာ"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:true, Thai   :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai   :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false
 ]
 
@@ -76,7 +79,7 @@ var countryCodes  = [
     Gujarati:"",   Hindi     :"In", Kannada   :"",   Malayalam:"",
     Marathi :"",   Nepali    :"",   Oriya     :"",   Punjabi  :"",
     Sanskrit:"",   Tamil     :"",   Telugu    :"",   Urdu     :"",
-    BanglaGoti:"bdG", BanglaDruti:"bd", Thai :"th",     JpHiragana :"jp", //Goti need change 'bd'
+    BanglaGoti:"bdG", BanglaDruti:"bd", Thai :"th",  JpHiragana :"jp", //Goti need change 'bd'
     JpKatakana :"jpk", Burmese:"mm"
 ]
 

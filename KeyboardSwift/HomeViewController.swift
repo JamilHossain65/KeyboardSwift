@@ -21,9 +21,9 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
     //app setting::12
-    //let fullVersionID = "com.vaticsoft.iap.russianKeyboard"
+    let fullVersionID = "com.vaticsoft.iap.russianKeyboard"
     //let fullVersionID = "SmartFontRemoveAds"
-    let fullVersionID = "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
+    //let fullVersionID = "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
     
     var productsArray: [SKProduct] = []
     
@@ -114,17 +114,18 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
     @objc func restoreButtonPressed(){
         print("restoreButtonPressed")
+        //setObject(0, key: kIsPurchaed)
         IAPHandler.shared.restorePurchase()
     }
     
     @objc func buyButtonPressed(){
         print("buyButtonPressed::\(self.productsArray[0])")
+        //setObject(1, key: kIsPurchaed)
+        
         IAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
             if let tran = transaction, let prod = product {
                 //use transaction details and purchased product as you want
                 setObject(1, key: kIsPurchaed)
-                let isPurchased = getObject(kIsPurchaed)
-                print("isPurchased::\(isPurchased)")
             }
             //Globals.shared.showWarnigMessage(alert.message)
         }

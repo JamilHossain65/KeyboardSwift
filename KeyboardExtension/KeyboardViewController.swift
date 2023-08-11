@@ -53,12 +53,15 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(BanglaDruti, for: .normal) //MARK: - do it dynamic
+        button.setTitle(Russian, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
         
-        self.perform(#selector(openContainerApp), with: nil, afterDelay: AD_MIN_TIME)
+        let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
+        if !isPurchased{
+            self.perform(#selector(openContainerApp), with: nil, afterDelay: AD_MIN_TIME)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
