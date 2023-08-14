@@ -25,14 +25,18 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
        
         self.view.frame = CGRect.zero
         
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: admobAdKey, request: request ) { (ad, error) in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
+        let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
+        if !isPurchased{
+            let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID: admobAdKey, request: request ) { (ad, error) in
+                if let error = error {
+                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                    return
+                }
+                self.interstitial = ad
+                self.interstitial?.fullScreenContentDelegate = self
+                self.interstitial?.present(fromRootViewController: self)
             }
-            self.interstitial = ad
-            self.interstitial?.fullScreenContentDelegate = self
         }
         
         let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? ""
@@ -46,11 +50,6 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         ){
             GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["06fa119d4743dd21237899a32e0d1031"]
         }
-        let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
-        if !isPurchased{
-            perform(#selector(showAd), with: nil, afterDelay: 0)
-        }
-        
         
     }
     
@@ -62,7 +61,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     
     @objc func showAd(){
         if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
+            //interstitial?.present(fromRootViewController: self)
         } else {
             print("Ad wasn't ready")
             perform(#selector(showAd), with: nil, afterDelay: 2)

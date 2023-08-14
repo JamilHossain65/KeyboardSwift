@@ -16,7 +16,7 @@ let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 60*60 //60 min
 
 let kIsPurchaed = "kIsPurchaed"
-let kIsAdLoaded = "kIsAdLoaded"
+
 
 let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"

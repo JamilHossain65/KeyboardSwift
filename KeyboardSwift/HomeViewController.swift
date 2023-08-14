@@ -351,7 +351,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 }
 
 extension HomeViewController:UITextViewDelegate {
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool{
+    func textViewDidChange(_ textView: UITextView){
         //if #available(iOS 15.0, *) { }
         //app setting::114
         if (self.IS_LAUNCHING_AD){ //MARK:- todo enable this keyboard
@@ -363,8 +363,6 @@ extension HomeViewController:UITextViewDelegate {
             
             self.IS_LAUNCHING_AD = false
         }
-        
-        return true
     }
     
      @objc func showAd(){
