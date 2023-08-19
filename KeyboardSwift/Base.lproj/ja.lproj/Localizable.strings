@@ -6,11 +6,11 @@
 //
 
 // MARK: - Keboard Constants
-"k123String"    = "123";
+"k123String"    = "一二";
 "kSymbolString" = "#+=";
-"kAbcString"    = "ABC";
-"kReturnString" = "Return";
-"kSpaceString"  = "Space";
+"kAbcString"    = "あかさ";
+"kReturnString" = "戻る";
+"kSpaceString"  = "日本語";
 "kStopSpace"    = ". ";
 "kDoubleSpace"  = "  ";
 

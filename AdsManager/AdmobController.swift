@@ -73,8 +73,8 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         let parameters = UMPRequestParameters()
         
         let debugSettings = UMPDebugSettings()
-//        debugSettings.testDeviceIdentifiers = ["275b5f12d7a4d7ffe03eb5b6b3daf1db"]
-//        debugSettings.geography = UMPDebugGeography.EEA
+        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ] //["275b5f12d7a4d7ffe03eb5b6b3daf1db"]
+        debugSettings.geography = UMPDebugGeography.EEA
         
         // Set tag for under age of consent. Here false means users are not under age.
         parameters.tagForUnderAgeOfConsent = false
