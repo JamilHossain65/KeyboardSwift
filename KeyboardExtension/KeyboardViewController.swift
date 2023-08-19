@@ -581,7 +581,13 @@ extension KeyboardViewController: KeyboardViewDelegate {
             updateFullStop(newCharacter)
         }else{
             if langName == BanglaDruti && newCharacter != " "{
-                textDocumentProxy.insertText(newCharacter.trimmingCharacters(in: .whitespaces))
+                var _newCharacter = newCharacter.trimmingCharacters(in: .whitespaces)
+//                let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+//                if !BanglaConsonents.contains(textLeft.last!) &&  _newCharacter == "া"{
+//                    _newCharacter = "আ"
+//                }
+                
+                textDocumentProxy.insertText(_newCharacter)
             }else{
                 textDocumentProxy.insertText(newCharacter)
             }

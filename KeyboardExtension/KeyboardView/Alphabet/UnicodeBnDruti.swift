@@ -50,6 +50,11 @@ let kUnicodeBnDrutiReplaceLetterShift = kUnicodeBnDrutiLetterShift
 let kUnicodeBnDrutiReplaceNumbers     = kUnicodeBnDrutiNumbers
 let kUnicodeBnDrutiReplacePuncuation  = kUnicodeBnDrutiPuncuation
 
+//MARK: - Consonent list
+let BanglaConsonents = "ক৹ র৹ ত৹ য়৹ প৹ স৹ দ৹ ফ৹ গ৹ হ৹ জ৹ ক৹ ল৹ য৹ ক্স৹ চ৹ ভ৹ ব৹ ন৹ ম"
+let BanglaVowels     = "অ,আ,ই,ঈ,উ,ঊ,ঋ,এ,ঐ,ও,ঔ"
+let EnglishVowels    = "a,e,i,o,u,w"
+
 
 //MARK:- Hint Letters
 let hintWordsBnDruti = "a আ,w অ  ঃ,e এ ঐ  ৈ,u উ ঊ  ূ,i ই ঈ ী,o ও ঔ  ৌ  ্,k খ,g ঘ,n ণ ঙ ঞ ং  ঁ,c ছ,j ঝ য,t ট ঠ থ ৎ,d ধ ড ঢ,p ফ,b ভ,m ঙ ঞ,y য,r ড় ঢ় ঋ  ৃ,s শ ষ,. ? ; !,@ ৳ & $ # %"
