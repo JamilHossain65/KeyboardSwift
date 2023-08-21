@@ -10,7 +10,7 @@ import UIKit
 import Appodeal
 import FirebaseCore
 import FirebaseAuth
-import GoogleMobileAds
+//import GoogleMobileAds
 import AppTrackingTransparency
 import UserNotifications
 import AdSupport
@@ -24,20 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        //GADMobileAds.sharedInstance().start(completionHandler: nil)
         FirebaseApp.configure()
         AdManager.shared.appodealInitializeSDK()
-        perform(#selector(requestConcent), with: nil, afterDelay: 0)
+//        let adManager = AdManager()
+//        adManager.requestConsentInfo()
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         setNotification()
-    }
-    
-    @objc func requestConcent(){
-        let adManager = AdManager()
-        adManager.requestConsentInfo()
     }
     
     @objc func adAcknoledge(){

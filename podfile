@@ -64,8 +64,13 @@ target 'KeyboardSwift' do
   otherFramework
 end
 
-target 'KeyboardSmartFonts' do
+target 'SmartFonts' do
   appodeal
   otherFramework
+end
+
+target 'Japanese' do
+    appodeal
+    otherFramework
 end
 

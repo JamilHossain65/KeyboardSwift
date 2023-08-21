@@ -12,7 +12,12 @@ import AdSupport
 import StoreKit
 import Appodeal
 
+import GoogleMobileAds
+import UserMessagingPlatform
+
 class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
+    private var isMobileAdsStartCalled = false
+    private var consentForm:UMPConsentForm?
     
     //access token
     //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
@@ -21,9 +26,74 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
     //app setting::12
-    let fullVersionID = "com.vaticsoft.iap.russianKeyboard"
+    //let fullVersionID = "com.vaticsoft.iap.russianKeyboard"
     //let fullVersionID = "SmartFontRemoveAds"
     //let fullVersionID = "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
+    
+    var fullVersionID: String {
+        get {
+            let langName = getString(SelectedLanguage)
+            
+            switch langName {
+            case Bangla:
+                return ""
+            case BanglaGoti:
+                return ""
+            case BanglaDruti:
+                return ""
+            case Gujarati:
+                return ""
+            case Hindi:
+                return ""
+            case Kannada:
+                return ""
+            case Malayalam:
+                return ""
+            case Marathi:
+                return ""
+            case Nepali:
+                return ""
+            case Oriya:
+                return ""
+            case Punjabi:
+                return ""
+            case Sanskrit:
+                return ""
+            case Tamil:
+                return ""
+            case Telugu:
+                return ""
+            case Urdu:
+                return ""
+            case Indonesian:
+                return ""
+            case Russian:
+                return ""
+            case Spanish:
+                return ""
+            case French:
+                return ""
+            case German:
+                return ""
+            case Italian:
+                return ""
+            case Korean:
+                return ""
+            case Turkish:
+                return ""
+            case Portuguese:
+                return ""
+            case Portuguese:
+                return ""
+            case JpHiragana:
+                return "com.vaticsoft.iap.JapaneseKeyboard"
+            case JpKatakana:
+                return "com.vaticsoft.iap.JapaneseKeyboard"
+            default://English
+                return "com.vaticsoft.iap.JapaneseKeyboard"
+            }
+        }
+    }
     
     var productsArray: [SKProduct] = []
     
@@ -44,6 +114,8 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         self.view.backgroundColor = .white
         
         IS_LAUNCHING_AD = true
+        
+        requestConsentInfoUpdate()
         
         let restore = UIBarButtonItem(title: "Restore", style: .plain, target: self, action: #selector(restoreButtonPressed))
         let buy = UIBarButtonItem(title: "Buy", style: .plain, target: self, action: #selector(buyButtonPressed))
@@ -110,6 +182,91 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        print("consentForm::\(consentForm)")
+        
+        consentForm?.present(
+            from: self,
+            completionHandler: { dismissError in
+                if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
+                    // App can start requesting ads.
+                }
+                // Handle dismissal by reloading form.
+            })
+    }
+    
+    func requestConsentInfoUpdate(){
+        // Create a UMPRequestParameters object.
+        let parameters = UMPRequestParameters()
+        // Set tag for under age of consent. false means users are not under age
+        // of consent.
+        let debugSettings = UMPDebugSettings()
+        parameters.tagForUnderAgeOfConsent = false
+        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
+        debugSettings.geography = .EEA
+        parameters.debugSettings = debugSettings
+        
+        // Request an update for the consent information.
+        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) {
+            [weak self] requestConsentError in
+            guard let self else { return }
+            
+            if let consentError = requestConsentError {
+                // Consent gathering failed.
+                return print("Error: \(consentError.localizedDescription)")
+            }
+            
+            self.showForm()
+        }
+        
+        // Check if you can initialize the Google Mobile Ads SDK in parallel
+        // while checking for new consent information. Consent obtained in
+        // the previous session can be used to request ads.
+        //        if UMPConsentInformation.sharedInstance.canRequestAds {
+        //            startGoogleMobileAdsSDK()
+        //        }
+    }
+    
+    func showForm(){
+        UMPConsentForm.load(completionHandler: { form, loadError in
+            if loadError != nil {
+                // Handle the error.
+                print("loadError::\(loadError)")
+            } else {
+                // Present the form. You can also hold on to the reference to present
+                // later.
+                self.consentForm = form
+                print("self.consentForm::\(self.consentForm)")
+                
+                if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
+                    form?.present(
+                        from: self,
+                        completionHandler: { dismissError in
+                            if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
+                                // App can start requesting ads.
+                            }
+                            // Handle dismissal by reloading form.
+                        })
+                } else {
+                    // Keep the form available for changes to user consent.
+                    print("Keep the form available for changes to user consent.")
+                }
+            }
+        })
+    }
+    
+    private func startGoogleMobileAdsSDK() {
+        DispatchQueue.main.async {
+            guard !self.isMobileAdsStartCalled else { return }
+            
+            self.isMobileAdsStartCalled = true
+            
+            // Initialize the Google Mobile Ads SDK.
+            GADMobileAds.sharedInstance().start()
+            
+            // TODO: Request an ad.
+            // GADInterstitialAd.load(...)
+        }
     }
     
     @objc func restoreButtonPressed(){

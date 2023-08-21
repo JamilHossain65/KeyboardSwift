@@ -38,8 +38,8 @@ class AdManager: UIViewController {
     }
     
     func loadConsentForm(){
-        let admobController = AdmobController()
-        admobController.loadForm()
+        //let admobController = AdmobController()
+        //admobController.loadForm()
     }
     
     //MARK: - Appodeal

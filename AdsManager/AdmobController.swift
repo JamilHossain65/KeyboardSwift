@@ -16,13 +16,78 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     private var interstitial: GADInterstitialAd?
     
     //app setting:: 6
-    var admobAdKey = "ca-app-pub-9133033983333483/6077303084"
+    //var admobAdKey = {return "ca-app-pub-9133033983333483/6077303084"}
+    var admobAdKey: String {
+        get {
+            let langName = getString(SelectedLanguage)
+            
+            switch langName {
+            case Bangla:
+                return ""
+            case BanglaGoti:
+                return ""
+            case BanglaDruti:
+                return ""
+            case Gujarati:
+                return ""
+            case Hindi:
+                return ""
+            case Kannada:
+                return ""
+            case Malayalam:
+                return ""
+            case Marathi:
+                return ""
+            case Nepali:
+                return ""
+            case Oriya:
+                return ""
+            case Punjabi:
+                return ""
+            case Sanskrit:
+                return ""
+            case Tamil:
+                return ""
+            case Telugu:
+                return ""
+            case Urdu:
+                return ""
+            case Indonesian:
+                return ""
+            case Russian:
+                return ""
+            case Spanish:
+                return ""
+            case French:
+                return ""
+            case German:
+                return ""
+            case Italian:
+                return ""
+            case Korean:
+                return ""
+            case Turkish:
+                return ""
+            case Portuguese:
+                return ""
+            case Portuguese:
+                return ""
+            case JpHiragana:
+                return "ca-app-pub-9133033983333483/4102060257"
+            case JpKatakana:
+                return "ca-app-pub-9133033983333483/4102060257"
+            default://English
+                return "ca-app-pub-9133033983333483/4102060257"
+            }
+        }
+    }
 
     //var void (^adFailWithCompletion)(BOOL success);
 
+    private var isMobileAdsStartCalled = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         self.view.frame = CGRect.zero
         
         let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
@@ -69,61 +134,72 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     }
     
     func requestConsentInfoUpdate(){
-        // Create a UMPRequestParameters object.
-        let parameters = UMPRequestParameters()
-        
-        let debugSettings = UMPDebugSettings()
-        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ] //["275b5f12d7a4d7ffe03eb5b6b3daf1db"]
-        debugSettings.geography = UMPDebugGeography.EEA
-        
-        // Set tag for under age of consent. Here false means users are not under age.
-        parameters.tagForUnderAgeOfConsent = false
-        
-        // Request an update to the consent information.
-        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(
-            with: parameters,
-            completionHandler: { [self] error in
-
-              // The consent information has updated.
-              if error != nil {
-                // Handle the error.
-                  print("consent error::\(error)")
-              } else {
-                // The consent information state was updated.
-                // You are now ready to see if a form is available.
-                let formStatus = UMPConsentInformation.sharedInstance.formStatus
-                  print("formStatus::\(formStatus.rawValue)")
-                if formStatus == UMPFormStatus.available {
-                  loadForm()
+            // Create a UMPRequestParameters object.
+            let parameters = UMPRequestParameters()
+            // Set tag for under age of consent. false means users are not under age
+            // of consent.
+            let debugSettings = UMPDebugSettings()
+            parameters.tagForUnderAgeOfConsent = false
+            debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
+            debugSettings.geography = .EEA
+            parameters.debugSettings = debugSettings
+            
+            
+            // Request an update for the consent information.
+            UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) {
+                [weak self] requestConsentError in
+                guard let self else { return }
+                
+                if let consentError = requestConsentError {
+                    // Consent gathering failed.
+                    return print("Error: \(consentError.localizedDescription)")
                 }
-              }
-            })
-    }
     
-    func loadForm() {
-        UMPConsentForm.load(completionHandler: { form, loadError in
-        if loadError != nil {
-          // Handle the error.
-            print("loadError::\(loadError)")
-        } else {
-          // Present the form. You can also hold on to the reference to present
-          // later.
-          if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
-            form?.present(
-                from: self,
-                completionHandler: { dismissError in
-                  if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
-                    // App can start requesting ads.
+                UMPConsentForm.load(completionHandler: { form, loadError in
+                if loadError != nil {
+                  // Handle the error.
+                    print("loadError::\(loadError)")
+                } else {
+                  // Present the form. You can also hold on to the reference to present
+                  // later.
+                  if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
+                    form?.present(
+                        from: self,
+                        completionHandler: { dismissError in
+                          if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
+                            // App can start requesting ads.
+                          }
+                            // Handle dismissal by reloading form.
+                        })
+                  } else {
+                    // Keep the form available for changes to user consent.
                   }
-                    // Handle dismissal by reloading form.
-                    self.loadForm()
-                })
-          } else {
-            // Keep the form available for changes to user consent.
-          }
+                }
+              })
+                
+            }
+            
+            // Check if you can initialize the Google Mobile Ads SDK in parallel
+            // while checking for new consent information. Consent obtained in
+            // the previous session can be used to request ads.
+    //        if UMPConsentInformation.sharedInstance.canRequestAds {
+    //            startGoogleMobileAdsSDK()
+    //        }
         }
-      })
-    }
+        
+        private func startGoogleMobileAdsSDK() {
+            DispatchQueue.main.async {
+                guard !self.isMobileAdsStartCalled else { return }
+
+                self.isMobileAdsStartCalled = true
+
+              // Initialize the Google Mobile Ads SDK.
+              GADMobileAds.sharedInstance().start()
+
+              // TODO: Request an ad.
+              // GADInterstitialAd.load(...)
+            }
+          }
     
     //MARK: - DELEGATE METHODS
     

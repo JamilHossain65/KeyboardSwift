@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3A1CB7DC49E54EFF9D482C5D /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
+		3A40A925A1D1EB769EFDA3D1 /* Pods_Japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E753921A61184AA080E941DE /* Pods_Japanese.framework */; };
+		41AB61559865766897269F0A /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
+		6A45486FEC38FD9B954D07C3 /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */; };
 		8D01375C2A5C595E0091CC58 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D01375D2A5C595E0091CC58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D01375E2A5C595E0091CC58 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5075D26815EF800377CBD /* Utils.swift */; };
@@ -37,7 +40,6 @@
 		8D0137772A5C595E0091CC58 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D0137782A5C595E0091CC58 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D0137792A5C595E0091CC58 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D01377A2A5C595E0091CC58 /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
 		8D01377C2A5C595E0091CC58 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D01377D2A5C595E0091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D01377F2A5C595E0091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -78,7 +80,6 @@
 		8D0137AF2A5C597D0091CC58 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D0137B02A5C597D0091CC58 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D0137B12A5C597D0091CC58 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D0137B22A5C597D0091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */; };
 		8D0137B42A5C597D0091CC58 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D0137B52A5C597D0091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D0137B62A5C597D0091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -121,7 +122,6 @@
 		8D0137E82A5C59860091CC58 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D0137E92A5C59860091CC58 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D0137EA2A5C59860091CC58 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D0137EB2A5C59860091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */; };
 		8D0137ED2A5C59860091CC58 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D0137EE2A5C59860091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D0137EF2A5C59860091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -164,7 +164,6 @@
 		8D0138212A5C59890091CC58 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D0138222A5C59890091CC58 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D0138232A5C59890091CC58 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D0138242A5C59890091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */; };
 		8D0138262A5C59890091CC58 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D0138272A5C59890091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D0138282A5C59890091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -207,7 +206,6 @@
 		8D01385A2A5C598C0091CC58 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D01385B2A5C598C0091CC58 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D01385C2A5C598C0091CC58 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D01385D2A5C598C0091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */; };
 		8D01385F2A5C598C0091CC58 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D0138602A5C598C0091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D0138612A5C598C0091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -250,7 +248,6 @@
 		8D0138932A5C59920091CC58 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D0138942A5C59920091CC58 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D0138952A5C59920091CC58 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D0138962A5C59920091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */; };
 		8D0138982A5C59920091CC58 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D0138992A5C59920091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D01389A2A5C59920091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -293,7 +290,6 @@
 		8D0138CC2A5C59950091CC58 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D0138CD2A5C59950091CC58 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D0138CE2A5C59950091CC58 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D0138CF2A5C59950091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */; };
 		8D0138D12A5C59950091CC58 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D0138D22A5C59950091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D0138D32A5C59950091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -355,7 +351,6 @@
 		8D2E78362A5C492C00A09A80 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D2E78372A5C492C00A09A80 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D2E78382A5C492C00A09A80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D2E78392A5C492C00A09A80 /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
 		8D2E783B2A5C492C00A09A80 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D2E783C2A5C492C00A09A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D2E783E2A5C492C00A09A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -510,7 +505,6 @@
 		8D981EEC2A650AC50072A8D3 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D981EED2A650AC50072A8D3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D981EEE2A650AC50072A8D3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D981EEF2A650AC50072A8D3 /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
 		8D981EF12A650AC50072A8D3 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D981EF22A650AC50072A8D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D981EF32A650AC50072A8D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -567,7 +561,6 @@
 		8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8DFDDA8827E2F9C5005AD90B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */; };
 		8DFDDB3027E2FF16005AD90B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
-		9A388DE933C13552C122DB9A /* Pods_KeyboardSmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -775,9 +768,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSmartFonts.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts.debug.xcconfig"; sourceTree = "<group>"; };
-		394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardSmartFonts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		80483C7C6909A7CF2D87C1B9 /* Pods-KeyboardSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.release.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.release.xcconfig"; sourceTree = "<group>"; };
+		03128D8683DD49573BC1E25D /* Pods-Japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Japanese.debug.xcconfig"; path = "Target Support Files/Pods-Japanese/Pods-Japanese.debug.xcconfig"; sourceTree = "<group>"; };
+		5BC85D5E7DCE914877EB2D51 /* Pods-KeyboardSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.release.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.release.xcconfig"; sourceTree = "<group>"; };
+		6CBE26D564765851758260E0 /* Pods-SmartFonts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFonts.release.xcconfig"; path = "Target Support Files/Pods-SmartFonts/Pods-SmartFonts.release.xcconfig"; sourceTree = "<group>"; };
+		711C13B9809BF0E8A8ABB5DE /* Pods-SmartFonts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFonts.debug.xcconfig"; path = "Target Support Files/Pods-SmartFonts/Pods-SmartFonts.debug.xcconfig"; sourceTree = "<group>"; };
+		8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartFonts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D01378E2A5C595E0091CC58 /* Russian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Russian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0137C72A5C597D0091CC58 /* Druti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Druti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0138002A5C59860091CC58 /* German.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = German.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -941,9 +936,10 @@
 		8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
 		8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0F0F61278118B2289C85231 /* Pods-KeyboardSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		C227815F031A2988E8F60B3C /* Pods-Japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Japanese.release.xcconfig"; path = "Target Support Files/Pods-Japanese/Pods-Japanese.release.xcconfig"; sourceTree = "<group>"; };
 		CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSmartFonts.release.xcconfig"; path = "Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts.release.xcconfig"; sourceTree = "<group>"; };
-		FA7D550191FFE21E2B8C99BB /* Pods-KeyboardSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		E753921A61184AA080E941DE /* Pods_Japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -954,7 +950,6 @@
 				8D0137772A5C595E0091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D0137782A5C595E0091CC58 /* AdSupport.framework in Frameworks */,
 				8D0137792A5C595E0091CC58 /* StoreKit.framework in Frameworks */,
-				8D01377A2A5C595E0091CC58 /* Pods_KeyboardSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,7 +960,6 @@
 				8D0137AF2A5C597D0091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D0137B02A5C597D0091CC58 /* AdSupport.framework in Frameworks */,
 				8D0137B12A5C597D0091CC58 /* StoreKit.framework in Frameworks */,
-				8D0137B22A5C597D0091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,7 +970,6 @@
 				8D0137E82A5C59860091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D0137E92A5C59860091CC58 /* AdSupport.framework in Frameworks */,
 				8D0137EA2A5C59860091CC58 /* StoreKit.framework in Frameworks */,
-				8D0137EB2A5C59860091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -987,7 +980,7 @@
 				8D0138212A5C59890091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D0138222A5C59890091CC58 /* AdSupport.framework in Frameworks */,
 				8D0138232A5C59890091CC58 /* StoreKit.framework in Frameworks */,
-				8D0138242A5C59890091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */,
+				3A40A925A1D1EB769EFDA3D1 /* Pods_Japanese.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,7 +991,6 @@
 				8D01385A2A5C598C0091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D01385B2A5C598C0091CC58 /* AdSupport.framework in Frameworks */,
 				8D01385C2A5C598C0091CC58 /* StoreKit.framework in Frameworks */,
-				8D01385D2A5C598C0091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,7 +1001,6 @@
 				8D0138932A5C59920091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D0138942A5C59920091CC58 /* AdSupport.framework in Frameworks */,
 				8D0138952A5C59920091CC58 /* StoreKit.framework in Frameworks */,
-				8D0138962A5C59920091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,7 +1011,6 @@
 				8D0138CC2A5C59950091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D0138CD2A5C59950091CC58 /* AdSupport.framework in Frameworks */,
 				8D0138CE2A5C59950091CC58 /* StoreKit.framework in Frameworks */,
-				8D0138CF2A5C59950091CC58 /* Pods_KeyboardSmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1031,7 +1021,6 @@
 				8D2E78362A5C492C00A09A80 /* AppTrackingTransparency.framework in Frameworks */,
 				8D2E78372A5C492C00A09A80 /* AdSupport.framework in Frameworks */,
 				8D2E78382A5C492C00A09A80 /* StoreKit.framework in Frameworks */,
-				8D2E78392A5C492C00A09A80 /* Pods_KeyboardSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,7 +1031,7 @@
 				8D3AE88F2A56CE7000C74CF6 /* AppTrackingTransparency.framework in Frameworks */,
 				8D3AE8902A56CE7000C74CF6 /* AdSupport.framework in Frameworks */,
 				8D3AE8912A56CE7000C74CF6 /* StoreKit.framework in Frameworks */,
-				9A388DE933C13552C122DB9A /* Pods_KeyboardSmartFonts.framework in Frameworks */,
+				6A45486FEC38FD9B954D07C3 /* Pods_SmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1053,7 +1042,6 @@
 				8D981EEC2A650AC50072A8D3 /* AppTrackingTransparency.framework in Frameworks */,
 				8D981EED2A650AC50072A8D3 /* AdSupport.framework in Frameworks */,
 				8D981EEE2A650AC50072A8D3 /* StoreKit.framework in Frameworks */,
-				8D981EEF2A650AC50072A8D3 /* Pods_KeyboardSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1053,7 @@
 				8DA96A8827E98E08009CF1E9 /* AdSupport.framework in Frameworks */,
 				8D8741152A383F43009E1A85 /* StoreKit.framework in Frameworks */,
 				3A1CB7DC49E54EFF9D482C5D /* Pods_KeyboardSwift.framework in Frameworks */,
+				41AB61559865766897269F0A /* Pods_KeyboardSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1081,10 +1070,12 @@
 		4180F7C0840B7C14EDBBF46E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */,
-				E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */,
-				FA7D550191FFE21E2B8C99BB /* Pods-KeyboardSwift.debug.xcconfig */,
-				80483C7C6909A7CF2D87C1B9 /* Pods-KeyboardSwift.release.xcconfig */,
+				C0F0F61278118B2289C85231 /* Pods-KeyboardSwift.debug.xcconfig */,
+				5BC85D5E7DCE914877EB2D51 /* Pods-KeyboardSwift.release.xcconfig */,
+				711C13B9809BF0E8A8ABB5DE /* Pods-SmartFonts.debug.xcconfig */,
+				6CBE26D564765851758260E0 /* Pods-SmartFonts.release.xcconfig */,
+				03128D8683DD49573BC1E25D /* Pods-Japanese.debug.xcconfig */,
+				C227815F031A2988E8F60B3C /* Pods-Japanese.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1096,7 +1087,8 @@
 				8DA96A8727E98E08009CF1E9 /* AdSupport.framework */,
 				8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */,
 				CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */,
-				394F3DEC1232AD783C8E53FF /* Pods_KeyboardSmartFonts.framework */,
+				8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */,
+				E753921A61184AA080E941DE /* Pods_Japanese.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1446,13 +1438,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D01378B2A5C595E0091CC58 /* Build configuration list for PBXNativeTarget "Russian" */;
 			buildPhases = (
-				8D01375A2A5C595E0091CC58 /* [CP] Check Pods Manifest.lock */,
 				8D01375B2A5C595E0091CC58 /* Sources */,
 				8D0137762A5C595E0091CC58 /* Frameworks */,
 				8D01377B2A5C595E0091CC58 /* Resources */,
 				8D0137872A5C595E0091CC58 /* Embed App Extensions */,
-				8D0137892A5C595E0091CC58 /* [CP] Embed Pods Frameworks */,
-				8D01378A2A5C595E0091CC58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1468,13 +1457,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0137C42A5C597D0091CC58 /* Build configuration list for PBXNativeTarget "Druti" */;
 			buildPhases = (
-				8D0137922A5C597D0091CC58 /* [CP] Check Pods Manifest.lock */,
 				8D0137932A5C597D0091CC58 /* Sources */,
 				8D0137AE2A5C597D0091CC58 /* Frameworks */,
 				8D0137B32A5C597D0091CC58 /* Resources */,
 				8D0137C02A5C597D0091CC58 /* Embed App Extensions */,
-				8D0137C22A5C597D0091CC58 /* [CP] Embed Pods Frameworks */,
-				8D0137C32A5C597D0091CC58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1490,13 +1476,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0137FD2A5C59860091CC58 /* Build configuration list for PBXNativeTarget "German" */;
 			buildPhases = (
-				8D0137CB2A5C59860091CC58 /* [CP] Check Pods Manifest.lock */,
 				8D0137CC2A5C59860091CC58 /* Sources */,
 				8D0137E72A5C59860091CC58 /* Frameworks */,
 				8D0137EC2A5C59860091CC58 /* Resources */,
 				8D0137F92A5C59860091CC58 /* Embed App Extensions */,
-				8D0137FB2A5C59860091CC58 /* [CP] Embed Pods Frameworks */,
-				8D0137FC2A5C59860091CC58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1512,13 +1495,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0138362A5C59890091CC58 /* Build configuration list for PBXNativeTarget "Japanese" */;
 			buildPhases = (
-				8D0138042A5C59890091CC58 /* [CP] Check Pods Manifest.lock */,
+				7197AE9716D6399D015F3421 /* [CP] Check Pods Manifest.lock */,
 				8D0138052A5C59890091CC58 /* Sources */,
 				8D0138202A5C59890091CC58 /* Frameworks */,
 				8D0138252A5C59890091CC58 /* Resources */,
 				8D0138322A5C59890091CC58 /* Embed App Extensions */,
-				8D0138342A5C59890091CC58 /* [CP] Embed Pods Frameworks */,
-				8D0138352A5C59890091CC58 /* [CP] Copy Pods Resources */,
+				4B76737DF3B7DCE2BF4669B9 /* [CP] Embed Pods Frameworks */,
+				A19416FE9592A608DC45D034 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1534,13 +1517,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D01386F2A5C598C0091CC58 /* Build configuration list for PBXNativeTarget "Spanish" */;
 			buildPhases = (
-				8D01383D2A5C598C0091CC58 /* [CP] Check Pods Manifest.lock */,
 				8D01383E2A5C598C0091CC58 /* Sources */,
 				8D0138592A5C598C0091CC58 /* Frameworks */,
 				8D01385E2A5C598C0091CC58 /* Resources */,
 				8D01386B2A5C598C0091CC58 /* Embed App Extensions */,
-				8D01386D2A5C598C0091CC58 /* [CP] Embed Pods Frameworks */,
-				8D01386E2A5C598C0091CC58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1556,13 +1536,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0138A82A5C59920091CC58 /* Build configuration list for PBXNativeTarget "Turkish" */;
 			buildPhases = (
-				8D0138762A5C59920091CC58 /* [CP] Check Pods Manifest.lock */,
 				8D0138772A5C59920091CC58 /* Sources */,
 				8D0138922A5C59920091CC58 /* Frameworks */,
 				8D0138972A5C59920091CC58 /* Resources */,
 				8D0138A42A5C59920091CC58 /* Embed App Extensions */,
-				8D0138A62A5C59920091CC58 /* [CP] Embed Pods Frameworks */,
-				8D0138A72A5C59920091CC58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1578,13 +1555,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0138E12A5C59950091CC58 /* Build configuration list for PBXNativeTarget "Indian" */;
 			buildPhases = (
-				8D0138AF2A5C59950091CC58 /* [CP] Check Pods Manifest.lock */,
 				8D0138B02A5C59950091CC58 /* Sources */,
 				8D0138CB2A5C59950091CC58 /* Frameworks */,
 				8D0138D02A5C59950091CC58 /* Resources */,
 				8D0138DD2A5C59950091CC58 /* Embed App Extensions */,
-				8D0138DF2A5C59950091CC58 /* [CP] Embed Pods Frameworks */,
-				8D0138E02A5C59950091CC58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1600,13 +1574,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D2E784A2A5C492C00A09A80 /* Build configuration list for PBXNativeTarget "ThaiKeyboard" */;
 			buildPhases = (
-				8D2E78192A5C492C00A09A80 /* [CP] Check Pods Manifest.lock */,
 				8D2E781A2A5C492C00A09A80 /* Sources */,
 				8D2E78352A5C492C00A09A80 /* Frameworks */,
 				8D2E783A2A5C492C00A09A80 /* Resources */,
 				8D2E78462A5C492C00A09A80 /* Embed App Extensions */,
-				8D2E78482A5C492C00A09A80 /* [CP] Embed Pods Frameworks */,
-				8D2E78492A5C492C00A09A80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1644,13 +1615,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D981F002A650AC50072A8D3 /* Build configuration list for PBXNativeTarget "Burmese" */;
 			buildPhases = (
-				8D981ECF2A650AC50072A8D3 /* [CP] Check Pods Manifest.lock */,
 				8D981ED02A650AC50072A8D3 /* Sources */,
 				8D981EEB2A650AC50072A8D3 /* Frameworks */,
 				8D981EF02A650AC50072A8D3 /* Resources */,
 				8D981EFC2A650AC50072A8D3 /* Embed App Extensions */,
-				8D981EFE2A650AC50072A8D3 /* [CP] Embed Pods Frameworks */,
-				8D981EFF2A650AC50072A8D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2044,15 +2012,32 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B76737DF3B7DCE2BF4669B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		67A4EE7264EB410A25C138F2 /* [CP] Check Pods Manifest.lock */ = {
@@ -2070,14 +2055,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSmartFonts-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SmartFonts-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8D01375A2A5C595E0091CC58 /* [CP] Check Pods Manifest.lock */ = {
+		7197AE9716D6399D015F3421 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2092,493 +2077,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSwift-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Japanese-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8D0137892A5C595E0091CC58 /* [CP] Embed Pods Frameworks */ = {
+		A19416FE9592A608DC45D034 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D01378A2A5C595E0091CC58 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0137922A5C597D0091CC58 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSmartFonts-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0137C22A5C597D0091CC58 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0137C32A5C597D0091CC58 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0137CB2A5C59860091CC58 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSmartFonts-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0137FB2A5C59860091CC58 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0137FC2A5C59860091CC58 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138042A5C59890091CC58 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSmartFonts-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138342A5C59890091CC58 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138352A5C59890091CC58 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D01383D2A5C598C0091CC58 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSmartFonts-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D01386D2A5C598C0091CC58 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D01386E2A5C598C0091CC58 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138762A5C59920091CC58 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSmartFonts-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138A62A5C59920091CC58 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138A72A5C59920091CC58 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138AF2A5C59950091CC58 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSmartFonts-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138DF2A5C59950091CC58 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0138E02A5C59950091CC58 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D2E78192A5C492C00A09A80 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D2E78482A5C492C00A09A80 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D2E78492A5C492C00A09A80 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D981ECF2A650AC50072A8D3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KeyboardSwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D981EFE2A650AC50072A8D3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D981EFF2A650AC50072A8D3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C962F6312DA26214E318C424 /* [CP] Embed Pods Frameworks */ = {
@@ -2604,15 +2124,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardSmartFonts/Pods-KeyboardSmartFonts-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1B066FCA8244EE1BBA6C525 /* [CP] Copy Pods Resources */ = {
@@ -3149,7 +2669,6 @@
 /* Begin XCBuildConfiguration section */
 		8D01378C2A5C595E0091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA7D550191FFE21E2B8C99BB /* Pods-KeyboardSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3178,7 +2697,6 @@
 		};
 		8D01378D2A5C595E0091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80483C7C6909A7CF2D87C1B9 /* Pods-KeyboardSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3208,7 +2726,6 @@
 		};
 		8D0137C52A5C597D0091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3237,7 +2754,6 @@
 		};
 		8D0137C62A5C597D0091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3267,7 +2783,6 @@
 		};
 		8D0137FE2A5C59860091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3296,7 +2811,6 @@
 		};
 		8D0137FF2A5C59860091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3326,7 +2840,7 @@
 		};
 		8D0138372A5C59890091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */;
+			baseConfigurationReference = 03128D8683DD49573BC1E25D /* Pods-Japanese.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3334,7 +2848,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Japanese-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3342,7 +2856,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3355,7 +2869,7 @@
 		};
 		8D0138382A5C59890091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */;
+			baseConfigurationReference = C227815F031A2988E8F60B3C /* Pods-Japanese.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3363,7 +2877,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Japanese-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3372,7 +2886,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3385,7 +2899,6 @@
 		};
 		8D0138702A5C598C0091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3414,7 +2927,6 @@
 		};
 		8D0138712A5C598C0091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3444,7 +2956,6 @@
 		};
 		8D0138A92A5C59920091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3473,7 +2984,6 @@
 		};
 		8D0138AA2A5C59920091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3503,7 +3013,6 @@
 		};
 		8D0138E22A5C59950091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3532,7 +3041,6 @@
 		};
 		8D0138E32A5C59950091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3562,7 +3070,6 @@
 		};
 		8D2E784B2A5C492C00A09A80 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA7D550191FFE21E2B8C99BB /* Pods-KeyboardSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3591,7 +3098,6 @@
 		};
 		8D2E784C2A5C492C00A09A80 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80483C7C6909A7CF2D87C1B9 /* Pods-KeyboardSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3621,7 +3127,7 @@
 		};
 		8D3AE8A32A56CE7000C74CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F6C8AE12E3CFF3C4F7F09E /* Pods-KeyboardSmartFonts.debug.xcconfig */;
+			baseConfigurationReference = 711C13B9809BF0E8A8ABB5DE /* Pods-SmartFonts.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3650,7 +3156,7 @@
 		};
 		8D3AE8A42A56CE7000C74CF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E847D6B0DB1736AE950D5478 /* Pods-KeyboardSmartFonts.release.xcconfig */;
+			baseConfigurationReference = 6CBE26D564765851758260E0 /* Pods-SmartFonts.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3680,7 +3186,6 @@
 		};
 		8D981F012A650AC50072A8D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA7D550191FFE21E2B8C99BB /* Pods-KeyboardSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3709,7 +3214,6 @@
 		};
 		8D981F022A650AC50072A8D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80483C7C6909A7CF2D87C1B9 /* Pods-KeyboardSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3857,7 +3361,7 @@
 		};
 		8DE7F95D25E4476900D3C48A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA7D550191FFE21E2B8C99BB /* Pods-KeyboardSwift.debug.xcconfig */;
+			baseConfigurationReference = C0F0F61278118B2289C85231 /* Pods-KeyboardSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3886,7 +3390,7 @@
 		};
 		8DE7F95E25E4476900D3C48A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80483C7C6909A7CF2D87C1B9 /* Pods-KeyboardSwift.release.xcconfig */;
+			baseConfigurationReference = 5BC85D5E7DCE914877EB2D51 /* Pods-KeyboardSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -3921,7 +3425,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3930,7 +3434,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3950,7 +3454,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3959,7 +3463,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
