@@ -17,7 +17,13 @@ import UserMessagingPlatform
 
 class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     private var isMobileAdsStartCalled = false
-    private var consentForm:UMPConsentForm?
+    //app setting:: 7
+    //MARK: - TODO manually: "Bundle display name" of 'TargetName_info.plist' file replace to keyboardExtension "Display Name".
+    //copy "Bundle identifier" from submit_info.txt file and paste the Bundle Identifier to keyboardExtension.
+    //select group from  Siging & Capabilities both target app and keyboardExtension app.
+    
+    //app setting:: 8
+    //MARK: - TODO manually: Target version and keyboardExtension will be same.
     
     //access token
     //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
@@ -26,10 +32,6 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
     //app setting::12
-    //let fullVersionID = "com.vaticsoft.iap.russianKeyboard"
-    //let fullVersionID = "SmartFontRemoveAds"
-    //let fullVersionID = "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
-    
     var fullVersionID: String {
         get {
             let langName = getString(SelectedLanguage)
@@ -40,7 +42,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
             case BanglaGoti:
                 return ""
             case BanglaDruti:
-                return ""
+                return "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
             case Gujarati:
                 return ""
             case Hindi:
@@ -68,7 +70,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
             case Indonesian:
                 return ""
             case Russian:
-                return ""
+                return "com.vaticsoft.iap.russianKeyboard"
             case Spanish:
                 return ""
             case French:

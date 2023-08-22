@@ -8,7 +8,7 @@
 // MARK: - Keboard Constants
 "k123String"    = "一二";
 "kSymbolString" = "#+=";
-"kAbcString"    = "あかさ";
+"kAbcString"    = "あか";
 "kReturnString" = "戻る";
 "kSpaceString"  = "日本語";
 "kStopSpace"    = ". ";

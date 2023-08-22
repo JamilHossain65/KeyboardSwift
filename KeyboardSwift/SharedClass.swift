@@ -8,8 +8,6 @@
 
 import Foundation
 
-//app setting::109
-//change app icon and bundle id in both app target and extension target
 //app setting::108
 var isProduction = false
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
@@ -68,7 +66,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:true, Thai   :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai   :false,  JpHiragana:true,
     JpKatakana:false, Burmese:false
 ]
 
