@@ -70,7 +70,11 @@ target 'SmartFonts' do
 end
 
 target 'Japanese' do
-    appodeal
-    otherFramework
+  appodeal
+  otherFramework
 end
 
+target 'Druti' do
+  appodeal
+  otherFramework
+end

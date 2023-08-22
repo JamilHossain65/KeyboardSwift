@@ -561,6 +561,7 @@
 		8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8DFDDA8827E2F9C5005AD90B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */; };
 		8DFDDB3027E2FF16005AD90B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		F105AA684423D720AD7082CF /* Pods_Druti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3385BC88752144EC562E58F /* Pods_Druti.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -936,9 +937,12 @@
 		8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
 		8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A255CBA40803ECC4E424E840 /* Pods-Druti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druti.release.xcconfig"; path = "Target Support Files/Pods-Druti/Pods-Druti.release.xcconfig"; sourceTree = "<group>"; };
+		ABEF1CF7916B95F4D86B6152 /* Pods-Druti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druti.debug.xcconfig"; path = "Target Support Files/Pods-Druti/Pods-Druti.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F0F61278118B2289C85231 /* Pods-KeyboardSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		C227815F031A2988E8F60B3C /* Pods-Japanese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Japanese.release.xcconfig"; path = "Target Support Files/Pods-Japanese/Pods-Japanese.release.xcconfig"; sourceTree = "<group>"; };
 		CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3385BC88752144EC562E58F /* Pods_Druti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Druti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E753921A61184AA080E941DE /* Pods_Japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -960,6 +964,7 @@
 				8D0137AF2A5C597D0091CC58 /* AppTrackingTransparency.framework in Frameworks */,
 				8D0137B02A5C597D0091CC58 /* AdSupport.framework in Frameworks */,
 				8D0137B12A5C597D0091CC58 /* StoreKit.framework in Frameworks */,
+				F105AA684423D720AD7082CF /* Pods_Druti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1081,8 @@
 				6CBE26D564765851758260E0 /* Pods-SmartFonts.release.xcconfig */,
 				03128D8683DD49573BC1E25D /* Pods-Japanese.debug.xcconfig */,
 				C227815F031A2988E8F60B3C /* Pods-Japanese.release.xcconfig */,
+				ABEF1CF7916B95F4D86B6152 /* Pods-Druti.debug.xcconfig */,
+				A255CBA40803ECC4E424E840 /* Pods-Druti.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1089,6 +1096,7 @@
 				CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */,
 				8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */,
 				E753921A61184AA080E941DE /* Pods_Japanese.framework */,
+				D3385BC88752144EC562E58F /* Pods_Druti.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1457,10 +1465,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D0137C42A5C597D0091CC58 /* Build configuration list for PBXNativeTarget "Druti" */;
 			buildPhases = (
+				9BAA04CA4E8A566FBD79CF07 /* [CP] Check Pods Manifest.lock */,
 				8D0137932A5C597D0091CC58 /* Sources */,
 				8D0137AE2A5C597D0091CC58 /* Frameworks */,
 				8D0137B32A5C597D0091CC58 /* Resources */,
 				8D0137C02A5C597D0091CC58 /* Embed App Extensions */,
+				3F07CA83FA9A82C1FB68B525 /* [CP] Embed Pods Frameworks */,
+				A4A6E37543CEDFF7DEAC5A90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1984,6 +1995,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3F07CA83FA9A82C1FB68B525 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3F0A2B9132DAB78194CD5518 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2084,6 +2112,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9BAA04CA4E8A566FBD79CF07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Druti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A19416FE9592A608DC45D034 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2099,6 +2149,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4A6E37543CEDFF7DEAC5A90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C962F6312DA26214E318C424 /* [CP] Embed Pods Frameworks */ = {
@@ -2726,6 +2793,7 @@
 		};
 		8D0137C52A5C597D0091CC58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABEF1CF7916B95F4D86B6152 /* Pods-Druti.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2741,7 +2809,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2754,6 +2822,7 @@
 		};
 		8D0137C62A5C597D0091CC58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A255CBA40803ECC4E424E840 /* Pods-Druti.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2770,7 +2839,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3436,7 +3505,7 @@
 				);
 				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3465,7 +3534,7 @@
 				);
 				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

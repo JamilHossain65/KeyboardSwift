@@ -27,7 +27,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case BanglaGoti:
                 return ""
             case BanglaDruti:
-                return ""
+                return "ca-app-pub-9133033983333483/9411877271"
             case Gujarati:
                 return ""
             case Hindi:
@@ -77,7 +77,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case JpKatakana:
                 return "ca-app-pub-9133033983333483/4102060257"
             default://English
-                return "ca-app-pub-9133033983333483/4102060257"
+                return ""
             }
         }
     }

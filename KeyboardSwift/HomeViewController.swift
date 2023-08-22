@@ -183,16 +183,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("consentForm::\(consentForm)")
         
-        consentForm?.present(
-            from: self,
-            completionHandler: { dismissError in
-                if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
-                    // App can start requesting ads.
-                }
-                // Handle dismissal by reloading form.
-            })
     }
     
     func requestConsentInfoUpdate(){
@@ -202,8 +193,9 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
         // of consent.
         let debugSettings = UMPDebugSettings()
         parameters.tagForUnderAgeOfConsent = false
-        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
-        debugSettings.geography = .EEA
+        //app setting::5
+//        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
+//        debugSettings.geography = .EEA
         parameters.debugSettings = debugSettings
         
         // Request an update for the consent information.
@@ -235,9 +227,6 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
             } else {
                 // Present the form. You can also hold on to the reference to present
                 // later.
-                self.consentForm = form
-                print("self.consentForm::\(self.consentForm)")
-                
                 if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
                     form?.present(
                         from: self,
@@ -249,7 +238,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
                         })
                 } else {
                     // Keep the form available for changes to user consent.
-                    print("Keep the form available for changes to user consent.")
+                    
                 }
             }
         })
