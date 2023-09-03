@@ -12,9 +12,20 @@ import Foundation
 var isProduction = false
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 60*60 //60 min
+let kPrevAdShownTime = "kPrevAdShownTime"
+
+enum AD_LOADING_STATUS:Int {
+    case NOT_REQUESTED
+    case REQUESTED
+    case LOADING
+    case LOADED
+}
+
+var adLoadingStatus:AD_LOADING_STATUS = .NOT_REQUESTED
+let kAdLoadingStatus = "kAdLoadingStatus"
 
 let kIsPurchaed = "kIsPurchaed"
-
+let kIsAppUsed = "kIsAppUsed"
 
 let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"
@@ -66,7 +77,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai   :false,  JpHiragana:true,
+    BanglaGoti:false, BanglaDruti:true, Thai   :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false
 ]
 
@@ -135,4 +146,21 @@ extension NSObject {
     var thisClassName: String {
         return NSStringFromClass(type(of: self))
     }
+}
+
+//MARK: - Ad Shown Time
+func getCurrentTime() ->TimeInterval{
+    let timeStamp = TimeInterval(1000 * Date().timeIntervalSince1970)
+    return timeStamp
+}
+
+func savePreAdShownTime(sec:TimeInterval? = 0){
+    let currentTime = getCurrentTime() + sec!
+    print("prev ad shwon Time::\(currentTime)")
+    setObject(currentTime, key: kPrevAdShownTime)
+}
+
+func getPreAdShownTime() -> TimeInterval{
+    let tm = getObject(kPrevAdShownTime) as? TimeInterval ?? getCurrentTime()
+    return tm
 }

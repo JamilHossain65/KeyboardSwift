@@ -10,7 +10,7 @@ import UIKit
 import Appodeal
 import FirebaseCore
 import FirebaseAuth
-//import GoogleMobileAds
+import GoogleMobileAds
 import AppTrackingTransparency
 import UserNotifications
 import AdSupport
@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         AdManager.shared.appodealInitializeSDK()
 //        let adManager = AdManager()
 //        adManager.requestConsentInfo()
+        GADMobileAds.sharedInstance().start()
         return true
     }
     

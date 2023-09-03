@@ -15,8 +15,10 @@ import Appodeal
 import GoogleMobileAds
 import UserMessagingPlatform
 
-class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
+class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
+    
     private var isMobileAdsStartCalled = false
+    private var rewardedInterstitialAd: GADRewardedInterstitialAd?
     //app setting:: 7
     //MARK: - TODO manually: "Bundle display name" of 'TargetName_info.plist' file replace to keyboardExtension "Display Name".
     //copy "Bundle identifier" from submit_info.txt file and paste the Bundle Identifier to keyboardExtension.
@@ -92,7 +94,7 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
             case JpKatakana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
             default://English
-                return "com.vaticsoft.iap.JapaneseKeyboard"
+                return "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
             }
         }
     }
@@ -109,15 +111,24 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})//MARK: - make it ordered array
     
     let dropDown = DropDown()
-    var IS_LAUNCHING_AD = false
+    
+    let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
+    let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
-        IS_LAUNCHING_AD = true
+        //requestConsentInfoUpdate()
         
-        requestConsentInfoUpdate()
+        if !isPurchased {//not paid user
+            loadAd()
+            if isAppUsed{ //app already used
+                perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 5)
+                perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
+            }
+        }
         
         let restore = UIBarButtonItem(title: "Restore", style: .plain, target: self, action: #selector(restoreButtonPressed))
         let buy = UIBarButtonItem(title: "Buy", style: .plain, target: self, action: #selector(buyButtonPressed))
@@ -185,7 +196,32 @@ class HomeViewController: UIViewController,UNUserNotificationCenterDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+    }
+    
+    @objc func checkAdLoadRequesting(){
+        print("adLoadingStatus::\(adLoadingStatus)")
+        switch adLoadingStatus{
+        case .REQUESTED:
+            adLoadingStatus = .LOADING
+            perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 10)
+            break
+        case .LOADING:
+            perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 10)
+            break
+        default:
+            break
+        }
+    }
+    
+    func showAdmobAdFromHelperApp(){
+        if isAppUsed{ //app already used
+            AdmobController.shared.showRewardedInterstitial(self)
+        }
+    }
+    
+    @objc func loadAdmob(){
+        //AdManager.shared.loadAdMobAdsOnParrent(self)
+        AdmobController.shared.loadRewardedInterstitial(self)
     }
     
     func requestConsentInfoUpdate(){
@@ -502,22 +538,36 @@ extension HomeViewController:UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView){
         //if #available(iOS 15.0, *) { }
         //app setting::114
-        if (self.IS_LAUNCHING_AD){ //MARK:- todo enable this keyboard
+        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
+        
+        if !isAppUsed { //MARK:- todo enable this keyboard
             let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
             if !isPurchased{
-                self.perform(#selector(self.showAd), with: nil, afterDelay: 0)
+                setObject(1, key: kIsAppUsed)
+                showAd()
+                loadAd()
                 //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
             }
-            
-            self.IS_LAUNCHING_AD = false
         }
     }
     
-     @objc func showAd(){
+    @objc func showAd(){
+        print("showAd...")
         perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
-        let adManager = AdManager()
-        adManager.showAdMobAdsOnParrent(self)
+        //AdManager.shared.showAdMob(self)
+        AdmobController.shared.showRewardedInterstitial(self)
     }
+    
+    @objc func loadAd(){
+        perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME*0.7)
+        AdmobController.shared.loadRewardedInterstitial(self)
+    }
+    
+    @objc func showFbMetaAd(){
+       perform(#selector(showFbMetaAd), with: nil, afterDelay: AD_MIN_TIME)
+       let adManager = AdManager()
+       adManager.showFbMetaAdsOnParrent(self)
+   }
     
     @objc func showAppodealAd(){
 //        let adManager = AdManager()

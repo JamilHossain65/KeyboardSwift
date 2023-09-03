@@ -326,6 +326,28 @@ extension String {
     }
 }
 
+class BaseViewController: UIViewController {
+
+    var hideStatusBar: Bool = false {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+
+    override var prefersStatusBarHidden: Bool {
+           return hideStatusBar
+    }
+    
+    //implement like this way
+    //hideStatusBar = true
+}
+
+extension UINavigationController {
+    var rootViewController: UIViewController? {
+        return viewControllers.first
+    }
+}
+
 
 
 

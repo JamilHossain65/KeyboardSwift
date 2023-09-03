@@ -53,14 +53,14 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(JpHiragana, for: .normal) //MARK: - do it dynamic
+        button.setTitle(BanglaDruti, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
         
         let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
-        if !isPurchased{
-            self.perform(#selector(openContainerApp), with: nil, afterDelay: AD_MIN_TIME)
+        if !isPurchased {
+            self.perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME)
         }
     }
     
@@ -79,12 +79,27 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             // read from clipboard
             let content = UIPasteboard.general.string
             self.textDocumentProxy.insertText(content ?? "")
+            
+            //check first ad
+            let nowTime   = getCurrentTime()
+            let PrevTime  = getObject(kPrevAdShownTime) as? TimeInterval ?? nowTime
+            
+            //check for first time ad show
+            if nowTime == PrevTime || (nowTime - PrevTime) > AD_MIN_TIME*1000 {
+                adLoadingStatus = .REQUESTED
+                setObject(Int(adLoadingStatus.rawValue), key: kAdLoadingStatus)
+                self.perform(#selector(loadAd), with: nil, afterDelay: 10)
+            }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showView()
+    }
+    
+    @objc func loadAd(){
+        openContainerApp()
     }
     
     func refreshWordFile(){

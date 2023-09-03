@@ -61,7 +61,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 case .authorized:
                     // Tracking authorization dialog was shown
                     // and we are authorized
-                    print("Authorized")
+                    DispatchQueue.main.async {
+                        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+                            if let homVC:HomeViewController = navigationController.rootViewController as? HomeViewController {
+                                homVC.showAdmobAdFromHelperApp()
+                            }
+                        }
+                        print("Authorized")
+                    }
+                
                 case .denied:
                     // Tracking authorization dialog was
                     // shown and permission is denied

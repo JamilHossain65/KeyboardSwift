@@ -15,7 +15,7 @@ class AdManager: UIViewController {
 
     }
     
-    func showAdMobAdsOnParrent(_ viewController:UIViewController){
+    func loadAdMobAdsOnParrent(_ viewController:UIViewController){
         /*
         FirebaseHelper *firebaseHelper = [FirebaseHelper sharedInstance];
         AdmobAd *adVC = [[AdmobAd alloc]initWithNibName:@"AdmobAd" bundle:nil];
@@ -28,8 +28,28 @@ class AdManager: UIViewController {
          */
         
         //app setting::107
-        let admobController = AdmobController()
-        admobController.showOn(viewController)
+        AdmobController.shared.loadAdmobOn(viewController)
+    }
+    
+    func showAdMob(_ viewController:UIViewController){
+        AdmobController.shared.showRewardedInterstitial(viewController)
+    }
+    
+    func showFbMetaAdsOnParrent(_ viewController:UIViewController){
+        /*
+        FirebaseHelper *firebaseHelper = [FirebaseHelper sharedInstance];
+        AdmobAd *adVC = [[AdmobAd alloc]initWithNibName:@"AdmobAd" bundle:nil];
+        adVC.admobAdKey = [firebaseHelper getValue:kADMOBE_AD_KEY];
+        adVC.adFailWithCompletion = ^(BOOL success){
+            self.completionHandlerAdmob(success);
+        };
+        [viewController.view addSubview:adVC.view];
+        [viewController addChildViewController:adVC];
+         */
+        
+        //app setting::207
+        let fbAudienceNetwork = FBAudienceNetwork()
+        fbAudienceNetwork.showOn(viewController)
     }
     
     func requestConsentInfo(){
@@ -47,6 +67,7 @@ class AdManager: UIViewController {
         let appodealController = AdAppodeal()
         appodealController.initializeAppodealSDK()
     }
+    
     func showAppodealAdsOnParrent(_ viewController:UIViewController){
         let appodealController = AdAppodeal()
         appodealController.showOn(viewController)

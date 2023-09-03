@@ -9,25 +9,26 @@ import UIKit
 import GoogleMobileAds
 import UserMessagingPlatform
 
+//https://developers.facebook.com/docs/audience-network/guides/setting-up/ad-setup/ios/rewarded-video
+
 class AdmobController: UIViewController, GADFullScreenContentDelegate {
-    public static let sharedInstance = AdmobController()
+    public static let shared = AdmobController()
     typealias admobCompletion = (_ success:Bool) -> Void
     
-    private var interstitial: GADInterstitialAd?
+    //private var rewardedInterstitialAd: GADRewardedInterstitialAd?
+    private var interstitialAd: GADInterstitialAd?
     
     //app setting:: 6
-    //var admobAdKey = {return "ca-app-pub-9133033983333483/6077303084"}
     var admobAdKey: String {
         get {
             let langName = getString(SelectedLanguage)
-            
             switch langName {
             case Bangla:
                 return ""
             case BanglaGoti:
                 return ""
             case BanglaDruti:
-                return "ca-app-pub-9133033983333483/9411877271"
+                return "ca-app-pub-9133033983333483/1492998119"
             case Gujarati:
                 return ""
             case Hindi:
@@ -77,7 +78,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case JpKatakana:
                 return "ca-app-pub-9133033983333483/4102060257"
             default://English
-                return ""
+                return "ca-app-pub-9133033983333483/1492998119" //MARK: - todo
             }
         }
     }
@@ -89,20 +90,6 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.frame = CGRect.zero
-        
-        let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
-        if !isPurchased{
-            let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID: admobAdKey, request: request ) { (ad, error) in
-                if let error = error {
-                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                    return
-                }
-                self.interstitial = ad
-                self.interstitial?.fullScreenContentDelegate = self
-                self.interstitial?.present(fromRootViewController: self)
-            }
-        }
         
         let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? ""
         print("deviceID::\(String(describing: deviceID))")
@@ -118,98 +105,146 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         
     }
     
-    func showOn(_ viewController:UIViewController){
+    func loadAdmobOn(_ viewController:UIViewController){
         let adVC = AdmobController(nibName: "AdmobController", bundle: nil)
         viewController.view.addSubview(adVC.view)
         viewController.addChild(adVC)
     }
     
-    @objc func showAd(){
-        if interstitial != nil {
-            //interstitial?.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-            perform(#selector(showAd), with: nil, afterDelay: 2)
+    func loadRewardedInterstitial(_ viewController:UIViewController, isShow:Bool? = false){
+        //Rewarded interstitial
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
+            if let error = error {
+                return print("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
+            }
+
+            AdmobController.shared.interstitialAd = ad
+            AdmobController.shared.interstitialAd?.fullScreenContentDelegate = self
+            //let options = GADServerSideVerificationOptions()
+              //    options.customRewardString = "SAMPLE_CUSTOM_DATA_STRING"
+            //AdmobController.shared.interstitialAd?.serverSideVerificationOptions = options
+            
+            adLoadingStatus = .LOADED
+            print("isShow::\(isShow!)")
+            if isShow!{
+                self.loadAdmobOn(viewController)
+                AdmobController.shared.interstitialAd?.present(fromRootViewController: viewController)
+            }
+            
+            print("ad loaded:::\(AdmobController.shared.interstitialAd)")
         }
     }
     
-    func requestConsentInfoUpdate(){
-            // Create a UMPRequestParameters object.
-            let parameters = UMPRequestParameters()
-            // Set tag for under age of consent. false means users are not under age
-            // of consent.
-            let debugSettings = UMPDebugSettings()
-            parameters.tagForUnderAgeOfConsent = false
-            debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
-            debugSettings.geography = .EEA
-            parameters.debugSettings = debugSettings
-            
-            
-            // Request an update for the consent information.
-            UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) {
-                [weak self] requestConsentError in
-                guard let self else { return }
-                
-                if let consentError = requestConsentError {
-                    // Consent gathering failed.
-                    return print("Error: \(consentError.localizedDescription)")
-                }
-    
-                UMPConsentForm.load(completionHandler: { form, loadError in
-                if loadError != nil {
-                  // Handle the error.
-                    print("loadError::\(loadError)")
-                } else {
-                  // Present the form. You can also hold on to the reference to present
-                  // later.
-                  if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
-                    form?.present(
-                        from: self,
-                        completionHandler: { dismissError in
-                          if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
-                            // App can start requesting ads.
-                          }
-                            // Handle dismissal by reloading form.
-                        })
-                  } else {
-                    // Keep the form available for changes to user consent.
-                  }
-                }
-              })
-                
-            }
-            
-            // Check if you can initialize the Google Mobile Ads SDK in parallel
-            // while checking for new consent information. Consent obtained in
-            // the previous session can be used to request ads.
-    //        if UMPConsentInformation.sharedInstance.canRequestAds {
-    //            startGoogleMobileAdsSDK()
-    //        }
+    @objc func showRewardedInterstitial(_ viewController:UIViewController) {
+        guard let rewardedInterstitialAd = AdmobController.shared.interstitialAd else {
+            loadRewardedInterstitial(viewController, isShow: true)
+            return print("Ad wasn't ready")
         }
         
-        private func startGoogleMobileAdsSDK() {
-            DispatchQueue.main.async {
-                guard !self.isMobileAdsStartCalled else { return }
-
-                self.isMobileAdsStartCalled = true
-
-              // Initialize the Google Mobile Ads SDK.
-              GADMobileAds.sharedInstance().start()
-
-              // TODO: Request an ad.
-              // GADInterstitialAd.load(...)
+        loadAdmobOn(viewController)
+        if UIApplication.shared.applicationState == .active{
+            let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
+            if !isPurchased {
+                self.interstitialAd?.present(fromRootViewController: viewController)
             }
-          }
+        }else{
+            let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
+            if !isPurchased {
+                loadRewardedInterstitial(viewController, isShow: true)
+            }
+            print("app is not active")
+        }
+    }
     
-    //MARK: - DELEGATE METHODS
+    //MARK: - ADMOB DELEGATE METHODS
     
     // Tells the delegate that the ad failed to present full screen content.
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-      print("Ad did fail to present full screen content.")
+        print("Ad did fail to present full screen content::\(error.localizedDescription)")
+        AdmobController.shared.interstitialAd = nil
+        adLoadingStatus = .NOT_REQUESTED
     }
-
+    
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("adWillPresentFullScreenContent.\(ad)")
+        savePreAdShownTime()
+        adLoadingStatus = .NOT_REQUESTED
+    }
+    
     /// Tells the delegate that the ad dismissed full screen content.
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-      print("Ad did dismiss full screen content.")
+        print("Ad did dismiss full screen content.:\(ad)")
+        AdmobController.shared.interstitialAd = nil
+        adLoadingStatus = .NOT_REQUESTED
+    }
+    
+    //MARK: - Google Concent METHODS
+    func requestConsentInfoUpdate(){
+        // Create a UMPRequestParameters object.
+        let parameters = UMPRequestParameters()
+        // Set tag for under age of consent. false means users are not under age
+        // of consent.
+        let debugSettings = UMPDebugSettings()
+        parameters.tagForUnderAgeOfConsent = false
+        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
+        debugSettings.geography = .EEA
+        parameters.debugSettings = debugSettings
+        
+        
+        // Request an update for the consent information.
+        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) {
+            [weak self] requestConsentError in
+            guard let self else { return }
+            
+            if let consentError = requestConsentError {
+                // Consent gathering failed.
+                return print("Error: \(consentError.localizedDescription)")
+            }
+            
+            UMPConsentForm.load(completionHandler: { form, loadError in
+                if loadError != nil {
+                    // Handle the error.
+                    print("loadError::\(loadError)")
+                } else {
+                    // Present the form. You can also hold on to the reference to present
+                    // later.
+                    if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
+                        form?.present(
+                            from: self,
+                            completionHandler: { dismissError in
+                                if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
+                                    // App can start requesting ads.
+                                }
+                                // Handle dismissal by reloading form.
+                            })
+                    } else {
+                        // Keep the form available for changes to user consent.
+                    }
+                }
+            })
+            
+        }
+        
+        // Check if you can initialize the Google Mobile Ads SDK in parallel
+        // while checking for new consent information. Consent obtained in
+        // the previous session can be used to request ads.
+        //        if UMPConsentInformation.sharedInstance.canRequestAds {
+        //            startGoogleMobileAdsSDK()
+        //        }
+    }
+        
+    private func startGoogleMobileAdsSDK() {
+        DispatchQueue.main.async {
+            guard !self.isMobileAdsStartCalled else { return }
+            
+            self.isMobileAdsStartCalled = true
+            
+            // Initialize the Google Mobile Ads SDK.
+            GADMobileAds.sharedInstance().start()
+            
+            // TODO: Request an ad.
+            // GADInterstitialAd.load(...)
+        }
     }
 }
