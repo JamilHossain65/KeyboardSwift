@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case Bangla:
                 return ""
             case BanglaGoti:
-                return ""
+                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
             case BanglaDruti:
                 return "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
             case Gujarati:
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case Russian:
                 return "com.vaticsoft.iap.russianKeyboard"
             case Spanish:
-                return ""
+                return "com.vaticsoft.iap.spanishKeyboard"
             case French:
                 return ""
             case German:
@@ -87,14 +87,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 return ""
             case Portuguese:
                 return ""
-            case Portuguese:
-                return ""
+            case Burmese:
+                return "com.vaticsoft.iap.burmeseKeyboard"
             case JpHiragana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
             case JpKatakana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
             default://English
-                return "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
+                return "com.vaticsoft.iap.spanishKeyboard"
             }
         }
     }

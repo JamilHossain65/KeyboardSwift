@@ -25,7 +25,7 @@ class FBAudienceNetwork: UIViewController, FBRewardedVideoAdDelegate {
             case BanglaGoti:
                 return ""
             case BanglaDruti:
-                return "ca-app-pub-9133033983333483/9411877271"
+                return ""
             case Gujarati:
                 return ""
             case Hindi:
@@ -71,11 +71,11 @@ class FBAudienceNetwork: UIViewController, FBRewardedVideoAdDelegate {
             case Portuguese:
                 return ""
             case JpHiragana:
-                return "ca-app-pub-9133033983333483/4102060257"
+                return ""
             case JpKatakana:
-                return "ca-app-pub-9133033983333483/4102060257"
+                return ""
             default://English
-                return "ca-app-pub-9133033983333483/9411877271"
+                return ""
             }
         }
     }

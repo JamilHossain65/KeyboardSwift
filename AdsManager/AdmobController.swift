@@ -58,7 +58,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case Russian:
                 return ""
             case Spanish:
-                return ""
+                return "ca-app-pub-9133033983333483/4720877434"
             case French:
                 return ""
             case German:
@@ -71,14 +71,14 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
                 return ""
             case Portuguese:
                 return ""
-            case Portuguese:
-                return ""
+            case Burmese:
+                return "ca-app-pub-9133033983333483/2368759846"
             case JpHiragana:
                 return "ca-app-pub-9133033983333483/4102060257"
             case JpKatakana:
                 return "ca-app-pub-9133033983333483/4102060257"
             default://English
-                return "ca-app-pub-9133033983333483/1492998119" //MARK: - todo
+                return "ca-app-pub-9133033983333483/4720877434" //MARK: - todo
             }
         }
     }

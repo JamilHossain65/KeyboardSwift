@@ -17,7 +17,15 @@ import AdSupport
 import UserMessagingPlatform
 
 @main
-    
+
+//MARK: -
+/*
+Disable unwanted log print in xcode simulator
+1 - From Xcode menu open: Product > Scheme > Edit Scheme
+
+2 - On your Environment Variables set OS_ACTIVITY_MODE = disable
+*/
+
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window:UIWindow?

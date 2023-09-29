@@ -64,7 +64,7 @@ target 'KeyboardSwift' do
   otherFramework
 end
 
-target 'SmartFonts' do
+target 'ThaiKeyboard' do
   appodeal
   otherFramework
 end
@@ -74,7 +74,42 @@ target 'Japanese' do
   otherFramework
 end
 
+target 'Burmese' do
+  appodeal
+  otherFramework
+end
+
+target 'Russian' do
+  appodeal
+  otherFramework
+end
+
+target 'Spanish' do
+  appodeal
+  otherFramework
+end
+
 target 'Druti' do
+  appodeal
+  otherFramework
+end
+
+target 'German' do
+  appodeal
+  otherFramework
+end
+
+target 'Turkish' do
+  appodeal
+  otherFramework
+end
+
+target 'Indian' do
+  appodeal
+  otherFramework
+end
+
+target 'SmartFonts' do
   appodeal
   otherFramework
 end
