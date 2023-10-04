@@ -29,6 +29,8 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
                 return ""
             case BanglaDruti:
                 return "ca-app-pub-9133033983333483/1492998119"
+            case Thai:
+                return ""
             case Gujarati:
                 return ""
             case Hindi:

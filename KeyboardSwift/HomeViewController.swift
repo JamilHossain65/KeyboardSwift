@@ -14,6 +14,7 @@ import Appodeal
 
 import GoogleMobileAds
 import UserMessagingPlatform
+import SwiftyJSON
 
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
@@ -45,6 +46,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
             case BanglaDruti:
                 return "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
+            case Thai:
+                return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
             case Gujarati:
                 return ""
             case Hindi:
@@ -94,7 +97,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case JpKatakana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
             default://English
-                return "com.vaticsoft.iap.spanishKeyboard"
+                return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
             }
         }
     }
@@ -126,7 +129,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             loadAd()
             if isAppUsed{ //app already used
                 perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 5)
-                perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
+                //perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
             }
         }
         
@@ -215,7 +218,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     func showAdmobAdFromHelperApp(){
         if isAppUsed{ //app already used
-            AdmobController.shared.showRewardedInterstitial(self)
+            //AdmobController.shared.showRewardedInterstitial(self)
+            appSetting()
         }
     }
     
@@ -322,7 +326,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func rewardedAdButtonPressed(){
         print("rewardedAdButtonPressed")
-        //showAppodealAd()
+        showAppodealAd()
     }
     
     func showLoading(view:UIView){
@@ -532,6 +536,50 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             }
         })
     }
+    
+    func appSetting(){
+        let url = "https://jamilhossain65.github.io/app-setting.json"
+        APIRequest(url).params([:], method:.GET, header: "", completion: {(response,errors) in
+            if errors == nil {
+                //print("response:\(response?.json)\n")
+                if let _response = response?.json {
+                    if let thaiSetting = _response["thai_keyboard"]{
+                        let isForceUpdate:Bool = JSON(thaiSetting)["is_force_update"].boolValue
+                        let appLink:String = JSON(thaiSetting)["app_link"].stringValue
+                        if isForceUpdate {
+                            weak var _self = self
+                            DispatchQueue.main.async(execute: {
+                                showAlertOkay(_self, title:"Update App",completion:{ isOkay in
+                                    //log("appLink::\(appLink)")
+                                    let appName = "VaticSoftThaiKeyboard"
+                                    if isAppInstalled(appName){
+                                        log("ThaiKeyboard already installed")
+                                        let appScheme = "\(appName)://app"
+                                        if let url = URL(string: appScheme) {
+                                            DispatchQueue.main.async(execute: {
+                                                UIApplication.shared.open(url)
+                                            })
+                                        }
+                                    }else{
+                                        log("app not install.")
+                                        if let url = URL(string: appLink) {
+                                            DispatchQueue.main.async(execute: {
+                                                UIApplication.shared.open(url)
+                                            })
+                                        }
+                                    }
+                                })
+                            })
+                        }else{
+                            self.showAppodealAd()
+                        }
+                    }
+                }
+            } else {
+                log("error:\(String(describing: errors?.message))")
+            }
+        })
+    }
 }
 
 extension HomeViewController:UITextViewDelegate {
@@ -544,9 +592,9 @@ extension HomeViewController:UITextViewDelegate {
             let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
             if !isPurchased{
                 setObject(1, key: kIsAppUsed)
-                showAd()
-                loadAd()
-                //self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
+                //showAd()
+                //loadAd()
+                self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
             }
         }
     }
@@ -573,17 +621,13 @@ extension HomeViewController:UITextViewDelegate {
 //        let adManager = AdManager()
 //        adManager.showAppodealAdsOnParrent(self)
         
-        /*
         //app setting::115
         print("appodeal ad should show here")
-        perform(#selector(showAppodealAd), with: nil, afterDelay: 10*60)
+        perform(#selector(showAppodealAd), with: nil, afterDelay: AD_APPODEAL_MIN_TIME)
         let placement = "default"
-        Appodeal.canShow(.interstitial, forPlacement: placement)
-        
-        Appodeal.showAd(.interstitial,
-                        forPlacement: placement,
-                        rootViewController: self)
-         */
+        if Appodeal.canShow(.interstitial, forPlacement: placement){
+            Appodeal.showAd(.interstitial, forPlacement: placement, rootViewController: self)
+        }
     }
 }
 

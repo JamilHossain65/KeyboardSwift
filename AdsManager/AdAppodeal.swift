@@ -10,7 +10,7 @@ import Appodeal
 
 //app setting:16
 private struct AppodealConstants {
-    static let key: String = "8d27e0858ace2ac52cee20d53ad32bc2beb523fa0fde604b"
+    static let key: String = "d161af6881a9948f32d1cf869155ea98703870c82108bdd2"
     static let adTypes: AppodealAdType = [.interstitial,.rewardedVideo]
     static let logLevel: APDLogLevel = .debug
     static let testMode: Bool = false

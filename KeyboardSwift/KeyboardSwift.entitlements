@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.vaticsoft.spanish.keyboard</string>
+		<string>group.com.vaticsoft.ThaiKeyboard</string>
 	</array>
 </dict>
 </plist>

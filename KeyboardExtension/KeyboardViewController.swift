@@ -53,7 +53,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(Spanish, for: .normal) //MARK: - do it dynamic
+        button.setTitle(Thai, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
@@ -939,6 +939,8 @@ extension KeyboardViewController: HintBarDelegate {
                 Bundle.setLanguage(lang: "es") //spanish
             }else if langName == Russian{
                 Bundle.setLanguage(lang: "ru")
+            }else if langName == Thai{
+                Bundle.setLanguage(lang: "th")
             }else{
                 Bundle.setLanguage(lang: "en")
             }

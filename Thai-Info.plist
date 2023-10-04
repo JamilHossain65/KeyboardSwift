@@ -25,12 +25,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>SmartFonts</string>
+				<string>VaticSoftThaiKeyboardOld</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-9133033983333483~9010772004</string>
 	<key>GADIsAdManagerApp</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
@@ -1206,8 +1208,6 @@
 	<true/>
 	<key>UIStatusBarHidden</key>
 	<true/>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-9133033983333483~9010772004</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

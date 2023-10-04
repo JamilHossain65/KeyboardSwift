@@ -17,15 +17,29 @@ func log(_ msg: Any?) {
     #endif
 }
 
-func showAlertOkay(title: String? = "", message:String? = "", completion: @escaping (Bool) -> () = {_ in}) {
+func isAppInstalled(_ appName:String) -> Bool{
+
+    let appScheme = "\(appName)://app"
+    let appUrl = URL(string: appScheme)
+
+    if UIApplication.shared.canOpenURL(appUrl! as URL){
+        return true
+    } else {
+        return false
+    }
+
+}
+
+func showAlertOkay(_ controller:UIViewController? = UIApplication.shared.keyWindow?.rootViewController , title: String? = "", message:String? = "", completion: @escaping (Bool) -> () = {_ in}) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     //alert.view.tintColor = UIColor.hex_17181a()
-    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+    alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { (_) in
         completion(true)
     }))
     
-    let window = UIApplication.shared.keyWindow
-    window?.rootViewController?.present(alert, animated: true, completion: nil)
+    DispatchQueue.main.async(execute: {
+        controller!.present(alert, animated: true, completion: nil)
+    })
 }
 
 func flag(from country:String) -> String {

@@ -11,7 +11,7 @@ import Foundation
 //app setting::108
 var isProduction = false
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
-let AD_APPODEAL_MIN_TIME:TimeInterval = 60*60 //60 min
+let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
 
 enum AD_LOADING_STATUS:Int {
@@ -71,13 +71,13 @@ let Burmese    = "မြန်မာ"
 //app setting::1
 var activeLanguages = [
     English :true,  Indonesian:false, Bangla    :false, Russian  :false,
-    Spanish :true, French    :false, German    :false, Italian  :false,
+    Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai   :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :true,  JpHiragana:false,
     JpKatakana:false, Burmese:false
 ]
 
