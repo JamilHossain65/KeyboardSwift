@@ -125,11 +125,13 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         //requestConsentInfoUpdate()
         
+        AdAppodeal.shared.initializeAppodealSDK()
+        
         if !isPurchased {//not paid user
             loadAd()
             if isAppUsed{ //app already used
                 perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 5)
-                //perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
+                perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
             }
         }
         
@@ -218,7 +220,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     func showAdmobAdFromHelperApp(){
         if isAppUsed{ //app already used
-            //AdmobController.shared.showRewardedInterstitial(self)
+            AdmobController.shared.showAdmobInterstitial(self)
             appSetting()
         }
     }
@@ -325,8 +327,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func rewardedAdButtonPressed(){
-        print("rewardedAdButtonPressed")
-        showAppodealAd()
+        AdManager.shared.showAppodealNonSkippableAdsOn(self)
     }
     
     func showLoading(view:UIView){
@@ -571,7 +572,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                                 })
                             })
                         }else{
-                            self.showAppodealAd()
+                            self.showAdmobInterstitial()
                         }
                     }
                 }
@@ -592,17 +593,15 @@ extension HomeViewController:UITextViewDelegate {
             let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
             if !isPurchased{
                 setObject(1, key: kIsAppUsed)
-                //showAd()
-                //loadAd()
-                self.perform(#selector(self.showAppodealAd), with: nil, afterDelay: 30)//30
+                showAdmobInterstitial()
+                loadAd()
             }
         }
     }
     
-    @objc func showAd(){
-        print("showAd...")
-        perform(#selector(showAd), with: nil, afterDelay: AD_MIN_TIME)
-        //AdManager.shared.showAdMob(self)
+    @objc func showRewardedAd(){
+        log("showAd...")
+        perform(#selector(showRewardedAd), with: nil, afterDelay: AD_MIN_TIME)
         AdmobController.shared.showRewardedInterstitial(self)
     }
     
@@ -611,23 +610,20 @@ extension HomeViewController:UITextViewDelegate {
         AdmobController.shared.loadRewardedInterstitial(self)
     }
     
+    @objc func showAdmobInterstitial(){
+        log("showAdmobInterstitial...")
+        perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+        AdmobController.shared.showAdmobInterstitial(self)
+    }
+    
     @objc func showFbMetaAd(){
        perform(#selector(showFbMetaAd), with: nil, afterDelay: AD_MIN_TIME)
        let adManager = AdManager()
        adManager.showFbMetaAdsOnParrent(self)
-   }
+    }
     
-    @objc func showAppodealAd(){
-//        let adManager = AdManager()
-//        adManager.showAppodealAdsOnParrent(self)
-        
-        //app setting::115
-        print("appodeal ad should show here")
-        perform(#selector(showAppodealAd), with: nil, afterDelay: AD_APPODEAL_MIN_TIME)
-        let placement = "default"
-        if Appodeal.canShow(.interstitial, forPlacement: placement){
-            Appodeal.showAd(.interstitial, forPlacement: placement, rootViewController: self)
-        }
+    @objc func showAppodealRewardedAd(){
+        AdManager.shared.showAppodealNonSkippableAdsOn(self)
     }
 }
 
@@ -682,13 +678,4 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return boundingBox
     }
-}
-
-extension HomeViewController: AppodealInterstitialDelegate {
-    func interstitialDidLoadAdIsPrecache(_ precache: Bool) {}
-    func interstitialDidFailToLoadAd() {}
-    func interstitialDidFailToPresent() {}
-    func interstitialWillPresent() {}
-    func interstitialDidDismiss() {}
-    func interstitialDidClick() {}
 }

@@ -11,17 +11,16 @@ import Appodeal
 //app setting:16
 private struct AppodealConstants {
     static let key: String = "d161af6881a9948f32d1cf869155ea98703870c82108bdd2"
-    static let adTypes: AppodealAdType = [.interstitial,.rewardedVideo]
+    static let adTypes: AppodealAdType = [.nonSkippableVideo]
     static let logLevel: APDLogLevel = .debug
     static let testMode: Bool = false
 }
 
-class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
+class AdAppodeal: UIViewController,AppodealNonSkippableVideoDelegate {
     public static let shared = AdAppodeal()
     typealias AdAppodealCompletion = (_ success:Bool) -> Void
-    
     //var void (^adFailWithCompletion)(BOOL success);
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -29,27 +28,19 @@ class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
         
         //sample code
         //https://github.com/appodeal/appodeal-ios-demo
-        Appodeal.setInterstitialDelegate(self)
-        self.showAd()
     }
     
-    func showOn(_ viewController:UIViewController){
-        DispatchQueue.main.async {
-            let adVC = AdAppodeal(nibName: "AdAppodeal", bundle: nil)
-            viewController.view.addSubview(adVC.view)
-            viewController.addChild(adVC)
-        }
-    }
-    
-    @objc func showAd(){
-        print("appodeal ad should show here")
-        perform(#selector(showAd), with: nil, afterDelay: 10*60)
-        let placement = "default"
-        Appodeal.canShow(.interstitial, forPlacement: placement)
+    @objc func showNonSkippableAppodeal(_ controller:UIViewController){
+        //perform(#selector(showNonSkippableAppodeal), with: nil, afterDelay: 60)
         
-        Appodeal.showAd(.interstitial,
-                        forPlacement: placement,
-                        rootViewController: self)
+        let placement = "default"
+        if Appodeal.canShow(.nonSkippableVideo, forPlacement: placement){
+            log("nonSkippableVideocan show")
+            Appodeal.showAd(.nonSkippableVideo, forPlacement: placement, rootViewController: controller)
+        }else{
+            log("nonSkippableVideocan not ready")
+            Appodeal.showAd(.nonSkippableVideo, forPlacement: placement, rootViewController: controller)
+        }
     }
     
     // MARK: Appodeal Initialization
@@ -67,17 +58,15 @@ class AdAppodeal: UIViewController, AppodealInterstitialDelegate {
         /// User Data
         // Appodeal.setUserId("userID")
         
-        
         // Initialise Appodeal SDK
-        Appodeal.setInterstitialDelegate(self)
+        //Appodeal.setInterstitialDelegate(self)
+        Appodeal.setNonSkippableVideoDelegate(self)
         Appodeal.initialize(withApiKey: AppodealConstants.key, types: AppodealConstants.adTypes)
     }
-    
-    func interstitialDidLoadAdIsPrecache(_ precache: Bool) {
-        print("interstitialDidLoadAdIsPrecache...")
-    }
-    
-    func interstitialWillPresent() {
-        print("interstitialWillPresent...")
+}
+
+extension AdAppodeal {
+    func nonSkippableVideoDidFinish() {
+        perform(#selector(showNonSkippableAppodeal), with: nil, afterDelay: 20)
     }
 }

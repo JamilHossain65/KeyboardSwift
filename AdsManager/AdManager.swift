@@ -28,11 +28,15 @@ class AdManager: UIViewController {
          */
         
         //app setting::107
-        AdmobController.shared.loadAdmobOn(viewController)
+        //AdmobController.shared.loadAdmobOn(viewController)
     }
     
-    func showAdMob(_ viewController:UIViewController){
+    func showAdmobRewarded(_ viewController:UIViewController){
         AdmobController.shared.showRewardedInterstitial(viewController)
+    }
+    
+    func showAdmobInterstitial(_ viewController:UIViewController){
+        AdmobController.shared.showAdmobInterstitial(viewController)
     }
     
     func showFbMetaAdsOnParrent(_ viewController:UIViewController){
@@ -68,9 +72,14 @@ class AdManager: UIViewController {
         appodealController.initializeAppodealSDK()
     }
     
+    //check this, need refactor delete
     func showAppodealAdsOnParrent(_ viewController:UIViewController){
         let appodealController = AdAppodeal()
-        appodealController.showOn(viewController)
+        //appodealController.showOn(viewController)
     }
     
+    func showAppodealNonSkippableAdsOn(_ viewController:UIViewController){
+        let appodealController = AdAppodeal()
+        appodealController.showNonSkippableAppodeal(viewController)
+    }
 }

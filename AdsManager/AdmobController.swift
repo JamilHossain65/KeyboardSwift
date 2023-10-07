@@ -159,6 +159,19 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         }
     }
     
+    func showAdmobInterstitial(_ viewController:UIViewController){
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
+            if let error = error {
+                return print("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
+            }
+
+            AdmobController.shared.interstitialAd = ad
+            AdmobController.shared.interstitialAd?.fullScreenContentDelegate = self
+            AdmobController.shared.interstitialAd?.present(fromRootViewController: viewController)
+        }
+    }
+    
     //MARK: - ADMOB DELEGATE METHODS
     
     // Tells the delegate that the ad failed to present full screen content.
