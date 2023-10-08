@@ -30,10 +30,10 @@ func isAppInstalled(_ appName:String) -> Bool{
 
 }
 
-func showAlertOkay(_ controller:UIViewController? = UIApplication.shared.keyWindow?.rootViewController , title: String? = "", message:String? = "", completion: @escaping (Bool) -> () = {_ in}) {
+func showAlertOkay(_ controller:UIViewController? = UIApplication.shared.keyWindow?.rootViewController , title: String? = "", message:String? = "", ok:String? = "OK", completion: @escaping (Bool) -> () = {_ in}) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     //alert.view.tintColor = UIColor.hex_17181a()
-    alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { (_) in
+    alert.addAction(UIAlertAction(title: ok, style: .default, handler: { (_) in
         completion(true)
     }))
     

@@ -219,9 +219,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func showAdmobAdFromHelperApp(){
+        appThaiSetting()
+        //appJpSetting()
+        
         if isAppUsed{ //app already used
             AdmobController.shared.showAdmobInterstitial(self)
-            appSetting()
         }
     }
     
@@ -331,7 +333,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func showLoading(view:UIView){
-        textView.text = "mas h this is hoss ajsmil jam ja ahs ajk ahsja   hsajkhs akjh sajk hasjkhs jakhsk hajks haksj test"
+        textView.text = "this is hossain jamil jam ja ahs ajk ahsja   hsajkhs akjh sajk hasjkhs jakhsk hajks haksj test"
         
         if let caret = textView.caret {
             
@@ -538,7 +540,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         })
     }
     
-    func appSetting(){
+    func appThaiSetting(){
         let url = "https://jamilhossain65.github.io/app-setting.json"
         APIRequest(url).params([:], method:.GET, header: "", completion: {(response,errors) in
             if errors == nil {
@@ -547,14 +549,65 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                     if let thaiSetting = _response["thai_keyboard"]{
                         let isForceUpdate:Bool = JSON(thaiSetting)["is_force_update"].boolValue
                         let appLink:String = JSON(thaiSetting)["app_link"].stringValue
+                        let alertTitle:String = JSON(thaiSetting)["alert_title"].string ?? "Update App"
+                        let alertMessage:String = JSON(thaiSetting)["alert_message"].string ?? ""
+                        let okButton:String = JSON(thaiSetting)["ok_button"].string ?? "Update"
+                        
                         if isForceUpdate {
                             weak var _self = self
                             DispatchQueue.main.async(execute: {
-                                showAlertOkay(_self, title:"Update App",completion:{ isOkay in
+                                showAlertOkay(_self, title:alertTitle, message: alertMessage, ok: okButton, completion:{ isOkay in
                                     //log("appLink::\(appLink)")
-                                    let appName = "VaticSoftThaiKeyboard"
+                                    let appName = "VaticSoftThaiKeyboard" //VaticSoftThaiKeyboardOld
                                     if isAppInstalled(appName){
                                         log("ThaiKeyboard already installed")
+                                        let appScheme = "\(appName)://app"
+                                        if let url = URL(string: appScheme) {
+                                            DispatchQueue.main.async(execute: {
+                                                UIApplication.shared.open(url)
+                                            })
+                                        }
+                                    }else{
+                                        log("app not install.")
+                                        if let url = URL(string: appLink) {
+                                            DispatchQueue.main.async(execute: {
+                                                UIApplication.shared.open(url)
+                                            })
+                                        }
+                                    }
+                                })
+                            })
+                        }else{
+                            self.showAdmobInterstitial()
+                        }
+                    }
+                }
+            } else {
+                log("error:\(String(describing: errors?.message))")
+            }
+        })
+    }
+    
+    func appJpSetting(){
+        let url = "https://jamilhossain65.github.io/app-setting.json"
+        APIRequest(url).params([:], method:.GET, header: "", completion: {(response,errors) in
+            if errors == nil {
+                //print("response:\(response?.json)\n")
+                if let _response = response?.json {
+                    if let thaiSetting = _response["japanese_keyboard"]{
+                        let isForceUpdate:Bool = JSON(thaiSetting)["is_force_update"].boolValue
+                        let appLink:String = JSON(thaiSetting)["app_link"].stringValue
+                        let alertTitle:String = JSON(thaiSetting)["alert_title"].stringValue
+                        let okButton:String = JSON(thaiSetting)["ok_button"].stringValue
+                        
+                        if isForceUpdate {
+                            weak var _self = self
+                            DispatchQueue.main.async(execute: {
+                                showAlertOkay(_self, title:alertTitle, ok: okButton, completion:{ isOkay in
+                                    //log("appLink::\(appLink)")
+                                    let appName = "VaticSoftJapaneseKeyboardOld" //VaticSoftJapaneseKeyboard
+                                    if isAppInstalled(appName){
+                                        log("VaticSoftJapaneseKeyboard already installed")
                                         let appScheme = "\(appName)://app"
                                         if let url = URL(string: appScheme) {
                                             DispatchQueue.main.async(execute: {

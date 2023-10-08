@@ -11,12 +11,12 @@ import Appodeal
 //app setting:16
 private struct AppodealConstants {
     static let key: String = "d161af6881a9948f32d1cf869155ea98703870c82108bdd2"
-    static let adTypes: AppodealAdType = [.nonSkippableVideo]
+    static let adTypes: AppodealAdType = [.rewardedVideo]
     static let logLevel: APDLogLevel = .debug
     static let testMode: Bool = false
 }
 
-class AdAppodeal: UIViewController,AppodealNonSkippableVideoDelegate {
+class AdAppodeal: UIViewController,AppodealNonSkippableVideoDelegate, AppodealRewardedVideoDelegate {
     public static let shared = AdAppodeal()
     typealias AdAppodealCompletion = (_ success:Bool) -> Void
     //var void (^adFailWithCompletion)(BOOL success);
@@ -34,12 +34,14 @@ class AdAppodeal: UIViewController,AppodealNonSkippableVideoDelegate {
         //perform(#selector(showNonSkippableAppodeal), with: nil, afterDelay: 60)
         
         let placement = "default"
-        if Appodeal.canShow(.nonSkippableVideo, forPlacement: placement){
-            log("nonSkippableVideocan show")
-            Appodeal.showAd(.nonSkippableVideo, forPlacement: placement, rootViewController: controller)
+        if Appodeal.canShow(.rewardedVideo, forPlacement: placement){
+            log("rewardedVideo can show")
+            Appodeal.showAd(.rewardedVideo, forPlacement: placement, rootViewController: controller)
         }else{
-            log("nonSkippableVideocan not ready")
-            Appodeal.showAd(.nonSkippableVideo, forPlacement: placement, rootViewController: controller)
+            log("rearded video not ready")
+//            let canShow = Appodeal.canShow(.rewardedVideo, forPlacement: placement)
+//            log("rewardedVideo ready:\(canShow)")
+//            Appodeal.showAd(.rewardedVideo, forPlacement: placement, rootViewController: controller)
         }
     }
     
@@ -60,13 +62,16 @@ class AdAppodeal: UIViewController,AppodealNonSkippableVideoDelegate {
         
         // Initialise Appodeal SDK
         //Appodeal.setInterstitialDelegate(self)
-        Appodeal.setNonSkippableVideoDelegate(self)
+        Appodeal.setRewardedVideoDelegate(self)
         Appodeal.initialize(withApiKey: AppodealConstants.key, types: AppodealConstants.adTypes)
     }
 }
 
 extension AdAppodeal {
     func nonSkippableVideoDidFinish() {
+        perform(#selector(showNonSkippableAppodeal), with: nil, afterDelay: 20)
+    }
+    func rewardedVideoDidFinish() {
         perform(#selector(showNonSkippableAppodeal), with: nil, afterDelay: 20)
     }
 }
