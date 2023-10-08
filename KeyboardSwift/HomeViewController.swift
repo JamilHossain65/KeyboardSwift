@@ -97,7 +97,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case JpKatakana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
             default://English
-                return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
+                return "com.vaticsoft.iap.JapaneseKeyboard"
             }
         }
     }

@@ -77,7 +77,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :true,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:true,
     JpKatakana:false, Burmese:false
 ]
 

@@ -10,10 +10,75 @@ import Appodeal
 
 //app setting:16
 private struct AppodealConstants {
-    static let key: String = "d161af6881a9948f32d1cf869155ea98703870c82108bdd2"
+    static let key: String = getKey()
     static let adTypes: AppodealAdType = [.rewardedVideo]
     static let logLevel: APDLogLevel = .debug
     static let testMode: Bool = false
+}
+
+func getKey() -> String {
+    let langName = getString(SelectedLanguage)
+    
+    switch langName {
+    case Bangla:
+        return ""
+    case BanglaGoti:
+        return ""
+    case BanglaDruti:
+        return ""
+    case Thai:
+        return "d161af6881a9948f32d1cf869155ea98703870c82108bdd2"
+    case Gujarati:
+        return ""
+    case Hindi:
+        return ""
+    case Kannada:
+        return ""
+    case Malayalam:
+        return ""
+    case Marathi:
+        return ""
+    case Nepali:
+        return ""
+    case Oriya:
+        return ""
+    case Punjabi:
+        return ""
+    case Sanskrit:
+        return ""
+    case Tamil:
+        return ""
+    case Telugu:
+        return ""
+    case Urdu:
+        return ""
+    case Indonesian:
+        return ""
+    case Russian:
+        return ""
+    case Spanish:
+        return ""
+    case French:
+        return ""
+    case German:
+        return ""
+    case Italian:
+        return ""
+    case Korean:
+        return ""
+    case Turkish:
+        return ""
+    case Portuguese:
+        return ""
+    case Burmese:
+        return "com.vaticsoft.iap.burmeseKeyboard"
+    case JpHiragana:
+        return "42e6185e165b7d8144bdf798b961fa2bf4f7e327508557f3"
+    case JpKatakana:
+        return "42e6185e165b7d8144bdf798b961fa2bf4f7e327508557f3"
+    default://English
+        return "42e6185e165b7d8144bdf798b961fa2bf4f7e327508557f3"
+    }
 }
 
 class AdAppodeal: UIViewController,AppodealNonSkippableVideoDelegate, AppodealRewardedVideoDelegate {
