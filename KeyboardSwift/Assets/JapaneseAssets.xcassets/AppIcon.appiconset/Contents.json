@@ -1,109 +1,109 @@
 {
   "images" : [
     {
-      "filename" : "ic_jp_key20@2x.png",
+      "filename" : "ic_jp40.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_jp_key20@3x.png",
+      "filename" : "ic_jp60.jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_jp_key29@2x.png",
+      "filename" : "ic_jp58.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_jp_key29@3x.png",
+      "filename" : "ic_jp87.jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_jp_key40@2x.png",
+      "filename" : "ic_jp80.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_jp_key40@3x.png",
+      "filename" : "ic_jp120.jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_jp_key40@3x 1.png",
+      "filename" : "ic_jp120 1.jpg",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "ic_jp_key60@3x.png",
+      "filename" : "ic_jp180.jpg",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "ic_jp_key20.png",
+      "filename" : "ic_jp20.jpg",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_jp_key20@2x 2.png",
+      "filename" : "ic_jp40 1.jpg",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "ic_jp_key29.png",
+      "filename" : "ic_jp29.jpg",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_jp_key29@2x 1.png",
+      "filename" : "ic_jp58 1.jpg",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "ic_jp_key20@2x 1.png",
+      "filename" : "ic_jp40 2.jpg",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_jp_key40@2x 1.png",
+      "filename" : "ic_jp80 1.jpg",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "ic_jp_key76.png",
+      "filename" : "ic_jp76.jpg",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "ic_jp_key152.png",
+      "filename" : "ic_jp152.jpg",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "ic_jp_key167.png",
+      "filename" : "ic_jp167.jpg",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "ic_jp_key1024.png",
+      "filename" : "ic_jp1024.jpg",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

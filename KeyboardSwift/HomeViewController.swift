@@ -47,7 +47,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case BanglaDruti:
                 return "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
             case Thai:
-                return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
+                return "com.vaticsoft.keyboard.thai.iap"
+                //return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
             case Gujarati:
                 return ""
             case Hindi:
@@ -93,11 +94,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case Burmese:
                 return "com.vaticsoft.iap.burmeseKeyboard"
             case JpHiragana:
-                return "com.vaticsoft.iap.JapaneseKeyboard"
+                return "com.vaticsoft.iap.keyboard.japanese"
             case JpKatakana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
             default://English
-                return "com.vaticsoft.iap.JapaneseKeyboard"
+                return "com.vaticsoft.keyboard.thai.iap"
             }
         }
     }
@@ -239,7 +240,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         // of consent.
         let debugSettings = UMPDebugSettings()
         parameters.tagForUnderAgeOfConsent = false
-        //app setting::5
+        //app setting::205
 //        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
 //        debugSettings.geography = .EEA
         parameters.debugSettings = debugSettings
