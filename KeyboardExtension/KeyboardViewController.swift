@@ -322,7 +322,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         hintBarManager.delegate = self
         hintBarManager.addSuggestionBar(parentView: inputView, txtView: textDocumentProxy)
         
-        showSettingOptionView()
+        if isProVersion{
+            showSettingOptionView()
+        }
+        
         refreshWordFile()
     }
     
@@ -488,6 +491,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
     //MARK: OPEN CONTAINER APP
     @objc func openContainerApp() {
+        if isProVersion{ return }
+        
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
@@ -928,7 +933,7 @@ extension KeyboardViewController: HintBarDelegate {
             }
             
             //MARK: - TODO: Do it dynamic
-            //app setting::4
+            //app setting::204
             if langName == JpHiragana || langName == JpKatakana { //"বাংলা"
                 Bundle.setLanguage(lang: "ja") //bn, my, ja
             }else if langName == BanglaGoti{

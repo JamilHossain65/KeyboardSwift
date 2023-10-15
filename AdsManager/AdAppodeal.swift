@@ -96,6 +96,8 @@ class AdAppodeal: UIViewController,AppodealNonSkippableVideoDelegate, AppodealRe
     }
     
     @objc func showNonSkippableAppodeal(_ controller:UIViewController){
+        if isProVersion{ return }
+        
         //perform(#selector(showNonSkippableAppodeal), with: nil, afterDelay: 60)
         
         let placement = "default"

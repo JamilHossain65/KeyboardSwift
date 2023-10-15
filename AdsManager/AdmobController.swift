@@ -114,6 +114,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     }
     
     func loadRewardedInterstitial(_ viewController:UIViewController, isShow:Bool? = false){
+        if isProVersion{ return }
         //Rewarded interstitial
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
@@ -139,6 +140,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     }
     
     @objc func showRewardedInterstitial(_ viewController:UIViewController) {
+        if isProVersion{ return }
         guard let rewardedInterstitialAd = AdmobController.shared.interstitialAd else {
             loadRewardedInterstitial(viewController, isShow: true)
             return print("Ad wasn't ready")
@@ -160,6 +162,8 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     }
     
     func showAdmobInterstitial(_ viewController:UIViewController){
+        if isProVersion{ return }
+        
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
             if let error = error {
