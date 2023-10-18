@@ -47,8 +47,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case BanglaDruti:
                 return "com.vaticsoft.iap.BanglaKeyboardDrutiNewFullVersion"
             case Thai:
-                //return "com.vaticsoft.keyboard.thai.iap"
-                return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
+                return "com.vaticsoft.keyboard.thai.iap"
+                //return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
             case Gujarati:
                 return ""
             case Hindi:
@@ -98,7 +98,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case JpKatakana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
             default://English
-                return "com.vaticsoft.iap.ThaiKeyboardFullVersion"
+                return "com.vaticsoft.keyboard.thai.iap"
             }
         }
     }
@@ -220,11 +220,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func showAdmobAdFromHelperApp(){
-        appThaiSetting()
+        //appThaiSetting()
         //appJpSetting()
         
         if isAppUsed{ //app already used
-            AdmobController.shared.showAdmobInterstitial(self)
+            //AdmobController.shared.showAdmobInterstitial(self)
         }
     }
     

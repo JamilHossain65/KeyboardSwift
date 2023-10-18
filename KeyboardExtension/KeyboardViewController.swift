@@ -88,7 +88,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             if nowTime == PrevTime || (nowTime - PrevTime) > AD_MIN_TIME*1000 {
                 adLoadingStatus = .REQUESTED
                 setObject(Int(adLoadingStatus.rawValue), key: kAdLoadingStatus)
-                self.perform(#selector(loadAd), with: nil, afterDelay: 10)
+                //self.perform(#selector(loadAd), with: nil, afterDelay: 10)
             }
         }
     }
