@@ -115,8 +115,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})//MARK: - make it ordered array
     
     let dropDown = DropDown()
-    
-    let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
     let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
     
     
@@ -223,8 +221,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         //appThaiSetting()
         //appJpSetting()
         
-        if isAppUsed{ //app already used
-            //AdmobController.shared.showAdmobInterstitial(self)
+        log("isAppUsed:::\(isAppUsed)")
+        
+        if isAppUsed { //app already used
+            AdmobController.shared.showAdmobInterstitial(self)
         }
     }
     
@@ -641,16 +641,14 @@ extension HomeViewController:UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView){
         //if #available(iOS 15.0, *) { }
         //app setting::114
-        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
-        
-        if !isAppUsed { //MARK:- todo enable this keyboard
-            let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
-            if !isPurchased{
-                setObject(1, key: kIsAppUsed)
-                showAdmobInterstitial()
-                loadAd()
-            }
-        }
+//        if !isAppUsed { //MARK:- todo enable this keyboard
+//            let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
+//            if !isPurchased{
+//                setObject(1, key: kIsAppUsed)
+//                showAdmobInterstitial()
+//                loadAd()
+//            }
+//        }
     }
     
     @objc func showRewardedAd(){

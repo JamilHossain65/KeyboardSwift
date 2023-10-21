@@ -32,12 +32,10 @@ class AdManager: UIViewController {
     }
     
     func showAdmobRewarded(_ viewController:UIViewController){
-        if isProVersion{ return }
         AdmobController.shared.showRewardedInterstitial(viewController)
     }
     
     func showAdmobInterstitial(_ viewController:UIViewController){
-        if isProVersion{ return }
         AdmobController.shared.showAdmobInterstitial(viewController)
     }
     
@@ -76,13 +74,11 @@ class AdManager: UIViewController {
     
     //check this, need refactor delete
     func showAppodealAdsOnParrent(_ viewController:UIViewController){
-        if isProVersion{ return }
         let appodealController = AdAppodeal()
         //appodealController.showOn(viewController)
     }
     
     func showAppodealNonSkippableAdsOn(_ viewController:UIViewController){
-        if isProVersion{ return }
         let appodealController = AdAppodeal()
         appodealController.showNonSkippableAppodeal(viewController)
     }

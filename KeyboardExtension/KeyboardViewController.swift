@@ -60,6 +60,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
         if !isPurchased {
+            //self.perform(#selector(loadAd), with: nil, afterDelay: 10)
             self.perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME)
         }
     }
@@ -88,7 +89,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             if nowTime == PrevTime || (nowTime - PrevTime) > AD_MIN_TIME*1000 {
                 adLoadingStatus = .REQUESTED
                 setObject(Int(adLoadingStatus.rawValue), key: kAdLoadingStatus)
-                //self.perform(#selector(loadAd), with: nil, afterDelay: 10)
+                setObject(nowTime, key: kPrevAdShownTime)
+                self.perform(#selector(loadAd), with: nil, afterDelay: 10)
             }
         }
     }
@@ -322,9 +324,11 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         hintBarManager.delegate = self
         hintBarManager.addSuggestionBar(parentView: inputView, txtView: textDocumentProxy)
         
-        if isProVersion{
-            showSettingOptionView()
-        }
+//        if isProVersion{
+//            showSettingOptionView()
+//        }
+        
+        showSettingOptionView()
         
         refreshWordFile()
     }
@@ -491,14 +495,12 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
     //MARK: OPEN CONTAINER APP
     @objc func openContainerApp() {
-        //if isProVersion{ return }
-        
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
         log("text::\(fullText)")
 
-        setObject(fullText, key: SUITE_KEY)
+        //setObject(fullText, key: SUITE_KEY)
 
         let url = URL(string: "VaticSoftThaiKeyboard://")
         let selectorOpenURL = sel_registerName("openURL:")
@@ -520,7 +522,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
+        
 //        var textColor: UIColor
 //        let proxy = self.textDocumentProxy
 //        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
@@ -576,7 +578,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let textRight = textDocumentProxy.documentContextAfterInput  ?? ""
         let fullText  = textLeft + textRight
         
-        setObject(fullText, key: SUITE_KEY)
+        //setObject(fullText, key: SUITE_KEY)
         
         //refreshStatus()
         
@@ -591,6 +593,13 @@ extension KeyboardViewController: KeyboardViewDelegate {
         //AudioServicesPlaySystemSound (0x450);
         
         hintBarType = .HINT_WORD
+        
+        if !isAppUsed {
+            let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
+            if !isPurchased{
+                setObject(1, key: kIsAppUsed)
+            }
+        }
         
         //https://picturetosound.com/en/a/26/iphone-typing-on-keyboard
         //audioManager.playSoundFile("key_sound.mp3")
@@ -632,7 +641,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
-        setObject(fullText, key: SUITE_KEY)
+        //setObject(fullText, key: SUITE_KEY)
         log("insert :: \(fullText)")
         
         //Hide setting view from suggestion bar
@@ -660,7 +669,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
         let fullText  = textLeft + textRight
-        setObject(fullText, key: SUITE_KEY)
+        //setObject(fullText, key: SUITE_KEY)
         log("insert word :: \(fullText)")
     }
     

@@ -30,13 +30,19 @@ class HintBarManager: NSObject {
     func addSuggestionBar(parentView:UIView,txtView:UITextDocumentProxy) {
         parentView.addSubview(suggestionBarScrollView)
         
-        if isProVersion {
-            //right side reload button
-            let reloadButton = getReloadButton()
-            reloadButton.frame = CGRect(x: Int(parentView.frame.width) - Int(21) ,y: 0, width: Int(21), height: Int(21))
-            reloadButton.center = CGPoint(x: reloadButton.center.x, y: suggestionBarScrollView.center.y)
-            parentView.addSubview(reloadButton)
-        }
+//        if isProVersion {
+//            //right side reload button
+//            let reloadButton = getReloadButton()
+//            reloadButton.frame = CGRect(x: Int(parentView.frame.width) - Int(21) ,y: 0, width: Int(21), height: Int(21))
+//            reloadButton.center = CGPoint(x: reloadButton.center.x, y: suggestionBarScrollView.center.y)
+//            parentView.addSubview(reloadButton)
+//        }
+        
+        //right side reload button
+        let reloadButton = getReloadButton()
+        reloadButton.frame = CGRect(x: Int(parentView.frame.width) - Int(21) ,y: 0, width: Int(21), height: Int(21))
+        reloadButton.center = CGPoint(x: reloadButton.center.x, y: suggestionBarScrollView.center.y)
+        parentView.addSubview(reloadButton)
         
         suggestionBarScrollView.layer.zPosition = -10
         suggestionBarScrollView.delegate = self

@@ -11,9 +11,10 @@ import Foundation
 //app setting::108
 var isProduction = false
 var isProVersion = false //app setting::301
-let AD_MIN_TIME:TimeInterval = 10*2 //10 min
+let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
+let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
 
 enum AD_LOADING_STATUS:Int {
     case NOT_REQUESTED
@@ -28,7 +29,8 @@ let kAdLoadingStatus = "kAdLoadingStatus"
 let kIsPurchaed = "kIsPurchaed"
 let kIsAppUsed = "kIsAppUsed"
 
-let SUITE_KEY = "group.com.vaticsoft.SmartKeyboard"
+//app setting::303
+let SUITE_KEY = "group.com.vaticsoft.ThaiKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"
 let kActiveLanguages  = "kActiveLanguages"
 
