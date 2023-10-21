@@ -70,7 +70,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         self.prepareHeightConstraint()
         
         if thisClassName.contains("KeyboardViewController") {
-            
+            /*
             deleteDoccumentText()
             
             let val = getObject(SUITE_KEY) as? String ?? ""
@@ -79,7 +79,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             // read from clipboard
             let content = UIPasteboard.general.string
             self.textDocumentProxy.insertText(content ?? "")
-            
+            */
             //check first ad
             let nowTime   = getCurrentTime()
             let PrevTime  = getObject(kPrevAdShownTime) as? TimeInterval ?? nowTime
@@ -491,7 +491,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
     //MARK: OPEN CONTAINER APP
     @objc func openContainerApp() {
-        if isProVersion{ return }
+        //if isProVersion{ return }
         
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""
@@ -500,7 +500,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
         setObject(fullText, key: SUITE_KEY)
 
-        let url = URL(string: "SmartFonts://")
+        let url = URL(string: "VaticSoftThaiKeyboard://")
         let selectorOpenURL = sel_registerName("openURL:")
         let context = NSExtensionContext()
         context.open(url! as URL, completionHandler: nil)
@@ -521,26 +521,26 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
-        var textColor: UIColor
-        let proxy = self.textDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
-            textColor = UIColor.white
-        } else {
-            textColor = UIColor.black
-        }
-        
-        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
-        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
-        let fullText  = textLeft + textRight
-        
-        let val = getObject(SUITE_KEY) as? String ?? ""
-        log("get val::\(val)")
-        
-        if fullText == val{
-            return
-        } else {
-            setObject(val, key: SUITE_KEY)
-        }
+//        var textColor: UIColor
+//        let proxy = self.textDocumentProxy
+//        if proxy.keyboardAppearance == UIKeyboardAppearance.dark {
+//            textColor = UIColor.white
+//        } else {
+//            textColor = UIColor.black
+//        }
+//
+//        let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
+//        let textRight = textDocumentProxy.documentContextAfterInput ?? ""
+//        let fullText  = textLeft + textRight
+//
+//        let val = getObject(SUITE_KEY) as? String ?? ""
+//        log("get val::\(val)")
+//
+//        if fullText == val{
+//            return
+//        } else {
+//            setObject(val, key: SUITE_KEY)
+//        }
         
     }
 }

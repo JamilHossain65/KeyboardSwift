@@ -11,7 +11,7 @@ import Foundation
 //app setting::108
 var isProduction = false
 var isProVersion = false //app setting::301
-let AD_MIN_TIME:TimeInterval = 10*60 //10 min
+let AD_MIN_TIME:TimeInterval = 10*2 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
 
