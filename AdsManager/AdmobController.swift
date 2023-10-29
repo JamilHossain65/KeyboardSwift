@@ -79,8 +79,10 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
                 return "ca-app-pub-9133033983333483/4102060257"
             case JpKatakana:
                 return "ca-app-pub-9133033983333483/4102060257"
+            case SmartFonts:
+                return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-9133033983333483/2553101054" //MARK: - todo
+                return "ca-app-pub-9133033983333483/2540966764" //MARK: - todo
             }
         }
     }

@@ -97,8 +97,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 return "com.vaticsoft.iap.keyboard.japanese"
             case JpKatakana:
                 return "com.vaticsoft.iap.JapaneseKeyboard"
+            case SmartFonts:
+                return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.keyboard.thai.iap"
+                return "SmartFontRemoveAds"
             }
         }
     }
@@ -299,7 +301,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             
             // Initialize the Google Mobile Ads SDK.
             GADMobileAds.sharedInstance().start()
-            
+            //GADMobileAds.sharedInstance().applicationVolume = 0.0
             // TODO: Request an ad.
             // GADInterstitialAd.load(...)
         }
@@ -641,14 +643,14 @@ extension HomeViewController:UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView){
         //if #available(iOS 15.0, *) { }
         //app setting::114
-//        if !isAppUsed { //MARK:- todo enable this keyboard
-//            let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
-//            if !isPurchased{
-//                setObject(1, key: kIsAppUsed)
-//                showAdmobInterstitial()
-//                loadAd()
-//            }
-//        }
+        if !isAppUsed && textView.text.count > 0 { //MARK:- todo enable this keyboard
+            let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
+            if !isPurchased{
+                setObject(1, key: kIsAppUsed)
+                showAdmobInterstitial()
+                loadAd()
+            }
+        }
     }
     
     @objc func showRewardedAd(){

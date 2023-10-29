@@ -88,7 +88,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             //check for first time ad show
             if nowTime == PrevTime || (nowTime - PrevTime) > AD_MIN_TIME*1000 {
                 adLoadingStatus = .REQUESTED
-                setObject(Int(adLoadingStatus.rawValue), key: kAdLoadingStatus)
+                //setObject(Int(adLoadingStatus.rawValue), key: kAdLoadingStatus)
                 setObject(nowTime, key: kPrevAdShownTime)
                 self.perform(#selector(loadAd), with: nil, afterDelay: 10)
             }
@@ -101,7 +101,9 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     @objc func loadAd(){
-        openContainerApp()
+        if isAppUsed {
+            openContainerApp()
+        }
     }
     
     func refreshWordFile(){
@@ -502,7 +504,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
         //setObject(fullText, key: SUITE_KEY)
 
-        let url = URL(string: "VaticSoftThaiKeyboard://")
+        let url = URL(string: "SmartFonts://") //VaticSoftThaiKeyboard://
         let selectorOpenURL = sel_registerName("openURL:")
         let context = NSExtensionContext()
         context.open(url! as URL, completionHandler: nil)
@@ -572,6 +574,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     func deleteCharacter(_ newCharacter: String) {
         writingMode = .DELETING
         hideSettingView()
+        UIDevice.current.playInputClick()
         
         textDocumentProxy.deleteBackward()
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
@@ -587,19 +590,17 @@ extension KeyboardViewController: KeyboardViewDelegate {
     
     func insertCharacter(_ newCharacter: String) {
         
+        if !isAppUsed {
+            setObject(1, key: kIsAppUsed)
+            openContainerApp()
+        }
+        
         //MARK:- TODO: play sound when tap letter
         //UIDevice.current.playInputClick()
         ////AudioServicesPlaySystemSound (1104);
         //AudioServicesPlaySystemSound (0x450);
         
         hintBarType = .HINT_WORD
-        
-        if !isAppUsed {
-            let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
-            if !isPurchased{
-                setObject(1, key: kIsAppUsed)
-            }
-        }
         
         //https://picturetosound.com/en/a/26/iphone-typing-on-keyboard
         //audioManager.playSoundFile("key_sound.mp3")
