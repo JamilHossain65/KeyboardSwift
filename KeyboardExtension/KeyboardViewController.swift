@@ -60,7 +60,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         
         let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
         if !isPurchased {
-            //self.perform(#selector(loadAd), with: nil, afterDelay: 10)
             self.perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME)
         }
     }
@@ -87,8 +86,6 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             
             //check for first time ad show
             if nowTime == PrevTime || (nowTime - PrevTime) > AD_MIN_TIME*1000 {
-                adLoadingStatus = .REQUESTED
-                //setObject(Int(adLoadingStatus.rawValue), key: kAdLoadingStatus)
                 setObject(nowTime, key: kPrevAdShownTime)
                 self.perform(#selector(loadAd), with: nil, afterDelay: 10)
             }
@@ -102,7 +99,25 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     @objc func loadAd(){
         if isAppUsed {
-            openContainerApp()
+            if isAppActive {
+                switch(adLoadingStatus){
+                case .REQUESTED:
+                    self.perform(#selector(loadAd), with: nil, afterDelay: 10)
+                    break
+                case .LOADING:
+                    self.perform(#selector(loadAd), with: nil, afterDelay: 10)
+                    break
+                case .LOADED:
+                    openContainerApp()
+                    break
+                default: //NOT_REQUESTED
+                    adLoadingStatus = .REQUESTED
+                    self.perform(#selector(loadAd), with: nil, afterDelay: 10)
+                    break
+                }
+            }else{
+                openContainerApp()
+            }
         }
     }
     

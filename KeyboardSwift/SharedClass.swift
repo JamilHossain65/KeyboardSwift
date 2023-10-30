@@ -21,6 +21,9 @@ var isAppUsed: Bool {
     }
 }
 
+var isAppActive = false
+    
+
 enum AD_LOADING_STATUS:Int {
     case NOT_REQUESTED
     case REQUESTED
@@ -29,7 +32,7 @@ enum AD_LOADING_STATUS:Int {
 }
 
 var adLoadingStatus:AD_LOADING_STATUS = .NOT_REQUESTED
-let kAdLoadingStatus = "kAdLoadingStatus"
+//let kAdLoadingStatus = "kAdLoadingStatus"
 
 let kIsPurchaed = "kIsPurchaed"
 let kIsAppUsed = "kIsAppUsed"

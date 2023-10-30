@@ -42,7 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        isAppActive = true
         setNotification()
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        isAppActive = false
     }
     
     @objc func adAcknoledge(){

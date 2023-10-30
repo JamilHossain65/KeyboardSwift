@@ -123,7 +123,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        
+        isAppActive = true
         //requestConsentInfoUpdate()
         
         AdAppodeal.shared.initializeAppodealSDK()
@@ -211,9 +211,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             adLoadingStatus = .LOADING
             perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 10)
             break
-        case .LOADING:
-            perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 10)
-            break
         default:
             break
         }
@@ -224,9 +221,17 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         //appJpSetting()
         
         log("isAppUsed:::\(isAppUsed)")
+        log("isAppActive:::\(isAppActive)")
+        log("adLoadingStatus:::\(adLoadingStatus)")
+        
+        isAppActive = true
         
         if isAppUsed { //app already used
-            AdmobController.shared.showAdmobInterstitial(self)
+            if adLoadingStatus == .LOADED{
+                AdmobController.shared.showRewardedInterstitial(self)
+            }else{
+                AdmobController.shared.showAdmobInterstitial(self)
+            }
         }
     }
     
