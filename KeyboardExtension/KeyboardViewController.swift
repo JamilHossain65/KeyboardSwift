@@ -53,7 +53,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(Thai, for: .normal) //MARK: - do it dynamic
+        button.setTitle(Burmese, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
@@ -98,6 +98,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     @objc func loadAd(){
+        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
         if isAppUsed {
             if isAppActive {
                 switch(adLoadingStatus){
@@ -519,7 +520,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
         //setObject(fullText, key: SUITE_KEY)
 
-        let url = URL(string: "SmartFonts://") //VaticSoftThaiKeyboard://
+        let url = URL(string: "\(appSchemeName)://") //VaticSoftThaiKeyboard://
         let selectorOpenURL = sel_registerName("openURL:")
         let context = NSExtensionContext()
         context.open(url! as URL, completionHandler: nil)
@@ -604,7 +605,7 @@ extension KeyboardViewController: KeyboardViewDelegate {
     }
     
     func insertCharacter(_ newCharacter: String) {
-        
+        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
         if !isAppUsed {
             setObject(1, key: kIsAppUsed)
             openContainerApp()

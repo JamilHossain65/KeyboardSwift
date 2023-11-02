@@ -130,6 +130,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         if !isPurchased {//not paid user
             loadAd()
+            let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
             if isAppUsed{ //app already used
                 perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 5)
                 perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
@@ -220,6 +221,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         //appThaiSetting()
         //appJpSetting()
         
+        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
         log("isAppUsed:::\(isAppUsed)")
         log("isAppActive:::\(isAppActive)")
         log("adLoadingStatus:::\(adLoadingStatus)")
@@ -648,6 +650,7 @@ extension HomeViewController:UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView){
         //if #available(iOS 15.0, *) { }
         //app setting::114
+        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
         if !isAppUsed && textView.text.count > 0 { //MARK:- todo enable this keyboard
             let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
             if !isPurchased{

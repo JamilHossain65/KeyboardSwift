@@ -15,9 +15,78 @@ let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
 //var isAppUsed = false
-var isAppUsed: Bool {
+//var isAppUsed: Bool {
+//    get {
+//        return getObject(kIsAppUsed) as? Bool ?? false
+//    }
+//}
+
+var appSchemeName: String {
     get {
-        return getObject(kIsAppUsed) as? Bool ?? false
+        let langName = getString(SelectedLanguage)
+        
+        switch langName {
+        case Bangla:
+            return ""
+        case BanglaGoti:
+            return ""
+        case BanglaDruti:
+            return ""
+        case Thai:
+            return ""
+        case Gujarati:
+            return ""
+        case Hindi:
+            return ""
+        case Kannada:
+            return ""
+        case Malayalam:
+            return ""
+        case Marathi:
+            return ""
+        case Nepali:
+            return ""
+        case Oriya:
+            return ""
+        case Punjabi:
+            return ""
+        case Sanskrit:
+            return ""
+        case Tamil:
+            return ""
+        case Telugu:
+            return ""
+        case Urdu:
+            return ""
+        case Indonesian:
+            return ""
+        case Russian:
+            return ""
+        case Spanish:
+            return ""
+        case French:
+            return ""
+        case German:
+            return ""
+        case Italian:
+            return ""
+        case Korean:
+            return ""
+        case Turkish:
+            return ""
+        case Portuguese:
+            return ""
+        case Burmese:
+            return "BurmeseKeyboard"
+        case JpHiragana:
+            return ""
+        case JpKatakana:
+            return ""
+        case SmartFonts:
+            return ""
+        default://English
+            return "BurmeseKeyboard://"
+        }
     }
 }
 
@@ -89,8 +158,8 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :true,  JpHiragana:false,
-    JpKatakana:false, Burmese:false
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    JpKatakana:false, Burmese:true
 ]
 
 var countryCodes  = [
