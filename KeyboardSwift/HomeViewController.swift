@@ -35,9 +35,9 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
     
-    let monthlySubs = "com.vaticsoft.iap.burmeseKeyboard.monthly"
-    let halfYearlySubs = "com.vaticsoft.iap.burmeseKeyboard.monthly"
-    let yearlySubs = "com.vaticsoft.iap.burmeseKeyboard.monthly"
+    let monthlySubs = "com.vaticsoft.iap.burmese.keyboard.monthly"
+    let halfYearlySubs = "com.vaticsoft.iap.burmese.keyboard.halfYearly"
+    let yearlySubs = "com.vaticsoft.iap.burmese.keyboard.yearly"
     
     //app setting::12
     var fullVersionID: String {
@@ -327,7 +327,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func buyButtonPressed(){
         if self.productsArray.count <= 0 { return }
-        print("buyButtonPressed::\(self.productsArray[0])")
+        print("buyButtonPressed::\(self.productsArray[0].localizedDescription)")
         //setObject(1, key: kIsPurchaed)
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
