@@ -153,7 +153,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         self.textView.frame.origin.y = SizeConfig.navBarHeight
         
         IAPHandler.shared.isLogEnabled = true
-        IAPHandler.shared.setProductIds(ids: [monthlySubs,halfYearlySubs,yearlySubs]) //fullVersionID
+        IAPHandler.shared.setProductIds(ids: [fullVersionID]) //[monthlySubs,halfYearlySubs,yearlySubs]
         IAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
            guard let sSelf = self else {return}
            sSelf.productsArray = products
@@ -211,7 +211,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func checkAdLoadRequesting(){
-        print("adLoadingStatus::\(adLoadingStatus)")
+        log("adLoadingStatus::\(adLoadingStatus)")
         switch adLoadingStatus{
         case .REQUESTED:
             adLoadingStatus = .LOADING
@@ -266,7 +266,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             
             if let consentError = requestConsentError {
                 // Consent gathering failed.
-                return print("Error: \(consentError.localizedDescription)")
+                return log("Error: \(consentError.localizedDescription)")
             }
             
             self.showForm()
@@ -284,7 +284,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         UMPConsentForm.load(completionHandler: { form, loadError in
             if loadError != nil {
                 // Handle the error.
-                print("loadError::\(loadError)")
+                log("loadError::\(loadError)")
             } else {
                 // Present the form. You can also hold on to the reference to present
                 // later.
@@ -320,14 +320,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func restoreButtonPressed(){
-        print("restoreButtonPressed")
+        log("restoreButtonPressed")
         //setObject(0, key: kIsPurchaed)
         IAPHandler.shared.restorePurchase()
     }
     
     @objc func buyButtonPressed(){
         if self.productsArray.count <= 0 { return }
-        print("buyButtonPressed::\(self.productsArray[0].localizedDescription)")
+        log("buyButtonPressed::\(self.productsArray[0].localizedDescription)")
         //setObject(1, key: kIsPurchaed)
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
@@ -368,7 +368,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func doneButtonPressed(){
-        print("doneButtonPressed")
+        log("doneButtonPressed")
         view.endEditing(true)
     }
     
@@ -387,7 +387,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             loading.startAnimating()
             view.addSubview(loading)
             
-            print("caret::\(caret)")
+            log("caret::\(caret)")
         }
         
     }
@@ -408,8 +408,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
         let countryCode2 = countryCodes[actLanguages.last ?? ""] ?? ""
         
-        print("countryCode1::\(countryCode1)")
-        print("countryCode2::\(countryCode2)")
+        log("countryCode1::\(countryCode1)")
+        log("countryCode2::\(countryCode2)")
         
         var codeBd = flag(from: "bd")//bd
         var codeEn = flag(from: "us") //us
@@ -422,10 +422,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             codeBd = flag(from: countryCode1)
         }
         
-        print("codeBd::\(codeBd)")
-        print("codeEn::\(codeEn)")
+        log("codeBd::\(codeBd)")
+        log("codeEn::\(codeEn)")
         */
-        print("actLanguages::\(actLanguages)")
+        log("actLanguages::\(actLanguages)")
         
         languageButton = UIButton(frame: CGRect(x: textView.frame.size.width - 122, y: textView.frame.size.height - 44, width: 40, height: 40))
         
@@ -455,13 +455,13 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             
         }else{
             let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
-            print("actLanguages::\(actLanguages)")
+            log("actLanguages::\(actLanguages)")
             
             let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
             let countryCode2 = countryCodes[actLanguages.last ?? ""] ?? ""
             
-            print("countryCode1::\(countryCode1)")
-            print("countryCode2::\(countryCode2)")
+            log("countryCode1::\(countryCode1)")
+            log("countryCode2::\(countryCode2)")
             
             var codeBd = flag(from: "bd")//bd //MARK: -  initally selected language
             var codeEn = flag(from: "us") //us
@@ -474,8 +474,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 codeBd = flag(from: countryCode1)
             }
             
-            print("codeBd::\(codeBd)")
-            print("codeEn::\(codeEn)")
+            log("codeBd::\(codeBd)")
+            log("codeEn::\(codeEn)")
             languageButton.setTitle("\(codeBd)", for: .normal)
             languageButton.setTitle("\(codeEn)", for: .selected)
         }
@@ -571,7 +571,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let url = BASE_URL + API_TEST
         APIRequest(url).params([:], method:.GET, header: "", completion: {(response,errors) in
             if errors == nil {
-                //print("response:\(response.json)\n")
+                //log("response:\(response.json)\n")
                 if let _response = response?.json {
                     if let name = _response["test"] as? String {
                         log(name)
@@ -588,7 +588,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let url = "https://jamilhossain65.github.io/app-setting.json"
         APIRequest(url).params([:], method:.GET, header: "", completion: {(response,errors) in
             if errors == nil {
-                //print("response:\(response?.json)\n")
+                //log("response:\(response?.json)\n")
                 if let _response = response?.json {
                     if let thaiSetting = _response["thai_keyboard"]{
                         let isForceUpdate:Bool = JSON(thaiSetting)["is_force_update"].boolValue
@@ -636,7 +636,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let url = "https://jamilhossain65.github.io/app-setting.json"
         APIRequest(url).params([:], method:.GET, header: "", completion: {(response,errors) in
             if errors == nil {
-                //print("response:\(response?.json)\n")
+                //log("response:\(response?.json)\n")
                 if let _response = response?.json {
                     if let thaiSetting = _response["japanese_keyboard"]{
                         let isForceUpdate:Bool = JSON(thaiSetting)["is_force_update"].boolValue
@@ -725,7 +725,7 @@ extension HomeViewController:UITextViewDelegate {
 
 extension HomeViewController:AudioManagerDelegate {
     func recordDidFinish(){
-        print("convert start.....")
+        log("convert start.....")
         /*
         let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
         let countryCode1 = languageCodes[actLanguages.first ?? ""] ?? ""
