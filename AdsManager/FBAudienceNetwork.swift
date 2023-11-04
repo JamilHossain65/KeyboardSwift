@@ -15,7 +15,7 @@ class FBAudienceNetwork: UIViewController, FBRewardedVideoAdDelegate {
     private var rewardedVideoAd: FBRewardedVideoAd?
     
     //app setting:: 200
-    var admobAdKey: String {
+    var metaAdKey: String {
         get {
             let langName = getString(SelectedLanguage)
             

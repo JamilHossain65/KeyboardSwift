@@ -8,7 +8,7 @@
 
 import Foundation
 
-//app setting::108
+//app setting::4
 var isProduction = false
 var isProVersion = false //app setting::301
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
@@ -63,7 +63,7 @@ var appSchemeName: String {
         case Russian:
             return ""
         case Spanish:
-            return ""
+            return "SpanishKeyboard"
         case French:
             return ""
         case German:
@@ -85,7 +85,7 @@ var appSchemeName: String {
         case SmartFonts:
             return ""
         default://English
-            return "BurmeseKeyboard://"
+            return "SpanishKeyboard"
         }
     }
 }
