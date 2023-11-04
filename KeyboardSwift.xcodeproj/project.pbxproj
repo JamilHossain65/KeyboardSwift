@@ -87,7 +87,6 @@
 		8D0137B62A5C597D0091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D0137B72A5C597D0091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D0137B82A5C597D0091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
-		8D0137B92A5C597D0091CC58 /* SmartFonts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */; };
 		8D0137BA2A5C597D0091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0137BB2A5C597D0091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D0137BC2A5C597D0091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
@@ -129,7 +128,6 @@
 		8D0137EF2A5C59860091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D0137F02A5C59860091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D0137F12A5C59860091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
-		8D0137F22A5C59860091CC58 /* SmartFonts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */; };
 		8D0137F32A5C59860091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0137F42A5C59860091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D0137F52A5C59860091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
@@ -171,7 +169,6 @@
 		8D0138282A5C59890091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D0138292A5C59890091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D01382A2A5C59890091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
-		8D01382B2A5C59890091CC58 /* SmartFonts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */; };
 		8D01382C2A5C59890091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D01382D2A5C59890091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D01382E2A5C59890091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
@@ -213,7 +210,6 @@
 		8D0138612A5C598C0091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D0138622A5C598C0091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D0138632A5C598C0091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
-		8D0138642A5C598C0091CC58 /* SmartFonts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */; };
 		8D0138652A5C598C0091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0138662A5C598C0091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D0138672A5C598C0091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
@@ -255,7 +251,6 @@
 		8D01389A2A5C59920091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D01389B2A5C59920091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D01389C2A5C59920091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
-		8D01389D2A5C59920091CC58 /* SmartFonts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */; };
 		8D01389E2A5C59920091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D01389F2A5C59920091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D0138A02A5C59920091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
@@ -297,7 +292,6 @@
 		8D0138D32A5C59950091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D0138D42A5C59950091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D0138D52A5C59950091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
-		8D0138D62A5C59950091CC58 /* SmartFonts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */; };
 		8D0138D72A5C59950091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0138D82A5C59950091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D0138D92A5C59950091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
@@ -320,7 +314,6 @@
 		8D02F5FB27B178B9008AA6E3 /* german.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F727B178B9008AA6E3 /* german.txt */; };
 		8D0D37482A40BE020006741B /* AdAppodeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D37472A40BE010006741B /* AdAppodeal.swift */; };
 		8D1369012A5A76FA0036CAD7 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
-		8D1369032A5A7AB60036CAD7 /* SmartFonts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */; };
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D1C0A2E2A2E44F700E61C3B /* UnicodeTh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */; };
 		8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */; };
@@ -836,7 +829,6 @@
 		8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = submit_info.rtf; sourceTree = "<group>"; };
 		8D0D37472A40BE010006741B /* AdAppodeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdAppodeal.swift; sourceTree = "<group>"; };
 		8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SmartFonts.xcassets; sourceTree = "<group>"; };
-		8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SmartFonts-Info.plist"; sourceTree = "<group>"; };
 		8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeTh.swift; sourceTree = "<group>"; };
 		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D2E784D2A5C492C00A09A80 /* ThaiKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1465,13 +1457,12 @@
 				8DE7F95925E4476900D3C48A /* Info.plist */,
 				8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */,
 				8DDC12F52A7CC0E500B60933 /* Spanish-Info.plist */,
-				8D1369022A5A7AB60036CAD7 /* SmartFonts-Info.plist */,
-				8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */,
 				8D7E9F4B2A5E4C7A0011621C /* Thai-Info.plist */,
 				8D7E9F4D2A5E5BC50011621C /* Druti-Info.plist */,
 				8D8A99282A62DAF40092ADB9 /* Japanese-Info.plist */,
 				8D981F042A650AC70072A8D3 /* Burmese-Info.plist */,
 				8D3AE8A62A56CE7100C74CF6 /* SmartFonts-Info.plist */,
+				8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */,
 				8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */,
 				8DD5076526815FEA00377CBD /* sound */,
 			);
@@ -1868,7 +1859,6 @@
 				8D0137B72A5C597D0091CC58 /* AdAppodeal.xib in Resources */,
 				8D0137B82A5C597D0091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0138E72A5C5F3E0091CC58 /* DrutiAssets.xcassets in Resources */,
-				8D0137B92A5C597D0091CC58 /* SmartFonts-Info.plist in Resources */,
 				8DDBA4DD2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0137BA2A5C597D0091CC58 /* bangla.flac in Resources */,
 				8D0137BB2A5C597D0091CC58 /* Localizable.strings in Resources */,
@@ -1890,7 +1880,6 @@
 				8D0137F02A5C59860091CC58 /* AdAppodeal.xib in Resources */,
 				8D0138E92A5C5F530091CC58 /* GermanAssets.xcassets in Resources */,
 				8D0137F12A5C59860091CC58 /* SmartFonts.xcassets in Resources */,
-				8D0137F22A5C59860091CC58 /* SmartFonts-Info.plist in Resources */,
 				8D0137F32A5C59860091CC58 /* bangla.flac in Resources */,
 				8D0137F42A5C59860091CC58 /* Localizable.strings in Resources */,
 				8D0137F52A5C59860091CC58 /* GoogleService-Info.plist in Resources */,
@@ -1911,7 +1900,6 @@
 				8D8A99292A62DAF40092ADB9 /* Japanese-Info.plist in Resources */,
 				8D0138292A5C59890091CC58 /* AdAppodeal.xib in Resources */,
 				8D01382A2A5C59890091CC58 /* SmartFonts.xcassets in Resources */,
-				8D01382B2A5C59890091CC58 /* SmartFonts-Info.plist in Resources */,
 				8DDBA4D92A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D01382C2A5C59890091CC58 /* bangla.flac in Resources */,
 				8D01382D2A5C59890091CC58 /* Localizable.strings in Resources */,
@@ -1933,7 +1921,6 @@
 				8D0138622A5C598C0091CC58 /* AdAppodeal.xib in Resources */,
 				8D0138632A5C598C0091CC58 /* SmartFonts.xcassets in Resources */,
 				8DDC12F62A7CC0E500B60933 /* Spanish-Info.plist in Resources */,
-				8D0138642A5C598C0091CC58 /* SmartFonts-Info.plist in Resources */,
 				8DDBA4DC2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0138652A5C598C0091CC58 /* bangla.flac in Resources */,
 				8D0138662A5C598C0091CC58 /* Localizable.strings in Resources */,
@@ -1955,7 +1942,6 @@
 				8D01389B2A5C59920091CC58 /* AdAppodeal.xib in Resources */,
 				8D0138F52A5C5FDB0091CC58 /* TurkishAssets.xcassets in Resources */,
 				8D01389C2A5C59920091CC58 /* SmartFonts.xcassets in Resources */,
-				8D01389D2A5C59920091CC58 /* SmartFonts-Info.plist in Resources */,
 				8D01389E2A5C59920091CC58 /* bangla.flac in Resources */,
 				8D01389F2A5C59920091CC58 /* Localizable.strings in Resources */,
 				8D0138A02A5C59920091CC58 /* GoogleService-Info.plist in Resources */,
@@ -1976,7 +1962,6 @@
 				8D0138D32A5C59950091CC58 /* Main.storyboard in Resources */,
 				8D0138D42A5C59950091CC58 /* AdAppodeal.xib in Resources */,
 				8D0138D52A5C59950091CC58 /* SmartFonts.xcassets in Resources */,
-				8D0138D62A5C59950091CC58 /* SmartFonts-Info.plist in Resources */,
 				8D0138D72A5C59950091CC58 /* bangla.flac in Resources */,
 				8D0138D82A5C59950091CC58 /* Localizable.strings in Resources */,
 				8D0138D92A5C59950091CC58 /* GoogleService-Info.plist in Resources */,
@@ -2016,7 +2001,6 @@
 				8D3AE8962A56CE7000C74CF6 /* Main.storyboard in Resources */,
 				8D3AE8972A56CE7000C74CF6 /* AdAppodeal.xib in Resources */,
 				8D1369012A5A76FA0036CAD7 /* SmartFonts.xcassets in Resources */,
-				8D1369032A5A7AB60036CAD7 /* SmartFonts-Info.plist in Resources */,
 				8D3AE8982A56CE7000C74CF6 /* bangla.flac in Resources */,
 				8D3AE8992A56CE7000C74CF6 /* Localizable.strings in Resources */,
 				8DDBA4E12A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
@@ -3261,7 +3245,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Russian-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3269,7 +3253,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3290,7 +3274,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Russian-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3299,7 +3283,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4025,7 +4009,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -4036,7 +4020,7 @@
 				);
 				MARKETING_VERSION = 1.1.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4054,7 +4038,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -4065,7 +4049,7 @@
 				);
 				MARKETING_VERSION = 1.1.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

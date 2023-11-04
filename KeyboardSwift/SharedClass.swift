@@ -31,9 +31,9 @@ var appSchemeName: String {
         case BanglaGoti:
             return ""
         case BanglaDruti:
-            return ""
+            return "DrutiKeyboard"
         case Thai:
-            return ""
+            return "VaticSoftThaiKeyboard"
         case Gujarati:
             return ""
         case Hindi:
@@ -61,7 +61,7 @@ var appSchemeName: String {
         case Indonesian:
             return ""
         case Russian:
-            return ""
+            return "RussianKeyboard"
         case Spanish:
             return "SpanishKeyboard"
         case French:
@@ -79,13 +79,13 @@ var appSchemeName: String {
         case Burmese:
             return "BurmeseKeyboard"
         case JpHiragana:
-            return ""
+            return "VaticSoftJapaneseKeyboardOld"
         case JpKatakana:
             return ""
         case SmartFonts:
             return ""
         default://English
-            return "SpanishKeyboard"
+            return "RussianKeyboard"
         }
     }
 }
@@ -151,8 +151,8 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
-    Spanish :true, French    :false, German    :false, Italian  :false,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
+    Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
