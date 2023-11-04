@@ -10,7 +10,8 @@ import Foundation
 
 //app setting::4
 var isProduction = false
-var isProVersion = false //app setting::301
+//app setting::301
+var isProVersion = false
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
@@ -85,7 +86,7 @@ var appSchemeName: String {
         case SmartFonts:
             return ""
         default://English
-            return "RussianKeyboard"
+            return "VaticSoftJapaneseKeyboardOld"
         }
     }
 }
@@ -151,14 +152,14 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:true,
     JpKatakana:false, Burmese:false
 ]
 

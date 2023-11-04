@@ -3312,7 +3312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3342,7 +3342,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3430,8 +3430,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.keyboard.japanese;
+				MARKETING_VERSION = 1.2.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -3460,8 +3460,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.keyboard.japanese;
+				MARKETING_VERSION = 1.2.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -4018,9 +4018,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4047,9 +4047,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

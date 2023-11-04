@@ -82,7 +82,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-9133033983333483/4720877434" //MARK: - todo
+                return "ca-app-pub-9133033983333483/1492998119" //MARK: - todo
             }
         }
     }
