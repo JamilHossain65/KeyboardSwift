@@ -24,7 +24,6 @@
 		8D0137642A5C595E0091CC58 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D0137652A5C595E0091CC58 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D0137662A5C595E0091CC58 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D0137672A5C595E0091CC58 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D0137682A5C595E0091CC58 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D0137692A5C595E0091CC58 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D01376A2A5C595E0091CC58 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -64,7 +63,6 @@
 		8D01379C2A5C597D0091CC58 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D01379D2A5C597D0091CC58 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D01379E2A5C597D0091CC58 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D01379F2A5C597D0091CC58 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D0137A02A5C597D0091CC58 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D0137A12A5C597D0091CC58 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D0137A22A5C597D0091CC58 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -105,7 +103,6 @@
 		8D0137D52A5C59860091CC58 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D0137D62A5C59860091CC58 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D0137D72A5C59860091CC58 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D0137D82A5C59860091CC58 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D0137D92A5C59860091CC58 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D0137DA2A5C59860091CC58 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D0137DB2A5C59860091CC58 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -146,7 +143,6 @@
 		8D01380E2A5C59890091CC58 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D01380F2A5C59890091CC58 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D0138102A5C59890091CC58 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D0138112A5C59890091CC58 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D0138122A5C59890091CC58 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D0138132A5C59890091CC58 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D0138142A5C59890091CC58 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -187,7 +183,6 @@
 		8D0138472A5C598C0091CC58 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D0138482A5C598C0091CC58 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D0138492A5C598C0091CC58 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D01384A2A5C598C0091CC58 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D01384B2A5C598C0091CC58 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D01384C2A5C598C0091CC58 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D01384D2A5C598C0091CC58 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -228,7 +223,6 @@
 		8D0138802A5C59920091CC58 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D0138812A5C59920091CC58 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D0138822A5C59920091CC58 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D0138832A5C59920091CC58 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D0138842A5C59920091CC58 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D0138852A5C59920091CC58 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D0138862A5C59920091CC58 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -269,7 +263,6 @@
 		8D0138B92A5C59950091CC58 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D0138BA2A5C59950091CC58 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D0138BB2A5C59950091CC58 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D0138BC2A5C59950091CC58 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D0138BD2A5C59950091CC58 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D0138BE2A5C59950091CC58 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D0138BF2A5C59950091CC58 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -328,7 +321,6 @@
 		8D2E78232A5C492C00A09A80 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D2E78242A5C492C00A09A80 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D2E78252A5C492C00A09A80 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D2E78262A5C492C00A09A80 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D2E78272A5C492C00A09A80 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D2E78282A5C492C00A09A80 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D2E78292A5C492C00A09A80 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -357,7 +349,6 @@
 		8D2E78442A5C492C00A09A80 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D2E78452A5C492C00A09A80 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
 		8D2E78472A5C492C00A09A80 /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8DE7F9C125E4784200D3C48A /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3AE8732A56CE7000C74CF6 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D3AE8742A56CE7000C74CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
@@ -370,7 +361,6 @@
 		8D3AE87B2A56CE7000C74CF6 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D3AE87C2A56CE7000C74CF6 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D3AE87D2A56CE7000C74CF6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D3AE87E2A56CE7000C74CF6 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3AE87F2A56CE7000C74CF6 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D3AE8802A56CE7000C74CF6 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D3AE8812A56CE7000C74CF6 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -480,7 +470,6 @@
 		8D8EB7C62AF67978000D858E /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D8EB7C72AF67978000D858E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
 		8D8EB7C82AF67978000D858E /* FBAudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */; };
-		8D8EB7C92AF67978000D858E /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D8EB7CA2AF67978000D858E /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D8EB7CB2AF67978000D858E /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D8EB7CC2AF67978000D858E /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -526,7 +515,6 @@
 		8D981ED92A650AC50072A8D3 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
 		8D981EDA2A650AC50072A8D3 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
 		8D981EDB2A650AC50072A8D3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
-		8D981EDC2A650AC50072A8D3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D981EDD2A650AC50072A8D3 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8D981EDE2A650AC50072A8D3 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8D981EDF2A650AC50072A8D3 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
@@ -619,6 +607,18 @@
 		8DF6E32626C3563F0031E094 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E8152266D8F770073B3B6 /* Color.swift */; };
 		8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */; };
 		8DF6E35626C357550031E094 /* HintBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A2C26388F7D001DE455 /* HintBarManager.swift */; };
+		8DFDC31A2AFA23F1003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC31C2AFA251D003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC31D2AFA251D003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC31E2AFA251F003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC31F2AFA251F003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC3202AFA2521003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC3212AFA2521003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC3222AFA2522003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC3232AFA2523003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC3242AFA2524003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC3252AFA2525003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DFDC3262AFA2526003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8DFDDA8827E2F9C5005AD90B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */; };
 		8DFDDB3027E2FF16005AD90B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
@@ -2894,6 +2894,7 @@
 				8D01375C2A5C595E0091CC58 /* APIKey.swift in Sources */,
 				8D01375D2A5C595E0091CC58 /* SceneDelegate.swift in Sources */,
 				8D01375E2A5C595E0091CC58 /* Utils.swift in Sources */,
+				8DFDC3212AFA2521003ACEFD /* SharedClass.swift in Sources */,
 				8D01375F2A5C595E0091CC58 /* AdUtil.swift in Sources */,
 				8D0137602A5C595E0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137612A5C595E0091CC58 /* Triangle.swift in Sources */,
@@ -2903,7 +2904,6 @@
 				8D0137652A5C595E0091CC58 /* IAPHandler.swift in Sources */,
 				8D0137662A5C595E0091CC58 /* Response.swift in Sources */,
 				8DDBA4D02A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D0137672A5C595E0091CC58 /* SharedClass.swift in Sources */,
 				8D0137682A5C595E0091CC58 /* FirebaseHelper.m in Sources */,
 				8D0137692A5C595E0091CC58 /* AdsManager.m in Sources */,
 				8D01376A2A5C595E0091CC58 /* SpeechModel.swift in Sources */,
@@ -2928,6 +2928,7 @@
 				8D0137942A5C597D0091CC58 /* APIKey.swift in Sources */,
 				8D0137952A5C597D0091CC58 /* SceneDelegate.swift in Sources */,
 				8D0137962A5C597D0091CC58 /* Utils.swift in Sources */,
+				8DFDC31F2AFA251F003ACEFD /* SharedClass.swift in Sources */,
 				8D0137972A5C597D0091CC58 /* AdUtil.swift in Sources */,
 				8D0137982A5C597D0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137992A5C597D0091CC58 /* Triangle.swift in Sources */,
@@ -2937,7 +2938,6 @@
 				8D01379D2A5C597D0091CC58 /* IAPHandler.swift in Sources */,
 				8D01379E2A5C597D0091CC58 /* Response.swift in Sources */,
 				8DDBA4D22A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D01379F2A5C597D0091CC58 /* SharedClass.swift in Sources */,
 				8D0137A02A5C597D0091CC58 /* FirebaseHelper.m in Sources */,
 				8D0137A12A5C597D0091CC58 /* AdsManager.m in Sources */,
 				8D0137A22A5C597D0091CC58 /* SpeechModel.swift in Sources */,
@@ -2962,6 +2962,7 @@
 				8D0137CD2A5C59860091CC58 /* APIKey.swift in Sources */,
 				8D0137CE2A5C59860091CC58 /* SceneDelegate.swift in Sources */,
 				8D0137CF2A5C59860091CC58 /* Utils.swift in Sources */,
+				8DFDC3232AFA2523003ACEFD /* SharedClass.swift in Sources */,
 				8D0137D02A5C59860091CC58 /* AdUtil.swift in Sources */,
 				8D0137D12A5C59860091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137D22A5C59860091CC58 /* Triangle.swift in Sources */,
@@ -2971,7 +2972,6 @@
 				8D0137D62A5C59860091CC58 /* IAPHandler.swift in Sources */,
 				8D0137D72A5C59860091CC58 /* Response.swift in Sources */,
 				8DDBA4D32A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D0137D82A5C59860091CC58 /* SharedClass.swift in Sources */,
 				8D0137D92A5C59860091CC58 /* FirebaseHelper.m in Sources */,
 				8D0137DA2A5C59860091CC58 /* AdsManager.m in Sources */,
 				8D0137DB2A5C59860091CC58 /* SpeechModel.swift in Sources */,
@@ -2996,6 +2996,7 @@
 				8D0138062A5C59890091CC58 /* APIKey.swift in Sources */,
 				8D0138072A5C59890091CC58 /* SceneDelegate.swift in Sources */,
 				8D0138082A5C59890091CC58 /* Utils.swift in Sources */,
+				8DFDC31A2AFA23F1003ACEFD /* SharedClass.swift in Sources */,
 				8D0138092A5C59890091CC58 /* AdUtil.swift in Sources */,
 				8D01380A2A5C59890091CC58 /* Primitive+Extension.swift in Sources */,
 				8D01380B2A5C59890091CC58 /* Triangle.swift in Sources */,
@@ -3005,7 +3006,6 @@
 				8D01380F2A5C59890091CC58 /* IAPHandler.swift in Sources */,
 				8D0138102A5C59890091CC58 /* Response.swift in Sources */,
 				8DDBA4CE2A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D0138112A5C59890091CC58 /* SharedClass.swift in Sources */,
 				8D0138122A5C59890091CC58 /* FirebaseHelper.m in Sources */,
 				8D0138132A5C59890091CC58 /* AdsManager.m in Sources */,
 				8D0138142A5C59890091CC58 /* SpeechModel.swift in Sources */,
@@ -3030,6 +3030,7 @@
 				8D01383F2A5C598C0091CC58 /* APIKey.swift in Sources */,
 				8D0138402A5C598C0091CC58 /* SceneDelegate.swift in Sources */,
 				8D0138412A5C598C0091CC58 /* Utils.swift in Sources */,
+				8DFDC3222AFA2522003ACEFD /* SharedClass.swift in Sources */,
 				8D0138422A5C598C0091CC58 /* AdUtil.swift in Sources */,
 				8D0138432A5C598C0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0138442A5C598C0091CC58 /* Triangle.swift in Sources */,
@@ -3039,7 +3040,6 @@
 				8D0138482A5C598C0091CC58 /* IAPHandler.swift in Sources */,
 				8D0138492A5C598C0091CC58 /* Response.swift in Sources */,
 				8DDBA4D12A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D01384A2A5C598C0091CC58 /* SharedClass.swift in Sources */,
 				8D01384B2A5C598C0091CC58 /* FirebaseHelper.m in Sources */,
 				8D01384C2A5C598C0091CC58 /* AdsManager.m in Sources */,
 				8D01384D2A5C598C0091CC58 /* SpeechModel.swift in Sources */,
@@ -3064,6 +3064,7 @@
 				8D0138782A5C59920091CC58 /* APIKey.swift in Sources */,
 				8D0138792A5C59920091CC58 /* SceneDelegate.swift in Sources */,
 				8D01387A2A5C59920091CC58 /* Utils.swift in Sources */,
+				8DFDC3242AFA2524003ACEFD /* SharedClass.swift in Sources */,
 				8D01387B2A5C59920091CC58 /* AdUtil.swift in Sources */,
 				8D01387C2A5C59920091CC58 /* Primitive+Extension.swift in Sources */,
 				8D01387D2A5C59920091CC58 /* Triangle.swift in Sources */,
@@ -3073,7 +3074,6 @@
 				8D0138812A5C59920091CC58 /* IAPHandler.swift in Sources */,
 				8D0138822A5C59920091CC58 /* Response.swift in Sources */,
 				8DDBA4D42A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D0138832A5C59920091CC58 /* SharedClass.swift in Sources */,
 				8D0138842A5C59920091CC58 /* FirebaseHelper.m in Sources */,
 				8D0138852A5C59920091CC58 /* AdsManager.m in Sources */,
 				8D0138862A5C59920091CC58 /* SpeechModel.swift in Sources */,
@@ -3098,6 +3098,7 @@
 				8D0138B12A5C59950091CC58 /* APIKey.swift in Sources */,
 				8D0138B22A5C59950091CC58 /* SceneDelegate.swift in Sources */,
 				8D0138B32A5C59950091CC58 /* Utils.swift in Sources */,
+				8DFDC3252AFA2525003ACEFD /* SharedClass.swift in Sources */,
 				8D0138B42A5C59950091CC58 /* AdUtil.swift in Sources */,
 				8D0138B52A5C59950091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0138B62A5C59950091CC58 /* Triangle.swift in Sources */,
@@ -3107,7 +3108,6 @@
 				8D0138BA2A5C59950091CC58 /* IAPHandler.swift in Sources */,
 				8D0138BB2A5C59950091CC58 /* Response.swift in Sources */,
 				8DDBA4D52A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D0138BC2A5C59950091CC58 /* SharedClass.swift in Sources */,
 				8D0138BD2A5C59950091CC58 /* FirebaseHelper.m in Sources */,
 				8D0138BE2A5C59950091CC58 /* AdsManager.m in Sources */,
 				8D0138BF2A5C59950091CC58 /* SpeechModel.swift in Sources */,
@@ -3132,6 +3132,7 @@
 				8D2E781B2A5C492C00A09A80 /* APIKey.swift in Sources */,
 				8D2E781C2A5C492C00A09A80 /* SceneDelegate.swift in Sources */,
 				8D2E781D2A5C492C00A09A80 /* Utils.swift in Sources */,
+				8DFDC31D2AFA251D003ACEFD /* SharedClass.swift in Sources */,
 				8D2E781E2A5C492C00A09A80 /* AdUtil.swift in Sources */,
 				8D2E781F2A5C492C00A09A80 /* Primitive+Extension.swift in Sources */,
 				8D2E78202A5C492C00A09A80 /* Triangle.swift in Sources */,
@@ -3141,7 +3142,6 @@
 				8D2E78242A5C492C00A09A80 /* IAPHandler.swift in Sources */,
 				8D2E78252A5C492C00A09A80 /* Response.swift in Sources */,
 				8DDBA4CD2A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D2E78262A5C492C00A09A80 /* SharedClass.swift in Sources */,
 				8D2E78272A5C492C00A09A80 /* FirebaseHelper.m in Sources */,
 				8D2E78282A5C492C00A09A80 /* AdsManager.m in Sources */,
 				8D2E78292A5C492C00A09A80 /* SpeechModel.swift in Sources */,
@@ -3166,6 +3166,7 @@
 				8D3AE8732A56CE7000C74CF6 /* APIKey.swift in Sources */,
 				8D3AE8742A56CE7000C74CF6 /* SceneDelegate.swift in Sources */,
 				8D3AE8752A56CE7000C74CF6 /* Utils.swift in Sources */,
+				8DFDC3262AFA2526003ACEFD /* SharedClass.swift in Sources */,
 				8D3AE8762A56CE7000C74CF6 /* AdUtil.swift in Sources */,
 				8D3AE8772A56CE7000C74CF6 /* Primitive+Extension.swift in Sources */,
 				8D3AE8782A56CE7000C74CF6 /* Triangle.swift in Sources */,
@@ -3175,7 +3176,6 @@
 				8D3AE87C2A56CE7000C74CF6 /* IAPHandler.swift in Sources */,
 				8D3AE87D2A56CE7000C74CF6 /* Response.swift in Sources */,
 				8DDBA4D62A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D3AE87E2A56CE7000C74CF6 /* SharedClass.swift in Sources */,
 				8D3AE87F2A56CE7000C74CF6 /* FirebaseHelper.m in Sources */,
 				8D3AE8802A56CE7000C74CF6 /* AdsManager.m in Sources */,
 				8D3AE8812A56CE7000C74CF6 /* SpeechModel.swift in Sources */,
@@ -3200,6 +3200,7 @@
 				8D8EB7BD2AF67978000D858E /* APIKey.swift in Sources */,
 				8D8EB7BE2AF67978000D858E /* SceneDelegate.swift in Sources */,
 				8D8EB7BF2AF67978000D858E /* Utils.swift in Sources */,
+				8DFDC31E2AFA251F003ACEFD /* SharedClass.swift in Sources */,
 				8D8EB7C02AF67978000D858E /* AdUtil.swift in Sources */,
 				8D8EB7C12AF67978000D858E /* Primitive+Extension.swift in Sources */,
 				8D8EB7C22AF67978000D858E /* Triangle.swift in Sources */,
@@ -3209,7 +3210,6 @@
 				8D8EB7C62AF67978000D858E /* IAPHandler.swift in Sources */,
 				8D8EB7C72AF67978000D858E /* Response.swift in Sources */,
 				8D8EB7C82AF67978000D858E /* FBAudienceNetwork.swift in Sources */,
-				8D8EB7C92AF67978000D858E /* SharedClass.swift in Sources */,
 				8D8EB7CA2AF67978000D858E /* FirebaseHelper.m in Sources */,
 				8D8EB7CB2AF67978000D858E /* AdsManager.m in Sources */,
 				8D8EB7CC2AF67978000D858E /* SpeechModel.swift in Sources */,
@@ -3234,6 +3234,7 @@
 				8D981ED12A650AC50072A8D3 /* APIKey.swift in Sources */,
 				8D981ED22A650AC50072A8D3 /* SceneDelegate.swift in Sources */,
 				8D981ED32A650AC50072A8D3 /* Utils.swift in Sources */,
+				8DFDC3202AFA2521003ACEFD /* SharedClass.swift in Sources */,
 				8D981ED42A650AC50072A8D3 /* AdUtil.swift in Sources */,
 				8D981ED52A650AC50072A8D3 /* Primitive+Extension.swift in Sources */,
 				8D981ED62A650AC50072A8D3 /* Triangle.swift in Sources */,
@@ -3243,7 +3244,6 @@
 				8D981EDA2A650AC50072A8D3 /* IAPHandler.swift in Sources */,
 				8D981EDB2A650AC50072A8D3 /* Response.swift in Sources */,
 				8DDBA4CF2A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D981EDC2A650AC50072A8D3 /* SharedClass.swift in Sources */,
 				8D981EDD2A650AC50072A8D3 /* FirebaseHelper.m in Sources */,
 				8D981EDE2A650AC50072A8D3 /* AdsManager.m in Sources */,
 				8D981EDF2A650AC50072A8D3 /* SpeechModel.swift in Sources */,
@@ -3268,6 +3268,7 @@
 				8DD507462681596B00377CBD /* APIKey.swift in Sources */,
 				8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */,
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,
+				8DFDC31C2AFA251D003ACEFD /* SharedClass.swift in Sources */,
 				8D8323D527E437640068CBA1 /* AdUtil.swift in Sources */,
 				8D8477BD2A36F47100E89677 /* Primitive+Extension.swift in Sources */,
 				8DB2747727E222B3000518B0 /* Triangle.swift in Sources */,
@@ -3277,7 +3278,6 @@
 				8D8477C12A370A5F00E89677 /* IAPHandler.swift in Sources */,
 				8D8BCF7A26E76E2200615097 /* Response.swift in Sources */,
 				8DDBA4CC2A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */,
-				8D3129E227303B55001EE3C3 /* SharedClass.swift in Sources */,
 				8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */,
 				8DB274BF27E226C4000518B0 /* AdsManager.m in Sources */,
 				8DD507762681644A00377CBD /* SpeechModel.swift in Sources */,
@@ -4293,7 +4293,7 @@
 				);
 				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4322,7 +4322,7 @@
 				);
 				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

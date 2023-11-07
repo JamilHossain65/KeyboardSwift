@@ -15,12 +15,6 @@ var isProVersion = false
 let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
-//var isAppUsed = false
-//var isAppUsed: Bool {
-//    get {
-//        return getObject(kIsAppUsed) as? Bool ?? false
-//    }
-//}
 
 var appSchemeName: String {
     get {
@@ -86,7 +80,7 @@ var appSchemeName: String {
         case SmartFonts:
             return ""
         default://English
-            return "KeyboardGoti"
+            return "VaticSoftJapaneseKeyboardOld"
         }
     }
 }
@@ -159,7 +153,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:true,
     JpKatakana:false, Burmese:false
 ]
 

@@ -105,7 +105,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
+                return "com.vaticsoft.iap.JapaneseKeyboard"
             }
         }
     }
@@ -330,41 +330,52 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         log("buyButtonPressed::\(self.productsArray[0].localizedDescription)")
         //setObject(1, key: kIsPurchaed)
         
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Monthly Subscription", style: .default, handler: { (_) in
+        //app setting:: 700
+        let isSubscription = false
+        if isSubscription {
+            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Monthly Subscription", style: .default, handler: { (_) in
+                IAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
+                    if let tran = transaction, let prod = product {
+                        //use transaction details and purchased product as you want
+                        setObject(1, key: kIsPurchaed)
+                    }
+                }
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Half Yearly Subscription", style: .default, handler: { (_) in
+                IAPHandler.shared.purchase(product: self.productsArray[1]) { (alert, product, transaction) in
+                    if let tran = transaction, let prod = product {
+                        //use transaction details and purchased product as you want
+                        setObject(1, key: kIsPurchaed)
+                    }
+                }
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Yearly Subscription", style: .default, handler: { (_) in
+                IAPHandler.shared.purchase(product: self.productsArray[2]) { (alert, product, transaction) in
+                    if let tran = transaction, let prod = product {
+                        //use transaction details and purchased product as you want
+                        setObject(1, key: kIsPurchaed)
+                    }
+                }
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+                self.dismiss(animated: true)
+            }))
+            
+            DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true, completion: nil)
+            })
+        }else{
             IAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
                 if let tran = transaction, let prod = product {
                     //use transaction details and purchased product as you want
-                    setObject(1, key: kIsPurchaed)
                 }
+                //Globals.shared.showWarnigMessage(alert.message)
             }
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Half Yearly Subscription", style: .default, handler: { (_) in
-            IAPHandler.shared.purchase(product: self.productsArray[1]) { (alert, product, transaction) in
-                if let tran = transaction, let prod = product {
-                    //use transaction details and purchased product as you want
-                    setObject(1, key: kIsPurchaed)
-                }
-            }
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Yearly Subscription", style: .default, handler: { (_) in
-            IAPHandler.shared.purchase(product: self.productsArray[2]) { (alert, product, transaction) in
-                if let tran = transaction, let prod = product {
-                    //use transaction details and purchased product as you want
-                    setObject(1, key: kIsPurchaed)
-                }
-            }
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-            self.dismiss(animated: true)
-        }))
-        
-        DispatchQueue.main.async(execute: {
-            self.present(alert, animated: true, completion: nil)
-        })
+        }
     }
     
     @objc func doneButtonPressed(){
