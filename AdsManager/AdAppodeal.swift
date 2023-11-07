@@ -23,7 +23,7 @@ func getKey() -> String {
     case Bangla:
         return ""
     case BanglaGoti:
-        return ""
+        return "eeee4e1c555fb055153b45b9444be6636ca4ac238babdc69"
     case BanglaDruti:
         return "6d9d93520b410e4ad5feda9d7a7d01e962d93bbaadf1126d"
     case Thai:
@@ -77,7 +77,7 @@ func getKey() -> String {
     case JpKatakana:
         return "42e6185e165b7d8144bdf798b961fa2bf4f7e327508557f3"
     default://English
-        return "6d9d93520b410e4ad5feda9d7a7d01e962d93bbaadf1126d"
+        return "eeee4e1c555fb055153b45b9444be6636ca4ac238babdc69"
     }
 }
 

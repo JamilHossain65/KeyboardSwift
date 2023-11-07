@@ -468,6 +468,50 @@
 		8D8BCF5F26E7638B00615097 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF5E26E7638B00615097 /* Errors.swift */; };
 		8D8BCF7A26E76E2200615097 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
 		8D8BD6C6276A075000B77F6C /* UnicodeBn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */; };
+		8D8EB7BD2AF67978000D858E /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
+		8D8EB7BE2AF67978000D858E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
+		8D8EB7BF2AF67978000D858E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5075D26815EF800377CBD /* Utils.swift */; };
+		8D8EB7C02AF67978000D858E /* AdUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8323D427E437630068CBA1 /* AdUtil.swift */; };
+		8D8EB7C12AF67978000D858E /* Primitive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477BB2A36F47100E89677 /* Primitive+Extension.swift */; };
+		8D8EB7C22AF67978000D858E /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747427E222B3000518B0 /* Triangle.swift */; };
+		8D8EB7C32AF67978000D858E /* AdmobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF98E527E3866200119E68 /* AdmobController.swift */; };
+		8D8EB7C42AF67978000D858E /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073E2681596B00377CBD /* APIUrl.swift */; };
+		8D8EB7C52AF67978000D858E /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
+		8D8EB7C62AF67978000D858E /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477C02A370A5F00E89677 /* IAPHandler.swift */; };
+		8D8EB7C72AF67978000D858E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF7926E76E2200615097 /* Response.swift */; };
+		8D8EB7C82AF67978000D858E /* FBAudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */; };
+		8D8EB7C92AF67978000D858E /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8D8EB7CA2AF67978000D858E /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
+		8D8EB7CB2AF67978000D858E /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
+		8D8EB7CC2AF67978000D858E /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507752681644A00377CBD /* SpeechModel.swift */; };
+		8D8EB7CD2AF67978000D858E /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */; };
+		8D8EB7CE2AF67978000D858E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6DA1D526E897FA0080E630 /* APIRequest.swift */; };
+		8D8EB7CF2AF67978000D858E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8BCF5E26E7638B00615097 /* Errors.swift */; };
+		8D8EB7D02AF67978000D858E /* SizeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8477BC2A36F47100E89677 /* SizeConfig.swift */; };
+		8D8EB7D12AF67978000D858E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD507422681596B00377CBD /* Reachability.swift */; };
+		8D8EB7D22AF67978000D858E /* AdAppodeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D37472A40BE010006741B /* AdAppodeal.swift */; };
+		8D8EB7D32AF67978000D858E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94B25E4474A00D3C48A /* AppDelegate.swift */; };
+		8D8EB7D42AF67978000D858E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */; };
+		8D8EB7D52AF67978000D858E /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83240B27E450B60068CBA1 /* AdManager.swift */; };
+		8D8EB7D62AF67978000D858E /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AA16D2682DEDC00EA136D /* AudioManager.swift */; };
+		8D8EB7D72AF67978000D858E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747327E222B3000518B0 /* LoadingView.swift */; };
+		8D8EB7D92AF67978000D858E /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
+		8D8EB7DA2AF67978000D858E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
+		8D8EB7DB2AF67978000D858E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
+		8D8EB7DC2AF67978000D858E /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */; };
+		8D8EB7DE2AF67978000D858E /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
+		8D8EB7DF2AF67978000D858E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
+		8D8EB7E02AF67978000D858E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
+		8D8EB7E12AF67978000D858E /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
+		8D8EB7E22AF67978000D858E /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
+		8D8EB7E32AF67978000D858E /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
+		8D8EB7E42AF67978000D858E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
+		8D8EB7E52AF67978000D858E /* FBAudienceNetwork.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */; };
+		8D8EB7E62AF67978000D858E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D8EB7E72AF67978000D858E /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
+		8D8EB7E82AF67978000D858E /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
+		8D8EB7E92AF67978000D858E /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
+		8D8EB7EB2AF67978000D858E /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8DE7F9C125E4784200D3C48A /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D91D30F27B7C3EC001BB9A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D91D33627B7FBAB001BB9A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
@@ -650,6 +694,13 @@
 			remoteGlobalIDString = 8DE7F9C025E4784200D3C48A;
 			remoteInfo = KeyboardExtension;
 		};
+		8D8EB7BA2AF67978000D858E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DE7F94025E4474A00D3C48A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DE7F9C025E4784200D3C48A;
+			remoteInfo = KeyboardExtension;
+		};
 		8D981ECE2A650AC50072A8D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8DE7F94025E4474A00D3C48A /* Project object */;
@@ -762,6 +813,17 @@
 			dstSubfolderSpec = 13;
 			files = (
 				8D3AE89F2A56CE7000C74CF6 /* KeyboardExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8EB7EA2AF67978000D858E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8D8EB7EB2AF67978000D858E /* KeyboardExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,6 +969,8 @@
 		8D8BCF5E26E7638B00615097 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8D8BCF7926E76E2200615097 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8D8BD6C5276A075000B77F6C /* UnicodeBn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeBn.swift; sourceTree = "<group>"; };
+		8D8EB7F12AF67979000D858E /* Goti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goti.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8EB7F32AF67FBD000D858E /* Goti-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Goti-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8D91CD452655E7EE00404F5D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D91D30E27B7C3EB001BB9A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Base.lproj/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D91D31227B7C403001BB9A4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Base.lproj/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1087,6 +1151,17 @@
 				8D3AE8902A56CE7000C74CF6 /* AdSupport.framework in Frameworks */,
 				8D3AE8912A56CE7000C74CF6 /* StoreKit.framework in Frameworks */,
 				6A45486FEC38FD9B954D07C3 /* Pods_SmartFonts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8EB7D82AF67978000D858E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8EB7D92AF67978000D858E /* AppTrackingTransparency.framework in Frameworks */,
+				8D8EB7DA2AF67978000D858E /* AdSupport.framework in Frameworks */,
+				8D8EB7DB2AF67978000D858E /* StoreKit.framework in Frameworks */,
+				8D8EB7DC2AF67978000D858E /* Pods_SmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1428,6 +1503,7 @@
 				8D0138AB2A5C59920091CC58 /* Turkish.app */,
 				8D0138E42A5C59950091CC58 /* Indian.app */,
 				8D981F032A650AC50072A8D3 /* Burmese.app */,
+				8D8EB7F12AF67979000D858E /* Goti.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1455,6 +1531,7 @@
 				8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */,
 				8D713FDA26EEEACE0064DE3A /* busy.gif */,
 				8DE7F95925E4476900D3C48A /* Info.plist */,
+				8D8EB7F32AF67FBD000D858E /* Goti-Info.plist */,
 				8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */,
 				8DDC12F52A7CC0E500B60933 /* Spanish-Info.plist */,
 				8D7E9F4B2A5E4C7A0011621C /* Thai-Info.plist */,
@@ -1713,6 +1790,28 @@
 			productReference = 8D3AE8A52A56CE7000C74CF6 /* SmartFonts.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8D8EB7B82AF67978000D858E /* Goti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D8EB7EE2AF67978000D858E /* Build configuration list for PBXNativeTarget "Goti" */;
+			buildPhases = (
+				8D8EB7BB2AF67978000D858E /* [CP] Check Pods Manifest.lock */,
+				8D8EB7BC2AF67978000D858E /* Sources */,
+				8D8EB7D82AF67978000D858E /* Frameworks */,
+				8D8EB7DD2AF67978000D858E /* Resources */,
+				8D8EB7EA2AF67978000D858E /* Embed App Extensions */,
+				8D8EB7EC2AF67978000D858E /* [CP] Embed Pods Frameworks */,
+				8D8EB7ED2AF67978000D858E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D8EB7B92AF67978000D858E /* PBXTargetDependency */,
+			);
+			name = Goti;
+			productName = KeyboardSwift;
+			productReference = 8D8EB7F12AF67979000D858E /* Goti.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8D981ECC2A650AC50072A8D3 /* Burmese */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D981F002A650AC50072A8D3 /* Build configuration list for PBXNativeTarget "Burmese" */;
@@ -1815,11 +1914,12 @@
 				8DE7F9C025E4784200D3C48A /* KeyboardExtension */,
 				8DE7F94725E4474A00D3C48A /* KeyboardSwift */,
 				8D2E78162A5C492C00A09A80 /* ThaiKeyboard */,
+				8D8EB7B82AF67978000D858E /* Goti */,
+				8D01378F2A5C597D0091CC58 /* Druti */,
 				8D0138012A5C59890091CC58 /* Japanese */,
 				8D981ECC2A650AC50072A8D3 /* Burmese */,
 				8D0137572A5C595E0091CC58 /* Russian */,
 				8D01383A2A5C598C0091CC58 /* Spanish */,
-				8D01378F2A5C597D0091CC58 /* Druti */,
 				8D0137C82A5C59860091CC58 /* German */,
 				8D0138732A5C59920091CC58 /* Turkish */,
 				8D0138AC2A5C59950091CC58 /* Indian */,
@@ -2008,6 +2108,25 @@
 				8D3AE89B2A56CE7000C74CF6 /* busy.gif in Resources */,
 				8D3AE89C2A56CE7000C74CF6 /* good-morning-google.flac in Resources */,
 				8D3AE89D2A56CE7000C74CF6 /* AdmobController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8EB7DD2AF67978000D858E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8EB7DE2AF67978000D858E /* hello (16bit PCM).wav in Resources */,
+				8D8EB7DF2AF67978000D858E /* LaunchScreen.storyboard in Resources */,
+				8D8EB7E02AF67978000D858E /* Main.storyboard in Resources */,
+				8D8EB7E12AF67978000D858E /* AdAppodeal.xib in Resources */,
+				8D8EB7E22AF67978000D858E /* SmartFonts.xcassets in Resources */,
+				8D8EB7E32AF67978000D858E /* bangla.flac in Resources */,
+				8D8EB7E42AF67978000D858E /* Localizable.strings in Resources */,
+				8D8EB7E52AF67978000D858E /* FBAudienceNetwork.xib in Resources */,
+				8D8EB7E62AF67978000D858E /* GoogleService-Info.plist in Resources */,
+				8D8EB7E72AF67978000D858E /* busy.gif in Resources */,
+				8D8EB7E82AF67978000D858E /* good-morning-google.flac in Resources */,
+				8D8EB7E92AF67978000D858E /* AdmobController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2410,6 +2529,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D8EB7BB2AF67978000D858E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartFonts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D8EB7EC2AF67978000D858E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D8EB7ED2AF67978000D858E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		965F4DA2233E1A3BCBC4DB3E /* [CP] Copy Pods Resources */ = {
@@ -3018,6 +3193,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D8EB7BC2AF67978000D858E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8EB7BD2AF67978000D858E /* APIKey.swift in Sources */,
+				8D8EB7BE2AF67978000D858E /* SceneDelegate.swift in Sources */,
+				8D8EB7BF2AF67978000D858E /* Utils.swift in Sources */,
+				8D8EB7C02AF67978000D858E /* AdUtil.swift in Sources */,
+				8D8EB7C12AF67978000D858E /* Primitive+Extension.swift in Sources */,
+				8D8EB7C22AF67978000D858E /* Triangle.swift in Sources */,
+				8D8EB7C32AF67978000D858E /* AdmobController.swift in Sources */,
+				8D8EB7C42AF67978000D858E /* APIUrl.swift in Sources */,
+				8D8EB7C52AF67978000D858E /* AdAppodeal.m in Sources */,
+				8D8EB7C62AF67978000D858E /* IAPHandler.swift in Sources */,
+				8D8EB7C72AF67978000D858E /* Response.swift in Sources */,
+				8D8EB7C82AF67978000D858E /* FBAudienceNetwork.swift in Sources */,
+				8D8EB7C92AF67978000D858E /* SharedClass.swift in Sources */,
+				8D8EB7CA2AF67978000D858E /* FirebaseHelper.m in Sources */,
+				8D8EB7CB2AF67978000D858E /* AdsManager.m in Sources */,
+				8D8EB7CC2AF67978000D858E /* SpeechModel.swift in Sources */,
+				8D8EB7CD2AF67978000D858E /* FirebaseManager.swift in Sources */,
+				8D8EB7CE2AF67978000D858E /* APIRequest.swift in Sources */,
+				8D8EB7CF2AF67978000D858E /* Errors.swift in Sources */,
+				8D8EB7D02AF67978000D858E /* SizeConfig.swift in Sources */,
+				8D8EB7D12AF67978000D858E /* Reachability.swift in Sources */,
+				8D8EB7D22AF67978000D858E /* AdAppodeal.swift in Sources */,
+				8D8EB7D32AF67978000D858E /* AppDelegate.swift in Sources */,
+				8D8EB7D42AF67978000D858E /* HomeViewController.swift in Sources */,
+				8D8EB7D52AF67978000D858E /* AdManager.swift in Sources */,
+				8D8EB7D62AF67978000D858E /* AudioManager.swift in Sources */,
+				8D8EB7D72AF67978000D858E /* LoadingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D981ED02A650AC50072A8D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3187,6 +3396,11 @@
 			isa = PBXTargetDependency;
 			target = 8DE7F9C025E4784200D3C48A /* KeyboardExtension */;
 			targetProxy = 8D3AE8702A56CE7000C74CF6 /* PBXContainerItemProxy */;
+		};
+		8D8EB7B92AF67978000D858E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DE7F9C025E4784200D3C48A /* KeyboardExtension */;
+			targetProxy = 8D8EB7BA2AF67978000D858E /* PBXContainerItemProxy */;
 		};
 		8D981ECD2A650AC50072A8D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3766,6 +3980,65 @@
 			};
 			name = Release;
 		};
+		8D8EB7EF2AF67978000D858E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 711C13B9809BF0E8A8ABB5DE /* Pods-SmartFonts.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
+				INFOPLIST_FILE = "Goti-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8D8EB7F02AF67978000D858E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CBE26D564765851758260E0 /* Pods-SmartFonts.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
+				INFOPLIST_FILE = "Goti-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8D981F012A650AC50072A8D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34E452BB6A4BE197146D77C1 /* Pods-Burmese.debug.xcconfig */;
@@ -4020,7 +4293,7 @@
 				);
 				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4049,7 +4322,7 @@
 				);
 				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.JapaneseKeyboard.JapaneseKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamil.BanglaKeyboard.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4139,6 +4412,15 @@
 			buildConfigurations = (
 				8D3AE8A32A56CE7000C74CF6 /* Debug */,
 				8D3AE8A42A56CE7000C74CF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D8EB7EE2AF67978000D858E /* Build configuration list for PBXNativeTarget "Goti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D8EB7EF2AF67978000D858E /* Debug */,
+				8D8EB7F02AF67978000D858E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

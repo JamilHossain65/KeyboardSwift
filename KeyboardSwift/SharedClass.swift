@@ -30,7 +30,7 @@ var appSchemeName: String {
         case Bangla:
             return ""
         case BanglaGoti:
-            return ""
+            return "KeyboardGoti"
         case BanglaDruti:
             return "DrutiKeyboard"
         case Thai:
@@ -86,7 +86,7 @@ var appSchemeName: String {
         case SmartFonts:
             return ""
         default://English
-            return "VaticSoftJapaneseKeyboardOld"
+            return "KeyboardGoti"
         }
     }
 }
@@ -159,7 +159,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:true,
+    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false
 ]
 
