@@ -78,9 +78,9 @@ var appSchemeName: String {
         case JpKatakana:
             return ""
         case SmartFonts:
-            return ""
+            return "SmartFonts"
         default://English
-            return "RussianKeyboard"
+            return "SmartFonts"
         }
     }
 }
@@ -146,7 +146,7 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
