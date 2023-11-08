@@ -105,7 +105,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "SmartFontRemoveAds"
+                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
             }
         }
     }

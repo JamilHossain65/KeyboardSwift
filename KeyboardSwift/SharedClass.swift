@@ -80,7 +80,7 @@ var appSchemeName: String {
         case SmartFonts:
             return "SmartFonts"
         default://English
-            return "SmartFonts"
+            return "KeyboardGoti"
         }
     }
 }
@@ -153,7 +153,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false
 ]
 

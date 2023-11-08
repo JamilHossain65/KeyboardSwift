@@ -77,7 +77,7 @@ func getKey() -> String {
     case JpKatakana:
         return "42e6185e165b7d8144bdf798b961fa2bf4f7e327508557f3"
     default://English
-        return "42e6185e165b7d8144bdf798b961fa2bf4f7e327508557f3"
+        return "eeee4e1c555fb055153b45b9444be6636ca4ac238babdc69"
     }
 }
 
