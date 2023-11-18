@@ -16,7 +16,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     typealias admobCompletion = (_ success:Bool) -> Void
     
     //private var rewardedInterstitialAd: GADRewardedInterstitialAd?
-    private var interstitialAd: GADInterstitialAd?
+    var interstitialAd: GADInterstitialAd?
     
     //app setting:: 6
     var admobAdKey: String {
@@ -96,7 +96,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         self.view.frame = CGRect.zero
         
         let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        print("deviceID::\(String(describing: deviceID))")
+        log("deviceID::\(String(describing: deviceID))")
         //let staticID = "7B9B8DBE-E8EB-44B3-957C-43AD0F2EAFA2"
         
         //app setting:: 103
@@ -120,7 +120,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
             if let error = error {
-                return print("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
+                return log("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
             }
 
             AdmobController.shared.interstitialAd = ad
@@ -130,20 +130,22 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             //AdmobController.shared.interstitialAd?.serverSideVerificationOptions = options
             
             adLoadingStatus = .LOADED
-            print("isShow::\(isShow!)")
+            LoadingView.shared.dismish()
+            
+            log("isShow::\(isShow!)")
             if isShow!{
                 self.loadAdmobOn(viewController)
                 AdmobController.shared.interstitialAd?.present(fromRootViewController: viewController)
             }
             
-            print("ad loaded:::\(AdmobController.shared.interstitialAd)")
+            log("ad loaded:::\(AdmobController.shared.interstitialAd)")
         }
     }
     
     @objc func showRewardedInterstitial(_ viewController:UIViewController) {
         guard let rewardedInterstitialAd = AdmobController.shared.interstitialAd else {
             loadRewardedInterstitial(viewController, isShow: true)
-            return print("Ad wasn't ready")
+            return log("Ad wasn't ready")
         }
         
         loadAdmobOn(viewController)
@@ -157,7 +159,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             if !isPurchased {
                 loadRewardedInterstitial(viewController, isShow: true)
             }
-            print("app is not active")
+            log("app is not active")
         }
     }
     
@@ -166,7 +168,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
             if let error = error {
-                return print("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
+                return log("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
             }
 
             self.loadAdmobOn(viewController)
@@ -180,22 +182,26 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     
     // Tells the delegate that the ad failed to present full screen content.
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad did fail to present full screen content::\(error.localizedDescription)")
+        log("Ad did fail to present full screen content::\(error.localizedDescription)")
         AdmobController.shared.interstitialAd = nil
+        LoadingView.shared.removeFromSuperview()
         adLoadingStatus = .NOT_REQUESTED
+        LoadingView.shared.dismish()
     }
     
     func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("adWillPresentFullScreenContent.\(ad)")
+        log("adWillPresentFullScreenContent.\(ad)")
         savePreAdShownTime()
         adLoadingStatus = .NOT_REQUESTED
+        LoadingView.shared.dismish()
     }
     
     /// Tells the delegate that the ad dismissed full screen content.
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.:\(ad)")
+        log("Ad did dismiss full screen content.:\(ad)")
         AdmobController.shared.interstitialAd = nil
         adLoadingStatus = .NOT_REQUESTED
+        LoadingView.shared.dismish()
     }
     
     //MARK: - Google Concent METHODS
@@ -218,13 +224,13 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             
             if let consentError = requestConsentError {
                 // Consent gathering failed.
-                return print("Error: \(consentError.localizedDescription)")
+                return log("Error: \(consentError.localizedDescription)")
             }
             
             UMPConsentForm.load(completionHandler: { form, loadError in
                 if loadError != nil {
                     // Handle the error.
-                    print("loadError::\(loadError)")
+                    log("loadError::\(loadError)")
                 } else {
                     // Present the form. You can also hold on to the reference to present
                     // later.

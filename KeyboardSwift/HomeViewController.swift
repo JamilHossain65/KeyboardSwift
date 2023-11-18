@@ -232,14 +232,35 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         log("adLoadingStatus:::\(adLoadingStatus)")
         
         isAppActive = true
+//        DispatchQueue.global(qos: .background).async {
+//            AdmobController.shared.showAdmobInterstitial(self)
+//            // Go back to the main thread to update the UI
+//            DispatchQueue.main.async {
+//                LoadingView.shared.showLoading(view: self.view)
+//                self.perform(#selector(self.dismissLoading), with: nil, afterDelay: 12)
+//            }
+//        }
+        
         
         if isAppUsed { //app already used
-            if adLoadingStatus == .LOADED{
+            if adLoadingStatus == .LOADED {
                 AdmobController.shared.showRewardedInterstitial(self)
             }else{
-                AdmobController.shared.showAdmobInterstitial(self)
+                DispatchQueue.global(qos: .background).async {
+                    AdmobController.shared.showAdmobInterstitial(self)
+                    // Go back to the main thread to update the UI
+                    DispatchQueue.main.async {
+                        LoadingView.shared.showLoading(view: self.view)
+                        //self.perform(#selector(self.dismissLoading), with: nil, afterDelay: 10)
+                    }
+                }
             }
         }
+        
+    }
+    
+    @objc func dismissLoading(){
+        LoadingView.shared.dismish()
     }
     
     @objc func loadAdmob(){
@@ -387,6 +408,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         AdManager.shared.showAppodealNonSkippableAdsOn(self)
     }
     
+    /*
     func showLoading(view:UIView){
         textView.text = "this is hossain jamil jam ja ahs ajk ahsja   hsajkhs akjh sajk hasjkhs jakhsk hajks haksj test"
         
@@ -402,6 +424,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
         
     }
+    */
     
     func addSpeakButtonUI(){
         recordButton = UIButton(frame: CGRect(x: textView.frame.size.width - 75, y: textView.frame.size.height - 44, width: 70, height: 40))
@@ -721,6 +744,14 @@ extension HomeViewController:UITextViewDelegate {
         log("showAdmobInterstitial...")
         perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
         AdmobController.shared.showAdmobInterstitial(self)
+        
+        DispatchQueue.global(qos: .background).async {
+            AdmobController.shared.showAdmobInterstitial(self)
+            // Go back to the main thread to update the UI
+            DispatchQueue.main.async {
+                LoadingView.shared.showLoading(view: self.view)
+            }
+        }
     }
     
     @objc func showFbMetaAd(){

@@ -10,13 +10,9 @@ import UIKit
 
 class LoadingView: UIView {
 
-    //decalred singleton of class LoadingView
-//    static let sharedInstance : LoadingView = {
-//        let instance = LoadingView()
-//        return instance
-//    }()
-    public static let sharedInstance = LoadingView()
-    //end sinletone
+    public static let shared = LoadingView()
+    
+    var mainView = UIView()
     
     var datString:String?
     
@@ -198,30 +194,42 @@ class LoadingView: UIView {
     @objc func showLoading(view:UIView){
         let loadingView:LoadingView = LoadingView(frame: CGRect(x: 0, y: 0, width: 300, height: 50), showAtPoint: view.center, data: "Please Wait...")
         view.addSubview(loadingView)
+        mainView = loadingView
         loadingView.tag = 123456
         self.showStatus(windowLavel: UIWindow.Level.statusBar)
-        
+        self.perform(#selector(self.dismish), with: nil, afterDelay: 10)
     }
     
     @objc func dismish(){
         print("dismiah called.......")
-//        if(activityIndicator != nil){
-//            activityIndicator.stopAnimating()
-//            activityIndicator = nil;
-//        }
-//        
-//        let adsManager:AdsManager = AdsManager.sharedInstance() as! AdsManager
-//        let application:UIApplication = adsManager.application
-//        
-//        for  s in (application.keyWindow?.subviews as [UIView]?)!{
-//            let view:UIView = s
-//            if view.tag == 123456{
-//                view.removeFromSuperview()
-//            }
-//        }//end
-//        
-//        //show status bar
-//        self.showStatus(windowLavel: UIWindow.Level.normal);
+        DispatchQueue.main.async {
+            self.mainView.removeFromSuperview()
+            LoadingView.shared.mainView.removeFromSuperview()
+        }
+        
+        /*
+        DispatchQueue.main.async {
+            LoadingView.shared.removeFromSuperview()
+            
+            if(self.activityIndicator != nil){
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator = nil;
+            }
+            
+            let adsManager:AdManager = AdManager.shared
+            let application:UIApplication = adsManager.application
+    
+            for  s in (application.keyWindow?.subviews as [UIView]?)!{
+                let view:UIView = s
+                if view.tag == 123456{
+                    view.removeFromSuperview()
+                }
+            }//end
+            
+            //show status bar
+            self.showStatus(windowLavel: UIWindow.Level.normal);
+        }
+         */
     }
     
     func showStatus(windowLavel:UIWindow.Level){
