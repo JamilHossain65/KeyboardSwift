@@ -137,9 +137,9 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         self.view.backgroundColor = .white
         isAppActive = true
         
-//        AdmobController.askForConsentForm(self, completion: {
-//            AdmobController.shared.startGoogleMobileAdsSDK()
-//        })
+        AdmobController.askForConsentForm(self, completion: {
+            //AdmobController.shared.startGoogleMobileAdsSDK()
+        })
         
         AdAppodeal.shared.initializeAppodealSDK()
         

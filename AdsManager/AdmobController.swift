@@ -208,62 +208,62 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         adLoadingStatus = .NOT_REQUESTED
     }
     
-    //MARK: - Google Concent METHODS
-    func requestConsentInfoUpdate(){
-        // Create a UMPRequestParameters object.
-        let parameters = UMPRequestParameters()
-        // Set tag for under age of consent. false means users are not under age
-        // of consent.
+    //MARK: - Google Concent Methods
+    static func askForConsentForm(_ controller:UIViewController, completion: @escaping () -> Void) {
+        let umpParams = UMPRequestParameters()
         let debugSettings = UMPDebugSettings()
-        parameters.tagForUnderAgeOfConsent = false
-        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
-        debugSettings.geography = .EEA
-        parameters.debugSettings = debugSettings
+        debugSettings.geography = UMPDebugGeography.EEA
+        umpParams.debugSettings = debugSettings
+        umpParams.tagForUnderAgeOfConsent = false
         
-        
-        // Request an update for the consent information.
-        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) {
-            [weak self] requestConsentError in
-            guard let self else { return }
-            
-            if let consentError = requestConsentError {
-                // Consent gathering failed.
-                return log("Error: \(consentError.localizedDescription)")
-            }
-            
-            UMPConsentForm.load(completionHandler: { form, loadError in
-                if loadError != nil {
-                    // Handle the error.
-                    log("loadError::\(loadError)")
+        UMPConsentInformation
+            .sharedInstance
+            .requestConsentInfoUpdate(with: umpParams,
+                                      completionHandler: { error in
+                if error != nil {
+                    print("MYERROR #1 \(String(describing: error))")
+                    completion()
                 } else {
-                    // Present the form. You can also hold on to the reference to present
-                    // later.
-                    if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
-                        form?.present(
-                            from: self,
-                            completionHandler: { dismissError in
-                                if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
-                                    // App can start requesting ads.
-                                }
-                                // Handle dismissal by reloading form.
-                            })
+                    let formStatus = UMPConsentInformation.sharedInstance.formStatus
+                    print("FORM STATUS: \(formStatus)")
+                    
+                    if formStatus == .available {
+                        loadForm(controller, completion: {
+                            completion()
+                        })
                     } else {
-                        // Keep the form available for changes to user consent.
+                        completion()
                     }
                 }
-            })
-            
-        }
-        
-        // Check if you can initialize the Google Mobile Ads SDK in parallel
-        // while checking for new consent information. Consent obtained in
-        // the previous session can be used to request ads.
-        //        if UMPConsentInformation.sharedInstance.canRequestAds {
-        //            startGoogleMobileAdsSDK()
-        //        }
+        })
     }
-        
-    private func startGoogleMobileAdsSDK() {
+    
+    static func loadForm(_ controller:UIViewController, completion: @escaping () -> Void) {
+        UMPConsentForm.load(completionHandler: { form, loadError in
+            if loadError != nil {
+                print("MYERROR #2 \(String(describing: loadError))")
+                completion()
+            } else {
+                print("CONSENT STATUS: \(UMPConsentInformation.sharedInstance.consentStatus)")
+                if UMPConsentInformation
+                    .sharedInstance.consentStatus == .required {
+                    
+//                    guard let rootViewController = UIApplication.shared.currentUIWindow()?.rootViewController else {
+//                        return completion()
+//                    }
+                    
+                    form?.present(from: controller, completionHandler: { dismissError in
+                        if UMPConsentInformation
+                            .sharedInstance.consentStatus == .obtained {
+                            completion()
+                        }
+                    })
+                }
+            }
+        })
+    }
+    
+    func startGoogleMobileAdsSDK() {
         DispatchQueue.main.async {
             guard !self.isMobileAdsStartCalled else { return }
             
