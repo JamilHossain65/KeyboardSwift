@@ -108,7 +108,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
                 case .LOADING:
                     self.perform(#selector(loadAd), with: nil, afterDelay: 10)
                     break
-                case .LOADED:
+                case .LOADED,.SHOWING:
                     openContainerApp()
                     break
                 default: //NOT_REQUESTED

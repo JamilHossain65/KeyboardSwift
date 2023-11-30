@@ -12,7 +12,7 @@ import Foundation
 var isProduction = false
 //app setting::301
 var isProVersion = false
-let AD_MIN_TIME:TimeInterval = 1*60 //10 min
+let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
 
@@ -93,6 +93,7 @@ enum AD_LOADING_STATUS:Int {
     case REQUESTED
     case LOADING
     case LOADED
+    case SHOWING
 }
 
 var adLoadingStatus:AD_LOADING_STATUS = .NOT_REQUESTED

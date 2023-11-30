@@ -20,6 +20,13 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     private var isMobileAdsStartCalled = false
     private var rewardedInterstitialAd: GADRewardedInterstitialAd?
+    
+    private var isStatusBarHidden = false {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
     //app setting:: 7
     //MARK: - TODO manually: "Bundle display name" of 'TargetName_info.plist' file replace to keyboardExtension "Display Name".
     //copy "Bundle identifier" from submit_info.txt file and paste the Bundle Identifier to keyboardExtension.
@@ -129,7 +136,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         isAppActive = true
-        //requestConsentInfoUpdate()
+        
+//        AdmobController.askForConsentForm(self, completion: {
+//            AdmobController.shared.startGoogleMobileAdsSDK()
+//        })
         
         AdAppodeal.shared.initializeAppodealSDK()
         
@@ -207,7 +217,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return isStatusBarHidden
     }
     
     @objc func checkAdLoadRequesting(){
@@ -226,32 +239,37 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         //appThaiSetting()
         //appJpSetting()
         
+        if adLoadingStatus == .SHOWING { return }
+            
         let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
         log("isAppUsed:::\(isAppUsed)")
         log("isAppActive:::\(isAppActive)")
         log("adLoadingStatus:::\(adLoadingStatus)")
         
         isAppActive = true
-//        DispatchQueue.global(qos: .background).async {
-//            AdmobController.shared.showAdmobInterstitial(self)
-//            // Go back to the main thread to update the UI
-//            DispatchQueue.main.async {
-//                LoadingView.shared.showLoading(view: self.view)
-//                self.perform(#selector(self.dismissLoading), with: nil, afterDelay: 12)
-//            }
-//        }
-        
         
         if isAppUsed { //app already used
             if adLoadingStatus == .LOADED {
                 AdmobController.shared.showRewardedInterstitial(self)
             }else{
-                DispatchQueue.global(qos: .background).async {
+                DispatchQueue.global(qos: .default).async {
                     AdmobController.shared.showAdmobInterstitial(self)
+                    
+                    DispatchQueue.main.async {
+                        AdmobController.shared.admobCompletion = { _ in
+                            print("admobCompletion....")
+                            self.isStatusBarHidden = false
+                            LoadingView.shared.dismish()
+                            self.textView.becomeFirstResponder()
+                        }
+                    }
+                    
                     // Go back to the main thread to update the UI
                     DispatchQueue.main.async {
+                        self.textView.resignFirstResponder()
+                        self.isStatusBarHidden = true
                         LoadingView.shared.showLoading(view: self.view)
-                        //self.perform(#selector(self.dismissLoading), with: nil, afterDelay: 10)
+                        self.perform(#selector(self.dismissLoading), with: nil, afterDelay: 10)
                     }
                 }
             }
@@ -260,84 +278,13 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func dismissLoading(){
+        self.isStatusBarHidden = false
         LoadingView.shared.dismish()
     }
     
     @objc func loadAdmob(){
         //AdManager.shared.loadAdMobAdsOnParrent(self)
         AdmobController.shared.loadRewardedInterstitial(self)
-    }
-    
-    func requestConsentInfoUpdate(){
-        // Create a UMPRequestParameters object.
-        let parameters = UMPRequestParameters()
-        // Set tag for under age of consent. false means users are not under age
-        // of consent.
-        let debugSettings = UMPDebugSettings()
-        parameters.tagForUnderAgeOfConsent = false
-        //app setting::205
-//        debugSettings.testDeviceIdentifiers = [ GADSimulatorID ]
-//        debugSettings.geography = .EEA
-        parameters.debugSettings = debugSettings
-        
-        // Request an update for the consent information.
-        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) {
-            [weak self] requestConsentError in
-            guard let self else { return }
-            
-            if let consentError = requestConsentError {
-                // Consent gathering failed.
-                return log("Error: \(consentError.localizedDescription)")
-            }
-            
-            self.showForm()
-        }
-        
-        // Check if you can initialize the Google Mobile Ads SDK in parallel
-        // while checking for new consent information. Consent obtained in
-        // the previous session can be used to request ads.
-        //        if UMPConsentInformation.sharedInstance.canRequestAds {
-        //            startGoogleMobileAdsSDK()
-        //        }
-    }
-    
-    func showForm(){
-        UMPConsentForm.load(completionHandler: { form, loadError in
-            if loadError != nil {
-                // Handle the error.
-                log("loadError::\(loadError)")
-            } else {
-                // Present the form. You can also hold on to the reference to present
-                // later.
-                if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
-                    form?.present(
-                        from: self,
-                        completionHandler: { dismissError in
-                            if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
-                                // App can start requesting ads.
-                            }
-                            // Handle dismissal by reloading form.
-                        })
-                } else {
-                    // Keep the form available for changes to user consent.
-                    
-                }
-            }
-        })
-    }
-    
-    private func startGoogleMobileAdsSDK() {
-        DispatchQueue.main.async {
-            guard !self.isMobileAdsStartCalled else { return }
-            
-            self.isMobileAdsStartCalled = true
-            
-            // Initialize the Google Mobile Ads SDK.
-            GADMobileAds.sharedInstance().start()
-            //GADMobileAds.sharedInstance().applicationVolume = 0.0
-            // TODO: Request an ad.
-            // GADInterstitialAd.load(...)
-        }
     }
     
     @objc func restoreButtonPressed(){
@@ -407,24 +354,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     @objc func rewardedAdButtonPressed(){
         AdManager.shared.showAppodealNonSkippableAdsOn(self)
     }
-    
-    /*
-    func showLoading(view:UIView){
-        textView.text = "this is hossain jamil jam ja ahs ajk ahsja   hsajkhs akjh sajk hasjkhs jakhsk hajks haksj test"
-        
-        if let caret = textView.caret {
-            
-            let loading = UIActivityIndicatorView(frame: CGRect(x: caret.origin.x, y: caret.origin.y + 5, width: 17, height: 17))
-            loading.hidesWhenStopped = true
-            loading.style = UIActivityIndicatorView.Style.gray
-            loading.startAnimating()
-            view.addSubview(loading)
-            
-            log("caret::\(caret)")
-        }
-        
-    }
-    */
     
     func addSpeakButtonUI(){
         recordButton = UIButton(frame: CGRect(x: textView.frame.size.width - 75, y: textView.frame.size.height - 44, width: 70, height: 40))
@@ -729,12 +658,6 @@ extension HomeViewController:UITextViewDelegate {
         }
     }
     
-    @objc func showRewardedAd(){
-        log("showAd...")
-        perform(#selector(showRewardedAd), with: nil, afterDelay: AD_MIN_TIME)
-        AdmobController.shared.showRewardedInterstitial(self)
-    }
-    
     @objc func loadAd(){
         perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME*0.7)
         AdmobController.shared.loadRewardedInterstitial(self)
@@ -742,16 +665,8 @@ extension HomeViewController:UITextViewDelegate {
     
     @objc func showAdmobInterstitial(){
         log("showAdmobInterstitial...")
-        perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+        //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
         AdmobController.shared.showAdmobInterstitial(self)
-        
-        DispatchQueue.global(qos: .background).async {
-            AdmobController.shared.showAdmobInterstitial(self)
-            // Go back to the main thread to update the UI
-            DispatchQueue.main.async {
-                LoadingView.shared.showLoading(view: self.view)
-            }
-        }
     }
     
     @objc func showFbMetaAd(){

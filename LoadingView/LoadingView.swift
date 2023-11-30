@@ -57,12 +57,14 @@ class LoadingView: UIView {
         
         //set transperency in parent view
         self.backgroundColor = UIColor.clear
-        
+        let keyWindow = UIApplication.shared.keyWindow
         //add a fade view
         fadeView.backgroundColor = UIColor.black
-        fadeView.frame           = self.frame
-        fadeView.alpha           = 0.20
-        self.addSubview(fadeView)
+        fadeView.frame = self.frame
+        fadeView.alpha = 0.33
+        fadeView.tag   = 1011
+        keyWindow!.addSubview(fadeView)
+        //self.addSubview(fadeView)
         
         //add popover view
         
@@ -192,6 +194,9 @@ class LoadingView: UIView {
     }
     
     @objc func showLoading(view:UIView){
+        //remove existing loading view
+        //dismish()
+        
         let loadingView:LoadingView = LoadingView(frame: CGRect(x: 0, y: 0, width: 300, height: 50), showAtPoint: view.center, data: "Please Wait...")
         view.addSubview(loadingView)
         mainView = loadingView
@@ -204,6 +209,9 @@ class LoadingView: UIView {
         print("dismiah called.......")
         DispatchQueue.main.async {
             self.mainView.removeFromSuperview()
+            let keyWindow = UIApplication.shared.keyWindow
+            let view = keyWindow?.viewWithTag(1011)
+            view?.removeFromSuperview()
             LoadingView.shared.mainView.removeFromSuperview()
         }
         

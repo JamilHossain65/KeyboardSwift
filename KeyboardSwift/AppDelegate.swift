@@ -32,12 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //GADMobileAds.sharedInstance().start(completionHandler: nil)
         FirebaseApp.configure()
         AdManager.shared.appodealInitializeSDK()
-//        let adManager = AdManager()
-//        adManager.requestConsentInfo()
-        GADMobileAds.sharedInstance().start()
         return true
     }
     

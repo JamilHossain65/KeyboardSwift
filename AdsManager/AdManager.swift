@@ -32,7 +32,7 @@ class AdManager: UIViewController {
     }
     
     func showAdmobRewarded(_ viewController:UIViewController){
-        AdmobController.shared.showRewardedInterstitial(viewController)
+        //AdmobController.shared.showRewardedInterstitial(viewController)
     }
     
     func showAdmobInterstitial(_ viewController:UIViewController){
@@ -58,7 +58,7 @@ class AdManager: UIViewController {
     
     func requestConsentInfo(){
         let admobController = AdmobController()
-        admobController.requestConsentInfoUpdate()
+//        admobController.requestConsentInfoUpdate()
     }
     
     func loadConsentForm(){
