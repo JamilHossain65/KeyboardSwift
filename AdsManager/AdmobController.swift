@@ -117,6 +117,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     }
     
     func loadRewardedInterstitial(_ viewController:UIViewController, isShow:Bool? = false){
+        //if !Reachability.isConnected() { return }
         //Rewarded interstitial
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
@@ -164,6 +165,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     
     
     func showAdmobInterstitial(_ viewController:UIViewController){
+       // if !Reachability.isConnected() { return }
         log("admobAdKey::\(admobAdKey)")
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in

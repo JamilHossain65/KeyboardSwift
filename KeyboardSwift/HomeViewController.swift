@@ -158,7 +158,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonPressed))
         
         self.navigationItem.leftBarButtonItems = [restore,buy]
-        self.navigationItem.rightBarButtonItems = [adButton,done]
+        self.navigationItem.rightBarButtonItems = [/*adButton,*/ done]
         
         self.textView.frame.origin.y = SizeConfig.navBarHeight
         
@@ -224,6 +224,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func checkAdLoadRequesting(){
+        if !Reachability.isConnected(){ return }
         log("adLoadingStatus::\(adLoadingStatus)")
         switch adLoadingStatus{
         case .REQUESTED:
@@ -238,7 +239,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     func showAdmobAdFromHelperApp(){
         //appThaiSetting()
         //appJpSetting()
-        
+        if !Reachability.isConnected(){ return }
         if adLoadingStatus == .SHOWING { return }
             
         let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false

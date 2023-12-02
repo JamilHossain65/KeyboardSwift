@@ -11,7 +11,7 @@
 "kAbcString"    = "কখগ";
 "kReturnString" = "ফেরত";
 //app setting::5
-"kSpaceString"  = "দ্রুতি"; //দ্রুতি //গতি
+"kSpaceString"  = "গতি"; //দ্রুতি //গতি
 "kStopSpace"    = ". ";
 "kDoubleSpace"  = "  ";
 

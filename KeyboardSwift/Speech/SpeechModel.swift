@@ -51,7 +51,7 @@ class SpeechModel: NSObject {
     func requestMultipartForm(_ url: String, _ method: String?, _ header: [String:String]?, _ params: [String:Any]?, completion: @escaping(Response?, Error?) -> ()) {
         
         //check internet
-        if !Reachability.isConnectedToNetwork() {
+        if !Reachability.isConnected() {
             //ProgressHUD.shared.hide()
             showAlertOkay(message: "Not connected to the internet")
             return
