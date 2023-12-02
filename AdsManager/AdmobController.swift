@@ -130,7 +130,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             //let options = GADServerSideVerificationOptions()
               //    options.customRewardString = "SAMPLE_CUSTOM_DATA_STRING"
             //AdmobController.shared.interstitialAd?.serverSideVerificationOptions = options
-            log("load interstitial ad....\(ad)")
+            log("load ad....")
             adLoadingStatus = .LOADED
             LoadingView.shared.dismish()
             
@@ -214,7 +214,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     static func askForConsentForm(_ controller:UIViewController, completion: @escaping () -> Void) {
         let umpParams = UMPRequestParameters()
         let debugSettings = UMPDebugSettings()
-        debugSettings.geography = UMPDebugGeography.EEA
+        //debugSettings.geography = UMPDebugGeography.EEA
         umpParams.debugSettings = debugSettings
         umpParams.tagForUnderAgeOfConsent = false
         
@@ -223,11 +223,11 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             .requestConsentInfoUpdate(with: umpParams,
                                       completionHandler: { error in
                 if error != nil {
-                    print("MYERROR #1 \(String(describing: error))")
+                    log("MYERROR #1 \(String(describing: error))")
                     completion()
                 } else {
                     let formStatus = UMPConsentInformation.sharedInstance.formStatus
-                    print("FORM STATUS: \(formStatus)")
+                    log("FORM STATUS: \(formStatus)")
                     
                     if formStatus == .available {
                         loadForm(controller, completion: {
@@ -243,10 +243,10 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     static func loadForm(_ controller:UIViewController, completion: @escaping () -> Void) {
         UMPConsentForm.load(completionHandler: { form, loadError in
             if loadError != nil {
-                print("MYERROR #2 \(String(describing: loadError))")
+                log("MYERROR #2 \(String(describing: loadError))")
                 completion()
             } else {
-                print("CONSENT STATUS: \(UMPConsentInformation.sharedInstance.consentStatus)")
+                log("CONSENT STATUS: \(UMPConsentInformation.sharedInstance.consentStatus)")
                 if UMPConsentInformation
                     .sharedInstance.consentStatus == .required {
                     

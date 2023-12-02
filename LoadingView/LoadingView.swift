@@ -206,7 +206,6 @@ class LoadingView: UIView {
     }
     
     @objc func dismish(){
-        print("dismiah called.......")
         DispatchQueue.main.async {
             self.mainView.removeFromSuperview()
             let keyWindow = UIApplication.shared.keyWindow
