@@ -12,7 +12,7 @@ import Foundation
 var isProduction = false
 //app setting::301
 var isProVersion = false
-let AD_MIN_TIME:TimeInterval = 10*60 //10 min
+let AD_MIN_TIME:TimeInterval = 1*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
 
@@ -154,8 +154,8 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
-    JpKatakana:false, Burmese:false
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    JpKatakana:false, Burmese:false,
 ]
 
 var countryCodes  = [
