@@ -12,7 +12,7 @@ import Foundation
 var isProduction = false
 //app setting::301
 var isProVersion = false
-let AD_MIN_TIME:TimeInterval = 1*60 //10 min
+let AD_MIN_TIME:TimeInterval = 10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
 
@@ -80,13 +80,80 @@ var appSchemeName: String {
         case SmartFonts:
             return "SmartFonts"
         default://English
-            return "KeyboardGoti"
+            //app setting::5
+            return "RussianKeyboard"
         }
     }
 }
-
-var isAppActive = false
-    
+//app setting::9
+var SUITE_KEY: String {
+    get {
+        let langName = getString(SelectedLanguage)
+        
+        switch langName {
+        case Bangla:
+            return ""
+        case BanglaGoti:
+            return ""
+        case BanglaDruti:
+            return ""
+        case Thai:
+            return ""
+        case Gujarati:
+            return ""
+        case Hindi:
+            return ""
+        case Kannada:
+            return ""
+        case Malayalam:
+            return ""
+        case Marathi:
+            return ""
+        case Nepali:
+            return ""
+        case Oriya:
+            return ""
+        case Punjabi:
+            return ""
+        case Sanskrit:
+            return ""
+        case Tamil:
+            return ""
+        case Telugu:
+            return ""
+        case Urdu:
+            return ""
+        case Indonesian:
+            return ""
+        case Russian:
+            return "group.com.vaticsoft.russian.keyboard"
+        case Spanish:
+            return ""
+        case French:
+            return ""
+        case German:
+            return ""
+        case Italian:
+            return ""
+        case Korean:
+            return ""
+        case Turkish:
+            return ""
+        case Portuguese:
+            return ""
+        case Burmese:
+            return ""
+        case JpHiragana:
+            return ""
+        case JpKatakana:
+            return ""
+        case SmartFonts:
+            return ""
+        default://English
+            return "group.com.vaticsoft.russian.keyboard"
+        }
+    }
+}
 
 enum AD_LOADING_STATUS:Int {
     case NOT_REQUESTED
@@ -98,12 +165,11 @@ enum AD_LOADING_STATUS:Int {
 
 var adLoadingStatus:AD_LOADING_STATUS = .NOT_REQUESTED
 //let kAdLoadingStatus = "kAdLoadingStatus"
+var isAppActive = false
 
 let kIsPurchaed = "kIsPurchaed"
 let kIsAppUsed = "kIsAppUsed"
 
-//app setting::303
-let SUITE_KEY = "group.com.vaticsoft.ThaiKeyboard"
 let USER_INFO_KEY = "UserSelectedInfo"
 let kActiveLanguages  = "kActiveLanguages"
 
@@ -147,7 +213,7 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group

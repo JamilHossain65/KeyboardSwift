@@ -47,7 +47,6 @@
 		8D0137802A5C595E0091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D0137812A5C595E0091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0137822A5C595E0091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D0137832A5C595E0091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D0137842A5C595E0091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D0137852A5C595E0091CC58 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D0137862A5C595E0091CC58 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -87,7 +86,6 @@
 		8D0137B82A5C597D0091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D0137BA2A5C597D0091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0137BB2A5C597D0091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D0137BC2A5C597D0091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D0137BD2A5C597D0091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D0137BE2A5C597D0091CC58 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D0137BF2A5C597D0091CC58 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -127,7 +125,6 @@
 		8D0137F12A5C59860091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D0137F32A5C59860091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0137F42A5C59860091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D0137F52A5C59860091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D0137F62A5C59860091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D0137F72A5C59860091CC58 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D0137F82A5C59860091CC58 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -167,7 +164,6 @@
 		8D01382A2A5C59890091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D01382C2A5C59890091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D01382D2A5C59890091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D01382E2A5C59890091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D01382F2A5C59890091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D0138302A5C59890091CC58 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D0138312A5C59890091CC58 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -207,7 +203,6 @@
 		8D0138632A5C598C0091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D0138652A5C598C0091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0138662A5C598C0091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D0138672A5C598C0091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D0138682A5C598C0091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D0138692A5C598C0091CC58 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D01386A2A5C598C0091CC58 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -247,7 +242,6 @@
 		8D01389C2A5C59920091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D01389E2A5C59920091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D01389F2A5C59920091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D0138A02A5C59920091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D0138A12A5C59920091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D0138A22A5C59920091CC58 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D0138A32A5C59920091CC58 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -287,7 +281,6 @@
 		8D0138D52A5C59950091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D0138D72A5C59950091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0138D82A5C59950091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D0138D92A5C59950091CC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D0138DA2A5C59950091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D0138DB2A5C59950091CC58 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D0138DC2A5C59950091CC58 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -344,12 +337,10 @@
 		8D2E783F2A5C492C00A09A80 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D2E78402A5C492C00A09A80 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D2E78412A5C492C00A09A80 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D2E78422A5C492C00A09A80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D2E78432A5C492C00A09A80 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D2E78442A5C492C00A09A80 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D2E78452A5C492C00A09A80 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
 		8D2E78472A5C492C00A09A80 /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8DE7F9C125E4784200D3C48A /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8D3AE8732A56CE7000C74CF6 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D3AE8742A56CE7000C74CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D3AE8752A56CE7000C74CF6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5075D26815EF800377CBD /* Utils.swift */; };
@@ -384,7 +375,6 @@
 		8D3AE8972A56CE7000C74CF6 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D3AE8982A56CE7000C74CF6 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D3AE8992A56CE7000C74CF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D3AE89A2A56CE7000C74CF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D3AE89B2A56CE7000C74CF6 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D3AE89C2A56CE7000C74CF6 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D3AE89D2A56CE7000C74CF6 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -430,6 +420,18 @@
 		8D75AE202794338200CB1E0B /* UnicodeId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75AE1F2794338200CB1E0B /* UnicodeId.swift */; };
 		8D769A0D265F3BED00C74FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D769A0C265F3BED00C74FBA /* Assets.xcassets */; };
 		8D7C51692A5D05F7004DA260 /* GotiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C51682A5D05F7004DA260 /* GotiAssets.xcassets */; };
+		8D7DA78C2B2188FA0008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA78D2B2188FC0008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA78E2B2188FD0008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA78F2B2188FE0008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7902B2188FF0008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7912B2188FF0008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7922B2189000008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7932B2189010008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7942B2189020008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7952B2189020008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7962B2189040008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
+		8D7DA7972B2189050008B590 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D7E9F4C2A5E4C7B0011621C /* Thai-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D7E9F4B2A5E4C7A0011621C /* Thai-Info.plist */; };
 		8D7E9F4E2A5E5BC60011621C /* Druti-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D7E9F4D2A5E5BC50011621C /* Druti-Info.plist */; };
 		8D8323D527E437640068CBA1 /* AdUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8323D427E437630068CBA1 /* AdUtil.swift */; };
@@ -497,7 +499,6 @@
 		8D8EB7E32AF67978000D858E /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D8EB7E42AF67978000D858E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D8EB7E52AF67978000D858E /* FBAudienceNetwork.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */; };
-		8D8EB7E62AF67978000D858E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D8EB7E72AF67978000D858E /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D8EB7E82AF67978000D858E /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D8EB7E92AF67978000D858E /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -539,7 +540,6 @@
 		8D981EF42A650AC50072A8D3 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8D981EF52A650AC50072A8D3 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D981EF62A650AC50072A8D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
-		8D981EF82A650AC50072A8D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8D981EF92A650AC50072A8D3 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
 		8D981EFA2A650AC50072A8D3 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D981EFB2A650AC50072A8D3 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
@@ -550,11 +550,21 @@
 		8D9F89EB27AFF77800D6E517 /* bangla.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F89EA27AFF77800D6E517 /* bangla.txt */; };
 		8DA96A8627E972B9009CF1E9 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8DA96A8827E98E08009CF1E9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
+		8DA9F0ED2B21E6FF006FE56C /* Russian-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */; };
 		8DB2747627E222B3000518B0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747327E222B3000518B0 /* LoadingView.swift */; };
 		8DB2747727E222B3000518B0 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2747427E222B3000518B0 /* Triangle.swift */; };
 		8DB274BF27E226C4000518B0 /* AdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B527E226C4000518B0 /* AdsManager.m */; };
 		8DB274C027E226C4000518B0 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
 		8DB274C127E226C4000518B0 /* AdAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB274B727E226C4000518B0 /* AdAppodeal.m */; };
+		8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB6252B24371F00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB6262B24372000AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB6272B24372100AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB6282B24372200AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB6292B24372200AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB62A2B24372300AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
+		8DBCB62B2B243AFE00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DBF98E727E3866200119E68 /* AdmobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF98E527E3866200119E68 /* AdmobController.swift */; };
 		8DBF98E827E3866200119E68 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
 		8DC34FEB2A2E468C0032E52D /* thai.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DC34FEA2A2E468B0032E52D /* thai.txt */; };
@@ -592,7 +602,6 @@
 		8DDBA4DF2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */; };
 		8DDBA4E02A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */; };
 		8DDBA4E12A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */; };
-		8DDC12F42A7CC0CF00B60933 /* Russian-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */; };
 		8DDC12F62A7CC0E500B60933 /* Spanish-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC12F52A7CC0E500B60933 /* Spanish-Info.plist */; };
 		8DE7F94C25E4474A00D3C48A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94B25E4474A00D3C48A /* AppDelegate.swift */; };
 		8DE7F95325E4474A00D3C48A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -607,21 +616,12 @@
 		8DF6E32626C3563F0031E094 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4E8152266D8F770073B3B6 /* Color.swift */; };
 		8DF6E35126C357050031E094 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */; };
 		8DF6E35626C357550031E094 /* HintBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A2C26388F7D001DE455 /* HintBarManager.swift */; };
-		8DFDC31A2AFA23F1003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
-		8DFDC31C2AFA251D003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
-		8DFDC31D2AFA251D003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
-		8DFDC31E2AFA251F003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
-		8DFDC31F2AFA251F003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
-		8DFDC3202AFA2521003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DFDC3212AFA2521003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
-		8DFDC3222AFA2522003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
-		8DFDC3232AFA2523003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DFDC3242AFA2524003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DFDC3252AFA2525003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DFDC3262AFA2526003ACEFD /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DFDDA8727E2F9C5005AD90B /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8527E2F9C5005AD90B /* FirebaseHelper.m */; };
 		8DFDDA8827E2F9C5005AD90B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDDA8627E2F9C5005AD90B /* FirebaseManager.swift */; };
-		8DFDDB3027E2FF16005AD90B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		BBFDDB68DB7632CDBCB7F166 /* Pods_Indian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57925857E71BF4B089EBE54D /* Pods_Indian.framework */; };
 		C97926A8930F89BECE78EF73 /* Pods_Spanish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B763AA466958DA76AC42ECE1 /* Pods_Spanish.framework */; };
 		CA2AFB8FFB9D21EBD6C6BDAE /* Pods_Turkish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF064BD52B7842D853707 /* Pods_Turkish.framework */; };
@@ -1933,14 +1933,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7DA78C2B2188FA0008B590 /* GoogleService-Info.plist in Resources */,
 				8D01377C2A5C595E0091CC58 /* hello (16bit PCM).wav in Resources */,
 				8D01377D2A5C595E0091CC58 /* LaunchScreen.storyboard in Resources */,
-				8DDC12F42A7CC0CF00B60933 /* Russian-Info.plist in Resources */,
+				8DA9F0ED2B21E6FF006FE56C /* Russian-Info.plist in Resources */,
 				8D01377F2A5C595E0091CC58 /* Main.storyboard in Resources */,
 				8D0137802A5C595E0091CC58 /* AdAppodeal.xib in Resources */,
 				8D0137812A5C595E0091CC58 /* bangla.flac in Resources */,
 				8D0137822A5C595E0091CC58 /* Localizable.strings in Resources */,
-				8D0137832A5C595E0091CC58 /* GoogleService-Info.plist in Resources */,
 				8DDBA4DB2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0137842A5C595E0091CC58 /* busy.gif in Resources */,
 				8D0137852A5C595E0091CC58 /* good-morning-google.flac in Resources */,
@@ -1962,11 +1962,11 @@
 				8DDBA4DD2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0137BA2A5C597D0091CC58 /* bangla.flac in Resources */,
 				8D0137BB2A5C597D0091CC58 /* Localizable.strings in Resources */,
-				8D0137BC2A5C597D0091CC58 /* GoogleService-Info.plist in Resources */,
 				8D7E9F4E2A5E5BC60011621C /* Druti-Info.plist in Resources */,
 				8D0137BD2A5C597D0091CC58 /* busy.gif in Resources */,
 				8D0137BE2A5C597D0091CC58 /* good-morning-google.flac in Resources */,
 				8D0137BF2A5C597D0091CC58 /* AdmobController.xib in Resources */,
+				8D7DA7902B2188FF0008B590 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1974,6 +1974,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7DA7942B2189020008B590 /* GoogleService-Info.plist in Resources */,
 				8D0137ED2A5C59860091CC58 /* hello (16bit PCM).wav in Resources */,
 				8D0137EE2A5C59860091CC58 /* LaunchScreen.storyboard in Resources */,
 				8D0137EF2A5C59860091CC58 /* Main.storyboard in Resources */,
@@ -1982,7 +1983,6 @@
 				8D0137F12A5C59860091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0137F32A5C59860091CC58 /* bangla.flac in Resources */,
 				8D0137F42A5C59860091CC58 /* Localizable.strings in Resources */,
-				8D0137F52A5C59860091CC58 /* GoogleService-Info.plist in Resources */,
 				8D0137F62A5C59860091CC58 /* busy.gif in Resources */,
 				8D0137F72A5C59860091CC58 /* good-morning-google.flac in Resources */,
 				8DDBA4DE2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
@@ -2004,10 +2004,10 @@
 				8D01382C2A5C59890091CC58 /* bangla.flac in Resources */,
 				8D01382D2A5C59890091CC58 /* Localizable.strings in Resources */,
 				8D0138ED2A5C5F810091CC58 /* JapaneseAssets.xcassets in Resources */,
-				8D01382E2A5C59890091CC58 /* GoogleService-Info.plist in Resources */,
 				8D01382F2A5C59890091CC58 /* busy.gif in Resources */,
 				8D0138302A5C59890091CC58 /* good-morning-google.flac in Resources */,
 				8D0138312A5C59890091CC58 /* AdmobController.xib in Resources */,
+				8D7DA7912B2188FF0008B590 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2024,11 +2024,11 @@
 				8DDBA4DC2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0138652A5C598C0091CC58 /* bangla.flac in Resources */,
 				8D0138662A5C598C0091CC58 /* Localizable.strings in Resources */,
-				8D0138672A5C598C0091CC58 /* GoogleService-Info.plist in Resources */,
 				8D0138682A5C598C0091CC58 /* busy.gif in Resources */,
 				8D0138692A5C598C0091CC58 /* good-morning-google.flac in Resources */,
 				8D0138F12A5C5FAB0091CC58 /* SpanishAssets.xcassets in Resources */,
 				8D01386A2A5C598C0091CC58 /* AdmobController.xib in Resources */,
+				8D7DA7932B2189010008B590 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2036,6 +2036,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7DA7952B2189020008B590 /* GoogleService-Info.plist in Resources */,
 				8D0138982A5C59920091CC58 /* hello (16bit PCM).wav in Resources */,
 				8D0138992A5C59920091CC58 /* LaunchScreen.storyboard in Resources */,
 				8D01389A2A5C59920091CC58 /* Main.storyboard in Resources */,
@@ -2044,7 +2045,6 @@
 				8D01389C2A5C59920091CC58 /* SmartFonts.xcassets in Resources */,
 				8D01389E2A5C59920091CC58 /* bangla.flac in Resources */,
 				8D01389F2A5C59920091CC58 /* Localizable.strings in Resources */,
-				8D0138A02A5C59920091CC58 /* GoogleService-Info.plist in Resources */,
 				8D0138A12A5C59920091CC58 /* busy.gif in Resources */,
 				8D0138A22A5C59920091CC58 /* good-morning-google.flac in Resources */,
 				8DDBA4DF2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
@@ -2056,6 +2056,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7DA7962B2189040008B590 /* GoogleService-Info.plist in Resources */,
 				8D0138EB2A5C5F630091CC58 /* IndianAssets.xcassets in Resources */,
 				8D0138D12A5C59950091CC58 /* hello (16bit PCM).wav in Resources */,
 				8D0138D22A5C59950091CC58 /* LaunchScreen.storyboard in Resources */,
@@ -2064,7 +2065,6 @@
 				8D0138D52A5C59950091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0138D72A5C59950091CC58 /* bangla.flac in Resources */,
 				8D0138D82A5C59950091CC58 /* Localizable.strings in Resources */,
-				8D0138D92A5C59950091CC58 /* GoogleService-Info.plist in Resources */,
 				8D0138DA2A5C59950091CC58 /* busy.gif in Resources */,
 				8D0138DB2A5C59950091CC58 /* good-morning-google.flac in Resources */,
 				8DDBA4E02A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
@@ -2076,6 +2076,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7DA78E2B2188FD0008B590 /* GoogleService-Info.plist in Resources */,
 				8D2E783B2A5C492C00A09A80 /* hello (16bit PCM).wav in Resources */,
 				8D2E783C2A5C492C00A09A80 /* LaunchScreen.storyboard in Resources */,
 				8D7E9F4C2A5E4C7B0011621C /* Thai-Info.plist in Resources */,
@@ -2085,7 +2086,6 @@
 				8D2E78402A5C492C00A09A80 /* bangla.flac in Resources */,
 				8D2E78412A5C492C00A09A80 /* Localizable.strings in Resources */,
 				8DDBA4D82A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
-				8D2E78422A5C492C00A09A80 /* GoogleService-Info.plist in Resources */,
 				8D2E78432A5C492C00A09A80 /* busy.gif in Resources */,
 				8D2E78442A5C492C00A09A80 /* good-morning-google.flac in Resources */,
 				8D2E78452A5C492C00A09A80 /* AdmobController.xib in Resources */,
@@ -2101,10 +2101,10 @@
 				8D3AE8962A56CE7000C74CF6 /* Main.storyboard in Resources */,
 				8D3AE8972A56CE7000C74CF6 /* AdAppodeal.xib in Resources */,
 				8D1369012A5A76FA0036CAD7 /* SmartFonts.xcassets in Resources */,
+				8D7DA7972B2189050008B590 /* GoogleService-Info.plist in Resources */,
 				8D3AE8982A56CE7000C74CF6 /* bangla.flac in Resources */,
 				8D3AE8992A56CE7000C74CF6 /* Localizable.strings in Resources */,
 				8DDBA4E12A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
-				8D3AE89A2A56CE7000C74CF6 /* GoogleService-Info.plist in Resources */,
 				8D3AE89B2A56CE7000C74CF6 /* busy.gif in Resources */,
 				8D3AE89C2A56CE7000C74CF6 /* good-morning-google.flac in Resources */,
 				8D3AE89D2A56CE7000C74CF6 /* AdmobController.xib in Resources */,
@@ -2115,6 +2115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7DA78F2B2188FE0008B590 /* GoogleService-Info.plist in Resources */,
 				8D8EB7DE2AF67978000D858E /* hello (16bit PCM).wav in Resources */,
 				8D86E0A22AFB9F7A0075B2CA /* GotiAssets.xcassets in Resources */,
 				8D8EB7DF2AF67978000D858E /* LaunchScreen.storyboard in Resources */,
@@ -2124,7 +2125,6 @@
 				8D8EB7E32AF67978000D858E /* bangla.flac in Resources */,
 				8D8EB7E42AF67978000D858E /* Localizable.strings in Resources */,
 				8D8EB7E52AF67978000D858E /* FBAudienceNetwork.xib in Resources */,
-				8D8EB7E62AF67978000D858E /* GoogleService-Info.plist in Resources */,
 				8D8EB7E72AF67978000D858E /* busy.gif in Resources */,
 				8D8EB7E82AF67978000D858E /* good-morning-google.flac in Resources */,
 				8D8EB7E92AF67978000D858E /* AdmobController.xib in Resources */,
@@ -2140,10 +2140,10 @@
 				8D981EF32A650AC50072A8D3 /* Main.storyboard in Resources */,
 				8D981EF42A650AC50072A8D3 /* AdAppodeal.xib in Resources */,
 				8D981F062A6510F50072A8D3 /* BurmeseAssets.xcassets in Resources */,
+				8D7DA7922B2189000008B590 /* GoogleService-Info.plist in Resources */,
 				8D981EF52A650AC50072A8D3 /* bangla.flac in Resources */,
 				8D981EF62A650AC50072A8D3 /* Localizable.strings in Resources */,
 				8DDBA4DA2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
-				8D981EF82A650AC50072A8D3 /* GoogleService-Info.plist in Resources */,
 				8D981EF92A650AC50072A8D3 /* busy.gif in Resources */,
 				8D981EFA2A650AC50072A8D3 /* good-morning-google.flac in Resources */,
 				8D981EFB2A650AC50072A8D3 /* AdmobController.xib in Resources */,
@@ -2159,9 +2159,9 @@
 				8DE7F95325E4474A00D3C48A /* Main.storyboard in Resources */,
 				8DB274C027E226C4000518B0 /* AdAppodeal.xib in Resources */,
 				8DD5076A26815FEB00377CBD /* bangla.flac in Resources */,
+				8D7DA78D2B2188FC0008B590 /* GoogleService-Info.plist in Resources */,
 				8D91D30F27B7C3EC001BB9A4 /* Localizable.strings in Resources */,
 				8D7C51692A5D05F7004DA260 /* GotiAssets.xcassets in Resources */,
-				8DFDDB3027E2FF16005AD90B /* GoogleService-Info.plist in Resources */,
 				8D713FDB26EEEACE0064DE3A /* busy.gif in Resources */,
 				8DD5076B26815FEB00377CBD /* good-morning-google.flac in Resources */,
 				8DDBA4D72A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
@@ -2928,7 +2928,7 @@
 				8D0137942A5C597D0091CC58 /* APIKey.swift in Sources */,
 				8D0137952A5C597D0091CC58 /* SceneDelegate.swift in Sources */,
 				8D0137962A5C597D0091CC58 /* Utils.swift in Sources */,
-				8DFDC31F2AFA251F003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB6272B24372100AFF714 /* SharedClass.swift in Sources */,
 				8D0137972A5C597D0091CC58 /* AdUtil.swift in Sources */,
 				8D0137982A5C597D0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137992A5C597D0091CC58 /* Triangle.swift in Sources */,
@@ -2962,7 +2962,7 @@
 				8D0137CD2A5C59860091CC58 /* APIKey.swift in Sources */,
 				8D0137CE2A5C59860091CC58 /* SceneDelegate.swift in Sources */,
 				8D0137CF2A5C59860091CC58 /* Utils.swift in Sources */,
-				8DFDC3232AFA2523003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */,
 				8D0137D02A5C59860091CC58 /* AdUtil.swift in Sources */,
 				8D0137D12A5C59860091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137D22A5C59860091CC58 /* Triangle.swift in Sources */,
@@ -2996,7 +2996,7 @@
 				8D0138062A5C59890091CC58 /* APIKey.swift in Sources */,
 				8D0138072A5C59890091CC58 /* SceneDelegate.swift in Sources */,
 				8D0138082A5C59890091CC58 /* Utils.swift in Sources */,
-				8DFDC31A2AFA23F1003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB6262B24372000AFF714 /* SharedClass.swift in Sources */,
 				8D0138092A5C59890091CC58 /* AdUtil.swift in Sources */,
 				8D01380A2A5C59890091CC58 /* Primitive+Extension.swift in Sources */,
 				8D01380B2A5C59890091CC58 /* Triangle.swift in Sources */,
@@ -3030,7 +3030,7 @@
 				8D01383F2A5C598C0091CC58 /* APIKey.swift in Sources */,
 				8D0138402A5C598C0091CC58 /* SceneDelegate.swift in Sources */,
 				8D0138412A5C598C0091CC58 /* Utils.swift in Sources */,
-				8DFDC3222AFA2522003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */,
 				8D0138422A5C598C0091CC58 /* AdUtil.swift in Sources */,
 				8D0138432A5C598C0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0138442A5C598C0091CC58 /* Triangle.swift in Sources */,
@@ -3132,7 +3132,7 @@
 				8D2E781B2A5C492C00A09A80 /* APIKey.swift in Sources */,
 				8D2E781C2A5C492C00A09A80 /* SceneDelegate.swift in Sources */,
 				8D2E781D2A5C492C00A09A80 /* Utils.swift in Sources */,
-				8DFDC31D2AFA251D003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB6292B24372200AFF714 /* SharedClass.swift in Sources */,
 				8D2E781E2A5C492C00A09A80 /* AdUtil.swift in Sources */,
 				8D2E781F2A5C492C00A09A80 /* Primitive+Extension.swift in Sources */,
 				8D2E78202A5C492C00A09A80 /* Triangle.swift in Sources */,
@@ -3200,7 +3200,7 @@
 				8D8EB7BD2AF67978000D858E /* APIKey.swift in Sources */,
 				8D8EB7BE2AF67978000D858E /* SceneDelegate.swift in Sources */,
 				8D8EB7BF2AF67978000D858E /* Utils.swift in Sources */,
-				8DFDC31E2AFA251F003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB6282B24372200AFF714 /* SharedClass.swift in Sources */,
 				8D8EB7C02AF67978000D858E /* AdUtil.swift in Sources */,
 				8D8EB7C12AF67978000D858E /* Primitive+Extension.swift in Sources */,
 				8D8EB7C22AF67978000D858E /* Triangle.swift in Sources */,
@@ -3234,7 +3234,7 @@
 				8D981ED12A650AC50072A8D3 /* APIKey.swift in Sources */,
 				8D981ED22A650AC50072A8D3 /* SceneDelegate.swift in Sources */,
 				8D981ED32A650AC50072A8D3 /* Utils.swift in Sources */,
-				8DFDC3202AFA2521003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB6252B24371F00AFF714 /* SharedClass.swift in Sources */,
 				8D981ED42A650AC50072A8D3 /* AdUtil.swift in Sources */,
 				8D981ED52A650AC50072A8D3 /* Primitive+Extension.swift in Sources */,
 				8D981ED62A650AC50072A8D3 /* Triangle.swift in Sources */,
@@ -3268,7 +3268,7 @@
 				8DD507462681596B00377CBD /* APIKey.swift in Sources */,
 				8D91CD462655E7EF00404F5D /* SceneDelegate.swift in Sources */,
 				8DD5075E26815EF800377CBD /* Utils.swift in Sources */,
-				8DFDC31C2AFA251D003ACEFD /* SharedClass.swift in Sources */,
+				8DBCB62A2B24372300AFF714 /* SharedClass.swift in Sources */,
 				8D8323D527E437640068CBA1 /* AdUtil.swift in Sources */,
 				8D8477BD2A36F47100E89677 /* Primitive+Extension.swift in Sources */,
 				8DB2747727E222B3000518B0 /* Triangle.swift in Sources */,
@@ -3314,6 +3314,7 @@
 				8D3E2310279BCFAB0067DC30 /* UnicodeRu.swift in Sources */,
 				8D6DA1DF26E899050080E630 /* AudioManager.swift in Sources */,
 				8D4D347D27C48FA90007396F /* UnicodeMarathi.swift in Sources */,
+				8DBCB62B2B243AFE00AFF714 /* SharedClass.swift in Sources */,
 				8D74D7A527B24079006642E0 /* UnicodeEs.swift in Sources */,
 				8D4D347427C48FA90007396F /* UnicodeTamil.swift in Sources */,
 				8D4D347327C48FA90007396F /* UnicodeKannada.swift in Sources */,
@@ -3339,7 +3340,6 @@
 				8D4D347C27C48FA90007396F /* UnicodeHindi.swift in Sources */,
 				8D6DA1CA26E897D70080E630 /* APIUrl.swift in Sources */,
 				8D870AF12A663786006C5E9D /* UnicodeJpKatakana.swift in Sources */,
-				8D3129E827303BF1001EE3C3 /* SharedClass.swift in Sources */,
 				8D74D7A227B24079006642E0 /* UnicodeKo.swift in Sources */,
 				8D6DA1D226E897DC0080E630 /* APIRequest.swift in Sources */,
 				8DF6E32126C3563B0031E094 /* JhUtil.swift in Sources */,
@@ -3467,7 +3467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3497,7 +3497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4293,7 +4293,7 @@
 				);
 				MARKETING_VERSION = 1.1.3;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.SmartKeyboard.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4322,7 +4322,7 @@
 				);
 				MARKETING_VERSION = 1.1.3;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.SmartKeyboard.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
