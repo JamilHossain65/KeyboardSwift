@@ -32,7 +32,7 @@ class AdManager: UIViewController {
     }
     
     func showAdmobRewarded(_ viewController:UIViewController){
-        //AdmobController.shared.showRewardedInterstitial(viewController)
+        //AdmobController.shared.showRewardedAd(viewController)
     }
     
     func showAdmobInterstitial(_ viewController:UIViewController){

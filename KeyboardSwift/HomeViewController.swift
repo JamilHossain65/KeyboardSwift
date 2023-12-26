@@ -19,8 +19,6 @@ import SwiftyJSON
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     private var isMobileAdsStartCalled = false
-    private var rewardedInterstitialAd: GADRewardedInterstitialAd?
-    
     private var isStatusBarHidden = false {
         didSet {
             setNeedsStatusBarAppearanceUpdate()
@@ -112,7 +110,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.iap.russianKeyboard"
+                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
             }
         }
     }
@@ -251,10 +249,20 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         if isAppUsed { //app already used
             if adLoadingStatus == .LOADED {
-                AdmobController.shared.showRewardedInterstitial(self)
+                if AdmobController.shared.rewardedAd != nil {
+                    AdmobController.shared.showRewardedAd(self)
+                }else{
+                    AdmobController.shared.showAdmobInterstitial(self)
+                }
+                
             }else{
                 DispatchQueue.global(qos: .default).async {
-                    AdmobController.shared.showAdmobInterstitial(self)
+                    
+                    if AdmobController.shared.rewardedAd != nil {
+                        AdmobController.shared.showRewardedAd(self)
+                    }else{
+                        AdmobController.shared.showAdmobInterstitial(self)
+                    }
                     
                     DispatchQueue.main.async {
                         AdmobController.shared.admobCompletion = { _ in
@@ -285,7 +293,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func loadAdmob(){
         //AdManager.shared.loadAdMobAdsOnParrent(self)
-        AdmobController.shared.loadRewardedInterstitial(self)
+        AdmobController.shared.loadRewardedAd(self)
     }
     
     @objc func restoreButtonPressed(){
@@ -661,7 +669,7 @@ extension HomeViewController:UITextViewDelegate {
     
     @objc func loadAd(){
         perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME*0.7)
-        AdmobController.shared.loadRewardedInterstitial(self)
+        AdmobController.shared.loadRewardedAd(self)
     }
     
     @objc func showAdmobInterstitial(){

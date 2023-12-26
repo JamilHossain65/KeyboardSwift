@@ -81,7 +81,7 @@ var appSchemeName: String {
             return "SmartFonts"
         default://English
             //app setting::5
-            return "RussianKeyboard"
+            return "KeyboardGoti"
         }
     }
 }
@@ -92,13 +92,13 @@ var SUITE_KEY: String {
         
         switch langName {
         case Bangla:
-            return ""
+            return "group."
         case BanglaGoti:
-            return ""
+            return "group.com.jamil.BanglaKeyboard"
         case BanglaDruti:
-            return ""
+            return "group."
         case Thai:
-            return ""
+            return "group."
         case Gujarati:
             return ""
         case Hindi:
@@ -128,11 +128,11 @@ var SUITE_KEY: String {
         case Russian:
             return "group.com.vaticsoft.russian.keyboard"
         case Spanish:
-            return ""
+            return "group."
         case French:
-            return ""
+            return "group."
         case German:
-            return ""
+            return "group."
         case Italian:
             return ""
         case Korean:
@@ -142,15 +142,15 @@ var SUITE_KEY: String {
         case Portuguese:
             return ""
         case Burmese:
-            return ""
+            return "group."
         case JpHiragana:
-            return ""
+            return "group."
         case JpKatakana:
-            return ""
+            return "group."
         case SmartFonts:
-            return ""
+            return "group."
         default://English
-            return "group.com.vaticsoft.russian.keyboard"
+            return "group.com.jamil.BanglaKeyboard"
         }
     }
 }
@@ -213,14 +213,14 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false,
 ]
 
