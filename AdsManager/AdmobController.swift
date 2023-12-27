@@ -85,7 +85,77 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             }
         }
     }
-
+    
+    //app setting:: 10
+    var admobAdRewardedKey: String {
+        get {
+            let langName = getString(SelectedLanguage)
+            switch langName {
+            case Bangla:
+                return ""
+            case BanglaGoti:
+                return "ca-app-pub-9133033983333483/6496283136"
+            case BanglaDruti:
+                return "ca-app-pub-9133033983333483/4963605614"
+            case Thai:
+                return "ca-app-pub-9133033983333483/4717195930"
+            case Gujarati:
+                return ""
+            case Hindi:
+                return ""
+            case Kannada:
+                return ""
+            case Malayalam:
+                return ""
+            case Marathi:
+                return ""
+            case Nepali:
+                return ""
+            case Oriya:
+                return ""
+            case Punjabi:
+                return ""
+            case Sanskrit:
+                return ""
+            case Tamil:
+                return ""
+            case Telugu:
+                return ""
+            case Urdu:
+                return ""
+            case Indonesian:
+                return ""
+            case Russian:
+                return "ca-app-pub-9133033983333483/6659982938"
+            case Spanish:
+                return ""
+            case French:
+                return ""
+            case German:
+                return ""
+            case Italian:
+                return ""
+            case Korean:
+                return ""
+            case Turkish:
+                return ""
+            case Portuguese:
+                return ""
+            case Burmese:
+                return ""
+            case JpHiragana:
+                return "ca-app-pub-9133033983333483/5534603529"
+            case JpKatakana:
+                return "ca-app-pub-9133033983333483/5534603529"
+            case SmartFonts:
+                return ""
+            default://English
+                return "ca-app-pub-9133033983333483/6659982938"
+            }
+        }
+    }
+    
+    
     //var void (^adFailWithCompletion)(BOOL success);
 
     private var isMobileAdsStartCalled = false
@@ -120,10 +190,9 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             return log("Ad already loaded")
         }
         
-        let rewardedKey = "ca-app-pub-9133033983333483/6496283136"
-        GADRewardedAd.load(withAdUnitID:rewardedKey, request: GADRequest()) { ad, error in
+        GADRewardedAd.load(withAdUnitID:admobAdRewardedKey, request: GADRequest()) { ad, error in
             if let error = error {
-                return log("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
+                return log("Failed to load rewarded ad with error: \(error.localizedDescription)")
             }
             
             log("Rewarded ad load")
