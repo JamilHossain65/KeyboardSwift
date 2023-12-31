@@ -98,7 +98,7 @@ var SUITE_KEY: String {
         case BanglaDruti:
             return "group."
         case Thai:
-            return "group."
+            return "group.com.vaticsoft.ThaiKeyboard"
         case Gujarati:
             return ""
         case Hindi:
@@ -150,7 +150,7 @@ var SUITE_KEY: String {
         case SmartFonts:
             return "group."
         default://English
-            return "group.com.jamil.BanglaKeyboard"
+            return "group.com.vaticsoft.ThaiKeyboard"
         }
     }
 }
@@ -220,7 +220,7 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:true, BanglaDruti:false, Thai  :true,  JpHiragana:false,
     JpKatakana:false, Burmese:false,
 ]
 
