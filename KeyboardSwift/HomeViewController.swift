@@ -124,7 +124,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     //let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
     
     //let actLanguages = [English,Russian]
-    let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})//MARK: - make it ordered array
+    var actLanguages = activeLanguages.filter({$0.1}).map({$0.0}).sorted(by:>)
     
     let dropDown = DropDown()
     let isPurchased = getObject(kIsPurchaed) as? Bool ?? false
@@ -169,7 +169,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
 
         //app setting:: 105
-        var selectedIndex = 1
+        var selectedIndex = 0
         if actLanguages.count > 2 {
             selectedIndex = 1
             dropDown.dataSource = actLanguages
@@ -208,8 +208,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         audioManager.initAudio()
         audioManager.delegate = self
         //MARK: - Enable speek button
-//        addLanguageButtonUI()
-//        addSpeakButtonUI()
+        addLanguageButtonUI()
+        addSpeakButtonUI()
         
     }
     
@@ -426,7 +426,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             languageButton.setTitle(countryFlag, for: .normal)
             
         }else{
-            let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
+            let actLanguages = activeLanguages.filter({$0.1}).map({$0.0}).sorted(by:>)
             log("actLanguages::\(actLanguages)")
             
             let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
@@ -446,8 +446,12 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 codeBd = flag(from: countryCode1)
             }
             
+            //MARK: - todo remove static code
+            codeBd = codeBd.replacingOccurrences(of: "🇬", with: "")
+            
             log("codeBd::\(codeBd)")
             log("codeEn::\(codeEn)")
+            
             languageButton.setTitle("\(codeBd)", for: .normal)
             languageButton.setTitle("\(codeEn)", for: .selected)
         }
@@ -509,17 +513,23 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             let countryBd:[String] = countryCodes.filter({$0.0 == _non_english}).map({$0.1})
             
             let _countryEn:String = countryEn.first ?? ""
-            let _countryBd:String = countryBd.last ?? ""
+            var _countryBd:String = countryBd.first ?? ""
+            //MARK: - todo remove static code
+            _countryBd = _countryBd.replacingOccurrences(of: "G", with: "")
             
             let flagEn = flag(from: _countryEn)
             let flagBd = flag(from: _countryBd)
             self.languageButton.setTitle(flagEn, for: .selected)
             self.languageButton.setTitle(flagBd, for: .normal)
             self.languageButton.isSelected = !sender.isSelected
+            setObject(self.languageButton.isSelected ? 1 : 0, key: SelectedLanguage)
+            let index:Int   = getObject(SelectedLanguage) as? Int ?? 1
+            print("index::\(index)")
         }
     }
     
     func convertToText2(lang:String){
+        print("lang code:\(lang)")
         let audioManager = AudioManager()
         audioManager.delegate = self
         let speechModel  = SpeechModel()
@@ -531,7 +541,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             
             if let _errors = errors,_errors.message?.count ?? 0 > 0 {
                 log("error::\(_errors.message)")
-                showAlertOkay(message: "Error found!", completion: { _ in})
+                showAlertOkay(message: "Error!", completion: { _ in})
             } else {
                 self.textView.text += " \(speechModel.convertedText)"
                 log("text::\(speechModel.convertedText)")
@@ -716,10 +726,15 @@ extension HomeViewController:AudioManagerDelegate {
         let language = playButton.isSelected ? codeEn:codeBd //id,bn
         convertToText2(lang: language)
  */
-        let index:Int   = getObject(SelectedLanguage) as? Int ?? 0
+        let index:Int   = getObject(SelectedLanguage) as? Int ?? 1
+        
+        print("inx debug::\(index) \n languages:\(self.actLanguages)")
         let countryName = self.actLanguages[index]
         let countryCode:[String] = countryCodes.filter({$0.0 == countryName}).map({$0.1})
-        let _countryCode:String = countryCode.first ?? ""
+        var _countryCode:String = countryCode.first ?? ""
+        //MARK: - todo remove static code
+        _countryCode = _countryCode.replacingOccurrences(of: "bdG", with: "bn")
+        _countryCode = _countryCode.replacingOccurrences(of: "us", with: "en")
         convertToText2(lang: _countryCode)
     }
     

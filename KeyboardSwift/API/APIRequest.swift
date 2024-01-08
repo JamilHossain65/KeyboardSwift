@@ -95,9 +95,9 @@ struct APIRequest {
     }
     */
     
-    func uploadFile(params: [String:Any],paramName:String, fileName: String, fileData: Data, mimeType:String,completion:@escaping (Any?, Error?) -> Void) {
+    func uploadFile(params: [String:Any]?,paramName:String, fileName: String, fileData: Data, mimeType:String,completion:@escaping (Any?, Error?) -> Void) {
         //https://stackoverflow.com/questions/41032678/upload-image-to-server-swift-3
-        print("calling api.....")
+        print("main app calling api.....")
         
         // generate boundary string using a unique per-app string
         let boundary = UUID().uuidString
@@ -108,19 +108,22 @@ struct APIRequest {
         request.httpMethod = "POST"
         request.timeoutInterval = 8
         
+        let langCode = params?[APIKey.language] as? String ?? APIKey.language_en
         
         // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
         // And the boundary is also set here
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.setValue(langCode, forHTTPHeaderField: "Language-Code")
         
         var bodyData = Data()
         
-        for (key, value) in params {
-            //add param into body
-            bodyData.NappendStringN("--\(boundary)")
-            bodyData.appendStringNN("Content-Disposition: form-data; name=\(key)")//lang
-            bodyData.appendString("\(value)")//bn
-        }
+//        for (key, value) in params {
+//            //add param into body
+//            bodyData.NappendStringN("--\(boundary)")
+//            bodyData.appendStringNN("Content-Disposition: form-data; name=\(key)")//lang
+//            bodyData.appendString("\(value)")//bn
+//        }
+        
         
         // Add the file data to the raw http request data
         bodyData.NappendStringN("--\(boundary)")
@@ -130,8 +133,8 @@ struct APIRequest {
         bodyData.append(fileData)
         bodyData.NappendStringN("--\(boundary)--")
         
-        //let bodyData2 = bodyData.data(using: .utf8)
-        //print("body::\(bodyData)")
+        //let bodyDataString = String(decoding: bodyData, as: UTF8.self)
+        //print("body::\(bodyDataString)")
         
         // Send a POST request to the URL, with the data we created earlier
         session.uploadTask(with: request, from: bodyData, completionHandler: { responseData, response, error in

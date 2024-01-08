@@ -21,7 +21,7 @@ class SpeechModel: NSObject {
     func doTranslateRequest2(completion: @escaping (Errors?) -> ()) {
         var params:[String:Any] = [:]
         params[APIKey.file_url] = self.fileUrl
-        params[APIKey.language] = self.convertedLanguage
+        params[APIKey.language] = self.convertedLanguage 
         
         let header = [APIKey.content_type:APIKey.multipart_form]
         let method = APIKey.POST
@@ -69,7 +69,7 @@ class SpeechModel: NSObject {
         print("[REQUEST URL]: \(url)")
         
         /*
-        let filename = "hello (16bit PCM).wav"//"good-morning-google.flac" //"hello (16bit PCM).wav"
+        let filename = "bangla.flac"//"good-morning-google.flac" //"hello (16bit PCM).wav" //bangla.flac
         let fileUrl = Bundle.main.path(forResource: filename, ofType: nil)
         guard let data = try? Data(contentsOf:URL(fileURLWithPath:fileUrl!)) else { return }
         
@@ -80,10 +80,10 @@ class SpeechModel: NSObject {
         guard let data = try? Data(contentsOf:fileUrl) else { return }
         //print("fileUrl:: \(fileUrl)")
         
-        let lang = params?[APIKey.language]
+        //let lang = params?[APIKey.language]
         
         let request = APIRequest(url)
-        request.uploadFile(params: ["lang":lang ?? "en"] ,paramName: "file", fileName: filename, fileData: data, mimeType: "audio/wav",completion: { (response,error) in
+        request.uploadFile(params: params, paramName: "file", fileName: filename, fileData: data, mimeType: "audio/flac",completion: { (response,error) in
             if let _response = response {
                 let json = _response as? [String:Any]
                 self.convertedText = json?[APIKey.converted_text] as? String ?? ""

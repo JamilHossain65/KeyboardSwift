@@ -20,6 +20,6 @@ let API_LOGIN = "/login/"
 let API_TEST  = "/test/"
 let API_TEST2 = "/test2/"
 
-let API_TRANSLATE      = "/convert/voice/lang/"
+let API_TRANSLATE      = "/convert/voice" //"/convert/voice/lang/"
 //"/convert/voice/lang/"
 let BASE_URL_TRANSLATE = "http://jamilhossain.pythonanywhere.com" //"http://127.0.0.1:5000/"
