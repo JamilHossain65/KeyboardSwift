@@ -13,6 +13,7 @@ enum IAPHandlerAlertType {
     case disabled
     case restored
     case purchased
+    case canceled
     
     var message: String{
         switch self {
@@ -20,6 +21,7 @@ enum IAPHandlerAlertType {
         case .disabled: return "Purchases are disabled in your device!"
         case .restored: return "You've successfully restored your purchase!"
         case .purchased: return "You've successfully bought this purchase!"
+        case .canceled: return "You've cancled this purchase!"
         }
     }
 }
@@ -142,6 +144,9 @@ extension IAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
                 case .failed:
                     log("Product purchase failed")
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    if let complition = self.purchaseProductComplition {
+                        complition(IAPHandlerAlertType.canceled, nil, nil)
+                    }
                     break
                 case .restored:
                     log("Product restored")

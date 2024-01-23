@@ -81,7 +81,7 @@ var appSchemeName: String {
             return "SmartFonts"
         default://English
             //app setting::5
-            return "KeyboardGoti"
+            return "RussianKeyboard"
         }
     }
 }
@@ -150,7 +150,7 @@ var SUITE_KEY: String {
         case SmartFonts:
             return "group."
         default://English
-            return "group.com.vaticsoft.ThaiKeyboard"
+            return "group.com.vaticsoft.russian.keyboard"
         }
     }
 }
@@ -213,14 +213,14 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false,
 ]
 

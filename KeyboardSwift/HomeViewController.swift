@@ -19,6 +19,8 @@ import SwiftyJSON
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     private var isMobileAdsStartCalled = false
+    private var isShowRewardedInterstitialVideo = false
+    
     private var isStatusBarHidden = false {
         didSet {
             setNeedsStatusBarAppearanceUpdate()
@@ -110,7 +112,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
+                return "com.vaticsoft.iap.russianKeyboard"
             }
         }
     }
@@ -140,6 +142,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         })
         
         AdAppodeal.shared.initializeAppodealSDK()
+        loadRewardedAdmob()
         
         if !isPurchased {//not paid user
             loadAd()
@@ -207,8 +210,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         //record audio
         audioManager.initAudio()
         audioManager.delegate = self
-        //MARK: - Enable speek button
-        addLanguageButtonUI()
+        addLangFlagButtonUI()
         addSpeakButtonUI()
         
     }
@@ -291,7 +293,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         LoadingView.shared.dismish()
     }
     
-    @objc func loadAdmob(){
+    @objc func loadRewardedAdmob(){
         //AdManager.shared.loadAdMobAdsOnParrent(self)
         AdmobController.shared.loadRewardedAd(self)
     }
@@ -349,8 +351,9 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             IAPHandler.shared.purchase(product: self.productsArray[0]) { (alert, product, transaction) in
                 if let tran = transaction, let prod = product {
                     //use transaction details and purchased product as you want
+                }else{
+                   AdManager.shared.showAppodealNonSkippableAdsOn(self)
                 }
-                //Globals.shared.showWarnigMessage(alert.message)
             }
         }
     }
@@ -374,7 +377,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         textView.addSubview(recordButton)
     }
     
-    func addLanguageButtonUI(){
+    func addLangFlagButtonUI(){
         /*
         let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
         let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
@@ -543,8 +546,20 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 log("error::\(_errors.message)")
                 showAlertOkay(message: "Error!", completion: { _ in})
             } else {
-                self.textView.text += " \(speechModel.convertedText)"
-                log("text::\(speechModel.convertedText)")
+                if !self.isShowRewardedInterstitialVideo {
+                    AdmobController.shared.showRewardedInterstitialAd(self, completion:{ rewardPoint in
+                        log("rewardPoint::\(rewardPoint)")
+                        if rewardPoint > 0 {
+                            self.isShowRewardedInterstitialVideo = true
+                            self.textView.text += " \(speechModel.convertedText)"
+                        }else{
+                            //MARK: - check this line execute or not
+                            showAlertOkay(message: "You didn't collect your reward!", completion: { _ in})
+                        }
+                    })
+                }else{
+                    self.textView.text += " \(speechModel.convertedText)"
+                }
             }
         })
     }
@@ -685,7 +700,7 @@ extension HomeViewController:UITextViewDelegate {
     @objc func showAdmobInterstitial(){
         log("showAdmobInterstitial...")
         //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
-        AdmobController.shared.showAdmobInterstitial(self)
+        AdmobController.shared.showRewardedInterstitialAd(self)
     }
     
     @objc func showFbMetaAd(){

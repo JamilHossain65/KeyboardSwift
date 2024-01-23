@@ -16,6 +16,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     var admobCompletion : ((_ success: Bool) -> ())?
     var rewardedAd: GADRewardedAd?
     var interstitialAd: GADInterstitialAd?
+    var rewardedInterstitialAd: GADRewardedInterstitialAd?
     
     //app setting:: 6
     var admobAdKey: String {
@@ -81,7 +82,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-9133033983333483/1612139034" //MARK: - todo
+                return "ca-app-pub-9133033983333483/6077303084" //MARK: - todo
             }
         }
     }
@@ -155,6 +156,74 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         }
     }
     
+    //app setting:: 10
+    var admobAdRewardedInterstitialKey: String {
+        get {
+            let langName = getString(SelectedLanguage)
+            switch langName {
+            case Bangla:
+                return ""
+            case BanglaGoti:
+                return "ca-app-pub-9133033983333483/8744413734"
+            case BanglaDruti:
+                return ""
+            case Thai:
+                return ""
+            case Gujarati:
+                return ""
+            case Hindi:
+                return ""
+            case Kannada:
+                return ""
+            case Malayalam:
+                return ""
+            case Marathi:
+                return ""
+            case Nepali:
+                return ""
+            case Oriya:
+                return ""
+            case Punjabi:
+                return ""
+            case Sanskrit:
+                return ""
+            case Tamil:
+                return ""
+            case Telugu:
+                return ""
+            case Urdu:
+                return ""
+            case Indonesian:
+                return ""
+            case Russian:
+                return "ca-app-pub-9133033983333483/4509503298"
+            case Spanish:
+                return "ca-app-pub-9133033983333483/1779398175"
+            case French:
+                return ""
+            case German:
+                return ""
+            case Italian:
+                return ""
+            case Korean:
+                return ""
+            case Turkish:
+                return ""
+            case Portuguese:
+                return ""
+            case Burmese:
+                return ""
+            case JpHiragana:
+                return ""
+            case JpKatakana:
+                return ""
+            case SmartFonts:
+                return "ca-app-pub-9133033983333483/9218904491"
+            default://English
+                return "ca-app-pub-9133033983333483/4509503298"
+            }
+        }
+    }
     
     //var void (^adFailWithCompletion)(BOOL success);
 
@@ -215,7 +284,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     }
     
     
-    @objc func showRewardedAd(_ viewController:UIViewController) {
+    @objc func showRewardedAd(_ viewController:UIViewController, completion: ((Int) -> Void)? = nil) {
         guard let _ = AdmobController.shared.rewardedAd else {
             loadRewardedAd(viewController, isShow: true)
             return log("Ad wasn't ready")
@@ -227,12 +296,76 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             if !isPurchased {
                 AdmobController.shared.rewardedAd?.present(fromRootViewController: viewController, userDidEarnRewardHandler: {
                     print("EarnReward 1")
+                    if let _completion = completion {
+                        _completion(1)
+                    }
                 })
             }
         }else{
             let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
             if !isPurchased {
                 loadRewardedAd(viewController, isShow: true)
+            }
+            log("app is not active")
+        }
+    }
+    
+    func loadRewardedInterstitialAd(_ viewController:UIViewController, isShow:Bool? = false,completion: ((Int) -> Void)? = nil){
+        //if !Reachability.isConnected() { return }
+        
+        if let _ = AdmobController.shared.rewardedInterstitialAd {
+            return log("Ad already loaded")
+        }
+        
+        GADRewardedInterstitialAd.load(withAdUnitID:admobAdRewardedInterstitialKey, request: GADRequest()) { ad, error in
+            if let error = error {
+                return log("Failed to load rewarded Interstitial ad with error: \(error.localizedDescription)")
+            }
+            
+            log("Rewarded ad load")
+
+            AdmobController.shared.rewardedInterstitialAd = ad
+            AdmobController.shared.rewardedInterstitialAd?.fullScreenContentDelegate = self
+            //let options = GADServerSideVerificationOptions()
+              //    options.customRewardString = "SAMPLE_CUSTOM_DATA_STRING"
+            //AdmobController.shared.interstitialAd?.serverSideVerificationOptions = options
+            adLoadingStatus = .LOADED
+            LoadingView.shared.dismish()
+
+            if isShow!{
+                self.loadAdmobOn(viewController)
+                AdmobController.shared.rewardedInterstitialAd?.present(fromRootViewController: viewController, userDidEarnRewardHandler: {
+                    print("EarnReward 1")
+                    if let _completion = completion {
+                        _completion(1)
+                    }
+                })
+            }
+        }
+    }
+    
+    
+    @objc func showRewardedInterstitialAd(_ viewController:UIViewController, completion: ((Int) -> Void)? = nil) {
+        guard let _ = AdmobController.shared.rewardedInterstitialAd else {
+            loadRewardedInterstitialAd(viewController, isShow: true, completion: completion)
+            return log("Ad wasn't ready")
+        }
+        
+        loadAdmobOn(viewController)
+        if UIApplication.shared.applicationState == .active{
+            let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
+            if !isPurchased {
+                AdmobController.shared.rewardedInterstitialAd?.present(fromRootViewController: viewController, userDidEarnRewardHandler: {
+                    print("EarnReward 1")
+                    if let _completion = completion {
+                        _completion(1)
+                    }
+                })
+            }
+        }else{
+            let isPurchased = getObject("kIsPurchaed") as? Bool ?? false
+            if !isPurchased {
+                loadRewardedInterstitialAd(viewController, isShow: true)
             }
             log("app is not active")
         }
