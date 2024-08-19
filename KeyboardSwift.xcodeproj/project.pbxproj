@@ -3,15 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16725466DCDA5C0874CDE177 /* Pods_Goti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF04D33AAC45D59B6FC2042 /* Pods_Goti.framework */; };
+		2F78B150AA87E7F8B2533E94 /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E84350B0C7686FF3A6FD538 /* Pods_SmartFonts.framework */; };
 		3A1CB7DC49E54EFF9D482C5D /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
 		3A40A925A1D1EB769EFDA3D1 /* Pods_Japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E753921A61184AA080E941DE /* Pods_Japanese.framework */; };
 		41AB61559865766897269F0A /* Pods_KeyboardSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */; };
 		6830256C6209F1A5C4AE419C /* Pods_Burmese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BAD4097999C4DB1EA4547 /* Pods_Burmese.framework */; };
-		6A45486FEC38FD9B954D07C3 /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */; };
+		6A45486FEC38FD9B954D07C3 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		8CCC281CE270B61FB210A388 /* Pods_German.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75C97B6A0214C8BE38D3DE6 /* Pods_German.framework */; };
 		8D01375C2A5C595E0091CC58 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D01375D2A5C595E0091CC58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
@@ -490,7 +492,6 @@
 		8D8EB7D92AF67978000D858E /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8D8EB7DA2AF67978000D858E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8D8EB7DB2AF67978000D858E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8D8EB7DC2AF67978000D858E /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */; };
 		8D8EB7DE2AF67978000D858E /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
 		8D8EB7DF2AF67978000D858E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D8EB7E02AF67978000D858E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
@@ -855,9 +856,12 @@
 /* Begin PBXFileReference section */
 		008B24224041B177CCC309AC /* Pods_ThaiKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThaiKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03128D8683DD49573BC1E25D /* Pods-Japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Japanese.debug.xcconfig"; path = "Target Support Files/Pods-Japanese/Pods-Japanese.debug.xcconfig"; sourceTree = "<group>"; };
+		0A3016FBF208FA15BD2A59B7 /* Pods-Goti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goti.debug.xcconfig"; path = "Target Support Files/Pods-Goti/Pods-Goti.debug.xcconfig"; sourceTree = "<group>"; };
+		1E84350B0C7686FF3A6FD538 /* Pods_SmartFonts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartFonts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032E3CAEA4CDD6205067ACE /* Pods-Russian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Russian.release.xcconfig"; path = "Target Support Files/Pods-Russian/Pods-Russian.release.xcconfig"; sourceTree = "<group>"; };
 		2325AAD19F4B7A8D17E657FA /* Pods-Indian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indian.release.xcconfig"; path = "Target Support Files/Pods-Indian/Pods-Indian.release.xcconfig"; sourceTree = "<group>"; };
 		34E452BB6A4BE197146D77C1 /* Pods-Burmese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Burmese.debug.xcconfig"; path = "Target Support Files/Pods-Burmese/Pods-Burmese.debug.xcconfig"; sourceTree = "<group>"; };
+		3AF04D33AAC45D59B6FC2042 /* Pods_Goti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		495AC1B0A5E3ED1768BD77CC /* Pods-German.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-German.debug.xcconfig"; path = "Target Support Files/Pods-German/Pods-German.debug.xcconfig"; sourceTree = "<group>"; };
 		4B42C11FC01EA438E8D1680A /* Pods-Spanish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spanish.debug.xcconfig"; path = "Target Support Files/Pods-Spanish/Pods-Spanish.debug.xcconfig"; sourceTree = "<group>"; };
 		51D902B1C6016CC4723507A4 /* Pods-Russian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Russian.debug.xcconfig"; path = "Target Support Files/Pods-Russian/Pods-Russian.debug.xcconfig"; sourceTree = "<group>"; };
@@ -866,7 +870,6 @@
 		5BC85D5E7DCE914877EB2D51 /* Pods-KeyboardSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardSwift.release.xcconfig"; path = "Target Support Files/Pods-KeyboardSwift/Pods-KeyboardSwift.release.xcconfig"; sourceTree = "<group>"; };
 		6CBE26D564765851758260E0 /* Pods-SmartFonts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFonts.release.xcconfig"; path = "Target Support Files/Pods-SmartFonts/Pods-SmartFonts.release.xcconfig"; sourceTree = "<group>"; };
 		711C13B9809BF0E8A8ABB5DE /* Pods-SmartFonts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFonts.debug.xcconfig"; path = "Target Support Files/Pods-SmartFonts/Pods-SmartFonts.debug.xcconfig"; sourceTree = "<group>"; };
-		8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartFonts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D01378E2A5C595E0091CC58 /* Russian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Russian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0137C72A5C597D0091CC58 /* Druti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Druti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0138002A5C59860091CC58 /* German.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = German.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1052,6 +1055,7 @@
 		E753921A61184AA080E941DE /* Pods_Japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E1DEA3D65EAC3E0800E832 /* Pods-ThaiKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThaiKeyboard.debug.xcconfig"; path = "Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		F448CF9E058F5CCBFDAA603B /* Pods_Russian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Russian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9325858334B279DF1BFB861 /* Pods-Goti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goti.release.xcconfig"; path = "Target Support Files/Pods-Goti/Pods-Goti.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1150,7 +1154,8 @@
 				8D3AE88F2A56CE7000C74CF6 /* AppTrackingTransparency.framework in Frameworks */,
 				8D3AE8902A56CE7000C74CF6 /* AdSupport.framework in Frameworks */,
 				8D3AE8912A56CE7000C74CF6 /* StoreKit.framework in Frameworks */,
-				6A45486FEC38FD9B954D07C3 /* Pods_SmartFonts.framework in Frameworks */,
+				6A45486FEC38FD9B954D07C3 /* (null) in Frameworks */,
+				2F78B150AA87E7F8B2533E94 /* Pods_SmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,7 +1166,7 @@
 				8D8EB7D92AF67978000D858E /* AppTrackingTransparency.framework in Frameworks */,
 				8D8EB7DA2AF67978000D858E /* AdSupport.framework in Frameworks */,
 				8D8EB7DB2AF67978000D858E /* StoreKit.framework in Frameworks */,
-				8D8EB7DC2AF67978000D858E /* Pods_SmartFonts.framework in Frameworks */,
+				16725466DCDA5C0874CDE177 /* Pods_Goti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1223,6 +1228,8 @@
 				96AA94EB556250C0626434FA /* Pods-ThaiKeyboard.release.xcconfig */,
 				BC8D1465FDEF6F2A972A70DF /* Pods-Turkish.debug.xcconfig */,
 				DB103321F8DF9981D611E98A /* Pods-Turkish.release.xcconfig */,
+				0A3016FBF208FA15BD2A59B7 /* Pods-Goti.debug.xcconfig */,
+				F9325858334B279DF1BFB861 /* Pods-Goti.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1234,7 +1241,6 @@
 				8DA96A8727E98E08009CF1E9 /* AdSupport.framework */,
 				8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */,
 				CE140A8ED17D9190193F0AC2 /* Pods_KeyboardSwift.framework */,
-				8785CBACFB4484C0055348D6 /* Pods_SmartFonts.framework */,
 				E753921A61184AA080E941DE /* Pods_Japanese.framework */,
 				D3385BC88752144EC562E58F /* Pods_Druti.framework */,
 				A82BAD4097999C4DB1EA4547 /* Pods_Burmese.framework */,
@@ -1244,6 +1250,8 @@
 				B763AA466958DA76AC42ECE1 /* Pods_Spanish.framework */,
 				008B24224041B177CCC309AC /* Pods_ThaiKeyboard.framework */,
 				5B7BF064BD52B7842D853707 /* Pods_Turkish.framework */,
+				3AF04D33AAC45D59B6FC2042 /* Pods_Goti.framework */,
+				1E84350B0C7686FF3A6FD538 /* Pods_SmartFonts.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2546,7 +2554,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SmartFonts-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Goti-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2559,15 +2567,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8D8EB7ED2AF67978000D858E /* [CP] Copy Pods Resources */ = {
@@ -2576,15 +2584,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		965F4DA2233E1A3BCBC4DB3E /* [CP] Copy Pods Resources */ = {
@@ -3462,7 +3470,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Russian-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3491,8 +3499,8 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Russian-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3982,7 +3990,7 @@
 		};
 		8D8EB7EF2AF67978000D858E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 711C13B9809BF0E8A8ABB5DE /* Pods-SmartFonts.debug.xcconfig */;
+			baseConfigurationReference = 0A3016FBF208FA15BD2A59B7 /* Pods-Goti.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4011,7 +4019,7 @@
 		};
 		8D8EB7F02AF67978000D858E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CBE26D564765851758260E0 /* Pods-SmartFonts.release.xcconfig */;
+			baseConfigurationReference = F9325858334B279DF1BFB861 /* Pods-Goti.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

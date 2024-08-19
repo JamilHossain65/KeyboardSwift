@@ -32,6 +32,7 @@
     [FIRApp configure];
 }
 
+/*
 -(void)addUserDataToDatabase:(NSString*)device_id{
     
     NSString *deviceID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
@@ -424,7 +425,7 @@
     NSLog(@"get newRevenue::%@",[self getValue:kREVENUE]);
     return newRevenue;
 }
-
+*/
 -(BOOL)isRegisteredUser{
     BOOL isRegisteredUser = [[self getValue:kREGISTERED_USER_KEY] boolValue];
     return isRegisteredUser;
