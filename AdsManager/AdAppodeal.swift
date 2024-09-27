@@ -8,7 +8,7 @@
 import UIKit
 import Appodeal
 
-//app setting:16
+//app setting:13
 private struct AppodealConstants {
     static let key: String = getKey()
     static let adTypes: AppodealAdType = [.rewardedVideo]
@@ -16,6 +16,7 @@ private struct AppodealConstants {
     static let testMode: Bool = false
 }
 
+//app setting:14
 func getKey() -> String {
     let langName = getString(SelectedLanguage)
     
@@ -77,7 +78,7 @@ func getKey() -> String {
     case JpKatakana:
         return "42e6185e165b7d8144bdf798b961fa2bf4f7e327508557f3"
     default://English
-        return "eeee4e1c555fb055153b45b9444be6636ca4ac238babdc69"
+        return "d161af6881a9948f32d1cf869155ea98703870c82108bdd2"
     }
 }
 

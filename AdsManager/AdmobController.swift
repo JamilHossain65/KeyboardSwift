@@ -82,7 +82,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-9133033983333483/6077303084" //MARK: - todo
+                return "ca-app-pub-9133033983333483/2553101054" //MARK: - todo
             }
         }
     }
@@ -151,12 +151,12 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case SmartFonts:
                 return ""
             default://English
-                return "ca-app-pub-9133033983333483/6659982938"
+                return "ca-app-pub-9133033983333483/4717195930"
             }
         }
     }
     
-    //app setting:: 10
+    //app setting:: 11
     var admobAdRewardedInterstitialKey: String {
         get {
             let langName = getString(SelectedLanguage)
