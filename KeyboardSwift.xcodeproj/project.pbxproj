@@ -898,6 +898,9 @@
 		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D2E784D2A5C492C00A09A80 /* ThaiKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
+		8D3713102CB5339C0060FDA0 /* sound_recog.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = sound_recog.py; sourceTree = "<group>"; };
+		8D3713112CB5339C0060FDA0 /* sound.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = sound.py; sourceTree = "<group>"; };
+		8D3713122CB5339C0060FDA0 /* speech_recog_test.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = speech_recog_test.py; sourceTree = "<group>"; };
 		8D3AE8A52A56CE7000C74CF6 /* SmartFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3AE8A62A56CE7100C74CF6 /* SmartFonts-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SmartFonts-Info.plist"; path = "/Users/jamil/Desktop/KeyboardSwift/SmartFonts-Info.plist"; sourceTree = "<absolute>"; };
 		8D3E230B279BCF280067DC30 /* russian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russian.txt; sourceTree = "<group>"; };
@@ -928,6 +931,7 @@
 		8D6DA1DA26E899050080E630 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8D6DA1DC26E899050080E630 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8D6DA1DD26E899050080E630 /* SpeechModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechModel.swift; sourceTree = "<group>"; };
+		8D70143D2CD24C3D00E1720B /* Image_Speech.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Image_Speech.py; sourceTree = "<group>"; };
 		8D713FDA26EEEACE0064DE3A /* busy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = busy.gif; sourceTree = "<group>"; };
 		8D74D79C27B24079006642E0 /* UnicodeGe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeGe.swift; sourceTree = "<group>"; };
 		8D74D79D27B24079006642E0 /* UnicodeKo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeKo.swift; sourceTree = "<group>"; };
@@ -978,12 +982,16 @@
 		8D91D30E27B7C3EB001BB9A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Base.lproj/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D91D31227B7C403001BB9A4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Base.lproj/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D91D33327B7F59E001BB9A4 /* bn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bn; path = Base.lproj/bn.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D93E7292CC3B180006C5CEB /* Text_Speech.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = Text_Speech.py; sourceTree = "<group>"; };
 		8D981F032A650AC50072A8D3 /* Burmese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burmese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D981F042A650AC70072A8D3 /* Burmese-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Burmese-Info.plist"; path = "/Users/jamil/Desktop/KeyboardSwift/Burmese-Info.plist"; sourceTree = "<absolute>"; };
 		8D981F052A6510F40072A8D3 /* BurmeseAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BurmeseAssets.xcassets; sourceTree = "<group>"; };
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8D9F6700275B8756006E65BE /* words_en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_en.txt; sourceTree = "<group>"; };
 		8D9F89EA27AFF77800D6E517 /* bangla.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bangla.txt; sourceTree = "<group>"; };
+		8DA7617E2CBCAB820008B744 /* demo.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = demo.py; sourceTree = "<group>"; };
+		8DA7617F2CBCABDD0008B744 /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		8DA761812CBCC7F70008B744 /* sound_test.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = sound_test.py; sourceTree = "<group>"; };
 		8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		8DA96A8727E98E08009CF1E9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8DB2747327E222B3000518B0 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -1274,6 +1282,18 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		8D3713132CB5339C0060FDA0 /* WebApp */ = {
+			isa = PBXGroup;
+			children = (
+				8DA7617F2CBCABDD0008B744 /* Readme.txt */,
+				8D93E7292CC3B180006C5CEB /* Text_Speech.py */,
+				8D70143D2CD24C3D00E1720B /* Image_Speech.py */,
+				8D3713112CB5339C0060FDA0 /* sound.py */,
+				8DA761802CBCC6860008B744 /* Tutorial */,
+			);
+			path = WebApp;
+			sourceTree = "<group>";
+		};
 		8D496A2B26388F2E001DE455 /* HintBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1415,6 +1435,17 @@
 			path = Alphabet;
 			sourceTree = "<group>";
 		};
+		8DA761802CBCC6860008B744 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				8DA7617E2CBCAB820008B744 /* demo.py */,
+				8DA761812CBCC7F70008B744 /* sound_test.py */,
+				8D3713102CB5339C0060FDA0 /* sound_recog.py */,
+				8D3713122CB5339C0060FDA0 /* speech_recog_test.py */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
 		8DB2747127E222B3000518B0 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1519,6 +1550,7 @@
 		8DE7F94A25E4474A00D3C48A /* KeyboardSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8D3713132CB5339C0060FDA0 /* WebApp */,
 				8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */,
 				8D8477BF2A370A3200E89677 /* InAppPurchase */,
 				8DFDDA8327E2F9C5005AD90B /* Firebase */,

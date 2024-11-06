@@ -26,6 +26,9 @@ class SpeechModel: NSObject {
         let header = [APIKey.content_type:APIKey.multipart_form]
         let method = APIKey.POST
         let url = BASE_URL_TRANSLATE + API_TRANSLATE
+        print("header::\(header)")
+        print("params::\(params)")
+        print("url::\(url)")
         
         self.requestMultipartForm(url,method,header,params) { (response, error) in
             DispatchQueue.main.async {

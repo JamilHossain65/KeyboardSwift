@@ -251,20 +251,24 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         if isAppUsed { //app already used
             if adLoadingStatus == .LOADED {
-                if AdmobController.shared.rewardedAd != nil {
-                    AdmobController.shared.showRewardedAd(self)
-                }else{
-                    AdmobController.shared.showAdmobInterstitial(self)
-                }
+//                if AdmobController.shared.rewardedAd != nil {
+//                    AdmobController.shared.showRewardedAd(self)
+//                }else{
+//                    AdmobController.shared.showAdmobInterstitial(self)
+//                }
+                
+                AdmobController.shared.showAdmobInterstitial(self)
                 
             }else{
                 DispatchQueue.global(qos: .default).async {
                     
-                    if AdmobController.shared.rewardedAd != nil {
-                        AdmobController.shared.showRewardedAd(self)
-                    }else{
-                        AdmobController.shared.showAdmobInterstitial(self)
-                    }
+//                    if AdmobController.shared.rewardedAd != nil {
+//                        AdmobController.shared.showRewardedAd(self)
+//                    }else{
+//                        AdmobController.shared.showAdmobInterstitial(self)
+//                    }
+                    
+                    AdmobController.shared.showAdmobInterstitial(self)
                     
                     DispatchQueue.main.async {
                         AdmobController.shared.admobCompletion = { _ in
@@ -361,6 +365,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     @objc func doneButtonPressed(){
         log("doneButtonPressed")
         view.endEditing(true)
+        
+        convertToText2(lang: English)
     }
     
     @objc func rewardedAdButtonPressed(){
@@ -694,13 +700,14 @@ extension HomeViewController:UITextViewDelegate {
     
     @objc func loadAd(){
         perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME*0.7)
-        AdmobController.shared.loadRewardedAd(self)
+        //AdmobController.shared.loadRewardedAd(self)
+        perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
     }
     
     @objc func showAdmobInterstitial(){
         log("showAdmobInterstitial...")
-        //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
-        AdmobController.shared.showRewardedInterstitialAd(self)
+        perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+        //AdmobController.shared.showRewardedInterstitialAd(self)
     }
     
     @objc func showFbMetaAd(){
