@@ -12,7 +12,7 @@ import Foundation
 var isProduction = false
 //app setting::301
 var isProVersion = false
-let AD_MIN_TIME:TimeInterval = 10*60 //10 min
+let AD_MIN_TIME:TimeInterval = 60 //10*60 //10 min
 let AD_APPODEAL_MIN_TIME:TimeInterval = 10*60 //60 min
 let kPrevAdShownTime = "kPrevAdShownTime"
 
@@ -81,7 +81,7 @@ var appSchemeName: String {
             return "SmartFonts"
         default://English
             //app setting::5
-            return "RussianKeyboard"
+            return "BurmeseKeyboard"
         }
     }
 }
@@ -142,7 +142,7 @@ var SUITE_KEY: String {
         case Portuguese:
             return ""
         case Burmese:
-            return "group."
+            return "group.com.vaticsoft.BurmeseKeyboard"
         case JpHiragana:
             return "group."
         case JpKatakana:
@@ -150,7 +150,7 @@ var SUITE_KEY: String {
         case SmartFonts:
             return "group."
         default://English
-            return "group.com.vaticsoft.ThaiKeyboard"
+            return "group.com.vaticsoft.BurmeseKeyboard"
         }
     }
 }
@@ -220,8 +220,8 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :true,  JpHiragana:false,
-    JpKatakana:false, Burmese:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    JpKatakana:false, Burmese:true,
 ]
 
 var countryCodes  = [

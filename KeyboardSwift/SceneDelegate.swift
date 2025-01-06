@@ -64,7 +64,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     DispatchQueue.main.async {
                         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
                             if let homVC:HomeViewController = navigationController.rootViewController as? HomeViewController {
-                                homVC.showAdmobAdFromHelperApp()
+                                //app setting:: 0.1
+                                //homVC.showAdmobAdFromHelperApp()
                             }
                         }
                         print("Authorized")

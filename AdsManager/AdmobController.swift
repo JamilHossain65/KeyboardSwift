@@ -82,7 +82,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-9133033983333483/2553101054" //MARK: - todo
+                return "ca-app-pub-9133033983333483/2368759846" //MARK: - todo
             }
         }
     }
@@ -251,7 +251,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         viewController.view.addSubview(adVC.view)
         viewController.addChild(adVC)
     }
-    
+    /*
     func loadRewardedAd(_ viewController:UIViewController, isShow:Bool? = false){
         //if !Reachability.isConnected() { return }
         
@@ -370,7 +370,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             log("app is not active")
         }
     }
-    
+    */
     
     func showAdmobInterstitial(_ viewController:UIViewController){
         // if !Reachability.isConnected() { return }

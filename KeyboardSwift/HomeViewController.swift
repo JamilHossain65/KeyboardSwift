@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.keyboard.thai.iap"
+                return "com.vaticsoft.iap.burmeseKeyboard"
             }
         }
     }
@@ -155,7 +155,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         let restore = UIBarButtonItem(title: "Restore", style: .plain, target: self, action: #selector(restoreButtonPressed))
         let buy = UIBarButtonItem(title: "Buy", style: .plain, target: self, action: #selector(buyButtonPressed))
-        let adButton = UIBarButtonItem(title: " ", style: .plain, target: self, action: #selector(rewardedAdButtonPressed))
+        let adButton = UIBarButtonItem(title: " ", style: .plain, target: self, action: #selector(showAdmobInterstitial))
         let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonPressed))
         
         self.navigationItem.leftBarButtonItems = [restore,buy]
@@ -299,7 +299,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func loadRewardedAdmob(){
         //AdManager.shared.loadAdMobAdsOnParrent(self)
-        AdmobController.shared.loadRewardedAd(self)
+        //AdmobController.shared.loadRewardedAd(self)
     }
     
     @objc func restoreButtonPressed(){
@@ -553,7 +553,9 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 showAlertOkay(message: "Error!", completion: { _ in})
             } else {
                 if !self.isShowRewardedInterstitialVideo {
-                    AdmobController.shared.showRewardedInterstitialAd(self, completion:{ rewardPoint in
+                    /*
+                    AdmobController.shared.showAdmobInterstitial(self, completion: { rewardPoint in
+                        
                         log("rewardPoint::\(rewardPoint)")
                         if rewardPoint > 0 {
                             self.isShowRewardedInterstitialVideo = true
@@ -562,7 +564,9 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                             //MARK: - check this line execute or not
                             showAlertOkay(message: "You didn't collect your reward!", completion: { _ in})
                         }
+                        
                     })
+                    */
                 }else{
                     self.textView.text += " \(speechModel.convertedText)"
                 }
@@ -706,8 +710,8 @@ extension HomeViewController:UITextViewDelegate {
     
     @objc func showAdmobInterstitial(){
         log("showAdmobInterstitial...")
-        perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
-        //AdmobController.shared.showRewardedInterstitialAd(self)
+        //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+        AdmobController.shared.showAdmobInterstitial(self)
     }
     
     @objc func showFbMetaAd(){
