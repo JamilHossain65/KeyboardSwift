@@ -53,7 +53,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(Thai, for: .normal) //MARK: - do it dynamic
+        button.setTitle(Hindi, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
@@ -95,6 +95,15 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showView()
+        
+        //Hide setting view from suggestion bar
+        hideSettingView()
+        
+        //show hint word
+        HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
+        //Refresh Shift Button Status
+        refreshStatus()
+        
     }
     
     @objc func loadAd(){
@@ -277,6 +286,17 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     @objc func checkWriting(){
+//        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
+//        if !isAppUsed { 
+//            //Hide setting view from suggestion bar
+//            hideSettingView()
+//            
+//            //show hint word
+//            HintBarManager.shared.refresh(scrollView: suggestionBarScrollView, dataArray: getHintWords())
+//            //Refresh Shift Button Status
+//            refreshStatus()
+//            return
+//        }
         
         coutTime += 1
         //log("coutTime::\(coutTime)")
@@ -284,6 +304,12 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
             timer?.invalidate()
             coutTime = 0
             showSettingView()
+//            let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
+//            if isAppUsed {
+//                //showSettingView()
+//            }else{
+//                hideSettingView()
+//            }
         }
     }
     
@@ -352,6 +378,10 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     }
     
     func showSettingOptionView(){
+        
+        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
+        if !isAppUsed { return }
+        
         if let _floatingButtonView = floatingButtonView {
             _floatingButtonView.removeFromSuperview()
         }
@@ -513,7 +543,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
     //MARK: OPEN CONTAINER APP
     @objc func openContainerApp() {
-        //app setting:: 0
+        //app setting:: 0 //remove return
         return
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""

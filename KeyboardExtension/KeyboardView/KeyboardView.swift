@@ -78,26 +78,33 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setSpecialButtonColor(){
+    //app setting::0.2
+    func setSpecialButtonColor(_ specialButtonColor:UIColor? = kAltButtonColor){
         //set color
         backgroundColor = .clear //kKeyboardBGColor //#d1d4db, rgb(209,212,219)
-        nextButton.defaultBackgroundColor   = kAltButtonColor //rgb(172, 176, 188) //#acb0bc
-        altButton.defaultBackgroundColor    = kAltButtonColor
-        altButton.highlightBackgroundColor  = kAltButtonColor
+        nextButton.defaultBackgroundColor   = specialButtonColor! //rgb(172, 176, 188) //#acb0bc
+        altButton.defaultBackgroundColor    = specialButtonColor!
+        altButton.highlightBackgroundColor  = specialButtonColor!
         
-        returnButton.defaultBackgroundColor  = kAltButtonColor
-        deleteButton.defaultBackgroundColor  = kAltButtonColor
+        returnButton.defaultBackgroundColor  = specialButtonColor!
+        deleteButton.defaultBackgroundColor  = specialButtonColor!
+        
+        spaceButton.defaultBackgroundColor  = specialButtonColor!
+        voiceButton.defaultBackgroundColor   = specialButtonColor!
         
         if altButton.isSelected{
-            shiftButton.highlightBackgroundColor = kAltButtonColor
-            shiftButton.defaultBackgroundColor   = kAltButtonColor
+            shiftButton.highlightBackgroundColor = specialButtonColor!
+            shiftButton.defaultBackgroundColor   = specialButtonColor!
         }else{
             if shiftButton.isSelected {
-                shiftButton.highlightBackgroundColor = .white
-                shiftButton.defaultBackgroundColor   = .white
+                //shiftButton.highlightBackgroundColor = .white
+                //shiftButton.defaultBackgroundColor   = .white
+                shiftButton.highlightBackgroundColor = .clear
+                shiftButton.defaultBackgroundColor   = .clear
+                
             } else {
-                shiftButton.highlightBackgroundColor = kAltButtonColor
-                shiftButton.defaultBackgroundColor   = kAltButtonColor
+                shiftButton.highlightBackgroundColor = specialButtonColor!
+                shiftButton.defaultBackgroundColor   = specialButtonColor!
             }
             
         }
@@ -117,7 +124,7 @@ class KeyboardView: UIView,UIInputViewAudioFeedback,UIGestureRecognizerDelegate 
         totalRow = keyArray.count
         
         configureKeys(totalRow)
-        setSpecialButtonColor()
+        setSpecialButtonColor(.clear)
     }
 }
 
@@ -435,7 +442,8 @@ extension KeyboardView {
         jhKey.tag   = keyButton.tag
         jhKey.delegate2 = self
         //jhKey.delegate = self
-        jhKey.backgroundColor = .white
+        //app setting:: 0.00
+        jhKey.backgroundColor = .clear //.white
         jhKey.setTitle(title, for: .normal)
         jhKey.setTitleColor(kKeyboardTextColor, for: .normal)
         jhKey.setTitleShadowColor(kTextShadowColor, for: .normal)

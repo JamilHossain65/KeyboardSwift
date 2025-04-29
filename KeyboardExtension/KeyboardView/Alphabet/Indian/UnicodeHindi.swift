@@ -29,7 +29,7 @@ let kUnicodeLettersHiNumList    = kUnicodeHiNumbers.components(separatedBy: "৹
 let kUnicodeLettersHiNormal = kUnicodeHiNormal.components(separatedBy: "৹ ")
 
 //MARK:- Numbers,punctuations,shift and unshift letters
-let kUnicodeHiNormal = "ौ৹  ै৹  ा৹  ी৹  ू৹  ब৹  ह৹ ग৹ द৹ ज৹ ड৹ \(kNL)৹ ो৹  े৹  ्৹  ि৹  ु৹ प৹ र৹ क৹ त৹ च৹ ट৹ \(kNL)৹ \(kSHIFT)৹  ं৹  ॉ৹ म৹ न৹ व৹ ल৹ स৹ य৹ \(kSPECIAL)"
+let kUnicodeHiNormal = "ौ৹  ै৹  ा৹  ी৹  ू৹  ब৹  ह৹ ग৹ द৹ ज৹ ड৹ \(kNL)৹  ो৹  े৹  ्৹  ि৹  ु৹ प৹ र৹ क৹ त৹ च৹ ट৹ \(kNL)৹ \(kSHIFT)৹  ं৹  ॉ৹ म৹ न৹ व৹ ल৹ स৹ य৹ \(kSPECIAL)"
 let kUnicodeHiLetterShift = "औ৹ ऐ৹ आ৹ ई৹ ऊ৹ भ৹ ऋ৹ घ৹ ध৹ झ৹ ढ৹ \(kNL)৹ ओ৹ ए৹ अ৹ इ৹ उ৹ फ৹  ृ৹ ख৹ थ৹ छ৹ ठ৹ \(kNL)৹ \(kSHIFT)৹  ँ৹ ऑ৹ ज्ञ৹ ण৹ क्ष৹  ়৹ श৹ ष৹ \(kSPECIAL)"
 let kUnicodeHiNumbers = "१৹ २৹ ३৹ ४৹ ५৹ ६৹ ७৹ ८৹ ९৹ ०৹ \(kNL)৹ -৹ /৹ :৹ ;৹ (৹ )৹ ₹৹ &৹ @৹ “৹ \(kNL)৹ \(kSHIFT)৹ ।৹ .৹ ,৹ ?৹ !৹ ’৹ \(kSPECIAL)"
 let kUnicodeHiPuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(kNL)৹ _৹ \\৹ |৹ ~৹ <৹ >৹ $৹ £৹ ^৹ €৹ •৹ \(kNL)৹ \(kSHIFT)৹ ॥৹ ॰৹ ऽ৹  ः৹ ॐ৹ ’৹ \(kSPECIAL)"
