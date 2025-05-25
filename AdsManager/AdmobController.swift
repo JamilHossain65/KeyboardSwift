@@ -11,12 +11,12 @@ import UserMessagingPlatform
 
 //https://developers.facebook.com/docs/audience-network/guides/setting-up/ad-setup/ios/rewarded-video
 
-class AdmobController: UIViewController, GADFullScreenContentDelegate {
+class AdmobController: UIViewController, FullScreenContentDelegate {
     public static let shared = AdmobController()
     var admobCompletion : ((_ success: Bool) -> ())?
-    var rewardedAd: GADRewardedAd?
-    var interstitialAd: GADInterstitialAd?
-    var rewardedInterstitialAd: GADRewardedInterstitialAd?
+    var rewardedAd: RewardedAd?
+    var interstitialAd: InterstitialAd?
+    var rewardedInterstitialAd: RewardedInterstitialAd?
     
     //app setting:: 6
     var admobAdKey: String {
@@ -241,7 +241,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         if(deviceID == "7B9B8DBE-E8EB-44B3-957C-43AD0F2EAFA2" || //indian
            deviceID == "AC3DABB5-98CD-4CE0-98F8-EA42F686A6E0"    // russain
         ){
-            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["06fa119d4743dd21237899a32e0d1031"]
+            MobileAds.shared.requestConfiguration.testDeviceIdentifiers = ["06fa119d4743dd21237899a32e0d1031"]
         }
         
     }
@@ -374,8 +374,8 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
     
     func showAdmobInterstitial(_ viewController:UIViewController){
         // if !Reachability.isConnected() { return }
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:admobAdKey, request: request) { ad, error in
+        let request = Request()
+        InterstitialAd.load(with:admobAdKey, request: request) { ad, error in
             if let error = error {
                 return log("Failed to load interstitial ad with error: \(error.localizedDescription)")
             }
@@ -383,14 +383,14 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             self.loadAdmobOn(viewController)
             AdmobController.shared.interstitialAd = ad
             AdmobController.shared.interstitialAd?.fullScreenContentDelegate = self
-            AdmobController.shared.interstitialAd?.present(fromRootViewController: viewController)
+            AdmobController.shared.interstitialAd?.present(from: viewController)
         }
     }
     
     //MARK: - ADMOB DELEGATE METHODS
     
     // Tells the delegate that the ad failed to present full screen content.
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+    func ad(_ ad: FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         log("Ad did fail to present full screen content::\(error.localizedDescription)")
         AdmobController.shared.interstitialAd = nil
         AdmobController.shared.rewardedAd = nil
@@ -399,14 +399,14 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         admobCompletion?(true)
     }
     
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: FullScreenPresentingAd) {
         log("adWillPresentFullScreenContent.\(ad)")
         savePreAdShownTime()
         adLoadingStatus = .SHOWING
     }
     
     /// Tells the delegate that the ad dismissed full screen content.
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
         log("Ad did dismiss full screen content.:\(ad)")
         AdmobController.shared.interstitialAd = nil
         AdmobController.shared.rewardedAd = nil
@@ -414,7 +414,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
         admobCompletion?(true)
     }
     
-    func adDidRecordClick(_ ad: GADFullScreenPresentingAd) {
+    func adDidRecordClick(_ ad: FullScreenPresentingAd) {
         log("adDidRecordClick:\(ad)")
         AdmobController.shared.interstitialAd = nil
         AdmobController.shared.rewardedAd = nil
@@ -486,7 +486,7 @@ class AdmobController: UIViewController, GADFullScreenContentDelegate {
             self.isMobileAdsStartCalled = true
             
             // Initialize the Google Mobile Ads SDK.
-            GADMobileAds.sharedInstance().start()
+            MobileAds.shared.start()
             
             // TODO: Request an ad.
             // GADInterstitialAd.load(...)
