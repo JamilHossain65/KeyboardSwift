@@ -26,11 +26,11 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case Bangla:
                 return ""
             case BanglaGoti:
-                return "ca-app-pub-9133033983333483/1612139034"
+                return "ca-app-pub-6852753831370662/6954560826"
             case BanglaDruti:
                 return "ca-app-pub-9133033983333483/1492998119"
             case Thai:
-                return "ca-app-pub-9133033983333483/2553101054"
+                return "ca-app-pub-6852753831370662/2157832232"
             case Gujarati:
                 return ""
             case Hindi:
@@ -82,7 +82,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-9133033983333483/9354257012" //MARK: - todo
+                return "ca-app-pub-6852753831370662/2157832232" //MARK: - todo
             }
         }
     }

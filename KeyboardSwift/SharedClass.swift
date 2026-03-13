@@ -217,10 +217,10 @@ var activeLanguages = [
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
-    Gujarati:false, Hindi    :true,  Kannada  :false,  Malayalam:false,
+    Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :true,  JpHiragana:false,
     JpKatakana:false, Burmese:false,
 ]
 
