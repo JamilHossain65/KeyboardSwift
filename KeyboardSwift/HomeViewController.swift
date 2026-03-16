@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.keyboard.thai.iap"
+                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
             }
         }
     }
@@ -356,7 +356,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 if let tran = transaction, let prod = product {
                     //use transaction details and purchased product as you want
                 }else{
-                   AdManager.shared.showAppodealNonSkippableAdsOn(self)
+                   //AdManager.shared.showAppodealNonSkippableAdsOn(self)
+                    self.showAdmobInterstitial()
                 }
             }
         }
