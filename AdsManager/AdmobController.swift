@@ -82,7 +82,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-6852753831370662/6954560826" //MARK: - todo
+                return "ca-app-pub-6852753831370662/2157832232" //MARK: - todo
             }
         }
     }
@@ -151,7 +151,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case SmartFonts:
                 return ""
             default://English
-                return "ca-app-pub-9133033983333483/6496283136"
+                return "ca-app-pub-9133033983333483/4717195930"
             }
         }
     }

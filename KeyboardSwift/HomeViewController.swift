@@ -141,25 +141,25 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             //AdmobController.shared.startGoogleMobileAdsSDK()
         })
         
-        AdAppodeal.shared.initializeAppodealSDK()
-        loadRewardedAdmob()
+        //AdAppodeal.shared.initializeAppodealSDK()
+        //loadRewardedAdmob()
         
-        if !isPurchased {//not paid user
-            loadAd()
+        if !self.isPurchased { //not paid user
+            self.loadAd()
             let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
             if isAppUsed{ //app already used
-                perform(#selector(checkAdLoadRequesting), with: nil, afterDelay: 5)
-                perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+                //self.perform(#selector(self.checkAdLoadRequesting), with: nil, afterDelay: 5)
+                self.perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
             }
         }
         
         let restore = UIBarButtonItem(title: "Restore", style: .plain, target: self, action: #selector(restoreButtonPressed))
         let buy = UIBarButtonItem(title: "Buy", style: .plain, target: self, action: #selector(buyButtonPressed))
-        let adButton = UIBarButtonItem(title: " ", style: .plain, target: self, action: #selector(showAdmobInterstitial))
+        let adButton = UIBarButtonItem(title: "    ", style: .plain, target: self, action: #selector(showAdmobInterstitial))
         let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonPressed))
         
         self.navigationItem.leftBarButtonItems = [restore,buy]
-        self.navigationItem.rightBarButtonItems = [/*adButton,*/ done]
+        self.navigationItem.rightBarButtonItems = [ /*adButton,*/ done]
         
         self.textView.frame.origin.y = SizeConfig.navBarHeight
         
@@ -366,8 +366,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     @objc func doneButtonPressed(){
         log("doneButtonPressed")
         view.endEditing(true)
-        
-        convertToText2(lang: English)
+        //convertToText2(lang: English)
     }
     
     @objc func rewardedAdButtonPressed(){
@@ -485,6 +484,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func playButtonTapped(sender:UIButton){
         log("playButtonTapped::\(actLanguages)")
+        perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: 1)
         
         if actLanguages.count > 2{
             let button = UIButton()
