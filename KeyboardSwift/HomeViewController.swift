@@ -149,7 +149,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
             if isAppUsed{ //app already used
                 //self.perform(#selector(self.checkAdLoadRequesting), with: nil, afterDelay: 5)
-                self.perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+                self.perform(#selector(self.showAdmobAppOpenAd), with: nil, afterDelay: AD_MIN_TIME)
             }
         }
         
@@ -237,6 +237,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func showAdmobAdFromHelperApp(){
+        AdmobController.shared.showAdmobInterstitial(self)
+    }
+    
+    /*
+    func showAdmobAdFromHelperApp(){
         //appThaiSetting()
         //appJpSetting()
         if !Reachability.isConnected(){ return }
@@ -291,6 +296,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
         
     }
+     */
     
     @objc func dismissLoading(){
         self.isStatusBarHidden = false
@@ -484,7 +490,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func playButtonTapped(sender:UIButton){
         log("playButtonTapped::\(actLanguages)")
-        perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: 1)
+        perform(#selector(self.showAdmobAppOpenAd), with: nil, afterDelay: 1)
         
         if actLanguages.count > 2{
             let button = UIButton()
@@ -714,6 +720,14 @@ extension HomeViewController:UITextViewDelegate {
         //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
         AdmobController.shared.showAdmobInterstitial(self)
     }
+    @objc func showAdmobAppOpenAd(){
+        log("showAdmobAppOpenAd...")
+        //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+        AdmobController.shared.showAdmobAppOpenAd(self)
+    }
+    
+    
+    
     
     @objc func showFbMetaAd(){
        perform(#selector(showFbMetaAd), with: nil, afterDelay: AD_MIN_TIME)

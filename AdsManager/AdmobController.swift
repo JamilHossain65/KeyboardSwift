@@ -10,15 +10,17 @@ import GoogleMobileAds
 import UserMessagingPlatform
 
 //https://developers.facebook.com/docs/audience-network/guides/setting-up/ad-setup/ios/rewarded-video
+//https://developers.google.com/admob/ios/app-open
 
 class AdmobController: UIViewController, FullScreenContentDelegate {
     public static let shared = AdmobController()
     var admobCompletion : ((_ success: Bool) -> ())?
     var rewardedAd: RewardedAd?
     var interstitialAd: InterstitialAd?
+    var appOpenAd: AppOpenAd?
     var rewardedInterstitialAd: RewardedInterstitialAd?
     
-    //app setting:: 6
+    //app setting::6
     var admobAdKey: String {
         get {
             let langName = getString(SelectedLanguage)
@@ -74,7 +76,9 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case Portuguese:
                 return ""
             case Burmese:
-                return "ca-app-pub-9133033983333483/2368759846"
+                //return "ca-app-pub-9133033983333483/2368759846"
+                return "ca-app-pub-7802882478784013/3431237527"
+                
             case JpHiragana:
                 return "ca-app-pub-9133033983333483/4102060257"
             case JpKatakana:
@@ -82,7 +86,77 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-6852753831370662/2157832232" //MARK: - todo
+                return "ca-app-pub-7802882478784013/3431237527" //MARK: - todo
+            }
+        }
+    }
+    
+    //app setting::6.1
+    var appOpenAdKey: String {
+        get {
+            let langName = getString(SelectedLanguage)
+            switch langName {
+            case Bangla:
+                return ""
+            case BanglaGoti:
+                return ""
+            case BanglaDruti:
+                return ""
+            case Thai:
+                return ""
+            case Gujarati:
+                return ""
+            case Hindi:
+                return ""
+            case Kannada:
+                return ""
+            case Malayalam:
+                return ""
+            case Marathi:
+                return ""
+            case Nepali:
+                return ""
+            case Oriya:
+                return ""
+            case Punjabi:
+                return ""
+            case Sanskrit:
+                return ""
+            case Tamil:
+                return ""
+            case Telugu:
+                return ""
+            case Urdu:
+                return ""
+            case Indonesian:
+                return ""
+            case Russian:
+                return ""
+            case Spanish:
+                return ""
+            case French:
+                return ""
+            case German:
+                return ""
+            case Italian:
+                return ""
+            case Korean:
+                return ""
+            case Turkish:
+                return ""
+            case Portuguese:
+                return ""
+            case Burmese:
+                return "ca-app-pub-7802882478784013/3431237527"
+                
+            case JpHiragana:
+                return ""
+            case JpKatakana:
+                return ""
+            case SmartFonts:
+                return ""
+            default://English
+                return "ca-app-pub-7802882478784013/3431237527" //MARK: - todo
             }
         }
     }
@@ -384,6 +458,21 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             AdmobController.shared.interstitialAd = ad
             AdmobController.shared.interstitialAd?.fullScreenContentDelegate = self
             AdmobController.shared.interstitialAd?.present(from: viewController)
+        }
+    }
+    
+    func showAdmobAppOpenAd(_ viewController:UIViewController){
+        // if !Reachability.isConnected() { return }
+        let request = Request()
+        AppOpenAd.load(with:appOpenAdKey, request: request) { ad, error in
+            if let error = error {
+                return log("Failed to load interstitial ad with error: \(error.localizedDescription)")
+            }
+
+            self.loadAdmobOn(viewController)
+            AdmobController.shared.appOpenAd = ad
+            AdmobController.shared.appOpenAd?.fullScreenContentDelegate = self
+            AdmobController.shared.appOpenAd?.present(from: viewController)
         }
     }
     
