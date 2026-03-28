@@ -220,8 +220,8 @@ var activeLanguages = [
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
-    JpKatakana:false, Burmese:true,
+    BanglaGoti:false, BanglaDruti:false, Thai  :true,  JpHiragana:false,
+    JpKatakana:false, Burmese:false,
 ]
 
 var countryCodes  = [
