@@ -149,7 +149,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
             if isAppUsed{ //app already used
                 //self.perform(#selector(self.checkAdLoadRequesting), with: nil, afterDelay: 5)
-                self.perform(#selector(self.showAdmobAppOpenAd), with: nil, afterDelay: AD_MIN_TIME)
+                self.perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
             }
         }
         

@@ -129,6 +129,7 @@ def otherFramework
   # Optionally, include the Swift extensions if you're using Swift.
   #pod 'FirebaseFirestoreSwift'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'GoogleMobileAdsConsentManager'
   pod 'FBAudienceNetwork'
   pod 'Firebase/Storage'
   

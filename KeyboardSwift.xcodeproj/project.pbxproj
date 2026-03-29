@@ -545,6 +545,17 @@
 		8DD175C52A67952D007ABA3A /* japanese.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DD175C42A67952C007ABA3A /* japanese.txt */; };
 		8DD175C72A679538007ABA3A /* burmese.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DD175C62A679538007ABA3A /* burmese.txt */; };
 		8DD7781A276231920088E282 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DD77819276231920088E282 /* words.txt */; };
+		8DDAD62F2F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6302F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6312F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6322F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6332F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6342F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6352F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6362F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6372F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6382F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
+		8DDAD6392F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */; };
 		8DDBA4CD2A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */; };
 		8DDBA4CE2A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */; };
 		8DDBA4CF2A97279100FD24B7 /* FBAudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */; };
@@ -960,6 +971,7 @@
 		8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "hello (16bit PCM).wav"; sourceTree = "<group>"; };
 		8DD507752681644A00377CBD /* SpeechModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechModel.swift; sourceTree = "<group>"; };
 		8DD77819276231920088E282 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
 		8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAudienceNetwork.swift; sourceTree = "<group>"; };
 		8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBAudienceNetwork.xib; sourceTree = "<group>"; };
 		8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Russian-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -1384,6 +1396,7 @@
 			isa = PBXGroup;
 			children = (
 				8D83240B27E450B60068CBA1 /* AdManager.swift */,
+				8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */,
 				8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */,
 				8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */,
 				8DBF98E527E3866200119E68 /* AdmobController.swift */,
@@ -2845,6 +2858,7 @@
 			files = (
 				8D01375C2A5C595E0091CC58 /* APIKey.swift in Sources */,
 				8D01375D2A5C595E0091CC58 /* SceneDelegate.swift in Sources */,
+				8DDAD62F2F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D01375E2A5C595E0091CC58 /* Utils.swift in Sources */,
 				8DFDC3212AFA2521003ACEFD /* SharedClass.swift in Sources */,
 				8D01375F2A5C595E0091CC58 /* AdUtil.swift in Sources */,
@@ -2879,6 +2893,7 @@
 			files = (
 				8D0137942A5C597D0091CC58 /* APIKey.swift in Sources */,
 				8D0137952A5C597D0091CC58 /* SceneDelegate.swift in Sources */,
+				8DDAD6312F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0137962A5C597D0091CC58 /* Utils.swift in Sources */,
 				8DBCB6272B24372100AFF714 /* SharedClass.swift in Sources */,
 				8D0137972A5C597D0091CC58 /* AdUtil.swift in Sources */,
@@ -2913,6 +2928,7 @@
 			files = (
 				8D0137CD2A5C59860091CC58 /* APIKey.swift in Sources */,
 				8D0137CE2A5C59860091CC58 /* SceneDelegate.swift in Sources */,
+				8DDAD6372F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0137CF2A5C59860091CC58 /* Utils.swift in Sources */,
 				8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */,
 				8D0137D02A5C59860091CC58 /* AdUtil.swift in Sources */,
@@ -2947,6 +2963,7 @@
 			files = (
 				8D0138062A5C59890091CC58 /* APIKey.swift in Sources */,
 				8D0138072A5C59890091CC58 /* SceneDelegate.swift in Sources */,
+				8DDAD6352F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0138082A5C59890091CC58 /* Utils.swift in Sources */,
 				8DBCB6262B24372000AFF714 /* SharedClass.swift in Sources */,
 				8D0138092A5C59890091CC58 /* AdUtil.swift in Sources */,
@@ -2981,6 +2998,7 @@
 			files = (
 				8D01383F2A5C598C0091CC58 /* APIKey.swift in Sources */,
 				8D0138402A5C598C0091CC58 /* SceneDelegate.swift in Sources */,
+				8DDAD6322F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0138412A5C598C0091CC58 /* Utils.swift in Sources */,
 				8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */,
 				8D0138422A5C598C0091CC58 /* AdUtil.swift in Sources */,
@@ -3015,6 +3033,7 @@
 			files = (
 				8D0138782A5C59920091CC58 /* APIKey.swift in Sources */,
 				8D0138792A5C59920091CC58 /* SceneDelegate.swift in Sources */,
+				8DDAD6362F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D01387A2A5C59920091CC58 /* Utils.swift in Sources */,
 				8DFDC3242AFA2524003ACEFD /* SharedClass.swift in Sources */,
 				8D01387B2A5C59920091CC58 /* AdUtil.swift in Sources */,
@@ -3049,6 +3068,7 @@
 			files = (
 				8D0138B12A5C59950091CC58 /* APIKey.swift in Sources */,
 				8D0138B22A5C59950091CC58 /* SceneDelegate.swift in Sources */,
+				8DDAD6382F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0138B32A5C59950091CC58 /* Utils.swift in Sources */,
 				8DFDC3252AFA2525003ACEFD /* SharedClass.swift in Sources */,
 				8D0138B42A5C59950091CC58 /* AdUtil.swift in Sources */,
@@ -3083,6 +3103,7 @@
 			files = (
 				8D2E781B2A5C492C00A09A80 /* APIKey.swift in Sources */,
 				8D2E781C2A5C492C00A09A80 /* SceneDelegate.swift in Sources */,
+				8DDAD6392F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D2E781D2A5C492C00A09A80 /* Utils.swift in Sources */,
 				8DBCB6292B24372200AFF714 /* SharedClass.swift in Sources */,
 				8D2E781E2A5C492C00A09A80 /* AdUtil.swift in Sources */,
@@ -3117,6 +3138,7 @@
 			files = (
 				8D3AE8732A56CE7000C74CF6 /* APIKey.swift in Sources */,
 				8D3AE8742A56CE7000C74CF6 /* SceneDelegate.swift in Sources */,
+				8DDAD6342F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D3AE8752A56CE7000C74CF6 /* Utils.swift in Sources */,
 				8DFDC3262AFA2526003ACEFD /* SharedClass.swift in Sources */,
 				8D3AE8762A56CE7000C74CF6 /* AdUtil.swift in Sources */,
@@ -3151,6 +3173,7 @@
 			files = (
 				8D8EB7BD2AF67978000D858E /* APIKey.swift in Sources */,
 				8D8EB7BE2AF67978000D858E /* SceneDelegate.swift in Sources */,
+				8DDAD6332F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D8EB7BF2AF67978000D858E /* Utils.swift in Sources */,
 				8DBCB6282B24372200AFF714 /* SharedClass.swift in Sources */,
 				8D8EB7C02AF67978000D858E /* AdUtil.swift in Sources */,
@@ -3185,6 +3208,7 @@
 			files = (
 				8D981ED12A650AC50072A8D3 /* APIKey.swift in Sources */,
 				8D981ED22A650AC50072A8D3 /* SceneDelegate.swift in Sources */,
+				8DDAD6302F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D981ED32A650AC50072A8D3 /* Utils.swift in Sources */,
 				8DBCB6252B24371F00AFF714 /* SharedClass.swift in Sources */,
 				8D981ED42A650AC50072A8D3 /* AdUtil.swift in Sources */,

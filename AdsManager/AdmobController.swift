@@ -20,10 +20,19 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     var appOpenAd: AppOpenAd?
     var rewardedInterstitialAd: RewardedInterstitialAd?
     
+    var langName: String {
+        get {
+            let actLanguages = activeLanguages.filter({$0.1}).map({$0.0}).sorted(by:>)
+            let langName:String = actLanguages.filter({$0 != English}).first!
+            log("langName:\(langName)")
+            return langName
+        }
+    }
+    
     //app setting::6
     var admobAdKey: String {
         get {
-            let langName = getString(SelectedLanguage)
+            //let langName = getString(SelectedLanguage)
             switch langName {
             case Bangla:
                 return ""
@@ -86,7 +95,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/2540966764"
             default://English
-                return "ca-app-pub-6852753831370662/2157832232" //MARK: - todo
+                return ""
             }
         }
     }
@@ -94,7 +103,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     //app setting::6.1
     var appOpenAdKey: String {
         get {
-            let langName = getString(SelectedLanguage)
+            //let langName = getString(SelectedLanguage)
             switch langName {
             case Bangla:
                 return ""
@@ -164,7 +173,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     //app setting:: 10
     var admobAdRewardedKey: String {
         get {
-            let langName = getString(SelectedLanguage)
+            //let langName = getString(SelectedLanguage)
             switch langName {
             case Bangla:
                 return ""
@@ -225,7 +234,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case SmartFonts:
                 return ""
             default://English
-                return "ca-app-pub-9133033983333483/4717195930"
+                return ""
             }
         }
     }
@@ -233,7 +242,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     //app setting:: 11
     var admobAdRewardedInterstitialKey: String {
         get {
-            let langName = getString(SelectedLanguage)
+            //let langName = getString(SelectedLanguage)
             switch langName {
             case Bangla:
                 return ""
@@ -294,7 +303,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             case SmartFonts:
                 return "ca-app-pub-9133033983333483/9218904491"
             default://English
-                return "ca-app-pub-9133033983333483/8744413734"
+                return ""
             }
         }
     }

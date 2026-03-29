@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationDidBecomeActive(_ application: UIApplication) {
         isAppActive = true
         setNotification()
+        // Show the app open ad when the app is foregrounded.
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
