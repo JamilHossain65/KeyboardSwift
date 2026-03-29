@@ -129,7 +129,6 @@ def otherFramework
   # Optionally, include the Swift extensions if you're using Swift.
   #pod 'FirebaseFirestoreSwift'
   pod 'Google-Mobile-Ads-SDK'
-  pod 'GoogleMobileAdsConsentManager'
   pod 'FBAudienceNetwork'
   pod 'Firebase/Storage'
   
@@ -204,16 +203,6 @@ end
 #  otherFramework
 #
 #end
-
-target 'KeyboardSwift' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for KeyboardSwift
-  appodeal
-  otherFramework
-
-end
 
 target 'Russian' do
   # Comment the next line if you don't want to use dynamic frameworks
