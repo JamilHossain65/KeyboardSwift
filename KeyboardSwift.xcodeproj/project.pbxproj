@@ -287,6 +287,17 @@
 		8D1369012A5A76FA0036CAD7 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D1C0A2E2A2E44F700E61C3B /* UnicodeTh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */; };
+		8D283DBB2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DBC2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DBD2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DBE2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DBF2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DC02F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DC12F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DC22F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DC32F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DC42F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
+		8D283DC52F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
 		8D2B61D7275A5FE80099DE30 /* key_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */; };
 		8D2E781B2A5C492C00A09A80 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D2E781C2A5C492C00A09A80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
@@ -509,6 +520,94 @@
 		8D981F062A6510F50072A8D3 /* BurmeseAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D981F052A6510F40072A8D3 /* BurmeseAssets.xcassets */; };
 		8D9F6701275B8756006E65BE /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
 		8D9F89EB27AFF77800D6E517 /* bangla.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F89EA27AFF77800D6E517 /* bangla.txt */; };
+		8DA1790D2F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA1790E2F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA1790F2F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179102F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179112F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179122F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179132F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179142F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179152F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179162F83938000845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA179172F83938000845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
+		8DA8FB332F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB342F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB352F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB362F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB372F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB382F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB392F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB3A2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB3B2F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB3C2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB3D2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB3E2F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB3F2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB402F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB412F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB422F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB432F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB442F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB452F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB462F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB472F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
+		8DA8FB482F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */; };
+		8DA8FB4E2F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB4F2F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB502F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB512F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB532F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB542F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB562F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB572F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB5A2F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB5B2F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB5D2F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB5E2F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB5F2F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB602F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB632F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB642F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB652F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB662F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB692F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB6A2F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB6B2F7939980003F3A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4A2F7939980003F3A1 /* Constants.swift */; };
+		8DA8FB6C2F7939980003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB6F2F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB702F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB712F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB722F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB732F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB742F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB752F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB762F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB772F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB782F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB792F793ACB0003F3A1 /* CustomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */; };
+		8DA8FB7B2F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB7C2F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB7D2F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB7E2F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB7F2F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB802F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB812F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB822F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB832F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB842F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB852F793B1E0003F3A1 /* CustomControls.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */; };
+		8DA8FB872F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB882F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB892F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB8A2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB8B2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB8C2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB8D2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB8E2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB8F2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB902F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
+		8DA8FB912F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
 		8DA9F0ED2B21E6FF006FE56C /* Russian-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */; };
 		8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
@@ -823,6 +922,7 @@
 		8D0D37472A40BE010006741B /* AdAppodeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdAppodeal.swift; sourceTree = "<group>"; };
 		8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SmartFonts.xcassets; sourceTree = "<group>"; };
 		8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeTh.swift; sourceTree = "<group>"; };
+		8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMobileAdsConsentManager.swift; sourceTree = "<group>"; };
 		8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = key_sound.mp3; sourceTree = "<group>"; };
 		8D2E784D2A5C492C00A09A80 /* ThaiKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3129E127303B55001EE3C3 /* SharedClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedClass.swift; sourceTree = "<group>"; };
@@ -918,10 +1018,18 @@
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8D9F6700275B8756006E65BE /* words_en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_en.txt; sourceTree = "<group>"; };
 		8D9F89EA27AFF77800D6E517 /* bangla.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bangla.txt; sourceTree = "<group>"; };
+		8DA1790C2F83937F00845266 /* NativeAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
 		8DA477452D45F68500119F5D /* Indian-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Indian-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8DA7617E2CBCAB820008B744 /* demo.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = demo.py; sourceTree = "<group>"; };
 		8DA7617F2CBCABDD0008B744 /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
 		8DA761812CBCC7F70008B744 /* sound_test.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = sound_test.py; sourceTree = "<group>"; };
+		8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNativeAdView.swift; sourceTree = "<group>"; };
+		8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleNativeAdView.xib; sourceTree = "<group>"; };
+		8DA8FB4A2F7939980003F3A1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControlsView.swift; sourceTree = "<group>"; };
+		8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControlsView.swift; sourceTree = "<group>"; };
+		8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomControls.xib; sourceTree = "<group>"; };
+		8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdManager.swift; sourceTree = "<group>"; };
 		8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		8DA96A8727E98E08009CF1E9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8DB2747327E222B3000518B0 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -1357,6 +1465,21 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
+		8DA8FB492F7938B70003F3A1 /* NativeAd */ = {
+			isa = PBXGroup;
+			children = (
+				8DA8FB4A2F7939980003F3A1 /* Constants.swift */,
+				8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */,
+				8DA8FB7A2F793B1E0003F3A1 /* CustomControls.xib */,
+				8DA8FB4C2F7939980003F3A1 /* CustomControlsView.swift */,
+				8DA8FB6E2F793ACB0003F3A1 /* CustomControlsView.swift */,
+				8DA1790C2F83937F00845266 /* NativeAdView.xib */,
+				8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */,
+				8DA8FB322F7935460003F3A1 /* SimpleNativeAdView.xib */,
+			);
+			path = NativeAd;
+			sourceTree = "<group>";
+		};
 		8DB2747127E222B3000518B0 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1369,7 +1492,9 @@
 		8DB274B027E226C4000518B0 /* AdsManager */ = {
 			isa = PBXGroup;
 			children = (
+				8DA8FB492F7938B70003F3A1 /* NativeAd */,
 				8D83240B27E450B60068CBA1 /* AdManager.swift */,
+				8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */,
 				8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */,
 				8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */,
 				8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */,
@@ -1861,6 +1986,9 @@
 				8DA9F0ED2B21E6FF006FE56C /* Russian-Info.plist in Resources */,
 				8D01377F2A5C595E0091CC58 /* Main.storyboard in Resources */,
 				8D0137802A5C595E0091CC58 /* AdAppodeal.xib in Resources */,
+				8DA8FB422F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
+				8DA8FB832F793B1E0003F3A1 /* CustomControls.xib in Resources */,
+				8DA179152F83937F00845266 /* NativeAdView.xib in Resources */,
 				8D0137812A5C595E0091CC58 /* bangla.flac in Resources */,
 				8D0137822A5C595E0091CC58 /* Localizable.strings in Resources */,
 				8DDBA4DB2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
@@ -1877,6 +2005,8 @@
 			files = (
 				8D0137B42A5C597D0091CC58 /* hello (16bit PCM).wav in Resources */,
 				8D0137B52A5C597D0091CC58 /* LaunchScreen.storyboard in Resources */,
+				8DA1790E2F83937F00845266 /* NativeAdView.xib in Resources */,
+				8DA8FB7C2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D0137B62A5C597D0091CC58 /* Main.storyboard in Resources */,
 				8D0137B72A5C597D0091CC58 /* AdAppodeal.xib in Resources */,
 				8D0137B82A5C597D0091CC58 /* SmartFonts.xcassets in Resources */,
@@ -1885,6 +2015,7 @@
 				8D0137BA2A5C597D0091CC58 /* bangla.flac in Resources */,
 				8D0137BB2A5C597D0091CC58 /* Localizable.strings in Resources */,
 				8D7E9F4E2A5E5BC60011621C /* Druti-Info.plist in Resources */,
+				8DA8FB372F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
 				8D0137BD2A5C597D0091CC58 /* busy.gif in Resources */,
 				8D0137BE2A5C597D0091CC58 /* good-morning-google.flac in Resources */,
 				8D0137BF2A5C597D0091CC58 /* AdmobController.xib in Resources */,
@@ -1902,6 +2033,9 @@
 				8D0137EF2A5C59860091CC58 /* Main.storyboard in Resources */,
 				8D0137F02A5C59860091CC58 /* AdAppodeal.xib in Resources */,
 				8D0138E92A5C5F530091CC58 /* GermanAssets.xcassets in Resources */,
+				8DA8FB3E2F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
+				8DA8FB842F793B1E0003F3A1 /* CustomControls.xib in Resources */,
+				8DA179132F83937F00845266 /* NativeAdView.xib in Resources */,
 				8D0137F12A5C59860091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0137F32A5C59860091CC58 /* bangla.flac in Resources */,
 				8D0137F42A5C59860091CC58 /* Localizable.strings in Resources */,
@@ -1918,6 +2052,8 @@
 			files = (
 				8D0138262A5C59890091CC58 /* hello (16bit PCM).wav in Resources */,
 				8D0138272A5C59890091CC58 /* LaunchScreen.storyboard in Resources */,
+				8DA179122F83937F00845266 /* NativeAdView.xib in Resources */,
+				8DA8FB822F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D0138282A5C59890091CC58 /* Main.storyboard in Resources */,
 				8D8A99292A62DAF40092ADB9 /* Japanese-Info.plist in Resources */,
 				8D0138292A5C59890091CC58 /* AdAppodeal.xib in Resources */,
@@ -1926,6 +2062,7 @@
 				8D01382C2A5C59890091CC58 /* bangla.flac in Resources */,
 				8D01382D2A5C59890091CC58 /* Localizable.strings in Resources */,
 				8D0138ED2A5C5F810091CC58 /* JapaneseAssets.xcassets in Resources */,
+				8DA8FB352F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
 				8D01382F2A5C59890091CC58 /* busy.gif in Resources */,
 				8D0138302A5C59890091CC58 /* good-morning-google.flac in Resources */,
 				8D0138312A5C59890091CC58 /* AdmobController.xib in Resources */,
@@ -1939,6 +2076,8 @@
 			files = (
 				8D01385F2A5C598C0091CC58 /* hello (16bit PCM).wav in Resources */,
 				8D0138602A5C598C0091CC58 /* LaunchScreen.storyboard in Resources */,
+				8DA179102F83937F00845266 /* NativeAdView.xib in Resources */,
+				8DA8FB7E2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D0138612A5C598C0091CC58 /* Main.storyboard in Resources */,
 				8D0138622A5C598C0091CC58 /* AdAppodeal.xib in Resources */,
 				8D0138632A5C598C0091CC58 /* SmartFonts.xcassets in Resources */,
@@ -1947,6 +2086,7 @@
 				8D0138652A5C598C0091CC58 /* bangla.flac in Resources */,
 				8D0138662A5C598C0091CC58 /* Localizable.strings in Resources */,
 				8D0138682A5C598C0091CC58 /* busy.gif in Resources */,
+				8DA8FB402F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
 				8D0138692A5C598C0091CC58 /* good-morning-google.flac in Resources */,
 				8D0138F12A5C5FAB0091CC58 /* SpanishAssets.xcassets in Resources */,
 				8D01386A2A5C598C0091CC58 /* AdmobController.xib in Resources */,
@@ -1964,6 +2104,9 @@
 				8D01389A2A5C59920091CC58 /* Main.storyboard in Resources */,
 				8D01389B2A5C59920091CC58 /* AdAppodeal.xib in Resources */,
 				8D0138F52A5C5FDB0091CC58 /* TurkishAssets.xcassets in Resources */,
+				8DA8FB432F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
+				8DA8FB852F793B1E0003F3A1 /* CustomControls.xib in Resources */,
+				8DA179162F83938000845266 /* NativeAdView.xib in Resources */,
 				8D01389C2A5C59920091CC58 /* SmartFonts.xcassets in Resources */,
 				8D01389E2A5C59920091CC58 /* bangla.flac in Resources */,
 				8D01389F2A5C59920091CC58 /* Localizable.strings in Resources */,
@@ -1984,6 +2127,9 @@
 				8D0138D22A5C59950091CC58 /* LaunchScreen.storyboard in Resources */,
 				8D0138D32A5C59950091CC58 /* Main.storyboard in Resources */,
 				8D0138D42A5C59950091CC58 /* AdAppodeal.xib in Resources */,
+				8DA8FB3B2F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
+				8DA8FB802F793B1E0003F3A1 /* CustomControls.xib in Resources */,
+				8DA1790F2F83937F00845266 /* NativeAdView.xib in Resources */,
 				8D0138D52A5C59950091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0138D72A5C59950091CC58 /* bangla.flac in Resources */,
 				8D0138D82A5C59950091CC58 /* Localizable.strings in Resources */,
@@ -2004,6 +2150,9 @@
 				8D7E9F4C2A5E4C7B0011621C /* Thai-Info.plist in Resources */,
 				8D2E783E2A5C492C00A09A80 /* Main.storyboard in Resources */,
 				8D0138F32A5C5FC30091CC58 /* ThaiAssets.xcassets in Resources */,
+				8DA8FB462F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
+				8DA8FB7D2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
+				8DA179172F83938000845266 /* NativeAdView.xib in Resources */,
 				8D2E783F2A5C492C00A09A80 /* AdAppodeal.xib in Resources */,
 				8D2E78402A5C492C00A09A80 /* bangla.flac in Resources */,
 				8D2E78412A5C492C00A09A80 /* Localizable.strings in Resources */,
@@ -2023,10 +2172,13 @@
 				8D3AE8962A56CE7000C74CF6 /* Main.storyboard in Resources */,
 				8D3AE8972A56CE7000C74CF6 /* AdAppodeal.xib in Resources */,
 				8D1369012A5A76FA0036CAD7 /* SmartFonts.xcassets in Resources */,
+				8DA8FB482F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
 				8D7DA7972B2189050008B590 /* GoogleService-Info.plist in Resources */,
+				8DA179112F83937F00845266 /* NativeAdView.xib in Resources */,
 				8D3AE8982A56CE7000C74CF6 /* bangla.flac in Resources */,
 				8D3AE8992A56CE7000C74CF6 /* Localizable.strings in Resources */,
 				8DDBA4E12A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
+				8DA8FB7F2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D3AE89B2A56CE7000C74CF6 /* busy.gif in Resources */,
 				8D3AE89C2A56CE7000C74CF6 /* good-morning-google.flac in Resources */,
 				8D3AE89D2A56CE7000C74CF6 /* AdmobController.xib in Resources */,
@@ -2043,6 +2195,9 @@
 				8D8EB7DF2AF67978000D858E /* LaunchScreen.storyboard in Resources */,
 				8D8EB7E02AF67978000D858E /* Main.storyboard in Resources */,
 				8D8EB7E12AF67978000D858E /* AdAppodeal.xib in Resources */,
+				8DA8FB342F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
+				8DA8FB7B2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
+				8DA179142F83937F00845266 /* NativeAdView.xib in Resources */,
 				8D8EB7E22AF67978000D858E /* SmartFonts.xcassets in Resources */,
 				8D8EB7E32AF67978000D858E /* bangla.flac in Resources */,
 				8D8EB7E42AF67978000D858E /* Localizable.strings in Resources */,
@@ -2062,10 +2217,13 @@
 				8D981EF32A650AC50072A8D3 /* Main.storyboard in Resources */,
 				8D981EF42A650AC50072A8D3 /* AdAppodeal.xib in Resources */,
 				8D981F062A6510F50072A8D3 /* BurmeseAssets.xcassets in Resources */,
+				8DA8FB392F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
 				8D7DA7922B2189000008B590 /* GoogleService-Info.plist in Resources */,
+				8DA1790D2F83937F00845266 /* NativeAdView.xib in Resources */,
 				8D981EF52A650AC50072A8D3 /* bangla.flac in Resources */,
 				8D981EF62A650AC50072A8D3 /* Localizable.strings in Resources */,
 				8DDBA4DA2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
+				8DA8FB812F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D981EF92A650AC50072A8D3 /* busy.gif in Resources */,
 				8D981EFA2A650AC50072A8D3 /* good-morning-google.flac in Resources */,
 				8D981EFB2A650AC50072A8D3 /* AdmobController.xib in Resources */,
@@ -2826,11 +2984,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB412F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D01375C2A5C595E0091CC58 /* APIKey.swift in Sources */,
+				8D283DBD2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D01375D2A5C595E0091CC58 /* SceneDelegate.swift in Sources */,
 				8DDAD62F2F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D01375E2A5C595E0091CC58 /* Utils.swift in Sources */,
 				8DFDC3212AFA2521003ACEFD /* SharedClass.swift in Sources */,
+				8DA8FB752F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D01375F2A5C595E0091CC58 /* AdUtil.swift in Sources */,
 				8D0137602A5C595E0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137612A5C595E0091CC58 /* Triangle.swift in Sources */,
@@ -2846,9 +3007,12 @@
 				8D01376D2A5C595E0091CC58 /* Errors.swift in Sources */,
 				8D01376E2A5C595E0091CC58 /* SizeConfig.swift in Sources */,
 				8D01376F2A5C595E0091CC58 /* Reachability.swift in Sources */,
+				8DA8FB892F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D0137702A5C595E0091CC58 /* AdAppodeal.swift in Sources */,
 				8D0137712A5C595E0091CC58 /* AppDelegate.swift in Sources */,
 				8D0137722A5C595E0091CC58 /* HomeViewController.swift in Sources */,
+				8DA8FB652F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB662F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0137732A5C595E0091CC58 /* AdManager.swift in Sources */,
 				8D0137742A5C595E0091CC58 /* AudioManager.swift in Sources */,
 				8D0137752A5C595E0091CC58 /* LoadingView.swift in Sources */,
@@ -2859,11 +3023,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB382F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D0137942A5C597D0091CC58 /* APIKey.swift in Sources */,
+				8D283DC52F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D0137952A5C597D0091CC58 /* SceneDelegate.swift in Sources */,
 				8DDAD6312F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0137962A5C597D0091CC58 /* Utils.swift in Sources */,
 				8DBCB6272B24372100AFF714 /* SharedClass.swift in Sources */,
+				8DA8FB782F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0137972A5C597D0091CC58 /* AdUtil.swift in Sources */,
 				8D0137982A5C597D0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137992A5C597D0091CC58 /* Triangle.swift in Sources */,
@@ -2879,9 +3046,12 @@
 				8D0137A52A5C597D0091CC58 /* Errors.swift in Sources */,
 				8D0137A62A5C597D0091CC58 /* SizeConfig.swift in Sources */,
 				8D0137A72A5C597D0091CC58 /* Reachability.swift in Sources */,
+				8DA8FB8B2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D0137A82A5C597D0091CC58 /* AdAppodeal.swift in Sources */,
 				8D0137A92A5C597D0091CC58 /* AppDelegate.swift in Sources */,
 				8D0137AA2A5C597D0091CC58 /* HomeViewController.swift in Sources */,
+				8DA8FB632F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB642F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0137AB2A5C597D0091CC58 /* AdManager.swift in Sources */,
 				8D0137AC2A5C597D0091CC58 /* AudioManager.swift in Sources */,
 				8D0137AD2A5C597D0091CC58 /* LoadingView.swift in Sources */,
@@ -2892,11 +3062,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB3D2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D0137CD2A5C59860091CC58 /* APIKey.swift in Sources */,
+				8D283DBB2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D0137CE2A5C59860091CC58 /* SceneDelegate.swift in Sources */,
 				8DDAD6372F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0137CF2A5C59860091CC58 /* Utils.swift in Sources */,
 				8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */,
+				8DA8FB712F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0137D02A5C59860091CC58 /* AdUtil.swift in Sources */,
 				8D0137D12A5C59860091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137D22A5C59860091CC58 /* Triangle.swift in Sources */,
@@ -2912,9 +3085,12 @@
 				8D0137DE2A5C59860091CC58 /* Errors.swift in Sources */,
 				8D0137DF2A5C59860091CC58 /* SizeConfig.swift in Sources */,
 				8D0137E02A5C59860091CC58 /* Reachability.swift in Sources */,
+				8DA8FB8A2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D0137E12A5C59860091CC58 /* AdAppodeal.swift in Sources */,
 				8D0137E22A5C59860091CC58 /* AppDelegate.swift in Sources */,
 				8D0137E32A5C59860091CC58 /* HomeViewController.swift in Sources */,
+				8DA8FB532F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB542F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0137E42A5C59860091CC58 /* AdManager.swift in Sources */,
 				8D0137E52A5C59860091CC58 /* AudioManager.swift in Sources */,
 				8D0137E62A5C59860091CC58 /* LoadingView.swift in Sources */,
@@ -2925,11 +3101,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB362F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D0138062A5C59890091CC58 /* APIKey.swift in Sources */,
+				8D283DBC2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D0138072A5C59890091CC58 /* SceneDelegate.swift in Sources */,
 				8DDAD6352F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0138082A5C59890091CC58 /* Utils.swift in Sources */,
 				8DBCB6262B24372000AFF714 /* SharedClass.swift in Sources */,
+				8DA8FB772F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0138092A5C59890091CC58 /* AdUtil.swift in Sources */,
 				8D01380A2A5C59890091CC58 /* Primitive+Extension.swift in Sources */,
 				8D01380B2A5C59890091CC58 /* Triangle.swift in Sources */,
@@ -2945,9 +3124,12 @@
 				8D0138172A5C59890091CC58 /* Errors.swift in Sources */,
 				8D0138182A5C59890091CC58 /* SizeConfig.swift in Sources */,
 				8D0138192A5C59890091CC58 /* Reachability.swift in Sources */,
+				8DA8FB8D2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D01381A2A5C59890091CC58 /* AdAppodeal.swift in Sources */,
 				8D01381B2A5C59890091CC58 /* AppDelegate.swift in Sources */,
 				8D01381C2A5C59890091CC58 /* HomeViewController.swift in Sources */,
+				8DA8FB692F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB6A2F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D01381D2A5C59890091CC58 /* AdManager.swift in Sources */,
 				8D01381E2A5C59890091CC58 /* AudioManager.swift in Sources */,
 				8D01381F2A5C59890091CC58 /* LoadingView.swift in Sources */,
@@ -2958,11 +3140,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB3F2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D01383F2A5C598C0091CC58 /* APIKey.swift in Sources */,
+				8D283DC12F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D0138402A5C598C0091CC58 /* SceneDelegate.swift in Sources */,
 				8DDAD6322F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0138412A5C598C0091CC58 /* Utils.swift in Sources */,
 				8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */,
+				8DA8FB732F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0138422A5C598C0091CC58 /* AdUtil.swift in Sources */,
 				8D0138432A5C598C0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0138442A5C598C0091CC58 /* Triangle.swift in Sources */,
@@ -2978,9 +3163,12 @@
 				8D0138502A5C598C0091CC58 /* Errors.swift in Sources */,
 				8D0138512A5C598C0091CC58 /* SizeConfig.swift in Sources */,
 				8D0138522A5C598C0091CC58 /* Reachability.swift in Sources */,
+				8DA8FB902F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D0138532A5C598C0091CC58 /* AdAppodeal.swift in Sources */,
 				8D0138542A5C598C0091CC58 /* AppDelegate.swift in Sources */,
 				8D0138552A5C598C0091CC58 /* HomeViewController.swift in Sources */,
+				8DA8FB502F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB512F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0138562A5C598C0091CC58 /* AdManager.swift in Sources */,
 				8D0138572A5C598C0091CC58 /* AudioManager.swift in Sources */,
 				8D0138582A5C598C0091CC58 /* LoadingView.swift in Sources */,
@@ -2991,11 +3179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB442F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D0138782A5C59920091CC58 /* APIKey.swift in Sources */,
+				8D283DC32F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D0138792A5C59920091CC58 /* SceneDelegate.swift in Sources */,
 				8DDAD6362F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D01387A2A5C59920091CC58 /* Utils.swift in Sources */,
 				8DFDC3242AFA2524003ACEFD /* SharedClass.swift in Sources */,
+				8DA8FB702F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D01387B2A5C59920091CC58 /* AdUtil.swift in Sources */,
 				8D01387C2A5C59920091CC58 /* Primitive+Extension.swift in Sources */,
 				8D01387D2A5C59920091CC58 /* Triangle.swift in Sources */,
@@ -3011,9 +3202,12 @@
 				8D0138892A5C59920091CC58 /* Errors.swift in Sources */,
 				8D01388A2A5C59920091CC58 /* SizeConfig.swift in Sources */,
 				8D01388B2A5C59920091CC58 /* Reachability.swift in Sources */,
+				8DA8FB882F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D01388C2A5C59920091CC58 /* AdAppodeal.swift in Sources */,
 				8D01388D2A5C59920091CC58 /* AppDelegate.swift in Sources */,
 				8D01388E2A5C59920091CC58 /* HomeViewController.swift in Sources */,
+				8DA8FB5A2F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB5B2F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D01388F2A5C59920091CC58 /* AdManager.swift in Sources */,
 				8D0138902A5C59920091CC58 /* AudioManager.swift in Sources */,
 				8D0138912A5C59920091CC58 /* LoadingView.swift in Sources */,
@@ -3024,11 +3218,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB3C2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D0138B12A5C59950091CC58 /* APIKey.swift in Sources */,
+				8D283DC22F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D0138B22A5C59950091CC58 /* SceneDelegate.swift in Sources */,
 				8DDAD6382F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D0138B32A5C59950091CC58 /* Utils.swift in Sources */,
 				8DFDC3252AFA2525003ACEFD /* SharedClass.swift in Sources */,
+				8DA8FB722F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0138B42A5C59950091CC58 /* AdUtil.swift in Sources */,
 				8D0138B52A5C59950091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0138B62A5C59950091CC58 /* Triangle.swift in Sources */,
@@ -3044,9 +3241,12 @@
 				8D0138C22A5C59950091CC58 /* Errors.swift in Sources */,
 				8D0138C32A5C59950091CC58 /* SizeConfig.swift in Sources */,
 				8D0138C42A5C59950091CC58 /* Reachability.swift in Sources */,
+				8DA8FB912F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D0138C52A5C59950091CC58 /* AdAppodeal.swift in Sources */,
 				8D0138C62A5C59950091CC58 /* AppDelegate.swift in Sources */,
 				8D0138C72A5C59950091CC58 /* HomeViewController.swift in Sources */,
+				8DA8FB4E2F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB4F2F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D0138C82A5C59950091CC58 /* AdManager.swift in Sources */,
 				8D0138C92A5C59950091CC58 /* AudioManager.swift in Sources */,
 				8D0138CA2A5C59950091CC58 /* LoadingView.swift in Sources */,
@@ -3057,11 +3257,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB452F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D2E781B2A5C492C00A09A80 /* APIKey.swift in Sources */,
+				8D283DBF2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D2E781C2A5C492C00A09A80 /* SceneDelegate.swift in Sources */,
 				8DDAD6392F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D2E781D2A5C492C00A09A80 /* Utils.swift in Sources */,
 				8DBCB6292B24372200AFF714 /* SharedClass.swift in Sources */,
+				8DA8FB792F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D2E781E2A5C492C00A09A80 /* AdUtil.swift in Sources */,
 				8D2E781F2A5C492C00A09A80 /* Primitive+Extension.swift in Sources */,
 				8D2E78202A5C492C00A09A80 /* Triangle.swift in Sources */,
@@ -3077,9 +3280,12 @@
 				8D2E782C2A5C492C00A09A80 /* Errors.swift in Sources */,
 				8D2E782D2A5C492C00A09A80 /* SizeConfig.swift in Sources */,
 				8D2E782E2A5C492C00A09A80 /* Reachability.swift in Sources */,
+				8DA8FB8F2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D2E782F2A5C492C00A09A80 /* AdAppodeal.swift in Sources */,
 				8D2E78302A5C492C00A09A80 /* AppDelegate.swift in Sources */,
 				8D2E78312A5C492C00A09A80 /* HomeViewController.swift in Sources */,
+				8DA8FB6B2F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB6C2F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D2E78322A5C492C00A09A80 /* AdManager.swift in Sources */,
 				8D2E78332A5C492C00A09A80 /* AudioManager.swift in Sources */,
 				8D2E78342A5C492C00A09A80 /* LoadingView.swift in Sources */,
@@ -3090,11 +3296,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB472F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D3AE8732A56CE7000C74CF6 /* APIKey.swift in Sources */,
+				8D283DC02F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D3AE8742A56CE7000C74CF6 /* SceneDelegate.swift in Sources */,
 				8DDAD6342F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D3AE8752A56CE7000C74CF6 /* Utils.swift in Sources */,
 				8DFDC3262AFA2526003ACEFD /* SharedClass.swift in Sources */,
+				8DA8FB762F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D3AE8762A56CE7000C74CF6 /* AdUtil.swift in Sources */,
 				8D3AE8772A56CE7000C74CF6 /* Primitive+Extension.swift in Sources */,
 				8D3AE8782A56CE7000C74CF6 /* Triangle.swift in Sources */,
@@ -3110,9 +3319,12 @@
 				8D3AE8842A56CE7000C74CF6 /* Errors.swift in Sources */,
 				8D3AE8852A56CE7000C74CF6 /* SizeConfig.swift in Sources */,
 				8D3AE8862A56CE7000C74CF6 /* Reachability.swift in Sources */,
+				8DA8FB8C2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D3AE8872A56CE7000C74CF6 /* AdAppodeal.swift in Sources */,
 				8D3AE8882A56CE7000C74CF6 /* AppDelegate.swift in Sources */,
 				8D3AE8892A56CE7000C74CF6 /* HomeViewController.swift in Sources */,
+				8DA8FB5F2F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB602F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D3AE88A2A56CE7000C74CF6 /* AdManager.swift in Sources */,
 				8D3AE88B2A56CE7000C74CF6 /* AudioManager.swift in Sources */,
 				8D3AE88C2A56CE7000C74CF6 /* LoadingView.swift in Sources */,
@@ -3123,11 +3335,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB332F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D8EB7BD2AF67978000D858E /* APIKey.swift in Sources */,
+				8D283DC42F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D8EB7BE2AF67978000D858E /* SceneDelegate.swift in Sources */,
 				8DDAD6332F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D8EB7BF2AF67978000D858E /* Utils.swift in Sources */,
 				8DBCB6282B24372200AFF714 /* SharedClass.swift in Sources */,
+				8DA8FB6F2F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D8EB7C02AF67978000D858E /* AdUtil.swift in Sources */,
 				8D8EB7C12AF67978000D858E /* Primitive+Extension.swift in Sources */,
 				8D8EB7C22AF67978000D858E /* Triangle.swift in Sources */,
@@ -3143,9 +3358,12 @@
 				8D8EB7CF2AF67978000D858E /* Errors.swift in Sources */,
 				8D8EB7D02AF67978000D858E /* SizeConfig.swift in Sources */,
 				8D8EB7D12AF67978000D858E /* Reachability.swift in Sources */,
+				8DA8FB872F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D8EB7D22AF67978000D858E /* AdAppodeal.swift in Sources */,
 				8D8EB7D32AF67978000D858E /* AppDelegate.swift in Sources */,
 				8D8EB7D42AF67978000D858E /* HomeViewController.swift in Sources */,
+				8DA8FB562F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB572F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D8EB7D52AF67978000D858E /* AdManager.swift in Sources */,
 				8D8EB7D62AF67978000D858E /* AudioManager.swift in Sources */,
 				8D8EB7D72AF67978000D858E /* LoadingView.swift in Sources */,
@@ -3156,11 +3374,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA8FB3A2F7935460003F3A1 /* SimpleNativeAdView.swift in Sources */,
 				8D981ED12A650AC50072A8D3 /* APIKey.swift in Sources */,
+				8D283DBE2F791624009805C6 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				8D981ED22A650AC50072A8D3 /* SceneDelegate.swift in Sources */,
 				8DDAD6302F78F7B700BEE310 /* AppOpenAdManager.swift in Sources */,
 				8D981ED32A650AC50072A8D3 /* Utils.swift in Sources */,
 				8DBCB6252B24371F00AFF714 /* SharedClass.swift in Sources */,
+				8DA8FB742F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
 				8D981ED42A650AC50072A8D3 /* AdUtil.swift in Sources */,
 				8D981ED52A650AC50072A8D3 /* Primitive+Extension.swift in Sources */,
 				8D981ED62A650AC50072A8D3 /* Triangle.swift in Sources */,
@@ -3176,9 +3397,12 @@
 				8D981EE22A650AC50072A8D3 /* Errors.swift in Sources */,
 				8D981EE32A650AC50072A8D3 /* SizeConfig.swift in Sources */,
 				8D981EE42A650AC50072A8D3 /* Reachability.swift in Sources */,
+				8DA8FB8E2F793CBA0003F3A1 /* NativeAdManager.swift in Sources */,
 				8D981EE52A650AC50072A8D3 /* AdAppodeal.swift in Sources */,
 				8D981EE62A650AC50072A8D3 /* AppDelegate.swift in Sources */,
 				8D981EE72A650AC50072A8D3 /* HomeViewController.swift in Sources */,
+				8DA8FB5D2F7939980003F3A1 /* Constants.swift in Sources */,
+				8DA8FB5E2F7939980003F3A1 /* CustomControlsView.swift in Sources */,
 				8D981EE82A650AC50072A8D3 /* AdManager.swift in Sources */,
 				8D981EE92A650AC50072A8D3 /* AudioManager.swift in Sources */,
 				8D981EEA2A650AC50072A8D3 /* LoadingView.swift in Sources */,

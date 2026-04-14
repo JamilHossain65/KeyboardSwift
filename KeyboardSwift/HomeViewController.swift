@@ -428,7 +428,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         languageButton.setTitleColor(.black, for: .normal)
         languageButton.setTitleColor(.black, for: .selected)
         
-        languageButton.addTarget(self, action: #selector(playButtonTapped(sender:)), for: .touchUpInside)
+        languageButton.addTarget(self, action: #selector(languageButtonTapped(sender:)), for: .touchUpInside)
         textView.addSubview(languageButton)
         languageButton.backgroundColor = .clear
         
@@ -488,9 +488,9 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
-    @objc func playButtonTapped(sender:UIButton){
-        log("playButtonTapped::\(actLanguages)")
-        perform(#selector(self.showAdmobAppOpenAd), with: nil, afterDelay: 1)
+    @objc func languageButtonTapped(sender:UIButton){
+        log("languageButtonTapped::\(actLanguages)")
+        perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: 0)
         
         if actLanguages.count > 2{
             let button = UIButton()
@@ -720,14 +720,17 @@ extension HomeViewController:UITextViewDelegate {
         //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
         AdmobController.shared.showAdmobInterstitial(self)
     }
+    
     @objc func showAdmobAppOpenAd(){
         log("showAdmobAppOpenAd...")
         //perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
         AdmobController.shared.showAdmobAppOpenAd(self)
     }
     
-    
-    
+    @objc func showAdmobNativeAd(){
+        log("show Admob Native Ad...")
+        AdmobController.shared.showNativeAd(self)
+    }
     
     @objc func showFbMetaAd(){
        perform(#selector(showFbMetaAd), with: nil, afterDelay: AD_MIN_TIME)

@@ -6,7 +6,6 @@
 //
 
 @preconcurrency import GoogleMobileAds
-@preconcurrency import GoogleMobileAdsConsentManager
 
 @MainActor
 // [START app_open_ad_manager_delegate]
@@ -90,9 +89,6 @@ class AppOpenAdManager: NSObject {
       appOpenAdManagerDelegate?.appOpenAdManagerAdDidComplete(self)
       // Load a new ad.
       // [START_EXCLUDE silent]
-        Task {
-          await loadAd()
-        }
         
         if GoogleMobileAdsConsentManager.shared.canRequestAds {
         Task {
