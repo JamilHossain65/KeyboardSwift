@@ -490,7 +490,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func languageButtonTapped(sender:UIButton){
         log("languageButtonTapped::\(actLanguages)")
-        perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: 0)
+        perform(#selector(self.showAdmobAppOpenAd), with: nil, afterDelay: 0)
         
         if actLanguages.count > 2{
             let button = UIButton()

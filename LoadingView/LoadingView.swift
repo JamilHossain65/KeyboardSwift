@@ -59,7 +59,7 @@ class LoadingView: UIView {
         self.backgroundColor = UIColor.clear
         let keyWindow = UIApplication.shared.keyWindow
         //add a fade view
-        fadeView.backgroundColor = UIColor.red
+        fadeView.backgroundColor = UIColor.black
         fadeView.frame = self.frame
         fadeView.alpha = 0.33
         fadeView.tag   = 1011

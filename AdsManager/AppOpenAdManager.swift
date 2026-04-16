@@ -60,7 +60,7 @@ class AppOpenAdManager: NSObject {
 
     do {
       appOpenAd = try await AppOpenAd.load(
-        with: "ca-app-pub-3940256099942544/5575463023", request: Request())
+        with: appOpenAdKey, request: Request())
       // [START set_delegate]
       appOpenAd?.fullScreenContentDelegate = self
       // [END set_delegate]

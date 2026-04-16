@@ -62,3 +62,366 @@ import MBProgressHUD
 
 //#define SUITE_NAME @"group.com.vaticsoft.BurmeseKeyboard"
 //let  AD_MIN_TIME = 10*60; //10 min
+
+var langName: String {
+    get {
+        let actLanguages = activeLanguages.filter({$0.1}).map({$0.0}).sorted(by:>)
+        let langName:String = actLanguages.filter({$0 != English}).first!
+        log("langName:\(langName)")
+        return langName
+    }
+}
+
+//app setting::6
+public var admobAdKey: String {
+    get {
+        //let langName = getString(SelectedLanguage)
+        switch langName {
+        case Bangla:
+            return ""
+        case BanglaGoti:
+            return "ca-app-pub-6852753831370662/6954560826"
+        case BanglaDruti:
+            return "ca-app-pub-9133033983333483/1492998119"
+        case Thai:
+            return "ca-app-pub-6852753831370662/2157832232"
+        case Gujarati:
+            return ""
+        case Hindi:
+            return "ca-app-pub-9133033983333483/9354257012"
+        case Kannada:
+            return ""
+        case Malayalam:
+            return ""
+        case Marathi:
+            return ""
+        case Nepali:
+            return ""
+        case Oriya:
+            return ""
+        case Punjabi:
+            return ""
+        case Sanskrit:
+            return ""
+        case Tamil:
+            return ""
+        case Telugu:
+            return ""
+        case Urdu:
+            return ""
+        case Indonesian:
+            return ""
+        case Russian:
+            return "ca-app-pub-9133033983333483/6077303084"
+        case Spanish:
+            return "ca-app-pub-9133033983333483/4720877434"
+        case French:
+            return ""
+        case German:
+            return ""
+        case Italian:
+            return ""
+        case Korean:
+            return ""
+        case Turkish:
+            return ""
+        case Portuguese:
+            return ""
+        case Burmese:
+            //return "ca-app-pub-9133033983333483/2368759846"
+            return "ca-app-pub-7802882478784013/3431237527"
+            
+        case JpHiragana:
+            return "ca-app-pub-9133033983333483/4102060257"
+        case JpKatakana:
+            return "ca-app-pub-9133033983333483/4102060257"
+        case SmartFonts:
+            return "ca-app-pub-9133033983333483/2540966764"
+        default://English
+            return ""
+        }
+    }
+}
+
+//    Thai Native
+//    ca-app-pub-6852753831370662/2572374392
+//    thai App open
+//    ca-app-pub-6852753831370662/1048268689
+
+//app setting::6.2
+var nativeAdKey: String {
+    get {
+        //let langName = getString(SelectedLanguage)
+        switch langName {
+        case Bangla:
+            return ""
+        case BanglaGoti:
+            return ""
+        case BanglaDruti:
+            return ""
+        case Thai:
+            return "ca-app-pub-6852753831370662/2572374392"
+        case Gujarati:
+            return ""
+        case Hindi:
+            return ""
+        case Kannada:
+            return ""
+        case Malayalam:
+            return ""
+        case Marathi:
+            return ""
+        case Nepali:
+            return ""
+        case Oriya:
+            return ""
+        case Punjabi:
+            return ""
+        case Sanskrit:
+            return ""
+        case Tamil:
+            return ""
+        case Telugu:
+            return ""
+        case Urdu:
+            return ""
+        case Indonesian:
+            return ""
+        case Russian:
+            return ""
+        case Spanish:
+            return ""
+        case French:
+            return ""
+        case German:
+            return ""
+        case Italian:
+            return ""
+        case Korean:
+            return ""
+        case Turkish:
+            return ""
+        case Portuguese:
+            return ""
+        case Burmese:
+            return ""
+            
+        case JpHiragana:
+            return ""
+        case JpKatakana:
+            return ""
+        case SmartFonts:
+            return ""
+        default://English
+            return "" //MARK: - todo
+        }
+    }
+}
+
+    //app setting::6.1
+    var appOpenAdKey: String {
+        get {
+            //let langName = getString(SelectedLanguage)
+            switch langName {
+            case Bangla:
+                return ""
+            case BanglaGoti:
+                return ""
+            case BanglaDruti:
+                return ""
+            case Thai:
+                return "ca-app-pub-6852753831370662/1048268689"
+            case Gujarati:
+                return ""
+            case Hindi:
+                return ""
+            case Kannada:
+                return ""
+            case Malayalam:
+                return ""
+            case Marathi:
+                return ""
+            case Nepali:
+                return ""
+            case Oriya:
+                return ""
+            case Punjabi:
+                return ""
+            case Sanskrit:
+                return ""
+            case Tamil:
+                return ""
+            case Telugu:
+                return ""
+            case Urdu:
+                return ""
+            case Indonesian:
+                return ""
+            case Russian:
+                return ""
+            case Spanish:
+                return ""
+            case French:
+                return ""
+            case German:
+                return ""
+            case Italian:
+                return ""
+            case Korean:
+                return ""
+            case Turkish:
+                return ""
+            case Portuguese:
+                return ""
+            case Burmese:
+                return "ca-app-pub-7802882478784013/3431237527"
+
+            case JpHiragana:
+                return ""
+            case JpKatakana:
+                return ""
+            case SmartFonts:
+                return ""
+            default://English
+                return "" //MARK: - todo
+            }
+        }
+    }
+
+//app setting:: 10
+var admobAdRewardedKey: String {
+    get {
+        //let langName = getString(SelectedLanguage)
+        switch langName {
+        case Bangla:
+            return ""
+        case BanglaGoti:
+            return "ca-app-pub-9133033983333483/6496283136"
+        case BanglaDruti:
+            return "ca-app-pub-9133033983333483/4963605614"
+        case Thai:
+            return "ca-app-pub-9133033983333483/4717195930"
+        case Gujarati:
+            return ""
+        case Hindi:
+            return ""
+        case Kannada:
+            return ""
+        case Malayalam:
+            return ""
+        case Marathi:
+            return ""
+        case Nepali:
+            return ""
+        case Oriya:
+            return ""
+        case Punjabi:
+            return ""
+        case Sanskrit:
+            return ""
+        case Tamil:
+            return ""
+        case Telugu:
+            return ""
+        case Urdu:
+            return ""
+        case Indonesian:
+            return ""
+        case Russian:
+            return "ca-app-pub-9133033983333483/6659982938"
+        case Spanish:
+            return ""
+        case French:
+            return ""
+        case German:
+            return ""
+        case Italian:
+            return ""
+        case Korean:
+            return ""
+        case Turkish:
+            return ""
+        case Portuguese:
+            return ""
+        case Burmese:
+            return ""
+        case JpHiragana:
+            return "ca-app-pub-9133033983333483/5534603529"
+        case JpKatakana:
+            return "ca-app-pub-9133033983333483/5534603529"
+        case SmartFonts:
+            return ""
+        default://English
+            return ""
+        }
+    }
+}
+
+//app setting:: 11
+var admobAdRewardedInterstitialKey: String {
+    get {
+        //let langName = getString(SelectedLanguage)
+        switch langName {
+        case Bangla:
+            return ""
+        case BanglaGoti:
+            return "ca-app-pub-9133033983333483/8744413734"
+        case BanglaDruti:
+            return ""
+        case Thai:
+            return ""
+        case Gujarati:
+            return ""
+        case Hindi:
+            return "ca-app-pub-9133033983333483/9354257012"
+        case Kannada:
+            return ""
+        case Malayalam:
+            return ""
+        case Marathi:
+            return ""
+        case Nepali:
+            return ""
+        case Oriya:
+            return ""
+        case Punjabi:
+            return ""
+        case Sanskrit:
+            return ""
+        case Tamil:
+            return ""
+        case Telugu:
+            return ""
+        case Urdu:
+            return ""
+        case Indonesian:
+            return ""
+        case Russian:
+            return "ca-app-pub-9133033983333483/4509503298"
+        case Spanish:
+            return "ca-app-pub-9133033983333483/1779398175"
+        case French:
+            return ""
+        case German:
+            return ""
+        case Italian:
+            return ""
+        case Korean:
+            return ""
+        case Turkish:
+            return ""
+        case Portuguese:
+            return ""
+        case Burmese:
+            return ""
+        case JpHiragana:
+            return ""
+        case JpKatakana:
+            return ""
+        case SmartFonts:
+            return "ca-app-pub-9133033983333483/9218904491"
+        default://English
+            return ""
+        }
+    }
+}
