@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
+                return "com.vaticsoft.iap.russianKeyboard"
             }
         }
     }
@@ -141,6 +141,25 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             //AdmobController.shared.startGoogleMobileAdsSDK()
         })
         
+        // Debug error message for admob
+        AdmobController.shared.admobCompletion = { error in
+            if let _error = error {
+                if currentAdUnit == .INTERSTITIAL{
+                    currentAdUnit = .APP_OPEN
+                }else{
+                    currentAdUnit = .INTERSTITIAL
+                }
+                log("new currentAdUnit:\(currentAdUnit)")
+                
+                if self.textView.text.lowercased() == "ad" {
+                    DispatchQueue.main.async {
+                        // Update UI
+                        showAlertOkay(message:_error.localizedDescription)
+                    }
+                }
+            }
+        }
+        
         //AdAppodeal.shared.initializeAppodealSDK()
         //loadRewardedAdmob()
         
@@ -148,8 +167,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.loadAd()
             let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
             if isAppUsed{ //app already used
-                //self.perform(#selector(self.checkAdLoadRequesting), with: nil, afterDelay: 5)
-                self.perform(#selector(self.showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+                self.showAdmobInterstitial()
             }
         }
         
@@ -490,7 +508,13 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func languageButtonTapped(sender:UIButton){
         log("languageButtonTapped::\(actLanguages)")
-        perform(#selector(self.showAdmobAppOpenAd), with: nil, afterDelay: 0)
+        log("currentAdUnit:\(currentAdUnit)")
+        if currentAdUnit == .APP_OPEN {
+            showAdmobAppOpenAd()
+        }else{
+            showAdmobInterstitial()
+        }
+        
         
         if actLanguages.count > 2{
             let button = UIButton()

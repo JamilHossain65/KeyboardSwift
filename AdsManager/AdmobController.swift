@@ -14,7 +14,7 @@ import UserMessagingPlatform
 
 class AdmobController: UIViewController, FullScreenContentDelegate {
     public static let shared = AdmobController()
-    var admobCompletion : ((_ success: Bool) -> ())?
+    var admobCompletion : ((_ error:Error?) -> ())?
     var rewardedAd: RewardedAd?
     var interstitialAd: InterstitialAd?
     var appOpenAd: AppOpenAd?
@@ -308,10 +308,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         let request = Request()
         InterstitialAd.load(with:admobAdKey, request: request) { ad, error in
             if let error = error {
-                DispatchQueue.main.async {
-                        // Update UI
-                    showAlertOkay(message:error.localizedDescription)
-                }
+                self.admobCompletion?(error)
                 return log("Failed to load interstitial ad with error: \(error.localizedDescription)")
             }
 
@@ -319,6 +316,8 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             AdmobController.shared.interstitialAd = ad
             AdmobController.shared.interstitialAd?.fullScreenContentDelegate = self
             AdmobController.shared.interstitialAd?.present(from: viewController)
+            currentAdUnit = .APP_OPEN
+            log("currentAdUnit:\(currentAdUnit)")
         }
     }
     
@@ -327,13 +326,17 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         let request = Request()
         AppOpenAd.load(with:appOpenAdKey, request: request) { ad, error in
             if let error = error {
+                self.admobCompletion?(error)
                 return log("Failed to load open ad with error: \(error.localizedDescription)")
             }
 
+            
             self.loadAdmobOn(viewController)
             AdmobController.shared.appOpenAd = ad
             AdmobController.shared.appOpenAd?.fullScreenContentDelegate = self
             AdmobController.shared.appOpenAd?.present(from: viewController)
+            currentAdUnit = .INTERSTITIAL
+            log("currentAdUnit:\(currentAdUnit)")
         }
     }
     
@@ -361,17 +364,12 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     func ad(_ ad: FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         log("Ad did fail to present full screen content::\(error.localizedDescription)")
         
-        DispatchQueue.main.async {
-                // Update UI
-            showAlertOkay(message:error.localizedDescription)
-        }
-        
         AdmobController.shared.interstitialAd = nil
         AdmobController.shared.appOpenAd = nil
         AdmobController.shared.rewardedAd = nil
         LoadingView.shared.removeFromSuperview()
         adLoadingStatus = .NOT_REQUESTED
-        admobCompletion?(true)
+        admobCompletion?(error)
     }
     
     func adWillPresentFullScreenContent(_ ad: FullScreenPresentingAd) {
@@ -386,7 +384,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         AdmobController.shared.interstitialAd = nil
         AdmobController.shared.rewardedAd = nil
         adLoadingStatus = .NOT_REQUESTED
-        admobCompletion?(true)
+        admobCompletion?(nil)
     }
     
     func adDidRecordClick(_ ad: FullScreenPresentingAd) {

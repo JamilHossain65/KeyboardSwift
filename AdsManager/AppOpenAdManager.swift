@@ -100,8 +100,9 @@ class AppOpenAdManager: NSObject {
     }
 
     if let appOpenAd {
-      appOpenAd.present(from: nil)
-      isShowingAd = true
+        appOpenAd.present(from: nil)
+        currentAdUnit = .INTERSTITIAL
+        isShowingAd = true
     }
   }
   // [END show_ad]
