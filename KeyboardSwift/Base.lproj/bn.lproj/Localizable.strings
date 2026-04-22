@@ -10,7 +10,7 @@
 "kSymbolString" = "#+=";
 "kAbcString"    = "কখগ";
 "kReturnString" = "ফেরত";
-//app setting::5
+//app setting::5.1
 "kSpaceString"  = "Space"; //"Space"; //দ্রুতি //গতি //ช่องว่าง
 "kStopSpace"    = ". ";
 "kDoubleSpace"  = "  ";

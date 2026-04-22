@@ -100,9 +100,11 @@ class AppOpenAdManager: NSObject {
     }
 
     if let appOpenAd {
+        if isAlreadyShowingAd { return }
         appOpenAd.present(from: nil)
         currentAdUnit = .INTERSTITIAL
         isShowingAd = true
+        isAlreadyShowingAd = true
     }
   }
   // [END show_ad]
@@ -130,6 +132,7 @@ extension AppOpenAdManager: FullScreenContentDelegate {
     print("App open ad was dismissed.")
     appOpenAd = nil
     isShowingAd = false
+    isAlreadyShowingAd = false
     appOpenAdManagerDelegate?.appOpenAdManagerAdDidComplete(self)
     Task {
       await loadAd()
@@ -140,6 +143,7 @@ extension AppOpenAdManager: FullScreenContentDelegate {
     print("App open ad failed to present with error: \(error.localizedDescription)")
     appOpenAd = nil
     isShowingAd = false
+    isAlreadyShowingAd = false
     appOpenAdManagerDelegate?.appOpenAdManagerAdDidComplete(self)
     Task {
       await loadAd()

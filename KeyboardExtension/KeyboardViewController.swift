@@ -53,7 +53,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(Russian, for: .normal) //MARK: - do it dynamic
+        button.setTitle(Spanish, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
@@ -543,7 +543,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
 
     //MARK: OPEN CONTAINER APP
     @objc func openContainerApp() {
-        //app setting:: 0 //remove return
+        //app setting:: 0.1 //remove return
         return
         let textLeft  = textDocumentProxy.documentContextBeforeInput ?? ""
         let textRight = textDocumentProxy.documentContextAfterInput ?? ""

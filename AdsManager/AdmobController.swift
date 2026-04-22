@@ -305,6 +305,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     
     func showAdmobInterstitial(_ viewController:UIViewController){
         // if !Reachability.isConnected() { return }
+        if isAlreadyShowingAd { return }
         let request = Request()
         InterstitialAd.load(with:admobAdKey, request: request) { ad, error in
             if let error = error {
@@ -323,6 +324,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     
     func showAdmobAppOpenAd(_ viewController:UIViewController){
         // if !Reachability.isConnected() { return }
+        if isAlreadyShowingAd { return }
         let request = Request()
         AppOpenAd.load(with:appOpenAdKey, request: request) { ad, error in
             if let error = error {
@@ -376,6 +378,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         log("adWillPresentFullScreenContent.\(ad)")
         savePreAdShownTime()
         adLoadingStatus = .SHOWING
+        isAlreadyShowingAd = true
     }
     
     /// Tells the delegate that the ad dismissed full screen content.
@@ -385,6 +388,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         AdmobController.shared.rewardedAd = nil
         adLoadingStatus = .NOT_REQUESTED
         admobCompletion?(nil)
+        isAlreadyShowingAd = false
     }
     
     func adDidRecordClick(_ ad: FullScreenPresentingAd) {

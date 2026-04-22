@@ -190,7 +190,6 @@
 		8D0138602A5C598C0091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D0138612A5C598C0091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D0138622A5C598C0091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
-		8D0138632A5C598C0091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D0138652A5C598C0091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0138662A5C598C0091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D0138682A5C598C0091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
@@ -2080,7 +2079,7 @@
 				8DA8FB7E2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D0138612A5C598C0091CC58 /* Main.storyboard in Resources */,
 				8D0138622A5C598C0091CC58 /* AdAppodeal.xib in Resources */,
-				8D0138632A5C598C0091CC58 /* SmartFonts.xcassets in Resources */,
+				8D0138F12A5C5FAB0091CC58 /* SpanishAssets.xcassets in Resources */,
 				8DDC12F62A7CC0E500B60933 /* Spanish-Info.plist in Resources */,
 				8DDBA4DC2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0138652A5C598C0091CC58 /* bangla.flac in Resources */,
@@ -2088,7 +2087,6 @@
 				8D0138682A5C598C0091CC58 /* busy.gif in Resources */,
 				8DA8FB402F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
 				8D0138692A5C598C0091CC58 /* good-morning-google.flac in Resources */,
-				8D0138F12A5C5FAB0091CC58 /* SpanishAssets.xcassets in Resources */,
 				8D01386A2A5C598C0091CC58 /* AdmobController.xib in Resources */,
 				8D7DA7932B2189010008B590 /* GoogleService-Info.plist in Resources */,
 			);
@@ -3565,12 +3563,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Russian-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3594,12 +3594,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Russian-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3630,6 +3632,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Druti-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3659,6 +3662,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Druti-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3689,6 +3693,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "KeyboardSmartFonts copy 2-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3718,6 +3723,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "KeyboardSmartFonts copy 2-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3748,6 +3754,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Japanese-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3777,6 +3784,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Japanese-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3807,12 +3815,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Spanish-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3836,13 +3845,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Spanish-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3866,6 +3876,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "KeyboardSmartFonts copy 5-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3895,6 +3906,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "KeyboardSmartFonts copy 5-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3925,6 +3937,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Indian-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3954,6 +3967,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Indian-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3981,7 +3995,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Thai-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -3990,7 +4004,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.keyboard.thai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4011,7 +4025,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Thai-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -4021,7 +4035,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.keyboard.thai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4045,6 +4059,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "SmartFonts-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4074,6 +4089,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "SmartFonts-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4104,7 +4120,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Goti-Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4134,7 +4150,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Goti-Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4165,6 +4181,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Burmese-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4194,6 +4211,7 @@
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Burmese-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4336,7 +4354,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -4345,9 +4363,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.9;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4365,7 +4383,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -4374,9 +4392,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.9;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.spanish.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
