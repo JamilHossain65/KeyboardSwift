@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     //copy "Bundle identifier" from submit_info.txt file and paste the Bundle Identifier to keyboardExtension.
     //select group from  Siging & Capabilities both target app and keyboardExtension app.
     
-    //app setting:: 8
+    //app setting::8
     //MARK: - TODO manually: Target version and keyboardExtension will be same.
     
     //access token
@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             case SmartFonts:
                 return "SmartFontRemoveAds"
             default://English
-                return "com.vaticsoft.iap.russianKeyboard"
+                return "com.vaticsoft.iap.BanglaKeyboardGotiFullVersion"
             }
         }
     }
@@ -136,7 +136,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         isAppActive = true
-        
+        //01755185528 Hafez Hamidul
         AdmobController.askForConsentForm(self, completion: {
             //AdmobController.shared.startGoogleMobileAdsSDK()
         })
@@ -149,7 +149,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 }else{
                     currentAdUnit = .INTERSTITIAL
                 }
-                log("new currentAdUnit:\(currentAdUnit)")
+                log("error currentAdUnit:\(currentAdUnit)")
                 
                 if self.textView.text.lowercased() == "ad" {
                     DispatchQueue.main.async {

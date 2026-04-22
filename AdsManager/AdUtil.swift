@@ -80,7 +80,7 @@ public var admobAdKey: String {
         case Bangla:
             return ""
         case BanglaGoti:
-            return "ca-app-pub-6852753831370662/6954560826"
+            return "ca-app-pub-6852753831370662/2187670512"
         case BanglaDruti:
             return "ca-app-pub-9133033983333483/1492998119"
         case Thai:
@@ -156,7 +156,7 @@ var nativeAdKey: String {
         case Bangla:
             return ""
         case BanglaGoti:
-            return ""
+            return "ca-app-pub-6852753831370662/4570291273"
         case BanglaDruti:
             return ""
         case Thai:
@@ -226,7 +226,7 @@ var nativeAdKey: String {
             case Bangla:
                 return ""
             case BanglaGoti:
-                return ""
+                return "ca-app-pub-6852753831370662/5883372944"
             case BanglaDruti:
                 return ""
             case Thai:
