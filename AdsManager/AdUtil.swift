@@ -72,13 +72,13 @@ var langName: String {
     }
 }
 
-//ca-app-pub-6852753831370662/6311791933
-//
-//App open
-//ca-app-pub-6852753831370662/8445859049
-//
-//Native app
-//ca-app-pub-6852753831370662/4938480996
+
+//interstitial
+//ca-app-pub-6852753831370662/6954560826
+//Native
+//ca-app-pub-6852753831370662/4570291273
+//Open app
+//ca-app-pub-6852753831370662/2187670512
 
 //app setting::6
 public var admobAdKey: String {
@@ -88,7 +88,7 @@ public var admobAdKey: String {
         case Bangla:
             return ""
         case BanglaGoti:
-            return "ca-app-pub-6852753831370662/2187670512"
+            return "ca-app-pub-6852753831370662/6954560826"
         case BanglaDruti:
             return "ca-app-pub-9133033983333483/1492998119"
         case Thai:
@@ -150,11 +150,6 @@ public var admobAdKey: String {
         }
     }
 }
-
-//    Thai Native
-//    ca-app-pub-6852753831370662/2572374392
-//    thai App open
-//    ca-app-pub-6852753831370662/1048268689
 
 //app setting::6.2
 var nativeAdKey: String {
@@ -234,7 +229,7 @@ var nativeAdKey: String {
             case Bangla:
                 return ""
             case BanglaGoti:
-                return "ca-app-pub-6852753831370662/5883372944"
+                return "ca-app-pub-6852753831370662/2187670512"
             case BanglaDruti:
                 return ""
             case Thai:

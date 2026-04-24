@@ -318,7 +318,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             AdmobController.shared.interstitialAd?.fullScreenContentDelegate = self
             AdmobController.shared.interstitialAd?.present(from: viewController)
             currentAdUnit = .APP_OPEN
-            log("currentAdUnit:\(currentAdUnit)")
+            log("currentAdUnit:\(currentAdUnit) admobAdKey::\(admobAdKey)")
         }
     }
     
