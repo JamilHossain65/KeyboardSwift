@@ -72,6 +72,14 @@ var langName: String {
     }
 }
 
+//ca-app-pub-6852753831370662/6311791933
+//
+//App open
+//ca-app-pub-6852753831370662/8445859049
+//
+//Native app
+//ca-app-pub-6852753831370662/4938480996
+
 //app setting::6
 public var admobAdKey: String {
     get {
@@ -124,7 +132,7 @@ public var admobAdKey: String {
         case Korean:
             return ""
         case Turkish:
-            return ""
+            return "ca-app-pub-6852753831370662/6311791933"
         case Portuguese:
             return ""
         case Burmese:
@@ -200,7 +208,7 @@ var nativeAdKey: String {
         case Korean:
             return ""
         case Turkish:
-            return ""
+            return "ca-app-pub-6852753831370662/4938480996"
         case Portuguese:
             return ""
         case Burmese:
@@ -270,7 +278,7 @@ var nativeAdKey: String {
             case Korean:
                 return ""
             case Turkish:
-                return ""
+                return "ca-app-pub-6852753831370662/8445859049"
             case Portuguese:
                 return ""
             case Burmese:

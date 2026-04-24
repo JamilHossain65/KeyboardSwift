@@ -8,7 +8,7 @@
 import UIKit
 import AudioToolbox
 
-protocol KeyboardViewDelegate: class {
+protocol KeyboardViewDelegate: AnyObject {
     func insertCharacter   (_ newCharacter: String)
     func deleteCharacter   (_ newCharacter: String)
     func gotoNextKeyboard  (_ nextButton  : UIButton)

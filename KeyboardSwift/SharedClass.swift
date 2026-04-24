@@ -137,7 +137,7 @@ var SUITE_KEY: String {
         case Korean:
             return ""
         case Turkish:
-            return ""
+            return "group.com.vaticsoft.BurmeseKeyboard"
         case Portuguese:
             return ""
         case Burmese:
@@ -149,7 +149,7 @@ var SUITE_KEY: String {
         case SmartFonts:
             return "group."
         default://English
-            return "group.com.jamil.BanglaKeyboard"
+            return ""
         }
     }
 }
@@ -223,12 +223,12 @@ let SmartFonts  = "SmartFonts"
 var activeLanguages = [
     English :true,  Indonesian:false, Bangla    :false, Russian  :false,
     Spanish :false, French    :false, German    :false, Italian  :false,
-    Korean  :false, Turkish   :false, Portuguese:false,
+    Korean  :false, Turkish   :true, Portuguese:false,
     //indian group
     Gujarati:false, Hindi    :false,  Kannada  :false,  Malayalam:false,
     Marathi :false, Nepali   :false,  Oriya    :false,  Punjabi  :false,
     Sanskrit:false, Tamil    :false,  Telugu   :false,  Urdu     :false,
-    BanglaGoti:true, BanglaDruti:false, Thai  :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai  :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false,
 ]
 
