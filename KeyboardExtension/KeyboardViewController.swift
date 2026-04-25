@@ -53,7 +53,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(BanglaGoti, for: .normal) //MARK: - do it dynamic
+        button.setTitle(Turkish, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
@@ -379,8 +379,8 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
     
     func showSettingOptionView(){
         
-        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
-        if !isAppUsed { return }
+//        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
+//        if !isAppUsed { return }
         
         if let _floatingButtonView = floatingButtonView {
             _floatingButtonView.removeFromSuperview()

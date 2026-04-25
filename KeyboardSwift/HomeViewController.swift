@@ -46,7 +46,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     let halfYearlySubs = "com.vaticsoft.iap.burmese.keyboard.halfYearly"
     let yearlySubs = "com.vaticsoft.iap.burmese.keyboard.yearly"
     
-    //app setting::12
+    //app setting::10
     var fullVersionID: String {
         get {
             let langName = getString(SelectedLanguage)
@@ -176,8 +176,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let adButton = UIBarButtonItem(title: "    ", style: .plain, target: self, action: #selector(showAdmobInterstitial))
         let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonPressed))
         
-        self.navigationItem.leftBarButtonItems = [restore,buy]
-        self.navigationItem.rightBarButtonItems = [ /*adButton,*/ done]
+//        self.navigationItem.leftBarButtonItems = [restore,buy]
+//        self.navigationItem.rightBarButtonItems = [ /*adButton,*/ done]
         
         self.textView.frame.origin.y = SizeConfig.navBarHeight
         

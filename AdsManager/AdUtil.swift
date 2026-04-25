@@ -360,7 +360,7 @@ var admobAdRewardedKey: String {
     }
 }
 
-//app setting:: 11
+//app setting::11
 var admobAdRewardedInterstitialKey: String {
     get {
         //let langName = getString(SelectedLanguage)
