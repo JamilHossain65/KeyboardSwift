@@ -282,7 +282,6 @@
 		8D02F5F927B178B9008AA6E3 /* italian.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F527B178B9008AA6E3 /* italian.txt */; };
 		8D02F5FA27B178B9008AA6E3 /* korean.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F627B178B9008AA6E3 /* korean.txt */; };
 		8D02F5FB27B178B9008AA6E3 /* german.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F727B178B9008AA6E3 /* german.txt */; };
-		8D0D4C842F99EB6C00080489 /* Turkish-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D372E132F9927C6002835DC /* Turkish-Info.plist */; };
 		8D1369012A5A76FA0036CAD7 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D1C0A2E2A2E44F700E61C3B /* UnicodeTh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */; };
@@ -929,7 +928,6 @@
 		8D3713102CB5339C0060FDA0 /* sound_recog.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = sound_recog.py; sourceTree = "<group>"; };
 		8D3713112CB5339C0060FDA0 /* sound.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = sound.py; sourceTree = "<group>"; };
 		8D3713122CB5339C0060FDA0 /* speech_recog_test.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = speech_recog_test.py; sourceTree = "<group>"; };
-		8D372E132F9927C6002835DC /* Turkish-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Turkish-Info.plist"; sourceTree = "<group>"; };
 		8D3AE8A52A56CE7000C74CF6 /* SmartFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3AE8A62A56CE7100C74CF6 /* SmartFonts-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SmartFonts-Info.plist"; path = "/Users/jamil/Desktop/KeyboardSwift/SmartFonts-Info.plist"; sourceTree = "<absolute>"; };
 		8D3E230B279BCF280067DC30 /* russian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = russian.txt; sourceTree = "<group>"; };
@@ -1054,6 +1052,7 @@
 		8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "hello (16bit PCM).wav"; sourceTree = "<group>"; };
 		8DD507752681644A00377CBD /* SpeechModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechModel.swift; sourceTree = "<group>"; };
 		8DD77819276231920088E282 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		8DD7DC6F2F9CFA42007D78AE /* Turkish-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Turkish-Info.plist"; sourceTree = "<group>"; };
 		8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
 		8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAudienceNetwork.swift; sourceTree = "<group>"; };
 		8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBAudienceNetwork.xib; sourceTree = "<group>"; };
@@ -1612,7 +1611,7 @@
 				8D7E9F4D2A5E5BC50011621C /* Druti-Info.plist */,
 				8D8A99282A62DAF40092ADB9 /* Japanese-Info.plist */,
 				8D981F042A650AC70072A8D3 /* Burmese-Info.plist */,
-				8D372E132F9927C6002835DC /* Turkish-Info.plist */,
+				8DD7DC6F2F9CFA42007D78AE /* Turkish-Info.plist */,
 				8D3AE8A62A56CE7100C74CF6 /* SmartFonts-Info.plist */,
 				8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */,
 				8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */,
@@ -2115,7 +2114,6 @@
 				8D0138A22A5C59920091CC58 /* good-morning-google.flac in Resources */,
 				8DDBA4DF2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0138A32A5C59920091CC58 /* AdmobController.xib in Resources */,
-				8D0D4C842F99EB6C00080489 /* Turkish-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
