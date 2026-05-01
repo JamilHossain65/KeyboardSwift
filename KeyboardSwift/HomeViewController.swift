@@ -297,7 +297,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                         AdmobController.shared.admobCompletion = { _ in
                             print("admobCompletion....")
                             self.isStatusBarHidden = false
-                            LoadingView.shared.dismish()
                             self.textView.becomeFirstResponder()
                         }
                     }
@@ -306,7 +305,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                     DispatchQueue.main.async {
                         self.textView.resignFirstResponder()
                         self.isStatusBarHidden = true
-                        LoadingView.shared.showLoading(view: self.view)
                         self.perform(#selector(self.dismissLoading), with: nil, afterDelay: 10)
                     }
                 }
@@ -317,8 +315,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
      */
     
     @objc func dismissLoading(){
-        self.isStatusBarHidden = false
-        LoadingView.shared.dismish()
+        //self.isStatusBarHidden = false
     }
     
     @objc func loadRewardedAdmob(){

@@ -203,7 +203,6 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
               //    options.customRewardString = "SAMPLE_CUSTOM_DATA_STRING"
             //AdmobController.shared.interstitialAd?.serverSideVerificationOptions = options
             adLoadingStatus = .LOADED
-            LoadingView.shared.dismish()
 
             if isShow!{
                 self.loadAdmobOn(viewController)
@@ -261,7 +260,6 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
               //    options.customRewardString = "SAMPLE_CUSTOM_DATA_STRING"
             //AdmobController.shared.interstitialAd?.serverSideVerificationOptions = options
             adLoadingStatus = .LOADED
-            LoadingView.shared.dismish()
 
             if isShow!{
                 self.loadAdmobOn(viewController)
@@ -369,7 +367,6 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         AdmobController.shared.interstitialAd = nil
         AdmobController.shared.appOpenAd = nil
         AdmobController.shared.rewardedAd = nil
-        LoadingView.shared.removeFromSuperview()
         adLoadingStatus = .NOT_REQUESTED
         admobCompletion?(error)
     }
@@ -472,21 +469,17 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
 }
 
 //MARK: - NATIVE AD DELEGATE METHODS
-
-
-
 extension AdmobController: VideoControllerDelegate {
-
-func videoControllerDidEndVideoPlayback(_ videoController: VideoController) {
-  videoStatusLabel.text = "Video playback has ended."
-}
+   func videoControllerDidEndVideoPlayback(_ videoController: VideoController) {
+        videoStatusLabel.text = "Video playback has ended."
+   }
 }
 
 extension AdmobController: @preconcurrency AdLoaderDelegate {
-func adLoader(_ adLoader: AdLoader, didFailToReceiveAdWithError error: Error) {
-  print("\(adLoader) failed with error: \(error.localizedDescription)")
-  refreshAdButton.isEnabled = true
-}
+    func adLoader(_ adLoader: AdLoader, didFailToReceiveAdWithError error: Error) {
+         print("\(adLoader) failed with error: \(error.localizedDescription)")
+         refreshAdButton.isEnabled = true
+    }
 }
 
 extension AdmobController: NativeAdLoaderDelegate {
