@@ -237,6 +237,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         super.viewWillAppear(animated)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.resignFirstResponder()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden
     }
