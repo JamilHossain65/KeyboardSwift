@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/Appodeal/AppodealPrivacyInfo.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/FBAudienceNetwork/FBAudienceNetwork.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/GoogleMobileAdsResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/UserMessagingPlatformResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/StackConsentManager/ConsentPrivacyInfo.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/StackModules/StackModules.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/StackModules/StackProductPresentation.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/StackModules/StackRendering.bundle

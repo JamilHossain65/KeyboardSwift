@@ -1,0 +1,3 @@
+${PODS_XCFRAMEWORKS_BUILD_DIR}/StackModules/Core-Static/StackModules.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/StackModules/ProductPresentation-Static/StackProductPresentation.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/StackModules/Rendering-Static/StackRendering.framework
