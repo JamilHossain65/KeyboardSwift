@@ -317,7 +317,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
         
     }
-     */
+    */
     
     @objc func dismissLoading(){
         //self.isStatusBarHidden = false

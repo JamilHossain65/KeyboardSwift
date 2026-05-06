@@ -282,6 +282,7 @@
 		8D02F5F927B178B9008AA6E3 /* italian.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F527B178B9008AA6E3 /* italian.txt */; };
 		8D02F5FA27B178B9008AA6E3 /* korean.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F627B178B9008AA6E3 /* korean.txt */; };
 		8D02F5FB27B178B9008AA6E3 /* german.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D02F5F727B178B9008AA6E3 /* german.txt */; };
+		8D04EE802FAA323D0015DCE9 /* Turkish-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D04EE7E2FAA321E0015DCE9 /* Turkish-Info.plist */; };
 		8D1369012A5A76FA0036CAD7 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D140F4A26C0E4A200512477 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D1C0A2E2A2E44F700E61C3B /* UnicodeTh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C0A2D2A2E44F700E61C3B /* UnicodeTh.swift */; };
@@ -915,6 +916,7 @@
 		8D02F5F527B178B9008AA6E3 /* italian.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = italian.txt; sourceTree = "<group>"; };
 		8D02F5F627B178B9008AA6E3 /* korean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = korean.txt; sourceTree = "<group>"; };
 		8D02F5F727B178B9008AA6E3 /* german.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = german.txt; sourceTree = "<group>"; };
+		8D04EE7E2FAA321E0015DCE9 /* Turkish-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Turkish-Info.plist"; sourceTree = "<group>"; };
 		8D06A3E225E6EC6800E3B47E /* JhUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JhUtil.swift; sourceTree = "<group>"; };
 		8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = submit_info.rtf; sourceTree = "<group>"; };
 		8D0D37472A40BE010006741B /* AdAppodeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdAppodeal.swift; sourceTree = "<group>"; };
@@ -1052,7 +1054,6 @@
 		8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "hello (16bit PCM).wav"; sourceTree = "<group>"; };
 		8DD507752681644A00377CBD /* SpeechModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechModel.swift; sourceTree = "<group>"; };
 		8DD77819276231920088E282 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
-		8DD7DC6F2F9CFA42007D78AE /* Turkish-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Turkish-Info.plist"; sourceTree = "<group>"; };
 		8DDAD62E2F78F7B000BEE310 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
 		8DDBA4CA2A97279000FD24B7 /* FBAudienceNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAudienceNetwork.swift; sourceTree = "<group>"; };
 		8DDBA4CB2A97279000FD24B7 /* FBAudienceNetwork.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBAudienceNetwork.xib; sourceTree = "<group>"; };
@@ -1611,7 +1612,7 @@
 				8D7E9F4D2A5E5BC50011621C /* Druti-Info.plist */,
 				8D8A99282A62DAF40092ADB9 /* Japanese-Info.plist */,
 				8D981F042A650AC70072A8D3 /* Burmese-Info.plist */,
-				8DD7DC6F2F9CFA42007D78AE /* Turkish-Info.plist */,
+				8D04EE7E2FAA321E0015DCE9 /* Turkish-Info.plist */,
 				8D3AE8A62A56CE7100C74CF6 /* SmartFonts-Info.plist */,
 				8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */,
 				8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */,
@@ -2114,6 +2115,7 @@
 				8D0138A22A5C59920091CC58 /* good-morning-google.flac in Resources */,
 				8DDBA4DF2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0138A32A5C59920091CC58 /* AdmobController.xib in Resources */,
+				8D04EE802FAA323D0015DCE9 /* Turkish-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3703,7 +3705,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.SmartKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -3734,7 +3736,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.SmartKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -3876,7 +3878,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Turkish-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -3885,7 +3887,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.turkish.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3906,7 +3908,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "Turkish-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -3916,7 +3918,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.turkish.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4357,7 +4359,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -4366,9 +4368,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.keyboard.thai.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.turkish.keyboard.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4386,7 +4388,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = KeyboardExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -4395,9 +4397,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.keyboard.thai.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.turkish.keyboard.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
