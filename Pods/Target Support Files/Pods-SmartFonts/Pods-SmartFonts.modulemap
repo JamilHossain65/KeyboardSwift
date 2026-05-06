@@ -1,0 +1,6 @@
+framework module Pods_SmartFonts {
+  umbrella header "Pods-SmartFonts-umbrella.h"
+
+  export *
+  module * { export * }
+}

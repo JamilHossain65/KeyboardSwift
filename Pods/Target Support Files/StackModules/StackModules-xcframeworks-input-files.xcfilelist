@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/StackModules/StackModules-xcframeworks.sh
+${PODS_ROOT}/StackModules/release/Static/StackModules.xcframework
+${PODS_ROOT}/StackModules/release/Static/StackProductPresentation.xcframework
+${PODS_ROOT}/StackModules/release/Static/StackRendering.xcframework
