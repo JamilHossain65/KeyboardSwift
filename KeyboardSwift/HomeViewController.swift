@@ -46,7 +46,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     let halfYearlySubs = "com.vaticsoft.iap.burmese.keyboard.halfYearly"
     let yearlySubs = "com.vaticsoft.iap.burmese.keyboard.yearly"
     
-    //app setting::10
+    //app setting::110
     var fullVersionID: String {
         get {
             let langName = getString(SelectedLanguage)

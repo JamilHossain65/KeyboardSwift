@@ -144,18 +144,16 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     //      adTypes: [.native], options: nil)
     //    adLoader.delegate = self
     //    adLoader.load(Request())
-        
+        print("nativeAdKey::\(nativeAdKey)")
         let multipleAdOptions = MultipleAdsAdLoaderOptions()
-        multipleAdOptions.numberOfAds = 5
-        
-          adLoader = AdLoader(
-             adUnitID: nativeAdKey,
-             rootViewController: self,
+        multipleAdOptions.numberOfAds = 1
+        adLoader = AdLoader(adUnitID: nativeAdKey,rootViewController: self,
              adTypes: [.native],
-             options: [multipleAdOptions])
+             options: [multipleAdOptions]
+        )
+         
         adLoader.delegate = self
         adLoader.load(Request())
-        
     }
 
     /// Returns a `UIImage` representing the number of stars from the given star rating; returns `nil`
@@ -177,11 +175,12 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
       }
     }
     
-    func loadAdmobOn(_ viewController:UIViewController){
-        let adVC = AdmobController(nibName: "AdmobController", bundle: nil)
-        viewController.view.addSubview(adVC.view)
-        viewController.addChild(adVC)
-    }
+//    func loadAdmobOn(_ viewController:UIViewController){
+//        let adVC = AdmobController(nibName: "AdmobController", bundle: nil)
+//        viewController.view.addSubview(adVC.view)
+//        viewController.addChild(adVC)
+//    }
+    
     /*
     func loadRewardedAd(_ viewController:UIViewController, isShow:Bool? = false){
         //if !Reachability.isConnected() { return }
@@ -311,7 +310,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
                 return log("Failed to load interstitial ad with error: \(error.localizedDescription)")
             }
 
-            self.loadAdmobOn(viewController)
+            //self.loadAdmobOn(viewController)
             AdmobController.shared.interstitialAd = ad
             AdmobController.shared.interstitialAd?.fullScreenContentDelegate = self
             AdmobController.shared.interstitialAd?.present(from: viewController)
@@ -331,7 +330,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             }
 
             
-            self.loadAdmobOn(viewController)
+            //self.loadAdmobOn(viewController)
             AdmobController.shared.appOpenAd = ad
             AdmobController.shared.appOpenAd?.fullScreenContentDelegate = self
             AdmobController.shared.appOpenAd?.present(from: viewController)

@@ -80,7 +80,7 @@ var langName: String {
 //Open app
 //ca-app-pub-6852753831370662/2187670512
 
-//app setting::6
+//app setting::106
 public var admobAdKey: String {
     get {
         //let langName = getString(SelectedLanguage)
@@ -136,8 +136,7 @@ public var admobAdKey: String {
         case Portuguese:
             return ""
         case Burmese:
-            //return "ca-app-pub-9133033983333483/2368759846"
-            return "ca-app-pub-7802882478784013/3431237527"
+            return "ca-app-pub-7802882478784013/4571622860"
             
         case JpHiragana:
             return "ca-app-pub-9133033983333483/4102060257"
@@ -207,8 +206,7 @@ var nativeAdKey: String {
         case Portuguese:
             return ""
         case Burmese:
-            return ""
-            
+            return "ca-app-pub-7802882478784013/9382565996"
         case JpHiragana:
             return ""
         case JpKatakana:
@@ -360,7 +358,7 @@ var admobAdRewardedKey: String {
     }
 }
 
-//app setting::11
+//app setting::111
 var admobAdRewardedInterstitialKey: String {
     get {
         //let langName = getString(SelectedLanguage)
