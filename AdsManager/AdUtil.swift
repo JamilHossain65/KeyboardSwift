@@ -208,9 +208,9 @@ var nativeAdKey: String {
         case Burmese:
             return "ca-app-pub-7802882478784013/9382565996"
         case JpHiragana:
-            return ""
+            return "ca-app-pub-9133033983333483/4431969135"
         case JpKatakana:
-            return ""
+            return "ca-app-pub-9133033983333483/4431969135"
         case SmartFonts:
             return ""
         default://English
@@ -278,9 +278,9 @@ var nativeAdKey: String {
                 return "ca-app-pub-7802882478784013/3431237527"
 
             case JpHiragana:
-                return ""
+                return "ca-app-pub-9133033983333483/3016769511"
             case JpKatakana:
-                return ""
+                return "ca-app-pub-9133033983333483/3016769511"
             case SmartFonts:
                 return ""
             default://English
