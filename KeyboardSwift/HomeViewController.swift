@@ -27,12 +27,12 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
-    //app setting::7
+    //app setting::5
     //MARK: - TODO manually: "Bundle display name" of 'TargetName_info.plist' file replace to keyboardExtension "Display Name".
     //copy "Bundle identifier" from submit_info.txt file and paste the Bundle Identifier to keyboardExtension.
     //select group from  Siging & Capabilities both target app and keyboardExtension app.
     
-    //app setting::8
+    //app setting::6
     //MARK: - TODO manually: Target version and keyboardExtension will be same.
     
     //access token
