@@ -1068,6 +1068,7 @@
 		8DE7F9C525E4784200D3C48A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
+		8DEECF942FB0D467008B05E2 /* StartCloudBuild.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = StartCloudBuild.txt; sourceTree = "<group>"; };
 		8DF36877266C20670098EA60 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHKeyPopup.swift; sourceTree = "<group>"; };
 		8DF622DD2A34454800061C6B /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = Base.lproj/th.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1546,6 +1547,7 @@
 			isa = PBXGroup;
 			children = (
 				8DFDDA2A27E2F947005AD90B /* KeyboardSwift-Bridging-Header.h */,
+				8DEECF942FB0D467008B05E2 /* StartCloudBuild.txt */,
 				8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */,
 				8DE7F94A25E4474A00D3C48A /* KeyboardSwift */,
 				8DE7F9C225E4784200D3C48A /* KeyboardExtension */,
