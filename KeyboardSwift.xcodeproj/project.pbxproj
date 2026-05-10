@@ -1547,7 +1547,6 @@
 			isa = PBXGroup;
 			children = (
 				8DFDDA2A27E2F947005AD90B /* KeyboardSwift-Bridging-Header.h */,
-				8DEECF942FB0D467008B05E2 /* StartCloudBuild.txt */,
 				8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */,
 				8DE7F94A25E4474A00D3C48A /* KeyboardSwift */,
 				8DE7F9C225E4784200D3C48A /* KeyboardExtension */,
@@ -1630,6 +1629,7 @@
 				8D769A0C265F3BED00C74FBA /* Assets.xcassets */,
 				8D2B61D6275A5FE80099DE30 /* key_sound.mp3 */,
 				8DE7F9C525E4784200D3C48A /* Info.plist */,
+				8DEECF942FB0D467008B05E2 /* StartCloudBuild.txt */,
 			);
 			path = KeyboardExtension;
 			sourceTree = "<group>";
