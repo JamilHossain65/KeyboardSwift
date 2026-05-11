@@ -1030,6 +1030,7 @@
 		8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdManager.swift; sourceTree = "<group>"; };
 		8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		8DA96A8727E98E08009CF1E9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8DAEEF2C2FB235AD00101186 /* German-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "German-Info.plist"; sourceTree = "<group>"; };
 		8DB2747327E222B3000518B0 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8DB2747427E222B3000518B0 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		8DB274B627E226C4000518B0 /* AdAppodeal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdAppodeal.xib; sourceTree = "<group>"; };
@@ -1609,6 +1610,7 @@
 				8D8A99282A62DAF40092ADB9 /* Japanese-Info.plist */,
 				8D981F042A650AC70072A8D3 /* Burmese-Info.plist */,
 				8D04EE7E2FAA321E0015DCE9 /* Turkish-Info.plist */,
+				8DAEEF2C2FB235AD00101186 /* German-Info.plist */,
 				8D3AE8A62A56CE7100C74CF6 /* SmartFonts-Info.plist */,
 				8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */,
 				8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */,
@@ -3691,7 +3693,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "German-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -3700,7 +3702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3721,7 +3723,7 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8KNMV3DJ4V;
 				INFOPLIST_FILE = "German-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -3731,7 +3733,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4364,9 +4366,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4393,9 +4395,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.russian.keyboard.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.german.keyboard.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

@@ -221,8 +221,8 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :true,
-    Spanish :false, French    :false, German    :false, Italian  :false,
+    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
+    Spanish :false, French    :false, German    :true, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi     :false,  Kannada  :false,  Malayalam :false,
@@ -234,7 +234,7 @@ var activeLanguages = [
 
 var countryCodes  = [
     English :"us", Indonesian:"id", Bangla    :"bd", Russian  :"ru",
-    Spanish :"es", French    :"fr", German    :"gr", Italian  :"it",
+    Spanish :"es", French    :"fr", German    :"de", Italian  :"it",
     Korean  :"ko", Turkish   :"tr", Portuguese:"pt",
     Gujarati:"",   Hindi     :"In", Kannada   :"",   Malayalam:"",
     Marathi :"",   Nepali    :"",   Oriya     :"",   Punjabi  :"",
@@ -245,7 +245,7 @@ var countryCodes  = [
 
 var languageCodes = [
     English :"en", Indonesian:"id", Bangla    :"bn", Russian  :"ru",
-    Spanish :"es", French    :"fr", German    :"gr", Italian  :"it",
+    Spanish :"es", French    :"fr", German    :"de", Italian  :"it",
     Korean  :"ko", Turkish   :"tr", Portuguese:"pt",
     Gujarati:"gu", Hindi     :"hi", Kannada   :"kn", Malayalam:"ml",
     Marathi :"mr", Nepali    :"",   Oriya     :"or", Punjabi  :"pa",

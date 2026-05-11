@@ -80,6 +80,15 @@ var langName: String {
 //Open app
 //ca-app-pub-6852753831370662/2187670512
 
+//GER
+//INTER
+//ca-app-pub-7802882478784013/3804598385
+//
+//OPEN
+//ca-app-pub-7802882478784013/7364569441
+//NATIVE
+//ca-app-pub-7802882478784013/3425324436
+
 //app setting::106
 public var admobAdKey: String {
     get {
@@ -126,7 +135,7 @@ public var admobAdKey: String {
         case French:
             return ""
         case German:
-            return ""
+            return "ca-app-pub-7802882478784013/3804598385"
         case Italian:
             return ""
         case Korean:
@@ -196,7 +205,7 @@ var nativeAdKey: String {
         case French:
             return ""
         case German:
-            return ""
+            return "ca-app-pub-7802882478784013/3425324436"
         case Italian:
             return ""
         case Korean:
@@ -265,7 +274,7 @@ var nativeAdKey: String {
             case French:
                 return ""
             case German:
-                return ""
+                return "ca-app-pub-7802882478784013/7364569441"
             case Italian:
                 return ""
             case Korean:
