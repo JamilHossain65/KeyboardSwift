@@ -117,7 +117,6 @@
 		8D0137EE2A5C59860091CC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95625E4476900D3C48A /* LaunchScreen.storyboard */; };
 		8D0137EF2A5C59860091CC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE7F95125E4474A00D3C48A /* Main.storyboard */; };
 		8D0137F02A5C59860091CC58 /* AdAppodeal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB274B627E226C4000518B0 /* AdAppodeal.xib */; };
-		8D0137F12A5C59860091CC58 /* SmartFonts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1369002A5A76FA0036CAD7 /* SmartFonts.xcassets */; };
 		8D0137F32A5C59860091CC58 /* bangla.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076626815FEA00377CBD /* bangla.flac */; };
 		8D0137F42A5C59860091CC58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D91D30D27B7C3EB001BB9A4 /* Localizable.strings */; };
 		8D0137F62A5C59860091CC58 /* busy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8D713FDA26EEEACE0064DE3A /* busy.gif */; };
@@ -2037,7 +2036,6 @@
 				8DA8FB3E2F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
 				8DA8FB842F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8DA179132F83937F00845266 /* NativeAdView.xib in Resources */,
-				8D0137F12A5C59860091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0137F32A5C59860091CC58 /* bangla.flac in Resources */,
 				8D0137F42A5C59860091CC58 /* Localizable.strings in Resources */,
 				8D0137F62A5C59860091CC58 /* busy.gif in Resources */,

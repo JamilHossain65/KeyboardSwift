@@ -32,4 +32,8 @@ let kUnicodeGePuncuation = "[৹ ]৹ {৹ }৹ #৹ %৹ ^৹ *৹ +৹ =৹ \(
 
 
 //MARK:- Hint words
-let hintWordsGe = "e è é ê ë ē ė ę,y ÿ,u û ü ù ú ū,i î ï í ī į ì,o ô ö ò ó œ ø ō õ,a à á â ä æ ã å ā,s ß ś š,c ç ć č,n ñ ń,E È É Ê Ë Ē Ė Ę,Y Ÿ,U Û Ü Ù Ú Ū,I Î Ï Í Ī Į Ì,O Ô Ö Ò Ó Ó Œ Ø Ō Õ,A À Á Â Ä Æ Ã Å Ā,S Ś Š,C Ç Ć Č,N Ñ Ń"
+let hintWordsGe = "A Ä,a ä,O Ö,o ö,U Ü,u ü,B ß,b ß"
+
+//O Ö o ö
+//U Ü u ü
+//B ß
