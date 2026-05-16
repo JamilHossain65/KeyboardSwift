@@ -1012,6 +1012,7 @@
 		8D981F032A650AC50072A8D3 /* Burmese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Burmese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D981F042A650AC70072A8D3 /* Burmese-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Burmese-Info.plist"; path = "/Users/jamil/Desktop/KeyboardSwift/Burmese-Info.plist"; sourceTree = "<absolute>"; };
 		8D981F052A6510F40072A8D3 /* BurmeseAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BurmeseAssets.xcassets; sourceTree = "<group>"; };
+		8D99441D2FB793F600E8D6B5 /* German-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "German-Info.plist"; sourceTree = "<group>"; };
 		8D9AA16D2682DEDC00EA136D /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8D9F6700275B8756006E65BE /* words_en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_en.txt; sourceTree = "<group>"; };
 		8D9F89EA27AFF77800D6E517 /* bangla.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bangla.txt; sourceTree = "<group>"; };
@@ -1068,7 +1069,6 @@
 		8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		8DEECF942FB0D467008B05E2 /* StartCloudBuild.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = StartCloudBuild.txt; sourceTree = "<group>"; };
-		8DF083AE2FB3588A003D73D8 /* German-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "German-Info.plist"; sourceTree = "<group>"; };
 		8DF36877266C20670098EA60 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHKeyPopup.swift; sourceTree = "<group>"; };
 		8DF622DD2A34454800061C6B /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = Base.lproj/th.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1607,7 +1607,7 @@
 				8D7E9F4B2A5E4C7A0011621C /* Thai-Info.plist */,
 				8D7E9F4D2A5E5BC50011621C /* Druti-Info.plist */,
 				8D8A99282A62DAF40092ADB9 /* Japanese-Info.plist */,
-				8DF083AE2FB3588A003D73D8 /* German-Info.plist */,
+				8D99441D2FB793F600E8D6B5 /* German-Info.plist */,
 				8D981F042A650AC70072A8D3 /* Burmese-Info.plist */,
 				8D04EE7E2FAA321E0015DCE9 /* Turkish-Info.plist */,
 				8D3AE8A62A56CE7100C74CF6 /* SmartFonts-Info.plist */,

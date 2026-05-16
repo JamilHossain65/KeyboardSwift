@@ -151,6 +151,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
                 }
                 log("error currentAdUnit:\(currentAdUnit)")
                 
+                self.loadAd()
+                
                 if self.textView.text.lowercased() == "ad" {
                     DispatchQueue.main.async {
                         // Update UI
@@ -510,13 +512,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @objc func languageButtonTapped(sender:UIButton){
         log("languageButtonTapped::\(actLanguages)")
-        log("currentAdUnit:\(currentAdUnit)")
-        if currentAdUnit == .APP_OPEN {
-            showAdmobAppOpenAd()
-        }else{
-            showAdmobInterstitial()
-        }
-        
+        loadAd()
         
         if actLanguages.count > 2{
             let button = UIButton()
@@ -736,9 +732,12 @@ extension HomeViewController:UITextViewDelegate {
     }
     
     @objc func loadAd(){
-        perform(#selector(loadAd), with: nil, afterDelay: AD_MIN_TIME*0.7)
-        //AdmobController.shared.loadRewardedAd(self)
-        perform(#selector(showAdmobInterstitial), with: nil, afterDelay: AD_MIN_TIME)
+        log("currentAdUnit:\(currentAdUnit)")
+        if currentAdUnit == .APP_OPEN {
+            showAdmobAppOpenAd()
+        }else{
+            showAdmobInterstitial()
+        }
     }
     
     @objc func showAdmobInterstitial(){
