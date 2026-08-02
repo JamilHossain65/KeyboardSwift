@@ -25,17 +25,29 @@ class AudioManager: NSObject,AVAudioRecorderDelegate {
         do {
             try recordingSession.setCategory(.record, mode: .default)
             try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                    } else {
-                        // failed to record!
-                    }
-                }
-            }
+//            recordingSession.requestRecordPermission() { [unowned self] allowed in
+//                DispatchQueue.main.async {
+//                    if allowed {
+//                    } else {
+//                        // failed to record!
+//                    }
+//                }
+//            }
             
         } catch {
             // failed to record!
+        }
+    }
+    
+    func permission(){
+        recordingSession = AVAudioSession.sharedInstance()
+        recordingSession.requestRecordPermission() { [unowned self] allowed in
+            DispatchQueue.main.async {
+                if allowed {
+                } else {
+                    // failed to record!
+                }
+            }
         }
     }
 

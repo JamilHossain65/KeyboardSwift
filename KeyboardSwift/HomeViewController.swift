@@ -495,6 +495,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func recordTapped(){
+        audioManager.permission()
         stopRecord()
         
         audioManager.recordTapped()
