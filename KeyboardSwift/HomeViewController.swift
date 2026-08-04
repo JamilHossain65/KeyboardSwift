@@ -15,6 +15,7 @@ import Appodeal
 import GoogleMobileAds
 import UserMessagingPlatform
 import SwiftyJSON
+import SnapKit
 
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
@@ -38,7 +39,39 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     //access token
     //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
     
-    @IBOutlet weak var textView: UITextView!
+    lazy var textView: UITextView = {
+        let textView = UITextView()
+        textView.delegate = self
+        textView.layer.borderWidth  = 1.0
+        textView.layer.cornerRadius = 8.0
+        textView.layer.borderColor  = UIColor.lightGray.cgColor
+        textView.becomeFirstResponder()
+        return textView
+    }()
+    
+    lazy var recordButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("Speak", for: .normal)
+        button.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 7
+        return button
+    }()
+    
+    lazy var languageButton: UIButton = {
+        let button = UIButton()
+        button.layer.borderWidth  = 1.0
+        button.layer.cornerRadius = 20.0
+        button.layer.borderColor  = UIColor.lightGray.cgColor
+        button.titleLabel?.font   = UIFont(name: "Arial", size: 25)
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.black, for: .selected)
+        button.addTarget(self, action: #selector(languageButtonTapped(sender:)), for: .touchUpInside)
+        button.backgroundColor = .clear
+        
+        return button
+    }()
+    
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
 //    let yearlySubID = "MyApp.sub.allaccess.yearly"
     
@@ -119,8 +152,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     var productsArray: [SKProduct] = []
     
-    var recordButton : UIButton!
-    var languageButton : UIButton!
     let audioManager = AudioManager()
     //app setting:: 104
     //let actLanguages =  [English,Bangla,Gujarati,Hindi,Kannada,Malayalam,Marathi,Oriya,Punjabi,Tamil,Telugu] //activeLanguages.filter({$0.1}).map({$0.0})
@@ -181,8 +212,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
 //        self.navigationItem.leftBarButtonItems = [restore,buy]
 //        self.navigationItem.rightBarButtonItems = [ /*adButton,*/ done]
         
-        self.textView.frame.origin.y = SizeConfig.navBarHeight
-        
         IAPHandler.shared.isLogEnabled = true
         IAPHandler.shared.setProductIds(ids: [fullVersionID]) //[monthlySubs,halfYearlySubs,yearlySubs]
         IAPHandler.shared.fetchAvailableProducts { [weak self](products)   in
@@ -215,18 +244,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             "m҉a҉n҉y҉ f҉o҉n҉t҉s҉ \n"
             //"t̸h̸e̸r̸e̸ a̸r̸e̸ m̸a̸n̸y̸ f̸o̸n̸t̸s̸ i̸ c̸n̸ u̸s̸e̸\n"
         */
-        
-        if let _ = textView{
-            textView.delegate = self
-            textView.layer.borderWidth  = 1.0
-            textView.layer.cornerRadius = 8.0
-            textView.layer.borderColor  = UIColor.lightGray.cgColor
-            textView.becomeFirstResponder()
-        }
-        
-        //textView.text = "saya bisa menulis bahasa indonesia dengan berbicara"
-        //showLoading(view: textView)
-        
+    
+        view.addSubview(textView)
+        view.addSubview(languageButton)
+        view.addSubview(recordButton)
         //record audio
         audioManager.initAudio()
         audioManager.delegate = self
@@ -237,6 +258,31 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        textView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(SizeConfig.navBarHeight)
+            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalToSuperview().multipliedBy(0.33)
+        }
+        
+        recordButton.snp.makeConstraints { make in
+            make.trailing.equalTo(textView).offset(-10)
+            make.bottom.equalTo(textView).offset(-10)
+            make.width.equalTo(70)
+            make.height.equalTo(40)
+            
+        }
+    
+        languageButton.snp.makeConstraints { make in
+            make.trailing.equalTo(recordButton.snp.leading).offset(-10)
+            make.lastBaseline.equalTo(recordButton)
+            make.width.equalTo(recordButton.snp.height)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -264,62 +310,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     func showAdmobAdFromHelperApp(){
         AdmobController.shared.showAdmobInterstitial(self)
     }
-    
-    /*
-    func showAdmobAdFromHelperApp(){
-        //appThaiSetting()
-        //appJpSetting()
-        if !Reachability.isConnected(){ return }
-        if adLoadingStatus == .SHOWING { return }
-            
-        let isAppUsed = getObject(kIsAppUsed) as? Bool ?? false
-        log("isAppUsed:::\(isAppUsed)")
-        log("isAppActive:::\(isAppActive)")
-        log("adLoadingStatus:::\(adLoadingStatus)")
-        
-        isAppActive = true
-        
-        if isAppUsed { //app already used
-            if adLoadingStatus == .LOADED {
-//                if AdmobController.shared.rewardedAd != nil {
-//                    AdmobController.shared.showRewardedAd(self)
-//                }else{
-//                    AdmobController.shared.showAdmobInterstitial(self)
-//                }
-                
-                AdmobController.shared.showAdmobInterstitial(self)
-                
-            }else{
-                DispatchQueue.global(qos: .default).async {
-                    
-//                    if AdmobController.shared.rewardedAd != nil {
-//                        AdmobController.shared.showRewardedAd(self)
-//                    }else{
-//                        AdmobController.shared.showAdmobInterstitial(self)
-//                    }
-                    
-                    AdmobController.shared.showAdmobInterstitial(self)
-                    
-                    DispatchQueue.main.async {
-                        AdmobController.shared.admobCompletion = { _ in
-                            print("admobCompletion....")
-                            self.isStatusBarHidden = false
-                            self.textView.becomeFirstResponder()
-                        }
-                    }
-                    
-                    // Go back to the main thread to update the UI
-                    DispatchQueue.main.async {
-                        self.textView.resignFirstResponder()
-                        self.isStatusBarHidden = true
-                        self.perform(#selector(self.dismissLoading), with: nil, afterDelay: 10)
-                    }
-                }
-            }
-        }
-        
-    }
-    */
     
     @objc func dismissLoading(){
         //self.isStatusBarHidden = false
@@ -402,57 +392,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func addSpeakButtonUI(){
-        recordButton = UIButton(frame: CGRect(x: textView.frame.size.width - 75, y: textView.frame.size.height - 44, width: 70, height: 40))
-        recordButton.setTitle("Speak", for: .normal)
-        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-        recordButton.backgroundColor = .gray
-        recordButton.layer.cornerRadius = 7
         restartSpeech(sec:5)
-        textView.addSubview(recordButton)
     }
     
     func addLangFlagButtonUI(){
-        /*
-        let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
-        let countryCode1 = countryCodes[actLanguages.first ?? ""] ?? ""
-        let countryCode2 = countryCodes[actLanguages.last ?? ""] ?? ""
-        
-        log("countryCode1::\(countryCode1)")
-        log("countryCode2::\(countryCode2)")
-        
-        var codeBd = flag(from: "bd")//bd
-        var codeEn = flag(from: "us") //us
-        
-        if countryCode1 == "us"{
-            codeEn = flag(from: countryCode1)
-            codeBd = flag(from: countryCode2)
-        }else{
-            codeEn = flag(from: countryCode2)
-            codeBd = flag(from: countryCode1)
-        }
-        
-        log("codeBd::\(codeBd)")
-        log("codeEn::\(codeEn)")
-        */
         log("actLanguages::\(actLanguages)")
-        
-        languageButton = UIButton(frame: CGRect(x: textView.frame.size.width - 122, y: textView.frame.size.height - 44, width: 40, height: 40))
-        
-        languageButton.layer.borderWidth  = 1.0
-        languageButton.layer.cornerRadius = 20.0
-        languageButton.layer.borderColor  = UIColor.lightGray.cgColor
-        
-        languageButton.titleLabel?.font   = UIFont(name: "Arial", size: 25)
-        //languageButton.setTitle(countryFlag, for: .normal)
-        
-//        playButton.setTitle("\(codeBd)", for: .normal)
-//        playButton.setTitle("\(codeEn)", for: .selected)
-        languageButton.setTitleColor(.black, for: .normal)
-        languageButton.setTitleColor(.black, for: .selected)
-        
-        languageButton.addTarget(self, action: #selector(languageButtonTapped(sender:)), for: .touchUpInside)
-        textView.addSubview(languageButton)
-        languageButton.backgroundColor = .clear
         
         if actLanguages.count > 2{
             let index:Int   = getObject(SelectedLanguage) as? Int ?? 0

@@ -119,6 +119,7 @@ def otherFramework
   pod 'MBProgressHUD'
   pod 'CryptoSwift'
   pod 'DropDown'
+  pod 'SnapKit'
   
   # pods for Ads
   pod 'IAPHelper'

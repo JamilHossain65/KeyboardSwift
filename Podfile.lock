@@ -90,6 +90,7 @@ PODS:
   - OMSDK_Appodeal (1.5.4)
   - Protobuf (3.29.3)
   - RecaptchaInterop (101.0.0)
+  - SnapKit (5.7.1)
   - StackConsentManager (3.0.0):
     - GoogleUserMessagingPlatform (~> 2.1)
   - StackModules (3.1.0):
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - IAPHelper
   - MBProgressHUD
+  - SnapKit
 
 SPEC REPOS:
   https://github.com/appodeal/CocoaPods.git:
@@ -153,6 +155,7 @@ SPEC REPOS:
     - OMSDK_Appodeal
     - Protobuf
     - RecaptchaInterop
+    - SnapKit
     - StackModules
     - SwiftyJSON
 
@@ -184,10 +187,11 @@ SPEC CHECKSUMS:
   OMSDK_Appodeal: 9ed58fc8cabfbe31637cd267b35c1f86d227c49d
   Protobuf: e2de96d939c642ce8da186343ff8929b35223212
   RecaptchaInterop: 11e0b637842dfb48308d242afc3f448062325aba
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   StackConsentManager: 3ef396bb4870b0772db2bb95f23d2ed304ba543d
   StackModules: f43fdc3fc047c0e208a6a44d604c97b2d1651bd7
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: fef6524aac5ded237ffba156cfdf2237ba1ba3b5
+PODFILE CHECKSUM: dfc50796c584573324485ead59ccd30690c6c669
 
 COCOAPODS: 1.16.2
