@@ -89,6 +89,15 @@ var langName: String {
 //NATIVE
 //ca-app-pub-7802882478784013/3425324436
 
+//Interstitial
+//ca-app-pub-4020516547273393/2176452563
+//Admob id
+//ca-app-pub-4020516547273393~7293897930
+//App open
+//
+//ca-app-pub-4020516547273393/9273996345
+
+
 //app setting::106
 public var admobAdKey: String {
     get {
@@ -99,7 +108,7 @@ public var admobAdKey: String {
         case BanglaGoti:
             return "ca-app-pub-6852753831370662/6954560826"
         case BanglaDruti:
-            return "ca-app-pub-9133033983333483/1492998119"
+            return "ca-app-pub-4020516547273393/2176452563"
         case Thai:
             return "ca-app-pub-6852753831370662/2157832232"
         case Gujarati:
@@ -238,7 +247,7 @@ var nativeAdKey: String {
             case BanglaGoti:
                 return "ca-app-pub-6852753831370662/2187670512"
             case BanglaDruti:
-                return ""
+                return "ca-app-pub-4020516547273393/9273996345"
             case Thai:
                 return "ca-app-pub-6852753831370662/1048268689"
             case Gujarati:
