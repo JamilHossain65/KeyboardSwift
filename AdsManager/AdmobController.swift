@@ -103,7 +103,9 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
 
     /// Handle changes to user consent.
     @IBAction func privacySettingsTapped(_ sender: UIBarButtonItem) {
-      Task {
+        //conscent
+      /*
+        Task {
         do {
           try await GoogleMobileAdsConsentManager.shared.presentPrivacyOptionsForm(from: self)
         } catch {
@@ -117,6 +119,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
           present(alertController, animated: true)
         }
       }
+        */
     }
 
     /// Handle ad inspector launch.
@@ -394,6 +397,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         adLoadingStatus = .NOT_REQUESTED
     }
     
+    
     //MARK: - Google Concent Methods
     static func askForConsentForm(_ controller:UIViewController, completion: @escaping () -> Void) {
         let umpParams = UMPRequestParameters()
@@ -403,7 +407,8 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         debugSettings.geography = UMPDebugGeography.EEA
         #endif  // DEBUG
         umpParams.debugSettings = debugSettings
-        umpParams.tagForUnderAgeOfConsent = false
+        //umpParams.isTaggedForUnderAgeOfConsent = false
+        
         
         UMPConsentInformation
             .sharedInstance

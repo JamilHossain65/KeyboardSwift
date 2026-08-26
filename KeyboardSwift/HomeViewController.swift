@@ -168,9 +168,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         self.view.backgroundColor = .white
         isAppActive = true
         //01755185528 Hafez Hamidul
-        AdmobController.askForConsentForm(self, completion: {
-            //AdmobController.shared.startGoogleMobileAdsSDK()
-        })
+        AdmobController.askForConsentForm(self, completion: { })
         
         // Debug error message for admob
         AdmobController.shared.admobCompletion = { error in

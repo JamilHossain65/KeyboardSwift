@@ -19,7 +19,7 @@ DerivedData/
 Carthage/
 
 # CocoaPods
-#Pods/
+Pods/
 #Podfile.lock
 
 # fastlane

@@ -112,7 +112,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Alamofire-SwiftyJSON
   - AlamofireImage
-  - Appodeal (= 3.5.2)
+  - Appodeal (~> 3.5.0)
   - CryptoSwift
   - DropDown
   - FBAudienceNetwork
@@ -192,6 +192,6 @@ SPEC CHECKSUMS:
   StackModules: f43fdc3fc047c0e208a6a44d604c97b2d1651bd7
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: dfc50796c584573324485ead59ccd30690c6c669
+PODFILE CHECKSUM: b284cc302966c3f17d91d52b524df9e658dfa3a2
 
 COCOAPODS: 1.16.2
