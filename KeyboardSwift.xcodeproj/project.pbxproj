@@ -13,7 +13,7 @@
 		305707131A5659F3CA6D0B47 /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8AD3BC8F93541FCAD1A7B6 /* Pods_SmartFonts.framework */; };
 		39583759BCC13E57B8E8447A /* Pods_Indian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04AB6D110F98D50483010F0 /* Pods_Indian.framework */; };
 		3A724E1B8EE9B3743BF712FC /* Pods_Bhahasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16922954E0A7F4434FA5CF0D /* Pods_Bhahasa.framework */; };
-		6A45486FEC38FD9B954D07C3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		6A45486FEC38FD9B954D07C3 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		8D01375C2A5C595E0091CC58 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D01375D2A5C595E0091CC58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D01375E2A5C595E0091CC58 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5075D26815EF800377CBD /* Utils.swift */; };
@@ -571,6 +571,8 @@
 		8D981EFB2A650AC50072A8D3 /* AdmobController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBF98E627E3866200119E68 /* AdmobController.xib */; };
 		8D981EFD2A650AC50072A8D3 /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8DE7F9C125E4784200D3C48A /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8D981F062A6510F50072A8D3 /* BurmeseAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D981F052A6510F40072A8D3 /* BurmeseAssets.xcassets */; };
+		8D9D9A7F303F3F3700F3628A /* bangla.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F89EA27AFF77800D6E517 /* bangla.txt */; };
+		8D9D9A80303F3F3700F3628A /* bangla.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F89EA27AFF77800D6E517 /* bangla.txt */; };
 		8D9F6701275B8756006E65BE /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
 		8D9F89EB27AFF77800D6E517 /* bangla.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F89EA27AFF77800D6E517 /* bangla.txt */; };
 		8DA1790D2F83937F00845266 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA1790C2F83937F00845266 /* NativeAdView.xib */; };
@@ -662,6 +664,8 @@
 		8DA8FB902F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
 		8DA8FB912F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
 		8DA9F0ED2B21E6FF006FE56C /* Russian-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */; };
+		8DB027CE303EDAB30079922A /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
+		8DB027CF303EDE830079922A /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
 		8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DBCB6252B24371F00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
@@ -710,6 +714,18 @@
 		8DE7F9C425E4784200D3C48A /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7F9C325E4784200D3C48A /* KeyboardViewController.swift */; };
 		8DE7FA2625E4C6E700D3C48A /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */; };
 		8DE7FA2825E4C6E700D3C48A /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */; };
+		8DF2FEB93042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEBA3042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEBB3042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEBC3042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEBD3042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEBE3042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEBF3042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEC03042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEC13042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEC23042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEC33042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
+		8DF2FEC43042A77A00228B10 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2FEB83042A75C00228B10 /* Search.swift */; };
 		8DF36878266C20670098EA60 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF36877266C20670098EA60 /* ColorExtension.swift */; };
 		8DF3FC2227AC18160062BE1E /* JHKeyPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */; };
 		8DF6E32126C3563B0031E094 /* JhUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A3E225E6EC6800E3B47E /* JhUtil.swift */; };
@@ -1146,6 +1162,7 @@
 		8DE7FA2325E4C6E700D3C48A /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		8DE7FA2525E4C6E700D3C48A /* KeyboardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		8DEECF942FB0D467008B05E2 /* StartCloudBuild.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = StartCloudBuild.txt; sourceTree = "<group>"; };
+		8DF2FEB83042A75C00228B10 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8DF36877266C20670098EA60 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8DF3FC2127AC18160062BE1E /* JHKeyPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHKeyPopup.swift; sourceTree = "<group>"; };
 		8DF622DD2A34454800061C6B /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = Base.lproj/th.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1271,7 +1288,7 @@
 				8D3AE88F2A56CE7000C74CF6 /* AppTrackingTransparency.framework in Frameworks */,
 				8D3AE8902A56CE7000C74CF6 /* AdSupport.framework in Frameworks */,
 				8D3AE8912A56CE7000C74CF6 /* StoreKit.framework in Frameworks */,
-				6A45486FEC38FD9B954D07C3 /* BuildFile in Frameworks */,
+				6A45486FEC38FD9B954D07C3 /* (null) in Frameworks */,
 				305707131A5659F3CA6D0B47 /* Pods_SmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1428,6 +1445,14 @@
 				8D4D346B27C48FA90007396F /* UnicodeTelugu.swift */,
 			);
 			path = Indian;
+			sourceTree = "<group>";
+		};
+		8D6C1C353042B4F10086217A /* SearchWord */ = {
+			isa = PBXGroup;
+			children = (
+				8DF2FEB83042A75C00228B10 /* Search.swift */,
+			);
+			path = SearchWord;
 			sourceTree = "<group>";
 		};
 		8D6CBEA226E8955100F8D7FC /* API */ = {
@@ -1683,11 +1708,12 @@
 				8DD5073C2681596B00377CBD /* API */,
 				8DD507742681644A00377CBD /* Speech */,
 				8DD507412681596B00377CBD /* Reachability */,
+				8D6C1C353042B4F10086217A /* SearchWord */,
+				8DD5075D26815EF800377CBD /* Utils.swift */,
 				8DE7F94B25E4474A00D3C48A /* AppDelegate.swift */,
 				8D91CD452655E7EE00404F5D /* SceneDelegate.swift */,
-				8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */,
-				8DD5075D26815EF800377CBD /* Utils.swift */,
 				8D8323DC27E438600068CBA1 /* Utility.h */,
+				8DE7F94F25E4474A00D3C48A /* HomeViewController.swift */,
 				8D8477BA2A36F47100E89677 /* Utils */,
 				8D3129E127303B55001EE3C3 /* SharedClass.swift */,
 				8DE7F95125E4474A00D3C48A /* Main.storyboard */,
@@ -2128,10 +2154,13 @@
 				8DA8FB7C2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D0137B62A5C597D0091CC58 /* Main.storyboard in Resources */,
 				8D0137B72A5C597D0091CC58 /* AdAppodeal.xib in Resources */,
+				8DB027CE303EDAB30079922A /* bahasa.txt in Resources */,
 				8D0137B82A5C597D0091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0138E72A5C5F3E0091CC58 /* DrutiAssets.xcassets in Resources */,
+				8D9D9A80303F3F3700F3628A /* bangla.txt in Resources */,
 				8DDBA4DD2A97279100FD24B7 /* FBAudienceNetwork.xib in Resources */,
 				8D0137BA2A5C597D0091CC58 /* bangla.flac in Resources */,
+				8DB027CF303EDE830079922A /* words_en.txt in Resources */,
 				8D0137BB2A5C597D0091CC58 /* Localizable.strings in Resources */,
 				8D7E9F4E2A5E5BC60011621C /* Druti-Info.plist in Resources */,
 				8DA8FB372F7935460003F3A1 /* SimpleNativeAdView.xib in Resources */,
@@ -2344,6 +2373,7 @@
 				8D8EB7E32AF67978000D858E /* bangla.flac in Resources */,
 				8D8EB7E42AF67978000D858E /* Localizable.strings in Resources */,
 				8D8EB7E52AF67978000D858E /* FBAudienceNetwork.xib in Resources */,
+				8D9D9A7F303F3F3700F3628A /* bangla.txt in Resources */,
 				8D8EB7E72AF67978000D858E /* busy.gif in Resources */,
 				8D8EB7E82AF67978000D858E /* good-morning-google.flac in Resources */,
 				8D8EB7E92AF67978000D858E /* AdmobController.xib in Resources */,
@@ -2467,9 +2497,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2506,9 +2540,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2523,9 +2561,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2540,9 +2582,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2579,9 +2625,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2596,9 +2646,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2613,9 +2667,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2630,9 +2688,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2669,9 +2731,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2708,9 +2774,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2725,9 +2795,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2742,9 +2816,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2759,9 +2837,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2776,9 +2858,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2793,9 +2879,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2832,9 +2922,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2849,9 +2943,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2954,9 +3052,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2971,9 +3073,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3010,9 +3116,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3027,9 +3137,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3044,9 +3158,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3061,9 +3179,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3078,9 +3200,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3102,6 +3228,7 @@
 				8D01375E2A5C595E0091CC58 /* Utils.swift in Sources */,
 				8DFDC3212AFA2521003ACEFD /* SharedClass.swift in Sources */,
 				8DA8FB752F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEC03042A77A00228B10 /* Search.swift in Sources */,
 				8D01375F2A5C595E0091CC58 /* AdUtil.swift in Sources */,
 				8D0137602A5C595E0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137612A5C595E0091CC58 /* Triangle.swift in Sources */,
@@ -3141,6 +3268,7 @@
 				8D0137962A5C597D0091CC58 /* Utils.swift in Sources */,
 				8DBCB6272B24372100AFF714 /* SharedClass.swift in Sources */,
 				8DA8FB782F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEC23042A77A00228B10 /* Search.swift in Sources */,
 				8D0137972A5C597D0091CC58 /* AdUtil.swift in Sources */,
 				8D0137982A5C597D0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137992A5C597D0091CC58 /* Triangle.swift in Sources */,
@@ -3180,6 +3308,7 @@
 				8D0137CF2A5C59860091CC58 /* Utils.swift in Sources */,
 				8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */,
 				8DA8FB712F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEBA3042A77A00228B10 /* Search.swift in Sources */,
 				8D0137D02A5C59860091CC58 /* AdUtil.swift in Sources */,
 				8D0137D12A5C59860091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0137D22A5C59860091CC58 /* Triangle.swift in Sources */,
@@ -3219,6 +3348,7 @@
 				8D0138082A5C59890091CC58 /* Utils.swift in Sources */,
 				8DBCB6262B24372000AFF714 /* SharedClass.swift in Sources */,
 				8DA8FB772F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEBC3042A77A00228B10 /* Search.swift in Sources */,
 				8D0138092A5C59890091CC58 /* AdUtil.swift in Sources */,
 				8D01380A2A5C59890091CC58 /* Primitive+Extension.swift in Sources */,
 				8D01380B2A5C59890091CC58 /* Triangle.swift in Sources */,
@@ -3258,6 +3388,7 @@
 				8D0138412A5C598C0091CC58 /* Utils.swift in Sources */,
 				8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */,
 				8DA8FB732F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEC13042A77A00228B10 /* Search.swift in Sources */,
 				8D0138422A5C598C0091CC58 /* AdUtil.swift in Sources */,
 				8D0138432A5C598C0091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0138442A5C598C0091CC58 /* Triangle.swift in Sources */,
@@ -3297,6 +3428,7 @@
 				8D01387A2A5C59920091CC58 /* Utils.swift in Sources */,
 				8DFDC3242AFA2524003ACEFD /* SharedClass.swift in Sources */,
 				8DA8FB702F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEBB3042A77A00228B10 /* Search.swift in Sources */,
 				8D01387B2A5C59920091CC58 /* AdUtil.swift in Sources */,
 				8D01387C2A5C59920091CC58 /* Primitive+Extension.swift in Sources */,
 				8D01387D2A5C59920091CC58 /* Triangle.swift in Sources */,
@@ -3336,6 +3468,7 @@
 				8D0138B32A5C59950091CC58 /* Utils.swift in Sources */,
 				8DFDC3252AFA2525003ACEFD /* SharedClass.swift in Sources */,
 				8DA8FB722F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEB93042A77A00228B10 /* Search.swift in Sources */,
 				8D0138B42A5C59950091CC58 /* AdUtil.swift in Sources */,
 				8D0138B52A5C59950091CC58 /* Primitive+Extension.swift in Sources */,
 				8D0138B62A5C59950091CC58 /* Triangle.swift in Sources */,
@@ -3375,6 +3508,7 @@
 				8D2E781D2A5C492C00A09A80 /* Utils.swift in Sources */,
 				8DBCB6292B24372200AFF714 /* SharedClass.swift in Sources */,
 				8DA8FB792F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEC33042A77A00228B10 /* Search.swift in Sources */,
 				8D2E781E2A5C492C00A09A80 /* AdUtil.swift in Sources */,
 				8D2E781F2A5C492C00A09A80 /* Primitive+Extension.swift in Sources */,
 				8D2E78202A5C492C00A09A80 /* Triangle.swift in Sources */,
@@ -3414,6 +3548,7 @@
 				8D3AE8752A56CE7000C74CF6 /* Utils.swift in Sources */,
 				8DFDC3262AFA2526003ACEFD /* SharedClass.swift in Sources */,
 				8DA8FB762F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEBD3042A77A00228B10 /* Search.swift in Sources */,
 				8D3AE8762A56CE7000C74CF6 /* AdUtil.swift in Sources */,
 				8D3AE8772A56CE7000C74CF6 /* Primitive+Extension.swift in Sources */,
 				8D3AE8782A56CE7000C74CF6 /* Triangle.swift in Sources */,
@@ -3453,6 +3588,7 @@
 				8D631870303AF425007E068A /* Utils.swift in Sources */,
 				8D631871303AF425007E068A /* SharedClass.swift in Sources */,
 				8D631872303AF425007E068A /* CustomControlsView.swift in Sources */,
+				8DF2FEC43042A77A00228B10 /* Search.swift in Sources */,
 				8D631873303AF425007E068A /* AdUtil.swift in Sources */,
 				8D631874303AF425007E068A /* Primitive+Extension.swift in Sources */,
 				8D631875303AF425007E068A /* Triangle.swift in Sources */,
@@ -3492,6 +3628,7 @@
 				8D8EB7BF2AF67978000D858E /* Utils.swift in Sources */,
 				8DBCB6282B24372200AFF714 /* SharedClass.swift in Sources */,
 				8DA8FB6F2F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEBE3042A77A00228B10 /* Search.swift in Sources */,
 				8D8EB7C02AF67978000D858E /* AdUtil.swift in Sources */,
 				8D8EB7C12AF67978000D858E /* Primitive+Extension.swift in Sources */,
 				8D8EB7C22AF67978000D858E /* Triangle.swift in Sources */,
@@ -3531,6 +3668,7 @@
 				8D981ED32A650AC50072A8D3 /* Utils.swift in Sources */,
 				8DBCB6252B24371F00AFF714 /* SharedClass.swift in Sources */,
 				8DA8FB742F793ACB0003F3A1 /* CustomControlsView.swift in Sources */,
+				8DF2FEBF3042A77A00228B10 /* Search.swift in Sources */,
 				8D981ED42A650AC50072A8D3 /* AdUtil.swift in Sources */,
 				8D981ED52A650AC50072A8D3 /* Primitive+Extension.swift in Sources */,
 				8D981ED62A650AC50072A8D3 /* Triangle.swift in Sources */,

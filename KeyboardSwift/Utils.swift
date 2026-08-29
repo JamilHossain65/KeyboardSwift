@@ -308,7 +308,9 @@ extension String {
                 print("text::\(text)")
                 return text
             }
-            catch {/* error handling here */}
+            catch {
+                print("Error reading file: \(error.localizedDescription)")
+            }
         }
         return ""
     }
@@ -326,18 +328,49 @@ extension String {
     }
     
     func readFile() -> String{
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let fileURL = dir.appendingPathComponent(self)
+        return read()
+    }
 
-            //reading
-            do {
-                let text2 = try String(contentsOf: fileURL, encoding: .utf8)
-                return text2
-            }
-            catch {/* error handling here */}
+    func readBundleFile(_ isLarge:Bool = false) -> String {
+        // 1. Locate the file in the main app bundle
+        guard let fileURL = Bundle.main.url(forResource: self, withExtension: nil) else {
+            print("Error: File not found in bundle.")
+            return ""
         }
+        
+        if isLarge{
+            //await readLargeFile(at: fileURL)
+        }else{
+            // 2. Read the contents safely
+            do {
+                let contents = try String(contentsOf: fileURL, encoding: .utf8)
+                //print(contents)
+                return contents
+            } catch {
+                print("Error reading file: \(error.localizedDescription)")
+            }
+        }
+        
+        
         return ""
     }
+    
+    func toArray(_ seperator:String) -> [String] {
+        let stringArray:[String] = self.components(separatedBy: seperator)
+        return stringArray
+    }
+    
+    func readLargeFile(at fileURL: URL) async {
+        do {
+            // Asynchronously process one line at a time
+            for try await line in fileURL.lines {
+                print("Line: \(line)")
+            }
+        } catch {
+            print("Error processing lines: \(error)")
+        }
+    }
+
 }
 
 class BaseViewController: UIViewController {

@@ -252,6 +252,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         addLangFlagButtonUI()
         addSpeakButtonUI()
         
+        Search.Shared.start()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -672,6 +674,12 @@ extension HomeViewController:UITextViewDelegate {
                 loadAd()
             }
         }
+        
+        let lastWord = textView.text.components(separatedBy: " ").last ?? ""
+        Search.Shared.searchWords(query: lastWord, completion: { results in
+            print(results)
+        })
+        
     }
     
     @objc func loadAd(){

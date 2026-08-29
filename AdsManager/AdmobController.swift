@@ -304,6 +304,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     */
     
     func showAdmobInterstitial(_ viewController:UIViewController){
+        /*
         // if !Reachability.isConnected() { return }
         if isAlreadyShowingAd { return }
         let request = Request()
@@ -320,9 +321,11 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             currentAdUnit = .APP_OPEN
             log("currentAdUnit:\(currentAdUnit) admobAdKey::\(admobAdKey)")
         }
+         */
     }
     
     func showAdmobAppOpenAd(_ viewController:UIViewController){
+        /*
         // if !Reachability.isConnected() { return }
         if isAlreadyShowingAd { return }
         let request = Request()
@@ -340,6 +343,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             currentAdUnit = .INTERSTITIAL
             log("currentAdUnit:\(currentAdUnit)")
         }
+         */
     }
     
     func showNativeAd(_ viewController:UIViewController){
