@@ -221,14 +221,14 @@ let SmartFonts  = "SmartFonts"
 
 //app setting::1
 var activeLanguages = [
-    English :true,  Indonesian:false, Bangla    :false, Russian  :false,
+    English :true,  Indonesian:true, Bangla    :false, Russian  :false,
     Spanish :false, French    :false, German    :false, Italian  :false,
     Korean  :false, Turkish   :false, Portuguese:false,
     //indian group
     Gujarati:false, Hindi     :false,  Kannada  :false,  Malayalam :false,
     Marathi :false, Nepali    :false,  Oriya    :false,  Punjabi   :false,
     Sanskrit:false, Tamil     :false,  Telugu   :false,  Urdu      :false,
-    BanglaGoti:false, BanglaDruti:true, Thai    :false,  JpHiragana:false,
+    BanglaGoti:false, BanglaDruti:false, Thai    :false,  JpHiragana:false,
     JpKatakana:false, Burmese:false,
 ]
 

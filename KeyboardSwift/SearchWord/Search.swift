@@ -22,7 +22,7 @@ class Search: NSObject {
             guard let self = self else { return }
             
             // Perform heavy file reading here
-            let wordString = "bangla.txt".readBundleFile()
+            let wordString = "bahasa.txt".readBundleFile()
             let wordArray = wordString.toArray("\n")
             
             let sortedArray = wordArray.sorted {

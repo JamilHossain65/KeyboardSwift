@@ -443,6 +443,7 @@
 		8D6318A1303AF425007E068A /* KeyboardExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8DE7F9C125E4784200D3C48A /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8D68831526E8D6400008D7D8 /* good-morning-google.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076726815FEA00377CBD /* good-morning-google.flac */; };
 		8D68831826E8D6430008D7D8 /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
+		8D6D0E7630440A9C0017795F /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
 		8D6DA1C026E897D10080E630 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6CBEAE26E8960D00F8D7FC /* Errors.swift */; };
 		8D6DA1C526E897D40080E630 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6CBEAA26E8960D00F8D7FC /* APIKey.swift */; };
 		8D6DA1CA26E897D70080E630 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6CBEAD26E8960D00F8D7FC /* APIUrl.swift */; };
@@ -664,7 +665,6 @@
 		8DA8FB902F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
 		8DA8FB912F793CBA0003F3A1 /* NativeAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB862F793CAB0003F3A1 /* NativeAdManager.swift */; };
 		8DA9F0ED2B21E6FF006FE56C /* Russian-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC12F32A7CC0CE00B60933 /* Russian-Info.plist */; };
-		8DB027CE303EDAB30079922A /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
 		8DB027CF303EDE830079922A /* words_en.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D9F6700275B8756006E65BE /* words_en.txt */; };
 		8DBCB6232B24371E00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
 		8DBCB6242B24371F00AFF714 /* SharedClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3129E127303B55001EE3C3 /* SharedClass.swift */; };
@@ -2154,7 +2154,6 @@
 				8DA8FB7C2F793B1E0003F3A1 /* CustomControls.xib in Resources */,
 				8D0137B62A5C597D0091CC58 /* Main.storyboard in Resources */,
 				8D0137B72A5C597D0091CC58 /* AdAppodeal.xib in Resources */,
-				8DB027CE303EDAB30079922A /* bahasa.txt in Resources */,
 				8D0137B82A5C597D0091CC58 /* SmartFonts.xcassets in Resources */,
 				8D0138E72A5C5F3E0091CC58 /* DrutiAssets.xcassets in Resources */,
 				8D9D9A80303F3F3700F3628A /* bangla.txt in Resources */,
@@ -2336,6 +2335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D631890303AF425007E068A /* GoogleService-Info.plist in Resources */,
+				8D6D0E7630440A9C0017795F /* bahasa.txt in Resources */,
 				8D631891303AF425007E068A /* hello (16bit PCM).wav in Resources */,
 				8D631892303AF425007E068A /* LaunchScreen.storyboard in Resources */,
 				8D11050D303C048C00067A0C /* IndonesiaAssets.xcassets in Resources */,
@@ -4721,7 +4721,7 @@
 				);
 				MARKETING_VERSION = 1.1.8;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.indonesianKeboard.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4750,7 +4750,7 @@
 				);
 				MARKETING_VERSION = 1.1.8;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.indonesianKeboard.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
