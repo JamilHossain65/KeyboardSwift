@@ -1,3 +1,6 @@
+# setup python
+# https://www.python.org/downloads/
+
 import os
 import speech_recognition as sr
 from flask import Flask, flash, request, redirect, url_for,jsonify
