@@ -16,6 +16,7 @@ import GoogleMobileAds
 import UserMessagingPlatform
 import SwiftyJSON
 import SnapKit
+import AudioToolbox //Vibration
 
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
@@ -45,6 +46,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         textView.layer.borderWidth  = 1.0
         textView.layer.cornerRadius = 8.0
         textView.layer.borderColor  = UIColor.lightGray.cgColor
+        textView.font = UIFont.systemFont(ofSize: 18)
+        textView.text = "Jamil Hossain"
         textView.becomeFirstResponder()
         return textView
     }()
@@ -70,6 +73,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         button.backgroundColor = .clear
         
         return button
+    }()
+    
+    lazy var dotLabel: UILabel = {
+        let dotLbl = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 8.s, height: 8.s)))
+        dotLbl.backgroundColor = .lightGray
+        dotLbl.layer.cornerRadius = dotLbl.frame.size.height/2 //half height
+        dotLbl.clipsToBounds = true
+        return dotLbl
     }()
     
 //    let monthlySubID = "MyApp.sub.allaccess.monthly"
@@ -202,13 +213,18 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
             }
         }
         
+        /*
         let restore = UIBarButtonItem(title: "Restore", style: .plain, target: self, action: #selector(restoreButtonPressed))
         let buy = UIBarButtonItem(title: "Buy", style: .plain, target: self, action: #selector(buyButtonPressed))
         let adButton = UIBarButtonItem(title: "    ", style: .plain, target: self, action: #selector(showAdmobInterstitial))
         let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonPressed))
         
-//        self.navigationItem.leftBarButtonItems = [restore,buy]
-//        self.navigationItem.rightBarButtonItems = [ /*adButton,*/ done]
+        self.navigationItem.leftBarButtonItems = [restore,buy]
+        self.navigationItem.rightBarButtonItems = [ /*adButton,*/ done]
+        */
+        
+        let dotButton = UIBarButtonItem(customView: dotLabel)
+        self.navigationItem.rightBarButtonItems = [dotButton]
         
         IAPHandler.shared.isLogEnabled = true
         IAPHandler.shared.setProductIds(ids: [fullVersionID]) //[monthlySubs,halfYearlySubs,yearlySubs]
@@ -292,6 +308,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden
+    }
+    
+    func triggerOldSchoolVibration() {
+        // Standard system vibrate ID
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     @objc func checkAdLoadRequesting(){
@@ -518,31 +539,22 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let speechModel  = SpeechModel()
         speechModel.convertedLanguage = lang
         speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
+        speechModel.convertedText = "Jamil"
         
         //loading(view: self.textView, stop: false)
-        speechModel.doTranslate2({errors in
+        speechModel.doTranslate2({ (response, errors) in
             
             if let _errors = errors,_errors.message?.count ?? 0 > 0 {
                 log("error::\(_errors.message)")
-                showAlertOkay(message: "Error!", completion: { _ in})
+//                showAlertOkay(message: "Error!", completion: { _ in})
+                self.triggerOldSchoolVibration()
             } else {
-                if !self.isShowRewardedInterstitialVideo {
-                    /*
-                    AdmobController.shared.showAdmobInterstitial(self, completion: { rewardPoint in
-                        
-                        log("rewardPoint::\(rewardPoint)")
-                        if rewardPoint > 0 {
-                            self.isShowRewardedInterstitialVideo = true
-                            self.textView.text += " \(speechModel.convertedText)"
-                        }else{
-                            //MARK: - check this line execute or not
-                            showAlertOkay(message: "You didn't collect your reward!", completion: { _ in})
-                        }
-                        
-                    })
-                    */
-                }else{
-                    self.textView.text += " \(speechModel.convertedText)"
+                if let text = response?.json?[APIKey.converted_text] as? String {
+                    if text == APIKey.not_understand { //make device vibrate
+                        self.triggerOldSchoolVibration()
+                    }else{
+                        self.textView.text += " \(text)"
+                    }
                 }
             }
         })

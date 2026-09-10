@@ -8,10 +8,11 @@
 import UIKit
 
 struct APIKey {
-    static let converted_text = "convert_speech"
+    static let converted_text = "convert_text"
     static let success  = "success"
     static let file_url = "file_url"
     static let language = "lang"
+    static let not_understand = "I could not understand audio"
     
     static let language_en = "en"
     static let language_bn = "bn"

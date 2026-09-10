@@ -69,6 +69,15 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         
         //initNativeAd()
         
+        // Swift Example for a Rewarded Ad
+        interstitialAd?.paidEventHandler = { adValue in
+            let revenue = adValue.value.doubleValue // Decimal value in standard currency (e.g., USD)
+            let currencyCode = adValue.currencyCode
+            //showAlertOkay(message: "\(revenue)", completion: { _ in})
+            // Log or send the impression-level value to your analytics
+            print("Ad revenue: \(revenue) \(currencyCode)")
+        }
+        
     }
     
     func initNativeAd(){
@@ -304,6 +313,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     */
     
     func showAdmobInterstitial(_ viewController:UIViewController){
+        return
         /*
         // if !Reachability.isConnected() { return }
         if isAlreadyShowingAd { return }
@@ -325,7 +335,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
     }
     
     func showAdmobAppOpenAd(_ viewController:UIViewController){
-        /*
+        
         // if !Reachability.isConnected() { return }
         if isAlreadyShowingAd { return }
         let request = Request()
@@ -343,7 +353,7 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
             currentAdUnit = .INTERSTITIAL
             log("currentAdUnit:\(currentAdUnit)")
         }
-         */
+         
     }
     
     func showNativeAd(_ viewController:UIViewController){
@@ -392,6 +402,16 @@ class AdmobController: UIViewController, FullScreenContentDelegate {
         adLoadingStatus = .NOT_REQUESTED
         admobCompletion?(nil)
         isAlreadyShowingAd = false
+    }
+    
+    func adDidRecordImpression(_ ad: FullScreenPresentingAd) {
+        log("Ad did adDidRecordImpression:\(ad)")
+        AdmobController.shared.interstitialAd = nil
+        AdmobController.shared.rewardedAd = nil
+        adLoadingStatus = .NOT_REQUESTED
+        admobCompletion?(nil)
+        isAlreadyShowingAd = false
+        showAlertOkay(message: "Did Record Impression")
     }
     
     func adDidRecordClick(_ ad: FullScreenPresentingAd) {

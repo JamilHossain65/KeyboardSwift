@@ -142,7 +142,6 @@ struct APIRequest {
                 let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
                 if let json = jsonData as? [String: Any] {
                     completion(json,nil)
-                    print(json)
                 }
             }else{
                 completion(nil,error)

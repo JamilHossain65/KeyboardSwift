@@ -53,7 +53,7 @@ class KeyboardViewController: UIInputViewController,UIInputViewAudioFeedback{
         Bundle.setLanguage(lang: "en") //bn
         let button = UIButton()
         //app setting::3
-        button.setTitle(Indonesian, for: .normal) //MARK: - do it dynamic
+        button.setTitle(BanglaDruti, for: .normal) //MARK: - do it dynamic
         didSelectLanguage(button)
         refreshWordFile()
         hideSettingView()
@@ -1088,11 +1088,15 @@ extension KeyboardViewController:AudioManagerDelegate {
         log("speechModel.fileUrl::\(speechModel.fileUrl)")
        
         speechModel.doTranslate2({errors in
-            if let _errors = errors,_errors == nil {
-                log("error::\(_errors.message)")
+            
+            if let _errors = errors {
+                log("error::\(String(describing: _errors.message))")
             } else {
-                self.textDocumentProxy.insertText(" \(speechModel.convertedText)")
-                log("text::\(speechModel.convertedText)")
+                DispatchQueue.main.async {
+                    speechModel.convertedText = "hello"
+                    self.textDocumentProxy.insertText(" \(speechModel.convertedText)")
+                    log("convertedText::\(speechModel.convertedText)")
+                }
             }
         })
     }

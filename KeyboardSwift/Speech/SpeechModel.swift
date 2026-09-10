@@ -14,11 +14,11 @@ class SpeechModel: NSObject {
     var convertedLanguage:String = ""
     var fileUrl:URL?
     
-    func doTranslate2(_ completion: @escaping (Errors?) -> ()) {
+    func doTranslate2(_ completion: @escaping (Response?,Errors?) -> ()) {
         doTranslateRequest2(completion: completion)
     }
     
-    func doTranslateRequest2(completion: @escaping (Errors?) -> ()) {
+    func doTranslateRequest2(completion: @escaping (Response?,Errors?) -> ()) {
         var params:[String:Any] = [:]
         params[APIKey.file_url] = self.fileUrl
         params[APIKey.language] = self.convertedLanguage 
@@ -26,21 +26,22 @@ class SpeechModel: NSObject {
         let header = [APIKey.content_type:APIKey.multipart_form]
         let method = APIKey.POST
         let url = BASE_URL_TRANSLATE + API_TRANSLATE
-        print("header::\(header)")
-        print("params::\(params)")
-        print("url::\(url)")
         
         self.requestMultipartForm(url,method,header,params) { (response, error) in
-            DispatchQueue.main.async {
-                if let _response = response {
-                    //self.convertedText = _result[APIKey.converted_text].stringValue
+//            DispatchQueue.main.async {
+//                
+//            }
+            
+            if let _response = response {
+                //self.convertedText = _result[APIKey.converted_text].stringValue
+                DispatchQueue.main.async {
                     self.convertedText = _response.json?[APIKey.converted_text] as? String ?? ""
-                    completion(nil)
-                } else {
-                    let message = error?.localizedDescription
-                    let _error = Errors(message: message)
-                    completion(_error)
+                    completion(_response, nil)
                 }
+            } else {
+                let message = error?.localizedDescription
+                let _error = Errors(message: message)
+                completion(nil, _error)
             }
         }
     }
@@ -90,7 +91,8 @@ class SpeechModel: NSObject {
             if let _response = response {
                 let json = _response as? [String:Any]
                 self.convertedText = json?[APIKey.converted_text] as? String ?? ""
-                completion(Response(json),nil)
+                let response = Response(json)
+                completion(response,nil)
             } else {
                 completion(nil,error)
             }
