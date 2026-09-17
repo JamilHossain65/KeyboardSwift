@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         textView.layer.cornerRadius = 8.0
         textView.layer.borderColor  = UIColor.lightGray.cgColor
         textView.font = UIFont.systemFont(ofSize: 18)
-        textView.text = "Jamil Hossain"
+        textView.text = ""
         textView.becomeFirstResponder()
         return textView
     }()
@@ -539,7 +539,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate {
         let speechModel  = SpeechModel()
         speechModel.convertedLanguage = lang
         speechModel.fileUrl = audioManager.getDocumentsDirectory().appendingPathComponent("recording.flac")
-        speechModel.convertedText = "Jamil"
         
         //loading(view: self.textView, stop: false)
         speechModel.doTranslate2({ (response, errors) in
@@ -734,40 +733,19 @@ extension HomeViewController:UITextViewDelegate {
 extension HomeViewController:AudioManagerDelegate {
     func recordDidFinish(){
         log("convert start.....")
-        /*
-        let actLanguages = activeLanguages.filter({$0.1}).map({$0.0})
-        let countryCode1 = languageCodes[actLanguages.first ?? ""] ?? ""
-        let countryCode2 = languageCodes[actLanguages.last ?? ""] ?? ""
-        
-        print("Code1::\(countryCode1)")
-        print("Code2::\(countryCode2)")
-        
-        
-        var codeBd = "bn"
-        var codeEn = "en"
-        
-        if countryCode1 == "en"{
-            codeEn = countryCode1
-            codeBd = countryCode2
-        }else{
-            codeEn = countryCode2
-            codeBd = countryCode1
-        }
-        
-        
-        let language = playButton.isSelected ? codeEn:codeBd //id,bn
-        convertToText2(lang: language)
- */
         let index:Int   = getObject(SelectedLanguage) as? Int ?? 1
         
         print("inx debug::\(index) \n languages:\(self.actLanguages)")
         let countryName = self.actLanguages[index]
-        let countryCode:[String] = countryCodes.filter({$0.0 == countryName}).map({$0.1})
-        var _countryCode:String = countryCode.first ?? ""
-        //MARK: - todo remove static code
-        _countryCode = _countryCode.replacingOccurrences(of: "bdG", with: "bn")
-        _countryCode = _countryCode.replacingOccurrences(of: "us", with: "en")
-        convertToText2(lang: _countryCode)
+        //let countryCode:[String] = countryCodes.filter({$0.0 == countryName}).map({$0.1})
+//        var _countryCode:String = countryCode.first ?? ""
+//        //MARK: - todo remove static code
+//        _countryCode = _countryCode.replacingOccurrences(of: "bdG", with: "bn")
+//        _countryCode = _countryCode.replacingOccurrences(of: "us", with: "en")
+        
+        let langCode:[String] = languageCodes.filter({$0.0 == countryName}).map({$0.1})
+        let _langCode:String = langCode.first ?? ""
+        convertToText2(lang: _langCode)
     }
     
     func restartSpeech(sec:Double){

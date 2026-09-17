@@ -82,17 +82,18 @@ class SpeechModel: NSObject {
         let filename = "recording.flac"
         let fileUrl:URL = params?[APIKey.file_url] as! URL
         guard let data = try? Data(contentsOf:fileUrl) else { return }
-        //print("fileUrl:: \(fileUrl)")
-        
-        //let lang = params?[APIKey.language]
         
         let request = APIRequest(url)
         request.uploadFile(params: params, paramName: "file", fileName: filename, fileData: data, mimeType: "audio/flac",completion: { (response,error) in
             if let _response = response {
-                let json = _response as? [String:Any]
-                self.convertedText = json?[APIKey.converted_text] as? String ?? ""
-                let response = Response(json)
-                completion(response,nil)
+                DispatchQueue.main.async {
+                    print("_response::\(_response)")
+                    print("error::\(error)")
+                    let json = _response as? [String:Any]
+                    self.convertedText = json?[APIKey.converted_text] as? String ?? ""
+                    let response = Response(json ?? [:])
+                    completion(response,nil)
+                }
             } else {
                 completion(nil,error)
             }

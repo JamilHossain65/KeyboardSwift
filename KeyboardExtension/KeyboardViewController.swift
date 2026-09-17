@@ -1067,7 +1067,7 @@ extension KeyboardViewController:AudioManagerDelegate {
     
     func recordDidFinish(){
         log("convert start.....")
-        convertToText2()
+        //convertToText2()
     }
     
     func restartSpeech(sec:Double){
@@ -1088,14 +1088,11 @@ extension KeyboardViewController:AudioManagerDelegate {
         log("speechModel.fileUrl::\(speechModel.fileUrl)")
        
         speechModel.doTranslate2({errors in
-            
             if let _errors = errors {
                 log("error::\(String(describing: _errors.message))")
             } else {
                 DispatchQueue.main.async {
-                    speechModel.convertedText = "hello"
                     self.textDocumentProxy.insertText(" \(speechModel.convertedText)")
-                    log("convertedText::\(speechModel.convertedText)")
                 }
             }
         })

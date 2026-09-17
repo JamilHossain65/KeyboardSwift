@@ -389,6 +389,7 @@
 		8D4D348B27C495BA0007396F /* UnicodeUrdu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D348A27C495BA0007396F /* UnicodeUrdu.swift */; };
 		8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D552EE326484C4000866DEF /* UnicodeEn.swift */; };
 		8D59B2252669AD2C0034A967 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59B2242669AD2C0034A967 /* Extension.swift */; };
+		8D6290573053A8050018EE73 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6DA1DD26E899050080E630 /* SpeechModel.swift */; };
 		8D63186B303AF425007E068A /* SimpleNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FB312F7935460003F3A1 /* SimpleNativeAdView.swift */; };
 		8D63186C303AF425007E068A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D63186D303AF425007E068A /* GoogleMobileAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D283DBA2F791614009805C6 /* GoogleMobileAdsConsentManager.swift */; };
@@ -451,7 +452,6 @@
 		8D6DA1D226E897DC0080E630 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6CBEAB26E8960D00F8D7FC /* APIRequest.swift */; };
 		8D6DA1DE26E899050080E630 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6DA1DA26E899050080E630 /* Reachability.swift */; };
 		8D6DA1DF26E899050080E630 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6DA1DC26E899050080E630 /* AudioManager.swift */; };
-		8D6DA1E026E899050080E630 /* SpeechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6DA1DD26E899050080E630 /* SpeechModel.swift */; };
 		8D74D7A127B24079006642E0 /* UnicodeGe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D79C27B24079006642E0 /* UnicodeGe.swift */; };
 		8D74D7A227B24079006642E0 /* UnicodeKo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D79D27B24079006642E0 /* UnicodeKo.swift */; };
 		8D74D7A327B24079006642E0 /* UnicodeFr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74D79E27B24079006642E0 /* UnicodeFr.swift */; };
@@ -3730,7 +3730,7 @@
 				8D552EE426484C4000866DEF /* UnicodeEn.swift in Sources */,
 				8D870AF02A663786006C5E9D /* UnicodeJpHiragana.swift in Sources */,
 				8DE7FA2625E4C6E700D3C48A /* KeyboardView.swift in Sources */,
-				8D6DA1E026E899050080E630 /* SpeechModel.swift in Sources */,
+				8D6290573053A8050018EE73 /* SpeechModel.swift in Sources */,
 				8DF36878266C20670098EA60 /* ColorExtension.swift in Sources */,
 				8D6DA1C526E897D40080E630 /* APIKey.swift in Sources */,
 				8D74D7B527B284DE006642E0 /* UnicodePt.swift in Sources */,
@@ -3933,7 +3933,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3964,7 +3964,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4719,7 +4719,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.3.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4748,7 +4748,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.3.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";

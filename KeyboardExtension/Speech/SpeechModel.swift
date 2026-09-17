@@ -25,16 +25,17 @@ class SpeechModel {
         
         
         self.requestMultipartForm(url,method,header,params) { (result, error) in
-//            DispatchQueue.main.async {
-//
-//            }
+            
             
             if let _result = result {
-                //todo refactor this line
                 let json = _result as? [String:Any]
                 self.convertedText = json?[APIKey.converted_text] as? String ?? ""
-                //let response = Response(json)
+                let response = Response(json)
+                let _error = Errors(message: error?.localizedDescription)
                 completion(nil)
+                DispatchQueue.main.async {
+
+                }
             } else {
                 let _error = Errors(message: error?.localizedDescription)
                 completion(_error)
