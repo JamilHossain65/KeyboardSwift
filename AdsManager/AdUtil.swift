@@ -108,7 +108,7 @@ public var admobAdKey: String {
         case BanglaGoti:
             return "ca-app-pub-6852753831370662/6954560826"
         case BanglaDruti:
-            //return "ca-app-pub-4020516547273393/2176452563"
+            //return "ca-app-pub-4020516547273393/2176452563" 
             return "ca-app-pub-4020516547273393/4545330726"
         case Thai:
             return "ca-app-pub-6852753831370662/2157832232"
