@@ -1091,6 +1091,8 @@
 		8D8754CB26F58D4800199FEB /* KeyboardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtension.entitlements; sourceTree = "<group>"; };
 		8D8754CE26F58DA100199FEB /* KeyboardSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardSwift.entitlements; sourceTree = "<group>"; };
 		8D8A99282A62DAF40092ADB9 /* Japanese-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Japanese-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8D8AB88E305CC134000B8D7D /* BhahasaDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BhahasaDebug.entitlements; sourceTree = "<group>"; };
+		8D8AB88F305CC174000B8D7D /* KeyboardExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtensionDebug.entitlements; sourceTree = "<group>"; };
 		8D8B0C3C29CCED6A000FE362 /* UnicodeBnGoti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeBnGoti.swift; sourceTree = "<group>"; };
 		8D8BCF5E26E7638B00615097 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8D8BCF7926E76E2200615097 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -1665,6 +1667,7 @@
 		8DE7F93F25E4474A00D3C48A = {
 			isa = PBXGroup;
 			children = (
+				8D8AB88E305CC134000B8D7D /* BhahasaDebug.entitlements */,
 				8DFDDA2A27E2F947005AD90B /* KeyboardSwift-Bridging-Header.h */,
 				8D08AF0227F5C5CD00FEF2BF /* submit_info.rtf */,
 				8DEECF942FB0D467008B05E2 /* StartCloudBuild.txt */,
@@ -1743,6 +1746,7 @@
 		8DE7F9C225E4784200D3C48A /* KeyboardExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8D8AB88F305CC174000B8D7D /* KeyboardExtensionDebug.entitlements */,
 				8D8754CB26F58D4800199FEB /* KeyboardExtension.entitlements */,
 				8D6CBEA226E8955100F8D7FC /* API */,
 				8D6DA1DB26E899050080E630 /* Speech */,
@@ -4409,7 +4413,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = KeyboardSwift/KeyboardSwift.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BhahasaDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
@@ -4453,7 +4457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.indonesianKeboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KeyboardSwift-Bridging-Header.h";
@@ -4707,7 +4711,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtensionDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
@@ -4719,9 +4723,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.indonesianKeboard.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4748,9 +4752,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.BanglaKeyboardDrutiNew.KeyboardExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaticsoft.indonesianKeboard.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

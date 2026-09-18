@@ -137,7 +137,7 @@ public var admobAdKey: String {
         case Urdu:
             return ""
         case Indonesian:
-            return ""
+            return "ca-app-pub-4020516547273393/2176452563"
         case Russian:
             return "ca-app-pub-8007562169424853/2159987459"
         case Spanish:
@@ -277,7 +277,7 @@ var nativeAdKey: String {
             case Urdu:
                 return ""
             case Indonesian:
-                return ""
+                return "ca-app-pub-4020516547273393/9273996345"
             case Russian:
                 return "ca-app-pub-8007562169424853/5366804520"
             case Spanish:
