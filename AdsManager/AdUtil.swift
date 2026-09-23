@@ -72,30 +72,14 @@ var langName: String {
     }
 }
 
-
-//interstitial
-//ca-app-pub-6852753831370662/6954560826
-//Native
-//ca-app-pub-6852753831370662/4570291273
-//Open app
-//ca-app-pub-6852753831370662/2187670512
-
-//GER
-//INTER
-//ca-app-pub-7802882478784013/3804598385
+//French intrtitial
 //
-//OPEN
-//ca-app-pub-7802882478784013/7364569441
-//NATIVE
-//ca-app-pub-7802882478784013/3425324436
-
-//Interstitial
-//ca-app-pub-4020516547273393/2176452563
-//Admob id
-//ca-app-pub-4020516547273393~7293897930
-//App open
+//ca-app-pub-3725738569569654~2113311330
 //
-//ca-app-pub-4020516547273393/9273996345
+//ca-app-pub-3725738569569654/4652589623
+//
+//App opens
+//ca-app-pub-3725738569569654/9026204048
 
 
 //app setting::106
@@ -108,7 +92,7 @@ public var admobAdKey: String {
         case BanglaGoti:
             return "ca-app-pub-6852753831370662/6954560826"
         case BanglaDruti:
-            //return "ca-app-pub-4020516547273393/2176452563" 
+            //return "ca-app-pub-4020516547273393/2176452563"
             return "ca-app-pub-4020516547273393/4545330726"
         case Thai:
             return "ca-app-pub-6852753831370662/2157832232"
@@ -143,7 +127,7 @@ public var admobAdKey: String {
         case Spanish:
             return "ca-app-pub-8007562169424853/2425812770"
         case French:
-            return ""
+            return "ca-app-pub-3725738569569654/4652589623"
         case German:
             return "ca-app-pub-7802882478784013/3804598385"
         case Italian:
@@ -283,7 +267,7 @@ var nativeAdKey: String {
             case Spanish:
                 return "ca-app-pub-8007562169424853/6626367145"
             case French:
-                return ""
+                return "ca-app-pub-3725738569569654/9026204048"
             case German:
                 return "ca-app-pub-7802882478784013/7364569441"
             case Italian:
