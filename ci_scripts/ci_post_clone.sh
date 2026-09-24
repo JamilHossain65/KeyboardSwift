@@ -1,8 +1,9 @@
-#!/bin/sh
-cd $CI_PRIMARY_REPOSITORY_PATH
-export LANG=en_US.UTF-8
-sudo gem install cocoapods
-pod install
+!/bin/sh -x
+
+#cd $CI_PRIMARY_REPOSITORY_PATH
+#export LANG=en_US.UTF-8
+#sudo gem install cocoapods
+#pod install
 
 # git command
 chmod +x ci_scripts/ci_post_clone.sh
