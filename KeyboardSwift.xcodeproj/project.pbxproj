@@ -13,7 +13,7 @@
 		305707131A5659F3CA6D0B47 /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8AD3BC8F93541FCAD1A7B6 /* Pods_SmartFonts.framework */; };
 		39583759BCC13E57B8E8447A /* Pods_Indian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04AB6D110F98D50483010F0 /* Pods_Indian.framework */; };
 		3A724E1B8EE9B3743BF712FC /* Pods_Bhahasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16922954E0A7F4434FA5CF0D /* Pods_Bhahasa.framework */; };
-		6A45486FEC38FD9B954D07C3 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		6A45486FEC38FD9B954D07C3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		8D01375C2A5C595E0091CC58 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5073D2681596B00377CBD /* APIKey.swift */; };
 		8D01375D2A5C595E0091CC58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91CD452655E7EE00404F5D /* SceneDelegate.swift */; };
 		8D01375E2A5C595E0091CC58 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5075D26815EF800377CBD /* Utils.swift */; };
@@ -716,7 +716,6 @@
 		8DD36029305F8C9900339A3F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8427E97104009CF1E9 /* AppTrackingTransparency.framework */; };
 		8DD3602A305F8C9900339A3F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA96A8727E98E08009CF1E9 /* AdSupport.framework */; };
 		8DD3602B305F8C9900339A3F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8741142A383F43009E1A85 /* StoreKit.framework */; };
-		8DD3602C305F8C9900339A3F /* Pods_Bhahasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16922954E0A7F4434FA5CF0D /* Pods_Bhahasa.framework */; };
 		8DD3602E305F8C9900339A3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFDDB2F27E2FF16005AD90B /* GoogleService-Info.plist */; };
 		8DD3602F305F8C9900339A3F /* bahasa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCFBF20278ED17D0093140C /* bahasa.txt */; };
 		8DD36030305F8C9900339A3F /* hello (16bit PCM).wav in Resources */ = {isa = PBXBuildFile; fileRef = 8DD5076826815FEA00377CBD /* hello (16bit PCM).wav */; };
@@ -798,6 +797,7 @@
 		A5C12CF271C2DB97AE72C2D2 /* Pods_Spanish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A153271EC4CEFF8E918B9483 /* Pods_Spanish.framework */; };
 		CCCE271BB4FE8571CF2B7E46 /* Pods_Japanese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA8F1585D67C0B12E591D48 /* Pods_Japanese.framework */; };
 		E50E628CEE6304312C3618E3 /* Pods_German.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A43846C5C476E86C7673F4 /* Pods_German.framework */; };
+		EB57B80A97B8D65CF9692386 /* Pods_Bhahasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16922954E0A7F4434FA5CF0D /* Pods_Bhahasa.framework */; };
 		F2C6901CCA9A329D6A9186B8 /* Pods_Druti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E78CED2028963ED1D4C43E /* Pods_Druti.framework */; };
 /* End PBXBuildFile section */
 
@@ -1048,6 +1048,7 @@
 		2805B06349B3F0AB3E34D7B5 /* Pods-Burmese.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Burmese.release.xcconfig"; path = "Target Support Files/Pods-Burmese/Pods-Burmese.release.xcconfig"; sourceTree = "<group>"; };
 		2E9F8629F793E8E660B2E4E5 /* Pods-Turkish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turkish.debug.xcconfig"; path = "Target Support Files/Pods-Turkish/Pods-Turkish.debug.xcconfig"; sourceTree = "<group>"; };
 		3DCA474048F6CFA11069EFBF /* Pods-Indian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indian.release.xcconfig"; path = "Target Support Files/Pods-Indian/Pods-Indian.release.xcconfig"; sourceTree = "<group>"; };
+		46FCAA4FB4FE11B25CE00B6D /* Pods-Bhahasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bhahasa.release.xcconfig"; path = "Target Support Files/Pods-Bhahasa/Pods-Bhahasa.release.xcconfig"; sourceTree = "<group>"; };
 		4E903BF1E005A6739BFC45F0 /* Pods-SmartFonts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFonts.release.xcconfig"; path = "Target Support Files/Pods-SmartFonts/Pods-SmartFonts.release.xcconfig"; sourceTree = "<group>"; };
 		5B9B44635FDEA0DD1EB8ABFA /* Pods-Goti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goti.debug.xcconfig"; path = "Target Support Files/Pods-Goti/Pods-Goti.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9E8B1C5DA87BFE30358CAB /* Pods-Burmese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Burmese.debug.xcconfig"; path = "Target Support Files/Pods-Burmese/Pods-Burmese.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1058,7 +1059,6 @@
 		75C5156CA6C83B473C7A73D1 /* Pods-Indian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indian.debug.xcconfig"; path = "Target Support Files/Pods-Indian/Pods-Indian.debug.xcconfig"; sourceTree = "<group>"; };
 		7956C8BEFA43C6EC9878D7B5 /* Pods-SmartFonts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFonts.debug.xcconfig"; path = "Target Support Files/Pods-SmartFonts/Pods-SmartFonts.debug.xcconfig"; sourceTree = "<group>"; };
 		85A4F84649F8705204B84E38 /* Pods-Druti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druti.release.xcconfig"; path = "Target Support Files/Pods-Druti/Pods-Druti.release.xcconfig"; sourceTree = "<group>"; };
-		85F23F88A95A8AC736A8FF99 /* Pods-Bhahasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bhahasa.release.xcconfig"; path = "Target Support Files/Pods-Bhahasa/Pods-Bhahasa.release.xcconfig"; sourceTree = "<group>"; };
 		8D01378E2A5C595E0091CC58 /* Russian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Russian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0137C72A5C597D0091CC58 /* Druti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Druti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0138002A5C59860091CC58 /* German.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = German.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1266,11 +1266,11 @@
 		BBE5AA466EAC048B733AEF79 /* Pods_Burmese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Burmese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1939B100663EAA3CB071BB /* Pods-German.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-German.release.xcconfig"; path = "Target Support Files/Pods-German/Pods-German.release.xcconfig"; sourceTree = "<group>"; };
 		C457A155B8D93EAAD46EABEC /* Pods_Turkish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turkish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C4AE7158F0831390176EA0 /* Pods-Bhahasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bhahasa.debug.xcconfig"; path = "Target Support Files/Pods-Bhahasa/Pods-Bhahasa.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA8F1585D67C0B12E591D48 /* Pods_Japanese.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Japanese.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD8AD3BC8F93541FCAD1A7B6 /* Pods_SmartFonts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartFonts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98EF7BB6B72B89E89703F71 /* Pods-Spanish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spanish.release.xcconfig"; path = "Target Support Files/Pods-Spanish/Pods-Spanish.release.xcconfig"; sourceTree = "<group>"; };
 		EB8DDE30432E8EE213961EC6 /* Pods-Russian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Russian.debug.xcconfig"; path = "Target Support Files/Pods-Russian/Pods-Russian.debug.xcconfig"; sourceTree = "<group>"; };
-		FECE14D4F6E1DC2A00C14789 /* Pods-Bhahasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bhahasa.debug.xcconfig"; path = "Target Support Files/Pods-Bhahasa/Pods-Bhahasa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1369,7 +1369,7 @@
 				8D3AE88F2A56CE7000C74CF6 /* AppTrackingTransparency.framework in Frameworks */,
 				8D3AE8902A56CE7000C74CF6 /* AdSupport.framework in Frameworks */,
 				8D3AE8912A56CE7000C74CF6 /* StoreKit.framework in Frameworks */,
-				6A45486FEC38FD9B954D07C3 /* (null) in Frameworks */,
+				6A45486FEC38FD9B954D07C3 /* BuildFile in Frameworks */,
 				305707131A5659F3CA6D0B47 /* Pods_SmartFonts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1382,6 +1382,7 @@
 				8D63188D303AF425007E068A /* AdSupport.framework in Frameworks */,
 				8D63188E303AF425007E068A /* StoreKit.framework in Frameworks */,
 				3A724E1B8EE9B3743BF712FC /* Pods_Bhahasa.framework in Frameworks */,
+				EB57B80A97B8D65CF9692386 /* Pods_Bhahasa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1414,7 +1415,6 @@
 				8DD36029305F8C9900339A3F /* AppTrackingTransparency.framework in Frameworks */,
 				8DD3602A305F8C9900339A3F /* AdSupport.framework in Frameworks */,
 				8DD3602B305F8C9900339A3F /* StoreKit.framework in Frameworks */,
-				8DD3602C305F8C9900339A3F /* Pods_Bhahasa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1431,8 +1431,6 @@
 		4180F7C0840B7C14EDBBF46E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FECE14D4F6E1DC2A00C14789 /* Pods-Bhahasa.debug.xcconfig */,
-				85F23F88A95A8AC736A8FF99 /* Pods-Bhahasa.release.xcconfig */,
 				5E9E8B1C5DA87BFE30358CAB /* Pods-Burmese.debug.xcconfig */,
 				2805B06349B3F0AB3E34D7B5 /* Pods-Burmese.release.xcconfig */,
 				69540445D438BDEEDCF09E5E /* Pods-Druti.debug.xcconfig */,
@@ -1455,6 +1453,8 @@
 				0949FF438B3CD3DE60EFA741 /* Pods-ThaiKeyboard.release.xcconfig */,
 				2E9F8629F793E8E660B2E4E5 /* Pods-Turkish.debug.xcconfig */,
 				B610F9EF4BC908089A3041AF /* Pods-Turkish.release.xcconfig */,
+				C4C4AE7158F0831390176EA0 /* Pods-Bhahasa.debug.xcconfig */,
+				46FCAA4FB4FE11B25CE00B6D /* Pods-Bhahasa.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2151,13 +2151,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DD36045305F8C9900339A3F /* Build configuration list for PBXNativeTarget "French" */;
 			buildPhases = (
-				8DD36005305F8C9900339A3F /* [CP] Check Pods Manifest.lock */,
 				8DD36006305F8C9900339A3F /* Sources */,
 				8DD36028305F8C9900339A3F /* Frameworks */,
 				8DD3602D305F8C9900339A3F /* Resources */,
 				8DD36041305F8C9900339A3F /* Embed App Extensions */,
-				8DD36043305F8C9900339A3F /* [CP] Embed Pods Frameworks */,
-				8DD36044305F8C9900339A3F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2644,13 +2641,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2687,13 +2680,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2708,13 +2697,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2729,13 +2714,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2772,13 +2753,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2793,13 +2770,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2814,13 +2787,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2835,13 +2804,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2878,13 +2843,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2921,13 +2882,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2942,13 +2899,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2963,13 +2916,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2984,81 +2933,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8DD36005305F8C9900339A3F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Bhahasa-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8DD36043305F8C9900339A3F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8DD36044305F8C9900339A3F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bhahasa/Pods-Bhahasa-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		928CF9758C8D8F8222A815B3 /* [CP] Copy Pods Resources */ = {
@@ -3069,13 +2950,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3090,13 +2967,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Russian/Pods-Russian-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3133,13 +3006,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartFonts/Pods-SmartFonts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3154,13 +3023,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Burmese/Pods-Burmese-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3263,13 +3128,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3284,13 +3145,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Goti/Pods-Goti-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3327,13 +3184,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Indian/Pods-Indian-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3348,13 +3201,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-German/Pods-German-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3369,13 +3218,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Japanese/Pods-Japanese-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3390,13 +3235,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Turkish/Pods-Turkish-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3411,13 +3252,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druti/Pods-Druti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4660,7 +4497,7 @@
 		};
 		8D6318A3303AF425007E068A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FECE14D4F6E1DC2A00C14789 /* Pods-Bhahasa.debug.xcconfig */;
+			baseConfigurationReference = C4C4AE7158F0831390176EA0 /* Pods-Bhahasa.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4690,7 +4527,7 @@
 		};
 		8D6318A4303AF425007E068A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85F23F88A95A8AC736A8FF99 /* Pods-Bhahasa.release.xcconfig */;
+			baseConfigurationReference = 46FCAA4FB4FE11B25CE00B6D /* Pods-Bhahasa.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4843,7 +4680,6 @@
 		};
 		8DD36046305F8C9900339A3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FECE14D4F6E1DC2A00C14789 /* Pods-Bhahasa.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4873,7 +4709,6 @@
 		};
 		8DD36047305F8C9900339A3F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85F23F88A95A8AC736A8FF99 /* Pods-Bhahasa.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
