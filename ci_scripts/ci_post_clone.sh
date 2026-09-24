@@ -6,7 +6,7 @@ pod install
 
 # git command
 chmod +x ci_scripts/ci_post_clone.sh
-# git add ci_scripts/ci_post_clone.sh
+git add ci_scripts/ci_post_clone.sh
 
 # Navigate to the repository root directory
 cd ..
