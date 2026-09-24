@@ -1,20 +1,13 @@
 # https://www.google.com/search?q=cloud+xcode+run+pod+install+script&client=safari&hs=Bc1V&sca_esv=611cad4472d239df&rls=en&sxsrf=APpeQnvUZKkwL8_fe1U-3wVb3VImIFgs_g%3A1790254222241&ei=jhy1au2aDraehvcP3a-iqQU&biw=1232&bih=711&oq=cloud+xcode+run+pod+install&gs_lp=Egxnd3Mtd2l6LXNlcnAiG2Nsb3VkIHhjb2RlIHJ1biBwb2QgaW5zdGFsbCoFCAAYoAEyBRAhGKABMgUQIRigATIFECEYoAFI9YwIUIMmWMn0B3ANeAGQAQOYAYgKoAG3dKoBETAuMzguMTAuMS4wLjEuMi4zuAEByAEA-AEBmAJAoALFZagCEMICChAAGEcY1gQYsAPCAgQQIxgnwgINEAAYgAQYigUYQxi0B8ICBRAAGIAEwgIIEAAYgAQYtAfCAgsQABiABBixAxiDAcICBRAuGIAEwgILEAAYgAQYigUYsQPCAggQLhiABBi0B8ICChAAGIAEGIoFGEPCAg4QABiABBiKBRiRAhi0B8ICDRAAGIAEGBQYhwIYtAfCAgsQABiABBiKBRiRAsICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIHECMY6gIYJ8ICFxAAGIAEGIoFGJECGOcGGOoCGLQC2AEBwgIaEAAYgAQYigUYkQIY5wYYtAcY6gIYtALYAQHCAg0QABiABBiKBRhDGLEDwgIREAAYgAQYigUYsQMYgwEYtAfCAg4QLhiABBixAxjHARjRA8ICExAuGIAEGIoFGEMYsQMYxwEY0QPCAggQABiABBixA8ICEBAuGIAEGIoFGEMYxwEY0QPCAgsQLhiABBjHARivAcICCBAAGBYYHhgKwgIHECEYChigAZgDHPEF9m2smY4aqUuIBgGQBgi6BgYIARABGAGSBxIxMy4zMy4xMy4xLjAuMi4xLjGgB9XdArIHETAuMzMuMTMuMS4wLjIuMS4xuAekZMIHCTItMjQuMzkuMcgHkgSACAE&sclient=gws-wiz-serp
-#!/bin/sh -x
+#!/bin/zsh
 
- cd $CI_PRIMARY_REPOSITORY_PATH
- export LANG=en_US.UTF-8
- sudo gem install cocoapods
- #pod install
-
-# git command
-# chmod +x ci_scripts/ci_post_clone.sh
-# git add ci_scripts/ci_post_clone.sh
-
-# Navigate to the repository root directory
-#cd ..
-
-# Install CocoaPods dependencies using Homebrew
+# Install CocoaPods via Homebrew
+echo "Installing CocoaPods..."
 brew install cocoapods
 
-# Run pod install to resolve and pull your dependencies
+# Navigate to the repository root directory if not already there
+cd "$CI_PRIMARY_REPOSITORY_PATH"
+
+# Install your Pod dependencies
+echo "Running pod install..."
 pod install
