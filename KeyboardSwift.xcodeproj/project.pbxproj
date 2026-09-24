@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		076072FF0C9BBE3D77D3D344 /* Pods_Spanish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FE5232EDD517E034F4CBF4 /* Pods_Spanish.framework */; };
 		2886C5FFBE39010C532CC844 /* Pods_Burmese.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A929C15EE642F305BEBF9C /* Pods_Burmese.framework */; };
+		3E9E98BD254C007398B9E6A8 /* Pods_French.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C5C33112F49E1931E149C6 /* Pods_French.framework */; };
 		4493942768164DEF0E8ED06F /* Pods_Turkish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7DE1DB484359E92CEBC42F /* Pods_Turkish.framework */; };
 		6403760B75795FD212DCCCC4 /* Pods_SmartFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1792B3C0F5990432DFF25577 /* Pods_SmartFonts.framework */; };
 		6A45486FEC38FD9B954D07C3 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
@@ -1045,6 +1046,7 @@
 		1672441AF38AC555D962D8C2 /* Pods-SmartFonts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFonts.debug.xcconfig"; path = "Target Support Files/Pods-SmartFonts/Pods-SmartFonts.debug.xcconfig"; sourceTree = "<group>"; };
 		1792B3C0F5990432DFF25577 /* Pods_SmartFonts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartFonts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A64B030270394CCA5731843 /* Pods_ThaiKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThaiKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF7472256B3BCE52243EABA /* Pods-French.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-French.debug.xcconfig"; path = "Target Support Files/Pods-French/Pods-French.debug.xcconfig"; sourceTree = "<group>"; };
 		28FE5232EDD517E034F4CBF4 /* Pods_Spanish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spanish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D08D86B02021161CB4506BF /* Pods_Druti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Druti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBF9F9B4563E685856AF605 /* Pods-Spanish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spanish.release.xcconfig"; path = "Target Support Files/Pods-Spanish/Pods-Spanish.release.xcconfig"; sourceTree = "<group>"; };
@@ -1057,6 +1059,7 @@
 		6E5BBF73C3828C7BBBFF2DD7 /* Pods-Turkish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turkish.debug.xcconfig"; path = "Target Support Files/Pods-Turkish/Pods-Turkish.debug.xcconfig"; sourceTree = "<group>"; };
 		6F06F206E9750B42F94824FA /* Pods_Russian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Russian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751776260BC9BD83B35DB02E /* Pods-Bhahasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bhahasa.release.xcconfig"; path = "Target Support Files/Pods-Bhahasa/Pods-Bhahasa.release.xcconfig"; sourceTree = "<group>"; };
+		7BB064CB9948638224D06701 /* Pods-French.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-French.release.xcconfig"; path = "Target Support Files/Pods-French/Pods-French.release.xcconfig"; sourceTree = "<group>"; };
 		8D01378E2A5C595E0091CC58 /* Russian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Russian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0137C72A5C597D0091CC58 /* Druti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Druti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0138002A5C59860091CC58 /* German.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = German.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1268,6 +1271,7 @@
 		CE3891756A936E5383E4879E /* Pods-Indian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indian.debug.xcconfig"; path = "Target Support Files/Pods-Indian/Pods-Indian.debug.xcconfig"; sourceTree = "<group>"; };
 		D12DEEF52D535242F21FD6C0 /* Pods-Spanish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spanish.debug.xcconfig"; path = "Target Support Files/Pods-Spanish/Pods-Spanish.debug.xcconfig"; sourceTree = "<group>"; };
 		E9E1B948ADDD6FFB56C5C586 /* Pods-Goti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goti.release.xcconfig"; path = "Target Support Files/Pods-Goti/Pods-Goti.release.xcconfig"; sourceTree = "<group>"; };
+		F2C5C33112F49E1931E149C6 /* Pods_French.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_French.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80ED0416C915982BF699D8F /* Pods-Japanese.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Japanese.debug.xcconfig"; path = "Target Support Files/Pods-Japanese/Pods-Japanese.debug.xcconfig"; sourceTree = "<group>"; };
 		FE9AD3F9AE5C85AFB6236EDE /* Pods-Turkish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turkish.release.xcconfig"; path = "Target Support Files/Pods-Turkish/Pods-Turkish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1413,6 +1417,7 @@
 				8DD36029305F8C9900339A3F /* AppTrackingTransparency.framework in Frameworks */,
 				8DD3602A305F8C9900339A3F /* AdSupport.framework in Frameworks */,
 				8DD3602B305F8C9900339A3F /* StoreKit.framework in Frameworks */,
+				3E9E98BD254C007398B9E6A8 /* Pods_French.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1453,6 +1458,8 @@
 				BB9FAA0D83AB8947BD334838 /* Pods-ThaiKeyboard.release.xcconfig */,
 				6E5BBF73C3828C7BBBFF2DD7 /* Pods-Turkish.debug.xcconfig */,
 				FE9AD3F9AE5C85AFB6236EDE /* Pods-Turkish.release.xcconfig */,
+				1AF7472256B3BCE52243EABA /* Pods-French.debug.xcconfig */,
+				7BB064CB9948638224D06701 /* Pods-French.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1475,6 +1482,7 @@
 				28FE5232EDD517E034F4CBF4 /* Pods_Spanish.framework */,
 				1A64B030270394CCA5731843 /* Pods_ThaiKeyboard.framework */,
 				9D7DE1DB484359E92CEBC42F /* Pods_Turkish.framework */,
+				F2C5C33112F49E1931E149C6 /* Pods_French.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2149,10 +2157,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DD36045305F8C9900339A3F /* Build configuration list for PBXNativeTarget "French" */;
 			buildPhases = (
+				C2CB85EAF418A5446224EE46 /* [CP] Check Pods Manifest.lock */,
 				8DD36006305F8C9900339A3F /* Sources */,
 				8DD36028305F8C9900339A3F /* Frameworks */,
 				8DD3602D305F8C9900339A3F /* Resources */,
 				8DD36041305F8C9900339A3F /* Embed App Extensions */,
+				2346FA58C97C327FECBB056F /* [CP] Embed Pods Frameworks */,
+				5C10139E0500B2344B86D39A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2648,6 +2659,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2346FA58C97C327FECBB056F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-French/Pods-French-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-French/Pods-French-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-French/Pods-French-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2CAB3BD39B8ADE4F8068B3EB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2814,6 +2842,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThaiKeyboard/Pods-ThaiKeyboard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C10139E0500B2344B86D39A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-French/Pods-French-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-French/Pods-French-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-French/Pods-French-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		66B0FAB6B7B20FEB5E8B2615 /* [CP] Embed Pods Frameworks */ = {
@@ -3094,6 +3139,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spanish/Pods-Spanish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2CB85EAF418A5446224EE46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-French-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C47E12098D3AE06C29B2DDB3 /* [CP] Check Pods Manifest.lock */ = {
@@ -4678,6 +4745,7 @@
 		};
 		8DD36046305F8C9900339A3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AF7472256B3BCE52243EABA /* Pods-French.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4707,6 +4775,7 @@
 		};
 		8DD36047305F8C9900339A3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BB064CB9948638224D06701 /* Pods-French.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
